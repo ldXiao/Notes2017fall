@@ -1,0 +1,1519 @@
+\documentclass[11pt,sans]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\newtheorem{dfn/thm}[thm]{Definition/Theorem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calb}{{\cal B}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\partial #1\over\partial #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Personal Notes for Commutative Algebra by P. Nelson}
+\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section*{About the Course}
+The course website is https://metaphor.ethz.ch/x/2017/hs/401-3132-00L/. 
+
+The topic includes
+\begin{itemize}
+\item 
+Basics about rings, ideals and modules
+\item 
+Localization
+\item 
+Primary decomposition
+\item 
+Integral dependence and valuations
+\item 
+Noetherian rings
+\item 
+Completions
+\item 
+Basic dimension theory
+\end{itemize}
+
+Prerequisite:
+
+Rings, homomorphism, ideals, quotient rings, zero divisors, prime/maximal ideals, fields.
+
+Convention: 
+Ring, we mean a commutative ring with identity.
+ 
+In particular for a ring homomorphism $f:R\rightarrow S$. We have $f(1_R)=1_S$.
+ 
+Remark:
+we allow 1=0 but then R=0.
+Caution, by definition $1\neq 0$ in a field .
+\section{Rings, ideals, radicals}
+\subsection{Lecture 1. Motivation and Basics by Paul Steinmann}
+In differential geometry, we have the theorem of level sets:
+\begin{thm}
+Let $f:\reals^n \rightarrow \reals$.
+If $0 \in \reals^n$ is a regular value of $f$ then $f^{-1}(0)$ is a submanifold.
+\end{thm} 
+ 
+In algebraic geometry, we look at $f^{-1}(0)$ for polynomial $f$.
+More precisely, fix an algebraic-closed field $\bbk$ and an integer $n>0$, consider the ring $R:=\bbk[x_1,...,x_n]$.
+ 
+Def: For a subset $S\subset R$ we define the \textbf{affine algebraic variety} by
+\begin{equation}
+V(S):=\{x\in \bbk^n| \forall f \in S,\ f(x)=0\subset \bbk^n\}
+\end{equation}
+\begin{rmk}
+With the affine algebraic varieties defined above, we have:
+\begin{itemize}
+\item $V(\emptyset)=\bbk^n$
+\item $ V(\{1\})=\emptyset$
+\item   For an non empty collection of subsets $(S_i)_{i\in I}$ $S_i\subset R$ we have 
+\begin{equation*}
+    \cap_{i\in I}V(S_i)=V(\cup_{i\in I} S_i)
+\end{equation*}
+\item $S$ and $S'$ are subsets in $R$
+\begin{equation*}
+    V(S)\cup V(S')=V(\{fg| f\in S, g\in S'\})
+\end{equation*}
+\end{itemize}
+as a consequence, 
+    $(V(S))_{S\subset R}$ form the closed sets of a topology on $\bbk^n$ called \textbf{Zariski topology}.
+\end{rmk}
+\begin{ex}
+n=2 , $R=\bbk[X_1,X_2]$
+
+ $V(\{X_1\})$ is the $X_2$ axis in $\bbk^2$
+
+ $V(\{X_2-X_1^2\})$ is the parabola in $\bbk^2$
+\end{ex}
+
+\begin{dfn}
+Conversely for all subset $X \subset \bbk^n$, consider 
+          $$ I(X):=\{f\in R | \forall x\in X: f(x)=0\}\subset R.$$
+\end{dfn}
+\begin{rmk}
+Fact: For S in R and X subset in $\bbk^n$, we have, 
+\begin{itemize}
+\item
+ $S\subset I(V(S))$
+\item
+ $X \subset V(I(X))$
+\item
+ For $S\subset S' \subset$ in $R$, we have $V(S)\supset V(S')$
+\item
+ For $X \subset X'\subset \bbk^n$, we have $ I(X)\supset I(X')$
+\item
+ $I(X) \subset R$ is  an ideal.
+\end{itemize}
+\end{rmk}
+
+\begin{dfn}
+The \textbf{radical of an ideal}   $a\subset R$ is 
+ $rad(\sca):=\{a\in R| \exists n\geq1\  s.t.\  a^n \in \sca\} \subset R$
+An ideal $\sca \subset R$ with $rad(\sca)$ is  called \textbf{radical}.
+\end{dfn}
+
+\begin{rmk}
+Fact, 
+for every ideal $\sca \subset R$ we have  $\sca\subset rad(\sca)$.
+
+ $rad(\sca)$ is an ideal, proof in exercise.
+
+For $X\subset \bbk^n$ the ideal $I(X)$ is radical. 
+
+\end{rmk}
+
+\begin{thm}
+(The Hilbert's Nullstelensatz)
+For any ideal $\sca \subset R $ we have
+$$I(V(\sca))=rad(\sca).$$
+\end{thm}
+
+An important consequence of the theorem:
+
+the maps $V$ and $I$ induce the one to one correspondence between
+$$
+\{\text{radical ideals in the polynomial ring}\}\Longleftrightarrow                   \{\text{affine algebraic varieties}\}
+$$
+and this correspondence inverse the inclusion.
+
+\begin{ex}
+For any point $x=(x_1,...,x_n) \in \bbk^n$ the ideal 
+$$
+I({x})=\scm_x:=(X_1-x_1,...,X_n-x_n)
+$$
+is maximal.
+\begin{proof}
+
+ If not, then there exists an ideal $\sca \subset R$
+s.t. 
+\begin{equation*}
+R\supsetneq \sca \supsetneq \scm_x,
+\end{equation*}
+but then by the Nullstellensatz,
+
+\begin{equation*}
+\emptyset\subsetneq V(\sca) \subsetneq V(\scm_x)=\{x\},
+\end{equation*}
+which makes the contradiction.
+\end{proof}
+\end{ex}
+
+Weak Nullstellensatz the ideals $m_x$ is are precisely the maximal ideals of $\bbk[x_1,...,x_n]$, where $\bbk$ needs to be algebraically closed
+\begin{ex}
+$\bbk=\reals, n=1$.
+$X^2+1$ is irreducible in $\reals[X]$.
+And $\reals[X]/(X^2+1) \cong \cplx$ is maximal.
+Consequence, we have a bijection
+$$
+\{\text{max ideals of R polynomial ring }\bbk[X_1,...,X_n]\}
+\Longleftrightarrow\{\text{Points in } \bbk^n\}
+$$
+\end{ex}
+
+Let $A$ be a ring.
+Remember 
+
+    An element $a\in A$ is \textbf{nilpotent} if there $\exists n>1\in \intg$ s.t. $a^n=0$.
+
+    An element $a\in A$ is a \textbf{zero divisor} if there is an element $b\in A, b\neq 0$ s.t. $ab=0$.
+
+Fact: every nilpotent element is a zero divisor but not conversely.
+
+\begin{ex}
+     take $(0,1)\in A\times A$ then $(0,1)\cdot(1,0) =(0,0)$
+\end{ex}
+
+\begin{dfn}
+ The ideal $N:rad((0))$ is called  the \textbf{nil radical} of $A$.
+\end{dfn}
+
+Then we have:
+\begin{enumerate}
+\item $\caln$ is the set of all nilpotent elements  of $A$
+\item $A/\caln$ has no nilpotent elements.
+\end{enumerate}
+\begin{proof}
+1. From definitions.
+2. Let $x\in A$ s.t. $\bar{x}\in A/\caln$ is nilpotent.
+ Let $n>0$ s.t. $\bar{x}^n=0$ then $x^n \in \caln$
+Thus there exists $k>0$ s.t. $(x^n)^k=0$ hence $x^{nk}=0$
+, $x\in \caln$.
+\end{proof}
+
+\begin{prop}
+The nil radical of A is the intersection of all prime ideals of A.
+\end{prop}
+\begin{proof}
+Denote by $\caln'$ the intersection of all prime ideals of $A$.
+For any nilpotent element $f\in A$ with $n>0$ s.t. $f^n=0$,
+We have $f^n\in \scp$ for every prime ideal $\scp$. Hence $f\in \scp$ We conclude $f\in \caln'$
+Conversely, suppose $f\in A$ is not nilpotent 
+Define $\Sigma:=\{ \sca \subset A\text{ ideals} | \forall n>0: f^n\notin \sca\}$
+We will apply Zorn's lemma. 
+We have 
+
+    1.  $(0)\in \Sigma$, so $\Sigma$ is nonempty,
+
+    2.  $\Sigma$ is partially ordered by inclusion.
+
+    3.  For any chain $(a_i)_{i\in I}\subset \Sigma$, the set $\sca :=\cup_{i\in I}a_i$ is an ideal and 
+
+    for all $n>0$, 
+    we have $f^n \notin \sca$, hence $\sca \in \Sigma$.
+By Zorn's lemma we conclude that there is a maximal element $\scp\in \Sigma$.
+We show that $\scp$ is a prime ideal.
+
+For any $x,y \notin \scp$, consider the ideals
+$\scp+(x), \scp+(y)$. They strictly contain $\scp$ and are thus not in $\Sigma$.
+Let $n,m>0$ s.t. $f^n\in (x), f^m\in \scp+(y)$.
+We conclude that $f^{n+m}\in \scp+(xy)$, so $\scp+(xy) \notin \Sigma$.
+Hence $xy \notin \scp$, which means, $\scp $ is a prime ideal so $f \notin \caln'$.
+\end{proof}
+
+Remember let $f:A \rightarrow B$ be a ring morphism. And $\scp\subset B$ a prime ideal . 
+Then $f^{-1}(\scp)$ is  a prime ideal of $A$.
+Caution: Not true for maximal ideals in general. 
+ 
+\begin{prop}
+Let $\sca\subset A$ be an ideal, $\pi : A\rightarrow A/\sca$
+There is a one to one correspondence between ideals of $A/\sca$ and ideals in $A$ which contain
+$\sca$ via $\scc=\pi^{-1}(\scb)$
+\end{prop}
+
+\begin{cor}
+Let $\sca\subset  A $ be an ideal, then $rad(\sca)$ is the intersection of all prime ideals which contain $\sca$.
+\end{cor}
+\begin{proof}
+consider the homomorphism $\pi :A\rightarrow A/\sca$
+Then $rad(\sca)=\pi^{-1}(\caln_{A/\sca})$.
+By the above proposition $\caln_{A/\sca}$ is the intersection of all prime ideals of $A/\sca$.
+ By the correspondence we conclude the statement.
+\end{proof}
+\begin{dfn}
+ The \textbf{Jacobson Radical} $\calr$ of $A$ is the intersection of all maximal ideals in $A$.
+\end{dfn}
+\begin{prop}\label{prop:criterion_jacobson_radical}
+We have 
+$x\in \calr\Longleftrightarrow \forall y \in A: 1-xy $ is a unit.
+\end{prop}
+\begin{proof}
+``$\Longrightarrow$'' let $x\in \calr$ and $y\in A$ s.t. $1-xy$ is not a unit. Then $1-xy\in \scm$ for some maximal ideal 
+$\scm \subset A$. But $x\in \calr\subset \scm,$ hence $1\in \scm$  contradiction.
+
+``$\Longleftarrow$'' let $x  \notin \calr$ then $x \notin \scm$ for some maximal ideal $\scm\subset A$.
+Since $\scm$ is maximal we conclude that $(x)+\scm=A$. Hence there exists $y\in A,\   u\in \scm$ s.t. $xy+u=1$.
+We conclude that $1-xy \in \scm $, so in particular , $1-xy$ is not a unit.
+ \end{proof}
+\subsection{Lecture 2. local rings, coprime ideals, ideal quotients by Paul Steinmann}
+\begin{dfn}
+A ring $A$ is called a \textbf{local ring} if $A$  admits precisely one maximal ideal;
+\end{dfn}
+
+\begin{ex}
+\ 
+\begin{itemize}
+\item
+Every field is a local ring with maximal ideal $\scm=0$, because every nonzero element is a unit.
+\item
+$\bbk[[X]]$ is the ring of formal power series over a field $\bbk$, it has a unique maximal ideal $(X)$. One can check that every element with nonzero constant term is invertible. i.e. $(a_0(1-g))^{-1}=a_0^{-1}(1+g+g^2+...)$
+\end{itemize}
+\end{ex}
+ 
+\begin{prop}\ 
+\begin{itemize}
+\item 
+Let $A$ be a ring and $\scm\neq (1)$ is an ideal of $A$ s.t. every $x\in A-\scm$  is a unit of $A$, then $A$ is a local ring with  maximal ideal $\scm$.
+\item
+Let $A$ be ring and $\scm\subset A$ is a maximal ideal s.t. any element of $1+\scm=\{1+a|a\in \scm \}$ is a unit in $A$. Then $A$ is a local ring.
+\end{itemize}
+\end{prop}
+
+\begin{proof}
+For first part, every proper ideal consists of non-units, hence is contained in $\scm$. In other words, an element is a unit iff it is not contained in any maximal ideal.
+For the second part, let $x\in A-\scm$. Since $\scm$ is maximal , we have $(x)+\scm=(1)$ , hence , $\exists y\in A, t\in \scm$, s.t. $xy+t=1$, which implies $xy=1-t\in 1+\scm.$ Thus ,$xy$ is a unit which implies that $x$ is a unit, Now use the first part.
+\end{proof}
+
+\begin{dfn}
+A ring $A$ is called \textbf{semilocal} if $A$ admits finitely many  maximal ideals.
+\end{dfn}
+
+\begin{ex}\ 
+\begin{itemize}
+\item 
+$\intg$ is not semilocal.
+\item
+Let $m\in \intg$. Then $\intg/(m\intg)$ is a semilocal ring with maximal ideals $ d\intg/m\intg$ for prime number $d|m$.
+\item In particular, for $p\in \intg$ prime , $\intg/p \intg$ is local ring.
+\end{itemize}
+\end{ex}
+
+ Reminder: Let $\sca,\scb \subset A$ be ideals their sum is 
+$$
+\sca+\scb:=\{a+b|a\in \sca, b\in \scb\},
+$$
+Which is the smallest ideal containing $\sca\cup\scb$.
+Also infinite sums $(\sca_i)_{i\in I}\subset A$ ideals,
+$$
+\sum_{i\in I }\sca_i :=\left\{\sum_{i\in I}x_i | x_i\in \sca_i  x_i =0 \text{for almost all i}\right\}
+$$
+And we also have
+$$
+\sca\cdot \scb\ or\ \sca\scb=\left\{\sum_{i\in I}x_i y_i|x_i \in \sca , y_i\in \scb, \text{all but finitely many terms are }0\right\}.
+$$
+\begin{dfn}
+Two ideals $\sca, \scb\subset A$ are called \textbf{coprime}\footnote{In some literature, it is called \textbf{comaximal}} if $\sca+\scb=(1)$ 
+\end{dfn}
+\begin{rmk}
+If $\sca,\scb\subset A$ are coprime ideals then $\sca\cap \scb =\sca\cdot \scb$.\\
+For general ideals $\sca,\scb\subset A$ :
+$$
+(\sca+\scb)\cdot(\sca\cap \scb)\subset \sca\cdot \scb\subset \sca\cap \scb.
+$$
+However, for coprime ideals, we also have $\sca\scb \supset \sca\cap\scb$, because $1=a+b$ for $a\in\sca, b\in \scb$, then
+$\forall x\in \sca\cap\scb$ we have $x=x\cdot 1=x(a+b)=xa+xb\in \sca\cdot \scb$.
+\end{rmk}
+
+\begin{prop}
+Let $\sca_1,...,\sca_n \subset A$ be ideals, denote $\varphi: A\rightarrow \prod_{i\in I}^n(A/\sca_{i})$ for the canonical homomorphism.\\
+(i) if $\sca_i,\sca_j$ are coprime for $i\neq j$ , then $\prod_{i=1}^n\sca_i=\cap_{i=1}^n\sca_i$.\\
+(ii)$\varphi$ is surjective iff $\sca_i,\sca_j$ are coprime for $i\neq  j$.\\
+(iii) $\varphi$ is injective iff $\cap_{i=1}^n\sca_i=(0)$.
+\end{prop}
+
+\begin{proof}
+(iii) Note that $ker \varphi =\cap^n_{i=1}\sca_i$.\\
+(i) by induction on $n$.
+For $n=2$ it is checked above. Suppose $n>2$ let $\scb:=\prod_{i=1}^{n-1}\sca_i=\cap^{n-1}_{i=1}\sca_i$
+Since $\sca_i+\sca_n=(1)$ for $1\leq i\leq n-1$. We have $x_i+y_i=1$ for some $x_i\in \sca_i, y_i\in \sca_n$
+Thus $\prod_{i=1}^{n-1}x_i= \prod_{i=1}^{n-1}(1-y_i) \equiv 1 \mod \sca_n$
+We conclude that $\sca_n+\scb=(1)$, s.t. 
+$$
+\prod^n_{i=1}\sca_i=\scb \sca_n=\sca\cap \sca_n=\cap_{i=1}^n\sca_i
+$$
+(ii) ``$\Longrightarrow$'', Suppose $\varphi $ is surjective. Let $i\neq j$, There exists an element $x\in A$ s.t. $\varphi(x)=(0,...,0,1,0,...,0)$, nonzero only at the $i$-th entry.
+Thus $x\equiv  1 \mod \sca_i$ and $x\equiv 0\mod \sca_j$.
+So $1=(1-x)+x\in \sca_i+\sca_j$.\\
+``$\Longleftarrow$'' We show that for all $k\in \{1,...,n\}$
+ there exists  an element $x\in A$ s.t. $\varphi(x)=(0,..0,1,0..0)$, nonzero at the $k$-th entry.
+Let $k\in \{1,...,n\}$. For every $j\in \{1,...,n\}\backslash\{k\}$.
+We have $\sca_k+\sca_j=(1)$, and thus there are elements $u_j\in\sca_k,v_j\in \sca_j$
+s.t. $u_j+v_j=1$.
+Define $x:=\prod_{i\neq k}v_i$. Then $x\equiv 0 \mod \sca_j,\ \forall j\neq k$ and $x=\prod_{i\neq k}(1-u_i)\equiv 1\mod \sca_k$.
+Hence, $\varphi(x)=(0,..,0,1,0,...,0)$ nonzero in the $k$-th entry.\\
+As a result, if each pair $\sca_i,\sca_j$ is coprime, we have 
+$$
+A/\left(\prod_{i=1}^n\sca_i\right)\cong \prod_{i=1}^n\left(A/\sca_i\right).
+$$
+\end{proof}
+
+ 
+\begin{prop}
+Le t $\sca,\scb\subset  A$ be ideals s.t. $rad(\sca),rad(\scb)$ are coprime. Then $\sca, \scb$ are coprime.
+\end{prop}
+\begin{proof}
+In fact, we have
+$$
+ rad(\sca+\scb)=rad(rad(\sca)+rad(\scb))=rad((1))=(1)
+$$
+Details in the exercise sheet.
+\end{proof}
+
+\begin{prop}\ \\
+(i) Let $\scp_1,..., \scp_n\subset A$ prime ideals and let $\sca \subset A$ be an ideal which is contained in $\cup_{i=1}^n\scp_i$ then $\sca\subset \scp_j$  for some $j$.\\
+(ii)Let $\sca_1,...,\sca_n\subset A$ be ideals and $\scp \subset A$ a prime ideal s.t. $\scp \supset \cap_{i=1}^n\sca_i$.
+Then $\scp\supset \sca_i$ for some $i$.
+If $\scp=\cap_{i=1}^n\sca_i$,  then $\scp =\sca_i $ for some $i$ .
+\end{prop}
+
+ 
+\begin{proof}
+Induction on $n$. For $n=1$, easily checked. For $n > 1$. Assume that $\sca \notsubset \scp_i$ 
+for all $1\leq i\leq n$. We show $\sca\notsubset \cup_{i=1}^n\scp_i$.
+By induction hypothesis we know that $\forall k,\sca\notsubset \cup_{i\neq k}^n\scp_i $, so there exists $x_k\in \sca$ s.t. $x_k\notin \scp_i,\ \forall i\neq k$.We choose an $x_k$ for each $\scp_k$ in the above manner.
+If $x_k\notin \scp_k$ for some $k$ , then we are done.
+If not, then $x_k\in \scp_k$ for all $k$. 
+Consider $y:=\sum_{k=1}^n\prod_{j\neq k}x_j$. We have $y\in \sca$ and $y \equiv \prod_{j\neq k}x_j \mod \scp_k,\forall k$.
+Since $x_j\notin \scp_k$ for $j\neq k$ and $\scp_k$ is a prime ideal, we conclude that $y\notin \scp_k$ for all $k$ hence $\sca\notsubset \cup_{i=1}^n \scp_i$.\\
+(ii) Suppose for all $i\in \{1,...,n\}$ we have $\scp\notsupset \sca_i$. Then there 
+are $x_i\in\sca_i $ with $x_i\notin \scp$ for all $i$. 
+And thus $\prod_{i=1}^n x_i\in \prod_{i=1}^n\sca_i\subset \cap_{i=1}^n\sca_i$. 
+Since $\scp$ is a prime ideal $\prod_{i=1}^n x_i\notin \scp$, hence $\scp\notsupset \cap_{i=1}^n \sca_i$.
+If $\scp=\cap_{i=1}^n\sca_i\subset \sca_k$ for all $k$, which produce the last part.
+\end{proof}
+
+\begin{dfn}
+Let $\sca,\scb\subset A$ be two ideals. Their \textbf{ideal quotient} is 
+$$
+(\sca:\scb):=\{x\in A| x\scb \subset \sca\}.
+$$ 
+The \textbf{annihilator} of an ideal $\sca\subset A $ is 
+$$
+Ann(\sca):=\{(0):\sca\}.
+$$
+\end{dfn}
+Notation: For $x\in A$ we write $(a:x):=(a:(x))$.\\
+Fact: 
+(i)The ideal quotient of two ideals is again an ideal.\\
+(ii)The set of zero divisors of $A$ is 
+$$
+D=\cup_{x\neq 0} Ann(x)=\cup_{x\neq 0}(Ann(x))
+$$
+\begin{proof}
+(i)
+(ii) The first equality is just by definition. The the second equality.
+$$
+D=rad(D)=rad(\cup_{x\neq 0}Ann(x))=\cup_{x\neq 0}rad(Ann(x)),
+$$
+ where we extend rad to arbitrary subsets.
+\end{proof}
+
+Properties: Let $\sca, \scb\subset A$ be ideals \\
+(i)$\sca\subset (\sca:\scb)$\\
+(ii) $(\sca:\scb)\scb\subset \sca$\\
+(iii)$((\sca:\scb):\scc)=(\sca:\scb\cdot\scc)=((\sca:\scc):\scb)$\\
+(iv) for ideals $(\sca_i)_{i\in I}\subset A$, $(\cap_{i\in I}\sca_i:\scb)=\cap_{i\in I}(\sca_i:\scb)$\\
+(v) for ideals $(\scb_i)_{i\in I}\subset A$ , $(\sca:\sum_{i\in I }\scb_i)=\cap_{i\in I} (\sca:\scb_i)$.\\
+ 
+\begin{dfn}
+Let $\sca\subset A$ be an ideal $f: A\rightarrow  B$ a ring homomorphism. We define the \textbf{extension} of $\sca$ by $f$ to be the ideal 
+$$
+\sca^e:=f_{*}(\sca):=B f(\sca)
+$$,
+Which is just the ideal in $B$ generated by $f(a)$\\
+For an dieal $\scb\subset B$. We define the \textbf{contraction} of $\scb$ via $f$ to be the ideal 
+$$
+\scb^c:=f^*(\scb):=f^{-1}(\scb)
+$$
+\end{dfn}
+
+Properties: Let $f: A\rightarrow B$ be a ring homomorphism , $\sca\subset A$ $\scb\subset B$ ideals. Then :\\
+(i) $\sca\subset f^*f_*(\sca)=\sca^{e c}$,$\scb\supset f_{*}f^*(\scb)=\scb^{ce}$.\\
+(ii) $f^*(\scb)=f^* f_*f^*(\scb), f_*(\sca)=f_* f^*f_*(\sca)$.\\
+(iii) Denote by $C$ the set of contracted ideals in $A$ and by $E$ the set of extended ideals in $B$, then 
+$$
+C=\{\sca\subset A|f^*f_*(\sca)=\sca\},
+$$
+ 
+$$
+E=\{\scb\subset B| f_* f^*(\scb)=\scb\}.
+$$ 
+And $f_*: C\rightarrow E$ is a bijection with inverse $f^*$.
+\begin{proof}
+ For (i), $\sca\subset f^{-1}f(\sca)\subset f^{-1}f_{*}(\sca)=f^{*}f_*(\sca)$. For (ii) $\scb \supset f(f^{-1}(\scb))$ and $\scb$ is an ideal so $\scb \supset f_{*}f^*(\scb)$. Part (iii) is left as an exercise.
+\end{proof}
+\section{Modules}
+\subsection{Lecture 3. Modules, Exact sequences by Professor Kowalski}
+Outline of this chapter 
+\begin{itemize}
+\item Definition examples and Nakayama's Lemma
+\item exact sequences , snake lemma
+\item tensor products
+\item Algebra over a ring
+\end{itemize}
+Roughly speaking, module is ``vector spaces for rings''. It is closely related to fibre bundles in geometry. For the convention, we still fix commutative ring $\cala$ with unit.
+\begin{dfn}
+A \textbf{module} $M$ over $\cala$ is an Abelian group with a linear action of $\cala$ on $M$, i.e.
+$$
+\begin{aligned}
+& \cala\times M\rightarrow M\\
+& (a,x)\mapsto ax
+\end{aligned}
+$$
+so that 
+$$
+\begin{aligned}
+&a(x+y)=ax+ay\\
+&(a+b)x=ax+bx\\
+&a(bx)=ab x\\
+& 1 x= x
+\end{aligned}
+$$
+\end{dfn}
+
+\begin{ex}
+\begin{enumerate}
+\item $\{0\}$ is an $\cala$-module
+\item if $\cala$ is a field $\cala$-module is just $\cala$-vector space.
+\item $I\subset\cala$ ideal; then $I$is an $\cala$-module (a submodule of $\cala$)
+\item $\cala=\intg$, an $\cala$-module is an abelian group.
+\end{enumerate}
+\end{ex}
+
+\begin{dfn}
+$M$ and $N$ are $\cala$-modules $f:M\rightarrow N$ is  \textbf{$\cala$-linear} if $f(ax+by)=af(x)+bf(y)$. The set of such $\rho:M\rightarrow N$ is denoted $Hom_{\cala}(M,N)$. It is an $\cala$-module with
+$$
+(f+g)(x)=f(x)+g(x),
+$$
+$$
+(af)(x)=af(x).
+$$
+\end{dfn}
+If
+$Q\overset{h}{\lrta }M\overset{f}{\lrta} N\overset{g}{\lrta} P$, then $g\circ f\in Hom_\cala(M,P)$ and $g\circ(f\circ h)=(g\circ f)\circ h$. Also, $id_M\in Hom_\cala(M,M)$. In other word, $\cala$-module is a category.
+
+\begin{dfn}
+$f:M\rta N$ is an \textbf{isomorphism} iff $\exists g:N\lrta M$ s.t. $g\circ f=id_N$ and $f\circ g=id_M$.
+\end{dfn}
+\begin{rmk}
+$Q\rta(h) M\rta(f) N\rta(g) P$, then for any $P$, we get
+ $$
+ f^*: Hom_\cala(M,P)\rta Hom_\cala(M,P)
+ $$
+ $$
+g\mapsto g\circ f
+ $$
+ and 
+ $$
+ f_*: Hom_\cala(Q,M)\rta Hom_\cala(Q,N)
+ $$
+ $$
+h\mapsto  f\circ h
+ $$
+They are $\cala$-linear, because for example
+$$
+\begin{aligned}
+(f^*(a h+b g))(x)&=((a h+b g)\circ f) (x)\\
+&= (a h+b g) (f(x))\\
+&=a h(f(x))+bg(f(x))\\
+&= (a f^*(h)+b f^* (g))(x).
+\end{aligned}
+$$
+\end{rmk}
+
+\begin{rmk}
+Suppose $M$ is an $\cala$-module and $N\subset M$ as submodule, then $M/N$ has the structure of $\cala$-module such that the canonical projection $\pi: M\rta M/N$ is $\cala$-linear. $a(x+N)=ax+N$ is well defined because $a N\subset N$.
+\end{rmk}
+\begin{dfn}$f: M\lrta N$ is a morphism of $\cala$-modules.\\
+\begin{itemize}
+\item 
+$
+Ker(f)=f^{-1}(\{0\})\subset M
+$ 
+is a submodule of $M$.
+\item 
+$
+Im(f)= f(M)\subset N
+$ is a submodule of $N$.
+\item 
+Coker(f)=N/Im(f) is an $\cala$-module.
+\end{itemize}
+\end{dfn}
+\begin{rmk}\label{rmk:iso} 
+\begin{enumerate}
+\item $ker(f)={0}\Longleftrightarrow f$ is injective.
+\item $coker(f)={0}\Longleftrightarrow f$ is surjective.
+\item if $f:M\rta N$ and $M'\subset ker(f)$, then we get an induced linear map $\bar{f}$, s.t the diagram 
+\[
+\begin{tikzcd}
+M \arrow[r,"f"] \arrow[d,"\pi"]  & N  \\
+   M/M' \arrow[ur,"\bar{f}"] & 
+\end{tikzcd}
+\]
+commutes. It properly defined by $\bar{f}(x+M')=f(x)$ since $f(M')=\{0\}$
+Then we have
+$$
+Im(\bar{f})=Im(f),
+$$
+and 
+$$
+Ker(\bar{f})=Ker(f)/M'.
+$$
+In particular, if $M'= Ker(f)$, we get an isomorphism 
+$$
+M/Ker(f)\overset{\bar{f}}{\lrta}Im(f).
+$$
+\end{enumerate}
+\end{rmk}
+
+If $M$ is an $\cala$-module and $(M_i)_{i\in I} $ a family of submodules then $\cap_{i\in I} M_i$ is a submodule.
+If $X\subset M$ be a  subset then the intersection of all submodules  containing $X$ is a submodule containing $X$, called the  submodule generated by $X$, denote it by $\lgl X\rgl$.
+One checks that 
+$$
+\begin{aligned}
+\lgl X\rgl&=\left\{\text{linear combination of elements of } X\right\}\\
+&=\left\{\sum_i a_i x_i|K\geq 0 \intg, a_i\in\cala, x_i\in X\right\}
+\end{aligned}
+$$
+We write 
+$$
+\sum_{i\in I} M_i=\lgl \cup_{i\in I} M_i\rgl
+$$
+\begin{dfn}
+If $M$ satisfies $M=\lgl X\rgl$ with $X$ finite, then $M$ is called finitely generated.
+\end{dfn}
+Warning:   A submodule of a finitely generated module is not necessarily finitely generated.
+\begin{ex}
+$$
+A=\cplx[X_1,...,X_n,...].
+$$
+$A$ is finitely generated by $1$ however, the ideal 
+$
+I=(X_1,..,X_n,...) $ is note finitely generated
+\end{ex}
+
+\begin{lemma}\ 
+\begin{enumerate}
+    \item $L\supset M\supset N$ are $\cala$-modules, then there is an isomorphism 
+    $$
+        (L/N)/(M/N)\rta L/M
+    $$
+
+    $$
+    (x+N)+M/N\mapsto x+M
+    $$
+    Rigorously:
+    $\pi: L\lrta L/M$ is surjective\\
+    $\Lrta \bar{\pi} :L/N\rta L/M$ is surjective\\
+    and $Ker(\bar{\pi})=M/N$ so
+     $$
+     (L/N)/(M/N)\cong Im(\bar{\pi}),
+     $$
+     by Remark~\ref{rmk:iso}.
+    \item $(M_1+M_2)/M_2\cong M_1/(M_1\cap M_2)$
+\end{enumerate}
+\end{lemma}
+\begin{dfn}
+$I\subset A$ ideal; $M$ module $I M=\lgl \{ax|a\in I,x\in M\}\rgl\subset M$ as a submodule.
+\end{dfn}
+$M/IM$ is naturally an $\cala/I$-module.
+
+\begin{dfn}
+$(M_i)_{i \in I}$ is a family of $\cala$-modules
+\begin{enumerate}
+\item $\prod_{i\in I} M_i$ is an $\cala$-module with $a(x_i)=(a x_i)$.
+\item $\oplus_{i\in I} M_i\subset \prod_{i\in I} M_i$ is the submodule of $(x_i)_{i\in I}$ s.t. $x_i=0$ for all but finitely many $i\in I$. 
+\end{enumerate}
+Cartesian product and direct product are the same when there only finitely many summand. If $M_i=M,\forall i\in I$,we denote $M^{(I)}:=\oplus_i M_i$. When $I$ is finite, we denote it by $M^I$.
+\end{dfn}
+
+\begin{dfn}
+An $\cala$-module $M$ is called \textbf{free} if there exists a set $I$ s.t. $M$ is isomorphic to $\cala^{(I)}$.
+\end{dfn}
+\begin{ex}\ 
+\begin{enumerate}
+\item if $\cala$ is a field, then every $\cala$-module is free.
+\item $\cala=\intg$ : $\intg/2\intg$ is not free.
+\item \textbf{Warning!} A submodule of a free module is not necessarily free.(e.g. ideals in $\cala$)
+\item If $\cala\neq \{0\}$, $n,m\geq 0$ are integer and $\cala^n\cong \cala^m$ then $n=m$.
+$I\subset \cala$ maximal ideal, then we get an isomorphism of $\cala/I$-vector spaces,
+$$
+(\cala/I)^n\cong(\cala/I)^m\Lrta n=m.
+$$
+This is called the \textbf{invariant basis number property}, all nontrivial commutative ring has the property. 
+\end{enumerate}
+\end{ex}
+
+\begin{prop}
+(Nakayama's lemma)\\
+$M$ finitely generated $\cala$-module, $I\subset \text{Jacobson radical of \cala, which is just } \cap_{\scm\subset\cala\ }\scm$, where $\scm $ are maximal ideals in $\cala$.
+If $IM=M$, then $M=\{0\}$. e.g. 
+$\cala$ being a local ring and $I=\scm$ the only maximal in $\cala$.
+\end{prop}
+
+\begin{proof}
+Suppose $M\neq {0}$, and let $\{x_1,...,x_n\}$ be a generating set with $n\geq1$ minimal.
+Since $IM=M$, we have $x_n\in IM$, so
+$$
+x_n=\sum_{i=1}^k
+a_i y_i, y_i\in M, a_i\in I
+$$
+where $y_i=\sum_j b_{ij }x_j$.
+Then we have 
+$$
+x_n=\sum_{j=1}^n c_j x_j
+$$
+$$
+c_j=\sum_i^k a_i b_{ij}\in I
+$$
+$$
+\Lrta (1-c_n)x_n=\sum_{j=1}^{n-1}c_j x_j
+$$ 
+and
+$(1-c_n)\equiv 1\mod I$ $\Lrta$ $c_n\in$ the Jacobson radical, then  $1-c_n$ is invertible by Proposition~\ref{prop:criterion_jacobson_radical}.
+$$
+x_n=(1-c_n)^{-1}\sum_{j=1}^{n-1}c_j x_j,
+$$ 
+which contradict the minimality of the generating set.
+\end{proof}
+
+\begin{cor}
+$M$ fin. gen. $\cala$-module, $I \subset \text{Jacobson radical }, N\subset M$. If $M=IM +N$, then $M=N$.
+\end{cor}
+\begin{proof}
+$I(M/N)=(IM+N)/N=(M/N)$, then by Nakayama's lemma we know 
+$$
+M/N={0}.
+$$
+\end{proof}
+
+\begin{cor}
+$\cala$ local ring, $\scm\subset \cala$ the maximal ideal. $M$ fin. gen. Then if $(x_1,...,x_n)\in M$ are such that their classes modulo $\scm$ form a basis of $M/\scm M$ as $\cala/\scm$-vector space, then they generate $M$.
+\end{cor}
+
+\begin{proof}
+$N=\lgl x_1,...,x_n\rgl$ and apply Nakayama's lemma.
+\end{proof}
+\section*{Exact sequence}
+\begin{dfn}
+(1)$M'\rta(f) M\rta(g) M''$ is \textbf{exact} if $Im(f)=ker(g)$\\
+(2) $M'\rta(f_1) M\rta(f_2) M''\rta...$ is \textbf{exact} if it is exact at each node.
+\end{dfn}
+
+\begin{ex}\ 
+\begin{enumerate}
+\item $0\lrta M\overset{g}{\lrta} M''$ is exact, is equivalent to say that $g$ is injective
+\item $M'\overset{f}{\lrta}M\lrta 0$ is exact, it is equivalent to say that $f$ is surjective.
+\item ``Short exact sequence'' $0\lrta M'\overset{f}{\lrta}M\overset{g}{\lrta}M'' \lrta0$ For instance, 
+$$
+\begin{array}{ c c c c c c c c c}
+0 & \longrightarrow  & M' & \overset{f}{\longrightarrow } & M'\oplus M'' & \overset{g}{\longrightarrow } & M'' & \longrightarrow  & 0\\
+ &  & x &\longmapsto  & (x,0) &  &  &  & \\
+ &  &  &  & (x,y) & \longmapsto & y &  &
+\end{array}
+$$
+ the splitting sequence is exact. In fact short exact sequence of free modules always splits.
+ \item $\cala=\intg$, for non-free modules, for example
+ $$
+\begin{array}{ c c c c c c c c c}
+0 & \longrightarrow  & \intg/2\intg & \longrightarrow  & \intg/4\intg & \longrightarrow  & \intg/w\intg & \longrightarrow  & 0\\
+ &  & x &\longmapsto  & 2x &  &  &  & \\
+ &  &  &  & x & \longmapsto & x\  mod\ 2 &  &
+\end{array}
+$$
+the exact sequence does not split.
+\end{enumerate}
+\end{ex}
+\subsection{Lecture 4. Snake Lemma, Tensor Product by Professor Kowalski}
+\begin{prop}(Snake Lemma)
+Suppose we have such a commutative diagram, each row is exact, 
+\[
+\begin{tikzcd}
+0\arrow[r]  & M'  \arrow[r]\arrow[d,"f'"] & M\arrow[r] \arrow[d,"f"] & M''\arrow[r] \arrow[d,"f''"] & 0 \\
+0\arrow[r]  & N'  \arrow[r] & N\arrow[r] & N''\arrow[r]  & 0 
+\end{tikzcd}
+\]
+then we have a map $\delta: Ker(f'')\lrta Coker(f')$ s.t.  
+$$
+0\lrta Ker(f')\lrta Ker(f)\rta Ker(f'')\overset{\delta}{\lrta}Coker(f')\lrta Coker(f)\lrta Coker(f'')\lrta 0 
+$$
+is exact.
+\end{prop}
+
+\begin{proof}
+Consider the kernels and cokernels with the induced map between them. For notion consideration, we write $Ker(f')$ as $K'$ and $Coker(f')$ as $C'$ and so on. We have the extended commutative diagram:
+\[
+\begin{tikzcd}
+0\arrow[r]  
+& K'  \arrow[r,"\hat{u}"]\arrow[d,"k'",hook] 
+& K\arrow[r,"\hat{v}"] \arrow[d,"k",hook] \arrow[ddd,phantom,""{coordinate, name=Z}] 
+& K'' \arrow[d,"k''",hook]  
+& \\
+0\arrow[r]  & M'  \arrow[r,"u"]\arrow[d,"f'"] & M\arrow[r,"v"] \arrow[d,"f"] & M''\arrow[r] \arrow[d,"f''"] & 0 \\
+0\arrow[r]  & N'  \arrow[r,"u'"] \arrow[d,"q'",two heads]& N\arrow[r,"v'"] \arrow[d,"q",two heads]& N''\arrow[r]\arrow[d,"q''",two heads]  & 0 \\
+  & C'  \arrow[r,"\bar{u}"] & C\arrow[r,"\bar{v}"] & C''\arrow[r]  & 0,
+\end{tikzcd}
+\]
+where the maps $k',k,k''$ are inclusion of the kernels as submodules and $q',q,q''$ are canonical projections, hence each column become exact now. $\bar{u}, \bar{v}$ are the morphism induced on quotient modules while $\hat{u}, \hat{v}$ are restrictions of $u,v$ on submodules. One can check the induced maps on Cokernels are well defined, for example, for $\bar{v}$ to be well defined, because $q''\circ v'\circ f=q''\circ f''\circ v =0$, thus $Im(f)\subset Ker(q''\circ v')$. One can also check that the above diagram is commutative. For example $x\in K'$, we have $f(\hat{u}(x))=f(u(x))=u'(f'(x))=0\Lrta \hat{u}(x)\in K$, then we have $u\circ k'=k\circ \hat{u}$. 
+\begin{enumerate}
+\item Exactness at $K'$\\
+We already know $\hat{u}=u|_{Ker(f')}$, $u$ injective implies that $\hat{u}$ is injective.
+\item Exactness at $K$\\
+We easily check that $Im(\hat{u})\subset Ker(\hat{v})$, because $k''\circ \hat{v}\circ \hat{u}=v\circ u\circ k'=0$, by the fact $k''$ is injective, we know $\hat{v}\circ\hat{u}=0$. For the converse inclusion, if $x\in Ker(\hat{v})=Ker(v)\cap Ker(f)$, then $x\in Im(u)\cap Ker(f)$. $\exists y\in M'$ s.t. $u(y)=x$ $\Lrta f(u(y))=0 \Lrta u'(f'(y))=0 $. Then because $u'$ is injective, $f'(y)=0\Lrta y\in K'\Lrta x=\hat{u}(y)$. Then we conclude $Ker(\hat{v})\subset Im(\hat{u})$, thus $Ker(\hat{v})= Im(\hat{u})$.
+\item Exactness at $C''$\\
+$q''\circ v'=\bar{v}\circ q$, $q'', v', q$ are all surjective, then we conclude that $\bar{v}$ has to be surjective.
+\item Exactness at $C$\\
+We easily verify that $\bar{v}\circ \bar{u}=0$, i.e. $\bar{v}\circ \bar{u}\circ q'=q''\circ v'\circ u'=0$ and $q'$ is surjective $\Lrta \bar{v}\circ \bar{u}=0$. For the converse inclusion, we choose $x+Im(f)\in Ker(\bar{v})$, where $x\in N$. $\bar{v}(x+Im(f))=0= q''\circ v'(x)$. $v'(x)\in Ker(q'')=Im(f'')$. $\exists y\in M'' $ s.t. $f''(y)=v'(x)$, On the other hand, $v$ is surjective ,$\Lrta \exists z\in M$ s.t. $v(z)=y$. Then, we have $f''(v(z))=v'(x)=v'(f(z))$. Then we choose $\tilde{x}=x-f(z)$, $\Lrta x+Im(f)=\tilde{x}+Im(f)$ \& $v'(\tilde{x})=0$. Then there exists $w\in N'$ s.t. $u'(w)=\tilde{x}$. Then, we check that $q\circ u'(w)=q(\tilde{x})=\tilde{x}+Im(f)$, thus $\bar{u}(q(w))=\tilde{x}+Im(f)\Lrta \bar{u}(w+Im(f'))=x+Im(f)$. Then we conclude $Ker(\bar{v})\subset Im(\bar{u})$.
+\item Construct $\delta$\\
+\[
+\begin{tikzcd}
+0\arrow[r]  
+& K'  \arrow[r,"\hat{u}"]\arrow[d,"k'",hook] 
+& K\arrow[r,"\hat{v}"] \arrow[d,"k",hook] \arrow[ddd,phantom,""{coordinate, name=Z}] 
+& K'' \arrow[d,"k''",hook]
+\arrow[phantom]{d}[red, xshift=-1.5 ex]{\substack{x\\[0.5\jot]\downmapsto\\[0.5\jot]x}}
+\arrow[dlldd,
+"\delta",blue,
+rounded corners,
+to path=
+{ -- ([xshift=12ex]\tikztostart.east)
+|- (Z) \tikztonodes
+-| ([xshift=-12ex]\tikztotarget.west)
+-- (\tikztotarget)}
+] 
+& 
+\\
+0\arrow[r]  
+& M'  \arrow[r,"u"]\arrow[d,"f'"] 
+& M\arrow[r,"v"] \arrow[d,"f"] \arrow[phantom]{r}[red, yshift=-1.5 ex]{\substack{\exists y\ \mapsto\ x}} \arrow[phantom]{d}[red, xshift=-2 ex]{\substack{y\\[0.5\jot]\downmapsto\\[0.5\jot] f(y)}}
+& M''\arrow[r] \arrow[d,"f''"] 
+& 0 
+\\
+0\arrow[r]  
+& N'  \arrow[r,"u'"] \arrow[d,"q'",two heads] \arrow[phantom]{r}[red, yshift=-1.5 ex]{\substack{\exists z\ \mapsto\ f(y)}} \arrow[phantom]{d}[red, xshift=-2 ex]{\substack{z\\[0.5\jot]\downmapsto\\[0.5\jot] [z]}}
+& N\arrow[r,"v'"] \arrow[d,"q",two heads]
+& N''\arrow[r]\arrow[d,"q''",two heads]  
+& 0 
+\\
+& C'  \arrow[r,"\bar{u}"] 
+& C\arrow[r,"\bar{v}"] 
+& C''\arrow[r]  
+& 0,
+\end{tikzcd}
+\]
+For an element $x\in K''$, $k''(x)=x\in M''$ and $f''(x)=0$. $\because v$ is surjective, $\therefore \exists y\in M $ s.t. $v(y)=x$. Then $f''(x)=f''(v(y))=v'(f(y))=0$ $\Lrta f(y)\in Ker(v')=Im(u')$. Therefore, there exists $z\in N'$ s.t. $u'(z)=f(y)$. The choice of $z$ is unique once we fix $y$, because $u'$ is injective. \textbf{We define $\delta:K''\lrta C', x\mapsto [z]=z+Im(f')$}. For $\delta$ to be well defined, it can not depend on the choice of $y$ and $z$. Choose another $\tilde{y}\in M$ and corresponding $\tilde{z}\in N'$ s.t. $v(\tilde{y})=x$ and $u'(\tilde{z})=f(\tilde{y})$. We have $v(\tilde{y}-y)=0$, $\exists w\in M'$ s.t. $u(w)=\tilde{y}-y$. Then $f(u(w))=u'(f'(w))=f(\tilde{y}-y)=f(\tilde{y})-f(y)$. Then we have $u'(\tilde{z})-u'(z)=u'(f'(w))$. Since $u'$ is injective, we have $\tilde{z}=z+f'(w)$, thus $\tilde{z}+Im(f')=z+Im(f')$.  Then we conclude that $\delta$ is well defined.
+\item Exactness at $K''$\\
+For $x\in K$, we formally write
+$$
+\begin{aligned}
+\delta(\hat{v}(x))&=u'^{-1}(f(v^{-1}(k''(\hat{v}(x)))))+Im(f')\\
+&=u'^{-1}(f(v^{-1}(v(k(x)))))+Im(f')\\
+&=u'^{-1}(f(k(x)))+Im(f')\\
+&=0 \text{ because } f\circ k=0.\\
+&\Lrta Im(\hat{v})\subset Ker(\delta)
+\end{aligned}
+$$
+For the converse inclusion. $\forall x\in Ker(\delta)$, we trace back to the construction of $\delta$, and select the corresponding $y\in M,\ z\in N'$, where $v(y)=x$ and $u'(z)=f(y)$. $\because x\in Ker(\delta),\therefore z\in Im(f')$. $\Lrta \exists w\in M'$ s.t. $f'(w)=z$. Then we choose another $\tilde{y}=y-u(w)$, one verifies that $v(\tilde{y})=v(y)-v(u(w))=v(y)=x$. (this is legal, because we know $\delta$ does not depend on the choice of $y$) Also, we know $f(\tilde{y})=f(y)-f(u(w))=f(y)-u'(f'(w))=f(y)-u'(z)=0$. Then we know $\tilde{y}\in Ker(f)=K$, we conclude that $\hat{v}(\tilde{y})=x$, thus $Ker(\delta)\subset Im(\hat{v})$.
+\item Exactness at $C'$\\
+For $x\in K''$, we formally write
+$$
+\begin{aligned}
+\bar{u}(\delta(x))&=\bar{u}\left(u'^{-1}(f(v^{-1}(k''(x))))+Im(f')\right)\\
+&=(q\circ u')\left(u'^{-1}(f(v^{-1}(k''(x))))\right)\\
+&=q(0+f(v^{-1}(k''(x))))\\
+&=0\\
+&\Lrta Im(\delta)\subset Ker(\bar{u})
+\end{aligned}
+$$
+For the converse inclusion, we choose an element $z+Im(f')\in Ker(\bar{u})$. Then $\bar{u}(z+Im(f'))=q\circ u'(z)=0$, then we have $\exists y\in M \text{ s.t. } u'(z)=f(y)$. Also we have $v'(u'(z))=v'(f(y))=0,\Lrta f''(v(y))=0$. $v(y)\in Ker(f'')=K''$. We can check that $\delta(v(y))=z+Im(f')$. Hence, we conclude that $Ker(\bar{u})\subset Im(\delta)$.
+\end{enumerate}
+\end{proof}
+
+\begin{ex}
+(Application of snake lemma) We have such a commutative diagram, each row is exact. Suppose the middle map is isomorphism. 
+\[
+\begin{tikzcd}
+0\arrow[r]  & M'  \arrow[r]\arrow[d,"f'"] & M\arrow[r] \arrow[d,"f"] & M''\arrow[r] \arrow[d,"f''"] & 0 \\
+0\arrow[r]  & N'  \arrow[r] & N\arrow[r] & N''\arrow[r]  & 0 
+\end{tikzcd}
+\]
+then we have a map $\delta: Ker(f'')\lrta Coker(f')$ s.t.  
+$$
+0\lrta Ker(f')\lrta \{0\} \rta Ker(f'')\overset{\delta}{\lrta}Coker(f')\lrta \{0\}\lrta Coker(f'')\lrta 0 
+$$
+is exact. Thus we get $\delta:Ker(f'')\lrta Coker(f')$ is an isomorphism.
+\end{ex}
+\begin{prop}
+
+\end{prop}
+If $0\lrta M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \lrta0$  is exact, then for any $\cala$-module $N$,
+\begin{equation}\label{eq:1}\tag{*}
+\begin{array}{ c c c c c c c c c}
+0 & \longrightarrow  & Hom_\cala(M'',N) & \overset{v^*}{\longrightarrow } & Hom_\cala(M,N) & \overset{u^*}{\longrightarrow } & Hom_\cala(M',N)  \\
+ &  & f &\longmapsto  & f\circ v &  &   \\
+ &  &  &  & g & \longmapsto & g\circ u 
+\end{array}
+\end{equation}
+is exact, in general $u^*$ is not surjective. Also,
+\begin{equation}\label{eq:2}\tag{**}
+\begin{array}{ c c c c c c c c c}
+  Hom_\cala(N,M'') & \overset{u_*}{\longrightarrow } & Hom_\cala(N,M) & \overset{v_*}{\longrightarrow } & Hom_\cala(N,M') & \longrightarrow  & 0\\
+  f &\longmapsto  & u\circ f  &  &  &  & \\
+   &  & g & \longmapsto & v\circ g &  &
+\end{array}
+\end{equation}
+is exact but $u_*$ is in general not always injective.
+\\
+More precisely, we have \textbf{right exactness of functor $Hom(\underline{\ \ }, N)$}:\\
+$$
+M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \lrta0 \text{ is exact} \Longleftrightarrow (\ref{eq:1}) \text{ is exact for all $N$}
+$$\\
+and 
+\textbf{Left exactness of functor $Hom(N,\underline{\ \ })$}:\\
+$$
+0\lrta M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \text{ is exact }\Longleftrightarrow (\ref{eq:2})\text{ is exact for all $N$}.
+$$
+\begin{proof}
+For ``$\Lrta$'' part of the first statement, we assume $M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \lrta0$ is exact. 
+Let $N$ be $\cala$-module, then we check that:
+\begin{enumerate}
+\item $u^*\circ v^*=0$\\
+Let $f:M''\lrta N$, $(u^*\circ v^*)(f)=f\circ v\circ u=f\circ(v\circ u)=0$ 
+\item $v^*$ is injective\\
+Let $f:M''\lrta N$ be such that $v^*(f)=f\circ v=0$ $\Lrta f(Im(v))=0$ $\Lrta$ $f=0$ because $v$ is surjective.
+\item $Ker(u^*)\subset Im(v^*)$\\
+Let $f:M\lrta N$ be such that $u^*(f)=f\circ u=0$. Then $f(Im(u))=0$ so $f(Ker(v))=0$, so there is $\bar{f}:M/Ker(v)\lrta N$ s.t. $\bar{f}\circ p=f$.
+\[
+\begin{tikzcd}
+ M  \arrow[r,"f"] \arrow[d,"p"] & N \\
+M/Ker(v)\arrow[swap, ur,"\bar{f}"] &    
+\end{tikzcd}
+\]
+We know that $v$ induces an isomorphism 
+\[
+\begin{tikzcd}
+ Im(v)=M''\arrow[dr,swap,bend right,"\bar{v}^{-1}"]&
+ M \arrow[swap,l,"v"] \arrow[r,"f"]  \arrow[d,"p"] & N \\
+& M/Ker(v)\arrow[swap, ur,"\bar{f}"] \arrow[ul,"\bar{v}"]& 
+\end{tikzcd}
+\]
+Let $f'=\bar{f}\circ \bar{v}^{-1}\in Hom(M'',N)$, we compute $v^*(f')=f'\circ v=\bar{f}\circ \bar{v}^{-1}\circ v=\bar{f}\circ p=f$ thus $f\in Im(v^*)$
+\end{enumerate} 
+We then give an example where the surjectivity of $u^*$ fails\\
+Consider $\cala=\intg$,\ 
+$0\lrta \intg\overset{\times 2}{\lrta}\intg\overset{\ }{\lrta}\intg/2\intg \lrta0$ is exact.
+$$
+\begin{aligned}
+v^*: & Hom(\intg, N)\rta Hom(\intg,N) \\
+ &\ \ \ \ \ \ \ \ \ f \longmapsto  f\circ(\times 2)
+\end{aligned}
+$$
+ is not surjective if $N=\intg$, because $f=Id_\intg$, we want to find a map $g$ such that the following diagram commutes,
+ \[
+\begin{tikzcd}
+0 \ar[r] & \intg\ar[r,"\times 2"]\ar[d,"Id"] & \intg \ar[dl, dashed,"?"description, "g"] \\
+& \intg &
+\end{tikzcd}
+ \]
+ but there is no $g$ such that $g\circ(\times 2)=Id_\intg$ because every morphism in $Hom_\intg(\intg,\intg)$ is of the form $\times q$, where $q\in\intg$.
+
+ Conversely, for the ``$\Llta$'' part of the first statement, assume (\ref{eq:1}) is always exact. We want to show that $M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \lrta0$ is exact, 
+ $$
+\begin{array}{ c c c c c c c c c}
+0 & \longrightarrow  & Hom_\cala(M'',N) & \overset{v^*}{\longrightarrow } & Hom_\cala(M,N) & \overset{u^*}{\longrightarrow } & Hom_\cala(M',N) &  & \\
+ &  & f &\longmapsto  & f\circ v &  &  &  & \\
+ &  &  &  & g & \longmapsto & g\circ u &  &
+\end{array}
+ $$
+ \begin{enumerate}
+\item Let $N=Coker(v)$ and $[p:M''\lrta Coker(v)]\in Hom(M'',N)$, then $v^*(p=p\circ v=0)$. Since $v^*$ is injective, we have $p=0$, in other words $M''=Ker(p)=Im(v)$ so $v$ is surjective.
+\item Take $N=M''$ and $f=Id_{M''}$, $(u^*\circ v^*)(f)=0$ means $Id_{M''}\circ v\circ u=0$ $\Lrta v\circ u=0$, hence $Im(u)\subset Ker(v)$.
+\item  Take $N=M/Im(u)$, and $p:M\lrta N$ projection, we have $u^*(p)=p\circ u=0$. So $p\in Ker(u^*)$, so there exists $f\in Hom(M'',N) $ s.t. $v^*(f)=f\circ v=p$. 
+\[
+\begin{tikzcd}
+ M'  \arrow[r,"f"] & N=M/Im(u) \\
+M\arrow[ur,"p"] \arrow[u,"v"] &    
+\end{tikzcd}
+\]
+Hence $Ker(v)\subset Ker(p)$ and $Ker(v)\subset Im(u)$, then we can conclude that $Ker(v)=Im(u)$.
+\end{enumerate}
+The above steps proves the first statement and proof of the second statement is similar.
+\end{proof}
+\section*{Tensor Product}
+\begin{dfn}
+$M,N,P$  are $\cala$-modules, A map $f:M\times N\lrta P$ is called $\cala$-\textbf{bilinear} if 
+$$
+f(ax+by, z)=af(x,z)+bf(y,z)
+$$
+$$
+f(x,ay+bz)=a f(x,y)+bf(x,z)
+$$
+$$
+Bil_{\cala}(M,N,P)=\{\text{ all $\cala$-bilinear maps form $M\times N$ to $P$}\}.
+$$
+$Bil_{\cala}(M,N,P)$ is an $\cala$-module.
+\end{dfn}
+
+\begin{dfn}\label{def:tensor_product}
+$M,N$ are $\cala$-modules and the \textbf{tensor product} gives an $\cala$-module $M\otimes_\cala N$ such that $Bil_\cala(M,N;P)=Hom_{\cala}(M\otimes_\cala N,P)$. $Bil_\cala(M,N;P)$ is obviously an $\cala$-module, with sum and scalar multiplication performed valuewise.
+\end{dfn}
+
+\begin{thm}
+$M,N$ are $\cala$-modules. There exists a pair $(T,\beta)$ where $T$ is an $\cala$-module and $\beta:M\times N\lrta T$ s.t.  any $\cala$-bilinear map $b:M\times N\lrta P$ factors through $(T,\beta)$, i.e. there exists a unique $f:T\lrta P$ s.t. the following  diagram commutes.
+\[
+\begin{tikzcd}
+ M\times N \arrow[d,"\beta"] \ar[r,"b"] & P \\
+T\arrow[swap,ur,"\exists !f"] &    
+\end{tikzcd}
+\]
+This is what we call \textbf{universal property}. One can check that if it exists, it is unique.
+\end{thm}
+\subsection{Lecture 5. Properties of Tensor Product}
+The motivation of tensor product is  to ``classify'' bilinear/multilinear maps between modules over some ring $\cala$.
+\begin{dfn/thm}
+$M$ and $N$ are $\cala$-modules, \textbf{there exists a best possible bilinear map $M\times N\rta M\otimes N$.} That is to say : there exists a module $T$ (denoted $M\otimes N$ or $M\otimes_\cala N$) and a bilinear map $f:M\times N\lrta T$. By ``best possible'', we mean:
+For all module $P$ and all bilinear map $b:M\times N\rta P$,
+here exists a unique $\tilde{b}:T\lrta P$ s.t. the following  diagram commutes.
+\[
+\begin{tikzcd}
+ M\times N \arrow[d,"f"] \ar[r,"b"] & P \\
+T\arrow[swap,ur,"\exists !\tilde{b}"] &    
+\end{tikzcd}
+\] 
+What's more $(T,f)$ is \textbf{strongly unique} which means \textbf{it is unique up to unique isomorphism}
+\[
+\begin{tikzcd}
+ M\times N \arrow[d,"f"] \ar[r,"f'"] & T'\arrow[swap,dl,"\exists !k"] \\
+T\arrow[swap,ur,bend right,"\exists !j"] &    
+\end{tikzcd}
+\] 
+\end{dfn/thm}
+\begin{proof}
+\textbf{Uniqueness}\\
+The uniqueness is just the direct result of universal property. By definition, $f$ is bilinear. Apply the universal property with $P=T'$, $b=f'$, then we know $j:=\tilde{b}:T\rta T'$. Similarly, we can construct $k$ by swapping $T,T'$. Consider $k\circ j:T\rta T$, apply the universal property with $P:=T$, $b:=f$
+\[
+\begin{tikzcd}
+ M\times N \arrow[d,"f"] \ar[r,"f"] & T \\
+T\arrow[swap,ur,"\exists !\tilde{b}"] &    
+\end{tikzcd}
+\] 
+We know $\exists ! \tilde{b}$ s.t. the diagram commutes. Then we have $\tilde{b}\circ f=f$, but another obvious map having this property is just $id_T$. Then, we get to the conclusion $k\circ j=id_T$ by the uniqueness of $\tilde{b}$. Similarly, we get $j\circ k=id_{T'}$. Altogether, we conclude that $(T,f)$ is unique up to unique isomorphism.\\
+\textbf{Existence}\\
+Form the free module $C:=\cala^{M\times N}$, where 
+$$
+\cala^{(M\times N)}=\left.\left\{\sum_{(x,y)\in M\times N} a_{(x,y)}(x,y)\right|a_{(x,y)}\in \cala, \text{almost all $a_{(x,y)}=0$}\right\}.
+$$
+{\color{red}We'd better mention the universal property of the free module $\cala^{(M\times N)}$, every map $q:M\times N\lrta P$ can be extended to $\tilde{q}:\cala^{(M\times N)}\lrta P$}\\
+Let submodule $D\subseteq C$, then there is an induced map $\bar{g}:M\times N\lrta C/D$ for defining map $g:M\times N\lrta C$ of the free module. Then we consider a certain submodule $D$ with the following two equivalent definitions
+\begin{itemize}
+\item $D$ is the smallest submodule for which all the induced map $\bar{g}:M\times N\lrta C/D$ is bilinear.
+\item $D$ it the submodule generated by the following elements
+$$
+\left\{\left.
+\begin{aligned}
+&(x+x',y)-(x,y)-(x',y)\\
+&(x,y+y')-(x,y)-(x,y')\\
+&a(x,y)-(ax,y)\\
+&a(x,y)-(x,ay)
+\end{aligned}
+\right|\forall a\in \cala, \forall x,x'\in M,\forall y,y'\in N
+\right\}
+$$
+\end{itemize}   
+The equivalence of two definition can be explained by the definition of ``bilinear maps''. \\
+We want to show that $C/D$ is what we are looking for. First, we claim, for all bilinear mop $ b:M\times N\rta P,\ Ker(\tilde{b})\supseteq D$.\\
+The proof is to just check it by hand, e.g.
+$$
+\begin{aligned}
+&\tilde{b}((x+x',y)-(x,y)-(x',y))\\
+&=\tilde{b}((x+x',y))-\tilde{b}((x,y))-\tilde{b}((x',y))\\
+&=b(x+x',y)-b(x,y)-b(x',y)\\
+&=0(\text{by $b$ is bilinear})
+\end{aligned}
+$$
+The characterization of $\tilde{b}$ determines its restriction of $g(M\times N)\subseteq T$. Clear by construction that $g(M\times N)$ generates $T$. We get the conclusion that $\bar{g}:M\times N\rta C/D=T$.
+\end{proof}
+Also note that, in general
+$$
+S:=\{m\otimes n|(m,n)\in M\times N\}\neq M\otimes N
+$$, e.g. $\intg^n\otimes \intg/2\intg\cong \intg/2\intg$
+but $S$ generates $M\otimes N$ as we saw in the proof.
+\begin{ex}
+Natural isomorphisms, $\exists !\ isomorphisms$
+\begin{enumerate}
+\item $M\otimes N\cong N\otimes M$
+\item $(M\otimes N)\otimes P\cong M\otimes (N\otimes P)$
+\item $M\otimes (N_1\oplus N_2)\cong (M\otimes N_1)\oplus (M\otimes N_2)$
+\item $\cala\otimes M\cong M$
+\end{enumerate}
+\end{ex}
+\begin{proof}
+we prove part 3. Consider a map: 
+$$
+\begin{aligned}
+b:M\times (N_1\oplus N_2)&\rta M\otimes N_1 \oplus M\otimes N_2\\
+(m,(n_1,n_2))&\mapsto (m\otimes n_1, m\otimes n_2).
+\end{aligned}
+$$
+We can check that $b$ is bilinear, for example 
+$$
+\begin{aligned}
+&b(m+m',(n_1,n_2))\\
+&=((m+m')\otimes n_1,(m+m')\otimes n_2)\\
+&= (m\otimes n_1+m'\otimes n_1,m\otimes n_2+m'\otimes n_2)\\
+&=(m\otimes n_1,m\otimes n_2)+(m'\otimes n_1,m'\otimes n_2)\\
+&=b(m,(n_1,n_2))+b(m',(n_1,n_2)).
+\end{aligned}
+$$
+As a result the bilinear map $b$ must factor through $M\otimes (N_1\oplus N_2)$, and we denote the corresponding map $f:M\otimes (N_1\oplus N_2)\rta M\otimes N_1 \oplus M\otimes N_2$.
+$$
+f(m\otimes (n_1,n_2))=(m\otimes n_1,m\otimes n_2).
+$$
+We use the terminology \textbf{pure tensor} to name the tensors like $x\otimes y\in M\otimes N$, obviously, $M\otimes N$ is linearly generated by  pure tensors.
+We want to show that $f$ is an isomorphism. Need to find the inverse map $g$ of $f$.
+
+define 
+$$
+\begin{aligned}
+g_1:M\otimes N_1&\lrta M\otimes(N_1\oplus N_2)\\
+(m\otimes n_1)&\longmapsto m\otimes (n_1,0)
+\end{aligned}
+$$
+similarly, we can construct 
+$$
+\begin{aligned}
+g_2:M\otimes N_2&\lrta M\otimes(N_1\oplus N_2)\\
+(m\otimes n_2)&\longmapsto m\otimes (0,n_2)
+\end{aligned}
+$$
+Then, we define $g=g_1\oplus g_2$. We want to show $f\circ g=id, g\circ f=id$.
+$$
+\begin{aligned}
+&f\circ g(m\otimes n,m'\otimes n_2)\\
+&=f(m\otimes (n_1,0)+m'\otimes(0,n_2))\\
+&=(m\otimes n_1,0)+(0,m'\otimes n_2)\\
+&=(m\otimes n_1,m'\otimes n_2)
+\end{aligned}
+$$
+Then $f\circ g=id $ on pure tensors, hence it is identity on all tensors, because $f\circ g$ is linear, and pure tensor generates the whole tensor product module.
+\end{proof}
+Consider $\cala^m=\cala\oplus \cala\oplus...\oplus \cala$ (finite free module), by the isomorphism 4 in the above example 
+$$
+\begin{aligned}
+\cala\otimes \cala&\cong \cala\\
+x\otimes y&\mapsto xy
+\end{aligned}
+$$
+also by iterating (3) and (4), we get 
+$$
+\cala^m\otimes \cala^n\cong \cala^{mn},
+$$
+compared to the known result
+$$
+\cala^m\oplus \cala^n\cong \cala^{m+n}.
+$$
+More directly,
+if $e_1^{(1)},...,e_m^{(1)}$ standard basis for $\cala^m$, $e_1^{(2)},...,e_n^{(2)}$ standard basis for $\cala^n$,
+then
+$$
+\left.\left\{e_i^{(1)}\otimes e_j^{(2)}\right|,m\geq i\geq1,n\geq j\geq 1\right\}
+$$
+form a basis of $\cala^m\otimes \cala^n$ and induces $\cong \cala^{mn}$
+
+To see this directly, consider a bilinear map $f:\cala^m\times \cala^n\lrta P$, where $P$ is some module.
+$$
+\cala^m\ni x=x_1 e_1^{(1)}+...+x_m e^{(1)}_m, \ x_i\in \cala
+$$
+$$
+\cala^n\ni y=y_1 e_1^{(1)}+...+y_m e^{(1)}_m, \ y_i\in \cala
+$$
+Then 
+$$
+f(x,y)=\sum_{
+\begin{aligned}
+&i=1...m\\
+&j=1...n
+\end{aligned}}
+x_i y_j f(e_i^{(1)}\otimes e_j^{(2)}),
+$$
+where we can define $f(e_i^{(1)}\otimes e_j^{(2)})=:a_{ij}\in P$
+Generally, given an $mn$-tuple $(a_{ij})$ in $P$ we may define a bilinear $f:\cala^m\times\cala^n\lrta P$ by the above formula.
+\[
+\begin{tikzcd}
+ \cala^m\times \cala^n \arrow[d,"f"] \ar[r]
+ \arrow[phantom]{r}[ yshift=3.5 ex]{\substack{ (e_i^{(1)}, e_j^{(2)})\ \longmapsto\ e_i^{(1)}\otimes e_j^{(2)}}} 
+ & \cala^{\oplus\{e_i^{(1)}\otimes e_j^{(2)}\}} \arrow[dl,"\exists !\tilde{f}\ s.t.\ \tilde{f}(e_{ij})=a_{ij}"]
+ \\
+P &    
+\end{tikzcd}
+\] 
+\begin{rmk}
+More generally, we may define the $n$-fold tensor products $M_1\otimes ...\otimes M_n$.
+$$
+\left\{\text{multilinear maps :}M_1\times...\times M_n\lrta P \right\}\leftrightarrow \left\{\text{linear maps :}M_1\otimes...\otimes M_n\lrta P \right\}
+$$
+Let $V=\reals^n$, then 
+$$
+\left\{\text{inner products on }V \right\}\leftrightarrow \left\{\text{linear functions on }V\otimes V\right\}
+$$
+\end{rmk}
+\begin{rmk}
+\textbf{Extension of scalars}
+Consider a ring morphism $f:\cala\rta\mathcal{B}$ and an $\cala$-module $M$, we can construct a $\calb$-module
+$$
+M_\calb:=M\otimes_\cala \calb,
+$$
+where $\calb$ is regarded as an $\cala$-module via $f$, i.e. $a\cdot b=f(a)b$. And the $\calb$ action on $M_\calb$ is like
+$b\cdot(m\otimes z):=m\otimes b z $
+\end{rmk}
+\begin{ex}\ 
+\begin{itemize}
+\item $M=\cala^m\Lrta M_\calb=\calb^m$
+\item $\cala=\reals, \calb=\cplx\Lrta (\reals^n)_\cplx:=(\reals^n)\otimes_\reals \cplx\cong\cplx^n$
+\end{itemize}
+\end{ex}
+
+\subsection{Lecture 6. Flatness}
+The meaning of $x\otimes y$ depends on the modules to which we regard $x$ and $y$ are belonging. In fact, one can have $x\in M'\subseteq M$ and $y\in N'\subset N$ but 
+$$
+M'\otimes N'\ni x\otimes y\neq x\otimes y\in M\otimes N
+$$
+\begin{ex}
+$\cala=\intg$ , $M'=2\intg\subseteq M=\intg$, $N'=\intg/2 =N$,
+ then $2\intg \otimes \intg/2\intg \ni 2\otimes 1\neq 0 $, but $\intg \otimes \intg/w\intg\ni2\otimes 1=0$ 
+\end{ex}
+In summary, we no $M'\subset M, N'\subset N$ does not indicate that $M'\otimes N'\subset M\otimes N$, which means the simple inclusion is  not an injective  morphism. 
+
+But $\otimes$ is indeed a \textbf{bifunctor}. Given module morphisms
+$$
+\begin{aligned}
+& f: M'\lrta M\\
+& g: N'\lrta N\\
+\exists ! f\otimes g:&M'\otimes N':\lrta M\otimes N\\
+&x\otimes y\longmapsto f(x)\otimes g(y)
+\end{aligned}
+$$ 
+and 
+$$
+(f\circ f')\otimes(g\circ g')=(f\otimes g)\circ (f'\otimes g')
+$$
+For example, we alway consider the case $g=1_N$ with $N$ $\cala$-module, then each morphism $f:M'\lrta M$ is mapped to $f\otimes 1_N:M'\otimes N\lrta M\otimes N$.
+
+\begin{dfn}
+$N$ is \textbf{flat} if $\forall f: M'\lrta M$  s.t.
+$$
+f:\text{injective }\Lrta f\otimes 1_N \text{ is injective}
+$$
+In other words,
+ $$
+M'\subset M\Lrta \text{``$M'\otimes N\subset M\otimes N$''}
+ $$
+\end{dfn}
+
+\begin{ex}\ 
+\begin{itemize}
+    \item 
+$\{0\}$ is a flat $\cala$-module
+\item 
+$\cala$ is a flat $\cala$-module, because $M\otimes_\cala\cala=M$ and $f=f\otimes 1_\cala$ 
+\end{itemize}
+\end{ex}
+
+\begin{lemma}
+Let $(N_i)_{i\in I}$ be a family of modules over $\cala$, then $\oplus_{i\in I} N_i$ is flat iff each $N_i$ is flat.
+\begin{proof}
+Suppose each $N_i$ is flat. Let $M'\overset{f}{\lrta}M$ be injective. Suppose, 
+$$
+M'\otimes(\oplus_{i}N_i)\overset{f\otimes 1}{\lrta}M\otimes (\oplus_i N_i) 
+$$
+is not injective, i.e.  $z\in Ker(f\otimes 1_N)\neq 0$. 
+Let $N$ denote $\oplus_i N_i$ and the $i$-th projection $\pi_i:N\lrta N_i$.
+\[
+\begin{tikzcd}
+0\neq z\arrow[r,phantom,"\in"] & \oplus_i (M'\otimes N_i)\arrow[r,"\rho_i'"] \arrow[d,equal] & M'\otimes N_i\arrow[d,equal] \\
+& M'\otimes(\oplus_i N_i)\arrow[r,"1_{M'}\otimes \pi_i"] \arrow[d,"f\otimes 1_N"] & M'\otimes N_i \arrow[d,"f\otimes 1_{N_i}"] \\
+& M\otimes (\oplus_i N_i)\arrow[r,"1_M\otimes \pi_i"] & M\otimes  N_i\\
+& \oplus_i (M\otimes N_i)\arrow[r,"\rho_i"] \arrow[u,equal] & M\otimes N_i\arrow[u,equal] \\
+\end{tikzcd}
+\]
+$z\neq 0\Lrta \exists i\in I$ s.t. $\rho_i'(z)\neq0$ $\Lrta (f\otimes 1_{N_i})(\rho_i'(z))\neq0\in M\otimes N_i$.
+But $(f\otimes 1_{N_i})(\rho_i'(z))=\rho_i(f\otimes 1_{N}(z))$ is the $i$-th component of $(f\otimes1_N)(z)=0$ by assumption, which gives the contradiction.
+The converse is simpler.
+\end{proof} 
+\end{lemma}
+\begin{cor}
+If $M$ is a free $\cala$-module, then it is a flat module.
+\begin{proof}
+We already know $\cala$ is flat, then by the previous lemma, we know $\oplus_{i\in I}\cala$ is flat.
+\end{proof}
+\end{cor}
+
+\begin{ex}
+Consider a system of linear equations
+$$
+S:f_1(x_1,...,x_n)=...=f_m(x_1,...,x_n)=0,
+$$
+where these $f_i$'s has coefficients in $\reals$. Then $S$ has solution over $\reals$ iff $S$ has solution over $\cplx$ (This claim works for any field extension $L/K$ instead of  $\cplx/\reals$)
+A simple proof goes like: ``$\Lrta$'' is trivial, for the converse, we take the real or the imaginary part of a complex solution. 
+
+For a second proof:
+$$
+M'=\reals^n\overset{f}{\lrta} M=\reals^m,
+$$
+where $f=(f_1,...,f_m)$.
+$\cala=\reals$, $ N=\cplx\cong \reals\oplus \reals i$ is free, then by the above corollary, we know $N$ is flat.
+Then $S$ has a solution over $\reals$ iff $Ker(f)\neq 0$, and $S$ has a solution over $\cplx$ iff $Ker(f\otimes 1_\cplx)\neq 0$. If $f\otimes 1$ is not injective, by the definition of flat module, we know $f$ is not injective, which conclude the proof. This second proof works for arbitrary field extension, because the field extensions are always free modules over the initial field.
+\end{ex}
+
+\begin{prop}(Right exactness of $\otimes N$)\\
+Consider an exact sequence of $\cala$-modules
+\begin{equation*}
+\begin{array}{ c c c c c c c c c}
+  M' & \overset{f}{\longrightarrow } & M & \overset{g}{\longrightarrow } & M'' & \longrightarrow  & 0\\
+\end{array}
+\end{equation*}
+Then we have
+\begin{equation*}
+\begin{array}{ c c c c c c c c c}
+  M'\otimes N & \overset{f\otimes 1}{\longrightarrow } & M\otimes N & \overset{g\otimes 1}{\longrightarrow } & M''\otimes N & \longrightarrow  & 0\\
+\end{array}
+\end{equation*}
+ is  exact for arbitrary $\cala$-module $N$.
+\end{prop}
+\begin{proof}
+Obviously $g\otimes 1$ is surjective. We only need to prove the exactness at $M\otimes N$. As for the easier inclusion,
+$
+Im(f\otimes 1)\subseteq Ker(g\otimes 1)
+$
+because $(g\otimes 1)\circ (f\otimes 1)=(g\circ f)\otimes 1=0$. 
+Then it remains to show 
+$$
+\frac{M\otimes N}{Im(f\otimes 1)}\overset{\psi}{\lrta}M''\otimes N
+$$
+is an isomorphism. $\psi $ is induced by $g\otimes 1$,  well defined because $
+Im(f\otimes 1)\subseteq Ker(g\otimes 1).
+$
+
+Now, we construct a two-sided inverse $\varphi$ of $\psi$.
+\[
+\begin{tikzcd}
+ M''\otimes N  \ar[r,dashed,"\exists \varphi"] & \frac{M\otimes N}{Im(f\otimes 1)} \\
+ M''\times N \arrow[u] \arrow[ur,dashed,"\exists \varphi_0"]& \\
+M\times N\arrow[swap,uur,"\varphi_1"]\arrow[u,"g\times 1"] &    
+\end{tikzcd}
+\] 
+Consider the map $\varphi_1$, it is the composition of the canonical projection and the defining map of tensor product.
+$\varphi_1(x,y)\mapsto x\otimes y+Im(f\otimes 1)$. Consider $(x'',y)\in M''\times N$, which is the image of $(x,y)$ under $g\times 1$. Then we can define $\varphi_0(x'',y):=\varphi_1(x,y)$. It is well-defined, because if there is another $(x_1,y)$ also map to $(x'',y)$, the difference
+$$
+x-x_1\in Ker(g)=Im(f),
+$$
+hence $\exists z\in M'$
+$x-x_1=f(z)$.
+$\Lrta (x-x_1)\otimes y=(f\otimes 1)(z\otimes y)$
+Then
+$$
+\varphi_1(x,y)-\varphi(x_1,y)=(x-x_1)\otimes y+Im(f\otimes 1)=0.
+$$
+Then it remains to check $\varphi_0$ is bilinear so that $\varphi_0$ lifts to a $\varphi$ on $M''\otimes N$. Also we  need to check the $\varphi$ is indeed the two-sided inverse of $\psi$.
+
+Consider  $\varphi_0(x'',ay+bv)$ and $\varphi_0(ax''+bw'',y)$. Chose $x$ and $w$ in the preimages $g^{-1}(x'')$ and $g^{-1}(w'')$. By the linearity of $g$, we can safely choose $ax+bw$ in the pre-image of $ax''+bw''$
+Knowing that $\varphi_1$ is bilinear (because the defining map of tensor product is bilinear and canonical projection is linear), we have
+$$
+\begin{aligned}
+&\varphi_0(x'',ay+bv)=\varphi_1(x,ay+bv)\\
+&=a\varphi_1(x,y)+b\varphi_1(x,v)=a\varphi_0(x'',y)+b\varphi_0(x'',v)
+\end{aligned}
+$$
+and
+$$
+\begin{aligned}
+&\varphi_0(ax''+bw'',y)=\varphi_1(ax+bw,y)\\
+&=a\varphi_1(x,y)+b\varphi(w,y)=a\varphi_0(x'',y)+b\varphi_0(w'',y).
+\end{aligned}
+$$ 
+Explicitly, with $x\in g^{-1}(x'')$, 
+$$
+\varphi(x''\otimes y)=x\otimes y+Im(f\otimes 1)
+$$
+and
+$$
+\psi(x\otimes y+Im(f\otimes 1))=g(x)\otimes y
+$$
+$$
+\begin{aligned}
+&\Lrta\\
+&\psi\circ\varphi(x''\otimes y)=g(x)\otimes y=x''\otimes y\\
+&\varphi\circ \psi(x\otimes y+Im(f\otimes 1))=x_1\otimes y+Im(f\otimes 1)=x\otimes y+Im(f\otimes 1),
+\end{aligned}
+$$
+where in the last line $x_1$ is another representative in $g^{-1}(x'')$.
+\end{proof}
+
+\begin{cor}
+$N$ is flat iff $\otimes N$ preserves the exactness of any sequence of modules
+\begin{proof}
+Any exact sequence can be split up into short exact sequence, and the flatness does indicate it preserve  the exactness of short exact sequence.
+\end{proof}
+\end{cor}
+
+\begin{ex}\label{ex:iso_quotient_module}
+An ideal
+$\sca\subset \cala$, and $M$ is an $\cala$-module,
+$$
+M\otimes_\cala \cala/\sca\cong M/\sca M,
+$$
+where $\sca M:=\{\sum x_i m_i|x_i\in \sca, m_i\in M\}$. $\sca M$ is a submodule of $M$.
+\begin{proof}
+$$
+0\lrta \sca\lrta \cala\lrta \cala/\sca\lrta 0 
+$$
+is an exact sequence (of \cala-modules). Tensorring it with $M$, we have
+$$
+\sca\otimes M\overset{\psi}{\lrta }M\lrta M\otimes \cala/\sca\lrta 0
+$$
+is exact, where $\psi $ is induced by the inclusion $\sca\inj\cala$, $\psi:x\otimes m\mapsto xm$. $Im(\psi)=\sca M$
+Then by the exactness, we have
+$$
+M\otimes \cala/\sca\cong M/Im(\psi)=M/\sca M.
+$$
+\end{proof}
+\end{ex}
+
+
+\begin{ex}
+$$\intg/m\intg\otimes_\intg \intg/n\intg\cong \intg/gcd(m,n)\intg.$$ 
+Pf. Take $M=\intg/m\intg$, $\cala=\intg$, $\sca=n\intg$. Then $\sca M=(n\intg+m\intg)/m\intg=gcd(m,n)\intg/m\intg$. $\cala/\sca=\intg/n\intg$
+
+Then by the result of Example~\ref{ex:iso_quotient_module}, we have
+$$
+M\otimes \cala/\sca=\frac{\intg}{m\intg}\otimes_\intg \frac{\intg}{n\intg}\cong\frac{\intg/m\intg}{gcd(m,n)\intg)/m\intg}= \frac{\intg}{gcd(m,n)\intg}=M/\sca M.
+$$
+\end{ex}
+
+Let $n\in\intg$. Then $\intg/n\intg$ is flat iff $n=\pm1,0$, i.e. $\intg/n\intg=\{0\} \text{ or } \intg$. This is easy to prove, consider the following short exact sequence for $|n|\geq 2$,
+$$
+0\lrta n\intg\lrta \intg\lrta \intg/n\intg\lrta 0,
+$$
+Suppose $\intg/n\intg$ is flat. Tensorring it with the above exact sequence, we get
+$$
+0\lrta0\lrta \intg\otimes\intg/n\intg\lrta \intg/n\intg\lrta 0,
+$$
+which gives the contradiction. 
+
+Fact\\
+Any finitely generated $\intg$-module is of the form
+$$
+M=\intg^r\left(\oplus_{i\in I}(\intg/n_i\intg\right))
+$$,
+ the second part of $M$ is denoted $M_{tors}$, then we get the corollary that a finitely generated $\intg$-module is flat iff $M_{tors}$ vanishes.
+\begin{dfn}
+$\cala$ a ring, $M$ an $\cala$-module, we call $M$ \textbf{torsion free} if $\forall a\in \cala$ non-zerodivisor. $m\in M$ $am=0\Lrta m=0$
+\end{dfn}
+
+\begin{thm}\ 
+\begin{enumerate}
+\item $M$ if flat $\Lrta$ $M$ is torsion free
+\item If $\cala$ is PID, $M$ is torsion free $\Lrta $ $M$ is flat.
+\end{enumerate}
+\end{thm}
+\begin{proof}
+Bosch section 4.2
+\end{proof}
+
+Some other facts about tensor product
+\begin{ex}
+For $\cala=\bbf$ being a field, $V, W$ finite dimensional vector space over $\bbf$
+$$
+\begin{aligned}
+V^*\otimes W&\cong Hom_{\bbf}(V,W)\\
+l\otimes w &\mapsto [v\mapsto l(v)w]
+\end{aligned}
+$$
+\end{ex}
+
+
+\end{document}

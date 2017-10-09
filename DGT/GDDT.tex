@@ -1,0 +1,104 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=red,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\pd}{\partial}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\calk}{{\cal K}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calm}{{\cal M}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\pd #1\over\pd #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\renewcommand{\qedsymbol}{$\square$}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\bibliographystyle{plain}
+\title{\bf Notes for Differential Galois Theory by P. Jossen}
+\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{The Ring of Partial Differential Operators}
+\begin{dfn}
+A $\Delta$-ring $\calr$ is a commutative ring with unit equipped with a set of commutative derivations $\Delta=\{\pd_1,...,\pd_r\}$. A $\Delta$-ideal $I\subset \calr$ is an ideal of $\calr$ s.t.  $\pd_i I\subset I$ for all $i=1,...,r$. If $\calr$ is a $\Delta$-ring, the set of constants is $\{c\in \calr|\pd_i(c)=0, \forall i\}$. Through out the expository article, we will assume that for any $\Delta$-ring, $\ratl\subset \calr$ and $\calc$ is algebraically closed field.
+\end{dfn}
+\begin{ex}
+$\calc$ be an algebraically closed with $t_1,...,t_r$ indeterminates. And the derivations are define to by $\pd_it_j=\delta_{ij}$ 
+\end{ex}
+
+\begin{dfn}
+Let $\calk$ be a $\Delta$-field. The ring of partial differential operators $\calk[\pd_1,...,\pd_r]$ with coefficients in $\calk$ is the noncommutative polynomial ring in the variables $\pd_i$, where $[\pd_i,\pd_j]=0$ but $[\pd_i, a]=\pd_i(a)$
+\end{dfn}
+
+\begin{dfn}
+A $\calk[\pd_1,...,\pd_r]$-module $\calm$ is a finite dimensional $\calk$-vector space that is a left module for the ring $\calk[\pd_1,...,\pd_r]$.
+\end{dfn}
+
+But in this case a quotient $\calr/I$ of $\Delta$
+
+
+
+
+
+\end{document}

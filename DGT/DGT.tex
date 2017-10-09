@@ -1,0 +1,394 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=red,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\pd}{\partial}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\calk}{{\cal K}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\pd #1\over\pd #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\renewcommand{\qedsymbol}{$\square$}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\bibliographystyle{plain}
+\title{\bf Notes for Differential Galois Theory by P. Jossen}
+\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section*{About the Course}
+Classical Galois theory:
+\begin{itemize}
+\item Fields $\calk$
+\item 
+ Fields extensions $\calk'/\calk$.
+ \item 
+$Gal(\calk'/\calk)= Aut_\calk(\calk')$.
+\item
+Solution of polynomials, $\calk'$=``$\calk$(solutions of polynomials)'', which is what we call \textbf{splitting field}.
+\end{itemize}
+ 
+\noindent In the Differential setting, 
+\begin{itemize}
+\item Fields $\calk$ with derivation $\pd$, e.g. $\ratl(t)$, with usual derivative:
+\item Differential field extension $\calk'\calk$
+\item $Gal(\calk'/\calk)=Aut_{(\calk,\pd)}(\calk',\pd)$
+\item Solution of differential equations. $\calk'=``\calk(\text{solution of differential equation})''$, which is called \textbf{Picard-Vessiot Field}
+\end{itemize}
+
+\section{Differential rings and modules}
+Convention: Ring= commutative ring with unit.
+\begin{dfn}
+Let $\calr$ be a ring. A \textbf{derivation} on  $\calr$ is a map $\pd:\calr \rightarrow \calr$ s.t.
+\begin{enumerate}
+\item $\pd (a+b)=\pd a+\pd b$,
+\item $\pd(ab)=a\pd b+b\pd a$.
+\end{enumerate}
+then we call $(\calr,\pd)$ a differential ring.
+A morphism of diff-rings $\varphi:(\calr_1,\pd_1 )\rightarrow (\calr_2,\pd_2)$ is a ring morphism s.t. $\pd_2\varphi=\varphi\pd_1$
+\end{dfn} 
+\begin{ex}
+$\ratl(t),\calk(t)$ with usual derivations and $\ratl[t],\calk[t]$, $C^\infty([0,1])$
+\end{ex}
+
+\begin{dfn}
+Let $(\calr, \pd)$ be a diff-ring, Call $\calc\subset\calr$ \textbf{constant} it $\pd c=0,\forall c\in \calc$.
+\end{dfn}
+
+\begin{prop}
+Let $\calc\subset\calr$ be the set of constant elements.
+\begin{enumerate}
+\item $\calc$ is a subring,
+\item If $\calr$ is a field, then so is $\calc$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+$1\in\calc$, $\pd 1=\pd (1\cdot 1)=2\pd 1\Longrightarrow \pd c=0$\\
+$a,b\in \calc\Longrightarrow a+b\in \calc$, and $ab\in\calc$ by Leibnitz rule.\\
+Suppose $\calr$ is a field ,$c\in \calc, c\neq 0, 0=\pd 1=\pd (c\cdot c^{-1})=c\pd (c^{-1})\Longrightarrow \pd c^{-1}=0$
+\end{proof}
+\begin{ex}
+Caution: $\calr=\bbf_p[t]$, $\pd$ is the usual derivative. Here, constant $\calc= \bbf_p[t^p]\supsetneqq \bbf_p$, because
+$$
+\pd(a_0+a_1 t^p+a_2 t^{2p}+...+a_n t^{np})=0.
+$$
+\end{ex}
+
+\begin{exercise}
+Show that $\calc \subseteq \calr$ is a algebraically closed in $\calr$. i.e. $x\in \calr$ algebraic over $\calc$ $\Longrightarrow$ $x\in \calc$.
+\end{exercise}
+
+\begin{dfn}
+A \textbf{differential $(\calr, \pd)$-module} $(M,\pd)$ is a $\calr$-module  $M$ , together with $\pd: M\rightarrow M $ satisfying:
+\begin{enumerate}
+\item $\pd(m+n)=\pd m+\pd n$
+\item $\pd_M(a m)=\pd_\calr a \cdot m+a\cdot \pd_M m$.
+\end{enumerate}
+Think of $(M,\pd)$ as a differential equation, with solutions $ker(\pd :M\rightarrow M).$
+\end{dfn}
+Suppose $\calr=\calk$ is a field (over that $M$ is free), $M $ has finite dimension.
+Choose a $\calk$-basis , $(e_1,...,e_n)$ of $M$.
+Set
+$$
+\pd e_i=-\sum_{j=1}^n a_{ij} e_j,
+$$
+where $A=(a_{ij})\in  M_{n \times n}(\calk)$. 
+The matrix $A$ characterizes $\pd :M\rightarrow M$, uniquely, by additivity and Leibnitz:
+$$
+m\in M, m=\sum_{i=1}^n \lambda_i e_i,
+$$
+
+$$
+\begin{aligned}
+\pd m & =\sum \pd (\lambda_i e_i)=\sum (\pd \lambda_i)e_i+\sum \lambda_i \pd e_i\\
+&=\sum(\pd \lambda_i) e_i-\sum \sum \lambda_i a_{ij} e_j.
+\end{aligned}
+$$
+The differential equation corresponding to $(M,\pd)$ is  the equation
+$$
+u'=A u.
+$$
+\begin{rmk}
+the matrix $A$ depends on the choice of the $\calk$-basis of $M$. Choosing a different basis yields an equation $u'=\tilde{A}u$ with $\tilde{A}=S^{-1}A S-S^{-1}S'$, where $S\in GL_n(\calk)$ is the base change matrix. we called $A,\tilde{A}$ equivalent
+\end{rmk}
+\begin{rmk}
+Let $M$ be a differential $\calk$-module, $\calc\subset \calk$ be the set of constants, then we have
+$
+\pd  :M\rightarrow M.
+$ 
+is $\calc$-linear, follows from Leibnitz.
+In particular $ker \pd\subseteq M$ is a $\calc$-module (vector space)
+\end{rmk}
+
+\begin{lemma}\label{lem:basis}
+Let $u'=A u$ be a differential equation with $A\in M_{n\times n}(\calk)$. Let $v_1,...,v_r\in \calk^n$ be solutions, i.e. $v_i'=A v_i$. If $v_1,...,v_r$ are linear dependent over $\calk$, then they are linear dependent over $\calc$. In particular,
+$$
+dim_{\calc}(\ker \pd)\leq n.
+$$
+\end{lemma}
+\begin{proof}
+Induction on $r$. For $r=1$, trivial. Fix $r\geq 2$, suppose lemma holds for $<r$ solutions. Suppose w.l.o.g that no proper subset of $\{v_1,...,v_r\}$ is linear dependent over $\calk$. We find that there is a unique linear dependence relation 
+$$
+v_1=\sum_{i=2}^r b_i v_i,\ b_i\in \calk
+$$
+$$
+\begin{aligned}
+0=v_1'-A v_1&=\sum b_i'v_i+b_i v_i' -\sum_{i=2}^r b_i A v_i\\
+& =\sum^r_{i=2}b_i' v_i+\sum_{i=2}^r b_i(v_i'-A v_i)=\sum_{i=2}
+^r b_i' v_i
+\end{aligned}
+$$
+so $b_i'=0$ for $i=2,...,r\Longrightarrow b_i\in\calc$, and $v_1,...,v_r$ linear dependent over $\calc$.
+\end{proof}
+Compactify the notation , $v_1,...,v_r$ columns of a matrix $V\in M_{n\times r}(\calk)$, then $v_i'=A v_i\Longrightarrow V'=A V$. Know that $rank_\calc V\leq n$.
+What we usually seek is a $V\in GL_n(\calk)$ with $V'=A V$. The columns of such $V $ provide a basis of the solution space of the differential equation and thus also a basis of the differential module itself.
+
+\begin{dfn}
+$\calk$ is a diff-field, $A\in M_{n\times n}(\calk)$, let $\calr$ be a differential $\calk$-algebra, which means we have a diff-ring morphism from $(\calr,\pd_\calr)$ to $(\calk,\pd_\calk)$. We also suppose $\calr$ has same constants as $\calk$ (every constant of $\calr$ lies in $\calk$).
+A matrix $V\in GL_n(\calr)$ is said to be a \textbf{fundamental matrix} of solutions of the differential equation $u'=A u$, if $V'=A V$.
+\end{dfn}
+Let $V,\tilde{V}$ be fundamental matrices of solutions of $u'=A u$, $V,\tilde{V}\in GL_{n}(\calr)$, $\tilde{V} =V\cdot S$ $S=V^{-1} \tilde{V}$
+$$
+A\tilde{V}=\tilde{V}'=(VS)'=V'S+V S'=A V S+V S'=A \tilde{V}+V S'
+$$
+
+$
+\Longrightarrow V S'=0,
+$
+$V$ is invertible $\Longrightarrow S'=0\Longrightarrow S\in GL_n(C)$.
+
+\begin{dfn}
+Let $v_1,...,v_n\in \calk$, The \textbf{Wronski matrix} of $\underline{v}\in \calk^n$
+is 
+$$
+Wr(\underline{v})=
+\begin{pmatrix}
+v_1  & v_2 & \cdots & v_n\\
+v_1^{(1)} & v_2^{(1)} & \cdots & v_n^{(1)}\\
+\vdots  & \vdots & \ddots & \vdots \\
+v_1^{(n-1)} & v_2^{(n-1)} & \cdots & v_n^{(n-1)}
+\end{pmatrix}
+$$
+the \textbf{Wronskian} is the determinant of the Wronski matrix, i.e. $det(Wr(\underline{v}))=:wr(\underline{v})$.
+\end{dfn}
+
+-----------------------------personal notes
+\begin{dfn}
+ A \textbf{Picard-Vessiot ring} over $\calk$ for the equation $v'=A y$, with $A\in M_{n\times n}(\calk)$, is a differential ring $\calr$ over $\calk$, such that:
+\begin{enumerate}
+\item $\calr$ is a simple differential ring (whose only differential ideal is $(0)$).
+\item There exists a fundamental matrix $F$ for $v'=A v$, with coefficients in $R$.
+\item $\calr$ is generated as a algebra over $\calk$ by the entries of the fundamental matrix $F$ and the inverse of the determinant of $F$, i.e. $\calr=\calk\langle(F_{ij}), 1/det(F)\rangle$.
+\end{enumerate}
+A \textbf{Picard-Vessiot ring} for a differential module $M$ over $\calk$ is defined as the Picard-Vessiot ring of a matrix differential equation $v'=A v$ associated $M$. One can check that the definition does not depend on the choice of the representing differential equation of the differential module.
+\end{dfn}
+
+
+\begin{prop}
+Let $M$ by a differential module over  $\calk$ of dimension $n$. We have the following equivalent definition of Picard-Vessiot ring of the diff-module $M$.
+\begin{enumerate}[label=(\alph*)]
+\item $\calr$ is a simple diff-ring.
+\item $V:=ker(\pd, \calr\otimes_{\calk} M)$ has dimension $n$ over $\calc$.
+\item Let $e_1,...,e_n$ denote any basis of $M$ over $\calk$, then $\calr$ is generated over $\calk$ by the coefficients of all $v\in V$, w.r.t the basis $e_1,...,e_n$ of $\calr\otimes_\calk M$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+
+\end{proof}
+$(b)+(c)\Longrightarrow (2)+(3)$: If the solution space of $\pd$ on $\calr\otimes_\calk M$ has dimension $n$, then we can find a basis $v_1,...,v_n$ over $\calc$, with each $v_i'=A v_i$. By \ref{lem:basis}, we know $v_1,...,v_n$ is linear independent over $\calk,\calr$. Then $\tilde{F}=(v_1,...,v_n)$ is already a fundamental matrix in $GL_n(\calr)$. If $\calr$ is generated by the coefficients of all $v\in V$, in particular, it is generated by a set that contain the entries of $\tilde{F}$ above. On the other hand $V$ is spanned by the column matrices of $\tilde{F}$over $\calc$. $\tilde{F}\in GL_n(\calr)\Longrightarrow \tilde{F}^{-1}\in GL_n(\calr)\Longrightarrow det(\tilde{F})^{-1}\in R$.
+-----------------------------
+
+
+
+\section{Picard-Vessiot extension}
+
+
+$\calk$ is a differential field with $char(\calk)=0$. The set of constants $\calc\subset \calk$ is a field and we assume it to be algebraic closed. Think of $\calk=\cplx(t),\pd=d/dt$ and $\calc=\cplx$.
+
+\begin{dfn}
+Let $\calr$ be a diff. $\calk$-algebra. An ideal $I\subset \calr$ is a \textbf{differential ideal} if $\pd I\subseteq I$. Say that $\calr$ is \textbf{simple} if $\{0\}$ and $\calr$ are the only differential ideal in $\calr$
+\end{dfn}
+
+\begin{rmk}
+$I\subseteq\calr$ is differential ideal, then the derivation on $\calr$ induces a derivation on $\calr/I$. Given any morphism of diff. rings $\varphi:\calr\lrta \calr'$, then $Ker(\varphi)$ is a differential ideal.
+\end{rmk}
+
+\begin{dfn}
+Let $A\in M_n(\calk)$, consider the matrix differential equation
+$$
+u'=Au
+$$
+
+A differential $\calk$-algebra $\calr$ is said to be a \textbf{Picard-Vessiot extension} for  $u'=Au$ if
+\begin{enumerate}
+\item $\calr$ is simple 
+\item The equation $u'=Au$ admits a fundamental matrix of solution in $\calr$, i.e. $\exists V\in M_n(\calr)$, invertible such that
+$$
+V'=AV.
+$$
+\item As $\calk$-algebra, $\calr$ is generated by the coefficients  $v_{ij}$ of $V$ and $det(V)^{-1}$.
+\end{enumerate}
+\end{dfn}
+Some references require in addition the constants of $\calr$ are $\calc$. We will see this additional requirement can be derived by 1-3 in our setting.
+
+A \textbf{Picard-Vessiot extension of a differential module $M$} is a Picard-Vessiot extension for any of the corresponding matrix differential equation. Exercise: check this.
+
+Alternatively, we can define the Picard-Vessiot extension of a differential module $M$ directly. Given a diff. module $(M,\pd_M)$, a Picard-Vessiot extension for $(M,\pd_M)$ is a diff. $\calk$-algebra $\calr$ s.t.
+\begin{enumerate}
+\item $\calr$ is simple
+\item $dim(\pd_{\calr\otimes M})=\dim_\calk M$, where $\pd_{\calr\otimes M}:\calr\otimes M\lrta \calr\otimes M $, $\pd_{\calr\otimes M}(r\otimes m)=r'\otimes m+r\otimes \pd_M m$. 
+\item $\calr$ is minimal with these properties.
+\end{enumerate}
+
+Exercise: Check that the two definitions of PV extension for diff. module coincide.
+
+\begin{ex}
+$\calk=\cplx(t), \calc=\cplx$, Consider the 2nd order linear homogeneous linear differential equation
+$$
+t\cdot u''+u'=0.
+$$
+We can set $v:=u', v'=u''$, then we have a new 1st order 
+$$
+\begin{pmatrix}
+u'\\
+v'
+\end{pmatrix} =\begin{pmatrix}
+0 & 1\\
+0 & -1/t
+\end{pmatrix}\begin{pmatrix}
+u\\
+v
+\end{pmatrix},
+$$
+where the matrix is called \textbf{companion matrix}.
+What we want is $\calr\supseteq \cplx(t), V\in GL_2(\calr)$ s.t. $V'=AV$. The general solution of the 2nd order equation is 
+$$
+a+b \log(t).
+$$
+Solution to $(u',v')^T=A\cdot(u,v)^T$ are
+$$
+\begin{aligned}
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix},
+&
+\begin{pmatrix}
+\log(t)\\
+1/t
+\end{pmatrix},
+\end{aligned}
+$$
+The corresponding fundamental matrix 
+$$
+V=\begin{pmatrix}
+1 & \log(t)\\
+0 & 1/t
+\end{pmatrix}.
+$$
+A candidate of the Picard-Vessiot ring is 
+$$
+\calr=\cplx(t)[X]
+$$
+the Differential on $\calr$, we just need to set $\pd X=X'=1/t$, in this case, we don't have to adjoint $det(V)^{-1}$. The only thing ledt to check is whether $\calr$ is simple.
+
+Yes, $I\subseteq \calr$ diff. ideal. $\calr$ principal $I=f(X)\calr$,  $\pd I\subset I$, where $\pd I=(\pd f)\calr$, derive it sufficiently many times. until $\pd^n f\in \cplx(t)$ $\Lrta \calr=\pd^n f\calr \subseteq I$.  
+\end{ex}
+
+\begin{lemma}
+Let $\calr$ be simple diff. $\calk$-algebra. Then 
+\begin{enumerate}
+\item $\calr$  is integral domain
+\item Suppose $\calr$ is finitely generated as $\calk$-algebra, then $Frac(\calr)=\call$ is a differential field with constants equal to $\calc$. 
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+The proof of the second part relies on the assumption that $\calc$ is algebraic closed, we will postpone it a little.
+
+Proof of (1) Pick $a\in \calr$ and $a\neq0$. Consider the ideal $I=\{b\in \calr|a^n\cdot b=0, \text{ for some $n\geq1$}\}$. This is a differential ideal. (Check it by derive it and multiply it with $a$)
+If $a$ is not nilpotent, then $1\not\in I$ then $I$ has to be $0$, so $a$ is not a zero divisor.
+It follows that if $a$ is a zero divisor, then $a$ has to be nilpotent.
+
+Let $I\subset \calr$ be the nil radical of $\calr$. Again, $I$ is a diff. ideal. But $1\not \in I$, $I$ has to be $\{0\}$.
+\end{proof}
+
+\begin{lemma}
+Let $\calk$ be a field of $\text{char } 0$. $\calr$ is a finitely generated $\calk$-algebra, integral domain, and suppose that $x\in \calr$ is such that the set $S:=\{c\in \calk|x-c\in \calr^{\times}\}$ is infinite. Then $x$ is algebraic over $\calk$
+\end{lemma}
+For example $\calk=\bar{\ratl}, \ \calr=\bar{\ratl}[x,y,1/x,1/(x^2+2)]$. For $x-c$ to be unit, then only possibility is  $c=0$, which means $x$ is not algebraic over $\bar{\ratl}$. While in the case
+$\calk=\ratl, \ \calr=\ratl[\sqrt{2}]$, $\sqrt{2}-c$ is always unit in $\calr^\times$, which means $\sqrt{2}$ is algebraic over $\ratl$.
+\begin{proof}
+Say $\calr=\calk[x_1,...,x_n]$ and $x_1=x$. Set $\call=frac(\calr)$, suppose $x$ is \textbf{not} algebraic over $\calk$, so $x$ is transcendental. Suppose w.l.o.g. that
+$x_1,...,x_r$ are a transcendental base for $\call/\calk$, i.e. $x_1,..,x_r$ are algebraic independent and $L/\calk(x_1,...,x_r)$ si a finite algebraic extension.
+\end{proof}
+
+
+
+
+
+
+
+
+\end{document}

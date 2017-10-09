@@ -1,0 +1,221 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=red,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\pd}{\partial}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\bbp}{\mathbb P}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\calk}{{\cal K}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\pd #1\over\pd #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\renewcommand{\qedsymbol}{$\square$}
+\newcommand{\rta}{\rightarrow}
+\newcommand{\Lrta}{\Longrightarrow}
+\newcommand{\lrta}{\longrightarrow}
+\newcommand{\Llta}{\Longleftarrow}
+\newcommand{\lgl}{\langle}
+\newcommand{\rgl}{\rangle}
+\newcommand{\inj}{\hookrightarrow}
+\bibliographystyle{plain}
+\title{\bf Cosmic Galois Group}
+\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+\section{Statement of main results}
+Marcolli and Connes defined it
+\begin{thm}
+For any Feynman graph $G$ with generic kinematics $q,m$ there is a canonical way to associate to a \textbf{convergent integral}
+\begin{itemize}
+\item an object $\text{mot}_G$ in $\mathcal{H}(S)$, where $S$ is a Zarikski open in a space of kinematics
+\item .....
+\item ....
+\end{itemize}
+\end{thm}
+\section{Feynman graph and graph polynomials}
+A Feynman graph is a graph $G$ defined by
+$(V_G,E_G,E_G^{ext}),$ where $V_G$ is the set of vertices of $G$, $E_G$ is the set of internal edges of $G$, and $E^{ext}_G$ is a set of external legs. Their endpoints are encoded by the maps $\pd:E_G\lrta Sym^{2}V_G$ and $\pd:E_G^{ext}\lrta V_G$. We shall assume that the vertices with external legs lie in a single connected  component of $G$. A Feynman graph additionally comes with kinematic data:
+\begin{itemize}
+\item a particle mass $m_e\in \reals$ for every internal edge $e\in E_G$.
+\item a momentum $q_i\in \reals^d$ for every external leg $i\in E^{ext}_G$,
+\end{itemize}
+where $d\geq 0$ is the dimension of space-time. All the external legs will be oriented inwards, so all momenta are incoming and are subject to momentum conservation.
+
+In this paper, a subgraph $H$ of $G$ will be graph defined by a triple $(V_H,E_H,E^{ext}_H)$ where $V_H\subset V_G$, $E_H\subset E_G$ and either $E^{ext}_H=E^{ext}_G$ or $E^{ext}_H=\emptyset$.
+
+A tadpole is a subgraph of the the form $\{\{v\},\{v,v\},\emptyset\}$. We shall use the following notation for the basic combinatorial invariants of $G$:
+\begin{itemize}
+\item $h_G=dim(H^1(G))$ the loop number of $G$
+\item $\kappa_G=dim(H^0(G))$ the number of connected components of $G$
+\item $N_G=|E_G|$ the number of connected components of $G$.
+\end{itemize}
+They do not depends on the external legs of $G$. Euler's formula states that
+$$
+N_G-V_G=h_G-\kappa_G.
+$$
+We define that If a vertex $v\in V_G$ has several incoming momenta $q_1,...,q_n$ we can replace it with a single incoming momentum $q_1 +...+ q_n$. Our notion of Feynman subgraph respects this equivalence relation. Then the graph polynomial defined latter would only depend on the equivalence classes.
+
+We say that a Feynman graph is \textbf{of type $(Q,M)$} is it is equivalent to a graph with at most $Q$ external kinematic parameters and at most $M$ nonzero particle mass. We shall call a graph one-particle irreducible, or 1PI, if every connected component is 2-edge connected (i.e. deleting any edge causes the loop number to drop).
+\subsection{Graph polynomials}
+Let $G$ be a Feynman graph. Recall that a tree is a connected graph $T$ with $h_T=0$. A forest is any graph with $h_T=0$.
+\begin{dfn}
+Let $G$ be a connected Feynman graph. The \textbf{Kirchhoff polynomial} (or first Symanzik polynomal) is the polynomial in $\intg[\alpha_e,e\in E_G]$ defined by
+$$
+\Psi_G=\sum_{T\subset G}\prod_{e\not \in T}\alpha_e,
+$$
+where the sum is over all spanning trees $T$ of $G$. If $G$ has several connected components $G_1,...,G_n$, we shall defined
+$$
+\Psi_G=\prod_{1}^n\Psi_{G_i}
+$$
+The $second Symanzik polynomial$ is defined for connected $G$ by
+$$
+\Phi_G(q)=\sum_{T_1\cup T_2\subset G}(q^{T_1})^2 \prod_{e\not \in T_1\cup T_2}\alpha_e,
+$$
+where the sum  is over all spanning 2-trees $T=T_1\cup T_2$ of $G$, and $q^{T_1}:=\sum_{i\in E^{ext}_{T_1}}q_i$ is the total momentum entering $T_1$.
+\end{dfn}
+
+\begin{rmk}
+$\alpha_e$ are just the Schwinger parameters
+\end{rmk}
+
+\begin{dfn}
+Let $G$ be a Feynman graph. Define
+$$
+\Xi_G(q,m)=\Phi_G(q)+\left(\sum_{e\in E_G}m_e^2\alpha_e\right)\Psi_G.
+$$
+It is the denominator of Feynman integral, and it is homogeneous in $\alpha_e$ of degree $h_G+1$
+\end{dfn}
+Since the graph polynomials only depend on the total momentum flow, they are well-defined on equivalence classes of graphs.
+\subsection{Feynman integral in projective space}
+After omitting certain pre-factors, we define the Feynman integral
+$$
+I_G(q,m)=\int_\sigma \omega_G(q,m),
+$$
+where
+$$
+\omega_G(q,m)=\frac{1}{\Psi_G^{d/2}}\left(\frac{\Psi_G}{\Xi_G(q,m)}\right)^{N_G-h_Gd/2}\Omega_G
+$$
+and
+$$
+\Omega_G=\sum^{N_G}_{i=1}(-1)^i\alpha_i d\alpha_1\wedge...\wedge \widehat{d\alpha_i}\wedge...\wedge d\alpha_{N_G}
+$$
+Following form the fact that $deg(\Psi_G)=h_G$ and $deg(\Xi_G)=h_G+1$, we know that $\omega_G$ is homogeneous of degree $0$.
+
+Finally, let $\sigma\subset \bbp^{N_G-1}(\reals)$ be the coordinate simplex defined in projective coordinates by
+$$
+\sigma=\{(\alpha_1:...:\alpha_{N_G})\in \bbp^{N_G-1}(\reals):\alpha_i\geq0\}.
+$$
+\subsection{Edge subgraphs and their quotients}
+
+Let $G=(V_G,E_G,E_G^{ext})$ be a Feynman graph. A set of internal edges $\gamma\subset E_G$ defines a subgraph of $G$ as follows. Write $E_\gamma=\gamma$ and let $V_\gamma$ be the set of endpoints of elements of $E_\gamma$.
+\begin{dfn}
+A set of edges $\gamma\subset E_G$ is \textbf{momentum-spanning} if $\partial E^{ext}_G\subset V_\gamma$, and the vertices $E^{ext}_G$ lie in a single connected component of the graph $(V_\gamma, E_\gamma)$.
+\end{dfn}
+
+we define the subgraph associated to $\gamma\subset E_G$ by
+$$
+(V_\gamma, E_\gamma, E^{ext}_\gamma),
+$$
+where $E^{ext}_\gamma=E^{ext}_G$ if $\gamma$ is momentum-spanning and $E_\gamma^{ext}=\emptyset$ otherwise. We all $(V_\gamma, E_\gamma, E^{ext}_\gamma)$ the edge-subgraph associated to $\gamma$ and denote it also by $\gamma$ when no confusion arises.
+
+The quotient of $G$ by an edge-subgraph $\gamma$ is defined by
+$$
+G/\gamma=(V_G/\sim,(E_Q\backslash \gamma)/\sim, {E_G}^{ext}/\sim),
+$$
+where $\sim$ is the equivalence relation on vertices of $G$ where two vertives are equivalent if and only if they are vertices of the same connected component of $\gamma$, and the induced equivalence relation on edges (unordered pairs of vertices). It is a Feynman graph. Every connected components of $\gamma$ corresponds to a unique vertex in $G/\gamma$. Note that $\gamma$ is momentum-spanning if and only if $G/\gamma$ is equivalent to a graph with no external momenta. (which amounts to compress each component of $\gamma$ to a single vertex.).
+
+In this way, exactly one of the two Feynman graphs $\gamma$ and $G/\gamma$ is equivalent to a Feynman graph with non-zero external momenta: if  is momentum spanning it is $\gamma$, otherwise it is $G/\gamma$.
+
+\subsection{Contraction-deletion}
+Let $G=(V_G,E_G,E^{ext}_G)$ be a Feynman graph. The deletion fo an edge $e$ in $G$ is the graph $G/e$ defined by deleting the edge $e$ but retaining its endpoints:
+$$
+G/e=(V_G,E_G\backslash\{e\}, E^{ext}_G).
+$$
+In general, it is not a union of Feynman graphs since momentum conservation may not hold on each of its connected components.
+
+One sometimes encounters the following variant of the previous notion of graph-quotient. It will be denoted by a double slash to distinguish it from the ordinary quotient. For an edge-subgraph $\gamma$, let $G//\gamma$ be the empty graph if $h_\gamma>0$ and
+$$
+G//\gamma=G/\gamma
+$$
+if $\gamma$ is a forest. In the case of a single edge $e$, $G/e$ is empty whenever $e$ is a tadpole.
+
+It follows from Euler's formula that
+$h_G=h_\gamma+h_{G/\gamma}$
+for any edge-subgraph $\gamma\subset G$ (which is not necessarily connected).
+\begin{lemma}
+(Contraction-deletion) Let $G$ be connected and $e\in E_G$. Then
+$$
+\Psi_G=\Psi_{G\backslash e}^0\alpha_e+\Psi_{G//e},
+$$
+$$
+\Phi_G(q)=\Phi^0_{G\backslash e}(q)\alpha_e+\Phi_{G//e}(q),
+$$
+\end{lemma}
+
+
+
+
+
+
+
+
+
+
+\end{document}

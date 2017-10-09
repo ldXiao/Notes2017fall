@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage{tikz-cd}
+\usepackage{enumitem} 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{exercise}[thm]{Exercise}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{dfn}[thm]{Definition}
+\newtheorem{axiom}[thm]{Axiom}
+\newtheorem{rmk}[thm]{Remark}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{question}[thm]{Question}
+\newtheorem{problem}[thm]{Problem}
+\renewcommand{\baselinestretch}{1.05}
+\newcommand{\pd}{\partial}
+\newcommand{\reals}{\mathbb R}
+\newcommand{\cplx}{\mathbb C}
+\newcommand{\intg}{\mathbb Z}
+\newcommand{\bbf}{\mathbb F}
+\newcommand{\bbk}{\mathbb K}
+\newcommand{\ratl}{\mathbb Q}
+\newcommand{\torus}{\mathbb T}
+\newcommand{\sca}{{\mathfrak a}}
+\newcommand{\scb}{{\mathfrak b}}
+\newcommand{\scc}{{\mathfrak c}}
+\newcommand{\scm}{{\mathfrak m}}
+\newcommand{\scn}{{\mathfrak n}}
+\newcommand{\scp}{{\mathfrak p}}
+\newcommand{\frakg}{{\mathfrak g}}
+\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\calf}{{\cal F}}
+\newcommand{\calg}{{\cal G}}
+\newcommand{\cala}{{\cal A}}
+\newcommand{\calc}{{\cal C}}
+\newcommand{\cale}{{\cal E}}
+\newcommand{\calk}{{\cal K}}
+\newcommand{\call}{{\cal L}}
+\newcommand{\caln}{{\cal N}}
+\newcommand{\calo}{{\cal O}}
+\newcommand{\calr}{{\cal R}}
+\newcommand{\mathbold}{\bf}
+\newcommand{\cinf}{C^{\infty}}
+\newcommand{\row}[2]{#1_1,\dots ,#1_{#2}}
+\newcommand{\dbyd}[2]{{\pd #1\over\pd #2}}
+\newcommand{\Space}{{\bf Space}}
+\newcommand{\alg}{{\mathbold Alg}}
+\newcommand{\notsubset}{\not \subset}
+\newcommand{\notsupset}{\not \supset}
+\newcommand{\pois}{{\mathbold Pois}}
+\newcommand{\pitilde}{\tilde{\pi}}
+\renewcommand{\qedsymbol}{$\square$}
+\bibliographystyle{plain}
+\title{\bf Questions for Thurston/Blor}
+\author{by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\begin{document}
+\maketitle
+At page 2 of Thurston's expository article on the essence of mathematical proofs. He gave a recursive definition of mathematics.
+\begin{itemize}
+\item Mathematics includes the natural numbers and plane and solid geometry.
+\item Mathematics that which mathematicians study.
+\item Mathematicians are those humans who advance human understanding of mathematics.  
+\end{itemize}  
+How to understand this? Obviously, this definition renders mathematics a time-dependent concept. If none of the mathematicians is studying some undiscovered subfield of mathematics today, this subfield is not part of math, right? 
+
+On the other hand, we can make similar definition which is less dependent on the details of \textbf{human understandings}:
+\begin{itemize}
+\item Mathematics includes the natural numbers and plane and solid geometry.
+\item Mathematics that which mathematicians study.
+\item Mathematicians are those humans who extend to realm of mathematics.  
+\end{itemize}
+Then, the question is \textbf{would mathematics be an infinite set under certain isomorphism?}, Is this definition independent of the universe we are in? (For example, we can consider a universe of only one integer $0$, the $0$ him/herself is a mathematician).
+
+For the article, I would say his argument involving $\intg/3\intg$ does not make much sense way we can't define $2+2=4$ in it. On the other hand  in the category of rings, we can say that $2+2=4$ is a \textbf{universal identity}, which means we can always find a unique ring morphism $\varphi:\intg\rightarrow R$ which maps $2+_\intg2=_\intg4$ to $\varphi(2)+_R\varphi(2)=_R\varphi(4)$, where $+_R$ and $=_R$ is the addition and equality in the ring $R$, this is true because $\intg$ is the initial object in the category of rings.
+\end{document}
