@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1507639219 "Cosmic Galois.tex" "Cosmic Galois.pdf" "Cosmic Galois" 1507727045
+["pdflatex"] 1507727491 "Cosmic Galois.tex" "Cosmic Galois.pdf" "Cosmic Galois" 1507727493
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -144,13 +144,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Cosmic Galois.aux" 1507639220 1386 03af45d30e255cbc1cd55c71884a1913 ""
-  "Cosmic Galois.out" 1507639220 481 d318586f22946cf169f6dba124e3129e ""
-  "Cosmic Galois.tex" 1507639219 11304 ff71ced09dc3e54b8af4339ac029ad72 ""
-  "Cosmic Galois.toc" 1507639220 537 7ebc6a3a1aff7cab326d5254681e8915 ""
+  "Cosmic Galois.aux" 1507727492 1386 03af45d30e255cbc1cd55c71884a1913 ""
+  "Cosmic Galois.out" 1507727492 481 d318586f22946cf169f6dba124e3129e ""
+  "Cosmic Galois.tex" 1507727491 11315 38e89c81323b3f2b60b564de31e8316c ""
+  "Cosmic Galois.toc" 1507727492 537 7ebc6a3a1aff7cab326d5254681e8915 ""
   (generated)
-  "Cosmic Galois.log"
-  "Cosmic Galois.aux"
-  "Cosmic Galois.pdf"
   "Cosmic Galois.out"
+  "Cosmic Galois.pdf"
+  "Cosmic Galois.log"
   "Cosmic Galois.toc"
+  "Cosmic Galois.aux"
