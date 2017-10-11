@@ -40,6 +40,7 @@
 \newcommand{\scm}{{\mathfrak m}}
 \newcommand{\scn}{{\mathfrak n}}
 \newcommand{\scp}{{\mathfrak p}}
+\newcommand{\scq}{\mathfrak q}
 \newcommand{\frakg}{{\mathfrak g}}
 \newcommand{\frakd}{{\mathfrak d}}
 \newcommand{\calf}{{\cal F}}
@@ -66,6 +67,7 @@
 \newcommand{\Lrta}{\Longrightarrow}
 \newcommand{\lrta}{\longrightarrow}
 \newcommand{\Llta}{\Longleftarrow}
+\newcommand{\Llrta}{\Longleftrightarrow}
 \newcommand{\lgl}{\langle}
 \newcommand{\rgl}{\rangle}
 \newcommand{\inj}{\hookrightarrow}
@@ -1516,4 +1518,172 @@ $$
 \end{ex}
 
 
+\section{Localization}
+
+\subsection{Lecture 7}
+\textbf{Motivation}
+For $\cala$ an integral domain, we defined the quotients field $Frac(\cala)$. Ingeneral, one may want to invert part of $\cala$.
+>>>>>>>>1
+
+\begin{dfn}
+A set of $\cala$, $S$ is \textbf{multiplicatively closed} if 
+\begin{itemize}
+\item $1\in S$
+\item $s,t\in S\Lrta st\in S$
+\end{itemize}
+\end{dfn}
+
+\begin{dfn}
+Let $\cala$ be a ring $S\subseteq \cala$ a multiplicatively closed set, define a relation $\sim $ on $\cala\times S$:
+$$
+(a,s)\sim(a',s')\Longleftrightarrow\exists t\in S \ \text{s.t. } as' t= a' st
+$$ 
+\end{dfn}
+
+\begin{lemma}
+$\sim$ is indeed a equiavlence relation
+\end{lemma}
+\begin{proof}
+reflectivity and symmetricity are trivial, for the transtivity
+$$
+(a,s)\sim(a',s')\sim (a'',s'')
+$$
+$$
+\begin{aligned}
+&\Lrta\\
+&\exists t\in S: as't=a's t\\
+& \exists t'\in S: a's'' t'=a''s't'\\
+&as''(tt's')=as'ts''t'=a's''t's t=a''s (t t's')\\
+& \Lrta (a,s)\sim(a'',s'')
+\end{aligned}
+$$
+\end{proof}
+\begin{dfn}
+$S^{-1}\cala:(\cala\times S/\sim)$, and we denote the equivalence class of $(a,s)$ by $a/s$
+\end{dfn}
+\begin{prop}
+There are well defined maps:
+$$
++:S^{-1}\cala\times S^{-1}\cala\lrta S^{-1}\cala,\ (a/s,a'/s')\mapsto \frac{as'+a's}{ss'}
+$$
+$$
+\times:S^{-1}\cala\times S^{-1}\cala\lrta S^{-1}\cala,\ (\frac{a}{s},\frac{a'}{s'})\mapsto \frac{aa'}{ss'}
+$$
+$$
+0_{S^{-1}\cala}=\frac{0}{1}\text{ and } 1_{S^{-1}\cala}=\frac{1}{1}
+$$
+Then $(S^{-1}\cala,0_{S^{-1}\cala},1_{S^{-1}\cala},+,\times)$ is a ring.
+\end{prop}
+\begin{ex}
+>>>>>>>>>2
+\end{ex}
+
+We say $S^{-1}\cala$ is \textbf{localization of $\cala$ with respect to $S$}
+When $\cala$ is an integral domain, $S=\cala-\{0\}$, the $S^{-1}\cala=Frac(\cala)$
+\begin{lemma}
+There exists a ring morphism $\iota$ from $\cala$ to $\S^{-1}\cala$ s.t each $a\in \cala$ maps to $a/1\in S^{-1}\cala$.
+It has to following property
+\begin{enumerate}[label=(\alph*)]
+\item $\iota(S)\subset (S^{-1}\cala)^{\times}$
+\item $Ker(\iota)=\{a\in \cala|sa=0 \text{ for some }s\in S\}$
+\item Suppose $\cala\neq=\{0\}.$ Then $\iota$ injective $\Longleftrightarrow$ $S$ contains no zero divisors $S\not \ni0$
+\item $S^{-1}\cala=\{0\}$ $\Longleftrightarrow$ $S\ni 0$
+\item $\iota$ is isomorphism  $\Longleftrightarrow $ $S\subseteq \cala^{\times}$
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+(a) $s\in S$. $\iota s=s/1$ $s/1\times 1/s=1$, then $s$ is a unit.
+
+(b)$Ker(\iota)=\{a\in \cala|\frac{a}{1}=\frac{0}{1}\}$ $\Longleftrightarrow$ $\exists t\in S: t(a1-01)=ta=0=\{\text{Zero divisors in }\cala\}$
+
+(c) derived from (a) and (b).
+
+(d) $S^{-1}\cala=\{0\}$ $\Longleftrightarrow$ $\frac{0}{1}={1}{1}$, then there exists an element $t\in S$ s.t. $t\cdot1=0$, $\Longleftrightarrow S\ni 0$
+
+(e)
+\end{proof}
+
+\begin{ex}
+$X$ any set $U\subseteq X$ any subset.
+$\cala:=\{\text{functions } f:X\lrta \reals\}$ is a ring of the the multiplication is defined value-wisely, $S:=\{f\in \cala| f(x)\neq 0, \forall x\in U\}$ is multiplicatively closed. Question, what is the localization $S^{-1}\cala$?
+\end{ex}
+\begin{lemma}
+Let $B:=\{\text{functions }U\lrta \reals\}$.
+Then the natural map $j:S^{-1}\cala\lrta B$ is an isomorphism $\frac{a}{s}\mapsto [U\ni x\mapsto\frac{a(x)}{s{x}}\in\reals]$
+\end{lemma}
+\begin{proof}
+Try defining $k:B\lrta S^{-1}\cala,\ b\longmapsto \tilde{b}/1$, where $\tilde{b}:X\Lrta \reals,\ x\longmapsto b(x)\text{ if } x\in U,{ otherwise }0$.
+
+$j$ is well-defined:
+
+Say $\frac{a}{s}=\frac{a'}{s'}$. Thus $\exists t\in S, a s' t=a' s t/$
+>>>>>>>>>>>>4
+
+$k\circ j=1$ Say $b=j(\frac{a}{s})$, what we want is $\tilde{b}/1=a/s$, i.e. $\exists t\in S:(a\cdot 1-\tilde{b}\cdot s)t=0$.
+
+Take $t:1_U=[x\mapsto 1 \text{ for }1\in U and 0 \text{ for } x\not \in U]$
+\end{proof}
+
+\subsection*{Universal property of localization}
+Recall $Hom(M\otimes N, P)\cong \{bilinear M\times N\lrta P\}$ and $Home_{\oplus_{i}M_i,N}\cong \oplus Hom(M_i,N)$,
+
+\begin{lemma}
+$Hom(S^{-1}\cala,\calb)\cong \{f:\cala\lrta \calb s.t. f(S)\subseteq \calb^{\times}\}$ 
+where an element $\tilde{f}\in Hom(S^{-1}\cala,\calb)$
+$$
+\tilde{f}(\frac{a}{s}):=f(a)f(s)^{-1}
+$$
+$$
+f(a):=\tilde{f}(\frac{a}{1})
+$$
+. This universal property of localization can serve as an alternative definition of localization.
+\end{lemma}
+\begin{proof}
+Want: $\forall f$ as above $\exists ! \tilde{f}\text{ s.t. } \tilde{f}\circ\iota=f$
+
+Uniqueness.
+$\tilde{f}(a/s)=\tilde{f}(a/1)\tilde{f}(s/1)^{-1}=f(a)f(s)^{-s}$
+
+Existence 
+Teke $\tilde{f}(a/s):=f(a)f(s)^{-1}$, check that it is well defined:
+$$
+\frac{a}{s}=\frac{a'}{s'}?\Lrta f(a)f(s)^{-1}=f(a')f(s')^{-1}
+$$
+This is guaranteed, $\exists t\in S: as' t=a's t$ $\Lrta (f(a)f(s')^{-1}-f(a')f(s)^{-1})f(t)=0$
+\end{proof}
+
+\begin{ex}
+(Most Important Examples)
+\begin{itemize}
+    \item 
+    $\cala\ni f$ $S_f:=\{f^n|n\geq 0\}$ is multi .closed
+    \item
+    $\scp\subset \cala$ is a prime ideal, then $\cala-\scp$ is multiplicatively closed. We can define (In fact then $\cala-\scp$ is multiplicatively closed is equivalent to $\scp$ is prime)
+    $\cala_{\scp}:=S_{\scp}^{-1}\cala$
+\end{itemize}
+Caution that if $\scp=(f)$, usually $\cala_(f)\neq \cala_{f}$
+\end{ex}
+>>>>>>>>>>>>>>5
+\textbf{
+$\scq\subseteq \calb$ prime $\Lrta \varphi^{*}(\scq)$ prime
+Then $\varphi^*:Spec(\calb)\lrta Spec(\cala)$
+}
+
+Back to $\iota \cala\lrta S^{-1}\cala$.
+\begin{prop}
+\begin{enumerate}[label=(\alph*)]
+\item $\iota^*:Spec(S^{-1}\cala))\lrta\{\scp\in Spec(\cala)|\scp\cap S=\emptyset\}$
+\item For any ideal $\sca\subseteq \cala$, $\iota_*(\sca)=\{a/s|a\in\sca,s\in S\}$
+\item $\iota_*(\sca)=S^{-1}(\cala)\Llrta\sca\cap S\neq \emptyset$
+\item For any ideal $\scb\subseteq S^{-1}\cala,$ $\varphi_{*}(\varphi^*(\scb))=\scb$
+\end{enumerate}
+\end{prop}
+\begin{proof}
+(b)Just check that $S^{-1}\cala \cdot V\subset V$
+
+(c) $\iota_*(\sca)=S^{-1}\cala\Llrta \exists a\in \sca, s\in S$ s.t. $a/s=1/1$
+$\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$. Conversely, $\sca\cap S\neq \emptyset$, any $a\in \sca, a=s\in S$, then $a/s=1/1$.
+
+(d) $\varphi_*(\varphi^*(\scb))\subset \scb$ in general. For the converse inclusion, if $a/s\in \scb$, then $a/s\cdot s/1=a/1\in\scb$, which means $a\in \varphi^{*}(\scb)\Lrta a/s\in \varphi_{*}(\varphi^*(\scb))$.  
+\end{proof}
 \end{document}
