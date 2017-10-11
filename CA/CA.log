@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  11 OCT 2017 15:45
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  11 OCT 2017 21:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -630,10 +630,6 @@ tly
 Package hyperref Info: Option `colorlinks' set `true' on input line 17.
 \c@thm=\count137
 
-
-LaTeX Warning: Unused global option(s):
-    [sans].
-
 (./CA.aux)
 \openout1 = `CA.aux'.
 
@@ -889,52 +885,33 @@ Overfull \hbox (28.84476pt too wide) detected at line 1240
  []
 
 [27] [28] [29] [30] [31] [32]
-Overfull \hbox (8.57843pt too wide) in paragraph at lines 1524--1527
+Overfull \hbox (8.57843pt too wide) in paragraph at lines 1524--1526
 \OT1/cmr/bx/n/10.95 Motivation \OT1/cmr/m/n/10.95 For $\OMS/cmsy/m/n/10.95 A$ \
 OT1/cmr/m/n/10.95 an in-te-gral do-main, we de-fined the quo-tients field $\OML
 /cmm/m/it/10.95 Frac\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 A\OT1/cmr/m/n/10.95
  )$.
  []
 
-[33] [34]
-Overfull \hbox (2.92148pt too wide) in paragraph at lines 1651--1653
-\OT1/cmr/m/n/10.95 This is guar-an-teed, $\OMS/cmsy/m/n/10.95 9\OML/cmm/m/it/10
-.95 t \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 : \OML/cmm
-/m/it/10.95 as[]t \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 a[]st$ $\OT1/cmr/m/n
-/10.95 =[]\OMS/cmsy/m/n/10.95 ) \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f\OT1/c
-mr/m/n/10.95 (\OML/cmm/m/it/10.95 a\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 f\OT
-1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]\OT1/cmr/m/n/10.95 )[] \OMS/cmsy/m/n/10
-.95 ^^@ \OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 a[]\OT1/cm
-r/m/n/10.95 )\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s\OT1
-/cmr/m/n/10.95 )[])\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95
- t\OT1/cmr/m/n/10.95 ) =
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1583--1584
+
  []
 
-
-Overfull \hbox (0.90814pt too wide) in paragraph at lines 1666--1671
-[]\OT1/cmr/m/n/10.95 >>>>>>>>>>>>>>5  $\U/euf/m/n/10.95 q \OMS/cmsy/m/n/10.95 ^
-^R B$ \OT1/cmr/bx/n/10.95 prime $\OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 ) \O
-ML/cmm/m/it/10.95 '[]\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 q\OT1/cmr/m/n/10.95 )
-$ \OT1/cmr/bx/n/10.95 prime Then $\OML/cmm/m/it/10.95 '[] \OT1/cmr/m/n/10.95 : 
-\OML/cmm/m/it/10.95 Spec\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n/10.95 B\OT1/cmr/m/n/1
-0.95 ) [][]\OMS/cmsy/m/n/10.95 !
- []
-
-[35] [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1689.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1689.
+[34] [35] [36] [37] [38]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1729.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1729.
  (./CA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1689.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1689.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1689.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1729.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1729.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1729.
  ) 
 Here is how much of TeX's memory you used:
- 22020 strings out of 493706
- 408845 string characters out of 6145769
- 470619 words of memory out of 5000000
- 25040 multiletter control sequences out of 15000+600000
+ 22058 strings out of 493706
+ 409833 string characters out of 6145769
+ 470609 words of memory out of 5000000
+ 25078 multiletter control sequences out of 15000+600000
  17739 words of font info for 70 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,15n,84p,934b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CA.pdf (36 pages).
+Output written on CA.pdf (38 pages).
