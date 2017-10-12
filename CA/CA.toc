@@ -7,5 +7,5 @@
 \contentsline {subsection}{\numberline {2.3}Lecture 5. Properties of Tensor Product}{23}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Lecture 6. Flatness}{28}{subsection.2.4}
 \contentsline {section}{\numberline {3}Localization}{33}{section.3}
-\contentsline {subsection}{\numberline {3.1}Lecture 7}{33}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Lecture 8}{38}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.1}Lecture 7 : Localization of rings}{33}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Lecture 8: Properties of localization of rings and localization of module}{38}{subsection.3.2}
