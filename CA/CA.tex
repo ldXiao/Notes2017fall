@@ -66,6 +66,7 @@
 \newcommand{\rta}{\rightarrow}
 \newcommand{\Lrta}{\Longrightarrow}
 \newcommand{\lrta}{\longrightarrow}
+\newcommand{\llrta}{\longleftrightarrow}
 \newcommand{\Llta}{\Longleftarrow}
 \newcommand{\Llrta}{\Longleftrightarrow}
 \newcommand{\lgl}{\langle}
@@ -1708,7 +1709,7 @@ thus $\varphi^*:Spec(\calb)\lrta Spec(\cala)$
 Back to the special case $\iota :\cala\lrta S^{-1}\cala$.
 \begin{prop}\ 
 \begin{enumerate}[label=(\alph*)]
-\item $\iota^*:Spec(S^{-1}\cala))\lrta\{\scp\in Spec(\cala)|\scp\cap S=\emptyset\}$
+\item $\iota^*:Spec(S^{-1}\cala))\lrta\{\scp\in Spec(\cala)|\scp\cap S=\emptyset\}$ is a bijection.
 \item For any ideal $\sca\subseteq \cala$, $\iota_*(\sca)=\{a/s|a\in\sca,s\in S\}$
 \item $\iota_*(\sca)=S^{-1}(\cala)\Llrta\sca\cap S\neq \emptyset$
 \item For any ideal $\scb\subseteq S^{-1}\cala,$ $\varphi_{*}(\varphi^*(\scb))=\scb$
@@ -1726,4 +1727,204 @@ $\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$
  $\varphi_*(\varphi^*(\scb))\subset \scb$ in general. For the converse inclusion, if $a/s\in \scb$, then $a/s\cdot s/1=a/1\in\scb$, which means $a\in \varphi^{*}(\scb)\Lrta a/s\in \varphi_{*}(\varphi^*(\scb))$. 
 \end{enumerate} 
 \end{proof}
+
+\subsection{Lecture 8}
+Recall
+$\iota\cala\lrta S^{-1}\cala$
+\begin{itemize}
+\item $\iota_*(\sca)=\{\frac{a}{s},a\in \sca,s\in S\}$
+\item $\iota_*\iota^*(\scb)=\scb\forall \scb\subseteq S^{-1}\cala$
+\item $\iota_*\sca=(1)\Llrta \sca\cap S\neq \emptyset$
+\end{itemize}
+\begin{prop}
+$$
+\left\{\scp\in \text{Spec}(\cala)|\scp\cap S=\emptyset\ (S\subseteq \cala-\scp)\right\}\longleftrightarrow \left\{\text{Spec}(S^{-1}\cala)\right\}
+$$
+is bijection.
+\end{prop}
+
+\begin{itemize}
+\item $\scq_1\subseteq \scq_2\Llrta \iota^*\scq_1\subseteq \iota^*\scq_2$
+\item $k(\scp):=Frac(\cala/\scp)$ is called the residue field of the prime ideal $\scp$.
+\end{itemize}
+Then the above bijection induces isomorphism $k(\iota^*\scq)\cong k(\scq)$
+
+\begin{ex}
+$\cala=\intg$, and $\scp=(p)$ where $p$ is a prime number. $k(\scq)=Frac(\intg/p)=\intg/p$.
+
+If $\scp=(0)$, $k(\scp)=Frac(\intg)=\ratl$.
+
+If $\scp=\scm$ a  maximal ideal.$\Llrta\cala/\scp$ is a field and $k(\scp)=\cala/\scp$ 
+\end{ex}
+
+\begin{ex}
+$\scp=(y)\subseteq\cala=\cplx[x,y]$, $\cala/\scp\cong \cplx[x], k(\scp)\cong \cplx(x)$
+\end{ex}
+\begin{proof}
+(Proof of the proposition) the proof contains the following points
+\begin{itemize}
+\item $\scp$ prime $\Llrta \iota^*\scp$ prime
+\item $\iota^*\iota_*\scp=\scp$ 
+\item  $\iota_*\iota^*\scq=\scq$ (true for any $\scq$, not necessarily prime)
+\end{itemize}
+
+$\iota^*\iota_*\scp\supseteq\scp$ is a general fact.
+ For the converse inclusion, $\iota^*\iota_*\scp=\iota^{-1}(\iota_*\scp)\overset{?}{\subseteq}\scp$. For an $a\in \iota^{-1}(\iota_*\scp)$, $\iota(a)=\frac{a}{1}\in\iota_*\scp\Lrta\exists b\in \scp, s\in S$ s.t. $\frac{a}{1}=\frac{b}{s}\Lrta ast=bt\in \scp$ and $s,t \in S\subseteq \cala-\scp\Lrta a\in \scp$ because $\scp$ is a prime ideal.
+
+ $\scp$ \text{ prime} $\overset{?}{\Lrta}\iota_*\scp$ prime. Consider $\frac{a}{s}\cdot \frac{b}{t}\in \iota_*\scp$, then $\frac{ab}{st}=\frac{c}{u},c\in\scp, u\in S$, then $\exists v\in S:abuv=cstv$, where $uv\in S$ $cstv\in\scp$, $uv\not\in \scp\Lrta ab\in\scp\Lrta$ at least one of $a, b\in\scp\Lrta$ at least one of $\frac{a}{s},\frac{b}{t}\in \iota_*\scp$.
+\end{proof}
+
+\begin{ex}
+$S=S_f=\{f^n:n\geq0\}$
+$\Lrta S^{-1}\cala=\cala_f=\cala[1/f]$. Let $\scp\cap S\neq \emptyset\Llrta$ some $f^n\in \scp\llrta f\in \scp$.
+Then $\text{Spec}(\cala_f)\cong \{\scp\in \text{Spec}(\cala)|f\in \scp\}$
+\end{ex}
+
+\begin{ex}
+$\cala=\intg,f=2$, $\cala_f=\intg[1/2]$
+
+$\{\text{primes in }\intg[1/2]\}\cong \{(0),(3),(5)....\}\subseteq\text{Spec}(\intg)$
+\end{ex}
+
+\begin{ex}
+$\cala=\cplx[x,y]$, there is a bijection between $\{\text{maximal ideals in }\cala\}$ and $\cplx^2$.
+The maximal ideal $\{f\in \cplx[x,y]| f(X_0,Y_0)=0\}=(x-X_0, y-Y_0)$ corresponds to the point $(X_0,Y_0)\in \cplx^2$\\
+Fix $f\in \cplx[x,y], f\neq 0, e.g. f=u-x^2$
+Then 
+$$
+\begin{aligned}
+&\left\{ \text{maximal ideals in  }\cala_f=\cplx[x,f,1/f]\right\}\\
+&\overset{bij}{\longleftrightarrow} \left\{\text{maximal ideal }\scm\in \cplx[x,y] s.t. f\notin \scm\right\}\\
+& \overset{bij}{\longleftrightarrow}\left\{(X,Y)\in \cplx^2|f(X,Y)\neq 0\right\}
+\end{aligned}
+$$
+Then we know that the $\text{Spec}(\cala)\cong \cplx^2$ while $\text{Spec}(\cala_f)$ is bijective to the complement of zero loci of $f$
+\end{ex}
+
+
+The localization at an element has the functorial property, for $f,g\in\cala$
+\[
+\begin{tikzcd}
+\cala\ar[r]\ar[rr,bend right]&\cala_f\ar[r]&\cala_{fg}  
+\end{tikzcd}
+\] 
+
+
+\begin{ex}
+$\cala$ an integral domain, $\cala_f\subseteq \cala_{fg}$ ($\frac{a}{(f)^n}=\frac{a g^n}{(fg)^n}$), $Frac(\cala)=\cup_f\cala_f$. For any $\scp\in \text{Spec}(\cala_f)\subseteq\text{\cala}$, $\cala_f\Lrta k(\scp)$ 
+
+$\{f\in \cala:f\notin \scp\}=f\in \cala:f(\scp)\neq 0\}$, where $f(\scp)\in k(\scp)$ is the image of $f$.
+\end{ex}
+
+\textbf{Aside:} $\cala$ is a local ring  $\Llrta\exists 1\scm\in \text{Specm}(\cala)\Llrta \exists ideal \scm with 1+\scm\subseteq \cala^\times, \scm$ maximal,
+$\Llrta \cala-\scm\subseteq \cala^\times$
+
+
+$\scp\subseteq\cala$ prime $\Lrta \cala_\scp:=S^{-1}_{\scp}\cala$
+
+\begin{prop}
+\begin{enumerate}[label=(\alph*)]
+\item $\text{Spec}(\cala_\scp)\cong \{\scq\in \text{Spec}(\cala)|\scq\subseteq\scp\}$
+\item For $\iota :\cala\lrta S^{-1}_{\scp}\cala$, $\cala_\scp$ is a local ring with maximal ideal $\scp_\scp ?:\iota_*(\scp)$,
+\end{enumerate}
+$\cala_\scp$ is called the \textbf{localization of $\cala$ at $\scp$}. $\iota_*$ is inclusion preserving.
+\end{prop}
+\begin{proof}
+$$
+S^{-1}_{\scp}\overset{\iota_*}{\cong}\left\{\scq\in \text{Spec}(\cala)|\scq\cap S_\scp =\emptyset \ (\scq\subseteq \scp)\right\}
+$$.
+$\iota_*$ is inclusion preserving,
+$\Lrta$ every prime ideal in $\cala_\scp$ is contained in $\scp_\scp$. using this and the fact that any ideal is contained in some maximal ideal, we see that $\scp_\scp\subseteq \cala_\scp$ is the maximal ideal.
+\end{proof}
+
+\begin{ex}
+$\scp=(p)\subseteq\intg=\cala$, then $\cala_\scp=\intg_{(\scp)}$ is local ring with maximal ideal $\scp_\scp$ generated by image of $\scp$. $\text{Spec}(\intg_{(\scp)})\cong \{\scq \in \text{Spec})(\intg)|\scq\subseteq \scp\}=\{(0),(p)\})$
+
+For residue field $\intg_{(p)}/\scp_\scp\cong \intg/(p)$, this isomorphism is by the first part of the first prop of today's lecture. And in general
+$$
+\cala_\scp/\scp_\scp=k(\scp)
+$$
+\end{ex}
+
+
+\begin{dfn}
+A \text{germ at} $p$ is an equivalence class $[(U,f)]$ of pairs $(U,f)$, where $p\in U\subseteq \Omega$ and $f:U\lrta \cplx$ holomorphic. And $(U_1,f_1)\sim (U_2,f_2)$ iff $f_1=f_2$ on some open neighborhood of $p$ inside $U_1\cap U_2$
+\end{dfn}
+\begin{lemma}
+$\Omega\subseteq \cplx$ open $\cala$ is the set of holomorphic germs $f:\Omega\lrta \cplx$. Fix $p\in\Omega$. and set $\scp=\{f\in \cala|f(p)=0\}$. Then $\cala$ is a local ring with maximal ideal $\scp$
+\end{lemma}
+\begin{proof}
+Want $\cala-\scp\subseteq \cala^\times$\\
+
+This is just a way of saying : if $f(p)\neq 0$, then there is an open neighborhood of $p$ on which $1/f$ is defined and holomorphic.
+\end{proof}
+
+\begin{ex}
+$\cala=\cplx[x,y],\scp=(y)$\\
+$$
+\text{Spec}(\cala_\scp)\cong \left\{\scq\in \text{Spec}(\cala)|\scq\subseteq (y)\right\}
+$$
+Then, the only choice of $\scq$ is just $(y),(0)$. 
+$\cala_\scp$ is a local ring with two primes, and residue field $\cplx(x)$.
+
+$\cala=\cplx[x,y],\scp=(x,y)$\\
+$$
+\text{Spec}(\cala_\scp)\cong \left\{\scq\in \text{Spec}(\cala)|\scq\subseteq (x,y)\right\}
+$$
+Then
+$$
+\text{Spec}(\cala_\scp)\cong \{(x,y)\}\cup\{(f):0\neq f\in \cplx[x,y] \text{ irreducible }, f(0,0)=0\}\cap\{(0)\}.
+$$
+The second set is just the set of plane curves passing through $0$
+\end{ex}
+
+\subsection*{localization of module}
+\begin{dfn}
+$S\subseteq \cala$ and $M$ is an $\cala$-module. Then we define the \textbf{localization of module}
+$$
+(m,s)\in M\times S, (m,s)\sim (m',s')\Llrta \exists t\in S: tsm'=ts'm
+$$
+and we denote the equivalence class of $(m,s)$ by $\frac{m}{s}$, and we see that $S^{-1}M$ is in fact an $S^{-1}\cala$-module:
+$$
+\frac{a}{s}\cdot \frac{m}{t}=\frac{am}{st}
+$$
+\end{dfn}
+
+\begin{lemma}
+$S^{-1}\cala\otimes_{\cala}M\cong S^{-1}M$, where the map is $\frac{a}{s}\otimes m\mapsto \frac{am}{s}$
+\end{lemma}
+\begin{proof}
+We can define the inverse
+$$
+\frac{1}{s}\otimes m \longleftarrow\frac{m}{s}
+$$
+and then check it is well-defined.
+\end{proof}
+
+Moreover, we can also define the localization of morphisms,
+\begin{dfn}
+Given $f:M\lrta N$ a morphism of $\cala$-module. $S^{-1}$. We define 
+$$
+\begin{aligned}
+S^{-1}f:&S^{-1}M\lrta S^{-1}N\\
+& \frac{m}{s}\longmapsto\frac{f(m)}{s}.
+\end{aligned}
+$$
+It is a well-defined morphism of $S^{-1}\cala$-modules and it has the functorial property
+$$
+S^{-1}(f\circ g)=S^{-1}f\circ S^{-1}g
+$$
+e.g. 
+$\scp\in \text{Spec}(\cala)$, then we have the localization $\cala_\scp$ and the localization of module : $M_\scp:=S^{-1}_\scp M\cong \cala_{\scp}\otimes_\cala M$.
+\end{dfn}
+
+Next time: we will focus other local properties i.e.properties of $M$ that depends only on  $M_\scp, \forall \scp\in \text{Spec}(\cala)$
+
+
+
+
+
+
+
+
 \end{document}
