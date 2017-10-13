@@ -8,6 +8,7 @@
 \usepackage{tikz-cd}
 \usepackage{enumitem} 
 \usepackage{hyperref}
+\usepackage{bbm}
 \hypersetup{
     colorlinks,
     citecolor=blue,
@@ -137,7 +138,13 @@ $$
 \end{ex}
 
 \begin{exercise}
-Show that $\calc \subseteq \calr$ is a algebraically closed in $\calr$. i.e. $x\in \calr$ algebraic over $\calc$ $\Longrightarrow$ $x\in \calc$.
+Show that $\calc \subseteq \calr$ is a algebraically closed in $\calr$. i.e. $x\in \calr$ algebraic over $\calc$ $\Longrightarrow$ $x\in \calc$. (Notice it does not mean $\calc=\overline{\calc}$ in general)
+\end{exercise}
+
+\begin{exercise}\label{exr:1.7}
+Show that for differential field $\calk$ with constants $\calc$, consider a field extension $\calr/\calk$, an element $x\in \calr$ satisfying $x'=0\in \calk$  is algebraic over $\calk\Lrta x$ is algebraic over $\calc$.\\
+\textbf{Solution}:\\
+$x$ is algebraic over $\calk$ , consider the minimal monic polynomial $p(X)= X^n+...a_0$ with coefficients in $\calk$. Then $p(c)=0\Lrta p(x)'=(a_{n-1}')x^{n-1}+...+(a_0')=0$ by the minimality of $p(X)$, we conclude that we conclude that each $a_{i}'=0$, thus finished the proof.
 \end{exercise}
 
 \begin{dfn}
@@ -209,15 +216,16 @@ What we usually seek is a $V\in GL_n(\calk)$ with $V'=A V$. The columns of such 
 $\calk$ is a diff-field, $A\in M_{n\times n}(\calk)$, let $\calr$ be a differential $\calk$-algebra, which means we have a diff-ring morphism from $(\calr,\pd_\calr)$ to $(\calk,\pd_\calk)$. We also suppose $\calr$ has same constants as $\calk$ (every constant of $\calr$ lies in $\calk$).
 A matrix $V\in GL_n(\calr)$ is said to be a \textbf{fundamental matrix} of solutions of the differential equation $u'=A u$, if $V'=A V$.
 \end{dfn}
+\begin{rmk}\label{rmk:fundamental_matrix}
 Let $V,\tilde{V}$ be fundamental matrices of solutions of $u'=A u$, $V,\tilde{V}\in GL_{n}(\calr)$, $\tilde{V} =V\cdot S$ $S=V^{-1} \tilde{V}$
 $$
 A\tilde{V}=\tilde{V}'=(VS)'=V'S+V S'=A V S+V S'=A \tilde{V}+V S'
 $$
-
 $
 \Longrightarrow V S'=0,
 $
 $V$ is invertible $\Longrightarrow S'=0\Longrightarrow S\in GL_n(C)$.
+\end{rmk}
 
 \begin{dfn}
 Let $v_1,...,v_n\in \calk$, The \textbf{Wronski matrix} of $\underline{v}\in \calk^n$
@@ -264,8 +272,8 @@ $(b)+(c)\Longrightarrow (2)+(3)$: If the solution space of $\pd$ on $\calr\otime
 
 \section{Picard-Vessiot extension}
 
-
-$\calk$ is a differential field with $char(\calk)=0$. The set of constants $\calc\subset \calk$ is a field and we assume it to be algebraic closed. Think of $\calk=\cplx(t),\pd=d/dt$ and $\calc=\cplx$.
+Through out this section, we will assume 
+$\calk$ is a differential field with $char(\calk)=0$(It contains $\ratl$ as subfield). The set of constants $\calc\subset \calk$ is a field and we assume it to be algebraic closed.  For example, think of $\calk=\cplx(t),\pd=d/dt$ and $\calc=\cplx$.
 
 \begin{dfn}
 Let $\calr$ be a diff. $\calk$-algebra. An ideal $I\subset \calr$ is a \textbf{differential ideal} if $\pd I\subseteq I$. Say that $\calr$ is \textbf{simple} if $\{0\}$ and $\calr$ are the only differential ideal in $\calr$
@@ -305,7 +313,7 @@ Alternatively, we can define the Picard-Vessiot extension of a differential modu
 Exercise: Check that the two definitions of PV extension for diff. module coincide.
 
 \begin{ex}
-$\calk=\cplx(t), \calc=\cplx$, Consider the 2nd order linear homogeneous linear differential equation
+$\calk=\cplx(t), \calc=\cplx$, Consider the 2nd order homogeneous linear differential equation
 $$
 t\cdot u''+u'=0.
 $$
@@ -357,7 +365,7 @@ the Differential on $\calr$, we just need to set $\pd X=X'=1/t$, in this case, w
 Yes, $I\subseteq \calr$ diff. ideal. $\calr$ principal $I=f(X)\calr$,  $\pd I\subset I$, where $\pd I=(\pd f)\calr$, derive it sufficiently many times. until $\pd^n f\in \cplx(t)$ $\Lrta \calr=\pd^n f\calr \subseteq I$.  
 \end{ex}
 
-\begin{lemma}
+\begin{lemma}\label{lem:PV}
 Let $\calr$ be simple diff. $\calk$-algebra. Then 
 \begin{enumerate}
 \item $\calr$  is integral domain
@@ -374,16 +382,177 @@ It follows that if $a$ is a zero divisor, then $a$ has to be nilpotent.
 Let $I\subset \calr$ be the nil radical of $\calr$. Again, $I$ is a diff. ideal. But $1\not \in I$, $I$ has to be $\{0\}$.
 \end{proof}
 
-\begin{lemma}
-Let $\calk$ be a field of $\text{char } 0$. $\calr$ is a finitely generated $\calk$-algebra, integral domain, and suppose that $x\in \calr$ is such that the set $S:=\{c\in \calk|x-c\in \calr^{\times}\}$ is infinite. Then $x$ is algebraic over $\calk$
+\begin{lemma}(Criterion for Algebraicity)
+Let $\calk$ be a field of $\text{char } 0$. $\calr$ is a finitely generated $\calk$-algebra, integral domain, and suppose that $x\in \calr$ is such that the set $S:=\{c\in \calk|x-c\in \calr^{\times}\}$ is infinite. Then $x$ is algebraic over $\calk$.
 \end{lemma}
 For example $\calk=\bar{\ratl}, \ \calr=\bar{\ratl}[x,y,1/x,1/(x^2+2)]$. For $x-c$ to be unit, then only possibility is  $c=0$, which means $x$ is not algebraic over $\bar{\ratl}$. While in the case
 $\calk=\ratl, \ \calr=\ratl[\sqrt{2}]$, $\sqrt{2}-c$ is always unit in $\calr^\times$, which means $\sqrt{2}$ is algebraic over $\ratl$.
 \begin{proof}
-Say $\calr=\calk[x_1,...,x_n]$ and $x_1=x$. Set $\call=frac(\calr)$, suppose $x$ is \textbf{not} algebraic over $\calk$, so $x$ is transcendental. Suppose w.l.o.g. that
-$x_1,...,x_r$ are a transcendental base for $\call/\calk$, i.e. $x_1,..,x_r$ are algebraic independent and $L/\calk(x_1,...,x_r)$ si a finite algebraic extension.
+Say $\calr=\calk[x_1,...,x_n]$ and w.l.o.g. $x_1=x$. Set $\call=Frac(\calr)$ ($\calr$ is integral domain), suppose $x$ is \textbf{not} algebraic over $\calk$, so $x$ is transcendental. Suppose w.l.o.g. that
+Reorder $x_2,...,x_n$ such that  $x_1,...,x_r$ are a transcendence base for $\call/\calk$, i.e. $x_1,..,x_r$ are algebraic independent and $L/\calk(x_1,...,x_r)$ is a finite algebraic extension. Recall the \href{https://en.wikipedia.org/wiki/Primitive_element_theorem}{Lemma of primitive element} (every finite field extension of char $0$, can be generated by one element). Pick $y\in \calr$ such that $\call=\calk(x_1,...,x_r)[y]$, look at the minimal polynomial of $y$ over $\calk[x_1,...,x_r]$
+$$
+a_N(x_1,...,x_r)T^N+a_{N-1}(x_1,...,x_r)T^{N-1}+...,
+$$
+where $a_i\in \calk[x_1,...,x_r]$
+
+Pick $G\in \calk[x_1,...,x_r]$ s.t.
+\begin{enumerate}[label=\arabic*)]
+\item $a_N|G$ and
+\item $x_1,...,x_n\in \calk[x_1,...,x_r,y,G^{-1}]$
+\end{enumerate} 
+For $s>r$, $x_s\in \calr\subseteq \call=Frac(\calk[x_1,...,x_r])[y]$
+$$
+x_s=\frac{P_s(x_1,...,x_r,y)}{Q_s(x_1,...,x_r)}=\frac{\tilde{P}_s(x_1,...,x_r,y)}{G}
+$$
+$G$ has to be a multiple of all those denominators $Q_s$, it is always possible to pick such a $G$.
+
+Since the set $S\subseteq \calk$ is infinite, we can find $s_1,...,s_r\in S$ with $G(s_1,...,s_r)$ $\neq 0$. Fix such elements $s_1,...,s_r\in S$, we can  define a ring homomorphism $\calk[x_1,..,x_r,y,G^{-1}]\overset{\varphi}{\lrta} \overline{\calk}$ where $x_i\mapsto s_i$, $ y\mapsto$ any root of the minimal polynomial evaluated in $s_i$. $a_N(s_1,...,s_r)T^N+...$ and $G^{-1}\mapsto G(s_1,...,s_r)^{-1}$. since $G(s_1,...,s_r)\neq0$  also we have $a_N(s_1,....,s_r)\neq 0$ (The minimal polynomial of $y$ with coefficients evaluated in $s_i$ indeed has nontrivial roots in $\overline{\calk}$). The ring homomorphism is well-defined and $\calr\subseteq\calk[x_1,..,x_r,y,G^{-1}]$
+$\varphi(x_1-s_s)=0$, where $(x_1-s_s)$ is invertible in $\calr$, which makes the contradiction.
 \end{proof}
 
+
+\begin{lemma}(Second half of Lemma~\ref{lem:PV})
+$\calk$ is a differential field and $\calc$ is the field of constant, $\calc=\overline{\calc}$ and $char \calc=0$. $\calr/\calk$ simple differential ring which is finitely generated as $\calk$-algebra. $\Lrta $ the field of constants of $\calr$ is $\calc$.
+\end{lemma}
+\begin{proof} We already know $\calr$ is an integral domain.
+Let $\call=Frac(\calr)$, fix $a\in \call, a\neq 0, a'=0$. Suppose $a\notin \calc$, consider the ideal $I:=\{b\in \calr|a\cdot b\in \calr\}\subseteq \calr$. This is a differential ideal because $b\in I\Lrta a b'=a'b+ab'=(ab)'\in \calr$. By the assumption $\calr$ is simple differential ring $\Lrta I=\calr$. Then $1\in I\Lrta a\cdot 1\in \calr$. $a$ has an inverse in $\call$, denote it by $c$. Then $e\neq 0,e'=0$ we can proceed the similar construction $J:=\{b\in \calr|e\cdot b\in \calr\}\subseteq \calr$ it also indicates that $e\in \calr$, hence we get the conclusion that $a\in \calr^\times$
+
+Same argument for $a+c$ for any $c\in \calc$ shows 
+$(a+c)\in \calr^\times,\forall c\in \calc\Lrta a$ is algebraic over $\calk$ $\overset{Exercise~\ref{exr:1.7}}{\Lrta} a $ is algebraic over $\calc=\overline{\calc}$ $\Lrta a\in \calc$
+\end{proof}
+
+\begin{prop} $\calk$ is a differential field with constants $\calc=\overline{\calc}$
+Let $u'=A u$ be a matrix differential equation over $\calk$. 
+\begin{enumerate}[label=(\arabic*)]
+\item A Picard-Vessiot extension for $u'=A u$ exists. 
+\item Any two P-V extension for $u'=Au$ are isomorphic.
+\item The field of constant of any P-V extension is $\calc=\overline{\calc}$ 
+\end{enumerate}
+\end{prop}
+\begin{proof}
+The previous Lemma $\Lrta $(3)
+
+For (1) consider the ring $\calr_0=\calk[(X_{ij})_{1\leq i,j\leq n},det(X)]$. Define a differentiation n $\calr_0$by 
+$$
+X'=AX
+$$
+$$
+X_{ij}'= (AX)_{ij}\text{ a polynomial in} \in \calk[X_{ij},..,X_{nn}]
+$$
+and together with the Leibnitz rule it is a well-defined differentiation on $\calr_0$.
+
+Pick any maximal differential ideal $I\subseteq \calr_0$ and set $\calr=\calr_0/I$. $\calr$ is a P-V ring:\\
+Simple because $I$ is maximal.\\
+Fundamental matrix of solutions is $X$ (the classes of $X$ in $\calr_0/I$)\\
+$\calr$ is generated by $X_{ij}$ and $det(X)^{-1}$.
+
+For (2) Let $\calr_1,\calr_2$ be P-V rings. Consider $\calr=\calr_1\otimes \calr_2$ with differential $(a\otimes b)'=a'\otimes b+a\otimes b'$. Choose $I\subseteq \calr$ maximal differential ideal.
+Consider $\varphi_1:\calr_1\lrta \calr/T|\varphi_1(a)=a\otimes 1$ and $\varphi_2:\calr_2\lrta \calr/T|\varphi_2(1)=1\otimes b$. $\varphi_1$ and $\varphi_2$ are morphism of differential rings and since $\calr_1,\calr_2$ are simple, $\varphi_1,\varphi_2$ are injective. Let $V_1\in M_n(\calr_1), V_2=M_n(\calr_2)$ be fundamental matrices of solution of $u'=Au$. $\varphi_1(V_1)$ and $\varphi_2(V_2)$ are fundamental matrices of solution in $\calr/I$. $\calr/I$ is simple finitely generated $\Lrta$ constants in $\calr/I$ are $\calc$.
+$\exists S\in GL_{n}(\calc)$ with $\varphi_1(V_1)=\varphi_2(V_2) S$
+
+$\varphi_1(\calr_1)$ is isomorphic to the algebra in $\calr/I$ generated by $\varphi_1(V_{1,ij})$ and $\varphi_1(det(V_1))^{-1}=$ the algebra in $\calr/I$ generated by $\varphi_2(V_{2,ij})$ and $\varphi_2(det(V_2))^{-1}$ $\cong \varphi_2(\calr_2)$
+
+Then $\calr_1\cong \varphi_1(\calr_1)=\varphi_2(\calr_2)\cong \calr_2$
+\end{proof}
+
+\section{The Differential Galois Groups}
+
+Assumption: $\calk$- differential field with $char 0$, $\calc$ is the set of constants in $\calk$ and $\calc=\overline{\calc}$.
+\begin{dfn}
+Let $\calr$ be a Picard-Vessiot ring of a differential equation $u'=Au$ or of a differential module $(M,\pd)$ over $\calk$. We call \textbf{Galois group of the equation/ module} the group 
+$Aut^{\pd}(\calr/\calk)=$\{$\calk$-algebra isomorphism $\varphi:\calr\lrta \calr$ compatible with the differentiations\}. Usually we denote it with $\text{Gal}^{\pd}(\calr/\calk)$
+\end{dfn}
+
+Exercise: Let $\call/\calk$ be a finite Galois extension.
+\begin{enumerate}[label=(\arabic*)]
+\item There is unique differentiation on $\call$ extending that of $\calk$.
+\item Look at $\call$ as a $\calk$-module (differential module), Then a Picard-Vessiot extension fo $\call$ is $\call$ as a $\calk$-algebra.
+\item $\text{Gal}^{\pd}(\call/\calk)=\text{Gal}(\call/\calk)$
+\end{enumerate}
+
+
+$\text{Gal}^\pd(\calr/\calk)$ can be seen as a subgroup of $GL_n(\calc)$
+Let $V\in GL_n(\calr)$ be a fundamental matrix of solutions. Pick $g\in G=\text{Gal}^\pd(\calr/\calk)$. then  $gV=g(v_{ij})$ is again a fundamental matrix of solutions.
+$$
+(gV)'=g V'=g AV=A(gV)
+$$
+$$
+g(V)=V\cdot \gamma(g)
+$$
+$\gamma\in GL_n(\calc)$ is unique, because two fundamental matrices are linked with a unique matrix in $GL_n(\calc)$ (Remark~\ref{rmk:fundamental_matrix}). Then we get a group homomorphism: 
+$$
+\begin{aligned}
+\gamma:&G\hookrightarrow GL_n(\calc)\\
+& g\longmapsto \gamma(g)
+\end{aligned}
+$$
+It is injective:
+$\gamma(g)=\mathbbm{1}\Lrta gV=V$, but $\calr$ is generated by entries of $V\Lrta g=id_\calr=\mathbbm{1}_G$.
+
+
+What makes differential Galois groups a powerful tool is that they are linear algebraic groups and, moreover, establish a Galois correspondence, analogous to the classical Galois correspondence. Torsors will explain the connection between the Picard-Vessiot ring and the differential Galois group. The Tannakian approach to linear differential equations provides new insight and useful methods. Some of this is rather technical in nature. We will try to explain theorems and proofs on various levels of abstraction.
+
+\begin{ex}
+$\calk=\cplx(t),\calc=\cplx$
+$u'=Au$
+$$
+A=\begin{pmatrix}
+0 & 1\\
+0 & -1/t
+\end{pmatrix}
+$$
+$X:=\log(t)$. The Picard-Vessiot ring $\calr=\cplx(t)[X]$, with differential defined by $X'=\frac{1}{t}$+Leibnitz.
+$\text{Aut}^\pd(\calr/\calk)\ni g$, the action of $g$ is $\cplx(t)$-linear.
+$$
+\begin{aligned}
+g:&\cplx(t)[X]\Lrta \cplx(t)[X]\\
+& X\longmapsto g(X)
+\end{aligned}
+$$
+It is compatible with the differentiation
+$$
+\begin{aligned}
+g(X)'&=g(X')=g(1/t)=1/t\\
+g(X)&=X+a,\ a\in\cplx
+\end{aligned}
+$$
+For a fundamental matrix
+$$
+V=
+\begin{pmatrix*}
+1 & X\\
+0 & 1/t
+\end{pmatrix*}
+$$
+
+$$
+g(V)=
+\begin{pmatrix*}
+1 & X+a\\
+0 & 1/t
+\end{pmatrix*}
+=\begin{pmatrix*}
+1 & X\\
+0 & 1/t
+\end{pmatrix*}
+\cdot 
+\begin{pmatrix*}
+1 & a\\
+0 & 1
+\end{pmatrix*}
+$$
+Then 
+$$
+\text{Gal}^\pd(\calr/\calk)
+=\left\{\left.\begin{pmatrix*}
+1 & a\\
+0 & 1
+\end{pmatrix*}
+\right| a\in \cplx
+\right\}
+\cong(\cplx,+)
+$$
+\end{ex}
 
 
 
