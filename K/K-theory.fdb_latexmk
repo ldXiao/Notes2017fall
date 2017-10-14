@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1507578259 "K-theory.tex" "K-theory.pdf" "K-theory" 1507578260
+["pdflatex"] 1507971916 "K-theory.tex" "K-theory.pdf" "K-theory" 1507971917
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -165,13 +165,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "K-theory.aux" 1507578260 1262 cce058ebd944e6159bf607e02f5e35fa ""
-  "K-theory.out" 1507578260 149 fbf92a639e8bb46c565153bdc0190ba1 ""
-  "K-theory.tex" 1507578258 38561 5d269a8e566253bb1b902f6ae08ddd56 ""
-  "K-theory.toc" 1507578260 201 ecc661b0a84604e9d6ac9eb8d45e61cb ""
+  "K-theory.aux" 1507971917 1515 d5775c7345693acf829d9b70460d26d8 ""
+  "K-theory.out" 1507971917 200 a3c5f35257b0fd078c15c99558cf0156 ""
+  "K-theory.tex" 1507971916 39884 25530453aa0a61d58c3b23337f711555 ""
+  "K-theory.toc" 1507971917 270 c548e1662fd39176f28bf44df0566ea0 ""
   (generated)
-  "K-theory.toc"
-  "K-theory.log"
   "K-theory.pdf"
-  "K-theory.out"
   "K-theory.aux"
+  "K-theory.out"
+  "K-theory.log"
+  "K-theory.toc"

@@ -151,8 +151,36 @@ $$
 such that the following diagrams commute:
 \begin{enumerate}[label=(\alph*)]
 \item Coassociativity:
-\item
+    \[
+    \begin{tikzcd}
+    H\ar[r,"\Delta"]\ar[d," \Delta"]& H\otimes H\ar[d,"Id\otimes \Delta"] \\
+    H\otimes H\ar[r,"\Delta\otimes Id"] & H\otimes H\otimes H,
+    \end{tikzcd}
+    \]
+\item Counit.
+    \[
+    \begin{tikzcd}
+    H\otimes K & H\otimes H\ar[l,"Id\otimes\epsilon"] \ar[r,"\epsilon\otimes Id"] & K\otimes H \\
+    & H\ar[ul]\ar[ur]\ar[u,"\Delta"] &
+    \end{tikzcd}
+    \]
 \end{enumerate}
+\item A bialgebra $H$ is called a \textbf{Hopf algebra} if it is further equipped witha morphism of algebras
+$$
+S:H\lrta H \ (\text{antipode})
+$$
+such that the following diagram commutes:
+\begin{enumerate}[label=(c)]
+\item Antipode.
+    \[
+    \begin{tikzcd}
+        & H\otimes H\ar[rr,"S\otimes Id"] &\ & H\otimes H\ar[dr,"\nabla"] & \\
+    H\ar[rr,"\epsilon"]\ar[ur,"\Delta"]\ar[dr,"\Delta"]& & k\ar[rr,"\eta"] & & H\\
+    & H\otimes H\ar[rr,"Id\otimes S"] & & H\otimes H\ar[ur, "\nabla"] &
+    \end{tikzcd}
+    \]
+\end{enumerate}
+\item A bialgebra $H$ is called commutative if the product is commutative, and cocommutative if the coproduct satisfies $\Delta=\tau\circ \Delta$, where $\tau:H\otimes H\lrta H\otimes H$ is the flip of the factors.
 \end{enumerate}
 \end{dfn}
 

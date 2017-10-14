@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1507882251 "Miscellaneous.tex" "Miscellaneous.pdf" "Miscellaneous" 1507882252
+["pdflatex"] 1507931468 "Miscellaneous.tex" "Miscellaneous.pdf" "Miscellaneous" 1507931469
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -176,17 +176,17 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "Miscellaneous.aux" 1507882252 1008 58fe1f4bb163388b04c1b0e077d2b1d2 ""
+  "Miscellaneous.aux" 1507931469 1008 2c33bf917a80773f423f27eb683e53c6 ""
   "Miscellaneous.glsdefs" 1507827997 1801 b7bc9ff174cabd056813527dc57dd575 ""
-  "Miscellaneous.out" 1507882252 202 46dbe2e44fa2c184fc0bb30930d25528 ""
-  "Miscellaneous.tex" 1507882250 6202 f603677427e7f957af5e6eb98ea01f21 ""
-  "Miscellaneous.toc" 1507882252 240 6b761e6ce006db0b04b9b49cc7a9b900 ""
+  "Miscellaneous.out" 1507931469 202 46dbe2e44fa2c184fc0bb30930d25528 ""
+  "Miscellaneous.tex" 1507931468 7335 b40e79b2828b144b42eed144ca0780ef ""
+  "Miscellaneous.toc" 1507931469 240 aa86229ccfb5b28eb36e0c9f0bd365ea ""
   (generated)
-  "Miscellaneous.toc"
   "Miscellaneous.ist"
   "Miscellaneous.log"
+  "Miscellaneous.toc"
+  "Miscellaneous.pdf"
   "Miscellaneous.glsdefs"
   "Miscellaneous.aux"
   "Miscellaneous.glo"
   "Miscellaneous.out"
-  "Miscellaneous.pdf"
