@@ -10,3 +10,6 @@
 \contentsline {subsection}{\numberline {3.1}Lecture 7 : Localization of rings}{33}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Lecture 8: Properties of localization of rings and localization of module}{38}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Lecture 9: Localization of Modules}{42}{subsection.3.3}
+\contentsline {section}{\numberline {4}Noetherian Ring and Nullstellensatz}{45}{section.4}
+\contentsline {subsection}{\numberline {4.1}Lecture 10}{45}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Lecture 11}{49}{subsection.4.2}
