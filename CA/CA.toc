@@ -13,3 +13,4 @@
 \contentsline {section}{\numberline {4}Noetherian Ring and Nullstellensatz}{45}{section.4}
 \contentsline {subsection}{\numberline {4.1}Lecture 10}{45}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Lecture 11}{49}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Lecture 12}{52}{subsection.4.3}

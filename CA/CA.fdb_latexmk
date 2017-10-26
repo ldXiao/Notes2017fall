@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1508859693 "CA.tex" "CA.pdf" "CA" 1508859696
+["pdflatex"] 1509023023 "CA.tex" "CA.pdf" "CA" 1509023026
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -157,15 +157,15 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "CA.aux" 1508859696 2931 9b0b3f75c92f60ff1f76f53cba3e164b ""
-  "CA.out" 1508859696 1415 cb6951ec14a82e72a6266013c3cc3fb8 ""
-  "CA.tex" 1508859693 98759 a97525dd4c1a27ee75eca76e953c772a ""
-  "CA.toc" 1508859696 1482 6e503f01114e21ad875230516c147248 ""
+  "CA.aux" 1509023026 3025 f9956c8a54b7097a23a340555d8e6b6b ""
+  "CA.out" 1509023026 1478 49a2c869905c823cdd9cbe658923964c ""
+  "CA.tex" 1509023023 105119 9b7f2629226f5c1c8cfa1a60e8a4a660 ""
+  "CA.toc" 1509023026 1558 19e3a51389caf9e744029ea3a321e8c9 ""
   (generated)
-  "CA.pdf"
-  "CA.out"
-  "CA.aux"
-  "CA.toc"
-  "CA.log"
-  "/Users/vector_cat/Dropbox/2017fall/CA/CA.log"
   "/Users/vector_cat/Dropbox/2017fall/CA/CA.pdf"
+  "CA.out"
+  "CA.pdf"
+  "CA.toc"
+  "/Users/vector_cat/Dropbox/2017fall/CA/CA.log"
+  "CA.aux"
+  "CA.log"

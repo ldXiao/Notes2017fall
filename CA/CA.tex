@@ -2332,7 +2332,7 @@ $\cala$ any ring.
 \end{dfn}
 >>>>>>>>>>>>2
 \begin{dfn}
-An ideal $\sca\subseteq \cala$ is \textbf{decomposable} if we may write $\sca\scq_1\cap...\cap \scq_n$, We call this a primary decomposition.
+An ideal $\sca\subseteq \cala$ is \textbf{decomposable} if we may write $\sca=\scq_1\cap...\cap \scq_n$, We call this a primary decomposition.
 \end{dfn}
 \begin{prop}
 $\cala$ is Noetherian, $\Lrta$ every $\sca\subseteq \cala$ is decomposable. 
@@ -2345,11 +2345,109 @@ recall the ideal of induction in general.
 (II) $1\in S$ and $(n\in S\Lrta n+1\in S)\Lrta S=\mathbb{N}$
 
 and 
-\textbf{Noetherian Induction}$\cala$ a Noetherian ring\\
-(I)Every $S$ a subset of the ``set of all ideals'' has maximal element.
+\textbf{Noetherian Induction} $\cala$ a Noetherian ring\\
+(I)Every $S$ a subset of the ``set of all ideals'' has minimal element.
 \\
 (II)
 >>>>>>>>>>3 
+
+\subsection{Lecture 12}
+\begin{lemma}
+$\cala$ is Noetherian, $\sca\subseteq \cala$ is an ideal. $\Lrta\sca$ decomposable:
+$\exists $ primary ideals $\scq_1,...,\scq_n\subseteq \cala$ s.t. $\sca=\scq_1\cap...\cap\scq_n$
+, where $\scq$ primary $\Llrta x y\in \scq\Lrta x\in \scq\ or\ y^n\in \scq\ for\ some \ n$\end{lemma}
+\begin{proof}
+Define: An ideal $r$ is \textbf{irresducible} if whenever $r=r'\cap r''$, we have either $r=r'$ or $r=r''$. NOtice $(6)=(2)(3)$ is not irreducible.\\
+\textbf{Claim1}: $\cala$ Noetherian. Then irresucible $\Lrta$ primary.
+
+Proof of Claim1\\
+Let $\sca$ irreducible. Let $x,y\in \cala$ with $xy \in \sca$. Assume $x\notin \sca$. Want $\exists n,y^n\in\sca$. For notational simplicity, we may replace $\cala$ by $\cala/\sca$ and reduce to the case $\sca=(0)$. (We want to construct a ascending sequence of ideals.) Consider the ideals $Ann(y^n)$. Theses ideals goes up  as $n$ increases $\Lrta$, $Ann(y^n)=Ann(y^{n+1})$ for some $n$ because $\cala$ is Noetherian. Then we know, $xy=0$, $x\in Ann(y)$, $(x)\subseteq Ann(y)$.\\
+\textbf{subclaim}: $Ann(y)\cap(y)=0$.\\
+ Assuming the subclaim,(since $(0)$ is irreducible) deduce that either $Ann(y)=(0)\Lrta x\in (0)$ or $(y^n)=(0)\Lrta y^n=0$.
+ Now we turn to prove the subclaim: Let $z\in Ann(y)\cap(y^n)$. Then $z=y^n t, t\in \cala $ and $zy=0\Lrta t y^{n+1}=0\Lrta t\in Ann(y^{n+1})=Ann(y^n)\Lrta z= t y^n=0$. This finishes the proof of subclaim thus also the proof of Claim1.
+
+ \textbf{Calim2}: $\cala$ Noetherian, $S:=\{\text{ideals in $\cala$ that are finite intersection of irreducible }ideals\}$ $\Lrta S=\{\text{ideals in $\cala$}\}$. \\
+ Proof of Claim2: Consider the complement $S^c=$\{idaels in $\cala$ that are not finite intersections of irreducible ideals\}. Want: $S^c=\emptyset$. If not, then it contains a maximal element $\sca$. Claim $\sca\neq (1)$, because $\sca$ not irreducible. 
+
+ $\Lrta\sca=\scb\cap \scc,\scb\supsetneq\sca, and \scc\supsetneq \sca$
+
+ $\sca$ maximal in $S^c$, $\scb, \scc\notin S^c$. $\Lrta \scb,\scc\in S$. So $\scb$ and $\scc$ are finite intersections of irreducible ideals $\Lrta\sca=\scb\cap\scc$ is a finite intersection of irreducible ideals. contradiction.
+Alternatively, by Noetherian induction, it suffice to show if $\sca$ has the property that \textbf{all strictly larger ideals $\scb\supsetneq \sca$ belongs to $S$} Then $\sca\in S$. If not, then$\sca=\scb\cap\scc, \scc,\scb\supsetneq \sca\Lrta \scb,\scc\in S$. conclude as before.
+\end{proof}
+
+Basics on primary ideals:\\
+\begin{lemma}
+Let $\scq$ primary. Then $\scp:=rad(\scq)$ is prime. It is the smallest prime containing $\scq.$
+\end{lemma}
+\begin{proof}
+It suffices to show $\scp$ is prime. ($\scp$= intersection of all prime ideals containing $\scq$, hence contained in any such prime, hence is the minimal such prime.) Let $x,y\in\cala$, $xy\in\scp,x\notin \scp$. Want $y\in\scp$.\\
+ $(xy)^n\in\scq$ for some $n$. $x^n\notin\scq\Lrta (y^n)^m\in\scq $ for some $m$$\Lrta  y\in\scp$.
+\end{proof}
+\begin{dfn}
+If $\scq$ is primary with radical $\scp$, we call $\scq$ \textbf{$\scp$-primary}.
+\end{dfn}
+\begin{lemma}
+If $\scq_1,..,,\scq_n$, $\scp$-primary, then $\scq=\scq_1\cap...\cap \scq_n$ is $\scp$-primary.
+\end{lemma}
+\begin{proof}
+Read $\scq_1\cap...\cap\scq_n=rad(\scq_1)\cap...\cap rad(\scq_n)=\scp\cap...\cap \scp=\scp$. Then it left to show $\scq_1\cap...\cap\scq_n$ is primary. 
+
+Suppose $xy\in\scq, x\notin \scp$. Want $y\in \scq$. We have $xy\in \scq_i,x\notin\scp\Lrta y\in \scq_i\forall i\Lrta y\in\scq$
+\end{proof}
+
+Let $\scp$ prime. In general, a $\scp$-primary ideal $\scq$ need not be a power of $\scp$, and a power of $\scp$ need not be primary. For example:
+If $\scm$ maximal ideal, $\scq$ any ideal, and $\scm=rad(\scq)$, then $\scq$ is primary.
+\begin{proof}
+Then $\scm/\scq=Nil(\cala/\scq)$ is both a maximal ideal and the intersection of all prime ideals $\Lrta\cala/\scq$ has exactly one prime ideal, $\scm/\scq$. $(\cala/\scq,\scm,\scq)$ is a local ring. To show that $\scq$ is primary, we maust show any zero divisors in $\cala/\scq$ is Nilpotent (belong s to $Nil(\cala/\scq)=\scm/\scq$) In other words, want if $x\in\cala/\scq,x\notin\scm/\scq$, then $x$ not a zero divisor. Because $x\in\cala/\scq adn x\notin \scm/\scq\Lrta \cala/\scq $is local ring with unique prime $\scm/\scq\Lrta x$ is a unit.
+\end{proof}
+
+\begin{lemma}
+$\scm$ maximal,$\Lrta\scm^n$ is $\scm$-primary $\forall n$
+\end{lemma}
+\begin{ex}
+$\scm=(X,Y)\subseteq K[X,Y]\Lrta \scm^n$ is primary.
+\end{ex}
+\begin{ex}
+$\scq=(X^2,Y)\subseteq K[X,Y]$ is $\scm$-primary.
+\end{ex}
+\begin{ex}
+$\sca=\prod^J_{j=1}(X-z_j)^{n_j}\subseteq \cplx[X]$ for some distinct $z_1,...,z_J\in\cplx$. Then $\sca=\scq_1\cap...\cap\scq_J$, $\scq_j=((X-z_j)^{n_j})$ $\scp_j=rad(\scq_j)=(X-z_j)$ 
+\end{ex}
+\begin{ex}
+$\scq_1=(X,Y)^2=(X^2,XY,Y^2)\subseteq K[X,Y],\scp=(X,Y)$. $\scq_2=(Y)\Lrta \scp_2=(Y)$
+
+$\sca=\scq_1\cap\scq_2=(XY,Y^2)$
+\end{ex}
+
+How do we talk about the uniqueness of primary decomposition?
+Sometimes you shrink a primary decomposition $\scq=\scq_1\cap...\cap\scq_n$. $\scp_j=rad(\scq_j)$ 
+\begin{enumerate}[label=(\alph*)]
+\item If $\scp_i=\scp_j$ for some $i\neq j$, then we can replace $\scq_i$ with $\scq_i\cap\scq_j$ and delete $\scq_j$.
+\item $\scq_j\supseteq \cap_{i:i\neq j}\scq_j$, then we can delete $\scq_j$.
+\end{enumerate}
+\begin{dfn}
+If we can't do (a) or (b), we call the resulting decomposition \textbf{minimal}. Let $\sca$ ideal, we define $Ass(\sca):=\{\text{prime ideals of the form $rad(\sca:x)$ for some $x\in\cala$}\}$ to be \textbf{the set of associated ideals of $\sca$}.(recall $y\in(\sca:x)\Llrta y$ maps $x$ into $\sca\Llrta yx\in\sca$ )
+\end{dfn}
+
+\begin{thm}
+Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=Ass(\sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
+\end{thm}
+
+\begin{lemma}
+Let $\scq$ $\scp$-primary, $x\in\cala$.\\
+
+ $x\in\scq\Lrta(\scq:x)=(1)$
+
+ $x\notin\scq\Lrta (\scq:x)$ is $\scp$-primary.
+
+ $x\notin\scp\Lrta (\scq:x)=\scq$
+\end{lemma}
+
+We first show that the lemma leads to the theorem.
+\begin{proof}
+$\{p_j\}\supseteq Ass(\sca)$. Let $x\in\cala$ s.t. $rad(\sca:x)=\scp$ is prime. want $\scp=$some $\scp+j$. $rad(\sca:x)=\cap rad(\scq_j:x)=\cap_{x\notin\scq_j}\scp_j\Lrta\scp=$some $\scq_j$
+>>>>>>>>1
+\end{proof}
 
 
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  24 OCT 2017 17:41
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  26 OCT 2017 15:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,21 +956,53 @@ $\OML/cmm/m/it/10.95 S$ \OT1/cmr/m/n/10.95 max-i-mal al-ge-braic in-de-pen-dent
 mr/m/n/10.95 )$
  []
 
-[49] [50] [51] [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2375.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2375.
+[49] [50] [51]
+Overfull \hbox (0.27327pt too wide) in paragraph at lines 2363--2368
+\OT1/cmr/m/n/10.95 Assuming the sub-claim,(since $(0)$ is ir-re-ducible) de-duc
+e that ei-ther $\OML/cmm/m/it/10.95 Ann\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 
+y\OT1/cmr/m/n/10.95 ) =
+ []
+
+
+Overfull \hbox (89.16655pt too wide) in paragraph at lines 2369--2371
+[]\OT1/cmr/bx/n/10.95 Calim2\OT1/cmr/m/n/10.95 : $\OMS/cmsy/m/n/10.95 A$ \OT1/c
+mr/m/n/10.95 Noethe-rian, $\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 := \OMS/cms
+y/m/n/10.95 f[]\OML/cmm/m/it/10.95 ideals\OMS/cmsy/m/n/10.95 g$
+ []
+
+[52]
+Underfull \hbox (badness 10000) in paragraph at lines 2378--2379
+
+ []
+
+[53]
+Overfull \hbox (119.19717pt too wide) in paragraph at lines 2429--2430
+\OT1/cmr/m/it/10.95 tion \OT1/cmr/bx/it/10.95 min-i-mal\OT1/cmr/m/it/10.95 . Le
+t $\U/euf/m/n/10.95 a$ \OT1/cmr/m/it/10.95 ideal, we de-fine $\OML/cmm/m/it/10.
+95 Ass\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 a\OT1/cmr/m/n/10.95 ) := \OMS/cmsy/m
+/n/10.95 f[]g$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2437--2438
+
+ []
+
+[54]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2473.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2473.
  (./CA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2375.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2375.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2375.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2473.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2473.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2473.
  ) 
 Here is how much of TeX's memory you used:
  22165 strings out of 493706
  412406 string characters out of 6145769
- 470667 words of memory out of 5000000
+ 469667 words of memory out of 5000000
  25185 multiletter control sequences out of 15000+600000
  17739 words of font info for 70 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,15n,84p,934b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CA.pdf (52 pages).
+Output written on CA.pdf (54 pages).
