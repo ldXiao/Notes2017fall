@@ -668,11 +668,179 @@ A representable functor $G$\{$:\calc$-algebra\} $\lrta$\{Groups\}, $\calb\longma
 \end{dfn}
 
 
+\subsection{Application of the fact that differential Galois group is a algebraic group}
 
+laast week: $\calr/\calk$ Picard-Vessiot extension with Galois group $G=GL_n(\calc)$. The main message of last week is that $G$ is a algebraic group. you can see it in different ways.
+$$
+G=Spec(\cala),
+$$
+where $\cala$ is a Hopf Algebra. Or equivalently, we can see $G$ as a functor:
+$$
+\{\calc-\text{algebra}\}\lrta\{\text{Groups}\}
+$$
+$$
+\calb\longmapsto G(\calb)=Hom_{\calc-\alg}(\cala,\calb).
+$$
+Call \textbf{dimension} of $G$ the transcendence degree of $\cala$ over $\calc$.
+$$
+dim(G)\leq n^2
+$$
+This notion of dimension coincides with the intuitive ideas, and with actual dimension as a complex variety if $\calc=\cplx$.
 
+denote by $G_\calk$ the base-change of $G$ to $\calk$, i.e.
+$$
+G_\calk=Spec(\calk\otimes\cala)
+$$
+$$
+\{\calk-\text{alg}\}\lrta\{Groups\}
+$$
+$$
+\call\longmapsto Hom_\calk(\calk\otimes \cala,\call)=Hom_{\calc}(\cala,\call).
+$$
 
+Set $X=Spec(\calr)$, and consider a functor from $\calk$-algebra to sets:
+$$
+\{\calk-\text{alg}\}\lrta\{Sets\}
+$$
+$$
+\call\longmapsto Hom_\calk(\calr,\call)
+$$
+and in fact, for every $\calk$-algebra $\call$, the group $G_\calk(\call)$ acts on the set $X(\call)$
+\[
+\begin{tikzcd}
+G_\calk(\call)\times X(\call)\ar[d,equal]\ar[r]& X(\call)\ar[d,equal]\\
+Hom_\calc(\cala,\call)\times Hom_\calk(\calr,\call)\ar[d,equal]\ar[r]& Hom_{\calk}(\calr,\call)\ar[d,equal]\\
+G(L)\times Hom_\call(\calr\otimes \call,\call)\ar[r] & Hom_\call(\calr\otimes \call,\call)
+\end{tikzcd}
+\]
+where $G(\call)=Aut(\calr\otimes \call|_\call)$
+$$
+(g,x)\longmapsto[\calr\otimes\call\overset{g}{\lrta}\calr\otimes \call\overset{x}{\lrta}\call]
+$$
+This action is natural in $\call$, An action of the algebraic group $G$ on the algebraic variety $X$.
 
+\begin{thm}
+For every $\calk$-algebra $\call$ either $X(\call)=\emptyset$ or $G(L)$ acts simply transitively on $X(\call)$. In other words:
+$$
+G\times X\lrta G\times X
+$$
+$$
+(g,x)\longmapsto (g,gx)
+$$
+is a bijection for all $\call$, i.e. an isomorphism of functors or an isomorphism of affine algebra varieties. $X$ is a $G$-torsor.
+\end{thm}
+\begin{cor}
+$dim_\calc(G)=dim_\calk(G_\calk)=dim_\calk(X)=tr.deg(\calr/\calk)$
+\end{cor}
+\begin{ex}
+As an illustration: $\calk=\cplx(t),\calr=\cplx(1,log(t))$. remember that 
+$$
+G=\begin{pmatrix*}
+1 & *\\
+0& 1
+\end{pmatrix*}
+$$
+and $dim(G)=1$, then $tr.deg(\cplx(t,\log(t)))=1\Lrta \log (t) $ is not algebraic over $\cplx(t)$ 
+\end{ex}
 
+\begin{exercise}
+Consider similarly, $\calr=(t,\exp(t))$, $G=?$
+\end{exercise}
+
+\section{The Galois-correspondence of differential equations}
+Recall our setting: $\calk$ differential field, $\calc$ is constants, $\calc=\overline{\calc}$ with $char =0$
+\begin{thm}
+Let $\calr/\calk$ be a Picard-Vessiot extension, with Galois group $G$. Set $\call=frac(\calr)$. 
+$$
+\left\{
+\begin{aligned}
+\text{Subfields $M\subseteq \call$}\\
+\text{containing $\calk$, stable}\\text
+\text{under differentiation}
+\end{aligned}
+\right\}
+\Longleftrightarrow
+\left\{
+\begin{aligned}
+\text{algebraic subgroups  $H\subseteq G$}\\
+\end{aligned}
+\right\}
+$$
+$$
+\begin{aligned}
+&M\longmapsto Gal(\call/M)\subseteq Gal(\call/\calk)=G\\
+&\call^H\longmapsfrom H
+\end{aligned}
+$$
+where $\call^H$ is the subfield of $\call$ which is fixed under every element of $H$
+There maps are bijection inverse o each other.
+
+If $N\subseteq G$ is normal subgroup, then the map $G\lrta Gal(\call^N/\calk)$ is surjective, and $\call^N$ is a Picard-Vessiot extension with Galosi group $G/N$.
+\end{thm}
+\begin{prop}
+In the setup of the theorem
+$$
+L^G=\calk
+$$
+\begin{proof}
+The inclusion $\supseteq$ is evident. For the converse inclusion. Pick $x\in \call,x\notin\calk$ and we have to produce $g\in G$ with $gx\neq x$. Set $x=\frac{p}{q}$, $p,q\in\calr,q\neq 0$. Consider $r=p\otimes q-q\otimes p\in\calr\otimes\calr$. 
+
+Two easy facts:
+$r\neq 0$(because $\frac{p}{q}\notin\calk$) and $\calr\otimes \calr$ has no nilpotents (Char=0)
+
+Choose a maximal differential ideal $J$ in $\calr\otimes\calr[1/r]$. Have tow canonical morphisms of differential algebras
+$$
+\calr\overset{\varphi_1}{\lrta} \frac{(\calr\otimes\calr)[1/r]}{J}\overset{\varphi_2}{\longleftarrow}\calr
+$$
+$$
+a\longmapsto (a\otimes1),(1\otimes b)\longmapsfrom b
+$$
+$\varphi_1,\varphi_2$ are injective ($\calr$ simple) and images of $\varphi_1,\varphi_2$ are equal (c.f. proof of unicity of P-V-extension) say $S$
+\[
+\begin{tikzcd}
+\calr\ar[r,"\varphi_1"]\ar[rr,swap,bend right,"g=\varphi^{-1}_2\circ \varphi_1"] & S & R\ar[l,swap,"\varphi_2"]
+\end{tikzcd}
+\]
+$g\in Gal(\calr/\calk)=G$. The class of $r$ in $\calr\otimes\calr(1/r)/J$ is the unit 
+$$
+\begin{aligned}
+0\neq &[p\otimes p-q\otimes p]=\varphi_1(p)\varphi_2(q)-\varphi_1(q)-\varphi_2(p)\\
+&= \varphi_1(p\cdot(g q))-\varphi_1(q\cdot(g p))\\
+&\Lrta p \cdot g q \neq q \cdot g p\\
+& x\neq g x
+\end{aligned}
+$$
+\end{proof}
+\end{prop}
+
+\section{local theory of differential equations}
+Setups: $\calc=\overline{\calc}$ field of $char=-$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.a. $xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=frac( \calc[[t]])???$ with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
+
+Ingredients to classification:
+\begin{enumerate}
+\item 
+Set $\mathfrak{D}=\calk[\pd]$ the noncommutative ring of polynomial expressions differential operators
+$\call=a_n\pd^n+a_{n-1}\pd^{n-1}+...+a_0$. $\mathfrak{D}=$the ring of differential operators. multiplication: $\pd\cdot a =a'+a\pd,a\in\calk$. Differential modules over $calk$ are the same as left $\mathfrak{D}-$modules. Given $\cal\in\mathfrak{D}$, get a $\mathfrak{D}-$module
+$$
+\calk[\pd]/\calk[\pd]\cdot \call=\mathfrak{D}/\mathfrak{D}L
+$$
+This $\mathfrak{D}-$modules is the differential module of the equation $L(u)=0$.
+\item Finite field extension of $\calk$. Let $m\geq 1$ integer. Set $\calk_m=\calc((t^{1/m}))=\calc((t)[s])/\lgl s^m-t\rgl$. The field extension $\calk_m/\calk$ is Galois with group $\intg/m\intg$. For $[a]\in\intg/m\intg$ consider the automorphism
+ $$
+ \calk_m\overset{\epsilon(a)}{\lrta}\calk_m
+ $$
+ $$
+ t^{1/m}\longmapsto \xi^a_m\cdot t^{1/m},
+ $$
+ where $\epsilon:\intg/m\intg\overset{\cong}{\lrta}Gal(\calk_m/\calk)$ isomorphism. 
+\end{enumerate}
+If $n|m,$ then $\calk_n\subseteq \calk_m.$ Can consider $\overline{\calk}=\cup_{m\geq 1}\calk_m$.
+\begin{thm}
+$\overline{\calk}$ is algebraically closed!
+$$
+Gal(\overline{\calk}|\calk)=lim_m \intg/m\intg=\widehat{\intg}
+$$
+\end{thm}
 
 
 
