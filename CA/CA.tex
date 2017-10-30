@@ -502,7 +502,7 @@ Properties: Let $\sca, \scb\subset A$ be ideals \\
 (iv) for ideals $(\sca_i)_{i\in I}\subset A$, $(\cap_{i\in I}\sca_i:\scb)=\cap_{i\in I}(\sca_i:\scb)$\\
 (v) for ideals $(\scb_i)_{i\in I}\subset A$ , $(\sca:\sum_{i\in I }\scb_i)=\cap_{i\in I} (\sca:\scb_i)$.\\
  
-\begin{dfn}
+\begin{dfn}\label{def:extention_contraction}
 Let $\sca\subset A$ be an ideal $f: A\rightarrow  B$ a ring homomorphism. We define the \textbf{extension} of $\sca$ by $f$ to be the ideal 
 $$
 \sca^e:=f_{*}(\sca):=B f(\sca)
@@ -513,7 +513,8 @@ $$
 \scb^c:=f^*(\scb):=f^{-1}(\scb)
 $$
 \end{dfn}
-
+{\color{red} By definition, the extension and contraction always preserves inclusion $\subset$, but it does not necessarily preserve the proper inclusion $\subsetneq$}
+\begin{prop}\label{prop:properties_extension_contractino}
 Properties: Let $f: A\rightarrow B$ be a ring homomorphism , $\sca\subset A$ $\scb\subset B$ ideals. Then :\\
 (i) $\sca\subset f^*f_*(\sca)=\sca^{e c}$,$\scb\supset f_{*}f^*(\scb)=\scb^{ce}$.\\
 (ii) $f^*(\scb)=f^* f_*f^*(\scb), f_*(\sca)=f_* f^*f_*(\sca)$.\\
@@ -526,6 +527,7 @@ $$
 E=\{\scb\subset B| f_* f^*(\scb)=\scb\}.
 $$ 
 And $f_*: C\rightarrow E$ is a bijection with inverse $f^*$.
+\end{prop}
 \begin{proof}
  For (i), $\sca\subset f^{-1}f(\sca)\subset f^{-1}f_{*}(\sca)=f^{*}f_*(\sca)$. For (ii) $\scb \supset f(f^{-1}(\scb))$ and $\scb$ is an ideal so $\scb \supset f_{*}f^*(\scb)$. Part (iii) is left as an exercise.
 \end{proof}
@@ -1591,6 +1593,9 @@ $$
 \end{aligned}
 $$
 
+\begin{rmk}
+{\color{red}The above definition does not exclude the possibility that $S$ contains zero. But if $0\in S$ then we trivially have $\frac{1}{1}=\frac{0}{1}$, thus $S^{-1}\cala=\{0\}$}.
+\end{rmk}
 
 We say $S^{-1}\cala$ is \textbf{localization of $\cala$ with respect to $S$}.
 When $\cala$ is an integral domain, $S=\cala-\{0\}$ is multiplicative closed, the $S^{-1}\cala=Frac(\cala)$.
@@ -1607,15 +1612,14 @@ It has to following property
 \end{lemma}
 \begin{proof}We can easily check that $\iota$ thus defined is indeed a ring morphism.
 \begin{enumerate}[label=(\alph*)]
-\item  $s\in S$. $\iota(s)=s/1$ and $s/1\cdot 1/s=1$, then $s$ is a unit.
-\item $a\in Ker(\iota)=\{b\in \cala|\frac{b}{1}=\frac{0}{1}\}$ $\Longleftrightarrow$ $\exists t\in S: t(a1-01)=ta=0\Llrta a\in\{\text{Zero divisors in }\cala\}$.
+\item  $s\in S$. $\iota(s)=s/1$ and $s/1\cdot 1/s=1$, then $s$ is a unit in $S^{-1}\cala$.
+\item $a\in Ker(\iota)=\{b\in \cala|\frac{b}{1}=\frac{0}{1}\}$ $\Longleftrightarrow$ $\exists t\in S: t(a1-01)=ta=0.$
 \item  derived from (a) and (b).
-\item $S^{-1}\cala=\{0\}$ $\Longleftrightarrow$ $\frac{0}{1}=\frac{1}{1}$ $\Llrta$  there exists an element $t\in S$ s.t. $t\cdot1=0$, $\Longleftrightarrow S\ni 0$.
-\item ``$\Lrta$'' Suppose $\cala\neq \{0\}$, then $\iota $ is isomorphism $\Llrta$  $\iota$ is surjective and injective $\Llrta$ $\forall \frac{a}{s}\in S^{-1}\cala: \exists c\in \cala\ s.t.\ \frac{a}{s}=\frac{c}{1}$ and $S$ is has no zero divisors. Then we know, $\frac{1}{s}=\frac{c}{1}\Lrta\exists  t(s\cdot c-1)=0$, and by the fact $S$ has no zero divisors $s\cdot c=1$, which means $S\subseteq \cala^{\times}$.\\
+\item $S^{-1}\cala=\{0\}$ $\Longleftrightarrow$ $\frac{0}{1}=\frac{1}{1}$ $\Llrta$  there exists an element $t\in S$ s.t. $t\cdot1=0$, $\Longleftrightarrow t=0\in S$.
+\item ``$\Lrta$'' Suppose $\cala\neq \{0\}$, then $\iota $ is isomorphism $\Llrta$  $\iota$ is surjective and injective. The surjectivity is equivalent to $\forall \frac{a}{s}\in S^{-1}\cala: \exists c\in \cala\ s.t.\ \frac{a}{s}=\frac{c}{1}$ while the injectivity is equivalent to $S$ has no zero divisors according to (c). Then we know, $\frac{1}{s}=\frac{c}{1}\Lrta\exists t\in S,\ \text{such that }\  t(s\cdot c-1)=0$, and by the fact $S$ has no zero divisors $s\cdot c=1$, which means $S\subseteq \cala^{\times}$.\\
 ``$\Llta$'' Assume $\cala\neq\{0\}$. $S\subseteq\cala^\times$, then $S$ does not contain any zero divisors. $\forall \frac{a}{s}\in S^{-1}\cala, \exists v\in S \text{ s.t. } sv=1$. Then $ \frac{a}{s}=\frac{av}{1}\in Im(\iota)$, because $a s v=a$.
 
-
-
+If $\cala=\{0\}$, the claim is trivially true.
 \end{enumerate}
 \end{proof}
 
@@ -1629,7 +1633,7 @@ Then the natural map $j:S^{-1}\cala\lrta B$ is an isomorphism $\frac{a}{s}\mapst
 \end{lemma}
 \begin{proof}
 $j$ is well-defined:
-Say $\frac{a}{s}=\frac{a'}{s'}$. Thus $\exists t\in S, a s' t=a' s t/$. Then $(a(x)s(x)-a'(x)s'(x))t(x)=0$, where $t(x)\neq0\forall x\in U$. Then by the properties of real numbers $\frac{a(x)}{s(x)}=\frac{a'(z)}{s'(x)}$.
+Say $\frac{a}{s}=\frac{a'}{s'}$. Thus $\exists t\in S, a s' t=a' s t/$. Then $(a(x)s(x)-a'(x)s'(x))t(x)=0$, where $t(x)\neq0\forall x\in U$. Then by the properties of real numbers $\frac{a(x)}{s(x)}=\frac{a'(x)}{s'(x)}$.
 
 Try defining $k:B\lrta S^{-1}\cala,\ b\longmapsto \tilde{b}/1$, where
 $$
@@ -1701,30 +1705,33 @@ This is guaranteed, $\exists t\in S: as' t=a's t$ $\Lrta (f(a)f(s')-f(a')f(s))f(
 Caution that if $\scp=(f)$, usually $\cala_{(f)}\neq \cala_{f}$
 \end{ex}
 
-Consider $\varphi:\cala\lrta\calb$ and $\sca\subseteq \cala, \scb\subseteq \calb$. We have defined the extension and contraction of ideals as $\scb^{c}=\varphi^{*}(\sca):=\varphi^{-1}(\scb)$ and $\sca^{c}=\varphi_*(\sca):=\calb\varphi(\sca)$ \textbf{Notice that 
+Consider $\varphi:\cala\lrta\calb$ and $\sca\subseteq \cala, \scb\subseteq \calb$. We have defined in (~\ref{def:extention_contraction}) the extension and contraction of ideals as $\scb^{c}=\varphi^{*}(\sca):=\varphi^{-1}(\scb)$ and $\sca^{e}=\varphi_*(\sca):=\calb\varphi(\sca)$ \textbf{Notice that 
 $\scq\subseteq \calb$ prime $\Lrta \varphi^{*}(\scq)$ prime,
 thus $\varphi^*:\text{Spec}(\calb)\lrta \text{Spec}(\cala)$
 }.
 
 Back to the special case $\iota :\cala\lrta S^{-1}\cala$.
-\begin{prop}$S$ is a multiplicative set in a ring $\cala$, then for the canonical morphism $\iota:\cala\lrta S^{-1}\cala$:
+\begin{lemma}\label{lem:prep_localization_iso}
+$S$ is a multiplicative set in a ring $\cala$, then for the canonical morphism $\iota:\cala\lrta S^{-1}\cala$:
 \begin{enumerate}[label=(\alph*)]
-\item $\iota^*:\text{Spec}(S^{-1}\cala))\lrta\{\scp\in \text{Spec}(\cala)|\scp\cap S=\emptyset\}$ is a bijection.
-\item For any ideal $\sca\subseteq \cala$, $\iota_*(\sca)=\{a/s|a\in\sca,s\in S\}$
-\item $\iota_*(\sca)=S^{-1}\cala\Llrta\sca\cap S\neq \emptyset$
-\item For any ideal $\scb\subseteq S^{-1}\cala,$ $\varphi_{*}(\varphi^*(\scb))=\scb$
+\item For any ideal $\sca\subseteq \cala$, $\iota_*(\sca)=\{a/s|a\in\sca,s\in S\}$ and 
+\item {\color{red} For a general ideal $ \scq\subseteq S^{-1}\cala,\iota^*(\scq)\overset{bij}{\llrta}\scq\cap \{\frac{a}{1}|a\in\cala\}$}.
+\item $\iota_*(\sca)= S^{-1}\cala\Llrta\sca\cap S\neq \emptyset$
+\item For any ideal $\scb\subseteq S^{-1}\cala,$ $\iota_{*}(\iota^*(\scb))=\scb$
 \end{enumerate}
-\end{prop}
+\end{lemma}
 \begin{proof}\ 
 \begin{enumerate}[label=(\alph*)]
-    \item $\scq\subseteq S^{-1}\cala$, $\iota^*(\scq)=\iota^{-1}(\scq)$, $\iota(S)\subseteq (S^{-1}\cala)^\times,\Lrta \iota(S)\cap\scq=\emptyset$ otherwise $1\in \scq$ (In fact this part of proof also works for other ideals.)
+   % \item Choose an ideal $\scq\subseteq S^{-1}\cala$, $\iota^*(\scq)=\iota^{-1}(\scq)$, $\iota(S)\subseteq (S^{-1}\cala)^\times,\Lrta \iota(S)\cap\scq=\emptyset$ otherwise $1\in \scq$ (In fact this part of proof also works for other ideals.) and the remaining part for proof of (a) is postponed until the next lecture.
 \item 
-Just check that $S^{-1}\cala \cdot V\subset V$
+ Denote $V:=\iota(\sca)=\{\frac{a}{1}|a\in\sca\}$, and then we check that $\iota_*(\sca):=S^{-1}\cala\cdot V=\{\frac{a}{s}|a\in\sca,s\in S\}$. 
+\item 
+ Similarly, we choose an ideal $\scq\subseteq S^{-1}\cala$ and check that $\iota^*(\scq):=\iota^{-1}(\scq)\ni a\longmapsto \frac{a}{1}\in\scq$ and for an $\frac{b}{1}\in\scq\cap\{\frac{c}{1}|c\in\cala\}\longmapsto b\in\cala$, which gives the one to one correspondence. {\color{red} Notice that $\scq\cap\{\frac{a}{1}|a\in\cala\}$ is not necessarily an ideal in $S^{-1}\cala$.The explicit presentation of $\iota^*$ and $\iota_*$ shows that they preserve the proper inclusion ``$\subsetneq$''}
 \item
  $\iota_*(\sca)=S^{-1}\cala\Llrta \exists a\in \sca, s\in S$ s.t. $a/s=1/1$
-$\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$. Conversely, $\sca\cap S\neq \emptyset$, any $a\in \sca, a=s\in S$, then $a/s=1/1$.
+$\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$. Conversely, $\sca\cap S\neq \emptyset$, any $a\in \sca, a=s\in S$, then $a/s=1/1$. 
 \item 
- $\varphi_*(\varphi^*(\scb))\subset \scb$ in general. For the converse inclusion, if $a/s\in \scb$, then $a/s\cdot s/1=a/1\in\scb$, which means $a\in \varphi^{*}(\scb)\Lrta a/s\in \varphi_{*}(\varphi^*(\scb))$. 
+See Proposition~\ref{prop:properties_extension_contractino}, $\iota_*(\iota^*(\scb))\subset \scb$ in general. For the converse inclusion, if $a/s\in \scb$, then $a/s\cdot s/1=a/1\in\scb$, which means $a\in \iota^{*}(\scb)\Lrta a/s\in \iota_{*}(\iota^*(\scb))$. 
 \end{enumerate} 
 \end{proof}
 
@@ -1737,18 +1744,59 @@ $\iota:\cala\lrta S^{-1}\cala$
 \item $\iota_*\sca=(1)\Llrta \sca\cap S\neq \emptyset$
 \end{itemize}
 \begin{prop}\label{prop:iso_spec_localization}
+$S$ is a multiplicative set in a ring $\cala$, then for the canonical morphism $\iota:\cala\lrta S^{-1}\cala$:
 $$
-\left\{\scp\in \text{Spec}(\cala)|\scp\cap S=\emptyset\ (S\subseteq \cala-\scp)\right\}\longleftrightarrow \left\{\text{Spec}(S^{-1}\cala)\right\}
+\iota_*:\left\{\scp\in \text{Spec}(\cala)|\scp\cap S=\emptyset\ (S\subseteq \cala-\scp)\right\}\longleftrightarrow \left\{\text{Spec}(S^{-1}\cala)\right\}
 $$
-is bijection.
+is bijection with the inverse $\iota^*$.
 \end{prop}
+\begin{proof}
+The proof contains the following points
+\begin{enumerate}[label=(\alph*)]
+\item $\scp$ prime $\Llrta \iota^*\scp$ prime,
+\item $\iota^*\iota_*\scp=\scp$ ,
+\item $\iota_*(\sca)= S^{-1}\cala\Llrta\sca\cap S\neq \emptyset$,
+\item  $\iota_*\iota^*\scq=\scq$ (true for any $\scq$, not necessarily prime),
+\end{enumerate}
+of which (c) and (d) have  been proved in Lemma~\ref{lem:prep_localization_iso}.
 
+See Proposition~\ref{prop:properties_extension_contractino}, $\iota^*\iota_*\scp\supseteq\scp$ is a general fact.
+ For the converse inclusion, $\iota^*\iota_*\scp=\iota^{-1}(\iota_*\scp)\overset{?}{\subseteq}\scp$, choose an $a\in \iota^{-1}(\iota_*\scp)$, $\iota(a)=\frac{a}{1}\in\iota_*\scp\Lrta\exists b\in \scp, s\in S$ s.t. $\frac{a}{1}=\frac{b}{s}\Lrta ast=bt\in \scp$ and $s,t \in S\subseteq \cala-\scp\Lrta a\in \scp$ because $\scp$ is a prime ideal.
+
+ $\scp$ \text{ prime} $\overset{?}{\Lrta}\iota_*\scp$ prime. Consider $\frac{a}{s}\cdot \frac{b}{t}\in \iota_*\scp$, then $\frac{ab}{st}=\frac{c}{u},c\in\scp, u\in S$, then $\exists v\in S:abuv=cstv$, where $uv\in S$ $cstv\in\scp$, $uv\not\in \scp\Lrta ab\in\scp\Lrta$ at least one of $a, b\in\scp\Lrta$ at least one of $\frac{a}{s},\frac{b}{t}\in \iota_*\scp$.
+\end{proof}
+
+With the one to one correspondence, we can see that $\iota^*$ and $\iota_*$ preserve the inclusion, whats more, they preserve ``$\subsetneq$''
 \begin{itemize}
 \item $\scq_1\subseteq \scq_2\Llrta \iota^*\scq_1\subseteq \iota^*\scq_2$
-\item $k(\scp):=Frac(\cala/\scp)$ is called the residue field of the prime ideal $\scp$.
+\item $\scp_1\subseteq \scp_2\Llrta\iota_*(\scp_1)\subseteq\iota_*(\scp_2)$.
 \end{itemize}
-Then the above bijection induces isomorphism $k(\iota^*\scq)\cong k(\scq)$
-
+\begin{dfn}
+$k(\scp):=Frac(\cala/\scp)$ is called the \textbf{residue field at (the point) prime ideal $\scp$}.
+Then the above bijection induces isomorphism $k(\iota^*\scq)\cong k(\scq)$.
+$$
+k(\iota^*\scq)=Frac(\cala/\iota^*\scq)\cong Frac(S^{-1}\cala/\scq)=k(\scq)
+$$
+{\color{red}
+\begin{proof}
+Claim: there is an injective homomorphism form the integral domain $\cala/\iota^*\scq$ to $S^{-1}\cala/\scq$.
+$$
+\begin{aligned}
+\overline{\iota}:&\cala/\iota^* \scq\lrta S^{-1}\cala/\scq\\
+& a+\iota^*\scq\longmapsto \frac{a}{1}+\scq
+\end{aligned}
+$$
+$\iota_*\iota^*\scq=\scq\Lrta Ker(\overline{\iota})=0+\iota^*\scq$. And see for example  
+ \href{https://math.stackexchange.com/questions/2123201/relation-between-integral-domains-with-isomorphic-fraction-fields}{this stack exchange answer}, a injective morphism of integral domains induces a injective morphism of fraction fields. The induced morphism of fraction field is 
+ $$
+ Frac(\overline{\iota}):\frac{a+\iota^*\scq}{b+\iota^*\scq}\longmapsto \frac{\frac{a}{1}+\scq}{\frac{b}{1}+\scq}
+ $$
+ Lets check that it is in fact surjective: 
+ $$
+ \frac{\frac{f_1}{s_1}+\scq}{\frac{f_2}{s_2}+\scq}\sim \frac{\frac{f_1 s_2}{1}+\scq}{\frac{f_2 s_1}{1}+\scq}=Frac(\overline{\iota})\left(\frac{f_1 s_2+\iota^*\scq}{f_2 s_1+\iota^*\scq}\right)
+ $$
+\end{proof}}
+\end{dfn}
 \begin{ex}
 $\cala=\intg$, and $\scp=(p)$ where $p$ is a prime number. $k(\scp)=Frac(\intg/p)=\intg/p$.
 
@@ -1760,24 +1808,11 @@ If $\scp=\scm$ a  maximal ideal.$\Llrta\cala/\scp$ is a field and $k(\scp)=\cala
 \begin{ex}
 $\scp=(y)\subseteq\cala=\cplx[x,y]$, $\cala/\scp\cong \cplx[x], k(\scp)\cong \cplx(x)$
 \end{ex}
-\begin{proof}
-(Proof of the proposition) the proof contains the following points
-\begin{itemize}
-\item $\scp$ prime $\Llrta \iota^*\scp$ prime
-\item $\iota^*\iota_*\scp=\scp$ 
-\item  $\iota_*\iota^*\scq=\scq$ (true for any $\scq$, not necessarily prime)
-\end{itemize}
-
-$\iota^*\iota_*\scp\supseteq\scp$ is a general fact.
- For the converse inclusion, $\iota^*\iota_*\scp=\iota^{-1}(\iota_*\scp)\overset{?}{\subseteq}\scp$. For an $a\in \iota^{-1}(\iota_*\scp)$, $\iota(a)=\frac{a}{1}\in\iota_*\scp\Lrta\exists b\in \scp, s\in S$ s.t. $\frac{a}{1}=\frac{b}{s}\Lrta ast=bt\in \scp$ and $s,t \in S\subseteq \cala-\scp\Lrta a\in \scp$ because $\scp$ is a prime ideal.
-
- $\scp$ \text{ prime} $\overset{?}{\Lrta}\iota_*\scp$ prime. Consider $\frac{a}{s}\cdot \frac{b}{t}\in \iota_*\scp$, then $\frac{ab}{st}=\frac{c}{u},c\in\scp, u\in S$, then $\exists v\in S:abuv=cstv$, where $uv\in S$ $cstv\in\scp$, $uv\not\in \scp\Lrta ab\in\scp\Lrta$ at least one of $a, b\in\scp\Lrta$ at least one of $\frac{a}{s},\frac{b}{t}\in \iota_*\scp$.
-\end{proof}
 
 \begin{ex}
 $S=S_f=\{f^n:n\geq0\}$
 $\Lrta S^{-1}\cala=\cala_f=\cala[1/f]$. Let $\scp\cap S\neq \emptyset\Llrta$ some $f^n\in \scp\llrta f\in \scp$.
-Then $\text{Spec}(\cala_f)\cong \{\scp\in \text{Spec}(\cala)|f\in \scp\}$
+Then $\text{Spec}(\cala_f)\cong \{\scp\in \text{Spec}(\cala)|f{\color{red}\notin} \scp\}$
 \end{ex}
 
 \begin{ex}
@@ -1811,9 +1846,9 @@ The localization at an element has the functorial property, for $f,g\in\cala$
 
 
 \begin{ex}
-$\cala$ an integral domain, $\cala_f\subseteq \cala_{fg}$ ($\frac{a}{(f)^n}=\frac{a g^n}{(fg)^n}$), $Frac(\cala)=\cup_f\cala_f$. For any $\scp\in \text{Spec}(\cala_f)\subseteq\text{\cala}$, $\cala_f\Lrta k(\scp)$ 
+$\cala$ an integral domain, $\cala_f\subseteq \cala_{fg}$ ($\frac{a}{(f)^n}=\frac{a g^n}{(fg)^n}$), $Frac(\cala)=\cup_f\cala_f$. For any $\scp\in \text{Spec}(\cala_f)\subseteq\text{Spec}(\cala)$, $\cala_f\Lrta k(\scp)$ 
 
-$\{f\in \cala:f\notin \scp\}=f\in \cala:f(\scp)\neq 0\}$, where $f(\scp)\in k(\scp)$ is the image of $f$.
+$\{f\in \cala:f\notin \scp\}=\{f\in \cala:f(\scp)\neq 0\}$, where $f(\scp)\in k(\scp)$ is the image of $f$.
 \end{ex}
 
 \textbf{Aside:} $\cala$ is a local ring  $\Llrta\exists !\scm\in \text{Spec}(\cala)\Llrta \exists \text{ideal }\scm\text{ with }1+\scm\subseteq \cala^\times, \scm$ maximal,
@@ -1840,7 +1875,7 @@ $\Lrta$ every prime ideal in $\cala_\scp$ is contained in $\scp_\scp$. using thi
 \end{proof}
 
 \begin{ex}
-$\scp=(p)\subseteq\intg=\cala$, then $\cala_\scp=\intg_{(\scp)}$ is local ring with maximal ideal $\scp_\scp$ generated by image of $\scp$. $\text{Spec}(\intg_{(\scp)})\cong \{\scq \in \text{Spec})(\intg)|\scq\subseteq \scp\}=\{(0),(p)\})$
+$\scp=(p)\subseteq\intg=\cala$, then $\cala_\scp=\intg_{(\scp)}$ is local ring with maximal ideal $\scp_\scp$ generated by image of $\scp$. $\text{Spec}(\intg_{(\scp)})\cong \{\scq \in \text{Spec}(\intg)|\scq\subseteq \scp\}=\{(0),(p)\})$
 
 For residue field $\intg_{(p)}/\scp_\scp\cong \intg/(p)$, this isomorphism is by the first part of the first prop of today's lecture. And in general
 $$
@@ -1925,9 +1960,9 @@ Next time: we will focus other local properties i.e.properties of $M$ that depen
 
 
 \subsection{Lecture 9: Localization of Modules}
-
-$S\subseteq \cala$ then we can define  $S^{-1}\cala$.
-Also we define \textbf{localization of modules:} $S^{-1}M\cong S^{-1}\cala\otimes_\cala M$. The localization of module defines a functor $S^{-1}$:
+Recall that given a multiplicative closed set 
+$S\subseteq \cala$, we can define  $S^{-1}\cala$.
+Also we can define \textbf{localization of modules:} $S^{-1}M\cong S^{-1}\cala\otimes_\cala M$. The localization of module defines a functor $S^{-1}$:
 $f:M\lrta N$, induces a morphism of $S^{-1}\cala$-modules $S^{-1}f:S^{-1}M\lrta S^{-1}N$ and $S^{-1}(f\circ g)=S^{-1}f\circ S^{-1}g$. Moreover $S^{-1}$ is an exact functor:
 $$
 M'\overset{f}{\lrta}M\overset{g}{\lrta}M''
@@ -1961,10 +1996,19 @@ $S^{-1} $ commutes with:
 \begin{itemize}
 \item finite sums 
 \item finite intersections
-\item Kernel
+\item Kernel ($Ker(S^{-1}M\lrta S^{-1}N)\cong S^{-1}(Ker(M\lrta N))$)
 \item quotients 
+\item tensor products ($S^{-1}(M\otimes_\cala N)\cong S^{-1} M\otimes_{S^{-1}\cala}S^{-1}N$)
 \end{itemize} 
->>>>>>>>>1
+\begin{proof}
+We just prove the last one of it by constructing the isomorphism explicitly,
+$$
+\begin{aligned}
+&\frac{x\otimes_\cala y}{s}\longmapsto \frac{x}{s}\otimes_{S^{-1}\cala}\frac{y}{1}\sim \frac{x}{1}\otimes_{S^{-1}\cala}\frac{y}{s}\\
+&\frac{x}{s}\otimes_{S^{-1}\cala}\frac{y}{t}\longmapsto \frac{x\otimes_\cala y}{s t} 
+\end{aligned}
+$$
+\end{proof}
 \end{lemma}
 
 \subsection*{Local Properties}
@@ -1973,8 +2017,8 @@ $M$ is an $\cala$-module
 \textbf{Being zero is a local property} i.e. the followings are equivalent:
 \begin{enumerate}[label=(\alph*)]
 \item $M=0$
-\item $M_\scp=0\forall \scp \text{primes}$
-\item $M_\scm=0\forall \scm \text{maximals}$
+\item $M_\scp=0,\forall \scp \text{ primes }$
+\item $M_\scm=0,\forall \scm \text{ maximals}$
 \end{enumerate}
 \end{lemma}
 Claim 1\\
@@ -1992,7 +2036,7 @@ Then $x\not\in Ker(M\lrta M_\scm)$
 $x\in Ker(M\lrta M_\scm)\Lrta \exists s\in \cala-\scm: sx=0$\\
 $Ann(x)\not \subseteq \scm$
 \end{proof}
-The claim 2 means if $x\notin Ker(M\lrta M_\scm)\Lrta M_\scm\neq 0$
+The Claim2 means if $x\notin Ker(M\lrta M_\scm)\Lrta M_\scm\neq 0$
 
 \begin{proof}
 (of Lemma~\ref{lem:zerpo_local}).
