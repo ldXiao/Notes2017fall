@@ -276,16 +276,20 @@ $$
 \end{dfn}
 Some references require in addition the constants of $\calr$ are $\calc$. We will see this additional requirement can be derived by 1-3 in our setting.
 
-A \textbf{Picard-Vessiot extension of a differential module $M$} is a Picard-Vessiot extension for any of the corresponding matrix differential equation. Exercise: check this.
+A \textbf{Picard-Vessiot extension of a differential module $M$} is a Picard-Vessiot extension for any of the corresponding matrix differential equation. 
+\begin{exercise}
+Check that any two differential equation corresponding to a same differential module give the same P-V extension.
+\end{exercise}
 
 Alternatively, we can define the Picard-Vessiot extension of a differential module $M$ directly. Given a diff. module $(M,\pd_M)$, a Picard-Vessiot extension for $(M,\pd_M)$ is a diff. $\calk$-algebra $\calr$ s.t.
 \begin{enumerate}
 \item $\calr$ is simple
-\item $dim(\pd_{\calr\otimes M})=\dim_\calk M$, where $\pd_{\calr\otimes M}:\calr\otimes M\lrta \calr\otimes M $, $\pd_{\calr\otimes M}(r\otimes m)=r'\otimes m+r\otimes \pd_M m$. 
+\item $dim_\calc(Ker(\pd_{\calr\otimes M}))=\dim_\calk M$, where $\pd_{\calr\otimes M}:\calr\otimes M\lrta \calr\otimes M $, $\pd_{\calr\otimes M}(r\otimes m)=r'\otimes m+r\otimes \pd_M m$. 
 \item $\calr$ is minimal with these properties.
 \end{enumerate}
-
-Exercise: Check that the two definitions of PV extension for diff. module coincide.
+\begin{exercise} 
+Check that the two definitions of PV extension for diff. module coincide.
+\end{exercise}
 
 \begin{ex}
 $\calk=\cplx(t), \calc=\cplx$, Consider the 2nd order homogeneous linear differential equation
@@ -335,7 +339,7 @@ A candidate of the Picard-Vessiot ring is
 $$
 \calr=\cplx(t)[X]
 $$
-the Differential on $\calr$, we just need to set $\pd X=X'=1/t$, in this case, we don't have to adjoint $det(V)^{-1}$. The only thing ledt to check is whether $\calr$ is simple.
+the Differential on $\calr$, we just need to set $\pd X=X'=1/t$, in this case, we don't have to adjoint $det(V)^{-1}$. The only thing left to check is whether $\calr$ is simple.
 
 Yes, $I\subseteq \calr$ diff. ideal. $\calr$ principal $I=f(X)\calr$,  $\pd I\subset I$, where $\pd I=(\pd f)\calr$, derive it sufficiently many times. until $\pd^n f\in \cplx(t)$ $\Lrta \calr=\pd^n f\calr \subseteq I$.  
 \end{ex}
@@ -351,7 +355,7 @@ Let $\calr$ be simple diff. $\calk$-algebra. Then
 The proof of the second part relies on the assumption that $\calc$ is algebraic closed, we will postpone it a little.
 
 Proof of (1) Pick $a\in \calr$ and $a\neq0$. Consider the ideal $I=\{b\in \calr|a^n\cdot b=0, \text{ for some $n\geq1$}\}$. This is a differential ideal. (Check it by derive it and multiply it with $a$)
-If $a$ is not nilpotent, then $1\not\in I$ then $I$ has to be $0$, so $a$ is not a zero divisor.
+If $a$ is not nilpotent, then $1\not\in I$ then $I$ has to be $\{\}0\}$, so $a$ is not a zero divisor.
 It follows that if $a$ is a zero divisor, then $a$ has to be nilpotent.
 
 Let $I\subset \calr$ be the nil radical of $\calr$. Again, $I$ is a diff. ideal. But $1\not \in I$, $I$ has to be $\{0\}$.
@@ -437,16 +441,17 @@ Assumption: $\calk$- differential field with $char 0$, $\calc$ is the set of con
 Let $\calr$ be a Picard-Vessiot ring of a differential equation $u'=Au$ or of a differential module $(M,\pd)$ over $\calk$. We call \textbf{Galois group of the equation/ module} the group 
 $Aut^{\pd}(\calr/\calk)=$\{$\calk$-algebra isomorphism $\varphi:\calr\lrta \calr$ compatible with the differentiations\}. Usually we denote it with $\text{Gal}^{\pd}(\calr/\calk)$
 \end{dfn}
-
-Exercise: Let $\call/\calk$ be a finite Galois extension.
+\begin{exercise}
+Let $\call/\calk$ be a finite Galois extension.
 \begin{enumerate}[label=(\arabic*)]
 \item There is unique differentiation on $\call$ extending that of $\calk$.
 \item Look at $\call$ as a $\calk$-module (differential module), Then a Picard-Vessiot extension fo $\call$ is $\call$ as a $\calk$-algebra.
 \item $\text{Gal}^{\pd}(\call/\calk)=\text{Gal}(\call/\calk)$
 \end{enumerate}
+\end{exercise}
 
 
-$\text{Gal}^\pd(\calr/\calk)$ can be seen as a subgroup of $GL_n(\calc)$
+\textbf{$\text{Gal}^\pd(\calr/\calk)$ can be seen as a subgroup of $GL_n(\calc)$.}
 Let $V\in GL_n(\calr)$ be a fundamental matrix of solutions. Pick $g\in G=\text{Gal}^\pd(\calr/\calk)$. then  $gV=g(v_{ij})$ is again a fundamental matrix of solutions.
 $$
 (gV)'=g V'=g AV=A(gV)
@@ -530,36 +535,39 @@ $$
 \end{ex}
 
 \section{Algebraic Group: A Detour}
-Last week, we introduced differential Galois group, where $\calk$ is a differential field with algebraic closed constants $\calc=\overline{\calc}$. And the Picard-Vessiot extension (for equation or module). $Gal(\calr/\calk)=Aut^\pd_\calk(\calr)$. If $F\in Cl_n(\calr)$ is a fundamental matrix, $g\in Gal(\calr/\calk)$, then $gF $ is again a fundamental matrix, hence of the form $g F= F\gamma(g)$, where $\gamma(g)\in Gl_n(\calc)$.Then we obtain the embedding of $Gal(\calr/\calk)\overset{\gamma}{\lrta}Gl_n(\calc)$.
-
-
-Intrinsic variant:\\
- if $\calr$ is the Picard-Vessiot extension associated to a differential module $M$, then the $Gal(\calr/\calk)$ acts on $\calr\otimes M$ and leaves 
+Last week, we introduced differential Galois group, where $\calk$ is a differential field with algebraic closed constants $\calc=\overline{\calc}$. And the Picard-Vessiot extension (for equation or module). $Gal(\calr/\calk)=Aut^\pd_\calk(\calr)$. If $F\in GL_n(\calr)$ is a fundamental matrix, $g\in Gal(\calr/\calk)$, then $gF $ is again a fundamental matrix, hence of the form $g F= F\gamma(g)$, where $\gamma(g)\in GL_n(\calc)$.Then we obtain the embedding of $Gal(\calr/\calk)\overset{\gamma}{\lrta}GL_n(\calc)$.\\
+\textbf{Intrinsic variant:}\\
+ If $\calr$ is the Picard-Vessiot extension associated to a differential module $M$, then the $Gal(\calr/\calk)$ acts on $\calr\otimes M$ and leaves 
 $$
 V=Ker(\calr\otimes M\overset{\pd}{\lrta}\calr\otimes M)
 $$
-invariant. Which says $Gal(\calr/\calk)$ acts on V, get 
+invariant, notice that the action is $\calc-$linear on $V$. Which says $Gal(\calr/\calk)$ acts on V, get 
 $$
-\gamma:Gal\inj Gl(V)
+\gamma:Gal\inj GL(V)
 $$
 
 \begin{exercise}
-$\calr$ is the Picard-Vessiot extension of $\calk$
-$\call=frac(\calr)$, show that 
+$\calr$ is the Picard-Vessiot extension of $\calk$.
+$\call:=Frac(\calr)$, show that 
 $$
-Aut^\pd_\calk(\call)=Aut^\pd_\calk(\calr)=Gal
+Aut^\pd_\calk(\call)=Aut^\pd_\calk(\calr)=Gal(\calr/\calk)
 $$
+\begin{proof}
+Consider the group $Gal(\call/\calk)$ consisting of the $\calk-$linear automorphism on $\call$, commuting with the differential on $\call$. Each $\sigma\in Gal(\calr/\calk)$ extends to a unique element  $\tilde{\sigma} \in Gal(\call/\calk)$ by $\tilde{\sigma}\left(\frac{u}{v}\right)=\frac{\sigma(u)}{\sigma(v)}$ and
+ $$\pd_\call\left(\tilde{\sigma}\left(\frac{u}{v}\right)\right)=\frac{\pd_\calr (\sigma(u)) \sigma(v)-\pd_\calr (\sigma(v))\sigma(u)}{\sigma(v)^2}=\tilde{\sigma}\left(\frac{u'v-v'u}{v^2}\right)=\tilde{\sigma}\left(\pd_\call\left(\frac{u}{v}\right)\right)$$
+  There is an injective homomorphism $\varphi:Gal(\calr/\calk)\lrta Gal(\call/\calk):\sigma\mapsto \tilde{\sigma}$. $\varphi$ is in fact an bijective homomorphism because $\sigma=\tilde{\sigma}|_\calr$
+\end{proof}
 \end{exercise}
 
 \begin{dfn}
-A subgroup $G\subseteq GL_n(\calc)$ is \textbf{algebraic} if there exists polynomials $f_1,...,f_N\in\calc[x_{11},...,x_{nn},det(X)^{-1}]$ such that $G=\{g\in GL_n(\calc)|f_i(g)=0\forall , i=1,...,N\}$
+A subgroup $G\subseteq GL_n(\calc)$ is \textbf{algebraic} if there exists polynomials $f_1,...,f_N\in\calc[x_{11},...,x_{nn},det(X)^{-1}]$ such that $G=\{g\in GL_n(\calc)|f_i(g)=0\forall i=1,...,N\}$.
 \end{dfn}
 Alternatively, because $\calc[X,...X]$ is Noetherian:
 \begin{dfn}
-A subgroup $G\subseteq GL_n(\calc)$ is \textbf{algebraic} if there exists an ideal $\mathcal{I}\subset \calc[x_{11},...,x_{nn},det(X)^{-1}]$ s.t. $G=\{g\in GL_N(\calc)|f(g)=0,\forall\in \mathcal{I}\}$. One can suppose that $\mathcal{I}=\sqrt{\mathcal{I}}=\{f|f^N\in \mathcal{I}\}$
+A subgroup $G\subseteq GL_n(\calc)$ is \textbf{algebraic} if there exists an ideal $\mathcal{I}\subset \calc[x_{11},...,x_{nn},det(X)^{-1}]$ s.t. $G=\{g\in GL_N(\calc)|f(g)=0,\forall f\in \mathcal{I}\}$. One can suppose that $\mathcal{I}=\sqrt{\mathcal{I}}=\{f|f^N\in \mathcal{I}\}$.
 \end{dfn}
 
-\begin{ex}
+\begin{ex}\ 
 \begin{itemize}
 \item $G=GL_2(\calc), \mathcal{I}=\{0\}$
 \item $SL_2(\calc),\mathcal{I}=\lgl X_{11}X_{22}-X_{12}X_{21}-1\rgl$
@@ -573,9 +581,8 @@ $$
 $\mathcal{I}=\lgl X_{21},X_{11}-1, X_{22}-1\rgl$
 \end{itemize}
 \end{ex}
-
-FACT:\\
-$G=GL_n(\calc)$ algebraic, then $G$ is the zero set of the ideal $\{f\in \calc[X_{11},...,X_{nn}, det(X)^{-1}]|f(g)=0,\forall g\in G\}$, i.e $G=\{g\in GL_n(\calc)|f(g)=0\forall f\in \mathcal{I}\}$. This is wht we call \textbf{Hilbert Nullstalensatz}($\calc$ is algebraically closed.)
+\noindent\textbf{FACT:}\\
+$G=GL_n(\calc)$ algebraic, then $G$ is the zero set of the ideal $\{f\in \calc[X_{11},...,X_{nn}, det(X)^{-1}]\\ |f(g)=0,\forall g\in G\}$, i.e. $G=\{g\in GL_n(\calc)|f(g)=0\forall f\in \mathcal{I}\}$. This is what we call \textbf{Hilbert Nullstellensatz}($\calc$ is algebraically closed.)
 
 Consider the algebra $\calo_G=\cala=\calc[X_{11},...,X_{nn},det(X)^{-1}]/\mathcal{I}$, where we assume $\mathcal{I}=\sqrt{\mathcal{I}}$ is called \textbf{algebra of regular functions } on $G$. Given $a\in \cala, a=[f], f\in \calc[X_{11},...]$ s.t. 
 $$
@@ -588,11 +595,11 @@ only depends on $a$.
 
 
 \begin{thm}
-Let $\calr/\calk$ be a Picard-Vessiot extension with Galois group $G$. The group $G$, as a subgroup of $Gl_n(\calc)$, is an algebraic group.
+Let $\calr/\calk$ be a Picard-Vessiot extension with Galois group $G$. The group $G$, as a subgroup of $GL_n(\calc)$, is an algebraic group.
 \end{thm}
-\begin{proof}
+\begin{proof}(Singer Page 20)
 W.L.O.G, suppose $\calr$ is the P-V ring of an equation $u'=A u$, $A\in M_n(\calk)$.
-$\calr=\calr_0/\mathcal{I}$, where $\calr_0=\calk[X_{11},...,X_{nn}, det(X)^{-1}], X'=AX$ $\mathcal{I}\subseteq \calr_0$ maximal differential ideal. Choose generators $h_1,...,h_N$ of $\mathcal{I}\subseteq \calr_0$. Choose $(e_s)_{s\in S} $ a $\calc$-basis of $\calr$. CAn identify the $G\subseteq GL_n(\calc)$ with the group of matrices $M$ for which 
+$\calr=\calr_0/\mathcal{I}$, where $\calr_0=\calk[X_{11},...,X_{nn}, det(X)^{-1}], X'=AX$. $\mathcal{I}\subseteq \calr_0$ maximal differential ideal. Choose generators $h_1,...,h_N$ of $\mathcal{I}\subseteq \calr_0$. Choose $(e_s)_{s\in S} $ a $\calc$-basis of $\calr$. Can identify the $G\subseteq GL_n(\calc)$ with the group of matrices $M$ for which 
 $$
 \begin{aligned}
 \sigma_M:&\calr_0\lrta \calr_0\\
@@ -601,23 +608,29 @@ $$
 $$
 sends $\mathcal{I}$ to $\mathcal{I}$. Write $\sigma_M(h_i)\mod \mathcal{I}=\sum_{s\in S}c_{i,s}(M)e_s$, where $c_{i,s}(M)$ is uniquely determined. 
 
-Claim: $c_{is}(M)$ is  a polynomial expression in the coefficients $M_{ij}, det(M)^{-1}$.
-i.e. $\exists c_{is}(M)\in \calc[Y_{11},...,Y_{nn},det(Y)^{-1}]$. Knowing this $G=\{M\in GL_n(\calc)|c_{is}(M)=0\}$.
-$G=\{M\in GL_n(\calc)|c_{is}(M)=0\forall i,s\}$= zero set of the ideal generated by $c_{is}(Y)\subseteq\calc[Y_{11},...,det(Y)^{-1}]$.
+\textbf{Claim}: $c_{is}(M)$ is  a polynomial expression in the coefficients $M_{ij}, det(M)^{-1}$.
+i.e. $\exists c_{is}(\_)\in \calc[Y_{11},...,Y_{nn},det(Y)^{-1}]$. Knowing this,
+$$
+G=\{M\in GL_n(\calc)|c_{is}(M)=0\forall i,s\}
+$$
+= $\text{zero set of the ideal generated by $\{c_{is}(Y)\in\calc[Y_{11},...,det(Y)^{-1}],\forall i,s\}$}$.
 
-Verification of claim, For a $\calc$-algebra $\calb$,set $G(\calb)=\{\calb\otimes \calk-\text{linear automorphism of $\calb\otimes \calr$ replacing the differential $(b\otimes x)'=b\otimes x'$}\}\inj GL_n(\calb)$. Alternatively, $G(\calb)$ is the group of these matrices $M\in GL_n(\calb)$ s.t.
+Verification of claim, For a $\calc$-algebra $\calb$,set 
+$\calb\otimes_\calc \calk $ and $\calb\otimes_\calc \calr$ to be the differential ring with the differentiation defined by $\pd_{\calb\otimes \calr}(b\otimes x)'=b\otimes x'$. Then we can define the group $G(\calb)$ to be the group of $\calb\otimes_\calc\calk$-linear automorphism of $\calb\otimes_\calc\calr$ which commutating with the differentiation $\pd_{\calb\otimes\calr}$. 
+
+Alternatively, notice that $\calb\otimes_\calc\calr$ is in fact a $\calb$-algebra. $G(\calb)$ is the group of these matrices $M\in GL_n(\calb)$ s.t.
 $$
 \begin{aligned}
-\sigma_M:&\calb\otimes \calr_0\lrta \calb\otimes_0\\
-& X\longmapsto XM
+\sigma_M:&\calb\otimes \calr_0\lrta \calb\otimes\calr_0\\
+& (X)_{ij}\longmapsto (XM)_{ij}
 \end{aligned}
 $$
-sends $\calb\otimes \mathcal{I}$ to $\calb\otimes\mathcal{I}$
+sending $\calb\otimes \mathcal{I}$ to $\calb\otimes\mathcal{I}$ ($\calb\otimes_\calc \cal{I}$ is the maximal differential ideal in $\calb\otimes_\calc\calr_0$).
 
-Given a morphism $\calb_1\overset{\varphi}{\lrta}\calb_2$, we get a group homomorphismL
+Given a morphism of $\calc-$algebras: $\calb_1\overset{\varphi}{\lrta}\calb_2$, we get a group homomorphism
 $$
 \begin{aligned}
-&G(\calb)\lrta G(\calb_2)\\
+&G(\calb_1)\lrta G(\calb_2)\\
 &M\longmapsto \varphi(M)
 \end{aligned}
 $$
@@ -628,22 +641,28 @@ Notice:
 \calb_2\otimes \calr_0\ar[r,"\sigma_{\varphi(M)}"]&\calb_2\otimes \calr_0
 \end{tikzcd}
 \]
+commutes.
 
-For $M\in GL_n(\calb)$ have $\sigma_M(1\otimes h_i)\mod \calb\otimes \mathcal{I}=\sum_{s\in S}c_{is}(M)e_s$ $c_{is}\in \calb$ unique. Given a morphism $\varphi:\calb=\calb_1\lrta \calb_2$, get: Apply $\varphi$ to relation, or consider relation for $\varphi(M)$, Get $\varphi(c_{is}(M))=c_{is}(\varphi(M))$. Consider the special case $\calb=\calc[Y_{11},..,Y_{nn},det(Y)^{-1}]\overset{\varphi}{\lrta}\calc:Y\mapsto M$. By the previous result we have $c_{is}(M)=c_{is}(\varphi(Y))=\varphi_{is}(c_{is}(Y))$
+For $M\in GL_n(\calb)$ have $\sigma_M(1\otimes h_i)\mod \calb\otimes \mathcal{I}=\sum_{s\in S}c_{is}(M)e_s$ $c_{is}\in \calb$ unique. Given a morphism $\varphi:\calb=\calb_1\lrta \calb_2$, get: Apply $\varphi$ to relation, or consider relation for $\varphi(M)$, get $\varphi(c_{is}(M))=c_{is}(\varphi(M))$. Consider the special case $\calb=\calc[Y_{11},..,Y_{nn},det(Y)^{-1}]\overset{\varphi}{\lrta}\calc:Y\mapsto M$. 
+By the previous result we have $c_{is}(M)=c_{is}(\varphi(Y))=\varphi(c_{is}(Y))$.
+
+ These prove the claim thus conclude the proof that differential Galois group is a algebraic group.
 \end{proof}
 
-Back to the algebraic groups. Let $G\subseteq GL_n(\calc)$ be an algebraic group ideal $\mathcal{I}=\sqrt{\mathcal{I}}$, algebra of functions $\cala$.
+Back to the algebraic groups. Let $G\subseteq GL_n(\calc)$ be an algebraic group (or affine group scheme), with the defining ideal $\mathcal{I}=\sqrt{\mathcal{I}}$ and algebra of regular functions $\cala=\calc[X_{11},...,X_{nn},det(X)^{-1}]/\cal{I}$ (A Hopf algebra). We have an canonical isomorphism of groups:
 $$
 G=Hom_\calc(\cala,\calc)
 $$
 $$
 \begin{aligned}
 g\in G&\longmapsto  [ev_g:\cala\lrta \calc|f\longmapsto f(g)]\\
-&\varphi(x)\mapsfrom [\varphi:\cala\lrta \calc]&
-\end{aligned}
+\varphi(X)&\longmapsfrom [\varphi:\cala\lrta \calc]&
+\end{aligned}.
 $$
+This renders $Hom_\calc(\cala,\calc)$ a group.
 
-For a $\calc$-algebra $\calb$, consider $G(\calb)=Hom_\calc(\cala,\calb)\inj GL_n(\calb):\varphi\longmapsto \varphi(X)$. FACT: $G(\calb)\subseteq GL_n(\calb)$ is a subgroup.
+For a $\calc$-algebra $\calb$, consider $G(\calb)=Hom_\calc(\cala,\calb)\inj GL_n(\calb):\varphi\longmapsto \varphi(X)$. \\
+\textbf{FACT}: $G(\calb)\subseteq GL_n(\calb)$ is a subgroup.
 
 Explanation: Consider the following algebra morphisms:
 $$
@@ -651,26 +670,39 @@ $$
 \calc[X_{11},...,det^{-1}]\lrta \calc[Y_{ij},det(Y)^{-1}]\otimes \calc[Z_{ij},det(Z)^{-1}]=\calc[Y_{ij},Z_{ij},det(Y)^{-1},det(Z)^{-1}]
 \end{aligned}
 $$
->>>>>>>>1
+$$
+\{\text{Polynomial functions: $GL_n(\calc)\lrta \calc$}\}\lrta\{\text{Polynomial functions:$GL_n(\calc)\times GL_n(\calc)\lrta \calc$}\}
+$$
+\[
+\begin{aligned}
+\mu:f & \longmapsto &[(y,z)\mapsto f(y\cdot z)]\\
+\mu:I_{x} &\longmapsto & I_{y}\otimes I_{z}\\
+\end{aligned}
+\]
+and finally, we get
+$$
+\mu:\cala\lrta \cala\otimes_\calc \cala
+$$
+where we have constructed the comultiplication explicitly.
 
 Get from $\mu$ a composition law on $Hom_\calc(\cala,\calb)$, For $\varphi,\psi\in Hom_\calc(\cala,\calb)$, define $\varphi\cdot\psi$ as 
 $$
 \cala\overset{\mu}{\lrta}\cala\otimes\cala\overset{\varphi\otimes\psi}{\lrta}\calb\otimes \calb\overset{multiplication}{\lrta}\calb
 $$
 This is compatible with the group law in $GL_n(\calb)\supseteq G(\calb)=Hom_\calc(\cala,\calb)$. 
-$\cala$ is a \text{Hopf Algebra}
+$\cala$ is a \textbf{Hopf Algebra}.
 
 Then the algebraic group $G$ defines a functor
-$G$\{:$\calc$-algebra\} $\lrta$\{Groups\}, $\calb\longmapsto G(\calb)=Hom_\calc(\cala,\calb)$. 
+$G$\{:$\calc$-algebra\} $\lrta$\{Groups\}, $\calb\longmapsto G(\calb)=Hom_\calc(\cala,\calb)$. I.e. the group functor is represented by $Hom_\calc(\cala,\underline{\ \ })$.
 
 \begin{dfn}
-A representable functor $G$\{$:\calc$-algebra\} $\lrta$\{Groups\}, $\calb\longmapsto G(\calb)=Hom_\calc(\cala,\calb)$ for some unique Hopf algebra $\cala$. is called an \textbf{Affine group scheme.} $G=Spec(\cala)$. Moreover, if $\cala$ is finitely generated,then we call $G$ a \textbf{linear algebraic group over $\calc$}.
+A representable functor $G$\{$:\calc$-algebra\} $\lrta$\{Groups\}, $\calb\longmapsto G(\calb)=Hom_\calc(\cala,\calb)$ for some unique Hopf algebra $\cala$. is called an \textbf{Affine group scheme.} $G=Spec(\cala)$. Moreover, if $\cala$ is finitely generated,then we call $G$ a \textbf{linear algebraic group over $\calc$}.(Which means it can be embedded as a subgroup in $GL_n(\calc)$ for some $n$, for a reference that it has a faithful finite dimensional representation, see Milne page 72 )
 \end{dfn}
 
 
 \subsection{Application of the fact that differential Galois group is a algebraic group}
 
-laast week: $\calr/\calk$ Picard-Vessiot extension with Galois group $G=GL_n(\calc)$. The main message of last week is that $G$ is a algebraic group. you can see it in different ways.
+Last week: $\calr/\calk$ Picard-Vessiot extension with Galois group $G\subseteq GL_n(\calc)$. The main message of last week is that $G$ is a algebraic group. you can see it in different ways.
 $$
 G=Spec(\cala),
 $$
@@ -687,18 +719,20 @@ dim(G)\leq n^2
 $$
 This notion of dimension coincides with the intuitive ideas, and with actual dimension as a complex variety if $\calc=\cplx$.
 
-denote by $G_\calk$ the base-change of $G$ to $\calk$, i.e.
+Denote by $G_\calk$ the base-change of $G$ to $\calk$, i.e.
 $$
-G_\calk=Spec(\calk\otimes\cala)
+G_\calk=Spec(\calk\otimes_\calc\cala)
+$$
+where $\calk\otimes_\calc\cala$ is a Hopf algebra over $\calk$ and then $G_\calk$ defines a functor:
+$$
+\{\calk-\text{algebras}\}\lrta\{Groups\}
 $$
 $$
-\{\calk-\text{alg}\}\lrta\{Groups\}
+\call\longmapsto Hom_\calk(\calk\otimes \cala,\call)=Hom_{\calc}(\cala,\call),
 $$
-$$
-\call\longmapsto Hom_\calk(\calk\otimes \cala,\call)=Hom_{\calc}(\cala,\call).
-$$
+where we have the last line because $Hom_\calk(\calk\otimes_\calc\cala,\call)=Hom_\calc(\cala,Hom_\calk(\calk,\call))$.
 
-Set $X=Spec(\calr)$, and consider a functor from $\calk$-algebra to sets:
+Set $X=Spec(\calr)$, and consider it as a functor from $\calk$-algebra to sets:
 $$
 \{\calk-\text{alg}\}\lrta\{Sets\}
 $$
@@ -710,17 +744,17 @@ and in fact, for every $\calk$-algebra $\call$, the group $G_\calk(\call)$ acts 
 \begin{tikzcd}
 G_\calk(\call)\times X(\call)\ar[d,equal]\ar[r]& X(\call)\ar[d,equal]\\
 Hom_\calc(\cala,\call)\times Hom_\calk(\calr,\call)\ar[d,equal]\ar[r]& Hom_{\calk}(\calr,\call)\ar[d,equal]\\
-G(L)\times Hom_\call(\calr\otimes \call,\call)\ar[r] & Hom_\call(\calr\otimes \call,\call)
+G(\call)\times Hom_\call(\calr\otimes \call,\call)\ar[r] & Hom_\call(\calr\otimes \call,\call)
 \end{tikzcd}
 \]
-where $G(\call)=Aut(\calr\otimes \call|_\call)$
+{\color{red}where $G(\call)=Aut(\calr\otimes_\calk \call|_\call)$} 
 $$
 (g,x)\longmapsto[\calr\otimes\call\overset{g}{\lrta}\calr\otimes \call\overset{x}{\lrta}\call]
 $$
 This action is natural in $\call$, An action of the algebraic group $G$ on the algebraic variety $X$.
 
 \begin{thm}
-For every $\calk$-algebra $\call$ either $X(\call)=\emptyset$ or $G(L)$ acts simply transitively on $X(\call)$. In other words:
+For every $\calk$-algebra $\call$ either $X(\call)=\emptyset$ or $G(\call)$ acts simply transitively on $X(\call)$. In other words:
 $$
 G\times X\lrta G\times X
 $$
@@ -755,7 +789,7 @@ $$
 \left\{
 \begin{aligned}
 \text{Subfields $M\subseteq \call$}\\
-\text{containing $\calk$, stable}\\text
+\text{containing $\calk$, stable}\\
 \text{under differentiation}
 \end{aligned}
 \right\}
@@ -773,7 +807,7 @@ $$
 \end{aligned}
 $$
 where $\call^H$ is the subfield of $\call$ which is fixed under every element of $H$
-There maps are bijection inverse o each other.
+There maps are bijection inverse to each other.
 
 If $N\subseteq G$ is normal subgroup, then the map $G\lrta Gal(\call^N/\calk)$ is surjective, and $\call^N$ is a Picard-Vessiot extension with Galosi group $G/N$.
 \end{thm}
@@ -814,7 +848,7 @@ $$
 \end{prop}
 
 \section{local theory of differential equations}
-Setups: $\calc=\overline{\calc}$ field of $char=-$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.a. $xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=frac( \calc[[t]])???$ with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
+Setups: $\calc=\overline{\calc}$ field of $char=0$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.a. $xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=Frac( \calc[[t]])???$ with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
 
 Ingredients to classification:
 \begin{enumerate}

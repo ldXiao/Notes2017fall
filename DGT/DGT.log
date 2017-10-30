@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  27 OCT 2017 11:56
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  29 OCT 2017 20:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,7 +903,7 @@ d^^8d \U/MnSymbolD/m/n/10.95 ^^@\U/MnSymbolC/m/n/10.95 ^^B
  []
 
 [5] [6] [7] [8]
-Overfull \hbox (0.687pt too wide) in paragraph at lines 428--429
+Overfull \hbox (0.687pt too wide) in paragraph at lines 432--433
 \OML/cmm/m/it/10.95 '[]\OMX/MnSymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 det\OMX
 /MnSymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 V[]\OMX/MnSymbolE/m/n/10.95 ^^8d^^
 8d[] \U/MnSymbolD/m/n/10.95 ^^@$ \OT1/cmr/m/n/10.95 the al-ge-bra in $\OMS/MnSy
@@ -915,73 +915,53 @@ bolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 V[]\OMX/MnSymbolE/m/n/10.95 ^^8d^^8d[]$
  []
 
 [9]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 438.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 442.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 438.
-LaTeX Font Info:    Try loading font information for U+bbm on input line 465.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 442.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 470.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [10] [11]
-Overfull \hbox (77.8053pt too wide) in paragraph at lines 577--579
+[12]
+Overfull \hbox (44.81715pt too wide) in paragraph at lines 584--586
 \OML/cmm/m/it/10.95 G \U/MnSymbolD/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 GL[]\OMX/M
 nSymbolE/m/n/10.95 ^^88\OMS/MnSymbolS/m/n/10.95 C\OMX/MnSymbolE/m/n/10.95 ^^8d$
  \OT1/cmr/m/n/10.95 al-ge-braic, then $\OML/cmm/m/it/10.95 G$ \OT1/cmr/m/n/10.9
 5 is the zero set of the ideal $\OMX/MnSymbolE/m/n/10.95 ^^98\OML/cmm/m/it/10.9
 5 f \U/MnSymbolD/m/n/10.95 > \OMS/MnSymbolS/m/n/10.95 C\OMX/MnSymbolE/m/n/10.95
  ^^@\OML/cmm/m/it/10.95 X[]; :::; X[]; det\OMX/MnSymbolE/m/n/10.95 ^^88\OML/cmm
-/m/it/10.95 X\OMX/MnSymbolE/m/n/10.95 ^^8d[]^^ES\OML/cmm/m/it/10.95 f\OMX/MnSym
-bolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 g\OMX/MnSymbolE/m/n/10.95 ^^8d \U/MnSymb
-olD/m/n/10.95 ^^@
- []
-
-[12]
-Overfull \hbox (8.69576pt too wide) in paragraph at lines 604--607
-[]\OT1/cmr/m/n/10.95 Claim: $\OML/cmm/m/it/10.95 c[]\OMX/MnSymbolE/m/n/10.95 ^^
-88\OML/cmm/m/it/10.95 M\OMX/MnSymbolE/m/n/10.95 ^^8d$ \OT1/cmr/m/n/10.95 is a p
-oly-no-mial ex-pres-sion in the co-ef-fi-cients $\OML/cmm/m/it/10.95 M[]; det\O
-MX/MnSymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 M\OMX/MnSymbolE/m/n/10.95 ^^8d[]
-$\OT1/cmr/m/n/10.95 .
+/m/it/10.95 X\OMX/MnSymbolE/m/n/10.95 ^^8d[]^^E[] 
  []
 
 
-Overfull \hbox (24.25009pt too wide) in paragraph at lines 604--607
-\OT1/cmr/m/n/10.95 i.e. $\U/MnSymbolC/m/n/10.95 §\OML/cmm/m/it/10.95 c[]\OMX/Mn
-SymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 M\OMX/MnSymbolE/m/n/10.95 ^^8d \U/MnS
-ymbolD/m/n/10.95 > \OMS/MnSymbolS/m/n/10.95 C\OMX/MnSymbolE/m/n/10.95 ^^@\OML/c
-mm/m/it/10.95 Y[]; :::; Y[]; det\OMX/MnSymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.9
-5 Y\OMX/MnSymbolE/m/n/10.95 ^^8d[]^^E$\OT1/cmr/m/n/10.95 . Know-ing this $\OML/
-cmm/m/it/10.95 G \U/MnSymbolD/m/n/10.95 ^^@ \OMX/MnSymbolE/m/n/10.95 ^^98\OML/c
-mm/m/it/10.95 M \U/MnSymbolD/m/n/10.95 > \OML/cmm/m/it/10.95 GL[]\OMX/MnSymbolE
-/m/n/10.95 ^^88\OMS/MnSymbolS/m/n/10.95 C\OMX/MnSymbolE/m/n/10.95 ^^8dS\OML/cmm
-/m/it/10.95 c[]\OMX/MnSymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 M\OMX/MnSymbolE
-/m/n/10.95 ^^8d \U/MnSymbolD/m/n/10.95 ^^@
- []
-
-
-Overfull \hbox (288.52357pt too wide) in paragraph at lines 608--609
-[]\OT1/cmr/m/n/10.95 Verification of claim, For a $\OMS/MnSymbolS/m/n/10.95 C$\
-OT1/cmr/m/n/10.95 -algebra $\OMS/MnSymbolS/m/n/10.95 B$\OT1/cmr/m/n/10.95 ,set 
-$\OML/cmm/m/it/10.95 G\OMX/MnSymbolE/m/n/10.95 ^^88\OMS/MnSymbolS/m/n/10.95 B\O
-MX/MnSymbolE/m/n/10.95 ^^8d \U/MnSymbolD/m/n/10.95 ^^@ \OMX/MnSymbolE/m/n/10.95
- ^^98\OMS/MnSymbolS/m/n/10.95 B \U/MnSymbolC/m/n/10.95 a \OMS/MnSymbolS/m/n/10.
-95 K \U/MnSymbolC/m/n/10.95 ^^P []\OMX/MnSymbolE/m/n/10.95 ^^9d \U/MnSymbolA/m/
-n/10.95 0
+Overfull \hbox (12.80936pt too wide) in paragraph at lines 611--613
+[]\OT1/cmr/bx/n/10.95 Claim\OT1/cmr/m/n/10.95 : $\OML/cmm/m/it/10.95 c[]\OMX/Mn
+SymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 M\OMX/MnSymbolE/m/n/10.95 ^^8d$ \OT1/
+cmr/m/n/10.95 is a poly-no-mial ex-pres-sion in the co-ef-fi-cients $\OML/cmm/m
+/it/10.95 M[]; det\OMX/MnSymbolE/m/n/10.95 ^^88\OML/cmm/m/it/10.95 M\OMX/MnSymb
+olE/m/n/10.95 ^^8d[]$\OT1/cmr/m/n/10.95 .
  []
 
 [13]
-Overfull \hbox (59.179pt too wide) detected at line 653
+Overfull \hbox (59.179pt too wide) detected at line 672
 [] []
  []
 
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 664.
+[14]
+Overfull \hbox (77.82384pt too wide) detected at line 675
+\OMX/MnSymbolE/m/n/10.95 ^^98[]^^9d \U/MnSymbolA/m/n/10.95 Ð[]^^@ \OMX/MnSymbol
+E/m/n/10.95 ^^98[]^^9d
+ []
 
-Overfull \hbox (2.6205pt too wide) in paragraph at lines 663--665
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 696.
+
+Overfull \hbox (2.6205pt too wide) in paragraph at lines 695--697
 []\OT1/cmr/m/n/10.95 Then the al-ge-braic group $\OML/cmm/m/it/10.95 G$ \OT1/cm
 r/m/n/10.95 de-fines a func-tor $\OML/cmm/m/it/10.95 G$\OMS/cmsy/m/n/10.95 f\OT
 1/cmr/m/n/10.95 :$\OMS/MnSymbolS/m/n/10.95 C$\OT1/cmr/m/n/10.95 -algebra\OMS/cm
@@ -989,26 +969,38 @@ sy/m/n/10.95 g $\U/MnSymbolA/m/n/10.95 Ð[]^^@$\OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n
 /10.95 Groups\OMS/cmsy/m/n/10.95 g\OT1/cmr/m/n/10.95 ,
  []
 
-[14] [15] [16]
-LaTeX Font Info:    Try loading font information for U+euf on input line 822.
+[15]
+Overfull \hbox (19.77827pt too wide) in paragraph at lines 732--734
+\OT1/cmr/m/n/10.95 where we have the last line be-cause $\OML/cmm/m/it/10.95 Ho
+m[]\OMX/MnSymbolE/m/n/10.95 ^^88\OMS/MnSymbolS/m/n/10.95 K \U/MnSymbolC/m/n/10.
+95 a[] \OMS/MnSymbolS/m/n/10.95 A\OML/cmm/m/it/10.95 ; \OMS/MnSymbolS/m/n/10.95
+ L\OMX/MnSymbolE/m/n/10.95 ^^8d \U/MnSymbolD/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 
+Hom[]\OMX/MnSymbolE/m/n/10.95 ^^88\OMS/MnSymbolS/m/n/10.95 A\OML/cmm/m/it/10.95
+ ; Hom[]\OMX/MnSymbolE/m/n/10.95 ^^88\OMS/MnSymbolS/m/n/10.95 K\OML/cmm/m/it/10
+.95 ; \OMS/MnSymbolS/m/n/10.95 L\OMX/MnSymbolE/m/n/10.95 ^^8d^^8d$\OT1/cmr/m/n/
+10.95 . 
+ []
+
+[16] [17]
+LaTeX Font Info:    Try loading font information for U+euf on input line 856.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-[17] [18] [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 861.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 861.
+[18] [19] [20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 895.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 895.
  (./DGT.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 861.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 861.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 861.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 895.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 895.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 895.
  ) 
 Here is how much of TeX's memory you used:
- 22918 strings out of 493706
- 411621 string characters out of 6145769
- 433292 words of memory out of 5000000
- 25874 multiletter control sequences out of 15000+600000
+ 22919 strings out of 493706
+ 411639 string characters out of 6145769
+ 432292 words of memory out of 5000000
+ 25875 multiletter control sequences out of 15000+600000
  26581 words of font info for 100 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,15n,84p,698b,1073s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on DGT.pdf (19 pages).
+Output written on DGT.pdf (20 pages).
