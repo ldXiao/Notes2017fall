@@ -1811,8 +1811,8 @@ $\scp=(y)\subseteq\cala=\cplx[x,y]$, $\cala/\scp\cong \cplx[x], k(\scp)\cong \cp
 
 \begin{ex}
 $S=S_f=\{f^n:n\geq0\}$
-$\Lrta S^{-1}\cala=\cala_f=\cala[1/f]$. Let $\scp\cap S\neq \emptyset\Llrta$ some $f^n\in \scp\llrta f\in \scp$.
-Then $\text{Spec}(\cala_f)\cong \{\scp\in \text{Spec}(\cala)|f{\color{red}\notin} \scp\}$
+$\Lrta S^{-1}\cala=\cala_f=\cala[1/f]$. Let $\scp\cap S\neq \emptyset\Llrta$ some $f^n\in \scp\leftrightarrow f\in \scp$.
+Then $\text{Spec}(\cala_f)\cong \{\scp\in \text{Spec}(\cala)|f\notin \scp\}$
 \end{ex}
 
 \begin{ex}
@@ -2369,7 +2369,7 @@ $r(\sca)\subseteq I(V(\sca))$, $f\in r(\sca)\Lrta f^n\in \sca\Lrta f^n|_{V(\sca)
 For the converse inclusion recall that $r(\sca)=\cap_{\scp\ni \sca, prime}\scp$. suppose $f\notin  r(\sca) $. Want: $f\notin I(V(\sca))$.Choose $\scp\subseteq \sca,\scp \not \ni f$. Then $0\neq \overline{f}\in \cala/\scp$. $\Lrta (\cala/\scp)_{\overline{f}}=(\cala/\scp)[\frac{1}{\overline{f}}]\neq 0$. Choose a maximal ideal $\scm\subseteq (\cala/\scp)_{\overline{f}}=:\calb$. Set $L:=\calb/\scm$ a field, $L$ is finitely generated $K$-algebra. $\Lrta L/K $ is finite $\Lrta L=K$ because $\overline{K}=K$. Set $X=(X_1,...,X_d)$, $X_j=$ image of $t_j$ in $L$. Check that $f(X)\neq 0,X\in V(\sca)\Lrta f\notin I(V(\sca))$.
 \end{proof}
 
-\subsection*{Primary Decomposition}
+\section{Primary Decomposition}
 Consider $\alpha\in \cala$ a PID. We may write uniquely $\alpha\epsilon (p_1)^{n_1}\cdot \cdot\cdot (p_k)^{n_k}$ where $\epsilon$ unit and $p_j$ distinct  primes and $(\alpha)=(p_1^{n_1})\cap...\cap(p_k^{n_k})$ We call this the primary decomposition of $(\alpha)$. What happens to a general ring?
 
 $\cala$ any ring.
@@ -2444,7 +2444,7 @@ Suppose $xy\in\scq, x\notin \scp$. Want $y\in \scq$. We have $xy\in \scq_i,x\not
 Let $\scp$ prime. In general, a $\scp$-primary ideal $\scq$ need not be a power of $\scp$, and a power of $\scp$ need not be primary. For example:
 If $\scm$ maximal ideal, $\scq$ any ideal, and $\scm=rad(\scq)$, then $\scq$ is primary.
 \begin{proof}
-Then $\scm/\scq=Nil(\cala/\scq)$ is both a maximal ideal and the intersection of all prime ideals $\Lrta\cala/\scq$ has exactly one prime ideal, $\scm/\scq$. $(\cala/\scq,\scm,\scq)$ is a local ring. To show that $\scq$ is primary, we maust show any zero divisors in $\cala/\scq$ is Nilpotent (belong s to $Nil(\cala/\scq)=\scm/\scq$) In other words, want if $x\in\cala/\scq,x\notin\scm/\scq$, then $x$ not a zero divisor. Because $x\in\cala/\scq adn x\notin \scm/\scq\Lrta \cala/\scq $is local ring with unique prime $\scm/\scq\Lrta x$ is a unit.
+Then $\scm/\scq=Nil(\cala/\scq)$ is both a maximal ideal and the intersection of all prime ideals $\Lrta\cala/\scq$ has exactly one prime ideal, $\scm/\scq$. $(\cala/\scq,\scm,\scq)$ is a local ring. To show that $\scq$ is primary, we must show any zero divisors in $\cala/\scq$ is Nilpotent (belongs to $Nil(\cala/\scq)=\scm/\scq$) In other words, want if $x\in\cala/\scq,x\notin\scm/\scq$, then $x$ not a zero divisor. Because $x\in\cala/\scq adn x\notin \scm/\scq\Lrta \cala/\scq $is local ring with unique prime $\scm/\scq\Lrta x$ is a unit.
 \end{proof}
 
 \begin{lemma}
@@ -2475,18 +2475,20 @@ Sometimes you shrink a primary decomposition $\scq=\scq_1\cap...\cap\scq_n$. $\s
 If we can't do (a) or (b), we call the resulting decomposition \textbf{minimal}. Let $\sca$ ideal, we define $Ass(\sca):=\{\text{prime ideals of the form $rad(\sca:x)$ for some $x\in\cala$}\}$ to be \textbf{the set of associated ideals of $\sca$}.(recall $y\in(\sca:x)\Llrta y$ maps $x$ into $\sca\Llrta yx\in\sca$ )
 \end{dfn}
 
-\begin{thm}
+\begin{thm}\label{thm:primary_decomposition}
 Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=Ass(\sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
 \end{thm}
 
-\begin{lemma}
+\begin{lemma}\label{lem:p-primary_ideal}
 Let $\scq$ $\scp$-primary, $x\in\cala$.\\
-
+\begin{enumerate}[label=(\alph*)]
+ \item
  $x\in\scq\Lrta(\scq:x)=(1)$
-
+\item 
  $x\notin\scq\Lrta (\scq:x)$ is $\scp$-primary.
-
+\item 
  $x\notin\scp\Lrta (\scq:x)=\scq$
+\end{enumerate}
 \end{lemma}
 
 We first show that the lemma leads to the theorem.
@@ -2496,13 +2498,186 @@ $\{p_j\}\supseteq Ass(\sca)$. Let $x\in\cala$ s.t. $rad(\sca:x)=\scp$ is prime. 
 \end{proof}
 
 
+\subsection{Lecture 13}
+Recall the 
+First uniqueness theorem for Minimal Primary Decomposition(MPD).
+
+Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=Ass(\sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
+
+$\sca$ decomposable with $\scq_1\cap...\cap \scq_n$ being any of the MPD. take $\scp_i=rad(\scq_i)$
+$Ass(\sca)=\{\scp_1,...,\scp_n\}$
+
+\begin{ex}
+MPD's need not be unique:
+$$
+\begin{aligned}
+\sca&=(xy,x^2)\\
+&=(x)\cap (x,y)^2\\
+& =(x)\cap (x^2,y)
+\end{aligned}
+$$
+but $\scp_1=(x)$ and $p_2=(x,y)$
+\end{ex}
 
 
+And now we come back to the proof of the Lemma~\ref{lem:p-primary_ideal}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item let $y z\in(\scq:x),y\notin (\scq:x)$. 
+
+Want: some $z^n\in(\scq:x)$
+
+Know: $xyz\in\scq,xy\notin\scq$ because $\scq$ is primary $\Lrta$ some $z^n\in\scq$.\\
+$\Lrta(\scq:x)$ is primary.
+\item 
+Want: $rad(\scq:x)=\scq$
+
+Suppose $y^n\in(\scq:x)$
+
+Want: $y\in\scp.$\\
+Know $xy^n\in\scq$, $x\notin\scq\Lrta y\in rad(\scq)=\scp$
+\item 
+$x\notin \scp\Lrta (\scq:x)=\scq$, the $\supseteq$ part is obvious. For the ``$\subseteq$'' suppose $y\in(\scq:x)$, i.e. $xy\in\scq$. Know $x\notin\scp$ because $\scq$ is primary, $\Lrta y\in\scq$
+\end{enumerate}
+\end{proof}
+
+\begin{prop}
+If $\cala$ is Noetherian, then $\exists x\in\cala$ s.t. $(\scq:x)=\scp$ (necessarily $x\notin \scq$)
+\begin{proof}
+$\scp$ finitely generated ideal $x\in\scp\Lrta$ some $x^n\in\scq\Lrta $ some $\scp^n\subseteq \scq$ \\
+Choose $n\geq 1$ minimal with this property. Then $\scp^{n-1}\not\subseteq\scq\Lrta \exists x\in\scp^{n-1},x\notin\scq$.
+
+Claim: $(\scq:x)=\scp$.
+
+``$\subseteq$'': True, because we have seen that $(\scq:x)$ is $\scp$-primary.
+
+``$\supseteq$'': If $y\in\scp$, then $xy\in\scp^n\subseteq \scq\Lrta y\in(\scq:x)$
+\end{proof}
+\end{prop}
+
+\begin{ex}
+$k$ is field, and $\cala=k[t]$, $\scq=(t^N),N\geq 1$, $\scp=(t)$.
+
+$x\in\cala\Lrta x=c t^n+c' t^{n+1}+...,$ where $c\neq 0, n\geq 0, n=:ord_t(x)$
+for example: $x=t^4,+4t^2$, $ord_t(x)=2$
+$\frac{x}{1}\in\cala_\scp$, $\left(\frac{x}{1}\right)=\left(\frac{t^n}{1}\right)$
+
+Then $(\scq:x)=(t^m)$, where $m=\text{max}(N-n,0)$
+
+$x\in\scq\Llrta n\geq N\Llrta m=0$
+
+$x\notin\scq\Llrta m\geq 1\Lrta (\scq:x)$ is $\scp$-primary.
+
+$x\in(t^{N-1}),$ but $x\notin(t^N)\Lrta(\scq:x)=\scp$
+
+$x\notin\scp\Llrta n=0\Llrta m=N\Lrta (\scq:x)=\scq$
+\end{ex}
+
+Now we come to the proof of Theorem~\ref{thm:primary_decomposition}
+\begin{proof}
+Given a MPD $\sca=\scq_1\cap...\cap\scq_n$, $x\in\cala$, we can compute $(\sca:x)=\cap_{j}(\scq_j:x)$
+$$
+rad(\sca:x)=\underset{j:\scq_j\not\ni x}{\cap}\scp_j
+$$
+
+Since this decomposition is minimal, we may find for each $i$ an element $x\in\cap_{j\neq i}\scq_j$, $x\notin\scq_i$\\
+$\Lrta rad(\sca:x)=\scp_i$\\
+$\Lrta \scp_i\in Ass(\sca)$.\\ ($\scq_i\not \subseteq \cap_{j\neq i}\scq_j$) 
+
+Conversely, if $\scp$ is a prime of the form $\scp=rad(\sca:x)$ for some $x$, then $\scp=\cap_{j:\scq_j\not\ni x}\scp_j\Lrta \scp=\scp_j$ for some $j$. $\Lrta Ass(\sca)\subseteq \{\scp_1,...,\scp_n\}$
+\end{proof}
+
+This completes the proof the Theorem~\ref{thm:primary_decomposition}. Moreover, if $\cala$ is Noetherian, we may find for each $i$ an element $x$ with $(\sca:x)=\scp_i$, by applying the final part of the last lemma.
 
 
+\textbf{Note that} $rad(\sca)=\cap\scp_j$ if $\sca=\cap\scq_j$ is a  MPD.
+We want to define 
+\textbf{Zero-divisors modulo $\sca$}, 
+$$
+\begin{aligned}
+Z(\sca)&:=\{x\in\cala|\exists y\in\cala-\sca\ s.t.\ xy\in\sca\}\\
+&=\cup_{y\in\cala-\sca}(\sca:y)\\
+&\overset{(*)}{=}\cup_{y\in\cala-\sca}rad((\sca:y))
+\end{aligned}
+$$
+\begin{proof} of the (*), if some prower $x^n$ of $x$ satisfies $x^m\in(\sca:y)$, i.e. $x^n y\in\sca,$ then we may choose $n\geq 1$ minimal with thei property. Then $x\cdot x^{n-1}y\in \sca$ but $x^{n-1}y \notin \sca$. As $x\in(\sca:x^{n-1}y)\Lrta (*)$
+\end{proof}
+
+\begin{prop}
+$\sca=\cap\scq_j$ MPD,
+$\Lrta Z(\sca)=\cup\scp_j$.
+\begin{proof}
+$rad(\sca:y)=\cap_{j:\scq_j\not \ni y}\scp_j$,\\ $Z(\sca)\subseteq \cup\scp_j$: Let $x\in Z(\sca)$. We want to show that $x$ is contained in some $\scp_j$. The fact that $x\in Z(\sca)\Lrta(\sca:x)\not \subseteq \sca$. On the other hand, we know $(\sca:x)=\cap_j(\scq:x)$ and we know $(\scq_j:x)$ is $\scp_j$-primary ideal if $x\notin\scq_j$, or $(\scq_j:x)=\scq_j$ if $x\notin\scp_j$.
+
+If $x\notin\scp_j\forall j$, then $(\scq_j:x)=\scq_j\Lrta (\sca:x)\cap_{\scq_j}=\sca$, contrary to the hypothesis that $x\in Z(\sca)$.
+
+For the reverse inclusion, suppose $x\notin Z(\sca)$. Want to show that $x\notin\scp_j\forall j$. Alternatively, we might try to show  $\cup\scp_j\subseteq Z(\sca)$.
+
+Recall: give $j$, we can find $y$ s.t. $rad(\sca:y)=\scp_j$. Necessarily, $y\notin\sca$. So if $x\in \scp_j$, then $x\in  rad(\sca:y)\subseteq Z(\sca)$ because $rad(\sca:y)=\cap_{j:\scq_j\not\ni y}\scp_j$ 
+\end{proof}
+\end{prop}
 
 
+A good example for intuition, $\{z_1,...,z_n\}\subseteq k$ where $k$ is a field. $\sca=\cap \scq_j, \scq_k=(t-z_j)^{N_j}$ and $\cala=k[t]$.
+by the theoremm $0\neq x\in\cala\Lrta n_j:=ord_{t-z_j}(x):=$largest $n_j\geq 0$ such that $(t-z_j)^{n_j}$ divides $x$.\\
+Then $x\in Z(\sca)\Llrta \exists j:n_j\geq 1$.\\
+$x\in rad(\sca)\Llrta \forall j, n_j\geq1$.
+\textbf{NB:} $n_j=$ order of vanishing of $x $ at $z_j$, $n_j\geq c\Llrta $ first $c$ Taylor coefficients of $x$ at $z_j$
 
+\begin{dfn}
+$Ass(\sca)\ni \scp$ is either \\
+\textbf{minimal/isolated} is $\scp$ is a minimal element of $Ass(\sca)$ or\\
+\textbf{embedded} if $\scp_1\subsetneq \scp_2\Lrta V(\scp_1)\supseteq V(\scp_2)$ embedded in $V(\scp_1)$.
+\end{dfn}
+\begin{ex}
+$\scp_1=(x), \scp_2=(x,y)$\\
+$\sca=\scp_1\cap\scp_2^2=(xy,x^2)$, $\scp_1$ is isolated/minimal while $\scp_2$ is embedded.
+\end{ex}
+
+Then we state the second unique decomposition theorem:
+\begin{thm}\label{thm:secon_unique_decomposition}
+In any MPD $\sca=\cap \scq_j$, $\{\scq_j:\scp_j\text{ is minimal}\}$ depends only upon $\sca$. More precisely, for $\scp_j$ minimal, we have $\scq_j=\iota^*(\iota_*(\sca))$, where $\iota:\cala\lrta \cala_{p_j}$
+\end{thm}
+Recall that for a multiplicative set $S\subseteq \cala$, $\iota:\cala\lrta S^{-1}\cala$:
+
+$\scp$ prime ,
+
+$\scp\cap S\neq\emptyset\Lrta \iota_*(\scp)=(1)$
+
+$\scp\cap S=\emptyset\Lrta \iota^*(\scp)$ prime and $\iota^*\iota_*(\scp)=\scp$.
+
+\begin{lemma}
+$\iota^*\iota_*(\sca)=\cup_{s\in S}(\sca:s)$
+\begin{proof}
+$x\in \iota^*\iota_*(\sca)\Lrta $ $\frac{x}{1}\in\iota_*\sca=\{\frac{y}{s}:y\in\sca,s\in S\}$
+
+``$\subseteq$'': Suppose $\frac{x}{1}=\frac{y}{s}$ for some $y\in\sca,s\in S$. Then $\exists t\in S$ s.t. $t(xs-y)=0$ $\Lrta stx=yt \in \sca\Lrta x\in (\sca:st)$, where $st\in S$.
+
+``$\supseteq$'': Say $x\in (\sca:s)$ for some $s\in S$. Thus $xs=:y \in\sca$. Then $\frac{x}{1}=\frac{y}{s}\in \iota^*\iota_*\sca$ 
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+$S\subseteq \cala$ is multiplicative set $\scq\subseteq \cala$ primary and $\scp=rad(\scq)$. Then:
+\begin{enumerate}[label=(\alph*)]
+\item $\scp\cup S\neq \emptyset \Lrta ]iota)*\scq=(1)$
+\item $\scp\cap S=\emptyset$($\iota_*\scp$ is prime)$\Lrta \iota_*\scq$ is $\iota_* \scp$-primary.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item 
+Suppose $\scp\cap S\neq \emptyset$, Say $s_0\in \scp\cap S.\Lrta \exists n\geq 1: s_0^n\in \scq\cap S$
+$$
+\iota_*\scq=\{\frac{x}{s}:x\in \scq, s\in S\}
+$$
+Want $\frac{1}{1}\in \iota_* \scq\Lrta \frac{1}{1}=\frac{s_0^n}{s_0^n}\in \iota_*\scq$
+\item Suppose $\scp \cap S=\emptyset$. Then $rad(\iota_*(\scq))=\iota_*(rad\scq)=\iota_*\scp$.
+
+Let $\frac{x}{s},\frac{y}{t}\in S^{-1}\cala$, Suppose $(\frac{x}{s})\frac{y}{t}$
+>>>>>>>>>>>>1
+\end{enumerate}
+\end{proof}
+\end{lemma}
 
 
 

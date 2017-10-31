@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1509306407 "DGT.tex" "DGT.pdf" "DGT" 1509306408
+["pdflatex"] 1509306407 "DGT.tex" "DGT.pdf" "DGT" 1509446969
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -205,8 +205,8 @@
   "DGT.tex" 1509306407 40296 65932bb5af18b77079a7d9d82a852f41 ""
   "DGT.toc" 1509306408 843 06b31c5935c09eb4bd64114de722360c ""
   (generated)
-  "DGT.out"
+  "DGT.log"
   "DGT.pdf"
   "DGT.aux"
   "DGT.toc"
-  "DGT.log"
+  "DGT.out"
