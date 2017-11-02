@@ -52,6 +52,8 @@
 \newcommand{\calb}{{\cal B}}
 \newcommand{\calc}{{\cal C}}
 \newcommand{\cale}{{\cal E}}
+\newcommand{\cali}{{\cal I}}
+\newcommand{\calj}{{\cal J}}
 \newcommand{\calk}{{\cal K}}
 \newcommand{\call}{{\cal L}}
 \newcommand{\caln}{{\cal N}}
@@ -784,7 +786,7 @@ Consider similarly, $\calr=(t,\exp(t))$, $G=?$
 \section{The Galois-correspondence of differential equations}
 Recall our setting: $\calk$ differential field, $\calc$ is constants, $\calc=\overline{\calc}$ with $char =0$
 \begin{thm}
-Let $\calr/\calk$ be a Picard-Vessiot extension, with Galois group $G$. Set $\call=frac(\calr)$. 
+Let $\calr/\calk$ be a Picard-Vessiot extension, with Galois group $G$. Set $\call=Frac(\calr)$. 
 $$
 \left\{
 \begin{aligned}
@@ -806,10 +808,12 @@ $$
 &\call^H\longmapsfrom H
 \end{aligned}
 $$
-where $\call^H$ is the subfield of $\call$ which is fixed under every element of $H$
-There maps are bijection inverse to each other.
+where $\call^H$ is the subfield of $\call$ which is fixed under every element of $H$.
+These maps are bijective inverse to each other.
 
-If $N\subseteq G$ is normal subgroup, then the map $G\lrta Gal(\call^N/\calk)$ is surjective, and $\call^N$ is a Picard-Vessiot extension with Galosi group $G/N$.
+If $N\subseteq G$ is normal subgroup, then the map $G\lrta Gal(\call^N/\calk)$ is surjective with Kernel $N$, and $\call^N$ is a Picard-Vessiot extension with Galosi group $G/N$.
+
+For proof see Singer Page 26.
 \end{thm}
 \begin{prop}
 In the setup of the theorem
@@ -822,23 +826,23 @@ The inclusion $\supseteq$ is evident. For the converse inclusion. Pick $x\in \ca
 Two easy facts:
 $r\neq 0$(because $\frac{p}{q}\notin\calk$) and $\calr\otimes \calr$ has no nilpotents (Char=0)
 
-Choose a maximal differential ideal $J$ in $\calr\otimes\calr[1/r]$. Have tow canonical morphisms of differential algebras
+Choose a maximal differential ideal $\calj$ in $\calr\otimes\calr[1/r]$. Have two canonical morphisms of differential algebras
 $$
-\calr\overset{\varphi_1}{\lrta} \frac{(\calr\otimes\calr)[1/r]}{J}\overset{\varphi_2}{\longleftarrow}\calr
+\calr\overset{\varphi_1}{\lrta} \frac{(\calr\otimes\calr)[1/r]}{\calj}\overset{\varphi_2}{\longleftarrow}\calr
 $$
 $$
 a\longmapsto (a\otimes1),(1\otimes b)\longmapsfrom b
 $$
-$\varphi_1,\varphi_2$ are injective ($\calr$ simple) and images of $\varphi_1,\varphi_2$ are equal (c.f. proof of unicity of P-V-extension) say $S$
+$\varphi_1,\varphi_2$ are injective ($\calr$ simple) and images of $\varphi_1,\varphi_2$ are equal (c.f. proof of unicity of P-V-extension) denote the image by $S$
 \[
 \begin{tikzcd}
 \calr\ar[r,"\varphi_1"]\ar[rr,swap,bend right,"g=\varphi^{-1}_2\circ \varphi_1"] & S & R\ar[l,swap,"\varphi_2"]
 \end{tikzcd}
 \]
-$g\in Gal(\calr/\calk)=G$. The class of $r$ in $\calr\otimes\calr(1/r)/J$ is the unit 
+$g\in Gal(\calr/\calk)=G$. The class of $r$ in $\calr\otimes\calr[1/r]/\calj$ is a unit 
 $$
 \begin{aligned}
-0\neq &[p\otimes p-q\otimes p]=\varphi_1(p)\varphi_2(q)-\varphi_1(q)-\varphi_2(p)\\
+0\neq &[p\otimes q-q\otimes p]=\varphi_1(p)\varphi_2(q)-\varphi_1(q)\varphi_2(p)\\
 &= \varphi_1(p\cdot(g q))-\varphi_1(q\cdot(g p))\\
 &\Lrta p \cdot g q \neq q \cdot g p\\
 & x\neq g x
@@ -848,13 +852,13 @@ $$
 \end{prop}
 
 \section{local theory of differential equations}
-Setups: $\calc=\overline{\calc}$ field of $char=0$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.a. $xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=Frac( \calc[[t]])???$ with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
+Setups: $\calc=\overline{\calc}$ field of $char=0$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.g. $\xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=Frac( \calc[[t]])???$ with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
 
 Ingredients to classification:
 \begin{enumerate}
 \item 
 Set $\mathfrak{D}=\calk[\pd]$ the noncommutative ring of polynomial expressions differential operators
-$\call=a_n\pd^n+a_{n-1}\pd^{n-1}+...+a_0$. $\mathfrak{D}=$the ring of differential operators. multiplication: $\pd\cdot a =a'+a\pd,a\in\calk$. Differential modules over $calk$ are the same as left $\mathfrak{D}-$modules. Given $\cal\in\mathfrak{D}$, get a $\mathfrak{D}-$module
+$\call=a_n\pd^n+a_{n-1}\pd^{n-1}+...+a_0$. $\mathfrak{D}=$the ring of differential operators. multiplication: $\pd\cdot a =a'+a\pd,a\in\calk$. Differential modules over $\calk$ are the same as left $\mathfrak{D}-$modules. Given $\cal\in\mathfrak{D}$, get a $\mathfrak{D}-$module
 $$
 \calk[\pd]/\calk[\pd]\cdot \call=\mathfrak{D}/\mathfrak{D}L
 $$

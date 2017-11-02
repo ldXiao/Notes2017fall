@@ -2657,11 +2657,12 @@ $x\in \iota^*\iota_*(\sca)\Lrta $ $\frac{x}{1}\in\iota_*\sca=\{\frac{y}{s}:y\in\
 \end{proof}
 \end{lemma}
 
-\begin{lemma}
+\begin{lemma}\label{lem:second_uniqueness_decomposition}
 $S\subseteq \cala$ is multiplicative set $\scq\subseteq \cala$ primary and $\scp=rad(\scq)$. Then:
 \begin{enumerate}[label=(\alph*)]
-\item $\scp\cup S\neq \emptyset \Lrta ]iota)*\scq=(1)$
-\item $\scp\cap S=\emptyset$($\iota_*\scp$ is prime)$\Lrta \iota_*\scq$ is $\iota_* \scp$-primary.
+\item $\scp\cup S\neq \emptyset \Lrta \iota_*\scq=(1)$
+\item $\scp\cap S=\emptyset$($\iota_*\scp$ is prime)$\Lrta \iota_*\scq$ is $\iota_* \scp$-primary and $\iota^*\iota_* \scq=\scq$.
+\item $S\cap \scq =\emptyset \Llrta S\cap \scp=\emptyset$ 
 \end{enumerate}
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
@@ -2671,13 +2672,193 @@ $$
 \iota_*\scq=\{\frac{x}{s}:x\in \scq, s\in S\}
 $$
 Want $\frac{1}{1}\in \iota_* \scq\Lrta \frac{1}{1}=\frac{s_0^n}{s_0^n}\in \iota_*\scq$
-\item Suppose $\scp \cap S=\emptyset$. Then $rad(\iota_*(\scq))=\iota_*(rad\scq)=\iota_*\scp$.
+\item Suppose $\scp \cap S=\emptyset$. Then $rad(\iota_*(\scq))=\iota_*(rad(\scq))=\iota_*\scp$.
 
-Let $\frac{x}{s},\frac{y}{t}\in S^{-1}\cala$, Suppose $(\frac{x}{s})\frac{y}{t}$
->>>>>>>>>>>>1
+Let $\frac{x}{s},\frac{y}{t}\in S^{-1}\cala$, Suppose $(\frac{x}{s})\frac{y}{t}\in \iota_* \scq ,\frac{y}{t}\notin \iota_*\scq$, Want : some $(\frac{x}{s})^n\in \iota_*\scq$
 \end{enumerate}
 \end{proof}
 \end{lemma}
+
+\subsection{Lecture 14}
+Last lecture we ended before we prove the second uniqueness theorem of primary decomposition~\ref{lem:second_uniqueness_decomposition}. Now we continue:
+
+\begin{proof}
+Last time $rad(\iota_*\scq)=\iota_*rad(\scq)=\iota_*\scp$.\\
+Note : we may assume $\scq=(0)$, because localization is exact, hence commutes with taking quotients
+$$
+S^{-1}(\cala/\scq)\cong S^{-1}\cala/\iota_*\scq
+$$
+Thus take $\scq=(0)$, Assume $S\cap \scq=\emptyset$, i.e.  $S\not \ni 0$\\
+Want:
+\begin{enumerate}[label=(\roman*)]
+\item $\iota:$ injective (i.e. $\iota^*(0)=\iota^*\iota_*(0)\overset{?}{=}(0)$)
+\item $\iota_*(0)=(0)_{S^{-1}\cala}$ is primary.
+\end{enumerate}
+These implies the remaining assertions $(\text{for }\scq=(0))$.
+
+Proof of (i):\\
+By the general fact that $\frac{x}{1}=\frac{0}{1}\Llrta \exists s\in S : xs=0\Llrta x=0 \text{ or } S \text{ contains a zerodivisor }s : xs=0$,\\
+ (i) $\Llrta S$ contains no nonzero zerodivisors. \\
+$\Llrta$($(0)\subseteq \cala$ is primary) $S$ contains no nilpotents\\
+$\Llrta S\cap \scp =\emptyset\Llrta S\cap \scq=\emptyset\Llrta S\not \ni 0$
+
+Thus $(i)$ holds.
+
+proof of (ii):
+$$
+\begin{aligned}
+\left\{
+\begin{aligned}
+& \text{Zerodivisors }\\
+&\text{ in } S^{-1}\cala
+\end{aligned}
+\right\}
+&
+=\left\{
+\begin{aligned}
+& \frac{x}{s}:x\in\cala, s\in S\\
+& \text{such that } \exists\frac{y}{t}\in S^{-1}\cala \text{ nonzero }\\
+& \text{so that } \frac{x}{s}\frac{y}{t}=\frac{0}{1} 
+\end{aligned}
+\right\}\\
+& =\left\{
+\begin{aligned}
+&\frac{x}{s}:\exists y\in\cala\text{ with } y\cdot t\neq 0,\forall t\in S\\
+& \text{s.t. } \exists u\in S \text{ with } xuy =0\\
+&\text{where } uy \neq 0
+\end{aligned}
+\right\}\\
+&=\left\{
+\begin{aligned}
+& \frac{x}{s}: s\in S\\
+& x\in \cala \text{ is  zerodivisor}
+\end{aligned}
+\right\}\\
+&=\left\{ \frac{x}{s}: s\in S, x\in \cala\text{ is nilpotent}\right\}((0)\subseteq \cala\text{ is primary})\\
+&=Nil(S^{-1}\cala),(\text{ by the general fact that radical commutes with localizations})
+\end{aligned}
+$$
+Thus \{zerodivisors in $S^{-1}\cala$\}=$Nil(S^{-1}\cala)$, so $(0)_{S^{-1}\cala}$ is primary.
+>>>>>>>>>1
+
+
+
+The $\Llta$ direction of (c) is trivial. For the ``$\Lrta$'' direction of (c) Suppose $\exists s\in S\cap\scp$. Since $\scp=rad(\scq)$, $\exists n\geq 1 $ s.t. $s^n\in \scq$. $S$ multiplicative closed $\Lrta s^n\in S$. Thus $s\in S\cap \scq$. So $S\cap \scp\neq \emptyset \Lrta S\cap\scq\neq \emptyset$
+
+\end{proof}
+
+
+\begin{dfn}
+In that case call $\scq_j$ the $\scp_j$-primary component of  $\scq$.
+\end{dfn}
+
+\begin{lemma}
+Let $\sca$ decomposable. Then $Ass'(\sca)=\{\text{minimal primes $\scp$ containing $\sca$}\}$
+\end{lemma}
+\begin{proof}
+>>>>>>>>>>2
+\end{proof}
+
+\begin{thm}
+$\cala\supseteq \sca=\cap_{j=1}^n\scq_j$ MPD. If $\scp_\in Ass'(\sca),$ then 
+$$
+\scq_j=\iota^*\iota_*\sca,\iota:\cala\lrta \cala_{\scp_{j}}
+$$
+As a Corollary\\
+$\scq_j$ depends only on $\sca,\scp_j$
+\end{thm}
+\begin{proof}
+$$
+\begin{aligned}
+\iota^*\iota_*\sca&=\iota^*(\iota_*(\cap\scq_i))=\iota^*(\cap\iota_*\scq_i)=\cap\iota^*\iota_*\scq_i\\
+&
+=\left\{
+\begin{aligned}
+&\scq_i: i= j\\
+& (1) :i\neq j
+\end{aligned}
+\right.
+(\text{By the lemma from start of the class})
+\end{aligned}
+$$
+For the second identity, we must check that $\forall i\neq j$, $S\cap \scq_i\neq \emptyset\Llrta \scq_i\not\subseteq \scp_j$
+
+If $\scp_i\not\subseteq \scp_j$ $x\in\scp_i,x\notin\scp_j$ then some $x^n\in\scq_i,$ $\scp_i=rad(\scq_i)$, $x^n\notin \scp_j$ because $\scp_j$ is prime $\Lrta \scq_i\not\subseteq \scp_j$
+\end{proof}
+
+\begin{dfn}
+An $\cala-$module $M$ is called \textbf{Artin} or \textbf{Artinian} is it satisfies either of the following equivalent conditions:
+\begin{enumerate}[label=(\roman*)]
+\item \textbf{DCC} descending chain condition: if $M\supseteq M_1\supseteq M_2\supseteq ....$, then $\exists n_0$ s.t. $M_n=M_{n_0}\forall n\neq n_0$
+\item \textbf{MIN} minimal condition: Every collection of submodules has minimal element.
+The proof of $(i)\Llrta (ii)$ same as the proof in definition of Noetherian ring.
+\end{enumerate}
+\end{dfn}
+
+\begin{dfn}
+$\cala$ is an \textbf{Artin ring } if it satisfies the following equivalent conditions
+\begin{enumerate}[label=(\roman*)]
+\item $\cala$ is an $\cala$-module
+\item $\cala$ DCC on ideals
+\item $\cala$ MIN on ideals
+\end{enumerate}
+\end{dfn}
+
+\begin{lemma}
+If $0\lrta M'\lrta M\lrta M''\lrta 0$ is a short exact sequence of modules, then $M$ Artin $\Llrta$ $M', M''$ Artin.
+\end{lemma}
+\begin{cor}
+Any finitely generated modules over an Artin ring is Artin.
+\end{cor}
+\begin{cor}
+$\cala$ Artin $\Llrta $ $\cala/\sca:$ Artin $\forall \sca$ ideals.
+\end{cor}
+
+\begin{ex}\ 
+\begin{itemize}
+\item $\intg $ is not Artin,
+$(2)\supsetneq (2^2)\supsetneq (2^3)....$
+\item Any finite ring is Artin + Noetherian e.g. $\intg/n\intg,n\neq 0$
+\item Any finite product of Artin ring is Artin.
+\item $k$ is field, $\scm:=(X_1,...,X_n)\subset k[X_1,...,X_n]=\cala$. Then $\cala/\scm^l$ is Artin $\forall l\geq 0$ where $\cala/\scm^l$ is finite dimensional vector space over $k$.
+\item $k[X]/(X^l)$ is Artin $\forall l\geq 0$
+\item $k[X^2,X^3]/(X^{10})$ us Artin
+\item $k[X]$ is NOT Artin.
+\end{itemize}
+\end{ex}
+
+\begin{lemma}
+Let $\cala$ Artin. Then every prime in $\cala$ is maximal $\cala$ has only finitely many primes, hence the Jacobson radical $Jac(\cala)=Nil(\cala)$
+\end{lemma}
+\begin{proof}
+Let $\scp\subseteq \cala$ be prime. Set $\calb:\cala/\scp$. Then $\calb$ Artin, integral domain.
+\\
+Want $\calb$ is a field.\\
+Let $0\neq x\in \calb$, Want $x\in \calb^\times$\\
+Consider $(x)\supseteq (x^2)\supseteq (x^3)\supseteq...$. $\calb$ Artin $\Lrta \exists n\geq 0: (x^n)=(x^{n+1})$, $\exists u\in \calb:x^n=u x^{n+1}\Lrta 1=ux$ because $\calb$ is an integral domain. Then $x\in\calb^{\times}$ as required.\\
+Consider distinct maximal ideals $\scm_1,\scm_2,...\in\cala$. Consider $\scm_1\supseteq \scm_1\cap \scm_2\supseteq \scm_1\cap\scm_2\cap \scm_3\supseteq ...$ Choose $n_0: \scm_1\cap...\cap \scm_{n_0}=\scm_1\cap..\cap\scm_n \forall n\geq n_0$ $\Lrta \scm_1\cap...\cap\scm_{n_0}\subseteq \scm_n\Lrta \scm_n=\scm_j$ for some $j\leq n_0$.
+\end{proof}
+
+\begin{prop}
+$\cala$ is Artin $\Lrta \mathcal{N}:=Nil(\cala)$ is nilpotent: $\exists n\geq 0,\mathcal{N}^n=(0)$
+\end{prop}
+\begin{rmk}
+$$
+\cala=\oplus^n_{i=1}k[X_i]/(X^i_i)
+$$
+hence $\mathcal{N}=\oplus^n_{i=1}(X_i)$, where $(X_i)\subseteq k[X_i]/(X^i_i)$ $N^n=(0), N^{n-1}\neq (0)$, If $n<\infty, \cala$ is Artin . If $n=\infty, \cala$ is NOT Artin, $\cala$ not Nilpotent.
+\end{rmk}
+
+\begin{proof}
+Let $\mathcal{J}:= Nil{\cala}=Jac(\cala)$ by the lemma. Consider $\mathcal{J}\supseteq \mathcal{J}^2\supseteq \mathcal{J}^3\supseteq ...$ $\cala$ is Artin $\Lrta \mathcal{J}^n=\mathcal{J}^{n+1}$ for some $n$, Want $\mathcal{J}^n=(0)$\\
+
+Denote $\mathcal{I}:=\mathcal{J}^n$. Note that $\mathcal{J}\mathcal{I}=\mathcal{I}$, if we know that $\mathcal{I}$ were finitely generated, suppose $\mathcal{I}\neq (0)$. Then Nakayama lemma $\Lrta \mathcal{I}=(0)$
+
+Let $l$ be a minimal element of $\{\text{ideals $l\subseteq \mathcal{I}:\mathcal{J}^nl\neq (0)$}\}$. Then $\exists 0\neq x\in l$ with $\mathcal{J}^n(x)\neq (0)$. Then $(x\subseteq l\subseteq \mathcal{I}), \mathcal{J}^n (x)\neq (0)$, so by minimality, $l=(x)$.
+$\mathcal{J}^n(x)=\mathcal{J}^{n+1}(x)=\mathcal{J}^n\mathcal{J}(x)$.
+Want $\mathcal{J}(x)=(x)$\\
+If not, then $\mathcal{J}(x)$ is a nonut now $(x)$ finitely generated, so we conclude by Nakayama
+\end{proof}
 
 
 
