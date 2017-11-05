@@ -1824,7 +1824,7 @@ $\{\text{primes in }\intg[1/2]\}\cong \{(0),(3),(5)....\}\subseteq\text{Spec}(\i
 \begin{ex}
 $\cala=\cplx[x,y]$, there is a bijection between $\{\text{maximal ideals in }\cala\}$ and $\cplx^2$.
 The maximal ideal $\{f\in \cplx[x,y]| f(X_0,Y_0)=0\}=(x-X_0, y-Y_0)$ corresponds to the point $(X_0,Y_0)\in \cplx^2$\\
-Fix $f\in \cplx[x,y], f\neq 0, e.g. f=u-x^2$
+Fix $f\in \cplx[x,y], f\neq 0, e.g. f=y-x^2$
 Then 
 $$
 \begin{aligned}
@@ -1959,7 +1959,7 @@ Next time: we will focus other local properties i.e.properties of $M$ that depen
 
 
 
-\subsection{Lecture 9: Localization of Modules}
+\subsection{Lecture 9: Localization of Modules and Noetherian Rings}
 Recall that given a multiplicative closed set 
 $S\subseteq \cala$, we can define  $S^{-1}\cala$.
 Also we can define \textbf{localization of modules:} $S^{-1}M\cong S^{-1}\cala\otimes_\cala M$. The localization of module defines a functor $S^{-1}$:
@@ -2021,102 +2021,137 @@ $M$ is an $\cala$-module
 \item $M_\scm=0,\forall \scm \text{ maximals}$
 \end{enumerate}
 \end{lemma}
-Claim 1\\
-Let $x\in M$, then $x\neq 0\Longleftrightarrow Ann(x):\{a\in\cala|ax=0\}\neq (1)$
+\noindent\textbf{Claim 1:}
+Let $x\in M$, then $x\neq 0\Longleftrightarrow Ann(x):=\{a\in\cala|ax=0\}\neq (1)$
 \begin{proof}
 $x\neq 0\Llrta 1\cdot x\neq 0$ $\Llrta 1\notin Ann(x)\Llrta Ann(x)\neq (1)$
 \end{proof}
 
-Calim2:\\
-$\scm$ maximal $x\in M$
-Then $x\not\in Ker(M\lrta M_\scm)$ 
->>>>>>>>>>>???(absent)
-
+\noindent\textbf{Calim2:}
+$\scm$ maximal $x\in M$.
+Then $x\not\in Ker(M\lrta M_\scm)\Llrta \text{Ann}(x)\subseteq \scm$. 
 \begin{proof}
-$x\in Ker(M\lrta M_\scm)\Lrta \exists s\in \cala-\scm: sx=0$\\
-$Ann(x)\not \subseteq \scm$
+$x\in Ker(M\lrta M_\scm)\Llrta \exists s\in \cala-\scm\text{ s.t. } \frac{x}{1}=\frac{0}{s},\exists t\in \cala-\scm: tsx=0$ $\Llrta \text{Ann}(x)\not \subseteq \scm$.\\
 \end{proof}
-The Claim2 means if $x\notin Ker(M\lrta M_\scm)\Lrta M_\scm\neq 0$
-
 \begin{proof}
 (of Lemma~\ref{lem:zerpo_local}).
-It suffices to prove that (c)$\Lrta$(a)
-Let $0\neq x\in M\Lrta Ann(x)\neq (1)\Lrta \exists maxmal\ ideal\ \scm\supseteq Ann(x)$
-It suffices to show that 
->>>>>>>> 2
+It suffices to prove that (c)$\Lrta$(a), which amounts to show that $M\neq 0\Lrta \exists \scm\subset \cala $ s.t. $M_\scm\neq 0$\\
+Let $0\neq x\in M,$ by Claim 1,\\
+ $\Lrta Ann(x)\neq (1)\Lrta \exists maxmal\ ideal\ \scm\supseteq \text{Ann}(x)$. Then by Claim 2,\\
+$x\notin \text{Ker}(M\lrta M_\scm)\Lrta M_\scm\neq 0$
 \end{proof}
+\begin{prop}\label{prop:local_inj_surj}
+\textbf{(Injectivity/Surjectivity are local)}\\
+$M$ is an $\cala$-module, then the following are equivalent.
+\begin{enumerate}[label=(\alph*)]
+\item $M\overset{\phi}{\lrta}N$ is injective/surjective
+\item $M_\scp\overset{\phi_\scp}{\lrta}N_\scp$ is injective/surjective for all $\scp$ primes
+\item $M_\scm\overset{\phi_\scm}{\lrta}N_\scm$ is injective/surjective for all $\scm$ maximals.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+We prove the statements about surjectivity.\\
+$M\lrta N\lrta K=N/\phi(M)\lrta 0$ is exact.\\
+$\Lrta M_\scp\lrta N_\scp\lrta K_\scp\lrta 0$ is exact $\forall \scp$.\\
+$\phi$ is surjective $\llrta K=0$\\
+$\Llrta K_\scp=0,\forall\scp$ by Lemma~\ref{lem:zerpo_local}\\
+$\Llrta K_\scp=0\forall\scp$\\
+$\Llrta \phi_\scp$ surjective $\forall\scp$ prime. We can replace the prime ideal by maximal ideal and prove it similarly.
 
-\textbf{Injectivity/Surjectivity are local}
-$M$ is an $cala$-module, then the following are equivalent.
-
-\textbf{Flatness is local}\\
+For the statement of injectivity, we can analogously prove it by starting from the exact sequence
+$0\lrta Ker(\phi)\lrta M\overset{\phi}{\lrta}N$
+\end{proof}
+\begin{prop}
+\textbf{(Flatness is local)}\\
 $M$ is an $\cala$-module, then the followings are equivalent.
 \begin{enumerate}[label=(\alph*)]
 \item $\cala$-module $M$ is flat
 \item $\cala_\scp$-module $M_\scp$ is flat $\forall \scp$ prime
-\item $A_\scm$ module $M_\scm$ is flat $\forall \scm$ maximal ideals.
+\item $A_\scm$-module $M_\scm$ is flat $\forall \scm$ maximal ideals.
 \end{enumerate}
-\begin{proof}
-(a)$\Llrta$(b): Suppose $N\inj P$, want $N\otimes M\inj P\otimes M\Llrta (N\otimes M)_\scm=(N_\scm\otimes_{\cala_\scm}M_\scm)\inj P_\scm\otimes_{\cala_\scm} M_\scm (P\otimes M)_\scm\forall \scm$ \\
+\end{prop}
+\begin{proof}We prove e.g. 
+(a)$\Llrta$(b): Suppose $N\inj P$, want $N\otimes M\inj P\otimes M\Llrta (N\otimes M)_\scm=(N_\scm\otimes_{\cala_\scm}M_\scm)\inj P_\scm\otimes_{\cala_\scm} M_\scm= (P\otimes M)_\scm\forall \scm$ \\
 $\Longleftarrow N_\scm\inj P_\scm\forall \scm$\\
-$\Llrta N\inj P$ as usual.
+$\Llrta N\inj P$ by Proposition~\ref{prop:local_inj_surj}.
 \end{proof}
 
 
 \begin{dfn}
-(Lemma) 
+\textbf{(Lemma)} 
 \begin{enumerate}[label=(\alph*)]
-\item $\cala$ satisfies the \textbf{ascending chain condition on ideals} (All the sequence $\sca_1\subseteq \sca_2\subseteq ...$ stabilizes $\exists n_0$ s.t. $\sca_n=\sca_{n_0} \forall n\geq 0$)
+\item $\cala$ satisfies the \textbf{ascending chain condition on ideals} (All the sequence $\sca_1\subseteq \sca_2\subseteq ...$ stabilizes, i.e. $\exists n_0$ s.t. $\sca_n=\sca_{n_0} \forall n\geq 0$)
 \item Every ideal of $\cala$ is finitely generated.
 \item $\{\text{ideals in $\cala$}\}$ satisfies the \textbf{maximal property}: i.e. Every subset contains a maximal element. That is : For any nonempty collection $S$ of ideals in $\cala$, $\exists \sca\in S$ s.t. $\forall \scb\in S\Lrta \scb\not \supset \sca$
 \end{enumerate}
 Then, $\cala$ is called \textbf{Noetherian}
 \end{dfn}
 \begin{proof}
-(a)$\Lrta$(b). Let $\sca$ ideal. we may assume that $\cala$ is \textbf{NOT} finitely generated. Inductively construct $x_1, x_2,x_3...\in \sca$ such that $(x_1)\neq 0$ and $\sca\supsetneqq(x_1,x_2)\supsetneqq(x_1)$ an also $\sca\supsetneqq(x_1,x_2,x_3)\supsetneqq(x_1,x_2)$, but then this sequence contradict the \textbf{ACC},
+(a)$\Lrta$(b). Let $\sca$ ideal. we may assume that $\cala$ is \textbf{NOT} finitely generated. Inductively construct $x_1, x_2,x_3...\in \sca$ such that $(x_1)\neq 0$ and $\sca\supsetneqq(x_1,x_2)\supsetneqq(x_1)$ an also $\sca\supsetneqq(x_1,x_2,x_3)\supsetneqq(x_1,x_2)$, but then this sequence contradict the \textbf{ACC}。
 
 (a)$\Lrta$(c)\\
-Let $\emptyset \neq S\subseteq \{\text{ideals in }\cala\}$. If $S$ violates the maximal property, then we can find $\sca_1,\sca_2,...\in S$ s.t. $\sca_1\subseteq \sca_2\subseteq \sca_3\Lrta $ ACC fails.
+Let $\emptyset \neq S\subseteq \{\text{ideals in }\cala\}$. If $S$ violates the maximal property, then start from arbitrary ideal $\sca_1$, we can find $\sca_1\subsetneq \sca_2\in S$. Similarly, we can find $\sca_{j+1}\supsetneq \sca_j,\forall j\in\mathcal{N}$ by the countable choice axiom. Then the ACC fails.
 
-(c)$\Lrta $(a), If ACC fails, $\exists \sca_1\subseteq \sca_2\subseteq ...$ Take $S:=\{\sca_1,\sca_2,\sca_3...\}$. Then $S$ violates Maximal property.
+(c)$\Lrta $(a), If ACC fails, $\exists \sca_1\subsetneq \sca_2\subsetneq ...$ Take $S:=\{\sca_1,\sca_2,\sca_3...\}$. Then $S$ violates Maximal property.
 
-(b)$\Lrta$(a),Let $\sca_1\subseteq\sca_2\subseteq ...$ Want to show that $\exists n_0\sca_n=\sca_{a_0}\forall n\geq n_0$ $\sca:=\cup_N \sca_n$. WE know that every ideal of $\cala$ is finitely generated. Then $\sca$ is also finitely generated by 
->>>>>>>>>3
+(b)$\Lrta$(a),Let $\sca_1\subseteq\sca_2\subseteq ...$ Want to show that $\exists n_0,\sca_n=\sca_{n_0}\forall n\geq n_0$ $\sca:=\cup_n \sca_n$. We know that every ideal of $\cala$ is finitely generated. Then $\sca$ is also finitely generated by assumption (b). Then Assume it to be finitely generated by $r$ elements $\{x_1,...,x_r\}$, with $x_j\in\sca_{n_j}$. Choose $n_0=\text{max}\{n_1,...,n_r\}$, then we have $x_1,...,x_r\in \sca_{n_0}\Lrta \sca=\sca_{n_0}$. $\Lrta \sca_n=\sca_{n_0},\forall n\geq n_0$.
 \end{proof}
 
-\begin{dfn}(Lemma)\\
+\begin{dfn}\textbf{(Lemma)}\\
 $M$ is an $\cala$-module. The followings are equivalent:
 \begin{enumerate}[label=(\alph*)]
-\item $M$ ACC on submodules
+\item $M$ has \textbf{ACC} on submodules
 \item Every submodule of $M$ s finitely generated
-\item $M$ has the property of Maximal on submodules
+\item $M$ has the \textbf{maximal property} on submodules
 \end{enumerate}
-Then, we call $M$ a Noetherian $\cala$-module.
+Then, we call $M$ a \textbf{Noetherian $\cala$-module}.
 \end{dfn}
+\begin{proof}
+The proof is just identical.
+\end{proof}
 
 Note that $\cala$ Noetherian ring $\Llrta $ $\cala$ is a Noetherian $\cala$-module.
 
-\begin{lemma}
-Let $0\lrta M'\lrta M\lrta M''\lrta 0$ be a short exact sequence of $\cala$-modules. Then $M$ is Noetherian $\Llrta $ both $M', M''$ Noetherian
+\begin{lemma}\label{lem:SES_Noetherian}
+Let $0\lrta M'\lrta M\lrta M''\lrta 0$ be a short exact sequence of $\cala$-modules. Then $M$ is Noetherian $\Llrta $ both $M', M''$ Noetherian.
 \end{lemma}
 \begin{proof}
-$\Llta$,Use ACC. Let $N_1\subseteq N_2\subseteq ...$ be submodules of $M$. Want to show that $\exists n_0 :(n\geq n_0) N_n=N_{n_0}$.
+$\Llta$,Use ACC. Let $N_1\subseteq N_2\subseteq ...$ be submodules of $M$. Want to show that $\exists n_0 :(n\geq n_0)\Lrta N_n=N_{n_0}$.
 Consider $N''_j:=$ Image of $N_j$ in $M''$. $ N_1''\subseteq N_2''\subseteq ...$ By ACC of $M''$, $N''_{n_0}=N''_{n}\forall n\geq n_0$. Do the same for $N'_j:=M'\cap N_j$ ($M'\inj M$)\\
-Need if $N_i\subseteq N_j\subseteq M$ and $N_i''=N''_j, N'_i=N'_j$, then $N_i=N_j$.
+Need: if $N_i\subseteq N_j\subseteq M$ and $N_i''=N''_j, N'_i=N'_j$, then $N_i=N_j$. (Five Lemma)
+\[
+\begin{tikzcd}
+0\ar[r] & N_i'\ar[r]\ar[d,equal] & N_i\ar[r]\ar[d] & N_i''\ar[r]\ar[d,equal] & 0\\
+0\ar[r] & N_j'\ar[r] & N_j\ar[r] & N_j''\ar[r] & 0
+\end{tikzcd}
+\]
+
+For the $\Lrta$ direction, we can use the definition of Noetherian module to prove directly that \textbf{Any submodule of a Noetherian module is Noetherian} and \textbf{Any quotient module of Noetherian module is Noetherian}(See part of proof of Corollary~\ref{cor:Noetherian_quotient_module}).
 \end{proof}
 
-\begin{thm}(Hilbert basis theorem)
+\begin{thm}\label{thm:Hilbert_Basis}(Hilbert basis theorem)
 $\cala$ Noetherian $\Lrta $ $\cala[X]$ is Noetherian.
 \end{thm}
 
-\begin{cor}
-$\cala$ Noetherian $\Lrta \cala[x_1,...,x-n]$ Noetherian $\cala[x_1,...,x_n]/\sca$ Noetherian $\forall \sca\subseteq \cala[x_1,..,x_n]$
+\begin{cor}\label{cor:Noetherian_quotient_module}
+$\cala$ Noetherian $\Lrta \cala[x_1,...,x_n]$ Noetherian $\cala[x_1,...,x_n]/\sca$ Noetherian $\forall \sca\subseteq \cala[x_1,..,x_n]$
 \end{cor}
 
-\begin{proof}
-Let $\sca\subseteq \cala[x]$. We want to show $\sca$ finitely generated. Consider the ideal $\call\subseteq \cala$ generated by leading coefficients of elements of $\sca:ax^n+...\in \call$.
-Then $\cala$ Noetherian $\Lrta\call=(t_1,...,t_r),t_i\in \call$ $\exists f_1,...,f_r\in \sca: f_j=t_j x^{n_j}+...$. $N:=max(n_1,..,n_r)$ and we construct $\cala$-module $M:\oplus^N_{j=0}\cala x^j\subseteq \cala[x]$ $M\cap \sca$ is finitely generated.
->>>>>>>>>4
+\begin{proof}\textbf{of Theorem~\ref{thm:Hilbert_Basis}}
+Let $\sca\subseteq \cala[x]$. We want to show $\sca$ finitely generated. Consider the ideal $\call\subseteq \cala$ generated by leading coefficients of elements of $\sca$ i.e. for an element $ax^n+...\in\sca,a\in\call$
+Then $\cala$ is  Noetherian, $\call$ is finitely generated, $\Lrta\call=(t_1,...,t_r),t_i\in \call$ $\exists f_1,...,f_r\in \sca: f_j=t_j x^{n_j}+...$. Set $N:=max(n_1,..,n_r)$ and we construct $\cala$-module $M:=\oplus^N_{j=0}\cala x^j\subseteq \cala[x]$. $M\cap \sca$ is finitely generated because $M\cong \cala^N$ as $\cala$-module, and $\cala$ is a Noetherian $\cala-$module $\Lrta$ $\cala^n$ is Noetherian $\cala$-module:
+$$
+0\lrta \cala\lrta \cala^n\lrta \cala^{n-1}\lrta 0
+$$
+Using the above exact sequence, we can apply Lemma~\ref{lem:SES_Noetherian} and induct on $n$.
+
+And finally, we claim that
+$$
+\sca=(f_1,...,f_r)+M\cap\sca
+$$
+The $\subseteq$ part is obvious.
+
+\textbf{The remaining part of the proof is left till the next lecture.}
 \end{proof}
 
 \section{Noetherian Ring and Nullstellensatz}

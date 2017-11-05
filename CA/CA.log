@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  2 NOV 2017 15:13
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  5 NOV 2017 14:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -927,55 +927,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 1907--1908
 
  []
 
-[42] [43] [44] [45] [46]
-Overfull \hbox (3.32985pt too wide) in paragraph at lines 2113--2114
-[][]\OT1/cmr/bx/n/10.95 Corollary 3.36. []$\OMS/cmsy/m/n/10.95 A$ \OT1/cmr/m/it
-/10.95 Noethe-rian $\OT1/cmr/m/n/10.95 =[]\OMS/cmsy/m/n/10.95 ) A\OT1/cmr/m/n/1
-0.95 [\OML/cmm/m/it/10.95 x[]; :::; x \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.
-95 n\OT1/cmr/m/n/10.95 ]$ \OT1/cmr/m/it/10.95 Noethe-rian $\OMS/cmsy/m/n/10.95 
-A\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 x[]; :::; x[]\OT1/cmr/m/n/10.95 ]\OML/
-cmm/m/it/10.95 =\U/euf/m/n/10.95 a$
+[42]
+Overfull \hbox (2.37923pt too wide) in paragraph at lines 1962--1962
+[]\OT1/cmr/bx/n/12 Lecture 9: Lo-cal-iza-tion of Mod-ules and Noethe-rian Rings
+ 
  []
 
-[47] [48]
-Underfull \hbox (badness 10000) in paragraph at lines 2210--2211
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2225--2226
+[43] [44] [45]
+Missing character: There is no 。 in font cmr10!
+ [46] [47] [48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 2245--2246
 
  []
 
-[49] [50] [51]
-Overfull \hbox (11.10376pt too wide) in paragraph at lines 2331--2332
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 2260--2261
+
+ []
+
+[51] [52]
+Overfull \hbox (11.10376pt too wide) in paragraph at lines 2366--2367
 []$\OT1/cmr/m/n/10.95 \ =[]\OMS/cmsy/m/n/10.95 )$\OT1/cmr/m/n/10.95 '' As-sume 
 $\OML/cmm/m/it/10.95 S$ \OT1/cmr/m/n/10.95 max-i-mal al-ge-braic in-de-pen-dent
 . Want: $\OML/cmm/m/it/10.95 E=F\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S\OT1/c
 mr/m/n/10.95 )$
  []
 
-[52] [53]
-Overfull \hbox (0.27327pt too wide) in paragraph at lines 2409--2414
+[53] [54]
+Overfull \hbox (0.27327pt too wide) in paragraph at lines 2444--2449
 \OT1/cmr/m/n/10.95 Assuming the sub-claim,(since $(0)$ is ir-re-ducible) de-duc
 e that ei-ther $\OML/cmm/m/it/10.95 Ann\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 
 y\OT1/cmr/m/n/10.95 ) =
  []
 
-[54]
-Overfull \hbox (89.16655pt too wide) in paragraph at lines 2415--2417
+[55]
+Overfull \hbox (89.16655pt too wide) in paragraph at lines 2450--2452
 []\OT1/cmr/bx/n/10.95 Calim2\OT1/cmr/m/n/10.95 : $\OMS/cmsy/m/n/10.95 A$ \OT1/c
 mr/m/n/10.95 Noethe-rian, $\OML/cmm/m/it/10.95 S \OT1/cmr/m/n/10.95 := \OMS/cms
 y/m/n/10.95 f[]\OML/cmm/m/it/10.95 ideals\OMS/cmsy/m/n/10.95 g$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2424--2425
+Underfull \hbox (badness 10000) in paragraph at lines 2459--2460
 
  []
 
-[55]
-Overfull \hbox (119.19717pt too wide) in paragraph at lines 2475--2476
+[56]
+Overfull \hbox (119.19717pt too wide) in paragraph at lines 2510--2511
 \OT1/cmr/m/it/10.95 tion \OT1/cmr/bx/it/10.95 min-i-mal\OT1/cmr/m/it/10.95 . Le
 t $\U/euf/m/n/10.95 a$ \OT1/cmr/m/it/10.95 ideal, we de-fine $\OML/cmm/m/it/10.
 95 Ass\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 a\OT1/cmr/m/n/10.95 ) := \OMS/cmsy/m
@@ -983,18 +981,18 @@ t $\U/euf/m/n/10.95 a$ \OT1/cmr/m/it/10.95 ideal, we de-fine $\OML/cmm/m/it/10.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2483--2484
+Underfull \hbox (badness 10000) in paragraph at lines 2518--2519
 
  []
 
-[56]
-Overfull \hbox (18.17094pt too wide) in paragraph at lines 2502--2504
+[57]
+Overfull \hbox (18.17094pt too wide) in paragraph at lines 2537--2539
 \OT1/cmr/m/n/10.95 Recall the First unique-ness the-o-rem for Min-i-mal Pri-mar
 y De-com-po-si-tion(MPD). 
  []
 
 
-Overfull \hbox (12.34767pt too wide) in paragraph at lines 2505--2506
+Overfull \hbox (12.34767pt too wide) in paragraph at lines 2540--2541
 []\OT1/cmr/m/n/10.95 Let $\U/euf/m/n/10.95 a \OT1/cmr/m/n/10.95 = \U/euf/m/n/10
 .95 q[] \OMS/cmsy/m/n/10.95 \ \OML/cmm/m/it/10.95 ::: \OMS/cmsy/m/n/10.95 \ \U/
 euf/m/n/10.95 q[]$ \OT1/cmr/m/n/10.95 be a min-i-mal pri-mary de-com-po-si-tion
@@ -1002,8 +1000,8 @@ euf/m/n/10.95 q[]$ \OT1/cmr/m/n/10.95 be a min-i-mal pri-mary de-com-po-si-tion
 euf/m/n/10.95 p[]\OMS/cmsy/m/n/10.95 g \OT1/cmr/m/n/10.95 =
  []
 
-[57] [58] [59] [60]
-Overfull \hbox (79.47772pt too wide) in paragraph at lines 2699--2704
+[58] [59] [60] [61]
+Overfull \hbox (79.47772pt too wide) in paragraph at lines 2734--2739
 \OT1/cmr/m/n/10.95 By the gen-eral fact that $[] = [] \OMS/cmsy/m/n/10.95 ([]) 
 9\OML/cmm/m/it/10.95 s \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 S \OT1/cmr/m/n
 /10.95 : \OML/cmm/m/it/10.95 xs \OT1/cmr/m/n/10.95 = 0 \OMS/cmsy/m/n/10.95 ([])
@@ -1012,46 +1010,46 @@ r/m/n/10.95 :
  []
 
 
-Overfull \hbox (95.99164pt too wide) detected at line 2740
+Overfull \hbox (95.99164pt too wide) detected at line 2775
 [] []
  []
 
 
-Overfull \hbox (0.50136pt too wide) in paragraph at lines 2740--2743
+Overfull \hbox (0.50136pt too wide) in paragraph at lines 2775--2778
 \OT1/cmr/m/n/10.95 Thus \OMS/cmsy/m/n/10.95 f\OT1/cmr/m/n/10.95 zerodivisors in
  $\OML/cmm/m/it/10.95 S[]\OMS/cmsy/m/n/10.95 A$g\OT1/cmr/m/n/10.95 =$\OML/cmm/m
 /it/10.95 Nil\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 S[]\OMS/cmsy/m/n/10.95 A\O
 T1/cmr/m/n/10.95 )$, so $(0)[]$ is pri-mary. >>>>>>>>>1 
  []
 
-[61]
-Overfull \hbox (45.53203pt too wide) in paragraph at lines 2756--2757
+[62]
+Overfull \hbox (45.53203pt too wide) in paragraph at lines 2791--2792
 [][]\OT1/cmr/bx/n/10.95 Lemma 5.26. []\OT1/cmr/m/it/10.95 Let $\U/euf/m/n/10.95
  a$ \OT1/cmr/m/it/10.95 de-com-pos-able. Then $\OML/cmm/m/it/10.95 Ass[]\OT1/cm
 r/m/n/10.95 (\U/euf/m/n/10.95 a\OT1/cmr/m/n/10.95 ) = \OMS/cmsy/m/n/10.95 f[]g$
  
  []
 
-[62] [63]
-Underfull \hbox (badness 10000) in paragraph at lines 2853--2854
+[63] [64]
+Underfull \hbox (badness 10000) in paragraph at lines 2888--2889
 
  []
 
-[64]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2875.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2875.
+[65]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2910.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2910.
  (./CA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2875.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2875.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2875.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 2910.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 2910.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2910.
  ) 
 Here is how much of TeX's memory you used:
- 22178 strings out of 493706
- 412693 string characters out of 6145769
- 470878 words of memory out of 5000000
- 25196 multiletter control sequences out of 15000+600000
+ 22268 strings out of 493706
+ 415029 string characters out of 6145769
+ 470982 words of memory out of 5000000
+ 25286 multiletter control sequences out of 15000+600000
  18360 words of font info for 72 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,16n,84p,934b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CA.pdf (64 pages).
+Output written on CA.pdf (65 pages).

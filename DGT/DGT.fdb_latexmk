@@ -1,10 +1,11 @@
 # Fdb version 3
-["pdflatex"] 1509652973 "DGT.tex" "DGT.pdf" "DGT" 1509652974
+["pdflatex"] 1509818959 "DGT.tex" "DGT.pdf" "DGT" 1509818961
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcti1095.tfm" 1136768653 2048 0d8d19633d1f5858141c8047aa877208 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1246382020 1040 b84415f97d114011685943ade933dc71 ""
+  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm" 1246382020 1040 a9d2074f3fa062d4d9046b92e2334d8c ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm" 1246382020 1040 82eb6630b094bff824fccca83ff507f9 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -200,13 +201,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "DGT.aux" 1509652974 1838 21ccd6b9f410c9c78219c9328738334b ""
-  "DGT.out" 1509652974 760 34a00d757e76273a4de70d1062c8c5b9 ""
-  "DGT.tex" 1509652972 40429 cbd0250f805b25b610ba96104f911444 ""
-  "DGT.toc" 1509652974 843 06b31c5935c09eb4bd64114de722360c ""
+  "DGT.aux" 1509818960 2074 e29dc16d9955abec1083d772e6079cd3 ""
+  "DGT.out" 1509818960 818 fa250b85a4f75d3b9c1eabb242ecc301 ""
+  "DGT.tex" 1509818959 47657 74969b2959de5eeb093c55af29a2662f ""
+  "DGT.toc" 1509818960 917 0b7f1eea61cca3290ce753a628e97e21 ""
   (generated)
-  "DGT.aux"
   "DGT.out"
-  "DGT.pdf"
-  "DGT.toc"
   "DGT.log"
+  "DGT.toc"
+  "DGT.aux"
+  "DGT.pdf"

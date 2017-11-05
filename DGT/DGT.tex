@@ -45,7 +45,7 @@
 \newcommand{\scn}{{\mathfrak n}}
 \newcommand{\scp}{{\mathfrak p}}
 \newcommand{\frakg}{{\mathfrak g}}
-\newcommand{\frakd}{{\mathfrak d}}
+\newcommand{\frakd}{{\mathfrak D}}
 \newcommand{\calf}{{\cal F}}
 \newcommand{\calg}{{\cal G}}
 \newcommand{\cala}{{\cal A}}
@@ -851,19 +851,20 @@ $$
 \end{proof}
 \end{prop}
 
-\section{local theory of differential equations}
-Setups: $\calc=\overline{\calc}$ field of $char=0$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.g. $\xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=Frac( \calc[[t]])???$ with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
+\section{Local theory of differential equations}
+Setups: $\calc=\overline{\calc}$ field of $char=0$. $\cplx=\cala$. choose $\xi_m\in\calc$-primitive $m$-th roots of unity. $\xi_m^n=\xi_{m/n}$ if $n|m.$ e.g. $\xi_m=e^{2\pi i/m}$. $\calk=\calc((t))=Frac( \calc[[t]])???$ (the formal Laurant series. ) with usual derivative. Goal: classify differential equation of differential modules over $\calk$. 
 
 Ingredients to classification:
 \begin{enumerate}
 \item 
 Set $\mathfrak{D}=\calk[\pd]$ the noncommutative ring of polynomial expressions differential operators
-$\call=a_n\pd^n+a_{n-1}\pd^{n-1}+...+a_0$. $\mathfrak{D}=$the ring of differential operators. multiplication: $\pd\cdot a =a'+a\pd,a\in\calk$. Differential modules over $\calk$ are the same as left $\mathfrak{D}-$modules. Given $\cal\in\mathfrak{D}$, get a $\mathfrak{D}-$module
+$\call=a_n\pd^n+a_{n-1}\pd^{n-1}+...+a_0$. $\mathfrak{D}=$the ring of differential operators. multiplication: $\pd\cdot a =a'+a\pd,a\in\calk$. Differential modules over $\calk$ are the same as left $\mathfrak{D}-$modules. Given $L\in\mathfrak{D}$, get a $\mathfrak{D}-$module
 $$
-\calk[\pd]/\calk[\pd]\cdot \call=\mathfrak{D}/\mathfrak{D}L
+\calk[\pd]/\calk[\pd]\cdot L=\mathfrak{D}/\mathfrak{D}L
 $$
-This $\mathfrak{D}-$modules is the differential module of the equation $L(u)=0$.
-\item Finite field extension of $\calk$. Let $m\geq 1$ integer. Set $\calk_m=\calc((t^{1/m}))=\calc((t)[s])/\lgl s^m-t\rgl$. The field extension $\calk_m/\calk$ is Galois with group $\intg/m\intg$. For $[a]\in\intg/m\intg$ consider the automorphism
+\textbf{Claim:}
+This $\mathfrak{D}-$modules is the differential module of the equation $L(u)=0$. In general \{Left $\mathfrak{D}$-module \}=\{Diff. $\calk$-module\}
+\item Finite field extension of $\calk$. Let $m\geq 1$ integer. Set $\calk_m=\calc((t^{1/m}))=\calc((t)[s])/\lgl s^m-t\rgl$. Clearly $\calk\subseteq \calk_m$. The field extension $\calk_m/\calk$ is Galois with group $\intg/m\intg$. For $[a]\in\intg/m\intg$ consider the automorphism
  $$
  \calk_m\overset{\epsilon(a)}{\lrta}\calk_m
  $$
@@ -880,12 +881,217 @@ Gal(\overline{\calk}|\calk)=lim_m \intg/m\intg=\widehat{\intg}
 $$
 \end{thm}
 
+\begin{thm}\label{thm:version1}
+Consider a matrix differential equation of the form 
+$$
+\delta u= Au
+$$
+where $\delta =t\cdot \pd=t\frac{\pd}{\pd t}$. Then there exists an extension $\calk_m/\calk$ such that the equation $\delta u= Au$ is equivalent to $\delta v= B v$, with $B\in M_n(\calk_m) $ of the form:
+$$
+\begin{pmatrix}
+B_{11} & 0 & \dots  &  &  &  &  &  &  & \\
+0 & B_{12} & \dots  &  &  &  &  &  &  & \\
+\vdots  & \vdots  & \ddots  & \vdots  &  &  &  &  &  & \\
+ &  & \dots  & B_{1m_{1}} &  &  &  &  &  & \\
+ &  &  &  & B_{21} &  &  &  &  & \\
+ &  &  &  &  & B_{22} &  &  &  & \\
+ &  &  &  &  &  & \ddots  &  &  & \\
+ &  &  &  &  &  &  & B_{2m_{2}} &  & \\
+ &  &  &  &  &  &  &  & \ddots  & \\
+ &  &  &  &  &  &  &  &  & B_{s\ m_{s}}
+\end{pmatrix}
+$$
+where each $B_{i a}$, $1\leq a\leq m_i$ is a block-diagonal matrix of the form 
+$$
+\begin{pmatrix}
+b_{i} &  &  &  & 0\\
+1 & \ddots  &  &  & \\
+0 & 1 & \ddots  &  & \\
+ & 0 & 1 & \ddots  & \\
+0 &  & 0 & 1 & b_{i}
+\end{pmatrix}
+$$
+and $b_i\in \calc[t^{-\frac{1}{m}}]$ and $b_i-b_j\notin \ratl $ for $i\neq j$
+\end{thm}
+Another version of the above theorem:
+\begin{thm}\label{thm:version2}
+Let $M$ be a left $\frakd-$module which is finite dimensional a $\calk$-vector space. There is $\calk_m/\calk$ and distinct $q_1,...,q_s\in t^{-1,m}\calc[t^{-1/m}]$ such that 
+$$
+\calk_m\otimes_\calk M=\oplus^s_{i=1} M_i
+$$
+where $M_i$ has the following shape. There exists a $\calc$-vector space $W_i$ finite dimensional and a linear map $l_i:W_i\lrta W_i$ s.t.
+$$
+M_i=\calk_m\otimes_\calc W_i
+$$
+with differential on $M_i$ given by 
+$$
+\delta_{M_i}(f\otimes w)=q_i f\otimes w+\delta f\otimes w+f\otimes l_i(w)
+$$
+\end{thm}
+And also another equivalent version
+\begin{thm}\label{thm:version3}
+For any differential operator $L=\pd^n+a_{n-1}\pd^{n-1}+...+a_1\pd+a_0$, there exists $\alpha\in\calk_m$ s.t. $L$ factors as 
+$$
+L=L_1\cdot(\pd-\alpha)
+$$
+where $L_1\in\calk_m[\pd]$
+\end{thm}
+
+We will take the next few weeks to prove the above theorem:
+$$
+\ref{thm:version1}\Longleftrightarrow\ref{thm:version2}\Lrta\ref{thm:version3}
+$$
+are relatively easy and the real difficulty lies in the 
+$$
+\Llta\ref{thm:version3}
+$$
+
+Lets first prove that $\overline{\calk}$ is algebraically closed.
+
+\begin{dfn}
+Valuations: An element $\alpha$ of $\overline{\calk}$ can be written as 
+$$
+\alpha =\sum_{n=N}^\infty a_n t^{n/m}
+$$
+with some fixed $m$, ($\alpha\in \calk_m$). If $\alpha\neq 0, a_N\neq 0 ,N\in\intg$. we define the \textbf{valuation}
+$$
+v(\alpha):=\left\{
+\begin{aligned}
+& N/m \ \ \  \text{ if $\alpha\neq 0$}\\
+& \infty \text{     \ \ \ \ \ \      if $\alpha=0$}
+\end{aligned}
+\right.
+$$
+Call $v(\alpha)$ the valuation of $\alpha$
+$$
+v:\calk_m\lrta \frac{1}{m}\intg\cup \{\infty\}
+$$
+``the valuation''
+$$
+v:\calk\lrta \intg\cup\{\infty\}
+$$
+$$
+v:\overline{\calk}\lrta \ratl\cup \{\infty\}.
+$$
+Obvious properties:
+\begin{enumerate}[label=(\roman*)]
+\item $v(\alpha\beta)=v(\alpha)+v(\beta)$
+\item $v(1)=0$
+\item $v(\alpha+\beta)\geq \text{min}(v(\alpha),v(\beta))$ equality if $v(\alpha)\neq v(\beta)$
+\end{enumerate}
+\end{dfn}
+\begin{dfn}
+Based one only the properties we define:
+$\calo_m=\{\alpha\in\calk_m|v(\alpha)\geq 0\}$ is a subring of $\calk_m$ \textbf{Valuation ring} and 
+$\calo_m\supseteq \scm_m:=\{\alpha\in \calk_m|v(\alpha)\geq 0\}$ the \textbf{valuation ideal}.
+\end{dfn}
+In this case they have the explicit form
+$$
+\calo_m=\calc[t^{1/m}]
+$$
+$$
+\calo_m\supseteq \scm_m =t^{1/m}\calc[t^{1/m}]
+$$
+$\scm$ is maximal. quotient $\calo_m/\scm_m=\calc$, $f\longmapsto f(v)$ and $\calo_m$ is a local ring. $(\calo_m,v)$ is a DVR \textbf{discrete valuation ring } and $(\overline{\calo}=\cup\calo_m,v)$ is a valuation ring.
+
+The valuation on $\calk_m$ induces a norm:
+$$
+|\alpha|=e^{-v(\alpha)}
+$$
+$$
+|0|=0
+$$
+check that 
+$|\alpha\beta|=|\alpha||\beta|$, $|\alpha+\beta|\leq |\alpha|+|\beta|$ and $|1|=1$. In this way, we get a metric
+$$
+dist(\alpha-\beta)=|\alpha-\beta|
+$$
+get a topology.
+
+\begin{exercise}Prove that:
+\begin{itemize}
+\item $\calk_m$ is complete (Every Cauchy sequence converges)
+\item $\calo_m\subseteq \calk_m$ is compact.
+\end{itemize}
+\end{exercise}
+
+\begin{lemma}
+(Hensel's Lemma) $\calo$ a valuation ring with maximal ideal $\scm$ Let $P\in\calo[X]$ ($\calo\subseteq\calk$) is  a monic polynomial, whose reduction $\mod\scm$ factors as 
+$$
+P\mod \scm=F=F_1 F_2
+$$ 
+with $F_i\in \calc[X]$ both monic and coprime. Then there exist $P_1,P_2\in\calo[X]$ with $P=P_1P_2$ with $F_i=P_i\mod \scm$
+\end{lemma}
+\begin{proof}
+Let $Q^{(1)}_1$ and $Q^{(2)}_2$ be the polynomials $F_1$ and $F_2$ seen elements of $\calo[X]$ ($F_i\in \calc[X]$). Suppose that we have constructed polynomials $Q_1^{(N)}$ and $Q^{(N)}_2\in\calo[X]$ with the properties:
+\begin{itemize}
+\item $(Q^{(N)}_i \mod \scm)=F_i$
+\item $(Q^{(N)})_i\mod \scm^M=Q^{(M)}_i,1\leq M\leq N.$
+\item $P=Q^{(N)}_1 Q^{(N)}_2\mod \scm^N$
+\end{itemize}
+For $N=1$, done. Set $Q^{(N+1)}_i=Q^{(N)}_i+t^N R_i$ with $R_i\in \calc[X]$ polynomials satisfying 
+$$
+R_1F_1+R_2F_2=\frac{P-Q^{(N)}_1Q^{(N)}_2}{t^N}\mod \scm
+$$
+is still $\in\calo[X]$, because $F_1,F_2$ coprime we can always find such $R_i$. We can check that the 3 properties hold for $Q^{(N+1)}_i$. The sequence $(Q_i^{(N)})^\infty_{N=1}$ are Cauchy and setting $P_i=\lim_{N\lrta \infty}Q^{(N)}_i$ get what we want.
+
+For any complete DVR, we can conduct the above proof
+\end{proof}
+
+\begin{exercise}
+Look up Hensel's lemma for $\intg_p$ $p$-adic integers, with $\calc$ replaced by $\bbf_p$
+\end{exercise}
+
+\begin{thm}
+The field $\overline{\calk}=\cup\calk_m$ is algebraically closed.
+\end{thm}
+
+\begin{dfn}
+Let $M$ be a finite dimensional $\calk$-vector space. A \textbf{Lattice} in $M$ is a $\calo-$submodule of $M$ generated by a $\calk-$basis of $M$. Typically, $M=\calk^n$, Lattice $L=\calo^n\subseteq \calk^n$
+\end{dfn}
+
+\begin{exercise}
+Show that Lattice can also be defined as
+
+Any finitely generated $\calo=$submodule of $M$ containing a $\calk$-basis of $M$ i.e. $L\subseteq M$ finitely generated as $\calo-$module. $KL=M$
+
+Any open and compact $\calo-$submodule of $M\cong \calk^n$
+
+
+\end{exercise}
+
+
+
+
+
+
+
 
 
 
 
 -------------
 \section{Personal Reads}
+\subsection{D-module}
+$\frakd$ is defined to be the ring of differential operators with coefficients in the differential field $\calk$.
+\begin{lemma}
+For differential operators $L_1,L_2$ in $\frakd$, with $L_1\neq 0$, there are unique differential operator $Q,R$ such that 
+$$
+L_2=Q L_1+R
+$$
+and $\text{deg } R<\text{deg } L_1$. This could be proved algorithmically because every $\calk$ is a field.
+
+In other word, $\frakd$ is  an Euclidean domain.
+\end{lemma}
+\begin{cor}
+For every left ideal $I\subseteq \calk[\pd]$, there is a unique differential operator $L$ such that $I=\calk[\pd]\cdot L$
+\end{cor}
+\begin{proof}
+Euclidean domain are principal ideal domain: see \href{https://proofwiki.org/wiki/Euclidean_Domain_is_Principal_Ideal_Domain}{the proofwiki page}
+\end{proof}
+\begin{lemma}
+Every finitely generated left $\frakd$-module is of the form $\oplus_i M_i$, where each $M_i$ is of isomorphic to either $\frakd$ or $\frakd/\frakd L$ for some differential operator $L$.
+\end{lemma}
 \subsection{Monodromy, Riemann-Hilbert Problem}
 $U$ is an open connected subset of the complex sphere $\mathcal{P}^1$ and let $Y'=AY$ be a differential equation on $U$, with $ A$ $n\times n$ matrix with coefficients are meromorphic functions on $U$. We assume that the equation is regular at every point $p\in U$ (might be regular singular point (which means the growth of solutions is bounded). Let $F_p$ be a matrix whose columns are the $n$ independent solutions, then $F_p$ is a fundamental matrix with entries in $\cplx(\{z-p\})$
 
