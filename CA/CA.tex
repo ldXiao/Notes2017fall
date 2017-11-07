@@ -2839,7 +2839,7 @@ $\cala$ is an \textbf{Artin ring } if it satisfies the following equivalent cond
 \end{enumerate}
 \end{dfn}
 
-\begin{lemma}
+\begin{lemma}\label{lem:SES_Artin}
 If $0\lrta M'\lrta M\lrta M''\lrta 0$ is a short exact sequence of modules, then $M$ Artin $\Llrta$ $M', M''$ Artin.
 \end{lemma}
 \begin{cor}
@@ -2894,16 +2894,165 @@ $\mathcal{J}^n(x)=\mathcal{J}^{n+1}(x)=\mathcal{J}^n\mathcal{J}(x)$.
 Want $\mathcal{J}(x)=(x)$\\
 If not, then $\mathcal{J}(x)$ is a nonut now $(x)$ finitely generated, so we conclude by Nakayama
 \end{proof}
+\section{Dimension Theory}
 
+\subsection{Lecture 15}
+\begin{dfn}
+The \textbf{Krull dimension} of a nonzero ring $\cala$, denoted $dim(\cala)$, is the supremum of all $r\geq 0$ s.t. $\exists$ chain of primes in $\cala$ of length $r$: 
+$\scp_0\subsetneq scp_1\subsetneq...\subsetneq \scp_r$
+\end{dfn}
 
+\begin{ex}\ 
+\begin{itemize}
+\item $k$ a field, $\Lrta (0)$ only prime, $\Lrta dim(k)=0$
+\item $dim(\intg)=1$
+\item (NOT OBVIOUS) $dim(k[x_1,...,x_n])=n$
+ and $dim(\calr[x_1,..,x_n])=dim(R)+n$.
+\item $dim(\cala)=0\Llrta $ every prime is maximal.  
+\end{itemize}
+\end{ex}
 
+\begin{thm}\label{thm:Artin_equiv_Noetherin+dim=0}
+$\cala$ an Artin ring $\Llrta\cala$ Noetherian and $dim(\cala)=0$. Recall last lecture, we proved $\cala$ Artin $\Lrta Nil(\cala)=Jac(\cala)$ is Nilpotent, $dim(\cala)=0$. 
+\end{thm}
 
+\begin{lemma}\label{lem:ideal_radical_Noetherian}
+$\cala$ Noetherian, $\sca\subseteq \cala$ ideal $\Lrta \exists n\geq 0: r(\sca)^n\subseteq \sca$
+\begin{proof}
+$r(\sca)$ is finitely generated, choose $N\geq 0$ large enough that $x_j^N\in\sca,\forall j=1,...,r$. Any $x\in r(\sca)$ may be written $x=\sum a_j x_j$ $\Lrta x^n=(\sum a_j x_j)^n=\cala\text{-linear combination of $x_1^{n_1}...x_r^{n_r} $ where $n_1+...n_r=n$}$. then we can take $n$ large enough $n\geq N\times r+1$, then at least one of $n_j$ is larger than $N$ for each term $\Lrta x^n\in\sca$.
+\end{proof}
+\end{lemma}
 
+\begin{cor}
+$\cala$ Noetherian, $\scq$  is $\scp$-primary, $\exists n\geq 0:\scq\supseteq \scp^n$
+\end{cor}
 
+\begin{lemma}\label{lem:Artin_Noetherin_product_of_maximals}
+Suppose $(0)\subseteq \cala$ is a finite product of maximal ideals. Then under this assumption, 
+$$
+\cala\text{ is Artin}\Llrta \cala\text{ is Noetherian}
+$$
+\begin{proof}
+Say $(0)=\scm_1\cdot \cdot \cdot \scm_r$. Each $k_j:\cala/\scm_j$ is a field. Define $M_0:=\cala$, $M_1:=\scm_1$,$M_2:=\scm_1\scm_2$...$M_r=(0)$.
 
+Then $M_j/M_{j+1} (j=0,1,...,r-1)$ is a $k_{j+1}-$vector space. Moreover: 
+$$
+\text{
+\{$\cala$-submodule of $M_j/M_{j+1}$\}}
+\overset{bij}{\llrta}
+\text{\{$k_{j+1}$-vector subspace of $M_j/M_{j+1}$\}}
+$$.
 
+In general, if $V$ is a vector space over a field $k$, then $V$ is Artin $\Llrta dim_k(V)<\infty$ $\Llrta V$ is Noetherian. Thus $M_j/M_{j+1}$ is Artin $\Llrta$ $M_j/M_{j+1}$ is Noetherian.
 
+To conclude, we apply the following Lemma:
+\begin{lemma}
+If $M=M_0\supseteq M_1\supseteq ...\supseteq M_r=\{0\}$ is a chain of modules over a ring then $M$ is Noetherian iff each $M_j/M_{j+1}$ is Noetherian and $M$ is Artin iff $M_j/M_{j+1}$ is Artin.
+\begin{proof}
+Induction on $r$, check it for $r=0$.
+For $r\geq 1$, 
+$$
+0\lrta M_1\lrta M_0\lrta M_0/M_1\lrta 0
+$$ Recall Lemma~\ref{lem:SES_Noetherian} and Lemma~\ref{lem:SES_Artin}, we know $M_1$ Noetherian (Artin) $\Llrta$ each $M_j/M_{j+1}$ is Noetherian (Artin)
+\end{proof}
+\end{lemma}
+\end{proof}
+\end{lemma}
 
+Now we come back to the proof of Theorem~\ref{thm:Artin_equiv_Noetherin+dim=0}
+\begin{proof}
+\textbf{Want:} Artin $\Llrta $ Noetherian + $dim=0$\\
+\textbf{Know:} Artin $\Llrta dim=0$\\
+By Lemma~\ref{lem:Artin_Noetherin_product_of_maximals}, it reduces to showing 
+\begin{enumerate}[label=(\roman*)]
+\item Artin $\Llrta $ $(0)=$ finite product of maximal ideals.
+\item Noetherian $\Lrta $ $(0)=$ finite product of maximal ideals + $dim=0$.
+\end{enumerate}
+
+For the part $(i)$. Recall $\cala$ Artin $\Lrta $ $\{\text{primes }\in \cala\}=\{\scm_1,...,\scm_r\}$ finite set of maximal ideals.
+$$
+(\scm_1\cdot \cdot \cdot \scm_r)^N\subseteq (\scm_1\cap ...\cap \scm_r)^N=Jac(\cala)^N=(0)
+$$
+for some $N$ by a proposition in last lecture.
+
+For part $(ii)$, $\cala$ Noetherian $\Lrta (0)=\cap_j\scq_j$ :MPD with $\scp_j=rad(\scq_j)$.
+$$
+\begin{aligned}
+(dim=0)& \Lrta\text{Each $\scp_j$ is maximal}\\
+& \Lrta \text{Every $\scp_j$ is isolated/minimal}\\
+& \Lrta \text{\{primes in $\cala$\}}=\{\scp_1,...,\scp_r\} \text{ are all maximal.}
+\end{aligned}
+$$
+Consider $(\scp_1,...,\scp_r)^N\subseteq (\scp_1\cap...\cap\scp_r)^N\subseteq (0)$, where $(\scp_1\cap...\cap \scp_r)=Nil(\cala)=rad(0)$ and we can conclude the last inclusion by Lemma~\ref{lem:ideal_radical_Noetherian}
+\end{proof}
+\begin{dfn}
+A ring $\cala$ is called primary iff $(0)$ is primary.
+\end{dfn}
+
+\begin{prop}
+$\cala$ is Artin. Then $\cala$ local $\Llrta $ primary.
+\begin{proof}
+``$\Lrta$ '':\\
+$(\cala:\scm)$ is local $\Llrta \scm $ is the unique prime ideal.\\
+$\Lrta$ $\scm=Jac(\cala)=Nil(\cala)$\\
+$\Lrta\scm^N=0$ for some $N\geq 0$\\
+$\cala-\scm=\cala^\times$
+$\Lrta\scm=\{\text{zero divisors}\}=\text{Nilpotents}=\text{Non-units}$ because $(0)$ is primary.\\
+``$\Llta$'', $(0)$ primary $\Lrta \scp=rad(0)$ is the smallest prime $\Lrta$ maximal\\
+$\Lrta\scp$ the unique prime in $\cala$\\
+$\Lrta\scp$: the unique maximal in $\cala$\\
+$\Lrta(\cala,\scm:=\scp)$ is local.
+
+\end{proof}
+\end{prop}
+
+Question: What are the Artin integral domains?\\
+Answer: The fields. $(0)$ prime $\Lrta (0)$ maximal $\Lrta \cala$ is a field. 
+
+\begin{prop}
+Let $(\cala,\scm)$ Noetherian local ring. Then either 
+\begin{enumerate}[label=(\roman*)]
+\item $\scm^n\neq \scm^{n+1}\forall n\geq 0$
+\item Some $\scm^n=0$, $\cala$ Artin.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+Need to show the negation of $(i)$ leads to $(ii)$.\\
+That $(i)$ is false is equivalent to $\exists n:\scm^n=\scm^{n+1}$ $\llrta \scm\sca=\sca,\sca:\scm^n$, because $\cala$ is Noetherian we know $\sca$ is finitely generated. Then by Nakayama lemma we know $\sca=(0)$\\
+
+Let $\scp\subseteq \cala$ be a prime. Then $\scm^n\subseteq \scp\subseteq \scm$. Take radical to get $\scp=\scm$. Indeed, $r(\scm^n)=r(0).$ $\Lrta \scm=\cap_\scp\scp\Lrta \scm $ unique prime$\Lrta dim(\cala)=0\Lrta \cala$ is Artin.
+\end{proof}
+
+\begin{ex}\ 
+\begin{itemize}
+\item $\intg/(p^n)$: Artin local
+\item $k[[x]]$: Noetherian $\scm=(x)$ not Artin local
+\item $k[[x]]/(x^n)$: Artin local
+\item $k[x^2,x^3]/(x^{10})$: Artin local $\scm=(x^2,x^3)$
+\end{itemize}
+In the first three examples, the maximal ideal is principal while in the last example it is not.
+\end{ex}
+
+In fact we can describe every Artin ring in terms of Artin local ring.
+\begin{thm}\label{thm:Artin_product_of_Artin_local}
+Every Artin ring is a finite direct product of local Artin local rings, unique up to reordering/isomorphism.
+\end{thm}
+\begin{proof}
+$\cala$ Artin $\Lrta $ $\cala$ Noetherian with $dim 0$ $\Lrta\exists (0)=\cap\scq_j:$ MPD with $\scp_j=rad(\scq_j)$ being maximal. $\exists n\geq 0$  s.t. $\scq_j\subseteq \scp_j^n\forall j$, $\scp_j$ maximal $\Lrta$ the $\scp_j$ are pairwise coprime $\Lrta$ $\scq_j$ are pairwise coprime. Then we know from Chinese remainder theorem:
+the map
+$$
+\cala/\cap_j\scq_j\lrta \prod_j \cala/\scq_j
+$$
+ is an isomorphism,
+ Which means 
+ $$
+\cala\cong\prod_j \cala/\scq_j
+ $$
+is a finite product of Artin local rings.
+
+Uniqueness: Suppose $\phi:\cala\overset{\cong}{\lrta}\prod_j\cala_j$ finite product of Artin local ring. Let $\phi_i:\cala\lrta \cala_i$, $\phi_j=pr_j\circ\phi$. Define $\scq_i':=\text{Ker}(\phi_i)$. Then $\cala/\scq'_i\cong \cala_i$. By the above lemma we know Artin local indicate primary. Then we know $\cala/\scq_i'$ primary $\scq_i'$ is primary.
+>>>>>>>>>1
+\end{proof}
 
 
 

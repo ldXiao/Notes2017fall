@@ -233,10 +233,10 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
+INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 OUTPUT CA.toc
-INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
-INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
-INPUT /usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
