@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1509818959 "DGT.tex" "DGT.pdf" "DGT" 1509818961
+["pdflatex"] 1510311565 "DGT.tex" "DGT.pdf" "DGT" 1510311566
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -201,13 +201,13 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "DGT.aux" 1509818960 2074 e29dc16d9955abec1083d772e6079cd3 ""
-  "DGT.out" 1509818960 818 fa250b85a4f75d3b9c1eabb242ecc301 ""
-  "DGT.tex" 1509818959 47657 74969b2959de5eeb093c55af29a2662f ""
-  "DGT.toc" 1509818960 917 0b7f1eea61cca3290ce753a628e97e21 ""
+  "DGT.aux" 1510311566 2292 81f097a81e38ccf71cef8295fe3cb875 ""
+  "DGT.out" 1510311566 886 80bed29c96231db3874d5f6941ac0094 ""
+  "DGT.tex" 1510311565 54593 c270ea3d4949229b795878c945ea02ed ""
+  "DGT.toc" 1510311566 999 69205ad6b4e0929d69114cabe1458271 ""
   (generated)
-  "DGT.out"
-  "DGT.log"
-  "DGT.toc"
   "DGT.aux"
+  "DGT.toc"
   "DGT.pdf"
+  "DGT.log"
+  "DGT.out"
