@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  9 NOV 2017 14:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  14 NOV 2017 17:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1040,37 +1040,100 @@ Underfull \hbox (badness 10000) in paragraph at lines 3020--3022
 
  []
 
-[67] [68] [69]
-Overfull \hbox (70.81554pt too wide) in paragraph at lines 3104--3105
-[][]\OT1/cmr/bx/n/10.95 Example 7.6. []$\OMS/cmsy/m/n/10.95 A \OT1/cmr/m/n/10.9
-5 = \OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[]; :::; X[]\
-OT1/cmr/m/n/10.95 ]$\OT1/cmr/m/it/10.95 , $\OML/cmm/m/it/10.95 I \OT1/cmr/m/n/1
-0.95 = \U/msb/m/n/10.95 Z[]$\OT1/cmr/m/it/10.95 , and $\OMS/cmsy/m/n/10.95 A[] 
-\OT1/cmr/m/n/10.95 := \OMS/cmsy/m/n/10.95 f[]g$\OT1/cmr/m/it/10.95 .
+[67] [68]
+Overfull \hbox (77.11174pt too wide) in paragraph at lines 3104--3105
+[][]\OT1/cmr/bx/n/10.95 Example 6.18. []$\OMS/cmsy/m/n/10.95 A \OT1/cmr/m/n/10.
+95 = \OML/cmm/m/it/10.95 k\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 X[]; :::; X[]
+\OT1/cmr/m/n/10.95 ]$\OT1/cmr/m/it/10.95 , $\OML/cmm/m/it/10.95 I \OT1/cmr/m/n/
+10.95 = \U/msb/m/n/10.95 Z[]$\OT1/cmr/m/it/10.95 , and $\OMS/cmsy/m/n/10.95 A[]
+ \OT1/cmr/m/n/10.95 := \OMS/cmsy/m/n/10.95 f[]g$\OT1/cmr/m/it/10.95 .
  []
 
-
+[69]
 Overfull \hbox (28.91045pt too wide) in paragraph at lines 3130--3134
 \OT1/cmr/m/n/10.95 Suppose $\OML/cmm/m/it/10.95 M[]$ \OT1/cmr/m/n/10.95 gen-er-
 ated by ho-mo-ge-neous el-e-ments $\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 x[]
 \OMS/cmsy/m/n/10.95 g$\OT1/cmr/m/n/10.95 . Then >>>>>>>>>>>>>1 
  []
 
-[70] [71]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3153.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 3153.
+[70]
+Overfull \hbox (55.40413pt too wide) in paragraph at lines 3165--3167
+\OT1/cmr/m/n/10.95 Last time we proveed the fol-low-ing are equiv-a-lent $(\OMS
+/cmsy/m/n/10.95 A ^^@ []\OT1/cmr/m/n/10.95 )\OML/cmm/m/it/10.95 ; \U/euf/m/n/10
+.95 a[]\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 M[]\OT1/cm
+r/m/n/10.95 )[] :
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3165--3167
+
+ []
+
+
+Overfull \hbox (19.82857pt too wide) in paragraph at lines 3174--3175
+$[] \OT1/cmr/m/n/10.95 : [] \OMS/cmsy/m/n/10.95 ([]) A[] \OT1/cmr/m/n/10.95 =[]
+\OMS/cmsy/m/n/10.95 ) \U/euf/m/n/10.95 a \OT1/cmr/m/n/10.95 : []$.
+ []
+
+[71]
+Overfull \hbox (43.86331pt too wide) in paragraph at lines 3183--3184
+[]\OT1/cmr/m/n/10.95 But we can de-rive this form $(\OML/cmm/m/it/10.95 M[]\OT1
+/cmr/m/n/10.95 )$ sta-ble $=[]\OMS/cmsy/m/n/10.95 ) [] \OT1/cmr/m/n/10.95 : [] 
+=[]\OMS/cmsy/m/n/10.95 )
+ []
+
+
+Overfull \hbox (6.51814pt too wide) in paragraph at lines 3183--3184
+\OT1/cmr/m/n/10.95 ([][])$ be-cause $[]$ is Noethe-rian and $[]$ is Noethe-
+ []
+
+
+Overfull \hbox (14.50424pt too wide) in paragraph at lines 3191--3192
+[]\OT1/cmr/m/n/10.95 Recall: The \OT1/cmr/bx/n/10.95 nth sym-bolic power $\U/eu
+f/m/n/10.95 p[]$ \OT1/cmr/m/n/10.95 of $\U/euf/m/n/10.95 p$ \OT1/cmr/m/n/10.95 
+is de-fined by $\U/euf/m/n/10.95 p[] \OT1/cmr/m/n/10.95 := \OML/cmm/m/it/10.95 
+^^S[]\OT1/cmr/m/n/10.95 ((\OML/cmm/m/it/10.95 ^^S[]\U/euf/m/n/10.95 p\OT1/cmr/m
+/n/10.95 )[]) =
+ []
+
+
+LaTeX Warning: Command \i invalid in math mode on input line 3193.
+
+
+Overfull \hbox (33.09488pt too wide) in paragraph at lines 3219--3220
+[][]\OT1/cmr/bx/n/10.95 Definition 6.27. []$\OML/cmm/m/it/10.95 dim\OT1/cmr/m/n
+/10.95 (\OMS/cmsy/m/n/10.95 A\OT1/cmr/m/n/10.95 ) = []\OMS/cmsy/m/n/10.95 f\OML
+/cmm/m/it/10.95 t \OMS/cmsy/m/n/10.95 ^^U \OT1/cmr/m/n/10.95 0 : \OMS/cmsy/m/n/
+10.95 9[]g$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3219--3220
+
+ []
+
+[72]
+Overfull \hbox (40.25017pt too wide) in paragraph at lines 3246--3248
+[]\OT1/cmr/m/n/10.95 Then there is a bi-jec-tion be-tween the set of $\OMS/cmsy
+/m/n/10.95 f[]g$ \OT1/cmr/m/n/10.95 and \OMS/cmsy/m/n/10.95 f[]g\OT1/cmr/m/n/10
+.95 ,
+ []
+
+[73]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 3289.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 3289.
  (./CA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3153.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3153.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3153.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 3289.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 3289.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3289.
  ) 
 Here is how much of TeX's memory you used:
- 22277 strings out of 493706
- 415243 string characters out of 6145769
- 470133 words of memory out of 5000000
- 25295 multiletter control sequences out of 15000+600000
+ 22279 strings out of 493706
+ 415258 string characters out of 6145769
+ 471187 words of memory out of 5000000
+ 25297 multiletter control sequences out of 15000+600000
  18360 words of font info for 72 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,16n,84p,934b,1138s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CA.pdf (71 pages).
+Output written on CA.pdf (73 pages).

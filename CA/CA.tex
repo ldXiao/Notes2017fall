@@ -3054,7 +3054,7 @@ Uniqueness: Suppose $\phi:\cala\overset{\cong}{\lrta}\prod_j\cala_j$ finite prod
 >>>>>>>>>1
 \end{proof}
 
-\section{Lecture 16}
+\subsection{Lecture 16}
 
 \begin{thm}\label{thm:Krull_intersection}(Krull intersection theorem)
 $\cala$ Noetherian, $\sca\subseteq Jac(\cala)$, $M$ finitely generated $\cala$-module.
@@ -3150,7 +3150,7 @@ This is a natural sourve of graded $\tilde{\cala}-$modules. $\tilde{M}=\oplus_{i
 \end{itemize}
 
 \begin{dfn}
-WE call a $\sca-$filtration \textbf{stable} if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
+We call a $\sca-$filtration \textbf{stable} if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
 >>>>>>>>>>>>2
 \end{dfn}
 
@@ -3160,5 +3160,130 @@ Suppose $(M_i):$ $\sca-$filtration $\tilde{M}$ is graded $\tilde{\cala}$-module.
 \begin{proof}
 >>>>>>>>>>3
 \end{proof}
+
+\subsection{Lecture 17}
+>>>>>>>1 recall
+Now we come back to the proof of Krull-intersectoin theorem. Last time we proveed the following are equivalent $(\cala-\text{Noetherian}), \sca\text{ any ideal}, (M_i)_{i\geq 0}:\sca-\text{filtration}, $ $\sca M_i\subseteq M_{i+1}$\\
+$$
+\tilde{\cala}=\boxplus_{i\geq 0}\sca^i,\ \  \tilde{M}=\boxplus_{i\geq 0} M_i
+$$ 
+\begin{enumerate}[label=(\roman*)]
+\item $(M_i)$ is stable,i.e.  if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
+\item $\tilde{M}$ is finitely generated $\tilde{\cala}-$module.
+\end{enumerate}
+$\tilde{\cala}:\text{ Noetherian }\Llrta \cala \text{ Nowtherian}\Lrta \sca: \text{finitely generated as an $\cala$ module }$. Suppose $\sca$ is generated as $(x_1,...,x_r)$. By the Hilbert basis theorem, $\tilde{\cala}:\text{ Noetherian }$ can be derived form $\tilde{\cala}$ begin finitely generated as an $\cala$-module by $x_1,..,x_r\in\sca^1\llrta (\tilde{\cala})_1$.
+
+\begin{proof} of Artin-Rees lemma\\
+Assume its hypothesis, choose $\forall i\geq 0, M_i:\sca^i M:$ then it is a stable $\sca$-filtration ($\sca M_i=\sca\cdot \sca^i M=\sca^{i+1}M=M_{i+1}$)
+
+$M_i'=\sca^i M\cap M'$: a $\sca$-filtration. $\tilde{M}':=\boxplus_{i\geq 0}M_i'$. $\tilde{M}$ is naturally a $\tilde{\cala}-$submodule of $\tilde{M}$
+
+$M_i'=\sca^{i-k}M_k'\Llrta $ (conclusion of Artin-Rees lemma) $\Llta$ $(M_i') stable$ $\Llrta$ $(\tilde{M}',\text{finitely generated $\tilde{\cala}$-module})$
+
+But we can derive this form $(M_i)$ stable $\Lrta\tilde{M}:\text{finitely generated $\tilde{\cala}-$module}\Lrta (\tilde{M}\text{ finitely generated $\tilde{\cala}-$module })$ because $\tilde{\cala}$ is Noetherian and $\tilde{M}$ is Noetherian.
+\end{proof}
+>>>>>>>>2
+Exercise:\\
+Deduce theorem1 form cor3
+
+Question: Let $\scp\in Spec(\cala)$. What is $Ker(\cala\lrta \cala_\scp)$?
+
+Recall: The \textbf{nth symbolic power} $\scp^{(n)}$ of $\scp$ is defined by $\scp^{(n)}:=\iota^*((\iota_*\scp)^n)=\iota^*(\iota_*(\scp^n))$ for $\iota:\cala\lrta \cala_\scp$. This is a $\scp-$primary ideal. ($\iota_*(\sca\scb)=\iota_*(\sca)\iota_*(\scb)$)
+\begin{cor}
+ $\cala-$Noetherian $\Lrta Ker(\cala\lrta \cala_\scp)\overset{?}{=}\cap_{\i\geq 0}\scp^{(i)}$.
+\end{cor}
+\begin{proof}
+We know $Ker(\cala\lrta \cala_\scp)=\iota^*((0))\overset{?}{=}\cap_{i\geq 0}\iota^*(\iota_*(\scp)^i)$.
+ The last equality is guaranteed by the cor3 above because $\iota^*((0))=\cap_{i\geq 0}\iota_*(\scp)^i$. 
+
+ Note that $\cala_\scp,\iota_*(\scp)$ is local, Noetherian.
+\end{proof}
+
+\begin{lemma}\label{lem_5}
+(A special use of Krull dimension theorem)
+$\cala$ Noetherian local integral domain: $(0)\text{ prime } \subseteq \scm \text{ maximal }\subseteq \cala$. Then the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $\exists $ prime $\scp$ with $(0)\subsetneq \scp\subsetneq \scm$
+\item $\forall f\in\scm,\exists\text{ prime }\scp\ni f \text{ s.t. }$ , $(0)\subsetneq \scp\subsetneq \scm$
+\end{enumerate}
+\end{lemma}
+
+\begin{ex}
+$\cala=k[[X,Y]]\supseteq \scm=(X,Y)\supseteq (0)$. There exists $(0)\subsetneq\scp\subsetneq\scm,$ e.g., $\scp=(X)$. The conclusion says that $\forall f\in\scm\exists $ prime $\scp\ni f$ with  $(0)\subsetneq \scp\subsetneq \scm$, e.g. $f=Y\in\scm$
+\end{ex}
+
+\underline{NB} $(ii)\Lrta(i)$ is clear: take $f=0$
+
+
+\begin{dfn}
+$dim(\cala)=\sup \{t\geq 0:\exists \text{ chain of primes $\scp_0\subsetneq \scp_1\subsetneq ...\subsetneq \scp_t\subseteq \cala$}\}$\\
+
+For prime $\scp\subseteq \cala:$ \textbf{ height }$ht(\scp):=\sup \{t\geq 0|\exists\text{chain $\scp_0\subsetneq ...\subsetneq \scp_t=\scp$}\}$
+$$
+ht(\scp)=dim(\cala_\scp)
+$$
+
+\textbf{Coheight:} $coht(\scp):=\sup\{t\geq 0|\exists \scp=\scp_0\subsetneq ...\subsetneq \scp_t\subsetneq \cala\}$
+
+$$
+coht(\scp)=dim(\cala/\scp)
+$$
+\end{dfn}
+ 
+Another version:
+\begin{lemma}\label{lem_5'}
+$0\neq f(\text{ non-unit })\in\cala:$ Noetherian integral domain. Then any minimal prime $\scp_0$ of $(f)$ satisfies $ht(\scp_0)= 1$\\
+$\scp_0\supseteq (f)$ minimal for this property ``$\scp_0\in Ass'((f))$''
+\end{lemma}
+
+Reduce Lemma~\ref{lem_5'} to Lemma~\ref{lem_5}, we may assume that $\cala$ is local with $\scp_0$ the maximal ideal:
+\begin{itemize}
+\item replace $\cala$ by $\cala_{\scp_0}$,\ \  $\iota:\cala\lrta \cala_{\scp_0}$
+\item replace $\scp_0$ by $\iota_*(\scp_0)$
+\item replace $f$ by $f/1=\iota(f)$
+\end{itemize}
+
+Then there is a bijection between the set of $\{\text{primes $\scp\subseteq \scp_0$}\}$ and \{\text{ primes of $\cala_{\scp_0}$}\}, and a bijection between: $\{\text{primes $\scp\ni f$}\}$ and $\{\text{ primes of }\cala_{\scp_0}|\scp\ni f/1\}$
+>>>>>>>>3
+
+
+Now we come back to the proof of Lemma~\ref{lem_5}.
+\begin{proof}
+``$(i)\Lrta(ii)$'' in Lemma~\ref{lem_5}
+
+$(ii)\Llrta dim(\cala/(f))\geq 1$, there are two bijections: $\scm\llrta$ a maximal ideal in $\cala/(f)$, $\scm\supsetneq\scp\llrta$ a prime idael in $\cala/(f)$.
+
+Consider the canonical projection $\pi:\cala\lrta \cala/(f)$. Let $\scp:$ prime s.t. $\scm\supsetneq \scp\not \ni f$.
+
+$\frac{\cala}{(f)}$ Artin $\Lrta$ $\exists k\forall i\geq k$ $\scp^{(k)}+(f)=\scp^{(i)}+(f)$
+
+Indeed, $\frac{\scp^{(k)}+(f)}{(f)}$ is a descending chain in $\frac{\cala}{(f)}$
+
+The negation of $(ii)\Lrta\exists f\in \scm$ s.t. $\forall \scp$ prime , either\\
+(a). NOT $(0\subsetneq \scp\subsetneq\scm)$\\
+or\\
+(b). $\scp\not\ni f$
+
+Case (a). OK $\Lrta $ NOT (i) for this $\scp$
+
+Case (b). We focus on this now.
+
+Know: $f\notin \scp\subseteq \scm$. Want $\scp=(0)$ As above, $\exists k,\forall i\geq k$: $\scp^{(k)}\subseteq\scp^{(i)}+(f)$.
+
+Claim: $\scp^{(k)}=\scp^{(i)}+f\scp^{(k)}:$
+$\scp^{(k)}=\scp^{(k)}+\scp^{(i)}$
+>>>>>>4
+
+(Claim)$\Lrta$ $f\scp^{(k)}/\scp^{(i)}=\scp^{(k)}/\scp^{(i)}\overset{Nak}{\Lrta} \scp^{(k)}/\scp^{(i)}=0$
+
+$\Lrta\scp^{(i)}=\scp^{(k)}\forall i\geq k$ $\Lrta$ $\scp^k\subseteq \scp^{(k)}=\cap_i\scp^{(i)}=$ (by some Cor in this lecure) $Ker(\cala\lrta \cala_\scp)=\{0\}$ the last equality because $\cala$ is a domain.
+$\scp^k=\{0\}$ (because $\cala$ is a domain) $\Lrta\scp=(0)$ as desired.
+\end{proof}
+
+>>>>>>>>>5
+
+
+
+
 
 \end{document}
