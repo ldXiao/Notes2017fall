@@ -2437,8 +2437,8 @@ $\cala$ is Noetherian, $\sca\subseteq \cala$ is an ideal. $\Lrta\sca$ decomposab
 $\exists $ primary ideals $\scq_1,...,\scq_n\subseteq \cala$ s.t. $\sca=\scq_1\cap...\cap\scq_n$
 , where $\scq$ primary $\Llrta x y\in \scq\Lrta x\in \scq\ or\ y^n\in \scq\ for\ some \ n$\end{lemma}
 \begin{proof}
-Define: An ideal $r$ is \textbf{irresducible} if whenever $r=r'\cap r''$, we have either $r=r'$ or $r=r''$. NOtice $(6)=(2)(3)$ is not irreducible.\\
-\textbf{Claim1}: $\cala$ Noetherian. Then irresucible $\Lrta$ primary.
+Define: An ideal $r$ is \textbf{irreducible} if whenever $r=r'\cap r''$, we have either $r=r'$ or $r=r''$. NOtice $(6)=(2)(3)$ is not irreducible.\\
+\textbf{Claim1}: $\cala$ Noetherian. Then irreducible $\Lrta$ primary.
 
 Proof of Claim1\\
 Let $\sca$ irreducible. Let $x,y\in \cala$ with $xy \in \sca$. Assume $x\notin \sca$. Want $\exists n,y^n\in\sca$. For notational simplicity, we may replace $\cala$ by $\cala/\sca$ and reduce to the case $\sca=(0)$. (We want to construct a ascending sequence of ideals.) Consider the ideals $Ann(y^n)$. Theses ideals goes up  as $n$ increases $\Lrta$, $Ann(y^n)=Ann(y^{n+1})$ for some $n$ because $\cala$ is Noetherian. Then we know, $xy=0$, $x\in Ann(y)$, $(x)\subseteq Ann(y)$.\\
@@ -2832,7 +2832,7 @@ The proof of $(i)\Llrta (ii)$ same as the proof in definition of Noetherian ring
 \begin{dfn}
 $\cala$ is an \textbf{Artin ring } if it satisfies the following equivalent conditions
 \begin{enumerate}[label=(\roman*)]
-\item $\cala$ is an $\cala$-module
+\item $\cala$ is an Artin $\cala$-module
 \item $\cala$ DCC on ideals
 \item $\cala$ MIN on ideals
 \end{enumerate}
@@ -2861,7 +2861,7 @@ $(2)\supsetneq (2^2)\supsetneq (2^3)....$
 \end{itemize}
 \end{ex}
 
-\begin{lemma}
+\begin{lemma}\label{lem:primes_are_maximal_in_Artin}
 Let $\cala$ Artin. Then every prime in $\cala$ is maximal $\cala$ has only finitely many primes, hence the Jacobson radical $Jac(\cala)=Nil(\cala)$
 \end{lemma}
 \begin{proof}
@@ -2873,7 +2873,7 @@ Consider $(x)\supseteq (x^2)\supseteq (x^3)\supseteq...$. $\calb$ Artin $\Lrta \
 Consider distinct maximal ideals $\scm_1,\scm_2,...\in\cala$. Consider $\scm_1\supseteq \scm_1\cap \scm_2\supseteq \scm_1\cap\scm_2\cap \scm_3\supseteq ...$ Choose $n_0: \scm_1\cap...\cap \scm_{n_0}=\scm_1\cap..\cap\scm_n \forall n\geq n_0$ $\Lrta \scm_1\cap...\cap\scm_{n_0}\subseteq \scm_n\Lrta \scm_n=\scm_j$ for some $j\leq n_0$.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:Artin_nilpotent_nilradical}
 $\cala$ is Artin $\Lrta \mathcal{N}:=Nil(\cala)$ is nilpotent: $\exists n\geq 0,\mathcal{N}^n=(0)$
 \end{prop}
 \begin{rmk}
@@ -2884,7 +2884,7 @@ hence $\mathcal{N}=\oplus^n_{i=1}(X_i)$, where $(X_i)\subseteq k[X_i]/(X^i_i)$ $
 \end{rmk}
 
 \begin{proof}
-Let $\mathcal{J}:= Nil{\cala}=Jac(\cala)$ by the lemma. Consider $\mathcal{J}\supseteq \mathcal{J}^2\supseteq \mathcal{J}^3\supseteq ...$ $\cala$ is Artin $\Lrta \mathcal{J}^n=\mathcal{J}^{n+1}$ for some $n$, Want $\mathcal{J}^n=(0)$\\
+Let $\mathcal{J}:= Nil(\cala)=Jac(\cala)$ by the lemma. Consider $\mathcal{J}\supseteq \mathcal{J}^2\supseteq \mathcal{J}^3\supseteq ...$ $\cala$ is Artin $\Lrta \mathcal{J}^n=\mathcal{J}^{n+1}$ for some $n$, Want $\mathcal{J}^n=(0)$\\
 
 Denote $\mathcal{I}:=\mathcal{J}^n$. Note that $\mathcal{J}\mathcal{I}=\mathcal{I}$, if we know that $\mathcal{I}$ were finitely generated, suppose $\mathcal{I}\neq (0)$. Then Nakayama lemma $\Lrta \mathcal{I}=(0)$
 
@@ -2903,7 +2903,7 @@ $\scp_0\subsetneq \scp_1\subsetneq...\subsetneq \scp_r$
 
 \begin{ex}\ 
 \begin{itemize}
-\item $k$ a field, $\Lrta (0)$ only prime, $\Lrta dim(k)=0$
+\item $k$ a field, $\Lrta (0)$ is the only prime $\Lrta dim(k)=0$
 \item $dim(\intg)=1$
 \item (NOT OBVIOUS) $dim(k[x_1,...,x_n])=n$
  and $dim(\calr[x_1,..,x_n])=dim(R)+n$.
@@ -2912,18 +2912,19 @@ $\scp_0\subsetneq \scp_1\subsetneq...\subsetneq \scp_r$
 \end{ex}
 
 \begin{thm}\label{thm:Artin_equiv_Noetherin+dim=0}
-$\cala$ an Artin ring $\Llrta\cala$ Noetherian and $dim(\cala)=0$. Recall last lecture, we proved $\cala$ Artin $\Lrta Nil(\cala)=Jac(\cala)$ is Nilpotent, $dim(\cala)=0$. 
+$\cala$ an Artin ring $\Llrta\cala$ Noetherian and $dim(\cala)=0$.  
 \end{thm}
+Recall last lecture, by the Proposition~\ref{lem:primes_are_maximal_in_Artin} says all primes in Artin ring is maximal, $dim(\cala)=0$.
 
 \begin{lemma}\label{lem:ideal_radical_Noetherian}
-$\cala$ Noetherian, $\sca\subseteq \cala$ ideal $\Lrta \exists n\geq 0: r(\sca)^n\subseteq \sca$
+$\cala$ Noetherian, $\sca\subseteq \cala$ ideal $\Lrta \exists n\geq 0: rad(\sca)^n\subseteq \sca$
 \begin{proof}
-$r(\sca)$ is finitely generated, choose $N\geq 0$ large enough that $x_j^N\in\sca,\forall j=1,...,r$. Any $x\in r(\sca)$ may be written $x=\sum a_j x_j$ $\Lrta x^n=(\sum a_j x_j)^n=\cala\text{-linear combination of $x_1^{n_1}...x_r^{n_r} $ where $n_1+...n_r=n$}$. then we can take $n$ large enough $n\geq N\times r+1$, then at least one of $n_j$ is larger than $N$ for each term $\Lrta x^n\in\sca$.
+$rad(\sca)$ is finitely generated, suppose it is generated by a finite set $\{x_i|i=1,...,r\}$. Choose $N\geq 0$ large enough that $x_j^N\in\sca,\forall j=1,...,r$. Any $x\in rad(\sca)$ may be written $x=\sum a_j x_j$ $\Lrta x^n=(\sum a_j x_j)^n=\cala\text{-linear combination of $x_1^{n_1}...x_r^{n_r} $ where $n_1+...n_r=n$}$. W we can take $n$ large enough $(n\geq N\times r+1)$, then at least one of $n_j$ is larger than $N$ for each term $\Lrta x^n\in\sca$.
 \end{proof}
 \end{lemma}
 
 \begin{cor}
-$\cala$ Noetherian, $\scq$  is $\scp$-primary, $\exists n\geq 0:\scq\supseteq \scp^n$
+$\cala$ Noetherian, $\scq$  is $\scp$-primary, $\exists n\geq 0:\scq\supseteq \scp^n$. (By definition)
 \end{cor}
 
 \begin{lemma}\label{lem:Artin_Noetherin_product_of_maximals}
@@ -2932,7 +2933,7 @@ $$
 \cala\text{ is Artin}\Llrta \cala\text{ is Noetherian}
 $$
 \begin{proof}
-Say $(0)=\scm_1\cdot \cdot \cdot \scm_r$. Each $k_j:\cala/\scm_j$ is a field. Define $M_0:=\cala$, $M_1:=\scm_1$,$M_2:=\scm_1\scm_2$...$M_r=(0)$.
+Say $(0)=\scm_1\cdot \cdot \cdot \scm_r$. Each $k_j:=\cala/\scm_j$ is a field. Define $M_0:=\cala$, $M_1:=\scm_1$, $M_2:=\scm_1\scm_2$,...,$M_r=(0)$.
 
 Then $M_j/M_{j+1} (j=0,1,...,r-1)$ is a $k_{j+1}-$vector space. Moreover: 
 $$
@@ -2940,7 +2941,7 @@ $$
 \{$\cala$-submodule of $M_j/M_{j+1}$\}}
 \overset{bij}{\llrta}
 \text{\{$k_{j+1}$-vector subspace of $M_j/M_{j+1}$\}}
-$$.
+$$
 
 In general, if $V$ is a vector space over a field $k$, then $V$ is Artin $\Llrta dim_k(V)<\infty$ $\Llrta V$ is Noetherian. Thus $M_j/M_{j+1}$ is Artin $\Llrta$ $M_j/M_{j+1}$ is Noetherian.
 
@@ -3537,5 +3538,174 @@ And $\scp_n\cala[X]+X\cala[X]$ is prime because $\cala[X]/(\scp_n\cala[X]+X\cala
 
 Hard direction $dim\cala[X]\leq dim(\cala)-1$. Consider $\scp_0\subseteq...$
 \end{proof}
+
+\subsection{Lecture 20}
+\begin{proof}
+Last time, we proved $dim(\cala[X])\geq dim(\cala)+1$ by exhibiting, for each length $r$ chain $\scp_0\subsetneq ...\subsetneq \scp_r\in \cala$. The length $r+1$ chain $\scp_0\cala[X]\subsetneq ...\subsetneq \scp_r\cala[X]\subsetneq \scp_r\cala[X]+(X)$ in $\cala[X]$.
+
+Now $dim(\cala[X])\leq dim(\cala)+1$. Because $dim \cala[X]=$ $\sup\{\scm\subseteq \cala[X] \text{ maximal }|ht(\scm)\}$
+
+So it suffices to show $\forall\scm\subseteq \cala[X]$ that $ht(\scm)\leq r+1$, where $r:=dim\cala$. May assume $r\leq \infty$.
+
+Consider $\scp:=\scm\cap\cala$ prime in $\cala$. We localize at $\scp$ :$S:=S_\scp=\cala-\scp$. $S^{-1}\cala=\cala_\scp$ is local with maximal ideal $S^{-1}(\cala[X])=(S^{-1}\cala)[X]=\cala_\scp[X]$. $S^{-1}\scm\subseteq S^{-1}\cala[X]$ remains a maximal ideal, and $ht(S^{-1}\scm)=ht(\scm)$, because the localization with respect to $S$, preserves the primes and their inclusions for those ideals not intersecting $S$.
+
+We now assume that $(\cala,\scp)$: Noetherian local ring, $\scm\subseteq\cala[X]$ maximal, $\scm\cap\cala=\scp$. $r=dim\cala\leq \infty$.
+
+\underline{Want} $ht(\scm)\leq r+1$\\
+It suffices by a theorem in last lecture to construct $r+1$ elements of $\cala[X]$ that generate an ideal with radical $\scm$.
+
+\underline{Know} $r=dim(\cala)=ht(\scp)$, so we can find $x_1,...,x_r\in\cala$ s.t.
+$\scp$ is the only prime of $\cala$ containing $(x_1,...,x_r)$ i.e., $rad((x_1,...,x_r))=\scp.$
+
+Consider
+$$
+\cala[X]\lrta\cala[X]/\scp\cala[X]=(\cala/\scp)[X]$$
+$$
+\scm\longmapsto\overline{\scm}\text{ maximal}
+$$
+where $\scm\supseteq\scp\cala[X]$ and $\cala/\scp$ is a field, thus $\cala/\scp[X]$ is a PID.
+
+$\overline{\scm}=(\overline{f})$ for some $\overline{f}\in(\cala/\scp)[X]$. Say $\overline{f}$ is the image of $f\in\scm$.
+
+\textbf{Claim}:$\scm$ is the only prime $\scq$ that contains $x_1,..,x_r,f.$
+
+Indeed, $\scq\cap \cala$ is a prime of $\cala$ containing $x_1,..,x_r$, hence $\scq\cap \cala=\scp$, so $\scq\supseteq \scp\cala[X]$, so $\scq$ identifies with a prime ideal $\overline{\scq}\subseteq \cala[X]/\scp\cala[X]$ which contains $\overline{f}$, hence $\overline{\scq}=\overline{\scm}$, hence $\scq=\scm$
+
+\end{proof}
+
+\begin{ex}(All the bad examples in algebraic geometry is more or less related to this example)
+One other example: $k$ is a field, $k[[x,y]]:=\{\text{formal power series over $k$ in $x,y$}\}=\{\sum_{ij}c_ij x^i y^j\}$, $k[[x,y]]$ is Noetherian, local ring with maximal ideal $(x,y)$
+
+Assume $\cala:=k[[x,y]]/(x^2,xy)$. what is  $dim\cala$?
+
+$\cala/(x)\cong k[[y]]$, $\cala/(x,y)\cong k$ are integral domains $\Lrta (x)\subsetneq (x,y)$ is a chain of prime, notice that $\cala$ is not a integral domain$\Lrta dim(\cala)\geq 1$
+
+$\cala\supseteq \scm=(x,y)$ (x and y here means the image of x and y in the quotient ring.)
+
+Claim $rad((y))=\scm$
+\begin{proof}
+$x^2=0\in(y), y^1\in(y)\rta \scm\subseteq rad((y))$, and by the fact the t$\scm $ is maximal $\scm=rad((y))$
+\end{proof}
+By the theorem on parameters, deduce that $dim(\cala)\leq 1$. hence $dim\cala=1$
+\end{ex}
+
+\begin{lemma}
+$k=\overline{k}$ say $k=\cplx$. $\cala=k[X_1,...,X_n]$. Let $\scm\subseteq \cala$ be a maximal ideal, then $\scm=(X_1-x_1,...,X_n-x_n)$ for some $(x_1,..,x_n)\in k^n$. Then $ht(\scm)=n$, and $\cala_\scm$ a local ring of dimension $n$ whose maximal ideal $\scm\cala_\scm$ has $n$ generators.
+\begin{proof}
+$dim(\cala_\scm)=ht(\scm\cala_\scm)=ht(\scm)\leq dim(\cala)=n$. $ht(\scm)\geq n$ because $\scm=\scp_n\supsetneq ...\supsetneq \scp_0$, $\scp_i=(X_1-x_1,...,X_i-x_i)$ 
+\end{proof}
+\end{lemma}
+
+Now let $(\cala,\scm):$ Noetherian local of $d:=dim(\cala)=ht(\scm)$ and we set $k=\cala/\scm$.
+
+\begin{lemma}\ 
+\begin{enumerate}[label=(\alph*)]
+\item In general , $d\leq dim_k(\scm/\scm^2)$ (The late is a $k-$vector space because $M$ and $\cala-$module $\Lrta M/\scm M$ is a $k-$vector space.)
+\item The following are equivalent:
+    \begin{enumerate}[label=(\roman*)]
+        \item $\scm$ admits a set of $d$ generator: $\scm=(x_1,..,x_d)$
+        \item $d=dim_k(\scm/\scm^2)$
+    \end{enumerate}
+    And if these hold, we call $(\cala,\scm)$ is \textbf{regular}
+\end{enumerate}
+\end{lemma}
+\begin{ex}
+$k[x_1,..,x_n]_\scm$ is regular.
+\end{ex}
+\begin{proof}\ 
+\begin{enumerate}[label=(\alph*)]
+\item Set $n:=dim_k(\scm/\scm^2)$. Choose $x_1,..,x_n\in\scm$ s.t. $\overline{x}_1,...,\overline{x}_n\in \scm/\scm^2$ form a basis.
+
+By Nakayama Lemma $\Lrta\scm=(x_1,...,x_b)\Lrta d\leq n$ by Krull dimension theorem.
+
+\item $(i)\Lrta (ii)$\\
+$\scm=(x_1,...,x_d)\Lrta \scm/\scm^2 $ is spannd by $\overline{x}_1,...,\overline{x}_d$, so $dim_k(\scm/\scm^2)\leq d$. Combine with $(a)$ to get $(ii)$.
+
+$(ii)\Lrta (i)$ Same proof as $(a)$
+
+\end{enumerate}
+\end{proof}
+
+
+Motivation: to show that $dim(\cala)=tr.deg.k(Frac(\cala))$, $\forall\cala$ integral domain that is finitely generated as an algebra over some field $k\subseteq\cala$.
+
+For example: $\cala=k[x_1,..,x_n]$
+
+\underline{Want} Machinery for comparing a general ring $\cala$ as above to this example.
+
+\section{Integral extension of rings}
+We will cover the contents of \S 5 of A-M and \S 3 pf Bosch
+\subsection{Lecture 20}
+Consider a monic polynomial equation with coefficients in $\cala$:
+\begin{equation}\label{eq:integral_extension}\tag{*}
+x^n+a_1 x^{n-1}+...+a_n=0
+\end{equation}
+\begin{dfn}
+Let $\cala\subseteq \calb$ be rings. Say that $x\in\calb$ is \textbf{integral over $\cala$} if $\exists n\geq 1$, $a_1,..,a_{n}\in\cala$ s.t. the above Equation(\ref{eq:integral_extension}) holds.
+
+And we say that $\calb$ is \textbf{integral over $\cala$} if each $x\in\calb$ is integral over $\cala$.
+\end{dfn}
+
+A non-obvious fact: $x,y\in \calb$ integral over $\cala$, then $x\pm y, xy$ are integral over $\cala$ (The elements in $\calb$ integral over $\cala$ form a ring)
+
+\begin{lemma}
+$\cala\subseteq \calb$ are rings. The followings are equivalent for $x\in\calb$.
+\begin{enumerate}[label=(\roman*)]
+\item $x$ is integral over $\cala$
+\item $\cala[x]$ is a finitely generated $\cala-$module: $\exists e_1,..,e_n\in\cala[x],s.t. \cala[x]=\sum_i\cala e_i$
+\item $\exists $ subring $\cala[x]\subseteq \calc\subsetneq \calb$ s.t. $\calc$ finitely generated $\cala-$module.
+\item $\exists$ faithful $\cala[x]-$module $M$ which is finitely generated as an $\cala-$module.
+(Here by faithful, we mean the only element $y\in\cala[x], y\cdot m=0,\forall m\in M$ $\Lrta y=0$ )
+\end{enumerate}
+\end{lemma}
+\begin{ex}
+$\frac{1}{2}\in\ratl$ is not integral over $\intg$, $\intg[\frac{1}{2}]$ not a finitely generated $\intg-$module. It equals to  $\sum_{n=0}^\infty 2^{-n}\intg$
+\end{ex}
+\begin{proof}
+$(i)\Lrta(ii)$ If $x$ satisfies $x^n+a_1 x^{n-1}+...+a_n=0$, then $\cala[x]=\sum^{n-1}_{i=0}\cala x^i\ni x^n=-(a_1 x^{n-1}+...+a_n)\Lrta x^{n+1}=-a_1x^n-(a_2 x^{n-1}+...+a_n x)$. By induction, we know $\cala[x]$ is a finitely generated $\cala-$module.
+
+$(ii)\Lrta (iii)$ $\calc:=\cala[x]$,
+
+$(iii)\Lrta(iv)$ $M:=\calc$
+
+$(iv)\Lrta(i)$ $M=\sum_i^n\cala e_i, e_i\in M$. Because $M$ is a $\cala[x]-$module, we can apply the action of $x$ on each $e_i$ and get a system of linear equations:
+$$
+\begin{array}{ c }
+x\cdot e_{1} =a_{11} e_{1} +...+a_{1n} e_{n}\\
+\vdots \\
+x\cdot e_{n} =a_{n1} e_{1} +...+a_{nn} e_{n}
+\end{array}
+$$
+with coefficients $a_{ij}\in\cala$. In terms of matrices, we can write
+\begin{center}
+$\Delta \cdot \begin{pmatrix}
+e_{1}\\
+\vdots \\
+e_{n}
+\end{pmatrix} =0$,
+\end{center}
+where $\Delta=(\delta_{ij}x-a_{ij})\in (\cala[x])^{n\times n}$. Now consider the Cramer's rule in linear algebra:
+$$
+\Delta^{ad}\cdot \Delta=(det\Delta)\cdot Id,
+$$
+we have the following equality
+\begin{center}
+$\det \Delta \cdot \begin{pmatrix}
+e_{1}\\
+\vdots \\
+e_{n}
+\end{pmatrix} =0$,
+\end{center}
+hence $\det\Delta m=0,\ \forall m\in M$, by the assumption in $(iv)$, M is a faithful $\cala[x]-$module $\Lrta \det \Delta=0$. Therefore $x$ satisfies the following monic polynomial equation 
+$$
+\det (\delta_{ij} X-a_{ij})=0
+$$
+as desired.
+\end{proof}
+
+
+
+
+
 
 \end{document}

@@ -23,3 +23,6 @@
 \contentsline {subsection}{\numberline {6.3}Lecture 17}{71}{subsection.6.3}
 \contentsline {subsection}{\numberline {6.4}Lecture 18}{74}{subsection.6.4}
 \contentsline {subsection}{\numberline {6.5}Lecture 19}{76}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Lecture 20}{79}{subsection.6.6}
+\contentsline {section}{\numberline {7}Integral extension of rings}{81}{section.7}
+\contentsline {subsection}{\numberline {7.1}Lecture 20}{81}{subsection.7.1}
