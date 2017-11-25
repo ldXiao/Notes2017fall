@@ -661,7 +661,7 @@ One checks that
 $$
 \begin{aligned}
 \lgl X\rgl&=\left\{\text{linear combination of elements of } X\right\}\\
-&=\left\{\sum_i a_i x_i|K\geq 0 \intg, a_i\in\cala, x_i\in X\right\}
+&=\left\{\sum^K_i a_i x_i|0\leq K\in \intg, a_i\in\cala, x_i\in X(\text{equivalently almost all $a_i$ are zero})\right\}
 \end{aligned}
 $$
 We write 
@@ -733,9 +733,9 @@ This is called the \textbf{invariant basis number property}, all nontrivial comm
 \end{enumerate}
 \end{ex}
 
-\begin{prop}
+\begin{prop}\label{lem:Nakayama}
 (Nakayama's lemma)\\
-$M$ finitely generated $\cala$-module, $I\subset \text{Jacobson radical of \cala, which is just } \cap_{\scm\subset\cala\ }\scm$, where $\scm $ are maximal ideals in $\cala$.
+$M$ finitely generated $\cala$-module, $I\subset \text{Jacobson radical of $\cala$}$, which is the intersection of all maximal ideals in $\cala$.
 If $IM=M$, then $M=\{0\}$. e.g. 
 $\cala$ being a local ring and $I=\scm$ the only maximal in $\cala$.
 \end{prop}
@@ -2129,6 +2129,8 @@ Need: if $N_i\subseteq N_j\subseteq M$ and $N_i''=N''_j, N'_i=N'_j$, then $N_i=N
 For the $\Lrta$ direction, we can use the definition of Noetherian module to prove directly that \textbf{Any submodule of a Noetherian module is Noetherian} and \textbf{Any quotient module of Noetherian module is Noetherian}(See part of proof of Corollary~\ref{cor:Noetherian_quotient_module}).
 \end{proof}
 
+In general, any finitely generated module over an Noetherian ring is Noetherian.
+
 \begin{thm}\label{thm:Hilbert_Basis}(Hilbert basis theorem)
 $\cala$ Noetherian $\Lrta $ $\cala[X]$ is Noetherian.
 \end{thm}
@@ -2856,7 +2858,7 @@ $(2)\supsetneq (2^2)\supsetneq (2^3)....$
 \item Any finite product of Artin ring is Artin.
 \item $k$ is field, $\scm:=(X_1,...,X_n)\subset k[X_1,...,X_n]=\cala$. Then $\cala/\scm^l$ is Artin $\forall l\geq 0$ where $\cala/\scm^l$ is finite dimensional vector space over $k$.
 \item $k[X]/(X^l)$ is Artin $\forall l\geq 0$
-\item $k[X^2,X^3]/(X^{10})$ us Artin
+\item $k[X^2,X^3]/(X^{10})$ is Artin
 \item $k[X]$ is NOT Artin.
 \end{itemize}
 \end{ex}
@@ -2906,7 +2908,7 @@ $\scp_0\subsetneq \scp_1\subsetneq...\subsetneq \scp_r$
 \item $k$ a field, $\Lrta (0)$ is the only prime $\Lrta dim(k)=0$
 \item $dim(\intg)=1$
 \item (NOT OBVIOUS) $dim(k[x_1,...,x_n])=n$
- and $dim(\calr[x_1,..,x_n])=dim(R)+n$.
+ and $dim(\calr[x_1,..,x_n])=dim(\calr)+n$.
 \item $dim(\cala)=0\Llrta $ every prime is maximal.  
 \end{itemize}
 \end{ex}
@@ -2986,7 +2988,7 @@ $$
 Consider $(\scp_1,...,\scp_r)^N\subseteq (\scp_1\cap...\cap\scp_r)^N\subseteq (0)$, where $(\scp_1\cap...\cap \scp_r)=Nil(\cala)=rad(0)$ and we can conclude the last inclusion by Lemma~\ref{lem:ideal_radical_Noetherian}
 \end{proof}
 \begin{dfn}
-A ring $\cala$ is called primary iff $(0)$ is primary.
+A ring $\cala$ is called \textbf{primary} iff $(0)$ is primary.
 \end{dfn}
 
 \begin{prop}
@@ -3074,52 +3076,54 @@ $$
 In particular, $\scm=Jac(\cala)$, hence it satisfies the requirement for ideals in the above theorem. But $\cap_{i\geq 0}\scm^i=\scm$. Indeed, $\scm$ is spanned over $k$  by $X^\alpha,\alpha\in\ratl_{>0}$. But $X^\alpha=(X^{\alpha/i})^i\in\scm^i\forall i\in\intg_{\geq 1}$. Thus $\scm\subseteq \scm^i\subseteq \scm\forall i\geq 1$. $\cala$ forms a Non-example of Non-Noetherian ring,$\scm$ is not finitely generated. 
 \end{ex}
 
-\begin{proof}
-$\sca\subseteq Jac(\cala)$. Maybe we can try Nakayama lemma?\\
-$M':=\cap_{i\geq 0}\sca^i M.$ Noetherian, $M$ finitely generated. $M$ is Noetherina $\Lrta M'$ is Noetherian and $M'$ is finitely generated. Want to show $M'=0$. By Nakayama lemma, reduce to showing that $\sca M'=M'$?\\
-Unfortunately, ideal multiplication and intersection do not in general commute, so this is not so clear, we can at most claim $\sca M'\subseteq M'$.\\ 
+\begin{proof}(of Theorem~\ref{thm:Krull_intersection})
+$\sca\subseteq Jac(\cala)$, which suggests us to  try Nakayama's Lemma~\ref{lem:Nakayama}.
+$M':=\cap_{i\geq 0}\sca^i M.$ $M$ finitely generated Noetherian module $\Lrta M'$ is Noetherian and $M'$ is finitely generated. Want to show $M'=0$. By Nakayama lemma, it reduce to showing that $\sca M'=M'$.\\
+Unfortunately, \textbf{ideal multiplication and intersection of modules do not in general commute}, so this is not so clear, we can at most claim $\sca M'\subseteq M'$(easy to check).\\ 
 To proceed, we need the following lemma:
-\begin{lemma}
-(Artin-Rees) $\cala$ Noetherian,$\sca$ any ideal. $M$ finitely generated module and $M'\subseteq M$ as a submodule. Then $\exists k\geq 0 $ s.t. $\forall i\geq k$
+\begin{lemma}\label{lem:Artin-Rees}
+(Artin-Rees) $\cala$ Noetherian,$\sca$ be any ideal in $\cala$. $M$ finitely generated module and $M'\subseteq M$ as a submodule. Then $\exists k\geq 0 $ so that $\forall i\geq k$
 $$
 \sca^i M\cap M'=\sca^{i-k}(\sca^k M\cap M')
 $$
-\begin{proof}
-``$\subseteq$''. Let $x\in \sca^i M\cap M'$. Thus 
-?????????????
-``$\supseteq$'':$\sca^k M\cap M'\subseteq M'\Lrta \sca^{i-k}(\sca^k M\cap M')\subseteq M'$. $\sca^{i-k}(\sca^k M\cap M')\subseteq \sca^{i-k}\sca^k M=\sca^i M$
-$\Lrta\sca^{i-k}(\sca^k M\cap M')\subseteq \sca^i M\cap M'$
-\end{proof}
+%\begin{proof}
+%``$\subseteq$''. Let $x\in \sca^i M\cap M'$. Thus 
+%?????????????
+%``$\supseteq$'':$\sca^k M\cap M'\subseteq M'\Lrta \sca^{i-k}(\sca^k M\cap M')\subseteq M'$. $\sca^{i-k}(\sca^k M\cap M')\subseteq \sca^{i-k}\sca^k M=\sca^i M$
+%$\Lrta\sca^{i-k}(\sca^k M\cap M')\subseteq \sca^i M\cap M'$
+%\end{proof}
 
-Then, by Artin-Rees Lemma, $\sca^i M\cap M'=\sca^{i-k}(\sca^k M\cap M')$. But $\sca^i M\cap M'=M'=\sca^k M\cap M'$. Take $i=k+1: M'=\sca M'$, done
+Then, by Artin-Rees Lemma~\ref{lem:Artin-Rees}, $\sca^i M\cap M'=\sca^{i-k}(\sca^k M\cap M')$. But $\sca^i M\cap M'=M'=\sca^k M\cap M'$. Take $i=k+1: M'=\sca M'$. Then use the Nakayama Lemma~\ref{lem:Nakayama}, $\Lrta M'=0$   done.
 \end{lemma}
 \end{proof}
 
-Aim next, to prove ``$\subseteq $'' part of Artin-Rees lemma.
+The ``$\supseteq$'' part of Artin-Rees Lemma~\ref{lem:Artin-Rees} is clear, because $\sca^{i-k}(\sca^k M\cap M')\subseteq \sca^i M\cap\sca^{i-k}M'$.
+
+Our aim next is to prove ``$\subseteq $'' part of Artin-Rees lemma.
 \begin{dfn}
-Let $I$ be a monoid (Set with associative binary operation and with identity). An $I$-graded ring is a ring together with a decomposition $\cala=\oplus_{i\in I}\cala_i$ such that $\cala_i\cala_j\subseteq \cala_{i+j}$. Thus $1\in \cala_0$
+Let $I$ be a \textbf{monoid} (Set with associative binary operation and with identity). An \textbf{$I$-graded ring} is a ring together with a decomposition $\cala=\oplus_{i\in I}\cala_i$ such that $\cala_i\cala_j\subseteq \cala_{i+j}$. Thus $1\in \cala_0$
 \end{dfn}
 
 \begin{ex}
-$\cala=k[X_1,...,X_n]$, $I=\intg_{\geq 0}$, and $\cala_i:=\{\text{homogeneous elements if degree $i$}\}$. Then $\cala=\oplus_{i\geq 0}\cala_i$ is a $\intg_{\geq 0}$ graded ring.
+$\cala=k[X_1,...,X_n]$, $I=\intg_{\geq 0}$, and $\cala_i:=$\{homogeneous elements if degree $i$\}. Then $\cala=\oplus_{i\geq 0}\cala_i$ is a $\intg_{\geq 0}$ graded ring.
 
 Another example is still the same $\cala$ but with $I=(\intg_{\geq 0})^n$ and $\cala_I=k X_1^{i_1}...X_n^{i_n}$
 \end{ex}
 
 \begin{dfn}
-A \textbf{graded module} $M$ over a graded ring $\cala=\oplus_{i\in I}\cala_i$ is a module equipped witha decomposition $M=\oplus_{i\in I } M_i$
- s.t. $\cala_i\cdot M_j\subseteq M_{i+j}$. A\textbf{graded submodule } $M'\subseteq M$ is then a submodule for which $M'=\oplus_{i\in I}(M'\cap M_i)$. A \textbf{ideal} pis  graded submodule of $\cala\Llrta\sca=\oplus_i(\sca\cap \cala_i)$.
-We call elements of $\cup_i\cala_i\subseteq \cala$ or $\cup_i M_i\subseteq M$ homogeneous. Elements of $\cala_i$ or $M_i$ are homogeneous of degree $i$.
+A \textbf{graded module} $M$ over a graded ring $\cala=\oplus_{i\in I}\cala_i$ is a module equipped with a decomposition $M=\oplus_{i\in I } M_i$
+ s.t. $\cala_i\cdot M_j\subseteq M_{i+j}$. A \textbf{graded submodule } $M'\subseteq M$ is then a submodule for which $M'=\oplus_{i\in I}(M'\cap M_i)$. A \text{ graded ideal} $\sca$ is  graded submodule of $\cala$ s.t. $\sca=\oplus_i(\sca\cap \cala_i)$.
+We call elements of $\cala_i\subseteq \cala$ or $ M_i\subseteq M$ \textbf{homogeneous}. Elements of $\cala_i$ or $M_i$ are homogeneous of degree $i$.
 \end{dfn}
 
 \begin{ex}
 $\cala=k[x,y]$ with its $\intg_{\geq 0}$-grading. Then $\sca=(x^2+y)$ is NOT a graded ideal. Indeed, $\sca\neq \sum_{i\geq 0}(\sca\cap \cala_i)\not\ni x^2+y$.
 
-One way to see this is to use the $\intg^2_{\geq 0}$-grading and visualized. Try to show $\sca\cap \cala_1={0}$. since $x^2\in\cala_2$ and $y\in\cala_1$ and $\cala=\oplus\cala_i$, this implies that $x^2+Y\in \sum(\sca\cap\cala_i)$
+One way to see this is to use the $\intg^2_{\geq 0}$-grading and visualized. Try to show $\sca\cap \cala_1={0}$. Since $x^2\in\cala_2$ and $y\in\cala_1$ and $\cala=\oplus\cala_i$, this implies that $x^2+y\notin \sum(\sca\cap\cala_i)$
 \end{ex}
 
 \begin{lemma}
-Let $M$ graded module over $\cala$ graded ring. 
+Let $M$ be graded module over a graded ring $\cala$. 
 \begin{enumerate}[label=(\roman*)]
 \item A submodule $M'\subseteq M$ is a graded submodule $\Llrta$ M' is generated by homogeneous elements. 
 \item Moreover, if $M'$ is a graded submodule and finitely generated as module, then it is generated by finitely many homogeneous elements.
@@ -3129,41 +3133,58 @@ Let $M$ graded module over $\cala$ graded ring.
 \begin{enumerate}[label=(\roman*)]
 \item $M'\subseteq M$ is graded $\Llrta M'=\sum_i(M'\cap M_i)\Lrta M'$ generated by some homogeneous elements $(x_\alpha)_\alpha$, where $x_\alpha\in M_{i(\alpha)}$\\
 Suppose $M'$ generated by homogeneous elements $\{x_\alpha\}$. Then
->>>>>>>>>>>>>1
-%$\Llrta \sum(M_i\cap M')\subseteq M'\sum_\alpha \cala x_\alpha\subseteq=\sum_\alpha M_{i(\alpha)}\cap M' \subseteq \sum_i M_i\cap M'$
+$$
+\begin{aligned}
+&\sum_i(M_i\cap M')\subseteq M'\subseteq \sum_\alpha\cala x_\alpha\\
+&=\sum_{j,\alpha}\cala_j x_\alpha\\
+&\subseteq\sum_{j,\alpha} M_{i(\alpha)+j}\cap M'(\text{By def of graded-module})\\
+&\subseteq \sum_i (M_i\cap M').
+\end{aligned}
+$$
 \item $M'\subseteq M$ graded, finitely generated.\\
-Similar.
-%$\Lrta\exists x_1,..,x_n\in M'$ s.t. $M'=\sum^n_{\alpha=1}\cala x_\alpha\subseteq \sum^n_{\alpha=1}\sum_i \cala y_{\alpha_i}\subseteq M'\Lrta$ $M'$ is generated by $\{y_\alpha:y_{\alpha_i}\neq 0\}$ a finite set.
+Similar proof. But now we start with a possibly infinite generating set of homogeneous elements $H$ and a finite generating set $F$. And notice that each element in $H$ can be expressed as a finite linear expansion by elements in $H$. Then altogether, we can select a finite homogeneous generating set in $H$. 
 \end{enumerate}
 \end{proof}
 
-Recall the setup for Artin-Rees. $\cala$ Noetherian $\sca$ ideal and $M$ finitely generated. Consider a $\intg_{\geq 0}$-graded ring. We denote it by $\tilde{\cala}:=\boxplus_{i\geq 0}\sca^i:=\{(x_i)_{i\geq 0}:x_i\in \sca^i, \text{with }x_i=0 \text{ for almost all }i\}$ 
+Recall the setup for Artin-Rees. $\cala$ Noetherian ring, $\sca$ is an ideal and $M$ finitely generated $\cala-$module. Consider a $\intg_{\geq 0}$-graded ring. We denote by $\tilde{\cala}:=\boxplus_{i\geq 0}\sca^i:=\{(x_i)_{i\geq 0}:x_i\in \sca^i, \text{with }x_i=0 \text{ for almost all }i\}$ 
 $\tilde{\cala}_j=\sca^j=\{(x_i)_{i\geq 0}\in \tilde{\cala}: x_i=0, \forall i\neq j\}$. Multiplication on $\tilde{\cala}$ linearly extends the maps:
 $$
 \sca^i\times \sca^j\lrta \sca^{i+j}
 $$
-This is a natural sourve of graded $\tilde{\cala}-$modules. $\tilde{M}=\oplus_{i\geq 0} M_i$ comming from $\sca-$filtration:
+This is a natural source of graded $\tilde{\cala}-$modules. $\tilde{M}=\boxplus_{i\geq 0} M_i$ coming from  \textbf{$\sca-$filtration $(M_i)$:}
 \begin{itemize}
 \item $M_i$ is a submodule of some module $M$.
 \item $\sca M_i\subseteq M_{i+1}\Lrta\sca^j M_i\subseteq M_{i+j}$
-\item $M_{i+1}\subseteq M_i$. Thus $\sca^i\times M_j\lrta M_{i+j}$ is defined. $\tilde{M}$ is a graded $\tilde{\cala}-$module.
+\item $M_{i+1}\subseteq M_i$. Thus $\sca^i\times M_j\lrta M_{i+j}$ is defined. 
 \end{itemize}
-
+$\tilde{M}$ is a graded $\tilde{\cala}-$module.
 \begin{dfn}
 We call a $\sca-$filtration \textbf{stable} if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
->>>>>>>>>>>>2
 \end{dfn}
-
+Because $\tilde{\cala}$ is Noetherian, we know $\sca$ is finitely generated by elements $x_1,...,x_n$. Then we know $\tilde{\cala}$ is finitely generated as an $\cala-$algebra by $\tilde{\cala}=\cala[x_1,...,x_n]$, then by Hilbert Basis Theorem~\ref{thm:Hilbert_Basis}, we know $\tilde{\cala}$ is Noetherian.
 \begin{lemma}
-Suppose $(M_i):$ $\sca-$filtration $\tilde{M}$ is graded $\tilde{\cala}$-module. Then $(\tilde{M})$ finitely generated $\tilde{A}-$module $\Lrta$ $(M_i)$ is stable.
+Suppose $(M_i):$ $\sca-$filtration and $\tilde{M}$ is graded $\tilde{\cala}$-module. Then $\tilde{M}$ is finitely generated $\tilde{\cala}-$module iff the $\sca-$filtration $(M_i)$ is stable.
 \end{lemma}
 \begin{proof}
->>>>>>>>>>3
+``$\Llta$''. By definition, $(M_i)$ stable $\Lrta$ $\tilde{M}=\tilde{\cala}\sum_{i\leq k}M_k$, where we claim that each $M_k$ is finitely generated $\cala-$module. This is true because $M$ is finitely generated ring over a Noetherian ring $\cala$, thus it is Noetherian. And submodule of a Noetherian module is Noetherian. Then $\tilde{M}$ is finitely generated $\tilde{\cala}-$module.
+
+``$\Lrta$''. Assume $\tilde{M}$ is finitely generated $\tilde{\cala}-$module, then we can choose $k$ large enough such that 
+$$
+\tilde{M}=\tilde{\cala}\sum_{i\leq k} M_k.
+$$
+If we pick $j-$th component for $j\geq k$, we have 
+$$
+\begin{aligned}
+M_j&=\tilde{\cala}_j\cdot M_0+\tilde{\cala}_{j-1}M_1+...+\tilde{\cala}_{j-k}M_k\\
+& = \sca^j M_0+...+\sca^{j-k}M_k\\
+&\subseteq \sca^{j-k}M_k
+\end{aligned}
+$$
+Then together with the definition of $\sca-$filtration, we know $\sca^{j-k}M_k=M_j$, thus the filtration is stable.
 \end{proof}
 
 \subsection{Lecture 17}
->>>>>>>1 Recall
-Now we come back to the proof of Krull-intersection theorem. Last time we proved the following are equivalent $(\cala-\text{Noetherian}), \sca\text{ any ideal}, (M_i)_{i\geq 0}:\sca-\text{filtration}, $ $\sca M_i\subseteq M_{i+1}$\\
+Now we come back to the proof of Artin-Ress Lemma~\ref{lem:Artin-Rees} thus the Krull-intersection theorem~\ref{thm:Krull_intersection}. Last time we proved the following are equivalent $(\cala-\text{Noetherian}), \sca\text{ any ideal}, (M_i)_{i\geq 0}:\sca-\text{filtration}, $ $\sca M_i\subseteq M_{i+1}$\\
 $$
 \tilde{\cala}=\boxplus_{i\geq 0}\sca^i,\ \  \tilde{M}=\boxplus_{i\geq 0} M_i
 $$ 
@@ -3171,10 +3192,10 @@ $$
 \item $(M_i)$ is stable,i.e.  if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
 \item $\tilde{M}$ is finitely generated $\tilde{\cala}-$module.
 \end{enumerate}
-$\tilde{\cala}:\text{ Noetherian }\Llrta \cala \text{ Nowtherian}\Lrta \sca: \text{finitely generated as an $\cala$ module }$. Suppose $\sca$ is generated as $(x_1,...,x_r)$. By the Hilbert basis theorem, $\tilde{\cala}:\text{ Noetherian }$ can be derived form $\tilde{\cala}$ begin finitely generated as an $\cala$-module by $x_1,..,x_r\in\sca^1\llrta (\tilde{\cala})_1$.
+$\tilde{\cala}:\text{ Noetherian }\Llrta \cala \text{ Noetherian}\Lrta \sca: \text{finitely generated as an $\cala$ module }$. Suppose $\sca$ is generated as $(x_1,...,x_r)$. By the Hilbert basis theorem, $\tilde{\cala}:\text{ Noetherian }$ can be derived form $\tilde{\cala}$ being finitely generated as an $\cala$-module by $x_1,..,x_r\in\sca^1\llrta (\tilde{\cala})_1$.
 
 \begin{proof} of Artin-Rees lemma\\
-Assume its hypothesis, choose $\forall i\geq 0, M_i:\sca^i M:$ then it is a stable $\sca$-filtration ($\sca M_i=\sca\cdot \sca^i M=\sca^{i+1}M=M_{i+1}$)
+Assume its hypothesis, choose $\forall i\geq 0, M_i:=\sca^i M:$ then it is a stable $\sca$-filtration ($\sca M_i=\sca\cdot \sca^i M=\sca^{i+1}M=M_{i+1}$)
 
 $M_i'=\sca^i M\cap M'$: a $\sca$-filtration. $\tilde{M}':=\boxplus_{i\geq 0}M_i'$. $\tilde{M}$ is naturally a $\tilde{\cala}-$submodule of $\tilde{M}$
 
@@ -3190,7 +3211,7 @@ Question: Let $\scp\in Spec(\cala)$. What is $Ker(\cala\lrta \cala_\scp)$?
 
 Recall: The \textbf{nth symbolic power} $\scp^{(n)}$ of $\scp$ is defined by $\scp^{(n)}:=\iota^*((\iota_*\scp)^n)=\iota^*(\iota_*(\scp^n))$ for $\iota:\cala\lrta \cala_\scp$. This is a $\scp-$primary ideal. ($\iota_*(\sca\scb)=\iota_*(\sca)\iota_*(\scb)$)
 \begin{cor}
- $\cala-$Noetherian $\Lrta Ker(\cala\lrta \cala_\scp)\overset{?}{=}\cap_{\i\geq 0}\scp^{(i)}$.
+ $\cala-$Noetherian $\Lrta Ker(\cala\lrta \cala_\scp)\overset{?}{=}\cap_{i\geq 0}\scp^{(i)}$.
 \end{cor}
 \begin{proof}
 We know $Ker(\cala\lrta \cala_\scp)=\iota^*((0))\overset{?}{=}\cap_{i\geq 0}\iota^*(\iota_*(\scp)^i)$.
@@ -3700,7 +3721,7 @@ hence $\det\Delta m=0,\ \forall m\in M$, by the assumption in $(iv)$, M is a fai
 $$
 \det (\delta_{ij} X-a_{ij})=0
 $$
-as desired.
+as desired. a
 \end{proof}
 
 

@@ -1156,7 +1156,7 @@ In fact it is if and only if. $D$ regular singular iff $v(a_i)\geq 0$
 Take $a_0 u''+a_1 u'+a_2 u=0$, $a_i\in\cplx((t)).$ Determine when this equation is regular
 \end{exercise}
 \begin{lemma}
-Given a regular singular differential modules $(M_1,\pd_1)$ and $(M_2,\pd_2)$, then $M_1\oplus M_2$, $M_1\otimes M_2$, $Hom(M_1,M_2)$, submodules \& quotients of $M_1$ are regular singular.
+Given a regular singular differential modules $(M_1,\pd_1)$ and $(M_2,\pd_2)$, then $M_1\oplus M_2$, $M_1\otimes M_2$, $Hom(M_1,M_2)$, submodules and quotients of $M_1$ are regular singular.
 \end{lemma}
 
 Let $(M,\pd)$ be regular singular, $L\subseteq M,$ $\delta L\subseteq L$. Then $\delta$ induces 
@@ -1235,13 +1235,63 @@ Coefficients of $t^i $ in the above equation
 $$
 A_0 P_i-P_i(A_0+i I)=-(A_i+A_{i-1}P_1+...A_1 P_{i-1})
 $$ 
-REcursively, $P_0=I$
+Recursively, $P_0=I$
 \end{proof}
 
 
 
 
+>>>>>>>>>>>>> A whole lecture is absent.
 
+
+
+
+
+
+Nov. 24th
+\begin{proof}
+Proof of classification theorem, general case $(M,\pd)$, arbitrary differential module, $\delta=t\cdot\pd$ over $\calk=\calc((t))$. Consider the operator.
+$$
+P=\delta^n+a_1\delta^{n-1}+...+a_n,\ \ a_i\in\calk
+$$
+Stating $P$ is regular singular $\Lrta v(a_i)\geq 0\forall i$ (each coefficient is in fact a Taylor series)
+$$
+\lambda=\min\left(\frac{v(a_i)}{i}|1\leq i\leq n\right)
+$$
+Assume $\lambda$, i.e., $P$ is irregular singular.
+
+Set $\eta=t^\lambda \delta,\delta=t^{-\lambda}\eta$. Substitute into $P$, get 
+$$
+Q=\eta^n+b_i\eta^{n-1}+...b_n
+$$
+with $\min (v(b_i))=0$, $b_i\in\calo_m\subseteq \calk_m$, $\calo_m=\calc[[t^{1/m}]]$, where $m=$ the denominator of $\lambda$.
+
+We have $Q\in\calo_m[\eta]\subseteq\calk_m[\eta]$. So there is a $\eta-$invariant lattice in $M_m$
+$$
+M_m=\calk_m\otimes M=\calk_m[\delta]/\calk_m[\delta]P=\calk_m[\eta]/\calk_m[\eta]Q
+$$
+namely $\calo_m[\eta]/\calo_m[\eta]Q=:L$
+
+So $\eta$ induces $\overline{\eta}:\overline{L}\lrta\overline{L}, \overline{L}=L/\scm_m L$
+
+Renaming $t^{1/m}$ by $t$, can assume $m=1,\calk=\calk_m,...$
+\begin{prop}
+(Hensel's lemma for irregular singular differential modules)
+
+$(M,\delta)$ a $\calk[\delta]-$module,$\delta=t^\alpha\delta,\alpha >0$ integer, $L\subseteq M$ an $\eta-$stable lattice. Suppose $\overline{L}=F_1,\oplus F_2$, $F_i\subseteq \overline{L}$ is $\overline{\eta}-$stable such that no eigenvalue of $\overline{\eta}$ on $F_1$ is an eigenvalue of $\overline{\eta}$ on $F_2$. Then the decomposition $\overline{L}=F_1\oplus F_2$ lifts to a decomposition 
+$$
+L=L_1\oplus L_2
+$$
+with $L_i$ stable under $\eta$
+\end{prop}
+\begin{proof}
+More of the same Hensel type proof, can be found in Singer's book if interested.
+\end{proof}
+
+
+
+
+\end{proof}
 
 
 
@@ -1279,5 +1329,74 @@ $U$ is an open connected subset of the complex sphere $\mathcal{P}^1$ and let $Y
 Two differential operator $\frac{d}{dz}-A$ and $\frac{d}{dt}-B$ are called equivalent if there exists a $F\in GL_n(\calk)$ s,t, $F^{-1}(\frac{d}{dz}-A)F=\frac{d}{dz}-B$
 A matrix differential operator $\frac{d}{dz}-A$ is called \textbf{regular singular} if the equation is equivalent to $\frac{d}{dz}-B$ such that the entries of $B$ have poles at $z=0$ of order at most $1$.
 \end{dfn}
+Variant 2 of classification theorem can be proved using Hensel, as  follows:
+\begin{itemize}
+\item Given $(M,\pd)$, fabricate $\lambda,Q,\eta,...$
+\item By Hensel: $\oplus M_i=M$, where $M_i$ contains a lattice $L_i\subseteq M_i$, stable under $\eta$ and $\overline{\eta}$ acting on $\overline{L}_i$ has only one eigenvalue $c_i$
+\item Replace $M$ by $M_i$, $c=c_i$, $L_i=L\subseteq M$. The characteristic polynomial of $\overline{\eta}$ acting on $\overline{L}$
+$$
+(X-c)^n
+$$
+for some $c\in\calc$, it follows that $\lambda\in \intg$.
+\item Substitute $\delta=c t^{\lambda_1}+t^{\lambda-2}\eta_2=t^{\lambda_1}(c+t^{\lambda_2-\lambda_1}\eta_2)$, $\lambda_1=\lambda, \lambda_2>\lambda_1$. We define $(c+t^{\lambda_2-\lambda_1}\eta_2)=:\eta$. Look at $\eta_2$ acting on $L$. Two possibilities:
+\begin{enumerate}
+\item $\overline{\eta}_2$ acting on $\overline{L}$ has more than one eigenvalue. $\Lrta$ use Hensel's lemma to decompose, done by induction on dimensions.
+\item $\overline{\eta}_2$ has only one eigenvalue.
+$$
+\delta=c_1 t^{\lambda_1}+c_2 t^{\lambda_2}+t^{\lambda_3}\eta_2, \ \ \lambda_3>\lambda_2>\lambda_1
+$$
+\end{enumerate}
+Eventually, either $M$ decomposes, or $\lambda_{N+1}\geq 0$, In that case $\eta_N$ (acting on $M$) is regular singular. The process yields a polynomial
+$$
+q\in t^{1/m}\calc[t^{1/m}]
+$$
+$$
+q=c_1 t^{\lambda_1}+...+c_N t^{\lambda_N}
+$$
+s.t. $\delta-q$ acts regular singularly on $M$. This gives variant 2 of the classification theorem
+\end{itemize}
 
+\section{Newton Polygons}
+$S\subseteq \reals^2$ finite set of points. The Newton polygon of $S$ is the region of all $(x_1,x_2)\in\reals^2$ s.t. $\exists (s_1, s_2)\in$ convex hull of $S$ $x_1\leq s_1$ and $ x_2\geq s_2$ 
+
+each edge has a slop and a (horizontal) length.
+
+
+Given two sets $S_1,S_2$, we say $Np(S_1)>Np(S_2)$ if $Np(S_1)\subseteq $ interior of $Np(S_2)\cup$ relative interior of the vertical edge of $Np(S_2)$
+
+
+Consider a differential operator
+$P=\sum^n_{i=0}a_i\delta^i=\sum^n_{i=0}\sum_{j\in \intg}a_{ij}t^j\delta^i,\ a_{ij}\in\calc$.
+
+Take in $\reals^2$ all points $(i,j)\in \intg^2$ with $a_{ij}\neq 0$. Call \textbf{Newton polygon of $P$} the $Np$ of this set.
+
+Although, the set of nonzero $a_{ij}$ can be infinite, but whenever $i$ is fixed, $j$ is bounded from below because every coefficient is Laurant series.
+
+\begin{dfn}
+Let $P\in \calk[\delta]$ be a differential operator
+$$
+P=\sum_{ij}a_{ij}t^j\delta^i
+$$
+The \textbf{boundary part} of $P$ is 
+$$
+B(P)=\sum_{(ij)\in boundary\ of\ Np(P)} a_{ij}t^j\delta^i
+$$ 
+$$
+R(P)=P-B(P)
+$$
+Given two operators $P_1,P_2$ say $P_1>P_2$ if(def) $Np(P_1)>Np(P_2)$
+
+Clearly
+$R(P)>P$, $R(P)>B(P)$, $Np(B(P))=Np(P)$.
+
+\begin{lemma}
+Let $L,P\in \calk[\delta]$. Then
+\begin{enumerate}
+\item $Np(LP)=Np(L)+Np(P)=\{v+w|v\in Np(L),w\in Np(P)\}=Np(PL)$
+\item The set of slope of $Np(PL)$ is the union of sets of slope of $P$ and $L$
+\item 
+\end{enumerate}
+\end{lemma}
+
+\end{dfn}
 \end{document}
