@@ -14,15 +14,15 @@
 \contentsline {subsection}{\numberline {4.1}Lecture 10}{49}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Lecture 11}{52}{subsection.4.2}
 \contentsline {section}{\numberline {5}Primary Decomposition}{55}{section.5}
-\contentsline {subsection}{\numberline {5.1}Lecture 12}{55}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.1}Lecture 12}{56}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Lecture 13}{58}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Lecture 14}{62}{subsection.5.3}
-\contentsline {section}{\numberline {6}Dimension Theory}{65}{section.6}
-\contentsline {subsection}{\numberline {6.1}Lecture 15}{65}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Lecture 16}{69}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Lecture 17}{72}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Lecture 18}{75}{subsection.6.4}
-\contentsline {subsection}{\numberline {6.5}Lecture 19}{77}{subsection.6.5}
-\contentsline {subsection}{\numberline {6.6}Lecture 20}{80}{subsection.6.6}
-\contentsline {section}{\numberline {7}Integral extension of rings}{82}{section.7}
-\contentsline {subsection}{\numberline {7.1}Lecture 20}{82}{subsection.7.1}
+\contentsline {section}{\numberline {6}Dimension Theory}{66}{section.6}
+\contentsline {subsection}{\numberline {6.1}Lecture 15}{66}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Lecture 16 Krull's Intersection Theorem}{69}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Lecture 17: Artin-Rees, Krull principal ideal theorem}{73}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Lecture 18 Krull Dimension Theorem}{77}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Lecture 19: Converse of Krull dimension theorem, System of Parameters}{79}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Lecture 20}{82}{subsection.6.6}
+\contentsline {section}{\numberline {7}Integral extension of rings}{84}{section.7}
+\contentsline {subsection}{\numberline {7.1}Lecture 20}{85}{subsection.7.1}

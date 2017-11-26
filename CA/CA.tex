@@ -23,6 +23,7 @@
 \newtheorem{axiom}[thm]{Axiom}
 \newtheorem{rmk}[thm]{Remark}
 \newtheorem{ex}[thm]{Example}
+\newtheorem{exercise}[thm]{Exercise}
 \newtheorem{question}[thm]{Question}
 \newtheorem{problem}[thm]{Problem}
 \newtheorem{dfn/thm}[thm]{Definition/Theorem}
@@ -79,8 +80,12 @@
 \author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
 \begin{document}
 \maketitle
+\begin{abstract}
+This a Live-Texed noted by the author in 2017 Winter, typo and mistakes are unavoidable, please use it at your own risk.
+\end{abstract}
 \tableofcontents
 \newpage
+
 \section*{About the Course:}
 The course website is https://metaphor.ethz.ch/x/2017/hs/401-3132-00L/. 
 
@@ -2408,30 +2413,39 @@ For the converse inclusion recall that $r(\sca)=\cap_{\scp\ni \sca, prime}\scp$.
 \section{Primary Decomposition}
 Consider $\alpha\in \cala$ a PID. We may write uniquely $\alpha=\epsilon (p_1)^{n_1}\cdot \cdot\cdot (p_k)^{n_k}$ where $\epsilon$ unit and $p_j$ distinct  primes and $(\alpha)=(p_1^{n_1})\cap...\cap(p_k^{n_k})$ We call this the primary decomposition of $(\alpha)$. What happens to a general ring?
 
-$\cala$ any ring.
-\begin{dfn}
-????????????
+
+\begin{dfn}$\cala$ is a general ring. 
+An ideal $\scq\subseteq\cala$ is \textbf{primary} iff every zerodivisor in $\cala/\scq$ is nilpotent.
 \end{dfn}
->>>>>>>>>>>>2
+\underline{Recall} $\scp\subseteq\cala$ is prime iff the only zerodivisor in $\cala/\scp$ is $0$. We know
+$$
+\text{prime}\Lrta\text{ primary}
+$$
+Equivalently, we can define: an ideal $\scq$ is primary if, whenever $xy\in\scq$, we have either $x\in\scq$ or $y\in rad(\scq)$
 \begin{dfn}
-An ideal $\sca\subseteq \cala$ is \textbf{decomposable} if we may write $\sca=\scq_1\cap...\cap \scq_n$, We call this a primary decomposition.
+An ideal $\sca\subseteq \cala$ is \textbf{decomposable} if we may write $\sca=\scq_1\cap...\cap \scq_n$, where each $\scq_i$ is primary. We call this a \textbf{primary decomposition.}
 \end{dfn}
 \begin{prop}
 $\cala$ is Noetherian, $\Lrta$ every $\sca\subseteq \cala$ is decomposable. 
 \end{prop}
 As part of the proof, we discuss the \textbf{Noetherian induction} first.
 
-recall the ideal of induction in general.
+recall the idea of induction in general.
 \textbf{Induction:} $S\subseteq \mathbb{N}$\\
 (I) $S$ has a minimal element.\\
-(II) $1\in S$ and $(n\in S\Lrta n+1\in S)\Lrta S=\mathbb{N}$
+(II) $1\in S$ and ``$n\in S\Lrta n+1\in S)$''\\
+ $\Lrta S=\mathbb{N}$
 
-and 
-\textbf{Noetherian Induction} $\cala$ a Noetherian ring\\
-(I)Every $S$ a subset of the ``set of all ideals'' has minimal element.
+Similarly, we can consider 
+\textbf{Noetherian Induction}. For $\cala$ a Noetherian ring\\
+(I)Every $S\subseteq\{\text{ideals in $\cala$}\}$  has maximal element.
 \\
-(II)
->>>>>>>>>>3 
+(II) Let $S\subseteq\{\text{ideals in $\cala$}\}$ s.t.
+\begin{enumerate}[label=(\alph*)]
+\item $(1)\in S$
+\item $\forall\sca:$  $[\scb\supsetneq\sca\Lrta \scb\in S]$ $\Lrta [\sca\in S]$\\
+Then $S=\{\text{ideals in $\cala$}\}$
+\end{enumerate}
 
 \subsection{Lecture 12}
 \begin{lemma}
@@ -3056,7 +3070,7 @@ Uniqueness: Suppose $\phi:\cala\overset{\cong}{\lrta}\prod_j\cala_j$ finite prod
 >>>>>>>>>1
 \end{proof}
 
-\subsection{Lecture 16}
+\subsection{Lecture 16 Krull's Intersection Theorem}
 
 \begin{thm}\label{thm:Krull_intersection}(Krull intersection theorem)
 $\cala$ Noetherian, $\sca\subseteq Jac(\cala)$, $M$ finitely generated $\cala$-module.
@@ -3183,7 +3197,7 @@ $$
 Then together with the definition of $\sca-$filtration, we know $\sca^{j-k}M_k=M_j$, thus the filtration is stable.
 \end{proof}
 
-\subsection{Lecture 17}
+\subsection{Lecture 17: Artin-Rees, Krull principal ideal theorem}
 Now we come back to the proof of Artin-Ress Lemma~\ref{lem:Artin-Rees} thus the Krull-intersection theorem~\ref{thm:Krull_intersection}. Last time we proved the following are equivalent $(\cala-\text{Noetherian}), \sca\text{ any ideal}, (M_i)_{i\geq 0}:\sca-\text{filtration}, $ $\sca M_i\subseteq M_{i+1}$\\
 $$
 \tilde{\cala}=\boxplus_{i\geq 0}\sca^i,\ \  \tilde{M}=\boxplus_{i\geq 0} M_i
@@ -3192,32 +3206,44 @@ $$
 \item $(M_i)$ is stable,i.e.  if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
 \item $\tilde{M}$ is finitely generated $\tilde{\cala}-$module.
 \end{enumerate}
-$\tilde{\cala}:\text{ Noetherian }\Llrta \cala \text{ Noetherian}\Lrta \sca: \text{finitely generated as an $\cala$ module }$. Suppose $\sca$ is generated as $(x_1,...,x_r)$. By the Hilbert basis theorem, $\tilde{\cala}:\text{ Noetherian }$ can be derived form $\tilde{\cala}$ being finitely generated as an $\cala$-module by $x_1,..,x_r\in\sca^1\llrta (\tilde{\cala})_1$.
+$\tilde{\cala}:\text{ Noetherian }\Llrta \cala \text{ Noetherian}\Lrta \sca: \text{finitely generated as an $\cala$ module }$. Suppose $\sca$ is generated as $(x_1,...,x_r)$. By the Hilbert basis theorem, $\tilde{\cala}:\text{ Noetherian }$ can be derived form $\tilde{\cala}$ being finitely generated as an $\cala$-module by $x_1,..,x_r\in\sca^1= (\tilde{\cala})_1$.
 
 \begin{proof} of Artin-Rees lemma\\
 Assume its hypothesis, choose $\forall i\geq 0, M_i:=\sca^i M:$ then it is a stable $\sca$-filtration ($\sca M_i=\sca\cdot \sca^i M=\sca^{i+1}M=M_{i+1}$)
 
-$M_i'=\sca^i M\cap M'$: a $\sca$-filtration. $\tilde{M}':=\boxplus_{i\geq 0}M_i'$. $\tilde{M}$ is naturally a $\tilde{\cala}-$submodule of $\tilde{M}$
+$M_i'=\sca^i M\cap M'$: an $\sca$-filtration. $\tilde{M}':=\boxplus_{i\geq 0}M_i'$. $\tilde{M}$ is naturally a $\tilde{\cala}-$submodule of $\tilde{M}$
 
 $M_i'=\sca^{i-k}M_k'\Llrta $ (conclusion of Artin-Rees lemma) $\Llta$ $(M_i') stable$ $\Llrta$ $(\tilde{M}',\text{finitely generated $\tilde{\cala}$-module})$
 
-But we can derive this form $(M_i)$ stable $\Lrta\tilde{M}:\text{finitely generated $\tilde{\cala}-$module}\Lrta (\tilde{M}\text{ finitely generated $\tilde{\cala}-$module })$ because $\tilde{\cala}$ is Noetherian and $\tilde{M}$ is Noetherian.
+But we can derive this form $(M_i)$ stable $\Lrta\tilde{M} $  is finitely generated $\tilde{\cala}-$module $\Lrta (\tilde{M}'\text{ is finitely generated $\tilde{\cala}-$module })$ because $\tilde{\cala}$ is Noetherian and $\tilde{M}$ is Noetherian.
 \end{proof}
->>>>>>>>2
-Exercise:\\
-Deduce theorem1 form cor3
+\underline{Recall}
+The theorem of Krull intersection says that if $\cala$ is Noetherian, $\sca\subseteq Jac(\cala)$, $M$ is a finitely generated $\cala-$module, then $\cap_i\sca^i M=0$. Then we have the following corollaries
 
-Question: Let $\scp\in Spec(\cala)$. What is $Ker(\cala\lrta \cala_\scp)$?
+\underline{Cor2}  Suppose $\cala$ Noetherian, 
+$\sca\subseteq Jac(\cala)$, then
+$$\cap_i\sca^i=0$$
 
-Recall: The \textbf{nth symbolic power} $\scp^{(n)}$ of $\scp$ is defined by $\scp^{(n)}:=\iota^*((\iota_*\scp)^n)=\iota^*(\iota_*(\scp^n))$ for $\iota:\cala\lrta \cala_\scp$. This is a $\scp-$primary ideal. ($\iota_*(\sca\scb)=\iota_*(\sca)\iota_*(\scb)$)
-\begin{cor}
- $\cala-$Noetherian $\Lrta Ker(\cala\lrta \cala_\scp)\overset{?}{=}\cap_{i\geq 0}\scp^{(i)}$.
-\end{cor}
+\underline{Cor3} Suppose $(\cala,\scm)$ Noetherian, local, $\scm=Jac(\cala)$, then
+$$
+\cap_i\scm^i=0
+$$
+\begin{exercise}
+Deduce Krull intersection theorem form Cor3
+\end{exercise}
+\subsection*{Kernel of localization with respect to a prime}
+\underline{Question}: Let $\scp\in Spec(\cala)$. What is $Ker(\cala\lrta \cala_\scp)$?
+\begin{dfn}
+The \textbf{nth symbolic power} $\scp^{(n)}$ of $\scp$ is defined by $\scp^{(n)}:=\iota^*((\iota_*\scp)^n)=\iota^*(\iota_*(\scp^n))$ for $\iota:\cala\lrta \cala_\scp$. This is a $\scp-$primary ideal. ($\iota_*(\sca\scb)=\iota_*(\sca)\iota_*(\scb)$)
+\end{dfn}
+\begin{thm}\label{thm:Noetherian_localization_kernel}
+ $\cala-$Noetherian, then $ Ker(\cala\lrta \cala_\scp)=\cap_{i\geq 0}\scp^{(i)}$.
+\end{thm}
 \begin{proof}
 We know $Ker(\cala\lrta \cala_\scp)=\iota^*((0))\overset{?}{=}\cap_{i\geq 0}\iota^*(\iota_*(\scp)^i)$.
- The last equality is guaranteed by the cor3 above because $\iota^*((0))=\cap_{i\geq 0}\iota_*(\scp)^i$. 
+ The last equality is guaranteed by the Cor3 above because $(0)=\cap_{i\geq 0}\iota_*(\scp)^i$. 
 
- Note that $\cala_\scp,\iota_*(\scp)$ is local, Noetherian.
+ Note that $(\cala_\scp,\iota_*(\scp))$ is local, Noetherian.
 \end{proof}
 
 \begin{lemma}\label{lem_5}
@@ -3253,30 +3279,47 @@ $$
  
 Another version:
 \begin{lemma}\label{lem_5'}
-$0\neq f(\text{ non-unit })\in\cala:$ Noetherian integral domain. Then any minimal prime $\scp_0$ of $(f)$ satisfies $ht(\scp_0)= 1$\\
-$\scp_0\supseteq (f)$ minimal for this property ``$\scp_0\in Ass'((f))$''
+$0\neq f(\text{ non-unit })\in\cala:$ Noetherian integral domain. Then any minimal prime $\scm_0$ of $(f)$ satisfies $ht(\scm_0)= 1$\\
+$\scm_0\supseteq (f)$ minimal for this property ``$\scm_0\in Ass'((f))$''
 \end{lemma}
 
-Reduce Lemma~\ref{lem_5'} to Lemma~\ref{lem_5}, we may assume that $\cala$ is local with $\scp_0$ the maximal ideal:
+Reduce Lemma~\ref{lem_5'} to Lemma~\ref{lem_5}, we may assume that $\cala$ is local with $\scm$ the maximal ideal:
 \begin{itemize}
-\item replace $\cala$ by $\cala_{\scp_0}$,\ \  $\iota:\cala\lrta \cala_{\scp_0}$
-\item replace $\scp_0$ by $\iota_*(\scp_0)$
+\item replace $\cala$ by $\cala_{\scm}$,\ \  $\iota:\cala\lrta \cala_{\scm}$
+\item replace $\scm$ by $\iota_*(\scm)$
 \item replace $f$ by $f/1=\iota(f)$
 \end{itemize}
 
-Then there is a bijection between the set of $\{\text{primes $\scp\subseteq \scp_0$}\}$ and \{\text{ primes of $\cala_{\scp_0}$}\}, and a bijection between: $\{\text{primes $\scp\ni f$}\}$ and $\{\text{ primes of }\cala_{\scp_0}|\scp\ni f/1\}$
->>>>>>>>3
+Then there are bijections 
+$$
+\{\text{primes $\scp\subseteq \scm$}\}\llrta \text{\{primes of $\cala_{\scm}$\}}
+$$
+and  
+$$
+\{\text{primes $\scp\ni f$}\} \llrta\{\text{ primes of }\cala_{\scm}|\scp\ni f/1\}
+$$
+So assume $(\cala,\scm)$ Noetherian local domain, $\scm:=\scm$.
+
+\underline{Know} $\scm\in Ass'((f))$, i.e., $\not \exists \text{ prime }\scp\ni f$ s.t. $(0)\subsetneq \scp\subsetneq \scm$ (We know $\scp\ni f\neq 0$, if $f\in\scp\subsetneq\scm$, then $\scm$ would not be a minimal prime of $(f)$).
+
+\underline{Want} $ht(\scm)=1$, i.e.,
+$1=\sup T$ where $T:=\{t\geq 0,\exists \text{chain} \scp_0\subsetneq ...\subsetneq \scp_t=\scm\}$. which is equivalent to 
+\begin{itemize}
+\item $(0)\subsetneq \scm$,$(\Llta \scm\ni f\neq 0)$\ \ \ , $T\ni 1$
+\item $\not \exists$ prime $\scp:(0)\subsetneq \scp\subsetneq\scm$\ \ \ ,$T\not\ni 2$
+\end{itemize}
 
 
 Now we come back to the proof of Lemma~\ref{lem_5}.
 \begin{proof}
 ``$(i)\Lrta(ii)$'' in Lemma~\ref{lem_5}
 
-$(ii)\Llrta dim(\cala/(f))\geq 1$, there are two bijections: $\scm\llrta$ a maximal ideal in $\cala/(f)$, $\scm\supsetneq\scp\llrta$ a prime idael in $\cala/(f)$.
+$(ii)\Llrta dim(\cala/(f))\geq 1, \forall f\in\scm$, there are two bijections: $\scm\llrta$ a maximal ideal in $\cala/(f)$, $\scm\supsetneq\scp\supsetneq(f)\llrta$ a prime ideal in $\cala/(f)$.
 
 Consider the canonical projection $\pi:\cala\lrta \cala/(f)$. Let $\scp:$ prime s.t. $\scm\supsetneq \scp\not \ni f$.
 
-$\frac{\cala}{(f)}$ Artin $\Lrta$ $\exists k\forall i\geq k$ $\scp^{(k)}+(f)=\scp^{(i)}+(f)$
+Assume the negation of $(ii)\Llrta dim(\cala/(f))=0$. Then by Theorem~\ref{thm:Artin_equiv_Noetherin+dim=0},
+$\frac{\cala}{(f)}$ is  Artin. $\Lrta$ $\exists k$ s.t., $\forall i\geq k$ $\scp^{(k)}+(f)=\scp^{(i)}+(f)$
 
 Indeed, $\frac{\scp^{(k)}+(f)}{(f)}$ is a descending chain in $\frac{\cala}{(f)}$
 
@@ -3289,27 +3332,69 @@ Case (a). OK $\Lrta $ NOT (i) for this $\scp$
 
 Case (b). We focus on this now.
 
-Know: $f\notin \scp\subseteq \scm$. Want $\scp=(0)$ As above, $\exists k,\forall i\geq k$: $\scp^{(k)}\subseteq\scp^{(i)}+(f)$.
+\underline{Know}: $f\notin \scp\subseteq \scm$.
 
-Claim: $\scp^{(k)}=\scp^{(i)}+f\scp^{(k)}:$
-$\scp^{(k)}=\scp^{(k)}+\scp^{(i)}$
->>>>>>4
+\underline{Want}: $\scp=(0)$
 
-(Claim)$\Lrta$ $f\scp^{(k)}/\scp^{(i)}=\scp^{(k)}/\scp^{(i)}\overset{Nak}{\Lrta} \scp^{(k)}/\scp^{(i)}=0$
+As above, $\exists k,\forall i\geq k$: 
+\begin{equation}\tag{*}
+\scp^{(k)}\subseteq\scp^{(i)}+(f)
+\end{equation}
 
-$\Lrta\scp^{(i)}=\scp^{(k)}\forall i\geq k$ $\Lrta$ $\scp^k\subseteq \scp^{(k)}=\cap_i\scp^{(i)}=$ (by some Cor in this lecture) $Ker(\cala\lrta \cala_\scp)=\{0\}$ the last equality because $\cala$ is a domain.
-$\scp^k=\{0\}$ (because $\cala$ is a domain) $\Lrta\scp=(0)$ as desired.
+Claim:
+\begin{equation}\tag{**}
+\scp^{(k)}=\scp^{(i)}+f\scp^{(k)}:
+\end{equation}
+\begin{proof} of Claim:
+
+``$\supseteq$'' OK
+
+``$\subseteq$''. Let $x\in\scp^{(k)}$. By (*) $\exists y\in\scp^{(i)},z\in\cala$ s.t. $x=y+fz$
+
+$x-y=fz\in \scp^{(k)}$
+
+$\Lrta z\in(\scp^{(k)}:f)=\scp^{(k)}$ ($\scp^{(k)}$ is $\scp-$primary and $\scp\not\ni f$)
+
+Taking $i\geq k$,
+$
+\scp^{(k)}\subseteq\scp^{(i)}+f\scp^{(k)}
+$
+, hence we have prove the claim.
 \end{proof}
+
+Then consider the module $M:=\scp^{(k)}/\scp^{(i)}$.
+(Claim:$\scp^{(k)}=\scp^{(i)}+f\scp^{(k)}$)$\Lrta$ 
+$$
+\scp^{(k)}/\scp^{(i)}=(\scp^{(k+1)}+f\scp^{(k)})/\scp^{(i)}=f\scp^{(k)}/\scp^{(i)}
+$$
+$\cala$ is local Noetherian, then
+$(f)\subseteq Jac(\cala)=\scm$
+$$
+(f)M=M\Lrta M=\scp^{(k)}/\scp^{(i)}=0\text{ by Nakayama~\ref{lem:Nakayama}}
+$$
+
+$\Lrta\scp^{(i)}=\scp^{(k)},\ \forall i\geq k$ $\Lrta$ $\scp^{(k)}=\cap_i\scp^{(i)}=$ (by Theorem~\ref{thm:Noetherian_localization_kernel} ) $Ker(\cala\lrta \cala_\scp)=\{0\}$ the last equality because $\cala$ is a domain.
+$\scp^k\subseteq\scp^{(k)}=(0)$ (because $\cala$ is a domain) $\Lrta\scp=(0)$ as desired.
+\end{proof}
+
+\begin{rmk}
+If $0\neq f\in\cplx[X_1,..,X_N]$, $Z(f)$ being the zero loci of $f$. Then every irreducible component $X$ of $Z(f)$ has dimension $N-1$.
+
+$Z(f)\llrta\text{ prime }\scp\ni f$
+
+$X\llrta $ minimal primes $\scp\supseteq (f)$ 
+
+$codim_{\cplx^N}(X)=1\Llrta ht(\scp)=1$
+\end{rmk}
+
 Recall from linear algebra:
 if $V$ is finite dimensional vector space over field $k$, and $l$ is a nonzero linear functional on $V$, then
 $$
 dim(ker(V))=dim(V)-1
 $$
+Krull dimension theorem is a variant for polynomials.
 
->>>>>>>>>5
-
-
-\subsection{Lecture 18}
+\subsection{Lecture 18 Krull Dimension Theorem}
 \begin{thm}\label{thm:krull_principal}
 (Krull's principal ideal theorem) $\cala$ a Noetherian ring and $a\in \cala$ is non-unit and non-zerodivisor.
 $\scp\in Ass'((a))$, i.e. $\scp\supseteq (a)$ is minimal. Then $ht(\scp)=1$
@@ -3317,15 +3402,14 @@ $\scp\in Ass'((a))$, i.e. $\scp\supseteq (a)$ is minimal. Then $ht(\scp)=1$
 Recall: $dim(\cala)=\sup\{t\geq 0|\exists \text{chain } \scp_0\subsetneq...\subsetneq \scp_t\subseteq \cala\}$
 
 $\scp$ prime: $ht(\scp)=\sup\{t\geq 0|\exists \text{chain } \scp_0\subsetneq...\subsetneq \scp_t=\scp\}$
-\begin{dfn}$\sca$ is any ideal in $\cala$.
-$ht(\sca)=\inf\{ht(\scp)|\scp\supseteq\sca\}$
- and $coht(\sca)=\sup\{coht(\scp),\scp\supseteq \sca\}$
+\begin{dfn}$\sca$ is any ideal in $\cala$. The \textbf{height} of $\sca$, $ht(\sca)=\inf\{ht(\scp)|\scp\supseteq\sca\}$
+ and \textbf{coheight} $coht(\sca)=\sup\{coht(\scp)|\scp\supseteq \sca\}$
 \end{dfn}
 
 Then the Theorem~\ref{thm:krull_principal} is equivalent to 
 ``if $a$ is non-unit and non-zerodivisor, then $ht((a))=1$ ''
 \begin{proof}
-$\cala$ Noetherian, $\Lrta (0)$ decomposable, where $(0)=\cap_i\scq_i$, MPD, $\scp_i=rad(\scq_i)$
+$\cala$ Noetherian, $\Lrta (0)$ decomposable, where $(0)=\cap_i\scq_i$, minimal priamry decomposition, $\scp_i=rad(\scq_i)$
 
 Recall:
 $$
@@ -3344,25 +3428,26 @@ Then $\cala$ Noetherian integral domain, $0\neq a\in \cala,a\in\scp,\scp\supset(
 Then by Lemma~\ref{lem_5'}$\Lrta \not \exists \scp':(0)\subsetneq \scp'\subsetneq \scp$
 \end{proof}
 
-Geometric Interpretation: suppose $k=\overline{k}$,
-Suppose $\cala=k[x_1,..,x_n]/\scq$ (some prime $\scq$) $\llrta$ $X$ irreducible variety in $k^n$, where $V(\scq)=\{X:f(X)=0\forall f\in\scq\}$.
+\textbf{Geometric Interpretation}: suppose $k=\overline{k}$,
+Suppose $\cala=k[x_1,..,x_n]/\scq$ (some prime $\scq$) $\llrta$ $X=V(\scq)$ irreducible variety in $k^n$, where $V(\scq)=\{z|f(z)=0\forall f\in\scq\}$.
 
-Then $dim(\cala)\llrta dim(X)$ $:=\sup\{t\geq 0:\exists\text{ chain of irreducible subvarieties } X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t\}$
+Then $dim(\cala)\llrta dim(X)$ $:=\sup\{t\geq 0:\exists$ chain of irreducible subvarieties $ X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t\}$
 
-\{primes in $\cala$\} $\llrta$ \{primes in $k[x_1,..,x_n]$ $\scp\supsetneq \scq$\} one to one corresponds to $Y\subseteq X$ irreducible subvarieties. (this correspondence is inclusion reversing)
+\{primes in $\cala$\} $\llrta$ \{primes $\scp$ in $k[x_1,..,x_n]$ $|$ $\scp\supsetneq \scq$\} one to one corresponds to $Y\subseteq X$ irreducible subvarieties. (this correspondence is inclusion reversing)
 
-$ht(\scp)$ $\llrta$ $codim_X(Y):=\sup\{t\geq 0|\exists \text{ chain of irreducible subvarieties such that }X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t=Y\}$
+$ht(\scp)$ $\llrta$ $codim_X(Y):=\sup\{t\geq 0|\exists $chain of irreducible subvarieties such that $X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t=Y\}$
 
 $\sca\subseteq\cala$ any ideal with $rad(\sca)=\sca $ $\llrta$ $Z\subseteq X$ closed subvariety
 
 $\scp_i\in Ass'(\sca) i.e. \scp_i\supseteq \sca$ minimal $\llrta$ irreducible components $Y_i\subseteq Z$
 
-$codim_X(Z)=\inf_{Y_i\text{irreducible components }} codim_X(Y_i)$
+$codim_X(Z)=\inf_{Y_i}\{ codim_X(Y_i)| \text{$Y_i$ is irreducible component of $Z$}\}$
 
 $coht(\scp)=dim(\cala/\scp)\llrta dim(Y)$
 
 $coht(\sca)=dim(\cala/\sca)=\sup_i \{coht(\scp_i)\}$
->>>>>>>>1
+
+$dim(Z)=\sup\{ dim(Y_i)| Y_i\text{ is irreducible component of $Z$}\}$
 
 Krull principal intersection theorem says :``Every irreducible component of a hypersurface in $X$ has codimension 1''
 
@@ -3432,12 +3517,12 @@ $ht(a_1,...a_s)\leq s$ by Krull dimension theorem~\ref{thm:Krull_dimension}
 
 $ht(a_1,...,a_s)\geq s$ by considering MPD.
 
->>>>>>>2
+For a complete proof, see the Theorem~\ref{thm:Krull_converse}
 \end{proof}
 
 
 
-\subsection{Lecture 19}
+\subsection{Lecture 19: Converse of Krull dimension theorem, System of Parameters}
 Recall: 
 \begin{thm}\label{thm:thm0}
 $\cala$ Noetherian, $r\geq 1$, $\sca=(a_1,...,a_r), a_i\in\cala$, $\scp\supset \sca$ minimal, then 
@@ -3447,7 +3532,7 @@ $$
 If $r=1$, and $a_1:$ not a zero divisor, then $ht(\scp)=1$
 \end{thm}
 
-\begin{thm}
+\begin{thm}\label{thm:Krull_converse}
 (Converse to Krull)\\
 $\sca\subset \cala$, Noetherian,  set $r=ht(\sca):\inf\{ht(\scp)|\scp\supset \sca,\scp\text{prime}\}$
 Then 
@@ -3524,11 +3609,14 @@ Note:$(x_1,...,x_r,y_1,...,y_s)$ $\scm-$primary\\
 $\Llrta$ $\scm$ is the only prime containing $(x_1,..,y_s)$\\
 $\Llrta\overline{\scm}$ is the only prime containing $(\overline{y}_1,...,\overline{y}_s)$\\
 $\Llrta(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}-$primary\\
-$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=dim(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)\overline{\scm}-$primary.
+$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=dim(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}-$primary.
 
-$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)\scm-$primary $\Lrta dim(\cala)\leq r+s$
->>>>>>>>>>.1
+FACT1:[$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)$ is $\scm-$ primary] $\Lrta dim(\cala)\leq r+s$, by Krull's dimension theorem~\ref{thm:Krull_dimension}.
 
+And in fact, if we start we a system of parameters $(\overline{z}_1,...,\overline{z}_t)$ of $\overline{A}$, $z_i$ are their preimages in $\cala$, we have proved that $(x_1,...,x_r,z_1,...,z_t)$ is $\scm$ primary, then $dim(\cala)\leq t+r= dim(\overline{\cala})+r$
+
+$(i)\Lrta$ $\exists y_1,..,y_s$ s.t., $\{x_1,...x_r,y_1,...,y_s\}$ is system of parameters.
+$\Lrta r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y)s$ is $\scm-$primary. Then, as prove before, $(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}-$primary, we have $dim(\overline{\cala})\leq s=dim(\cala)-r$, which indicates $(ii)$.
 
 Now check that $(ii)$ implies $(i)$.
 
@@ -3721,7 +3809,7 @@ hence $\det\Delta m=0,\ \forall m\in M$, by the assumption in $(iv)$, M is a fai
 $$
 \det (\delta_{ij} X-a_{ij})=0
 $$
-as desired. a
+as desired.
 \end{proof}
 
 
