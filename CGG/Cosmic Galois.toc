@@ -1,7 +1,9 @@
-\contentsline {section}{\numberline {1}Preliminary knowledge about algebraic group and Tannakian category}{2}{section.1}
+\contentsline {section}{\numberline {1}Preliminary knowledge about Algebraic Group and Tannakian Category}{2}{section.1}
 \contentsline {section}{\numberline {2}Statement of main results}{2}{section.2}
 \contentsline {section}{\numberline {3}Feynman graph and graph polynomials}{2}{section.3}
 \contentsline {subsection}{\numberline {3.1}Graph polynomials}{3}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Feynman integral in projective space}{4}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Edge subgraphs and their quotients}{4}{subsection.3.3}
 \contentsline {subsection}{\numberline {3.4}Contraction-deletion}{5}{subsection.3.4}
+\contentsline {section}{\numberline {4}General construction on Tannakian category}{6}{section.4}
+\contentsline {section}{\numberline {5}Motivic Periods over $\mathbb Q$}{6}{section.5}

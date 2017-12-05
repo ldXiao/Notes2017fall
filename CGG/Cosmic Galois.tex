@@ -49,10 +49,12 @@
 \newcommand{\cala}{{\cal A}}
 \newcommand{\calc}{{\cal C}}
 \newcommand{\cale}{{\cal E}}
+\newcommand{\calh}{{\cal H}}
 \newcommand{\calk}{{\cal K}}
 \newcommand{\call}{{\cal L}}
 \newcommand{\caln}{{\cal N}}
 \newcommand{\calo}{{\cal O}}
+\newcommand{\calp}{{\cal P}}
 \newcommand{\calr}{{\cal R}}
 \newcommand{\mathbold}{\bf}
 \newcommand{\cinf}{C^{\infty}}
@@ -216,6 +218,40 @@ Let $T$ be a spanning $k$-tree of $G$. The edge $e$ is not an edge of $T$ if and
 \end{proof} 
 \end{lemma}
 
+
+Goal, define and study a glaois grop of Feynman anmplitude
+
+\section{General construction on Tannakian category}
+\section{Motivic Periods over $\ratl$}
+\begin{dfn}
+\textbf{Category $\mathcal{H}$ of Betti and de Rham realizations:} Consider a category $\calh$ whose objects are triples $(V_B,V_{dR},c)$ consisting of the following data:
+\begin{enumerate}
+\item A finite dimensional $\ratl$-vector space $V_B$ with a finite increasing (Weight) filtration $W_\bullet V_B$.
+\item A finite dimensional $\ratl$-vector space $V_{dR}$ with a finite increasing (Weight) filtration $W_\bullet V_{dR}$ and a finite decreasing (Hodge) filtration $F^\bullet V_{dR}$.
+\item An isomorphism 
+$$
+c:V_{dR}\otimes_\ratl \cplx\overset{\sim}{\lrta} V_B\otimes_\ratl \cplx
+$$
+which respect the $W_\bullet$ filtration on both sides.
+\item A linear involution $F_\infty: V_B\overset{\sim}{\lrta}V_B$ called the real Frobenius.
+\end{enumerate}
+\end{dfn}
+The category $\calh$ has two fibre functors:
+$$
+\omega_\bullet:\calh\lrta Vec_\ratl
+,\bullet=B,dR
+$$
+Then we can regard $\calh$ as a Tannakian category.
+\begin{dfn}
+The ring of $\calh$-periods is ${\cal P}^\scm_\calh$. It is equipped with a 
+\begin{itemize}
+\item A period homomorphism
+$$
+per: \calp^\scm_\calh\lrta \cplx
+$$
+which sends $[(V_B,V_{dR},c)\sigma,\omega]^\scm$
+\end{itemize}
+\end{dfn}
 
 
 

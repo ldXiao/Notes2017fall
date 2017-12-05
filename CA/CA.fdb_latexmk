@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1511721134 "CA.tex" "CA.pdf" "CA" 1511721138
+["pdflatex"] 1512485665 "CA.tex" "CA.pdf" "CA" 1512485668
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -122,6 +122,7 @@
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo" 1428932888 9195 b429d9ae04d88356fbd16a7b811e600f ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd" 1428932888 2020 3b0fd77961c09bb31521c65d6da482b9 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty" 1317339792 42666 6fa770e3485520a6a5f2ea7d259c8f8d ""
+  "/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty" 1284422013 40502 e003406220954b0716679d7928aedd8a ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty" 1428932888 14285 20d80486c4ae98139889d8789596c967 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty" 1428932888 8125 557ab9f1bfa80d369fb45a914aa8a3b4 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty" 1428932888 2594 d18d5e19aa8239cf867fa670c556d2e9 ""
@@ -159,15 +160,16 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1440418255 3445933 d42c7652ab9730698e368ea320f1405d ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "CA.aux" 1511721138 6227 ede1c684190f8a7dcc6313407f935f7f ""
-  "CA.out" 1511721138 2474 03a3ce295b774bc9c4b1f38e3cfd4813 ""
-  "CA.tex" 1511721133 174823 6db88bbc234d6813972524f9a5f4ec54 ""
-  "CA.toc" 1511721138 2650 b435e7bc15ae8cefaeed2ea67a41dc54 ""
+  "CA.aux" 1512485668 7338 83fad6e1a258c9210b025c6acbb14196 ""
+  "CA.out" 1512485668 2663 0dee423fa7ea2ff31901970fa7f76572 ""
+  "CA.tex" 1512485665 192605 b7186681d61c13d8ca7cfd22bc1f1d07 ""
+  "CA.toc" 1512485668 2878 33e02295b3007698c50b4c158f0bebee ""
   (generated)
   "CA.toc"
   "/Users/vector_cat/Dropbox/2017fall/CA/CA.pdf"
+  "/Users/vector_cat/Dropbox/2017fall/CA/CA.log"
+  "CA.aux"
   "CA.pdf"
   "CA.log"
-  "CA.aux"
+  "CA+mp.sh"
   "CA.out"
-  "/Users/vector_cat/Dropbox/2017fall/CA/CA.log"

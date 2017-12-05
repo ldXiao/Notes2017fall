@@ -1,12 +1,12 @@
 \contentsline {section}{\numberline {1}Differential rings and modules}{2}{section.1}
 \contentsline {section}{\numberline {2}Picard-Vessiot extension}{5}{section.2}
-\contentsline {section}{\numberline {3}The Differential Galois Groups}{10}{section.3}
-\contentsline {section}{\numberline {4}Algebraic Group: A Detour}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Application of the fact that differential Galois group is a algebraic group}{15}{subsection.4.1}
-\contentsline {section}{\numberline {5}The Galois-correspondence of differential equations}{17}{section.5}
-\contentsline {section}{\numberline {6}Local theory of differential equations}{18}{section.6}
-\contentsline {section}{\numberline {7}Regular Singular Equations}{24}{section.7}
-\contentsline {section}{\numberline {8}Personal Reads}{28}{section.8}
-\contentsline {subsection}{\numberline {8.1}D-module}{28}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Monodromy, Riemann-Hilbert Problem}{28}{subsection.8.2}
-\contentsline {section}{\numberline {9}Newton Polygons}{29}{section.9}
+\contentsline {section}{\numberline {3}The Differential Galois Groups}{9}{section.3}
+\contentsline {section}{\numberline {4}Algebraic Group: A Detour}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Application of the fact that differential Galois group is a algebraic group}{14}{subsection.4.1}
+\contentsline {section}{\numberline {5}The Galois-correspondence of differential equations}{16}{section.5}
+\contentsline {section}{\numberline {6}Local theory of differential equations}{17}{section.6}
+\contentsline {section}{\numberline {7}Regular Singular Equations}{22}{section.7}
+\contentsline {section}{\numberline {8}Personal Reads}{26}{section.8}
+\contentsline {subsection}{\numberline {8.1}D-module}{26}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Monodromy, Riemann-Hilbert Problem}{26}{subsection.8.2}
+\contentsline {section}{\numberline {9}Newton Polygons}{27}{section.9}
