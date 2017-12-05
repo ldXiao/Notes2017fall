@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1512481985 "Cosmic Galois.tex" "Cosmic Galois.pdf" "Cosmic Galois" 1512481986
+["pdflatex"] 1512481985 "Cosmic Galois.tex" "Cosmic Galois.pdf" "Cosmic Galois" 1512495459
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -153,8 +153,8 @@
   "Cosmic Galois.tex" 1512481985 12819 bcddbb084ac932e564ba67c8ee1308e9 ""
   "Cosmic Galois.toc" 1512481986 842 a70f8c57dd771b09974298881eafe6b5 ""
   (generated)
-  "Cosmic Galois.log"
-  "Cosmic Galois.pdf"
   "Cosmic Galois.aux"
-  "Cosmic Galois.out"
   "Cosmic Galois.toc"
+  "Cosmic Galois.out"
+  "Cosmic Galois.pdf"
+  "Cosmic Galois.log"

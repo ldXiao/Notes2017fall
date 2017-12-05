@@ -18,6 +18,16 @@
 
 %\usepackage{pdfrender,xcolor,scrpage2}
 %\pdfrender{StrokeColor=black,TextRenderingMode=2,LineWidth=1pt}
+\tikzset{
+  subseteq/.style={
+    draw=none,
+    edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}},
+  Subseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+  }
+}
 
 \hypersetup{
     colorlinks,
@@ -4190,21 +4200,101 @@ Let $\tilde{g}\in Aut(E'/K)$ be any extension of $g$ such that $\tilde{g} $ exis
 Then $\tilde{g}(\scq_q\cap E')$ lies over $\scq_2\cap E$. Since theorem holds for $E'/E$ (finite normal extension), $\exists \sigma \in Aut(E'/E)$ s.t. $\sigma(\tilde{g}(\scq_1\cap E'))=\scq_2\cap E'$. Set $g':=\sigma\circ \tilde{g}\in Aut(E'/K)$. Clearly, $g'(\scq_1\cap E')=\scq_2\cap E'$, so $(E',g')\in A$. Also, $E\subsetneq E'$ and $g'|E=g$, which contradict the maximality of $(E,g)$
 
 Then let's talk about the so called going-down property.
-
-Let $\cala\subseteq \calb$ ring extension. We say that $\cala\subseteq \calb$ has property \textbf{Going-Down} (GD) if 
+\begin{dfn}
+Let $\cala\subseteq \calb$ are rings. We say that $\cala\subseteq \calb$ has property \textbf{Going-Down} (GD) if 
 $$
 \forall \text{ primes, } \scp'\subsetneq \scp\subset \cala, \scq\subset\calb 
 $$
 with $\scq\cap \cala=\scp$, $\exists $ prime $\scq'\subsetneq \scq$ with $\scq'\cap\cala=\scp'$
 
 >>>>>>>2
-
+\end{dfn}
 See P239 of Eisenbud or 32-33
  of Matsumura for a non-example.
 
 \begin{thm}
 Let $\cala\subseteq \calb$ be domains with $\cala$ normal, $\cala $ normal, $\calb$ integral over $\cala$. Then $\cala\subseteq \calb$ has GD.
 \end{thm}
+\begin{proof}
+Let $K:=Frac(\cala)$, $L_1:=Frac(\calb)$. $\Lrta L_1/L$ is algebraic field extension. $L_1\ni \frac{x}{y}, x\in \calb, -\neq y\in \calb$
+
+then
+$$
+x^n+a_1 x^{n-1}+...+a_n=0
+$$
+$\Lrta x$ is algebraic over $K$ and the same for $y$. 
+
+Let $L$ be any normal algebraic extension of $K$, that contains $L_1$ (e.g., $L=\overline{K}\supseteq L_1$) (e.g., $L:=$``normal closure of $L_1$ in $\overline{K}\supseteq L_1$'')
+
+Hence $x,y$ belong to a finite extension of $K$ $\Llrta$ $x,y$ algebraic over $K$, $\Lrta x/y$ algebraic over $K$.
+
+Let $C:=(\text{ integral closure of $\cala$ in $L$})$=$(\text{integral closure of $\calb$ in $L$})$
+
+\[
+\begin{tikzcd}
+&Q & C \arrow[r,Subseteq]  & L \\
+&\scq&\calb \arrow[r,Subseteq] \arrow[u,Subseteq] & L_1 \arrow[u,Subseteq] \\
+&\scp & \cala \arrow[r,Subseteq] \arrow[u,Subseteq] & K\arrow[u,Subseteq] \\
+\end{tikzcd}
+\]
+>>>>>>>>4
+
+Note that $g$ fixes $\cala$ so $\scq'\cap \cala=(g(Q')\cap \calb)\cap\cala=g(Q')\cap \cala=g(Q'\cap \cala)=\scp'=g(\scp')$
+\end{proof}
+
+Recall $\forall \cala\subseteq \calb$ integral, $\forall \scb\subseteq \calb,\sca\subseteq \cala\cap \scb$
+\begin{enumerate}[label=(\roman*)]
+\item $dim(\cala)=dim(\calb)$
+\item $dim(\cala/\sca)=dim(\calb/\scb)$, i.e., $
+coht(\sca)=coht(\scb)$
+\item $ht(\scb)\leq ht(\sca)$.
+\end{enumerate}
+\begin{cor}
+Suppose $\cala\subseteq \calb$ are domains, with $\cala$ noraml, $\calb$ integral over $\cala$. Let $\scb\subseteq \calb$, $\sca=\cala\cap \scb$. Then $ht(\sca)=ht(\scb)$.
+\end{cor}
+\begin{proof}
+\underline{Want}: $ht(\scb)\overset{?}{\geq} ht(\sca)$, where $ht(\scb)=\inf_{\scq\supseteq \scb} ht(\scq)$ and  $ht(\sca)=\inf_{\scp\supseteq \sca} ht(\scp)$.
+
+It suffices to show for each prime $\scq\subset\scb$ that $\scp:=\scq\cap \cala\supseteq \sca$ satisfies $ht(\scq)\geq ht(\scp)$. Let $\scp_0\subsetneq ...\subsetneq \scp_r=\scp$ be a chain of primes. By the going-down property, there exists a chain of primes $\scq_0\subsetneq ...\subsetneq \scp_r=\scp$ in $\calb$ such that $\scq_i$ lies over $\scp_i$
+>>>>>>5
+
+$\Lrta ht(\scq)\leq r$. Since $ht(\scp)=\sup\{\text{r as above}\}$, we then conclude that $ht(\scq)\geq ht(\scp)$.
+\end{proof}
+
+\begin{dfn}
+``$k$-domain $\cala$'' ($k$ is a field and $\cala$ is a $k$-algebra as well as a domain)
+
+\textbf{finitely generated $k$-domain} means a $k$.
+-domain which is a finitely generated $k$-algebra
+$\Llrta$ $\cala\cong k[X_1,...,X_n]/\sca$ for some $\sca$, $n$ $\Lrta dim(\cala)\leq n$
+\end{dfn}
+
+\begin{thm}
+Let $\cala$ finitely generated $k$-domain. Set $d:=dim(\cala)\in \intg_{\geq 0}$. Then there exists an injective morphism of $k$-algebras
+$$
+k[X]:=k[X_1,..,X_d]\overset{\kappa}{\lrta} \cala
+$$
+which is integral: $\cala$ is integral over $\kappa(k[X])$.
+\end{thm}
+
+\underline{NB} $\kappa$ is determined by $x_1:=\kappa(X_1),...,x_n:=\kappa(X_d)\in\cala$. $\kappa $ is injective $\Llrta$ $x_1,...,x_d\in \cala$ are algebraically independent over $k$.  So the theorem says : $\exists$ algebraically independent $x_1,..,x_d\in \cala$ s.t., $\cala$ is integral over the $k$-algebra $\cala_0:=k[x_1,...,x_d]\subseteq \cala$.
+\begin{cor}\label{cor:k-domain_dim_tr.deg}
+Let $\cala$ finitely generated $k$-domains, then $K:=Frac(\cala)$. Then $dim(\cala)=tr.deg_k(K)$
+\end{cor}
+\begin{proof} of Corollary~\ref{cor:k-domain_dim_tr.deg}. Let $d:=dim(\cala)$ $\cala_0=k[x_1,..,x_d]$ as above. 
+$K_0=Frac(\cala_0)\cong k(x_1,...,x_d)$
+
+$\cala$: integral over $\cala_0$ $\Lrta$ $K$ algebraic over $K_0$ (Confer the proof of Theorem 2 today).
+
+$\Lrta tr.deg_l(K)=tr.deg_k(K_0)=d=dim(\cala)$.
+\end{proof}
+\underline{NB}, If $\kappa: k[X_1,...,X_n]\lrta\cala$ is injective and integral, then automatically $n=dim(\cala)$, because we have seen that integral extension preserves dimension.
+
+
+
+
+
+
 \end{document}
 
 
