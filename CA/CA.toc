@@ -29,3 +29,4 @@
 \contentsline {subsection}{\numberline {7.2}Lecture 21}{84}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}Lecture 22}{88}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Lecture 23}{91}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Lecture 24}{94}{subsection.7.5}

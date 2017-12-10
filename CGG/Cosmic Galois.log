@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  5 DEC 2017 14:53
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  5 DEC 2017 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -633,25 +633,25 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 17.
 (./Cosmic Galois.aux)
 \openout1 = `"Cosmic Galois.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 81.
+LaTeX Font Info:    ... okay on input line 81.
  ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box41
-Package hyperref Info: Link coloring ON on input line 80.
+Package hyperref Info: Link coloring ON on input line 81.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -661,25 +661,25 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count138
 )
-LaTeX Info: Redefining \ref on input line 80.
-LaTeX Info: Redefining \pageref on input line 80.
-LaTeX Info: Redefining \nameref on input line 80.
+LaTeX Info: Redefining \ref on input line 81.
+LaTeX Info: Redefining \pageref on input line 81.
+LaTeX Info: Redefining \nameref on input line 81.
 
 (./Cosmic Galois.out) (./Cosmic Galois.out)
 \@outlinefile=\write4
 \openout4 = `"Cosmic Galois.out"'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+LaTeX Font Info:    Try loading font information for U+msa on input line 83.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+LaTeX Font Info:    Try loading font information for U+msb on input line 83.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 82.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 83.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -696,16 +696,16 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 [1
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 100.
  [2] [3]
-Overfull \hbox (2.57227pt too wide) in paragraph at lines 172--173
+Overfull \hbox (2.57227pt too wide) in paragraph at lines 173--174
 [][]\OT1/cmr/bx/n/10.95 Definition 3.4. []\OT1/cmr/m/it/10.95 A set of edges $\
 OML/cmm/m/it/10.95 ^^M \OMS/cmsy/m/n/10.95 ^^Z \OML/cmm/m/it/10.95 E[]$ \OT1/cm
 r/m/it/10.95 is \OT1/cmr/bx/it/10.95 momentum-spanning \OT1/cmr/m/it/10.95 if $
@@ -715,45 +715,53 @@ r/m/it/10.95 is \OT1/cmr/bx/it/10.95 momentum-spanning \OT1/cmr/m/it/10.95 if $
 [4] [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 225.
+(hyperref)                removing `math shift' on input line 226.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 225.
+(hyperref)                removing `math shift' on input line 226.
 
 
-Overfull \hbox (4.16278pt too wide) in paragraph at lines 229--230
+Overfull \hbox (4.16278pt too wide) in paragraph at lines 230--231
 []\OT1/cmr/m/it/10.95 A fi-nite di-men-sional $\U/msb/m/n/10.95 Q$\OT1/cmr/m/it
 /10.95 -vector space $\OML/cmm/m/it/10.95 V[]$ \OT1/cmr/m/it/10.95 with a fi-ni
 te in-creas-ing (Weight)
  []
 
 
-Overfull \hbox (8.18227pt too wide) in paragraph at lines 230--231
+Overfull \hbox (8.18227pt too wide) in paragraph at lines 231--232
 []\OT1/cmr/m/it/10.95 A fi-nite di-men-sional $\U/msb/m/n/10.95 Q$\OT1/cmr/m/it
 /10.95 -vector space $\OML/cmm/m/it/10.95 V[]$ \OT1/cmr/m/it/10.95 with a fi-ni
 te in-creas-ing (Weight)
  []
 
 [6]
-LaTeX Font Info:    Try loading font information for U+euf on input line 246.
+LaTeX Font Info:    Try loading font information for U+euf on input line 247.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 264.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 264.
+)
 
-(./Cosmic Galois.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 264.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 264.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 264.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 259.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 259.
+
+[7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 274.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 274.
+ (./Cosmic Galois.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 274.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 274.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 274.
  ) 
 Here is how much of TeX's memory you used:
- 20913 strings out of 493706
- 381403 string characters out of 6145769
+ 20917 strings out of 493706
+ 381444 string characters out of 6145769
  424398 words of memory out of 5000000
- 23942 multiletter control sequences out of 15000+600000
- 17176 words of font info for 69 fonts, out of 8000000 for 9000
+ 23946 multiletter control sequences out of 15000+600000
+ 17884 words of font info for 72 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  61i,9n,84p,875b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 

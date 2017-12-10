@@ -1677,8 +1677,9 @@ $$
 L_1=\sum_{i\geq 0}t^i L_1(i)
 $$
 $$
-L_2=\sum_{i\geq m}t^i L_2(i)
+L_2=\sum_{j\geq m}t^j L_2(j),
 $$
+where $L(k)\in\calc[\delta]$
 We want $Np(L_1)=N_1$, so we ask for: 
 \begin{itemize}
 \item $L_1(0)=$monic of degree $n_1$
@@ -1688,7 +1689,7 @@ $L_2(m)=$constant, since $0$ not to be slope of $L_2$. From $L\overset{!}{=}L_1L
 $$
 \sum_{k\geq m}t^{k}\sum_{i+j=k,i \geq 0,j\geq m} L_1(i)(\delta+j)L_2(j)(\delta)=\sum_{k\geq m}t^{k}L(k)(\delta)
 $$
-Solve for $L_1(i),L_2(j) $ recursively
+Solve for $L_1(i),L_2(j) $ recursively.
 
 In the case $k=m$,
 $$
@@ -1700,8 +1701,138 @@ is the only possibility
 
 >>>>>>>>>>4
 
+
+Second special case: $n_1=0$, $N_1$ has only one slope, $\lambda$ and $\lambda$ is the minimal slope of $N$
+
+Set $\lambda=\frac{b}{a}$, $b>0$, $a>0$ coprime integers. $\calk_a=\calc((t^{1/a}))\supseteq \calk=\calc((t))$, $s=t^{1/a}$, $\calk_a$ is a finite field extension of $\calk$ with degree $a$.
+
+Set $\Delta=s^b\delta=t^{b/a}\delta$, $\Delta$ is not an operator on $\calk$ but on $\calk_a$. Consider $L$ as an element of the larger ring $\calk_a[\Delta]\supseteq \calk[\delta]$
+$$
+\begin{aligned}
+L&=\delta^n+a_1\delta^{n-1}+...+a_n\\
+&= (s^{-b}\Delta)^n+a(s^a)(s^{-b}\Delta)^{n-1}+...
+\end{aligned}
+$$
+Set $P=s^{bn}L$. The factor $s^{-bn}$ makes $P$ unitary in $\Delta$. $P\in\calc((s))[\Delta]$. Look at the Newton polygon of $P$. It has the smallest slope $0$, thus it reduce to the first speciral case. Check this:
+$$
+\begin{aligned}
+L&=a_{0,m_1}t^{m_1}\delta^0
++a_{n_1,m_2}t^{m_2}\delta^{n_2}+...+\text{ irrelevant terms }\\
+& a_{0,m_1} s^{m_1 a}\Delta^0+a_{n_2,m_2}s^{m_2 a}(s^{-b}\Delta)^{n_2}+\text{junk}\\
+&=a_{0,m_1} s^{m_1 a}\Delta^0+a_{n_2,m_2}s^{m_2 a-n_2 b}\Delta^{n_2}+\text{junk}\\
+&=a_{0,m_1} s^{m_1 a}\Delta^0+a_{n_2,m_2}s^{m_1 a}\Delta^{n_2}+\text{junk}\\
+\end{aligned}
+$$
+The last equality comes from $a(m_1-m_2)=b n_2$
+
+\begin{tikzpicture}
+\draw[->,gray] (-1,0) -- (2.6,0);
+\draw (0,-0.5) node[anchor=east] {\tiny $m_1$};
+\draw (0,-0.5) -- (1,-0.25);
+\draw[dashed] (1,-0.25) -- (0,-0.25) node[anchor=east] {\tiny $m_2$};
+\draw[dashed] (1,-0.25) -- (1,0) node[anchor=south] {\tiny $n_2$};
+\draw[->,gray] (0,-1) -- (0,2);
+\end{tikzpicture}
+\begin{tikzpicture}
+\draw[->,gray] (-1,0) -- (2.6,0);
+\draw (1,-0.25) -- (0,-0.25) node[anchor=east] {\tiny $m_1 a$};
+\draw[dashed] (1,-0.25) -- (1,0) node[anchor=south] {\tiny $n_2$};
+\draw[->,gray] (0,-1) -- (0,2);
+\end{tikzpicture}
+
+Form 1st special case: $P=P_1P_2$ with $Np(P_1)$ only slope $0$.
+$$
+L=s^{-nb}P=s^{-nb}P_1P_2\overset{?}{=}L_1L_2
+$$
+The problem now is how to make sure that $L_i$ are infact in $\calc((t))[\delta]$ ($P_i$ are naturally in $\calc((s))[\delta]$).
+
+Use Galois theory (descent) to show $L_i\in \calc((t)[\delta])$. (a priori in  $\calc((t^{1/a}))[\delta]$)
+
+The Galois group $G=Gal(\calk_a/\calk)$ acts on $\calc((s))[\delta]$ by acting on coefficients. Fixed points are $\calc((t))[\delta]$, so we nned $\sigma(L_i)=L_i,\forall \sigma\in G$
+$$
+L=L_1L_2,\ \ \sigma L=\sigma L_1\sigma L_2
+$$
+$$
+\sigma L=L\Lrta L=L_1L_2=\sigma L_1\sigma L_2
+$$
+But decomposition is unique! $Np(L_1)=Np(\sigma L_1)$ $\Lrta \sigma L_1=L_1$ and $\sigma L_2=L_2$.
+
+\underline{symmetry} These special case also work if the smallest slope of $N$ occurs in $N_2$. Use the map
+$$
+\begin{aligned}
+\varphi:&\calc((t))[\delta]\lrta \calc((t))[\delta]\\
+& \sum a_i\delta^i\longmapsto \sum(-\delta^i)a_i
+\end{aligned}
+$$
+
+Just check $\varphi(L_1L_2)=\varphi(L_2)\varphi(L_1)$ and $Np(\varphi(L))=Np(L)$.
+
+
+\underline{Existence of Decomposition in general} The smallest slope $\lambda$ of $N$ belongs to $N_1$ (or to $N_2$) According to special cases $L=AB$. $A$ has only slope $\lambda$. Induction on the number of distinct slopes
+$B=B_1B_2$ $Np(B_2)=N_2$
+$$
+L=(AB_1)B_2
+$$ 
+and set $L_1:=AB_1$, $L_2:=B_2$.
+
+\underline{Unicity}: $L=L_1L_2=\tilde{L}_1\tilde{L}_2$ Suppose again the smallest slope $\lambda$ of $N$ occurs in $N_1$
+$$
+L_1=AB,\ \ \ A,\tilde{A} (\text{monic })
+$$
+$$
+\tilde{L}_1=\tilde{A}\tilde{B}\text{ only slope $\lambda$ }
+$$
+$$
+L=A(BL_2)=\tilde{A}(\tilde{B}\tilde{L}_2)
+$$
+unicity in the special case $\Lrta A=\tilde{A}$
+
+Induction on degrees $\Lrta  B=\tilde{B}$ and hence $L_1=\tilde{L}_1$ and $L_2=\tilde{L}_2$
+
+\underline{additional statement}
+Have short exact sequence:
+Want a>>>>>>>
+
+or show $\Psi$ is an isomorphism
+\[
+\begin{tikzcd}
+0\arrow[r]  & \frakd/\frakd L_1  \arrow[r,"L_2"] & \frakd/\frakd L\arrow[r] \arrow[d,equal] & \frakd/\frakd L_2\arrow[r,"\pi"]  & 0 \\
+0\arrow[r]  & \frakd/\frakd \tilde{L}_2\ar[rru,"\Psi"]  \arrow[r,"\tilde{L}_1"] & \frakd/\frakd L\arrow[r,"\pi"] & \frakd/\frakd \tilde{L}_1\arrow[r]  & 0 
+\end{tikzcd}
+\]
+We have $N=N_1+N_2=N_2+N_1$ get 
+$$
+L+\tilde{L}_2\tilde{L}_1
+$$
+unique with $Np(\tilde{L}_i)=N_i$
+Claim is an isomorphism:
+$dim \frakd/\frakd \tilde{L}_2=dim \frakd/\frakd L_2=deg L_2=deg\tilde{L}_2=d$.
+It suffices to show $\Psi$ is injective. Pick $A\in\frakd,deg(A)< d, A\neq 0$. Suppose $\Psi(\text{Class of $A$})=0$ $A\tilde{L}_1B L_2$ for some $B\in \frakd$ $\tilde{L}_1$ and $L_2$ have no common slopes $\Lrta Np(L_2)\subseteq Np(A)\Lrta deg(L_2)=d\geq deg(A)< d$, Then $\Psi$ is injective.
 \end{proof}
+
+\begin{ex}
+$L=\delta^2+(\frac{1}{t^2}+\frac{1}{t})\delta+(\frac{1}{t^3}-\frac{2}{t^2})$.
+
+Factorize $L$, $s=t,\Delta=t\delta$.
+
+We use the identity $\delta62=t^{-2}\Delta^2-t^{-1}\Delta$
+
+$$
+\begin{aligned}
+L&=\delta^2+(t^{-2}+t^{-1})\delta+(t^{-3}+2t^{-2})\\
+&=t^{-2}\Delta^2+(t^{-3}+t^{-2}-t^{-1})\Delta+(t^{-3}-2t^{-2})\\
+&=\Delta^2+(t^{-1}+1-t)\Delta+(t^{-1}-2)\\
+&\ \\
+P&=\Delta^2+(t^{-1}+1-t)\Delta
++(t^{-1}-2)
+\end{aligned}
+$$
+\end{ex}
+
+
 \end{thm}
+
+
 
 
 \end{document}
