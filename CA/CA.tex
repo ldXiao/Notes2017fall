@@ -6,10 +6,19 @@
 \usepackage{mathtools}
 \usepackage{natbib}
 \usepackage{tikz-cd}
+\usepackage{pgfplots}
 \usepackage{enumitem} 
 \usepackage{hyperref}
 \usepackage{geometry}
 \geometry{left=4cm,right=4cm}
+\pgfplotsset{every axis/.append style={
+                    axis x line=middle,    % put the x axis in the middle
+                    axis y line=middle,    % put the y axis in the middle
+                    axis line style={<->}, % arrows on the axis
+                    xlabel={$x$},          % default put x on x-axis
+                    ylabel={$y$},          % default put y on y-axis
+                    ticks=none,
+                    }}
 %\usepackage[urw-garamond]{mathdesign}
 %\usepackage{cmbright}
 %\usepackage{concmath}
@@ -4220,7 +4229,7 @@ with $\scq\cap \cala=\scp$, $\exists $ prime $\scq'\subsetneq \scq$ with $\scq'\
 See P239 of Eisenbud or 32-33
  of Matsumura for a non-example.
 
-\begin{thm}
+\begin{thm}\label{thm:normal_domain_goingdown}
 Let $\cala\subseteq \calb$ be domains with $\cala$ normal, $\cala $ normal, $\calb$ integral over $\cala$. Then $\cala\subseteq \calb$ has GD.
 \end{thm}
 \begin{proof}
@@ -4320,9 +4329,13 @@ For pedagogical reason, we start with a Baby case
 
 \begin{ex}
 For example, we can choose $f=XY-1$ $(\Lrta xy=1,y=1/x)$. Then $\cala$ \underline{Not} integral over $k[x]$. Thus the choice $z=x$ doesn't work.
+$$
+k[X]\cong k[x]\subsetneq \cala=\frac{k[X,Y]}{XY-1}\cong k\left[x,\frac{1}{x}\right]\subseteq k(x)\cong k(X).
+$$
 
->>>>>>1 (Int the memory not in onenotes)
-Similarly, $\cala$ is not integral over $k[y]$
+$k[X]$ is nomral because it is UFD, hence it is integrally closed in $k(X)$ $\Lrta$ $\cala$ is \underline{NOT} integral over $k[x]$.
+
+Similarly, $\cala$ is not integral over $k[y]$.
 
 But if we choose $z=y-ax$, then
 $$
@@ -4331,27 +4344,38 @@ $$
 $$
 -ax^2-zx+1=0
 $$
-$\Lrta \cala[x,z]$ is integral over $k[z], \forall a\in k, a\neq 0$.
+$\Lrta \cala=k[x,z]$ is integral over $k[z], \forall a\in k, a\neq 0$.
 
-We have also a geometric interpretion of the above example
+We have also a geometric interpretion of the above example:
+$Spec(\cala)=\{(x,y): xy=1\}$, by the lying-over properties of integral extensions in Theorem~\ref{thm:integral_extension_primes_properties}, we know there should be a surjective map from $Spec(\cala)$ to $Spec(k[z])$
+{\centering
+\begin{tikzpicture}
+    \begin{axis}
+        \addplot [red,thick,domain=0.2:5] ({x},{1/x});
+        \addplot [red,thick,domain=-5:-0.2] ({x},{1/x});
+        \addplot [blue, thick, domain=-5:5] ({x},{-0.2*x});
+    \end{axis}
+\end{tikzpicture}
+}
 
->>>>>>>>2
+
+{\color{red} The general surjective map looks like $(X-x_0,Y-y_0)\longmapsto (X-x_0,Y-y_0)\cap k[z]=(Z-y_0+a x_0) $, it shouldn't be depicted as the projection to the line but When we choose $z=x$, then $(X-x_0,Y-y_0)\longmapsto (Z-x_0)$ does not maps to $x_0=0$. In other words, we only have to worry about asymptotes}
 \end{ex}
 
 The above simple example gives us implication for the proof of the baby case:
-\begin{proof}
-By substituting $X':=X$, $Y':=Y-aX$, reduce to the case $a=0$
->>>>>>>>3
-\end{proof}
-
 \begin{lemma}
-In the context of Baby case, write $f=f_n+...f_0$. where $f_i$ homogeneous of degree $i$ and $f_n\neq 0$. If $Y-aX\not | f_n$, $a\in k$. Then $\cala$ is integral over $k[y-ax]$
+In the context of Baby case, $\cala=k[X,Y]/(f)$ write $f=f_n+...+f_0$. where $f_i$ homogeneous of degree $i$ and $f_n\neq 0$. If $Y-aX\nmid f_n$, $a\in k$. Then $\cala$ is integral over $k[y-ax]$
 \end{lemma}
+\begin{proof}
+By substituting $X':=X$, $Y':=Y-aX$, reduce to the case $a=0$.
+
+If $Y\nmid f_n$, then $f_n=X^{n}+(\text{lower powers in $X$ with coefficients in $Y$})$. Then $f(x,y)=0\Lrta$ $x^n+(\text{lower powers in $x$ with coefficients in $y$})$. Then we know $\cala=k[X,Y]/(f)=k[x,y]$ is integral over $k[y]$.
+\end{proof}
 \begin{cor}
 If $k$ is infinite, then Baby case holds.
 \end{cor}
 \begin{proof}
-By the above lemma, it suffices to find $a\in k$ s.t. $Y-aX\not | f_n$. Over $\overline{k}$, $f_n=\prod_{i=1...,n} (\alpha_i x-\beta_i Y)$ $\alpha_i,\beta_i\in \overline{k}$ not both zero. 
+By the above lemma, it suffices to find $a\in k$ s.t. $Y-aX\nmid f_n$. Over $\overline{k}$, $f_n=\prod_{i=1...,n} (\alpha_i x-\beta_i Y)$ $\alpha_i,\beta_i\in \overline{k}$ not both zero. 
 
 Just need that $a\neq \alpha_i/\beta_i\forall i$. This is always possible because $k$ is infinite.
 \end{proof}
@@ -4371,18 +4395,27 @@ $\Lrta x$ integral over $k[z]\Lrta\cala=k[x,z]$ is integral over $k[z]$. This ch
 \end{ex}
 
 \begin{proof}(of key lemma~\ref{lem:key_lemma_noether_normalization} due to Nagata)
-Write $f=\sum_{\alpha\in I}c_\alpha X^\alpha$, where $c_\alpha\in k^\times$ and $X^\alpha:=X_1^{\alpha_1}\cdot\cdot \cdot X^{\alpha_n}_n$. For some finite $I\subseteq \intg_{\geq }^n$. Choose $z_j:=x_j=x^{s_j}_n$ for $j=1,...,n-1$, where $s_j\in \intg_{\geq 0}$ to be chosen later.
+Write $f=\sum_{\alpha\in I}c_\alpha X^\alpha$, where $c_\alpha\in k^\times$ and $X^\alpha:=X_1^{\alpha_1}\cdot\cdot \cdot X^{\alpha_n}_n$. For some finite $I\subseteq \intg_{\geq }^n$. Choose $z_j:=x_j-x^{s_j}_n$ for $j=1,...,n-1$, where $s_j\in \intg_{\geq 0}$ to be chosen later.
 
 Then $x_j=x^{s_j}+z_j$, so
 $$
 \begin{aligned}
 w&=f(x_1,...,x_n)=f(x_n^{s_1}+z_1,...,x_n^{s_{n-1}}+z_{n-1},x_n)\\
 &=\sum_{\alpha\in I}c_\alpha (x^{s_1}_n+z_1)^{\alpha_1}\cdot\cdot \cdot (x_n^{s_{n-1}}+z_{n-1})^{\alpha_{n-1}}x_n^{\alpha_n}\\
-& \text{where each power equals} x_n^{s_j\alpha_j}+(...) \text{ lower powers with coefficients in $z$}\\
-&= x_n^{l(\alpha)}+(...),\ \ \ l(\alpha):=s_1\alpha_1+...+s_{n-1}\alpha_{n-1}+\alpha_n, \text{ where $(...)$ are of lower powers in $x_n$ with coefficients in $k[z_1,..,z_{n-1}]$}
+& \text{where each power equals } x_n^{s_j\alpha_j}+(...) \text{ lower powers with coefficients in $z_j$}\\
+&=\sum_{\alpha\in I} x_n^{l(\alpha)}+(...),\ \ \ l(\alpha):=s_1\alpha_1+...+s_{n-1}\alpha_{n-1}+\alpha_n,\\ 
+&\text{ where $(...)$ are of lower powers in $x_n$ with coefficients in $k[z_1,..,z_{n-1}]$}
 \end{aligned}
 $$
->>>>>>>>>>4
+\underline{Sublemma:} $\exists (s_1,...,s_{n-1})$ s.t., $\forall, \alpha,\beta\in I$
+\begin{equation}\tag*{(*)}
+\alpha\neq \beta\Lrta l(\alpha)\neq l(\beta)
+\end{equation}
+
+\underline{Proof1}: Take $s_j=s^j$, where $s:=\max\{|\alpha_j|+1|\alpha\in I, j=1,...,n\}$.
+
+\underline{Proof2}: $(*)$ basically says that $(s_1,...,s_{n-1})$ have to avoid finitely many proper subspaces of $\ratl^{n-1}$, which is always possible, because finite union of proper subspaces can not be the vector space it self.
+
 Choose $s$ as in sublemma. Choose $\alpha\in I$ s.t. $l(\alpha)$ maximal. Then $w=c_\alpha x_n^{l(\alpha)}+(...)$
 
 $\Lrta x_n$ is integral over $k[z_1,...,z_{n-1},w]$
@@ -4394,37 +4427,42 @@ $\Lrta k[x_1,...,x_n]$ is integral over $k[z_1,...,z_{n-1},w]$.
 
 The above proved the key lemma thus the Noether Normalization theorem.
 
-\begin{thm}
-Let $\cala$ finitely generated $k$-domain, $\scp\in Spec(\cala)$. Then $ht(\scp)+coht(\scp)=ht(\scp)+dim(\cala/\scp)=dim(\cala)$
+\begin{thm}\label{thm:fin.gen.k-domain_dim_equality}
+Let $\cala$ be finitely generated $k$-domain, $\scp\in Spec(\cala)$. Then $ht(\scp)+coht(\scp)=ht(\scp)+dim(\cala/\scp)=dim(\cala)$
 \end{thm}
 \begin{proof}
 Set $n:=dim(\cala)$. $\text{NN}\Lrta\exists x_1,..,x_n\in\cala$ algebraic independent s.t. $\cala$ is integral over $\cala_0:=k[x_1,..,x_n]\cong k[X_1,..,X_n]$.
 
-$\cala_0$ is UFD $\Lrta$ $\cala_0$ is normal. $\cala$ is a domain., $\cala_0\subseteq \cala$ is an integral extension. So by the result form last lecture, we have with 
+$\cala_0$ is UFD $\Lrta$ $\cala_0$ is normal. $\cala$ is a domain., $\cala_0\subseteq \cala$ is an integral extension. So by the going-down properties~\ref{thm:normal_domain_goingdown} , we have 
 $$
 \scp_0:=\cala_0\cap\scp\in Spec(\cala_0)
 $$
 that 
-$ht(\scp)=ht(\scp_0)$, $coht(\scp=coht(\scp_0))$, 
+$ht(\scp)=ht(\scp_0)$, $coht(\scp)=coht(\scp_0)$, 
 $dim(\cala)=dim(\cala_0)$. Thus by replacing $\cala$ by $\cala_0$, we may assume $\cala=k[X_1,...,X_n]$.
 
-If $\scp=(0)$, then OK: $ht(\scp)=0$, $coht(\scp)=dim(\cala)$. So we may assume $\scp\neq (0)$.
-So $\scp\ni x_n$/ Then $]scp\supseteq (x_n)$. 
+If $\scp=(0)$, then we are done: $ht(\scp)=0$, $coht(\scp)=dim(\cala)$. 
+
+So we may assume $\scp\neq (0)$.
+Suppose a special case where $\scp\ni x_n$. Then $\scp\supseteq (x_n)$. 
 
 Set $\overline{\cala}:=\cala/(x_n)\cong k[X_1,...,X_{n-1}]$, $\overline{\scp}:=\scp/(x_n)$.
 
 Then $0\subsetneq (x_n)\subseteq \scp$, so $ht(\scp)\geq ht(\overline{\scp})+1$.
 (Given $0=\overline{\scq_0}\subsetneq ...\subsetneq \overline{\scq_r}=\overline{\scp}$, get $0\subsetneq (x_n)=\scq_0\subsetneq...\subsetneq \scq_r=\scp $)
 
-Also $coht(\overline{\scp})=dim(\overline{\cala})=coht(\overline{\scp})$, $\dim(\overline{\cala})=n-q=dim(\cala)-1$.
+Also $coht(\overline{\scp})=dim(\overline{\cala})=coht(\overline{\scp})$, $\dim(\overline{\cala})=n-1=dim(\cala)-1$.
 
-In general $ht(\scp)+coht(\scp)\leq dim(\cala)$ holds trivially. so we just need to show $ht(\scp)+coht(\scp)\geq dim(\cala)$. where $ht(\scp)\geq ht(\overline{\scp})+1$, $coht(\scp)=coht(\overline{\scp})$ and $dim(\cala)=dim(\overline{\cala})+1$.
+In general $ht(\scp)+coht(\scp)\leq dim(\cala)$ holds trivially. so we just need to show
+ $$ht(\scp)+coht(\scp)\geq dim(\cala),$$
+  where $ht(\scp)\geq ht(\overline{\scp})+1$, $coht(\scp)=coht(\overline{\scp})$ and $dim(\cala)=dim(\overline{\cala})+1$. (If we are able to show $ht(\overline{\scp})+coht(\overline{\scp})\geq dim(\overline{\cala})$, we are done)
 
-So we can argue by induction on $n$ in the special case $x_n\in \scp$. We now reduce the general case to this one.
+So we can argue by induction on $n$ in the special case $x_n\in \scp$. 
 
-Choose any $0\neq f\in \scp$. By the key lemma for NN, $\exists z_1,...,z_{n-1}\in\cala=k=k[x_1,...,x_n]$, s.t. $\cala$ $\cala$ integral over $\cala_0:=k[z_1,...,z_{n-1},z_n]$, where $z_n:=f$. Then $tr.deg (\cala_0)=tr.deg(\cala)=n$, so $\{z_j\}$ are algebraically independent. Thus $\cala_0$ is again a polynomial ting, hence $\cala_0$ is normal.
+We now reduce the general case to this one.
+Choose any $0\neq f\in \scp$. By the key lemma for NN, $\exists z_1,...,z_{n-1}\in\cala=k[x_1,...,x_n]$, s.t. $\cala$ integral over $\cala_0:=k[z_1,...,z_{n-1},z_n]$, where $z_n:=f(x_1,...,x_n)$. Then $tr.deg (\cala_0)=tr.deg(\cala)=n$, so $\{z_j\}$ are algebraically independent. Thus $\cala_0$ is again a polynomial ring, hence $\cala_0$ is normal.
 
-By arguing as in the beginning of the proof, we have with $\scp_0:=\scp\cap\cala_0$ that $dim(\cala_0)=dim(\cala)$, $coht(\scp_0)=coht(\scp)$, $ht(\scp_0)=ht(\scp)$. Si iit suffices to show that $coht(\scp_0)+ht(\scp_0)\geq dim(\cala_0)$. 
+By arguing as in the beginning of the proof, we have with $\scp_0:=\scp\cap\cala_0$ that $dim(\cala_0)=dim(\cala)$, $coht(\scp_0)=coht(\scp)$, $ht(\scp_0)=ht(\scp)$. So it suffices to show that $coht(\scp_0)+ht(\scp_0)\geq dim(\cala_0)$. 
 
 But now $f\in\scp\Lrta z_n\in\scp_0$, so we reduce to the special case $x_n\in\scp$. Argue as above. 
 \end{proof}
@@ -4437,8 +4475,21 @@ $$
 \end{lemma}
 \begin{proof}
 Apply previous theorem to $(\cala,\scp)$, $(\cala,\scp')$ and $(\overline{\cala},\overline{\scp'}),$ where $\overline{\cala}=\cala/\scp$ and $\overline{\scp'}=\scp'/\scp$. Hypothesis that $\scp$, $\scp'$``adjacent'' $\Lrta ht(\overline{\scp'})=1$
+Then by Theorem~\ref{thm:fin.gen.k-domain_dim_equality}
+$$
+ht(\scp)+coht(\scp)=ht(\scp)+dim(\overline{\cala})=dim(\cala)
+$$
+$$
+ht(\scp')+coht(\scp')=ht(\scp')+coht(\overline{\scp'})=dim(\cala)
+$$
+$$
+ht(\overline{\scp'})+coht(\overline{\scp'})=dim(\overline{\cala})
+$$
+Then
+$$
+ht(\scp')-1=ht(\scp')-ht(\overline{\scp}')=dim(\cala)-dim(\overline{\cala})=ht(\scp)
+$$
 
->>>>>>>>4
 \end{proof}
 
 
