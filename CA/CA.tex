@@ -61,7 +61,6 @@
 \newcommand{\reals}{\mathbb R}
 \newcommand{\cplx}{\mathbb C}
 \newcommand{\intg}{\mathbb Z}
-\newcommand{\bbk}{\mathbb K}
 \newcommand{\bbf}{\mathbb F}
 \newcommand{\ratl}{\mathbb Q}
 \newcommand{\torus}{\mathbb T}
@@ -103,11 +102,12 @@
 \newcommand{\lgl}{\langle}
 \newcommand{\rgl}{\rangle}
 \newcommand{\inj}{\hookrightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
 \newcommand{\downmapsto}{\rotatebox[origin=c]{-90}{$\scriptstyle\mapsto$}\mkern2mu}
 \renewcommand{\qedsymbol}{$\square$}
 \bibliographystyle{plain}
-\title{\bf Personal Notes for Commutative Algebra by Prof. Nelson}
-\author{Texed by Lin-Da Xiao} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
+\title{\bf Lecture Notes for Commutative Algebra}
+\author{Paul Nelson} %\thanks{Research partially supported by NSF Grant DMS-96-25122 and the Miller Institute for Basic Research in Science.}
 \begin{document}
 \maketitle
 \tableofcontents
@@ -154,18 +154,18 @@ If $0 \in \reals^n$ is a regular value of $f$ then $f^{-1}(0)$ is a submanifold.
 \end{thm} 
  
 In algebraic geometry, we look at $f^{-1}(0)$ for polynomial $f$.
-More precisely, fix an algebraic-closed field $\bbk$ and an integer $n>0$, consider the ring $R:=\bbk[x_1,...,x_n]$.
+More precisely, fix an algebraically closed field $K$ and an integer $n>0$, consider the ring $R:=K[x_1,...,x_n]$.
  
-Def: For a subset $S\subset R$ we define the \textbf{affine algebraic variety} by
+Define: For a subset $S\subset R$ we define the \textbf{affine algebraic variety} by
 \begin{equation}
-V(S):=\{x\in \bbk^n| \forall f \in S,\ f(x)=0\subset \bbk^n\}
+V(S):=\{x\in K^n| \forall f \in S,\ f(x)=0\subset K^n\}
 \end{equation}
 \begin{rmk}
 With the affine algebraic varieties defined above, we have:
 \begin{itemize}
-\item $V(\emptyset)=\bbk^n$
+\item $V(\emptyset)=K^n$
 \item $ V(\{1\})=\emptyset$
-\item   For an non empty collection of subsets $(S_i)_{i\in I}$ $S_i\subset R$ we have 
+\item   For an non empty collection of subsets $(S_i)_{i\in I}$, $S_i\subset R$ we have 
 \begin{equation*}
     \cap_{i\in I}V(S_i)=V(\cup_{i\in I} S_i)
 \end{equation*}
@@ -175,22 +175,22 @@ With the affine algebraic varieties defined above, we have:
 \end{equation*}
 \end{itemize}
 as a consequence, 
-    $(V(S))_{S\subset R}$ form the closed sets of a topology on $\bbk^n$ called \textbf{Zariski topology}.
+    $(V(S))_{S\subset R}$ form the closed sets of a topology on $K^n$ called \textbf{Zariski topology}.
 \end{rmk}
 \begin{ex}
-n=2 , $R=\bbk[X_1,X_2]$
+n=2 , $R=K[X_1,X_2]$
 
- $V(\{X_1\})$ is the $X_2$ axis in $\bbk^2$
+ $V(\{X_1\})$ is the $X_2$ axis in $K^2$
 
- $V(\{X_2-X_1^2\})$ is the parabola in $\bbk^2$
+ $V(\{X_2-X_1^2\})$ is the parabola in $K^2$
 \end{ex}
 
 \begin{dfn}
-Conversely for all subset $X \subset \bbk^n$, consider 
+Conversely for all subset $X \subset K^n$, consider 
           $$ I(X):=\{f\in R | \forall x\in X: f(x)=0\}\subset R.$$
 \end{dfn}
 \begin{rmk}
-Fact: For S in R and X subset in $\bbk^n$, we have, 
+Fact: For $S$ in $R$ and $X$ subset in $K^n$, we have, 
 \begin{itemize}
 \item
  $S\subset I(V(S))$
@@ -199,7 +199,7 @@ Fact: For S in R and X subset in $\bbk^n$, we have,
 \item
  For $S\subset S' \subset$ in $R$, we have $V(S)\supset V(S')$
 \item
- For $X \subset X'\subset \bbk^n$, we have $ I(X)\supset I(X')$
+ For $X \subset X'\subset K^n$, we have $ I(X)\supset I(X')$
 \item
  $I(X) \subset R$ is  an ideal.
 \end{itemize}
@@ -207,8 +207,8 @@ Fact: For S in R and X subset in $\bbk^n$, we have,
 
 \begin{dfn}
 The \textbf{radical of an ideal}   $\sca\subset R$ is 
- $rad(\sca):=\{a\in R| \exists n\geq1\  s.t.\  a^n \in \sca\} \subset R$
-An ideal $\sca \subset R$ with $rad(\sca)$ is  called \textbf{radical}.
+ $rad(\sca):=\{a\in R| \exists n\geq1\  s.t.\  a^n \in \sca\} \subset R$.
+An ideal $\sca \subset R$ with $rad(\sca)=\sca$ is  called \textbf{radical}.
 \end{dfn}
 
 \begin{rmk}
@@ -217,7 +217,7 @@ for every ideal $\sca \subset R$ we have  $\sca\subset rad(\sca)$.
 
  $rad(\sca)$ is an ideal, proof in exercise.
 
-For $X\subset \bbk^n$ the ideal $I(X)$ is radical. 
+For $X\subset K^n$ the ideal $I(X)$ is radical. 
 
 \end{rmk}
 
@@ -236,7 +236,7 @@ $$
 and this correspondence inverse the inclusion.
 
 \begin{ex}
-For any point $x=(x_1,...,x_n) \in \bbk^n$ the ideal 
+For any point $x=(x_1,...,x_n) \in K^n$ the ideal 
 $$
 I({x})=\scm_x:=(X_1-x_1,...,X_n-x_n)
 $$
@@ -257,57 +257,58 @@ which makes the contradiction.
 \end{proof}
 \end{ex}
 
-Weak Nullstellensatz the ideals $m_x$ is are precisely the maximal ideals of $\bbk[x_1,...,x_n]$, where $\bbk$ needs to be algebraically closed
+Weak Nullstellensatz the ideals $m_x$ is are precisely the maximal ideals of $K[x_1,...,x_n]$, where $K$ needs to be algebraically closed
 \begin{ex}
-$\bbk=\reals, n=1$.
+$K=\reals, n=1$.
 $X^2+1$ is irreducible in $\reals[X]$.
 And $\reals[X]/(X^2+1) \cong \cplx$ is maximal.
-Consequence, we have a bijection
+Consequently, we have a bijection
 $$
-\{\text{max ideals of R polynomial ring }\bbk[X_1,...,X_n]\}
-\Longleftrightarrow\{\text{Points in } \bbk^n\}
+\{\text{maximal ideals of $R:=$ polynomial ring }K[X_1,...,X_n]\}
+\Longleftrightarrow\{\text{Points in } K^n\}
 $$
 \end{ex}
 
 Let $A$ be a ring.
 Remember 
 
-    An element $a\in A$ is \textbf{nilpotent} if there $\exists n>1\in \intg$ s.t. $a^n=0$.
+    An element $a\in \cala$ is \textbf{nilpotent} if there $\exists n>1\in \intg$ s.t. $a^n=0$.
 
-    An element $a\in A$ is a \textbf{zero divisor} if there is an element $b\in A, b\neq 0$ s.t. $ab=0$.
+    An element $a\in \cala$ is a \textbf{zero divisor} if there is an element $b\in \cala, b\neq 0$ s.t. $ab=0$.
 
 Fact: every nilpotent element is a zero divisor but not conversely.
 
 \begin{ex}
-     take $(0,1)\in A\times A$ then $(0,1)\cdot(1,0) =(0,0)$
+     take $(0,1)\in \cala\times \cala$ then $(0,1)\cdot(1,0) =(0,0)$
 \end{ex}
 
 \begin{dfn}
- The ideal $N:rad((0))$ is called  the \textbf{nil radical} of $A$.
+ The ideal $N:rad((0))$ is called  the \textbf{nil radical} of $\cala$.
 \end{dfn}
 
 Then we have:
-\begin{enumerate}
+\begin{enumerate}[label=(\roman*)]
 \item $\caln$ is the set of all nilpotent elements  of $A$
-\item $A/\caln$ has no nilpotent elements.
+\item $\cala/\caln$ has no nilpotent elements.
 \end{enumerate}
 \begin{proof}
-1. From definitions.
-2. Let $x\in A$ s.t. $\bar{x}\in A/\caln$ is nilpotent.
+$(i)$. From definitions.
+
+$(ii)$. Let $x\in \cala$ s.t. $\bar{x}\in A/\caln$ is nilpotent.
  Let $n>0$ s.t. $\bar{x}^n=0$ then $x^n \in \caln$
 Thus there exists $k>0$ s.t. $(x^n)^k=0$ hence $x^{nk}=0$
 , $x\in \caln$.
 \end{proof}
 
 \begin{prop}
-The nil radical of A is the intersection of all prime ideals of A.
+The nil radical of $\cala$ is the intersection of all prime ideals of $\cala$.
 \end{prop}
 \begin{proof}
 Denote by $\caln'$ the intersection of all prime ideals of $A$.
 For any nilpotent element $f\in A$ with $n>0$ s.t. $f^n=0$,
-We have $f^n\in \scp$ for every prime ideal $\scp$. Hence $f\in \scp$ We conclude $f\in \caln'$
+We have $f^n\in \scp$ for every prime ideal $\scp$. Hence $f\in \scp\Lrta$ conclude $f\in \caln'$.
 Conversely, suppose $f\in A$ is not nilpotent 
-Define $\Sigma:=\{ \sca \subset A\text{ ideals} | \forall n>0: f^n\notin \sca\}$
+Define $\Sigma:=\{ \sca \subset A\text{ ideals} | \forall n>0: f^n\notin \sca\}$.
 We will apply Zorn's lemma. 
 We have 
 
@@ -320,52 +321,52 @@ We have
     for all $n>0$, 
     we have $f^n \notin \sca$, hence $\sca \in \Sigma$.
 By Zorn's lemma we conclude that there is a maximal element $\scp\in \Sigma$.
-We show that $\scp$ is a prime ideal.
 
+We show that $\scp$ is a prime ideal.
 For any $x,y \notin \scp$, consider the ideals
 $\scp+(x), \scp+(y)$. They strictly contain $\scp$ and are thus not in $\Sigma$.
-Let $n,m>0$ s.t. $f^n\in (x), f^m\in \scp+(y)$.
+Let $n,m>0$ s.t. $f^n\in \scp+(x), f^m\in \scp+(y)$.
 We conclude that $f^{n+m}\in \scp+(xy)$, so $\scp+(xy) \notin \Sigma$.
 Hence $xy \notin \scp$, which means, $\scp $ is a prime ideal so $f \notin \caln'$.
 \end{proof}
 
-Remember let $f:A \rightarrow B$ be a ring morphism. And $\scp\subset B$ a prime ideal . 
-Then $f^{-1}(\scp)$ is  a prime ideal of $A$.
+Remember let $f:\cala \rightarrow \calb$ be a ring morphism. And $\scp\subset \calb$ a prime ideal. 
+Then $f^{-1}(\scp)$ is  a prime ideal of $\cala$.
 Caution: Not true for maximal ideals in general. 
  
 \begin{prop}
-Let $\sca\subset A$ be an ideal, $\pi : A\rightarrow A/\sca$
-There is a one to one correspondence between ideals of $A/\sca$ and ideals in $A$ which contain
+Let $\sca\subset A$ be an ideal, $\pi : A\rightarrow \cala/\sca$
+There is a one to one correspondence between ideals of $\cala/\sca$ and ideals in $\cala$ which contain
 $\sca$ via $\scc=\pi^{-1}(\scb)$
 \end{prop}
 
 \begin{cor}
-Let $\sca\subset  A $ be an ideal, then $rad(\sca)$ is the intersection of all prime ideals which contain $\sca$.
+Let $\sca\subset  \cala $ be an ideal, then $rad(\sca)$ is the intersection of all prime ideals which contain $\sca$.
 \end{cor}
 \begin{proof}
-consider the homomorphism $\pi :A\rightarrow A/\sca$
-Then $rad(\sca)=\pi^{-1}(\caln_{A/\sca})$.
-By the above proposition $\caln_{A/\sca}$ is the intersection of all prime ideals of $A/\sca$.
+consider the homomorphism $\pi :\cala\rightarrow \cala/\sca$
+Then $rad(\sca)=\pi^{-1}(\caln_{\cala/\sca})$.
+By the above proposition $\caln_{\cala/\sca}$ is the intersection of all prime ideals of $\cala/\sca$.
  By the correspondence we conclude the statement.
 \end{proof}
 \begin{dfn}
- The \textbf{Jacobson Radical} $\calr$ of $A$ is the intersection of all maximal ideals in $A$.
+ The \textbf{Jacobson Radical} $Jac(\cala)$ of $\cala$ is the intersection of all maximal ideals in $\cala$.
 \end{dfn}
 \begin{prop}\label{prop:criterion_jacobson_radical}
 We have 
-$x\in \calr\Longleftrightarrow \forall y \in A: 1-xy $ is a unit.
+$x\in Jac(\cala)\Longleftrightarrow \forall y \in \cala: 1-xy $ is a unit.
 \end{prop}
 \begin{proof}
-``$\Longrightarrow$'' let $x\in \calr$ and $y\in A$ s.t. $1-xy$ is not a unit. Then $1-xy\in \scm$ for some maximal ideal 
-$\scm \subset A$. But $x\in \calr\subset \scm,$ hence $1\in \scm$  contradiction.
+``$\Longrightarrow$'' let $x\in Jac(\cala)$ and $y\in \cala$ s.t. $1-xy$ is not a unit. Then $1-xy\in \scm$ for some maximal ideal 
+$\scm \subset \cala$. But $x\in Jac(\cala)\subset \scm,$ hence $1\in \scm$  contradiction.
 
-``$\Longleftarrow$'' let $x  \notin \calr$ then $x \notin \scm$ for some maximal ideal $\scm\subset A$.
+``$\Longleftarrow$'' let $x  \notin Jac(\cala)$ then $x \notin \scm$ for some maximal ideal $\scm\subset \cala$.
 Since $\scm$ is maximal we conclude that $(x)+\scm=A$. Hence there exists $y\in A,\   u\in \scm$ s.t. $xy+u=1$.
 We conclude that $1-xy \in \scm $, so in particular , $1-xy$ is not a unit.
  \end{proof}
 \subsection{Lecture 2. local rings, coprime ideals, ideal quotients by Paul Steinmann}
 \begin{dfn}
-A ring $A$ is called a \textbf{local ring} if $A$  admits precisely one maximal ideal;
+A ring $\cala$ is called a \textbf{local ring} if $\cala$  admits precisely one maximal ideal;
 \end{dfn}
 
 \begin{ex}
@@ -374,22 +375,22 @@ A ring $A$ is called a \textbf{local ring} if $A$  admits precisely one maximal
 \item
 Every field is a local ring with maximal ideal $\scm=0$, because every nonzero element is a unit.
 \item
-$\bbk[[X]]$ is the ring of formal power series over a field $\bbk$, it has a unique maximal ideal $(X)$. One can check that every element with nonzero constant term is invertible. i.e. $(a_0(1-g))^{-1}=a_0^{-1}(1+g+g^2+...)$
+$K[[X]]$ is the ring of formal power series over a field $K$, it has a unique maximal ideal $(X)$. One can check that every element with nonzero constant term is invertible. i.e. $(a_0(1-g))^{-1}=a_0^{-1}(1+g+g^2+...)$
 \end{itemize}
 \end{ex}
  
 \begin{prop}\ 
 \begin{itemize}
 \item 
-Let $A$ be a ring and $\scm\neq (1)$ is an ideal of $A$ s.t. every $x\in A-\scm$  is a unit of $A$, then $A$ is a local ring with  maximal ideal $\scm$.
+Let $\cala$ be a ring and $\scm\neq (1)$ is an ideal of $A$ s.t. every $x\in A-\scm$  is a unit of $A$, then $A$ is a local ring with  maximal ideal $\scm$.
 \item
-Let $A$ be ring and $\scm\subset A$ is a maximal ideal s.t. any element of $1+\scm=\{1+a|a\in \scm \}$ is a unit in $A$. Then $A$ is a local ring.
+Let $\cala$ be ring and $\scm\subset A$ is a maximal ideal s.t. any element of $1+\scm=\{1+a|a\in \scm \}$ is a unit in $\cala$. Then $\cala$ is a local ring with maximal ideal $\scm$.
 \end{itemize}
 \end{prop}
 
 \begin{proof}
 For first part, every proper ideal consists of non-units, hence is contained in $\scm$. In other words, an element is a unit iff it is not contained in any maximal ideal.
-For the second part, let $x\in A-\scm$. Since $\scm$ is maximal , we have $(x)+\scm=(1)$ , hence , $\exists y\in A, t\in \scm$, s.t. $xy+t=1$, which implies $xy=1-t\in 1+\scm.$ Thus ,$xy$ is a unit which implies that $x$ is a unit, Now use the first part.
+For the second part, let $x\in A-\scm$. Since $\scm$ is maximal , we have $(x)+\scm=(1)$ , hence , $\exists y\in A, t\in \scm$, s.t. $xy+t=1$, which implies $xy=1-t\in 1+\scm.$ Thus $xy$ is a unit which implies that $x$ is a unit. Now use the first part.
 \end{proof}
 
 \begin{dfn}
@@ -406,18 +407,18 @@ Let $m\in \intg$. Then $\intg/(m\intg)$ is a semilocal ring with maximal ideals 
 \end{itemize}
 \end{ex}
 
- Reminder: Let $\sca,\scb \subset A$ be ideals their sum is 
+Reminder: Let $\sca,\scb \subset \cala$ be ideals their sum is 
 $$
 \sca+\scb:=\{a+b|a\in \sca, b\in \scb\},
 $$
-Which is the smallest ideal containing $\sca\cup\scb$.
-Also infinite sums $(\sca_i)_{i\in I}\subset A$ ideals,
+which is the smallest ideal containing $\sca\cup\scb$.
+Also infinite sums $(\sca_i)_{i\in I}\subset \cala$ ideals,
 $$
-\sum_{i\in I }\sca_i :=\left\{\sum_{i\in I}x_i | x_i\in \sca_i  x_i =0 \text{for almost all i}\right\}
+\sum_{i\in I }\sca_i :=\left.\left\{\sum_{i\in I}x_i \right| x_i\in \sca_i,  x_i =0 \text{ for almost all i}\right\}
 $$
 And we also have
 $$
-\sca\cdot \scb\ or\ \sca\scb=\left\{\sum_{i\in I}x_i y_i|x_i \in \sca , y_i\in \scb, \text{all but finitely many terms are }0\right\}.
+\sca\cdot \scb\ or\ \sca\scb=\left.\left\{\sum_{i\in I}x_i y_i\right|x_i \in \sca , y_i\in \scb, \text{all but finitely many terms are }0\right\}.
 $$
 \begin{dfn}
 Two ideals $\sca, \scb\subset A$ are called \textbf{coprime}\footnote{In some literature, it is called \textbf{comaximal}} if $\sca+\scb=(1)$ 
@@ -433,7 +434,7 @@ $\forall x\in \sca\cap\scb$ we have $x=x\cdot 1=x(a+b)=xa+xb\in \sca\cdot \scb$.
 \end{rmk}
 
 \begin{prop}
-Let $\sca_1,...,\sca_n \subset A$ be ideals, denote $\varphi: A\rightarrow \prod_{i\in I}^n(A/\sca_{i})$ for the canonical homomorphism.\\
+Let $\sca_1,...,\sca_n \subset \cala$ be ideals, denote $\varphi: \cala\rightarrow \prod_{i\in I}^n(\cala/\sca_{i})$ for the canonical homomorphism.\\
 (i) if $\sca_i,\sca_j$ are coprime for $i\neq j$ , then $\prod_{i=1}^n\sca_i=\cap_{i=1}^n\sca_i$.\\
 (ii)$\varphi$ is surjective iff $\sca_i,\sca_j$ are coprime for $i\neq  j$.\\
 (iii) $\varphi$ is injective iff $\cap_{i=1}^n\sca_i=(0)$.
@@ -461,13 +462,13 @@ Define $x:=\prod_{i\neq k}v_i$. Then $x\equiv 0 \mod \sca_j,\ \forall j\neq k$ a
 Hence, $\varphi(x)=(0,..,0,1,0,...,0)$ nonzero in the $k$-th entry.\\
 As a result, if each pair $\sca_i,\sca_j$ is coprime, we have 
 $$
-A/\left(\prod_{i=1}^n\sca_i\right)\cong \prod_{i=1}^n\left(A/\sca_i\right).
+\cala/\left(\prod_{i=1}^n\sca_i\right)\cong \prod_{i=1}^n\left(\cala/\sca_i\right).
 $$
 \end{proof}
 
  
 \begin{prop}
-Let $\sca,\scb\subset  A$ be ideals s.t. $rad(\sca),rad(\scb)$ are coprime. Then $\sca, \scb$ are coprime.
+Let $\sca,\scb\subset  \cala$ be ideals s.t. $rad(\sca),rad(\scb)$ are coprime. Then $\sca, \scb$ are coprime.
 \end{prop}
 \begin{proof}
 In fact, we have
@@ -478,8 +479,8 @@ Details in the exercise sheet.
 \end{proof}
 
 \begin{prop}\ \\
-(i) Let $\scp_1,..., \scp_n\subset A$ prime ideals and let $\sca \subset A$ be an ideal which is contained in $\cup_{i=1}^n\scp_i$ then $\sca\subset \scp_j$  for some $j$.\\
-(ii)Let $\sca_1,...,\sca_n\subset A$ be ideals and $\scp \subset A$ a prime ideal s.t. $\scp \supset \cap_{i=1}^n\sca_i$.
+(i) Let $\scp_1,..., \scp_n\subset \cala$ prime ideals and let $\sca \subset \cala$ be an ideal which is contained in $\cup_{i=1}^n\scp_i$ then $\sca\subset \scp_j$  for some $j$.\\
+(ii)Let $\sca_1,...,\sca_n\subset \cala$ be ideals and $\scp \subset \cala$ a prime ideal s.t. $\scp \supset \cap_{i=1}^n\sca_i$.
 Then $\scp\supset \sca_i$ for some $i$.
 If $\scp=\cap_{i=1}^n\sca_i$,  then $\scp =\sca_i $ for some $i$ .
 \end{prop}
@@ -503,22 +504,22 @@ If $\scp=\cap_{i=1}^n\sca_i\subset \sca_k$ for all $k$, which produce the last p
 \begin{dfn}
 Let $\sca,\scb\subset A$ be two ideals. Their \textbf{ideal quotient} is 
 $$
-(\sca:\scb):=\{x\in A| x\scb \subset \sca\}.
+(\sca:\scb):=\{x\in \cala| x\scb \subset \sca\}.
 $$ 
 The \textbf{annihilator} of an ideal $\sca\subset A $ is 
 $$
 Ann(\sca):=\{(0):\sca\}.
 $$
 \end{dfn}
-Notation: For $x\in A$ we write $(a:x):=(a:(x))$.\\
-Fact: 
+Notation: For $x\in A$ we write $(\sca:x):=(\sca:(x))$.\\
+Fact: \\
 (i)The ideal quotient of two ideals is again an ideal.\\
 (ii)The set of zero divisors of $A$ is 
 $$
-D=\cup_{x\neq 0} Ann(x)=\cup_{x\neq 0}(Ann(x))
+D=\cup_{x\neq 0} Ann(x)=\cup_{x\neq 0}rad(Ann(x))
 $$
-\begin{proof}
-(i)
+\begin{proof}\ \\
+(i) Check by definition.\\
 (ii) The first equality is just by definition. The the second equality.
 $$
 D=rad(D)=rad(\cup_{x\neq 0}Ann(x))=\cup_{x\neq 0}rad(Ann(x)),
@@ -566,9 +567,9 @@ And $f_*: C\rightarrow E$ is a bijection with inverse $f^*$.
 \subsection{Lecture 3. Modules, Exact sequences by Professor Kowalski}
 Outline of this chapter 
 \begin{itemize}
-\item Definition examples and Nakayama's Lemma
-\item exact sequences , snake lemma
-\item tensor products
+\item Definition, examples, and Nakayama's Lemma
+\item Exact sequences , snake lemma
+\item Tensor products
 \item Algebra over a ring
 \end{itemize}
 Roughly speaking, module is ``vector spaces for rings''. It is closely related to fibre bundles in geometry. For the convention, we still fix commutative ring $\cala$ with unit.
@@ -591,7 +592,7 @@ $$
 $$
 \end{dfn}
 
-\begin{ex}
+\begin{ex}\ 
 \begin{enumerate}
 \item $\{0\}$ is an $\cala$-module
 \item if $\cala$ is a field $\cala$-module is just $\cala$-vector space.
@@ -616,9 +617,9 @@ $Q\overset{h}{\lrta }M\overset{f}{\lrta} N\overset{g}{\lrta} P$, then $g\circ f\
 $f:M\rta N$ is an \textbf{isomorphism} iff $\exists g:N\lrta M$ s.t. $g\circ f=id_N$ and $f\circ g=id_M$.
 \end{dfn}
 \begin{rmk}
-$Q\rta(h) M\rta(f) N\rta(g) P$, then for any $P$, we get
+$Q\overset{h}{\rta} M\overset{f}{\rta} N\overset{g}{\rta} P$, then for any $P$, we get
  $$
- f^*: Hom_\cala(M,P)\rta Hom_\cala(M,P)
+ f^*: Hom_\cala(N,P)\rta Hom_\cala(M,P)
  $$
  $$
 g\mapsto g\circ f
@@ -648,19 +649,19 @@ Suppose $M$ is an $\cala$-module and $N\subset M$ as submodule, then $M/N$ has t
 \begin{itemize}
 \item 
 $
-Ker(f)=f^{-1}(\{0\})\subset M
+Ker(f):=f^{-1}(\{0\})\subset M
 $ 
 is a submodule of $M$.
 \item 
 $
-Im(f)= f(M)\subset N
+Im(f):= f(M)\subset N
 $ is a submodule of $N$.
 \item 
-Coker(f)=N/Im(f) is an $\cala$-module.
+Coker(f):=N/Im(f) is an $\cala$-module.
 \end{itemize}
 \end{dfn}
 \begin{rmk}\label{rmk:iso} 
-\begin{enumerate}
+\begin{enumerate}[label=(\roman*)] 
 \item $ker(f)={0}\Longleftrightarrow f$ is injective.
 \item $coker(f)={0}\Longleftrightarrow f$ is surjective.
 \item if $f:M\rta N$ and $M'\subset ker(f)$, then we get an induced linear map $\bar{f}$, s.t the diagram 
@@ -670,8 +671,7 @@ M \arrow[r,"f"] \arrow[d,"\pi"]  & N  \\
    M/M' \arrow[ur,"\bar{f}"] & 
 \end{tikzcd}
 \]
-commutes. It properly defined by $\bar{f}(x+M')=f(x)$ since $f(M')=\{0\}$
-Then we have
+commutes. It is properly defined by $\bar{f}(x+M')=f(x)$ since $f(M')=\{0\}$. Then we have
 $$
 Im(\bar{f})=Im(f),
 $$
@@ -681,7 +681,7 @@ Ker(\bar{f})=Ker(f)/M'.
 $$
 In particular, if $M'= Ker(f)$, we get an isomorphism 
 $$
-M/Ker(f)\overset{\bar{f}}{\lrta}Im(f).
+M/Ker(f)\overset{\bar{f}}{\cong}Im(f).
 $$
 \end{enumerate}
 \end{rmk}
@@ -702,21 +702,21 @@ $$
 \begin{dfn}
 If $M$ satisfies $M=\lgl X\rgl$ with $X$ finite, then $M$ is called \textbf{finitely generated}.
 \end{dfn}
-Warning:   A submodule of a finitely generated module is not necessarily finitely generated.
+Warning: A submodule of a finitely generated module is not necessarily finitely generated.
 \begin{ex}
 $$
-A=\cplx[X_1,...,X_n,...].
+\cala=\cplx[X_1,...,X_n,...].
 $$
-$A$ is finitely generated by $1$ however, the ideal 
+$\cala$ is finitely generated $\cala$-module by $1$ however, the ideal 
 $
-I=(X_1,..,X_n,...) $ is note finitely generated
+I=(X_1,..,X_n,...)$ is not a finitely generated $\cala$-module.
 \end{ex}
 
 \begin{lemma}\ 
-\begin{enumerate}
+\begin{enumerate}[label=(\roman*)]
     \item $L\supset M\supset N$ are $\cala$-modules, then there is an isomorphism 
     $$
-        (L/N)/(M/N)\rta L/M
+        (L/N)/(M/N)\cong L/M
     $$
 
     $$
@@ -733,18 +733,22 @@ I=(X_1,..,X_n,...) $ is note finitely generated
     \item $(M_1+M_2)/M_2\cong M_1/(M_1\cap M_2)$
 \end{enumerate}
 \end{lemma}
-\begin{dfn}
-$I\subset A$ ideal; $M$ module $I M=\lgl \{ax|a\in I,x\in M\}\rgl\subset M$ as a submodule.
+\begin{dfn}Let 
+$I\subset \cala$ be an ideal and $M$ be a module. We define $I M:=\lgl \{ax|a\in I,x\in M\}\rgl\subset M$ as a submodule of $M$.
 \end{dfn}
+\begin{prop}
 $M/IM$ is naturally an $\cala/I$-module.
-
+\end{prop}
+\begin{proof} 
+An element of $M/IM$ is of the form $m+ IM$ and suppose $a+I =a'+I$ $\Lrta $ $ a(m+ IM)= am+ IM=(a'+ b)(m+IM)=a'(m+ IM)+ bm+ IM=a'm+IM$.
+\end{proof}
 \begin{dfn}
 $(M_i)_{i \in I}$ is a family of $\cala$-modules
-\begin{enumerate}
+\begin{enumerate}[label=(\roman*)]
 \item $\prod_{i\in I} M_i$ is an $\cala$-module with $a(x_i)=(a x_i)$.
 \item $\oplus_{i\in I} M_i\subset \prod_{i\in I} M_i$ is the submodule of $(x_i)_{i\in I}$ s.t. $x_i=0$ for all but finitely many $i\in I$. 
 \end{enumerate}
-Cartesian product and direct product are the same when there only finitely many summand. If $M_i=M,\forall i\in I$,we denote $M^{(I)}:=\oplus_i M_i$. When $I$ is finite, we denote it by $M^I$.
+\textbf{Cartesian product} and \textbf{direct product} are the same when there only finitely many summand. If $M_i=M,\forall i\in I$,we denote $M^{(I)}:=\oplus_i M_i$. When $I$ is finite, we denote it by $M^I$.
 \end{dfn}
 
 \begin{dfn}
@@ -766,13 +770,13 @@ This is called the \textbf{invariant basis number property}, all nontrivial comm
 
 \begin{prop}\label{lem:Nakayama}
 (Nakayama's lemma)\\
-$M$ finitely generated $\cala$-module, $I\subset \text{Jacobson radical of $\cala$}$, which is the intersection of all maximal ideals in $\cala$.
+$M$ finitely generated $\cala$-module, $I\subset Jac(\cala) \text{  the Jacobson radical of $\cala$}$, which is the intersection of all maximal ideals in $\cala$.
 If $IM=M$, then $M=\{0\}$. e.g. 
 $\cala$ being a local ring and $I=\scm$ the only maximal in $\cala$.
 \end{prop}
 
 \begin{proof}
-Suppose $M\neq {0}$, and let $\{x_1,...,x_n\}$ be a generating set with $n\geq1$ minimal.
+Suppose $M\neq \{0\}$, and let $\{x_1,...,x_n\}$ be a generating set with $n\geq1$ minimal.
 Since $IM=M$, we have $x_n\in IM$, so
 $$
 x_n=\sum_{i=1}^k
@@ -798,23 +802,23 @@ which contradict the minimality of the generating set.
 \end{proof}
 
 \begin{cor}
-$M$ fin. gen. $\cala$-module, $I \subset \text{Jacobson radical }, N\subset M$. If $M=IM +N$, then $M=N$.
+$M$ finitely generated $\cala$-module, $I \subset Jac(\cala), N\subset M$. If $M=IM +N$, then $M=N$.
 \end{cor}
 \begin{proof}
-$I(M/N)=(IM+N)/N=(M/N)$, then by Nakayama's lemma we know 
+$I(M/N)=IM/IN=IM/(IM\cap N)=(IM+N)/N=(M/N)$, then by Nakayama's lemma we know 
 $$
 M/N={0}.
 $$
 \end{proof}
 
-\begin{cor}
-$\cala$ local ring, $\scm\subset \cala$ the maximal ideal. $M$ fin. gen. Then if $(x_1,...,x_n)\in M$ are such that their classes modulo $\scm$ form a basis of $M/\scm M$ as $\cala/\scm$-vector space, then they generate $M$.
+\begin{cor}\label{cor:Nakayama}
+$\cala$ local ring, $\scm\subset \cala$ the maximal ideal. $M$ finitely generated. Then if $(x_1,...,x_n)\in M$ are such that their classes modulo $\scm$ form a basis of $M/\scm M$ as $\cala/\scm$-vector space, then they generate $M$.
 \end{cor}
 
 \begin{proof}
-$N=\lgl x_1,...,x_n\rgl$ and apply Nakayama's lemma.
+$N=\lgl x_1,...,x_n\rgl$ and apply Nakayama's lemma. Specifically, consider the composite map $N\inj M\lrta M/\scm M$ is surjective, then we have $N+\scm M=M$, then we can apply the Corollary~\ref{cor:Nakayama}.
 \end{proof}
-\section*{Exact sequence}
+\section*{Exact sequences}
 \begin{dfn}\ \\
 (1)$M'\rta(f) M\rta(g) M''$ is \textbf{exact} if $Im(f)=ker(g)$\\
 (2) $M'\rta(f_1) M\rta(f_2) M''\rta...$ is \textbf{exact} if it is exact at each node.
@@ -1554,7 +1558,7 @@ $$
 
 \section{Localization}
 
-\subsection{Lecture 7 : Localization of rings}
+\subsection{Lecture 7. Localization of rings}
 \textbf{Motivation}
 For $\cala$ an integral domain, we defined the quotients field $Frac(\cala)$. In general, one may want to invert part of $\cala$. For example, we may consider $\intg[1/2]=\{a/(2^n)|a\in \intg, n\in \mathcal{N}\}$. Each $2^n\in \intg[1/2]$ is invertible. For a subset $0\notin S\subseteq \cala$, we can define $\cala[1/S]$ to be the subring of $Frac(\cala)$ generated by $\cala$ and $\{1/s|s\in S\}$.
 
@@ -1766,7 +1770,7 @@ See Proposition~\ref{prop:properties_extension_contractino}, $\iota_*(\iota^*(\s
 \end{enumerate} 
 \end{proof}
 
-\subsection{Lecture 8: Properties of localization of rings and localization of module}
+\subsection{Lecture 8. Properties of localization of rings}
 Recall
 $\iota:\cala\lrta S^{-1}\cala$
 \begin{itemize}
@@ -1983,14 +1987,14 @@ $$
 S^{-1}(f\circ g)=S^{-1}f\circ S^{-1}g
 $$
 e.g. 
-$\scp\in \text{Spec}(\cala)$, then we have the localization $\cala_\scp$ and the localization of module : $M_\scp:=S^{-1}_\scp M\cong \cala_{\scp}\otimes_\cala M$.
+$\scp\in \text{Spec}(\cala)$, then we have the localization $\cala_\scp$ and the localization of module: $M_\scp:=S^{-1}_\scp M\cong \cala_{\scp}\otimes_\cala M$.
 \end{dfn}
 
 Next time: we will focus other local properties i.e.properties of $M$ that depends only on  $M_\scp, \forall \scp\in \text{Spec}(\cala)$
 
 
 
-\subsection{Lecture 9: Localization of Modules and Noetherian Rings}
+\subsection{Lecture 9. Localization of Modules and Local Properties}
 Recall that given a multiplicative closed set 
 $S\subseteq \cala$, we can define  $S^{-1}\cala$.
 Also we can define \textbf{localization of modules:} $S^{-1}M\cong S^{-1}\cala\otimes_\cala M$. The localization of module defines a functor $S^{-1}$:
@@ -2106,8 +2110,8 @@ $M$ is an $\cala$-module, then the followings are equivalent.
 $\Longleftarrow N_\scm\inj P_\scm\forall \scm$\\
 $\Llrta N\inj P$ by Proposition~\ref{prop:local_inj_surj}.
 \end{proof}
-
-
+\section{Noetherian rings and Nullstellensatz}
+\subsection{Lecture 9. Chain Conditions and Noetherian Rings}
 \begin{dfn}
 \textbf{(Lemma)} 
 \begin{enumerate}[label=(\alph*)]
@@ -2186,9 +2190,7 @@ The $\subseteq$ part is obvious.
 
 \textbf{The remaining part of the proof is left till the next lecture.}
 \end{proof}
-
-\section{Noetherian Ring and Nullstellensatz}
-\subsection{Lecture 10}
+\subsection{Lecture 10.}
 Recall:
 \begin{thm}
 $\cala$ Noetherian $\Lrta $ $\cala[x]$ Noetherian.
@@ -2319,25 +2321,25 @@ Let $\calb$ be an $\cala$-algebra. We say that $\calb$ is a\textbf{ finite $\cal
 \end{ex}
 
 \begin{thm}\label{thm:finite_field_extension}
-Assume $\bbk$a field $\bbk\subseteq \mathbb{L}$, where $\mathbb{L}$ is also a field. Assume $\mathbb{L}$ is a finitely generated $\bbk$-algebra. Then $\mathbb{L}$ is a finite $\bbk$-algebra $\Llrta$ $\mathbb{L}/\bbk$ is a finite field extension.
+Assume $K$a field $K\subseteq  L$, where $ L$ is also a field. Assume $ L$ is a finitely generated $K$-algebra. Then $ L$ is a finite $K$-algebra $\Llrta$ $ L/K$ is a finite field extension.
 \end{thm}
 
 \begin{cor}
 The maximal ideal of $\cala=\cplx[x_1,...,x_d]$ are all of the form $\scm_X=(x_1-X_1,...,x_d-X_d)$ for some $X\in\cplx^d$.
 \end{cor}
 \begin{proof}
-Thm $\Lrta$ Cor, Let $\scm\subseteq \cala$ be any maximal ideal, then $\mathbb{L}=\cala/\scm$ is a field.
+Thm $\Lrta$ Cor, Let $\scm\subseteq \cala$ be any maximal ideal, then $ L=\cala/\scm$ is a field.
  \[
 \begin{tikzcd}
-\cplx\ar[r]\ar[rr,bend right,"j"]&\cplx[x_1,...,x_d]=\cala\ar[r,two heads,"q"]&\mathbb{L}=\cala/\scm  
+\cplx\ar[r]\ar[rr,bend right,"j"]&\cplx[x_1,...,x_d]=\cala\ar[r,two heads,"q"]& L=\cala/\scm  
 \end{tikzcd}
 \] 
-Note: $\mathbb{L}$ is a finitely generated $\cplx$-algebra, generated by $q(x_1),...,q(x_d)$
+Note: $ L$ is a finitely generated $\cplx$-algebra, generated by $q(x_1),...,q(x_d)$
 $$
 \begin{aligned}
-Thm&\Lrta \mathbb{L}/j(\cplx)\text{ is finite field extension}\\
+Thm&\Lrta  L/j(\cplx)\text{ is finite field extension}\\
  & \Lrta
-\mathbb{L}\cong \cplx \text{($\cplx$ algebraically closed)}
+ L\cong \cplx \text{($\cplx$ algebraically closed)}
 \end{aligned}
 $$
 Set $X:=(j^{-1}(q(x_1)),...,j^{-1}(q(x_d)))\in \cplx^d$. Check $\scm=\scm_X$
@@ -2347,23 +2349,23 @@ Set $X:=(j^{-1}(q(x_1)),...,j^{-1}(q(x_d)))\in \cplx^d$. Check $\scm=\scm_X$
 Let $d\geq 1$. Then $\cplx(x_1,...,x_d)$ is \textbf{NOT} a finitely generated $\cplx$-algebra.
 \end{cor}
 \begin{proof}
-$\bbk=\cplx, \mathbb{L}=\cplx(x_1,..,x_d)$, then $\mathbb{L}/\bbk$ NOt finite (by thm) $\Lrta \mathbb{L}$ is NOT finitely generated $\cplx$-algebra.
+$K=\cplx,  L=\cplx(x_1,..,x_d)$, then $ L/K$ NOt finite (by thm) $\Lrta  L$ is NOT finitely generated $\cplx$-algebra.
 
-This proof also works when $\cplx$ replaced with any field $\bbk$.
+This proof also works when $\cplx$ replaced with any field $K$.
 
-Alternatively, we can also prove this directly, Let $f_1,..,f_n\in\bbk(x_1,..,x_d)$, each $f_i=\frac{g_i}{h_i}\in \cplx[x_1,...,x_d]$. Set $u:=1+x_1 h_1\cdot h_n$
+Alternatively, we can also prove this directly, Let $f_1,..,f_n\in K(x_1,..,x_d)$, each $f_i=\frac{g_i}{h_i}\in \cplx[x_1,...,x_d]$. Set $u:=1+x_1 h_1\cdot h_n$
 >>>>>>.?
-$\Lrta 1/u\notin \bbk[f_1,..,f_n]$ because denominator is coprime to the denominators of the $f_j$.
+$\Lrta 1/u\notin K[f_1,..,f_n]$ because denominator is coprime to the denominators of the $f_j$.
 \end{proof}
 
 Then we come back to the proof of the Theorem~\ref{thm:finite_field_extension}
 \begin{proof}
-Any $\mathbb{L}$ generated by $x_1,...,x_n$. Any $\mathbb{L}/\bbk$ NOT finite. Then the  transcendence degree $d$ is larger than $1$
-$\Llrta$ after reordering $x_1,...,x_n,$ $x_1,...,x_d$ algebraically independent over $\bbk$ and $x_{d+1},...,x_n$ is algebraic over $\bbk(x_1,...,x_d)$
+Any $ L$ generated by $x_1,...,x_n$. Any $ L/K$ NOT finite. Then the  transcendence degree $d$ is larger than $1$
+$\Llrta$ after reordering $x_1,...,x_n,$ $x_1,...,x_d$ algebraically independent over $K$ and $x_{d+1},...,x_n$ is algebraic over $K(x_1,...,x_d)$
 >>>>>>>>>>>2
 \end{proof}
 
-\subsection{Lecture 11}
+\subsection{Lecture 11.}
 
 Recall, $\bbf$ a field. $V$ a vector space over $\bbf$. $S\subseteq \bbf$ is linear independent. $\forall $ distinct $\{s_1,...,s_n\}\subseteq S$, $\forall c_1,...,c_n\in\bbf$, $c_1 s_1+...+c_n s_n=0\Lrta c_i=0$
 
@@ -2473,7 +2475,7 @@ Similarly, we can consider
 Then $S=\{\text{ideals in $\cala$}\}$
 \end{enumerate}
 
-\subsection{Lecture 12}
+\subsection{Lecture 12.}
 \begin{lemma}
 $\cala$ is Noetherian, $\sca\subseteq \cala$ is an ideal. $\Lrta\sca$ decomposable:
 $\exists $ primary ideals $\scq_1,...,\scq_n\subseteq \cala$ s.t. $\sca=\scq_1\cap...\cap\scq_n$
@@ -2977,7 +2979,7 @@ $$
 \begin{proof}
 Say $(0)=\scm_1\cdot \cdot \cdot \scm_r$. Each $k_j:=\cala/\scm_j$ is a field. Define $M_0:=\cala$, $M_1:=\scm_1$, $M_2:=\scm_1\scm_2$,...,$M_r=(0)$.
 
-Then $M_j/M_{j+1} (j=0,1,...,r-1)$ is a $k_{j+1}-$vector space. Moreover: 
+Then $M_j/M_{j+1} (j=0,1,...,r-1)$ is a $k_{j+1}$-vector space. Moreover: 
 $$
 \text{
 \{$\cala$-submodule of $M_j/M_{j+1}$\}}
@@ -3191,7 +3193,7 @@ $\tilde{\cala}_j=\sca^j=\{(x_i)_{i\geq 0}\in \tilde{\cala}: x_i=0, \forall i\neq
 $$
 \sca^i\times \sca^j\lrta \sca^{i+j}
 $$
-This is a natural source of graded $\tilde{\cala}$-modules. $\tilde{M}=\boxplus_{i\geq 0} M_i$ coming from  \textbf{$\sca-$filtration $(M_i)$:}
+This is a natural source of graded $\tilde{\cala}$-modules. $\tilde{M}=\boxplus_{i\geq 0} M_i$ coming from  \textbf{$\sca$-filtration $(M_i)$:}
 \begin{itemize}
 \item $M_i$ is a submodule of some module $M$.
 \item $\sca M_i\subseteq M_{i+1}\Lrta\sca^j M_i\subseteq M_{i+j}$
@@ -3199,11 +3201,11 @@ This is a natural source of graded $\tilde{\cala}$-modules. $\tilde{M}=\boxplus_
 \end{itemize}
 $\tilde{M}$ is a graded $\tilde{\cala}$-module.
 \begin{dfn}
-We call a $\sca-$filtration \textbf{stable} if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
+We call a $\sca$-filtration \textbf{stable} if $\exists k\geq 0:\forall i\geq k,\sca M_i=M_{i+1}\Lrta(\sca^j M_i=M_{i+j})$.
 \end{dfn}
 Because $\tilde{\cala}$ is Noetherian, we know $\sca$ is finitely generated by elements $x_1,...,x_n$. Then we know $\tilde{\cala}$ is finitely generated as an $\cala$-algebra by $\tilde{\cala}=\cala[x_1,...,x_n]$, then by Hilbert Basis Theorem~\ref{thm:Hilbert_Basis}, we know $\tilde{\cala}$ is Noetherian.
 \begin{lemma}
-Suppose $(M_i):$ $\sca-$filtration and $\tilde{M}$ is graded $\tilde{\cala}$-module. Then $\tilde{M}$ is finitely generated $\tilde{\cala}$-module iff the $\sca-$filtration $(M_i)$ is stable.
+Suppose $(M_i):$ $\sca$-filtration and $\tilde{M}$ is graded $\tilde{\cala}$-module. Then $\tilde{M}$ is finitely generated $\tilde{\cala}$-module iff the $\sca$-filtration $(M_i)$ is stable.
 \end{lemma}
 \begin{proof}
 ``$\Llta$''. By definition, $(M_i)$ stable $\Lrta$ $\tilde{M}=\tilde{\cala}\sum_{i\leq k}M_k$, where we claim that each $M_k$ is finitely generated $\cala$-module. This is true because $M$ is finitely generated ring over a Noetherian ring $\cala$, thus it is Noetherian. And submodule of a Noetherian module is Noetherian. Then $\tilde{M}$ is finitely generated $\tilde{\cala}$-module.
@@ -3212,7 +3214,7 @@ Suppose $(M_i):$ $\sca-$filtration and $\tilde{M}$ is graded $\tilde{\cala}$-mod
 $$
 \tilde{M}=\tilde{\cala}\sum_{i\leq k} M_k.
 $$
-If we pick $j-$th component for $j\geq k$, we have 
+If we pick $j$-th component for $j\geq k$, we have 
 $$
 \begin{aligned}
 M_j&=\tilde{\cala}_j\cdot M_0+\tilde{\cala}_{j-1}M_1+...+\tilde{\cala}_{j-k}M_k\\
@@ -3220,7 +3222,7 @@ M_j&=\tilde{\cala}_j\cdot M_0+\tilde{\cala}_{j-1}M_1+...+\tilde{\cala}_{j-k}M_k\
 &\subseteq \sca^{j-k}M_k
 \end{aligned}
 $$
-Then together with the definition of $\sca-$filtration, we know $\sca^{j-k}M_k=M_j$, thus the filtration is stable.
+Then together with the definition of $\sca$-filtration, we know $\sca^{j-k}M_k=M_j$, thus the filtration is stable.
 \end{proof}
 
 \subsection{Lecture 17: Artin-Rees, Krull principal ideal theorem}
@@ -3237,7 +3239,7 @@ $\tilde{\cala}:\text{ Noetherian }\Llrta \cala \text{ Noetherian}\Lrta \sca: \te
 \begin{proof} of Artin-Rees lemma\\
 Assume its hypothesis, choose $\forall i\geq 0, M_i:=\sca^i M:$ then it is a stable $\sca$-filtration ($\sca M_i=\sca\cdot \sca^i M=\sca^{i+1}M=M_{i+1}$)
 
-$M_i'=\sca^i M\cap M'$: an $\sca$-filtration. $\tilde{M}':=\boxplus_{i\geq 0}M_i'$. $\tilde{M}$ is naturally a $\tilde{\cala}-$submodule of $\tilde{M}$
+$M_i'=\sca^i M\cap M'$: an $\sca$-filtration. $\tilde{M}':=\boxplus_{i\geq 0}M_i'$. $\tilde{M}$ is naturally a $\tilde{\cala}$-submodule of $\tilde{M}$
 
 $M_i'=\sca^{i-k}M_k'\Llrta $ (conclusion of Artin-Rees lemma) $\Llta$ $(M_i') stable$ $\Llrta$ $(\tilde{M}',\text{finitely generated $\tilde{\cala}$-module})$
 
@@ -3260,10 +3262,10 @@ Deduce Krull intersection theorem form Cor3
 \subsection*{Kernel of localization with respect to a prime}
 \underline{Question}: Let $\scp\in Spec(\cala)$. What is $Ker(\cala\lrta \cala_\scp)$?
 \begin{dfn}
-The \textbf{nth symbolic power} $\scp^{(n)}$ of $\scp$ is defined by $\scp^{(n)}:=\iota^*((\iota_*\scp)^n)=\iota^*(\iota_*(\scp^n))$ for $\iota:\cala\lrta \cala_\scp$. This is a $\scp-$primary ideal. ($\iota_*(\sca\scb)=\iota_*(\sca)\iota_*(\scb)$)
+The \textbf{nth symbolic power} $\scp^{(n)}$ of $\scp$ is defined by $\scp^{(n)}:=\iota^*((\iota_*\scp)^n)=\iota^*(\iota_*(\scp^n))$ for $\iota:\cala\lrta \cala_\scp$. This is a $\scp$-primary ideal. ($\iota_*(\sca\scb)=\iota_*(\sca)\iota_*(\scb)$)
 \end{dfn}
 \begin{thm}\label{thm:Noetherian_localization_kernel}
- $\cala-$Noetherian, then $ Ker(\cala\lrta \cala_\scp)=\cap_{i\geq 0}\scp^{(i)}$.
+ $\cala$-Noetherian, then $ Ker(\cala\lrta \cala_\scp)=\cap_{i\geq 0}\scp^{(i)}$.
 \end{thm}
 \begin{proof}
 We know $Ker(\cala\lrta \cala_\scp)=\iota^*((0))\overset{?}{=}\cap_{i\geq 0}\iota^*(\iota_*(\scp)^i)$.
@@ -3379,7 +3381,7 @@ Claim:
 
 $x-y=fz\in \scp^{(k)}$
 
-$\Lrta z\in(\scp^{(k)}:f)=\scp^{(k)}$ ($\scp^{(k)}$ is $\scp-$primary and $\scp\not\ni f$)
+$\Lrta z\in(\scp^{(k)}:f)=\scp^{(k)}$ ($\scp^{(k)}$ is $\scp$-primary and $\scp\not\ni f$)
 
 Taking $i\geq k$,
 $
@@ -3490,7 +3492,7 @@ Geometrically:``every subvariety cut out by $\leq r$ equations has codimension $
 \end{thm}
 \begin{proof}
 Induct on $r\geq 1$. Suppose $\exists $ chain $\scp_0\subsetneq...\subsetneq\scp_t=\scp$\\
-Want $t\leq r$. Replace $\cala$ by $\cala/\scp$. Reduce to the case $(\cala,\scp)$ $\cala-$Noetherian local domain and $\scp$ maximal ideal in $\cala$. We know $\scp$ is the minimal among those primes containing $\sca$, $\Lrta$ $\scp$ is the only prime that contain $\sca$.
+Want $t\leq r$. Replace $\cala$ by $\cala/\scp$. Reduce to the case $(\cala,\scp)$ $\cala$-Noetherian local domain and $\scp$ maximal ideal in $\cala$. We know $\scp$ is the minimal among those primes containing $\sca$, $\Lrta$ $\scp$ is the only prime that contain $\sca$.
 
 So $\scp_t=\scp$ containing $\sca$ being minimal $\scp_{t-1}\nsupseteq\sca$ $\exists $ generator of $\sca$ not in $\scp_{t-1}$. Suppose $a_r\notin\scp_{t-1}$.
 
@@ -3519,7 +3521,7 @@ $\sca=(a_1,...,a_r)\Lrta$ $ht(\sca)\leq r$ by the above theorem.
 \begin{cor}
 $(\cala,\scm)$: Noetherian local ring with the maximal ideal. $k:=\cala/\scm$ field. Then $dim(\cala)\leq dim_k(\scm/\scm^2)$
 
-\underline{NB}: $\forall$ $\cala$-module $M$, the quotient $M/\scm M$ is a $k-$vector space.
+\underline{NB}: $\forall$ $\cala$-module $M$, the quotient $M/\scm M$ is a $k$-vector space.
 \end{cor}
 \begin{proof}
 Suppose, $r=dim_k(\scm/\scm^2)$, $a_1,...a_r$ is a basis of $\scm/\scm^2$. Let $\tilde{a}_1,...,\tilde{a}_r\in\scm$ be lifts of the $a_i$. 
@@ -3593,14 +3595,14 @@ Recall: $\scp_i$ are primes. then $\sca\subset \cap\scp_j\Llrta \exists j \sca\s
 
 \begin{cor}: $(\cala,\scm)$ Noetherian Local, Thus $dim(\cala)=ht(\scm)\leq \infty$.
 \end{cor}
-Then $\exists x_1,...,x_n\in\scm$ s.t. $\scm$ is minimal over $(x_1,...,x_n)$. Then $\scm$ is the only prime containing $(x_1,..,x_n)$, so $\scm=rad((x_1,...,x_n))$ and $(x_1,...,x_n)$ is $\scm-$primary. (recall that any idal whose radical is maximal is primary)
+Then $\exists x_1,...,x_n\in\scm$ s.t. $\scm$ is minimal over $(x_1,...,x_n)$. Then $\scm$ is the only prime containing $(x_1,..,x_n)$, so $\scm=rad((x_1,...,x_n))$ and $(x_1,...,x_n)$ is $\scm$-primary. (recall that any idal whose radical is maximal is primary)
 
 \begin{dfn}
 We say when $n=dim(\cala)=ht(\scm)$ that $x_1,...,x_n$ are \textbf{parameters} for $\scm$ (or form a \textbf{system of parameters}). Equivalently, any of the following holds:
 \begin{enumerate}[label=(\roman*)]
 \item $\scm\supseteq (x_1,...,x_n)$ is minimal
 \item $\scm=rad(x_1,...,x_n)$
-\item $(x_1,...,x_n)$ is $\scm-$primary.
+\item $(x_1,...,x_n)$ is $\scm$-primary.
 \end{enumerate}
 \end{dfn}
 
@@ -3629,24 +3631,24 @@ $(iii)\Lrta(i)$: If $x_1,...,x_r$ are not already a system of parameters, then $
 It remains to show $(i)\Llrta (ii)$. \\
 Consider $y_1,..,y_s\in\scm$. Let $\overline{\cala}:\cala/(x_1,..,x_r)$. $\overline{\cala}\supseteq\overline{\scm}:=$ Image  of $\scm$. Then $(\overline{\cala},\overline{\scm})$ is Noetherian local. Write $\overline{y}_1,...,\overline{y}_s\in\overline{\cala}$ the image of $y_1,..,y_s$
 
-$\{x_1,...,x_r,y_1,...,y_s\}$ system of parameters, by definition, is equivalent to $r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y_s)$ is $\scm-$primary.
+$\{x_1,...,x_r,y_1,...,y_s\}$ system of parameters, by definition, is equivalent to $r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$-primary.
 
-Note:$(x_1,...,x_r,y_1,...,y_s)$ $\scm-$primary\\
+Note:$(x_1,...,x_r,y_1,...,y_s)$ $\scm$-primary\\
 $\Llrta$ $\scm$ is the only prime containing $(x_1,..,y_s)$\\
 $\Llrta\overline{\scm}$ is the only prime containing $(\overline{y}_1,...,\overline{y}_s)$\\
-$\Llrta(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}-$primary\\
-$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=dim(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}-$primary.
+$\Llrta(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary\\
+$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=dim(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}$-primary.
 
-FACT1:[$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)$ is $\scm-$ primary] $\Lrta dim(\cala)\leq r+s$, by Krull's dimension theorem~\ref{thm:Krull_dimension}.
+FACT1:[$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$- primary] $\Lrta dim(\cala)\leq r+s$, by Krull's dimension theorem~\ref{thm:Krull_dimension}.
 
 And in fact, if we start we a system of parameters $(\overline{z}_1,...,\overline{z}_t)$ of $\overline{A}$, $z_i$ are their preimages in $\cala$, we have proved that $(x_1,...,x_r,z_1,...,z_t)$ is $\scm$ primary, then $dim(\cala)\leq t+r= dim(\overline{\cala})+r$
 
 $(i)\Lrta$ $\exists y_1,..,y_s$ s.t., $\{x_1,...x_r,y_1,...,y_s\}$ is system of parameters.
-$\Lrta r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y)s$ is $\scm-$primary. Then, as prove before, $(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}-$primary, we have $dim(\overline{\cala})\leq s=dim(\cala)-r$, which indicates $(ii)$.
+$\Lrta r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y)s$ is $\scm$-primary. Then, as prove before, $(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary, we have $dim(\overline{\cala})\leq s=dim(\cala)-r$, which indicates $(ii)$.
 
 Now check that $(ii)$ implies $(i)$.
 
-If $(ii)$ holds, with $s:=dim(\cala)-r=dim(\overline{\cala})$, then $\exists y_1,...,y_s\in\cala$ s.t. $\{\overline{y}_1,...,\overline{y}_s\}$ us a system of parameters. $\Lrta(\overline{y}_1,...,\overline{y}_s)$ $\overline{\scm}-$primary $\Lrta (x_1,..,x_r,y_1,...,y_s)\scm-$primary.
+If $(ii)$ holds, with $s:=dim(\cala)-r=dim(\overline{\cala})$, then $\exists y_1,...,y_s\in\cala$ s.t. $\{\overline{y}_1,...,\overline{y}_s\}$ us a system of parameters. $\Lrta(\overline{y}_1,...,\overline{y}_s)$ $\overline{\scm}$-primary $\Lrta (x_1,..,x_r,y_1,...,y_s)\scm$-primary.
 
 Want: $\{x_1,..,x_r,y_1,...,y_s\}$ is a system of parameters. Indeed, $r+s=dim(\cala)$, so this holds by definition. 
 \end{proof}
@@ -3735,7 +3737,7 @@ Now let $(\cala,\scm):$ Noetherian local of $d:=dim(\cala)=ht(\scm)$ and we set 
 
 \begin{lemma}\ 
 \begin{enumerate}[label=(\alph*)]
-\item In general , $d\leq dim_k(\scm/\scm^2)$ (The late is a $k-$vector space because $M$ and $\cala$-module $\Lrta M/\scm M$ is a $k-$vector space.)
+\item In general , $d\leq dim_k(\scm/\scm^2)$ (The late is a $k$-vector space because $M$ and $\cala$-module $\Lrta M/\scm M$ is a $k$-vector space.)
 \item The following are equivalent:
     \begin{enumerate}[label=(\roman*)]
         \item $\scm$ admits a set of $d$ generator: $\scm=(x_1,..,x_d)$
@@ -3803,7 +3805,7 @@ $(ii)\Lrta (iii)$ $\calc:=\cala[x]$,
 
 $(iii)\Lrta(iv)$ $M:=\calc$
 
-$(iv)\Lrta(i)$ $M=\sum_i^n\cala e_i, e_i\in M$. Because $M$ is a $\cala[x]$-module, we can apply the action of $x$ on each $e_i$ and get a system of linear equations:
+$(iv)\Lrta(i)$ Suppose a finitely generated $\cala$-module $M$ which is simultaneously a faithful $\cala[x]$-module. $M=\sum_i^n\cala e_i, e_i\in M$. Because $M$ is a $\cala[x]$-module, we can apply the action of $x$ on each $e_i$ and get a system of linear equations:
 $$
 \begin{array}{ c }
 x\cdot e_{1} =a_{11} e_{1} +...+a_{1n} e_{n}\\
@@ -3979,10 +3981,18 @@ Similarly, $k[x(x-1),x^2(x-1)]$ is not normal.
 $\cala$ is a domain. $K:=Frac(\cala)$. $L/K$ is an algebraic field extension. Suppose $\calb:=$integral closure of $\cala$ in $L$. Then $\calb$ is normal.
 \end{prop}
 \begin{proof}
+Integral closure $\calb$ is a subring of $L$, thus it is a integral domain.
+
 Check that $Frac(\calb)=L$: By definition, $\calb$ is a the set of integral element of $L$ over $\cala$, then $Frac(\calb)\subseteq L$. For the converse inclusion, $x\in L$, $L$ is an algebraic field extension of $K$, then $x$ satisfies some  polynomial equation with coefficients in $K$.
 $$
 x^n+k_1 x^{n-1}+...+k_n=0
 $$
+each $k_i$ can be written as $a_i/s_i$ where $s_i\in \cala^\times $, multiply the above equation by $s^n$, where $s:=\prod_i s_i\in \cala\in\calb$,
+then we get
+$$
+(s x)^n+(a_1s_2...s_n) (s x)^{n-1}+...=0,
+$$
+which means $sx\in \calb\Lrta x\in Frac(\calb)$.
 \end{proof}
 \begin{ex}
 $\cala=\intg, K=\ratl$, $L/K$ is finite extension ($L$ is a number field.) $\calb$ is the integral closure of $\cala$ in $L$.
@@ -4427,7 +4437,7 @@ $\Lrta k[x_1,...,x_n]$ is integral over $k[z_1,...,z_{n-1},w]$.
 
 The above proved the key lemma thus the Noether Normalization theorem.
 
-\begin{thm}\label{thm:fin.gen.k-domain_dim_equality}
+\begin{thm}\label{thm:finitelygeneratedk-domain_dim_equality}
 Let $\cala$ be finitely generated $k$-domain, $\scp\in Spec(\cala)$. Then $ht(\scp)+coht(\scp)=ht(\scp)+dim(\cala/\scp)=dim(\cala)$
 \end{thm}
 \begin{proof}
@@ -4460,7 +4470,7 @@ In general $ht(\scp)+coht(\scp)\leq dim(\cala)$ holds trivially. so we just need
 So we can argue by induction on $n$ in the special case $x_n\in \scp$. 
 
 We now reduce the general case to this one.
-Choose any $0\neq f\in \scp$. By the key lemma for NN, $\exists z_1,...,z_{n-1}\in\cala=k[x_1,...,x_n]$, s.t. $\cala$ integral over $\cala_0:=k[z_1,...,z_{n-1},z_n]$, where $z_n:=f(x_1,...,x_n)$. Then $tr.deg (\cala_0)=tr.deg(\cala)=n$, so $\{z_j\}$ are algebraically independent. Thus $\cala_0$ is again a polynomial ring, hence $\cala_0$ is normal.
+Choose any $0\neq f\in \scp$. By the key lemma for NN, $\exists z_1,...,z_{n-1}\in\cala=k[x_1,...,x_n]$, s.t. $\cala$ integral over $\cala_0:=k[z_1,...,z_{n-1},z_n]$, where $z_n:=f(x_1,...,x_n)$. Then $tr.deg (Frac(\cala_0))=tr.deg(Frac(\cala))=n$, so $\{z_j\}$ are algebraically independent. Thus $\cala_0$ is again a polynomial ring, hence $\cala_0$ is normal.
 
 By arguing as in the beginning of the proof, we have with $\scp_0:=\scp\cap\cala_0$ that $dim(\cala_0)=dim(\cala)$, $coht(\scp_0)=coht(\scp)$, $ht(\scp_0)=ht(\scp)$. So it suffices to show that $coht(\scp_0)+ht(\scp_0)\geq dim(\cala_0)$. 
 
@@ -4475,7 +4485,7 @@ $$
 \end{lemma}
 \begin{proof}
 Apply previous theorem to $(\cala,\scp)$, $(\cala,\scp')$ and $(\overline{\cala},\overline{\scp'}),$ where $\overline{\cala}=\cala/\scp$ and $\overline{\scp'}=\scp'/\scp$. Hypothesis that $\scp$, $\scp'$``adjacent'' $\Lrta ht(\overline{\scp'})=1$
-Then by Theorem~\ref{thm:fin.gen.k-domain_dim_equality}
+Then by Theorem~\ref{thm:finitelygeneratedk-domain_dim_equality}
 $$
 ht(\scp)+coht(\scp)=ht(\scp)+dim(\overline{\cala})=dim(\cala)
 $$
@@ -4489,12 +4499,638 @@ Then
 $$
 ht(\scp')-1=ht(\scp')-ht(\overline{\scp}')=dim(\cala)-dim(\overline{\cala})=ht(\scp)
 $$
+\end{proof}
 
+\subsection{Lecture 25}
+Recall last lecture, $\forall k$ field, $\cala$ a finitely generated $k$-domain, then
+\begin{enumerate}[label=(\roman*)]
+\item $dim(\cala)=tr.deg_k(K),$ where $K:=Frac(\cala)$
+\item $ht(\scp)+coht(\scp)=dim(\cala),\forall \scp\in Spec(\cala)$
+\item $ht(\scm)=dim(\cala),\forall \scm$ maximal
+\item If $\scp\subsetneq \scp'$ are adjacent,,i.e., $ht(\scp'/\scp)=1$, then $ht(\scp')=ht(\scp)+1$
+\end{enumerate}
+
+\begin{cor}
+If $\cala$ is  finitely generated $k$-domain. Every maximal chain of primes in $\cala$ has length $dim(\cala)$. That is to say: if $\scp_0\subsetneq ...\subsetneq \scp_r\subset \cala$ is a chain of primes that cannot be enlarged, then $rdim(\cala)$.
+\end{cor}
+The above corollary is false for general rings $\cala$. See the exercises, Matsumura, the keyword is \textbf{``Catenary''}
+\begin{proof}
+Maximality of the chain implies: $\scp_0=(0)\Lrta ht(\scp_0)=0$ and $\scp_r$ maximal $\Lrta ht(\scp_r)=dim(\cala)$. Also $\forall ht(\scp_i/\scp_{i-1})=1\Lrta ht(\scp_i)=ht(\scp_{i-1})+1$ $\Lrta dim(\cala)=ht(\scp_r)-ht(\scp_0)$.
+
+Note that this Cor implies $(ii),(iii,(iv))$
+\end{proof} 
+
+\begin{cor}
+(Another proof of Nullstellensatz) Let $K/k$ be field extension s.t. $K$ is finitely generated $k$-algebra, then $K/k$ is finite.
+\end{cor}
+\begin{proof}
+It suffices to show that $K/k$ is algebraic (i.e.,integral) because integral +finitelygenerated $\Llrta$ finite. That is, we want $tr.deg_k(K)=0$. But $tr.deg_k(K)=dim(K)=0$
 \end{proof}
 
 
+\section{Valuation rings and Normality}
+Recall the proof that the ring $\cala:=k[X,Y]/(XY-1)$ is not integral over $k[X]$. We denote by $x,y$ the image of $X,Y$ in $\cala$.
+
+We embed 
+$$\cala\inj k(X)$$
+$$
+x,y\longmapsto X,1/X
+$$
+We then argued that $k[X]$ is normal, hence that $\cala \cong k[X,1/X]$ is Not integral over $k[X]$.
+
+Here, we will give another proof.
+\begin{dfn}
+Any $0\neq f\in\cala$ may be written in the form
+$$
+a_{-n}X^{-n}+...+a_m X^{m},
+$$
+where $a_j\in k, a_{-n}\neq 0$.
+
+Set $v(f):=n\in \intg$.
+Note:
+\begin{enumerate}
+\item 
+$
+v(f_1f_2)=v(f_1)+v(f_2)
+$
+\item $v(f_1+f_2)\geq min(v(f_1),v(f_2))$, if $v(f_1)\neq v(f_2)$, then $v(f_1+f_2)=\min (v(f_1),v(f_2))$
+\end{enumerate}
+
+Now suppose that $f\in k[X,1/X]$, and $f\notin k[X]$. Then $v(f)\leq -1$, but 
+$$
+f^n+a_1 f^{n-1}+...a_0=0
+$$
+with $a_{j}\in k[X]$. Note $v(a_j)\geq 0$\\
+$\Lrta v(a_j f^{n-j})\geq v(f^{n-j})=(n-j)v(f)\leq -1$\\
+$\Lrta v(f^n)=nv(f)< v(a_1 f^{n-1}+....+a_n)$, contradicting to $f^n+a_1 f^{n-1}+..+a_n=0$
+\end{dfn}
+
+\begin{dfn}
+Let $K$ be a field, $(G,0+,\leq)$ totally ordered abelian group e.g. $(ex G=\intg)$. A map $v:K^\times\lrta G$ is called a \textbf{valuation} if it satisfies the property
+\begin{enumerate}
+\item 
+$
+v(f_1f_2)=v(f_1)+v(f_2)
+$
+\item $v(f_1+f_2)\geq min(v(f_1),v(f_2))$, if $v(f_1)\neq v(f_2)$, then $v(f_1+f_2)=\min (v(f_1),v(f_2))$
+\end{enumerate}
+In that case, the set $\cala:=\{x\in K^\times:v(x)\geq 0\}\cup \{0\}$ is a subring of $K$, called the \textbf{valuation ring of $v$}.
+\end{dfn}
+\begin{lemma}
+The set $\scm:=\{x\in K^\times:v(x)\geq 0\}\cup \{0\}$ is a maximal ideal of $\cala$ and $(\cala,\scm)$ is a local ring with $\cala^\times=\{x\in K^\times:v(x)=0\}$
+\end{lemma}
+\begin{proof}
+$x\in K^\times \cap \cala$, $v(x)=0$, $\Lrta v(1/x)+v(x)=v(1)=0$
+
+$\Lrta 1/x\in \cala$, so $x\in \cala^\times.\Lrta (\cala,\scm)$ is local ($\Llta \cala-\scm\subseteq\cala^\times$)
+
+The rest are left as exercise.
+\end{proof}
 
 
+\begin{dfn}
+($K$: field), We say that a subring $\cala\subseteq K$ is a \textbf{valuation ring} if $\exists $ valuation $v:K^\times\lrta G$ s.t. $\cala$ is the valuation ring of $v$. We call $G$ the \textbf{vaulation group of $v$}.
+\end{dfn}
+
+\begin{lemma}
+Valuation ring $\cala\subseteq K$  are normal. 
+\end{lemma}
+\begin{proof}
+Suppose $f\in K-\cala$ is integral over $\cala:$
+$$
+f^n+a_1 f^{n-1}+...+a_n=0
+$$
+Each $v(a_i)\geq 0$ because $a_i\in \cala$ but $v(f)\leq 0$ get a contradiction as before.
+\end{proof}
+
+Custom: one extends $v: K^\times\lrta G$ to $v: K\lrta G\cup \{\infty\}$ by $v(0):=\infty$.
+Then $\cala:=\{x\in K:v(x)\geq 0\}$, $\scm:=\{x\in K:v(x)>0\}$
+
+\begin{ex}
+$K=k(X)=Frac(k[X])$. Each $f\in K^\times$ may be written $f=X^n\frac{u}{v}$, where $u,w\in k[X]$ and $X\nmid uw$ in $k[X]$, $v(f):n$. This defines a valuation with the corresponding ring 
+$\cala=k[X]_\scp,\scp:(X)$. 
+
+for example
+$v(X+X^2)=v(X(X+1))=1$
+\end{ex}
+
+\begin{ex}
+$k[X^2,X^3]$ is not normal thus not a valuation ring.
+\end{ex}
+\begin{ex}
+$k[X(X-1),X^2(X-1)]$ is not normal thus not a valuation ring.
+\end{ex}
+
+\begin{lemma}
+Let $\cala\subseteq K$ be a subring, Then the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $\cala$ is a valuation ring (VR)
+\item $x\in K-\cala\Lrta 1/x\in \cala$ (i.e., $\forall x\in K$, either $x\in \cala$ or $1/x\in \cala$ or both.)
+\end{enumerate}
+\begin{proof}
+$(i)\Lrta (ii)$, Say $\cala$ is a VR
+ corresponding to $v:K^\times\lrta G$, if $x\in K-\cala$, then $v(x)\leq 0$, so $v(1/x)>0$, so $1/x\in \cala$.
+
+ $(ii)\Lrta (i)$: Set $G:=K^\times/\cala^\times$, $v:K^\times\lrta G$
+ define $``\leq \text{ on }G''$, Then $\leq $ is total order. Indeed, let $x\cala^\times, y\cala^\times\in G$. Take representatives $x,y\in k^\times$. Then $x/y\in K^\times$. If $x/y\in \cala$, then $x\in y^\cala$, so $y \cala^\times\leq x \cala^\times$ 
+ >>>>>>>>>>1
+\end{proof}
+\end{lemma}
+
+\begin{thm}\label{thm:integral_closure_VR}
+Let $\cala\subseteq K$ $K$ is a field. $\overline{\cala}:=$ integral closure of $\cala$ in $K$. Then 
+$$
+\overline{\cala}=\cap_{\substack{\calb:\text{VR, in $K$}\\, \text{with $\cala\subseteq \calb\subseteq K$}}}\calb
+$$
+\end{thm}
+\begin{proof}
+$\subseteq$: if $x\in K$ is integral over $\cala$, then $x$ is also integral over each $\calb\supseteq \cala$, but $\calb: \text{ VR }\Lrta\calb$ normal, hence $x\in \calb$. Thus $\overline{\cala}\subseteq \cap_{...}\calb$
+
+$\supseteq$: Need to show that if $f\in K$ is not integral over $\cala$, then $\exists $ VR $\calb\supseteq \cala$ with $f\notin \calb$.\\
+$\Lrta f\notin \cala[1/f]\Lrta 1/f\notin \cala[1/f]^\times$: \\
+$\exists \scp\subset\cala[1/f]$ primes so that $1/f\in \scp$.
+else $f=a_0+\frac{a_1}{f}+...+\frac{a_n}{f^n}$, then multiply by $f^n$ to see that $f:$ integral over $\cala$, we get the contradiction.
+>>>>>>>>2
+\end{proof}
+
+
+\subsection{Lecture 26}
+Recap: $K$  field, $G=(G,0+,\leq)$: totally ordered Abelian group.
+
+A valuation $v:K^\times\lrta G$ is  homomorphism s.t. $v(x+y)\geq \min (v(x),v(y))$ with equality for $v(x)\neq v(y)$. ExtendL $v(0)=\infty\geq g\forall g\in G$.
+Valuation ring VR: $\cala:=\{x\in K|v(x)\geq 0\}$. $\cala$ is local with $\scm=\{x\in K|v(x)> 0\}$
+
+VR is normal: $\cala=k[[x]], K=k((x)), v(\sum a_i x^i):=min\{i:a_i\neq 0\}$
+
+A subring $\cala\subset K$ is a VR for some $v$
+$\Llrta$ (if $x\in K-\cala$, then $x^{-1}\in\cala$, $G:=K^\times/\cala^{\times}$)
+
+
+Last time, we reduced the proof of Theorem~\ref{thm:integral_closure_VR} to the following lemma:
+\begin{lemma}
+Let $\cala\subset K$ be any subring $\scp\in Spec(\cala)$ Set $\mathbb{A}:=$ \{rings $\calb$: $\cala_\scp\subseteq \calb\subseteq K, \scp\calb\neq \calb$\}
+>>>>>>>>?
+\begin{proof}
+$(i)\Lrta (ii)$ $\scm\cap \cala=$
+>>>>>>1
+
+Choose any maximal ideal $\scm$ with $\scp\calb\subseteq \scm\subset \calb$. It exists because $\scp\calb\neq \calb$. Then $\scp\calb_\scm\subseteq \scm\calb_\scm\neq \calb_\scm$, because $\calb_\scm\neq \{0\}$. By maximality of $\calb$, must have $\calb_\scm=\calb$. (Else $\calb_\scm\supsetneq \calb, \scp\calb_\scm\neq \calb_\scm$) $\Lrta \calb$ is local with maximal ideal $\scm$. Also $rad(\scp\calb)=\scm$. Indeed, we have that for any prime that contains $\scp\calb$, the ring $\calb$ is local with maximal ideal $\scm$. Thus there is only one such prime.
+
+Write: $(1-b_0)=\sum_{i=1,...,n}b_i x^i\equiv 1\mod \scp\calb$. Hence $\equiv 1\mod \scm$, hence $in \calb^\times.$ If we multiply both side by $x^{-n}$
+$(1-b_0)x^{-n}=\sum_{i=1,...,n}b_i x^{i-n}$, Thus $\frac{1}{x}: $ integral over $\calb$. Thus $\calb[\frac{1}{x}]$ integral over $\calb$.
+
+Want: $1/x\in \calb$. Thus by ``lying over'', $\exists \scn\in Spec(\calb[\frac{1}{x}])$ with $\scn\cap \calb=\scm$.
+
+Then $\scp\calb[\frac{1}{x}]\subseteq\scm\calb[\frac{1}{x}]\subseteq \scn\calb[\frac{1}{x}]\neq \calb[\frac{1}{x}]$, so maximality of $\calb\Lrta \calb[\frac{1}{x}]=\calb\Lrta \frac{1}{x}\in \calb$
+\end{proof}
+\end{lemma}
+
+\begin{dfn}
+A valuation $v:K^\times\lrta G$ is \textbf{discrete} if $G\cong \intg, v\neq 0$. It is \textbf{normalized} if $v$ is surjective: $v(G)=\intg$. In general, $v(K^\times)=n\intg$ for some $n\in \intg_{\geq 1}$, so $\frac{1}{n}v$ is normalized. A \textbf{discrete valuation ring} (DVR) is a VR attached to a normalized discrete valuation.
+\end{dfn}
+
+\begin{ex}
+$\cala=k[x]_{(x)}$, $v(x^n\frac{u}{v}):=n$ for $x\nmid uv$, $u,v\in k[x]$
+
+or $\cala=k[[x]]$ as before.
+
+$\intg_(p):\{x=\scp^n\frac{a}{b}\in \ratl|a,b,n\in \intg, b\neq 0,p\nmid ab\}$, $v(x):=n$.
+
+
+Non-example: $A=\cup_{n\geq 1}k[[X^{1/n}]]\ni f=\sum_{i\in \frac{1}{n!}\intg}a_i X^{i}$. $v(f):=\min\{i:a_i\neq 0\}$, $v:K^\times\lrta \ratl$.
+\end{ex}
+
+Let $\cala\subset K$ be a DVR with normalized valuation
+$$
+v:K\lrta \intg\cup \{\infty\}
+$$
+$\scp=\{x\in K|v(x)\geq 1\}$
+
+A \textbf{uniformizer} is an element $\varpi$ with $v(\varpi)=1$
+
+\begin{lemma}
+Each $x\in K^\times$ is uniquely of the form
+$$
+x=u \varpi^n
+$$
+for some $u\in \cala^\times, n\in \intg$. One has $v(x)=n$, hence $n\geq 0\Llrta x\in \cala$, $n\geq 1\Llrta x\in \scp$.
+\begin{proof}
+Let $n:=v(x),u:=x\varpi^{-n}$, then $v(u)=v(x)-nn v(\varpi)=n-n=0$, so $u\in \cala^\times$
+\end{proof}
+\end{lemma}
+
+\begin{lemma}
+The ideals in $\cala$ are $(0)$ and $(\varpi^n)$. Moreover: $(\varpi^n)=\scp^n$ $\forall n\in \intg_{\geq 0}$. Any two uniformizer differ by a unitL $\varpi'=u\varpi,u\in \cala^\times$.
+$\{\text{uniformizer}\}=\scp-\scp^2$.
+\begin{proof}
+If $x=u\varpi^n\in \cala (n\geq 0)$, then $(x)=(\varpi^n)$. If $\sca\subseteq \cala$ is any nonzero idea, let $n:=\min\{v(x):0\neq x\in \sca\}$.
+
+Then $\forall y\in \sca$, we have $v(y)\geq n =v(\varpi^n)$. So $v(y\varpi^{-n})\geq 0$, so $y\varpi^{-n}\in\cala$, so any $y\in (\varpi^n)$. Thus $\sca\subseteq (\varpi^n)$. Conversely, $\exists in \sca$ with $v(x)=n$. Then $v(\varpi^n/x)=0$. So $\frac{\varpi^n}{x}\in \cala^\times$, so $(\varpi^n)\subseteq (x)\subseteq \sca$. Thus $\sca=(\varpi^n)$
+
+Thus, $\scp$ maximal $\Lrta$ $\scp=(\varpi)\Lrta \scp^n=(\varpi^n)$.
+
+The same argument works for any other $\varpi'$. Gives $(\varpi')=\scp=(\varpi)\Lrta \varpi'\in\cala^\times\varpi$.
+
+Also $\varpi\notin\scp^2$, alse $(\varpi)=(\varpi^2)\Lrta v(\varpi)=0$ contradiction.
+
+See form the proof that $\forall 0\neq x\in \cala,$
+$v(x)=\min\{n\geq 0|x\in \scp^n\}$. Thus the last statement holds.
+\end{proof}
+\end{lemma}
+\begin{cor}
+($\cala$ DVR) then $\cala$ is Noetherian.
+\begin{proof}
+Indeed, every ideal is principal hence finitely generated.
+\end{proof}
+\end{cor}
+
+\begin{cor}
+$Spec(\cala)=\{(0,\scp\}$, $\scp\neq (0)$.
+\end{cor}
+
+\begin{cor}
+$dim(\cala)=1$.
+\end{cor}
+
+\begin{cor}
+$\cala$ regular:
+\begin{proof}
+i.e., $dim_k(\scp/\scp^2)=dim(\cala)=1$, because $dim_k(\scp/\scp^2)=\{\text{minimal number of generators of $\scp$}\}$ by Nakayama lemma:
+And it equals to 1 because $\scp=(\varpi)$
+\end{proof}
+\end{cor}
+
+\begin{cor}
+$\cala$ DVR $\Lrta \cala$ VR $\Lrta $ $\cala$ normal.
+\end{cor}
+
+\begin{cor}
+The nonzero $\cala$-submodule of $K$ form a group $\cong \intg$. They are of the form $\cala\varpi^n, n\in \intg$. $\cala\varpi^m\cdot \cala\varpi^n=\cala^{m+n}$
+\end{cor}
+
+Now, Let $\cala:$ Noetherian local domain of dimension $dim(\cala)=1$. DVR gives examples of such $\cala$. But there are also Non-DVR examples
+$$
+\cala=k[[x^2,x^3]]=\{f=\sum^{\infty}_{i=0}a_i x^i|a_i\in k, a_1=0\}
+$$
+$\scm=(x^2,x^3)$
+
+\begin{thm} $(\cala,\scp)$ is Noetherian local domain with $dim(\cala)=1$.  
+The following are equivalent.
+\begin{itemize}
+\item $\cala$ DVR
+\item $\cala$ normal
+\item $\cala$ PID
+\item $\cala$ regular
+\end{itemize}
+
+We also introduce the notion of $PID^-:$ $\scp$ is principal $\exists \varpi\in \cala$ s.t $\scp=(\varpi)$.\\
+ $PID^{+}:$ $\exists \varpi \in\cala$ s.t. every nonzero ideal in $\cala$ is of the form $(\varpi^n), for some n\geq 0$.
+The interdependence of is the following diagram:
+
+\begin{tikzcd}
+\boxed{Normal} \arrow[rr, "(*)"', bend right] &  & \boxed{DVR} \arrow[dd, "\checkmark", bend left] \arrow[ll, "\checkmark "', bend right] &  &  \\
+ &  &  &  &  \\
+ &  & \boxed{PID^+} \arrow[d] \arrow[uu, "(?)", bend left] &  &  \\
+ &  & \boxed{PID} \arrow[d] &  &  \\
+ &  & \boxed{PID^-} \arrow[rr, "def"', leftrightarrow] \arrow[uu, "(?)", bend left] &  & \boxed{Regular} 
+\end{tikzcd}\begin{proof}
+>>>>>>>>>2
+Statement, In a VR, every finitely generated ideal is principal. 
+
+Also, a VR with principal maximal  ideal is DVR
+
+Inparticular, a Noetherian VR is  a DVR
+\end{proof}
+\end{thm}
+
+\subsection{Lecture 27}
+
+Recall 
+
+\begin{tikzcd}
+\boxed{DVR} \arrow[d, "\checkmark"] \arrow[r, "\checkmark", bend left] & \boxed{PID^+} \arrow[l, "\checkmark", bend left] \arrow[d, "\checkmark"] \\
+\boxed{Normal} \arrow[u, "(I)", bend left] & \boxed{PID} \arrow[d, "\checkmark"] \\
+\boxed{Regular} \arrow[r, leftrightarrow, "\checkmark"] & \boxed{PID^-} \arrow[uu, "(II)"', bend right]
+\end{tikzcd}
+\begin{proof}
+\underline{proof of (I)}\\
+\textbf{Sublemma 1}\\
+$\cala$ Noetherian local domain, $dim(\cala)=1$, $\scp:=$ the maximal ideal, $K:=Frac(\cala)$.
+Then $\forall x\in K,\exists n\geq 0$ s.t., $x\scp^n\subseteq \cala$,
+\begin{proof}
+Write $x=u/v, 0\neq v\in \cala$. It suffices to find $n\geq 0$ s.t., $\scp^n\subseteq(v)$. But $\dim(\cala)=1$ , $\cala$ is a domain, 
+\end{proof}
+
+\textbf{Sublemma 2}\\
+$(\cala,\scp)$ Noetherian local domain $K:=Frac(\cala)$. Let $y\in K$ s.t. $y\scp\subseteq \cala$. Then either
+\begin{enumerate}[label=(\roman*)]
+\item $1/y\in \scp$, or
+\item $y$ integral over $\cala$
+\end{enumerate}
+\begin{proof}
+If $y\scp=\cala$, then $yt=1$ for some $t\in \scp$, hence $1/y=y\in\scp$. Else $y\scp\subsetneq \cala$, so $y\scp\subset\scp$. $\cala$ Noetherian, so $\scp$ finitely generated, hence $y$ is  integral over $\cala$, it admits a faithful finitely generated  module, namely $\scp$.
+\end{proof}
+\textbf{Sublemma 3} $\cala$ is Noetherian valuation ring $\Llrta$ $\cala$ is a field or $\cala$ is a DVR.
+\begin{proof}
+$(\Llta), \checkmark$\\
+$(\Lrta)$ Suppose $\cala,\scp$ is a Noetherian VR. Then $\scp=(\varpi_1,...,\varpi_n)$.
+
+Let $v: K\lrta G\cup \{\infty\}$ be valuation that determines $\cala$. If $\cala=K$, then $\cala$ is a field. Else $v(K^\times)\neq \{0\}$, so $\cala$ contains nonzero non-units, so $\scp\neq (0)$, and $v(\varpi_j)\geq 0$. Let $g:=\min(v(\varpi_1),...,v(\varpi_n))$. Say $g=v(\varpi_1)$, Then $v(\varpi_j/\varpi_1)\geq 0$, so $\varpi_j\in \cala \varpi_1$, so $\scp=(\varpi_1)$.
+
+Now geiven $x\in \cala-\{0\}$. by Krull's theorem that $\cap_{n\geq 0}\cap^n=(0)$, we may choose $n\geq 0$, s.t. $x\in \scp^n$, $x\notin \scp^{n+1}$. Thus $\frac{x}{\varpi^n}=:u\in \cala-\scp=\cala^\times$. So $(x)=\scp^n$, $v(x)=ng$.
+
+Thus $v:K^\times \surj \intg g\cong \intg$, the second isomorphism is guaranteed by the fact that no power of $\varpi$ is a unit.
+\end{proof}
+
+The proof of sublemma 3 also shows
+$$
+PID^-\Lrta PID^+\Lrta DVR
+$$
+As we showed last time, there is a VR $(\calb,\scm)$, with $\cala\subseteq \calb\subseteq K$ and $\cala\cap \scm=\scp$, it suffices to show that $\calb=\cala$.
+
+Let $v:K\lrta G\cup \{\infty\}$ be a defining valuation for $\calb,$ then $\calb=\{x\in K|v(x)\geq 0\},\scm=\{x\in K: v(x)>0\}$. So $v(\scp)>0$. Let $x\in \calb$. Then $x\in K$, so by sublemma 1, $\exists n\geq 0$ so that $x\scp^n\subseteq \cala$. Choose $n$ minimal with this property.
+
+If $n=0$, then $x\in \cala$, so we are done. Else $n\geq 1$, and $x\scp^{n-1}\not\subseteq\cala$, so $\exists y\in x\scp^{n-1},y\notin \cala$. Then $y\scp \subseteq x\scp^n\subseteq \cala$,  so by sublemma 2: either $1/y\in\scp$ or $y$ integral over $\cala$.
+
+If $1/y\in\scp$, then $v(1/y)=-v(y)>0$, but $y\in\scp^{n-1}x$ and $v(x)\geq 0$, $v(\scp)>0$, so $v(y)\geq 0$. contradiction.
+
+If $y$ is integral over $\cala$, then since $\cala$ is normal, deduce that $y\in\cala$, but $y\notin \cala$ contraction.
+\end{proof}
+
+\begin{dfn}
+A \textbf{Dedekind domain} $\cala$ is a normal Noetherian domain of dimension one. Equivalently, $\cala$ is Noetherian domain s.t.
+\begin{itemize}
+    \item $\cala$ is integrally closed in $K=Frac(\cala)$,
+    \item Every nonzero prime is maximal,
+    \item $\cala\neq K$
+\end{itemize}
+\end{dfn}
+
+\underline{Restatement of Last theorem:} A local Dedekind domain is a DVR. 
+\begin{lemma}If $\cala$ is a Dedekind domain.
+Any localization such that $S^{-1}\cala\neq K$ is a Dedekind domain. In particular: $\cala$ is Dedekind and $Spec(\cala)\ni\scp\neq 0$, then $\cala_\scp$ is Dedekind domain.
+\end{lemma} 
+\begin{proof}
+Just need to check that every condition is preserved by localization. Remains only to check:
+\begin{lemma}
+Let $\cala$ domain. Then the following are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item $\cala$ normal
+\item $\cala_\scp$ is normal $\forall$ primes $\scp$
+\item $\cala_\scm$ normal $\forall$ maximal ideals $\scm$
+\end{enumerate}
+\begin{proof}
+$K:= Frac(\cala)=Frac(\cala_\scp)$,
+$(i)\Lrta (ii)$ Let $x\in K$ be integral over $\cala_\scp$: 
+$$
+x^n+a_1 x^{n-1}+...+a_n=0
+$$
+with each $a_j\in\cala_\scp$, say $a_j=\frac{b_j}{s_j}$, $b+j\in \cala$, $s_j\in\cala-\scp$.
+Set $s:=s_1\cdot\cdot\cdot s_n\in\cala-\scp$. $y:=sx\in K$, $x=y/s$, $sa_j\in\cala b_j\subseteq \cala$.
+Then 
+$$
+y^n+s a_1 y^{n-1}+...+s^{n-1}a_n
+=0
+$$
+with each coefficients in $\cala$, so since $\cala$ is normal, deduce that $y\in\cala$, hence that $x-y/s\in\cala_\scp$
+
+$(ii)\Lrta (iii)\checkmark$
+
+$(iii)\Lrta (i)\checkmark$: Let $x\in K$ be integral over $\cala$. Know each $\cala_\scm$ is normal. So $\forall \scm:$ maximal, we may write 
+$$
+x^{N}+a_1x^{N-1}+...+a_{N}=0
+$$
+for some $N\geq 0$, $a_{j}\in\cala_\scm$. $x\in\cala_\scm$ because $\cala_\scm$ is normal. Then there exists an $s_\scm\in\cala-\scm$ s.t. $s_\scm x\in\cala$. The ideal $\sum_{\scm,\text{max'l}}\cala s_\scm\not\subseteq \scm\forall\scm$, hence $\sum_{\scm}\cala s_\scm=\cala\ni 1$, so $\exists \scm_1,...,\scm_n,$ $\lambda_1,...,\lambda_n\in \cala$ s.t.,
+$$
+1=\sum\lambda_js_{\scm_j}
+$$
+Then $x=x\cdot 1=\sum)j\lambda_j s_{\scm_j}x$, where $s_{\scm_j}x\in\cala\Lrta \cala$.
+\end{proof}
+\end{lemma}
+\end{proof}
+
+\begin{ex}
+If $\cala$ is a PID, not a field, then $\cala$ is Dedekind.
+\begin{proof}
+PID $\Llrta$ every ideal principal (finitely generated) $\Lrta $ Noetherian.
+
+PID $\Lrta $ UFD $\Lrta$ normal.
+
+$\forall\scm\in Spem(\cala)$, $\cala_\scm$ Noetherian local domain with principal maximal ideal $\Lrta dim(\cala_\scm)\leq 1$ by system of parameters.
+$dim(\cala)\leq sup_\scm dim(\cala_\scm)$. $\cala$ not a field then $\cala\neq 0$ 
+\end{proof}
+\end{ex}
+
+
+\begin{lemma}
+$\cala$ Dedekind domain $\Lrta $ $\cala_\scm,\forall\scm$ 
+\end{lemma}
+\begin{proof}
+>>>>>>>>>>>>1
+\end{proof}
+
+\begin{cor}
+The ring of integers (integral closure of $\intg$ in the number field) in any number field (finite field extension over $\ratl$) is Dedekind. 
+\end{cor}
+Choose the special case $\cala=\intg$ and $K=\ratl$.
+
+where $M_x$ is the $K$-linear map $L\lrta L, y\longmapsto x y$. Note $T$ is $K$-linear. FAct: $L/K$ is separable $\Lrta $ the $K$-linear form $L\times L\ni (x,y)\longmapsto T(xy)$ is non-degeneratedL it induces an isomorphism $L\lrta L^*:=Hom_K(L,K)$ $x\longmapsto [y\mapsto T(xy)]$. Let $u_1,...,u_n\in L$ be the dual basis wRT
+
+>>>>>>>>2
+
+
+\subsection{Lecture 28}
+\begin{proof}
+We almost proved
+$\forall \cala$ Dedekind domain, $K:=Frac(\cala)$, $\calb:=$ integral closure of $\cala$ in $L$, where $L/K$ finite separable extension. Then $\calb$ is Dedekind.
+
+Reduced the proof to checking that $\calb$ is Noetherian. For this, it suffices to show that $\calb$ is finitely generated $\cala$-module because $\cala$ is Noetherian. We saw $\exists u_1,...,u_n\in\calb$ $K$-basis of $L$ $\leadsto$ dual basis $v_1,...,v_n\in L$ $K$-basis for $L/K$ separable. s.t., with
+ $$T:L\lrta K$$
+$$z\longmapsto trace_{L/K}(M_z)$$
+we have $T(u_iv_j)=\delta_{ij}$.We had used without proof that $L/K:$ Separable $\Lrta $ the bilinear form $L\times L\ni (x,y)\longmapsto T(xy)\in K$ is non-degenerate. Sketch of the proof: non-degeneracy means 
+$$
+\not\exists 0\neq x\in L, s.t., T(xy)=0,\forall y\in L
+$$
+$$
+\Llrta L \lrta L^*=Hom_{K}(L,K)
+$$
+$$
+x\longmapsto [y\mapsto T(xy)] 
+$$
+is isomorphism.
+
+Since this system is linear in $x$, we can extend scalar: it suffices to check $\not \exists 0\neq x\in L\otimes_K K^s$, $K^s$ is the separable closure of $K$. s.t., $T(xy)=0\forall y\in L\otimes_K K^s$. But $L\otimes_K K^s=(K^s)^{[L:K]}$ $\Llrta L/K$ separable. Hence $T$ is the $K^s$-linear extension of $T$
+$$
+T:L\otimes_K K^s\lrta K^s
+$$
+$$
+t\otimes z\longmapsto T(t)z
+$$
+$\leadsto$
+$$
+T:(K^s)^{[L:K]}\lrta K^s
+$$
+$$
+(z_i)\longmapsto \sum z_i
+$$
+s.t.  with $T:L\lrta K$, $z\longmapsto trace_{L/K}(M_z)$, we have $T(u_i v_i)=\delta_{ij}$
+
+\underline{Claim}: $\calb\subseteq \oplus_i \cala v_i\subseteq \otimes_i K v_i=L$. $\cala$ Noetherian $\Lrta \oplus \cala v_i$ is Noetherian $\Lrta \calb$ is finitely generated $\cala$-module $\Lrta \calb$ is Noetherian.
+
+Indeed, let $x\in \calb$. Write $x=\sum x_i v_i$ with $x_i\in K$. \underline{Want:} $x_i\in \cala=\calb\cap K$.
+
+Indeed, 
+$$
+T(x\cdot u_i)=x_i
+$$
+, where $x\cdot u_i\in\calb$ and the equality from $T:K$-linear.
+
+Reduce to checking: $T(\calb)\subseteq \cala$. Case $L/K$ Galois:
+$$
+T(x)=\sum_{\sigma\in Gal(L/K)
+} x^\sigma
+$$
+
+Recall that $G(L/K) $ acts on $\calb$, $x\in \calb\Lrta $ each $x^\sigma\in \calb$ $T(x)\in\calb\cap K=\cala$, the last equality from $\cala$ being normal.
+
+For the purpose of proving that $\calb$ Noetherian, we can reduce to the Galois case.
+
+\begin{tikzcd}
+\calb_1 \arrow[r, Subseteq] & L_1 \\
+\calb \arrow[r,Subseteq] \arrow[u,Subseteq] & L \arrow[u,Subseteq] \\
+\cala \arrow[r,Subseteq] \arrow[u,Subseteq] & K \arrow[u,Subseteq]
+\end{tikzcd}
+There always exists a extension $L_1/L$ such that $L_1/K$ is Galois, and we define the $\calb_1$ to be the integral closure of $\calb$ in $L_1$.
+Our proof the show that $\calb_1$ fin. gen $\cala$-module. since $\cala$ is Noetherian, concluse that $\calb$ is fin.gen. $\cala$-module.
+\end{proof}
+
+\begin{lemma}
+$\cala$ Noetherian domain of dimension 1, (every prime  ideal is maximal.) Tehn every nonzero ideal $\sca\subseteq \cala$ factor uniquely(up to reordering) as a product of primary ideals with distinct radicals.
+$$
+\sca=\prod_{i=1}^n\scq_i
+$$
+where $rad(\scq_i)=:\scp_i\neq \scp_j:=rad(\scq_j)$
+\end{lemma}
+\begin{proof}
+\underline{Existence}: Let $\scq=\cap_i\scq_i$  be a MPD, $\scp_i=rad(\scq_i)$. Then, since $\sca\neq 0$, know that each $\scp_i\neq 0$, hence the $\scp_i$ are maximal and distinct, hence pairwise coprimeL $\scp_i+\scp_j=\cala,\forall i\neq j$. Hence the $\scq_i$ are pairwise coprime. Hence $\cap\scq_i=\scq=\prod\scq_i$.
+
+\underline{Uniqueness} Suppose $\scq=\prod\scq_i$, with $\scp_i\neq \scp_j\forall i\neq j$. Then as before, the $\scp_i\neq 0$, hence maximal and distinct, hence pairwise coprime, hence $\sca=\cap \scq_i$ is a MPD with each component isolated. we conclude by ``2nd uniqueness theorem'' isolated component is a MPD are unique.
+\end{proof}
+
+\begin{thm}
+In a Dedekind domain, 
+\begin{enumerate}[label=(\roman*)]
+\item any power of a nonzero prime si primary,
+\item any nonzero primary  is a power of its radical,
+\item any nonzero ideal is uniquely a product of prime ideals.
+\end{enumerate}
+\begin{proof}
+(i): nonzero prime $\Lrta$ maximal, (dim =1). power of maximal ideals are primary.
+
+(ii) True if $\cala$ local, because the $\cala$ DVR. In general.
+$$
+\{\scp\text{-primary ideals in }\cala\}\llrta \{\scp\cala_\scp\text{-primary idaels in }\cala_\scp\}
+$$
+$$
+=\{\text{non-zerp ideals in $\cala$}\}=\{\text{powers of $\scp\cala_\scp$}\}
+$$
+
+(iii)$\Llta$ (i)+(ii)+Lemma above. 
+Key steps: primary decomposition, local Dedekind domain $\Lrta$ DVR
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+Let $\cala$ domain. $\cala$ fractional ideal is a submodule $T\subseteq K:=Frac(\cala)$ s.t. $x I\subseteq \cala$ for some $0\neq x\in\cala$.
+\end{dfn}
+\begin{ex}
+If $I=\cala y$ for some $y\in K$, then $I$ is fractional ideal: $y=u/v$, $u,v\in\cala$, $v\neq 0$
+So $v I=\cala u\subseteq \cala$. More generally, any finitely generated submodule $I\subseteq K$ is a fractional ideal:
+$$
+I=\sum_{i=1}^n\cala y_i, y_i=\frac{u_i}{v_i}.
+$$
+then $v_1,...,v_n I\subseteq \sum\cala u_i\subseteq \cala$.
+\end{ex}
+If $\cala$ Noetherian and $I$ fractional ideal, then $I $ finitely generated 
+(Pf. $x I\subseteq \cala$ for some $0\neq x\in \cala$ $\Lrta xI$ finitely generated, say $xI =\sum\cala z_i,z_i\in \cala$ ,then $I=\sum\cala \frac{z_i}{x}$
+)
+
+\begin{dfn}
+$$
+I\cdot J:=\{sum a_i b_j: a_i \in I, b_i\in J\}
+$$
+\end{dfn}
+
+\begin{dfn}
+An \textbf{invertible ideal} is a submodule $I\subseteq K$ s.t. $\exists$ submodule $J\subseteq K$ s.t., $IJ=A$
+\end{dfn}
+
+If $I$ is invertible and $IJ=\cala$ $\Lrta J=(\cala: I):=\{x\in K: xI \subseteq \cala\}$. This is because 
+$J\subseteq (\cala:I)=(\cala:I) I\cdot J\subseteq \cala\cdot J=J$
+
+So invertible ideals form a group.
+\begin{thm}
+$\cala$ Dedekind domain. The every nonzero fractional ideal is invertible. The group of nonzero fractional ideal is free on the nonzero primesL
+$$
+\oplus_{0\neq \scp\subset\cala}\intg\lrta \{\text{nonzero fractional ideals}\}
+$$
+$$
+(n_\scp)_\scp\longmapsto \prod_\scp\scp^{n_\scp}
+$$
+\begin{proof}
+Let $I$ nonzero fractional idael. Thus $xI \subseteq\cala$ for some $0\neq x\in \cala$. If $\cala$ local, then
+$$
+x=\varpi^nu,n\geq 0
+$$
+$$
+xI=(\varpi^m),m\geq 0
+$$
+$$
+\Lrta I=\cala\varpi^{m-n}
+$$
+$$
+\Lrta I\text{ invertible}
+$$
+
+$$
+\intg\lrta \{\text{invertible ideals }=\}=\{\text{nonzero fractional ideals}\}
+$$
+$$
+n\longmapsto \scp^n=(\varpi^n)
+$$
+\end{proof}
+\end{thm}
+
+In general, we know that $I\scp$ is invertible $\forall \scp\neq 0$ by the local case just established. But $I\cdot(\cala:I)=\cala\Llta (I\cdot (\cala:I))_\scp\overset{?}{=}\cala_\scp$
+
+But $(I\cdot (\cala:I))_\scp=I_\scp\cdot (\cala: I)_\scp=(\cala_\scp\cdot I_\scp)$ because $I$ finitely generated. so the general case reduce to the local case.
+
+The last equality is left as an exercise
+
+
+What is $\intg/3\otimes \intg_2$?
+
+What is $Spec(\intg[1/6])$
+
+What is the $Ker(\cala\lrta \cala_f)$
+
+Fluent in goingup going down
+
+Characterization of DVR,
+
+nonexample of 1-dim local ring that is not DVR $k[[x^2,x^3]]$
+
+equivalence of defs like radicals
+
+Show that valuation ring is normal.
+
+example of artin local ring which is not a field.
+
+give an example of non-flat module
+
+Going through homework and exercise of A-M.
+
+Eisenbud chap1 motivation.
 
 \end{document}
 
