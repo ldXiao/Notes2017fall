@@ -1921,9 +1921,103 @@ $$
 $$
  is a ring homomorphism, compatible with $\pd/\pd t$. If $\cplx(\{t\})$, it is a function globally defined on punctured disk $U$. Hence $\rho(\gamma)(f)=f$. Find $\rho(\gamma)\in G$, and hence the sammlest algebraic group containing $\rho(\gamma)$ is a subgroup of $G$.
 
- Conversely, if $f\in \calr$ satisfying $\rho(\gamma)(f)=f$, then by analytic continuation, $f$ extends toa hologomorphic function on the punctred disk, and $|f(t)|\leq c\cdot |t|^{-N}\Lrta f$ meromorphic at $0$, $\Lrta f\in \cplx(\{t\})$. $\calr^G=\cplx(\{t\})=\calr^{\pi_1}=\calr^{\text{smallest alg.gp...}}$ via Galois correspondence
+ Conversely, if $f\in \calr$ satisfying $\rho(\gamma)(f)=f$, then by analytic continuation, $f$ extends to a holomorphic function on the punctured disk, and $|f(t)|\leq c\cdot |t|^{-N}\Lrta f$ meromorphic at $0$, $\Lrta f\in \cplx(\{t\})$. $\calr^G=\cplx(\{t\})=\calr^{\pi_1}=\calr^{\text{smallest alg.gp...}}$ via Galois correspondence
 \end{proof}
 \end{cor}
+
+Addendum: Fuchs criterion
+
+A holomorphic function defined on an open sector, 
+
+>>>>>>1
+say that $f$ has moderate growth if $|f(z)|\leq c|z|^{-N}$ as $z\lrta 0$ for some constants. Every meromorphic function is of moderate growth. $\exp(-1/z^2)$ not moderate growth in the sector>>>but 
+moderate growth in the section>>>>
+
+A function $f$ on the punctured dick (sector with $\alpha=2\pi$) has moderate growth iff f is meromorphic.
+
+We say that a differential equation $u'=Au$ admits solution of moderate growth (near zero) if on any sector of opening $\alpha<2\pi$ the differential admit a fundamental matrix of solutions of moderate growth.
+
+\begin{thm}(Fuchs)
+A differential equation $\delta u=Au$ on the punctured disk is regular singular \underline{iff} it admits solutions of moderate growth.
+\end{thm}
+\begin{proof}
+``regular singular$\Llta$ sols of moderate growth'' $\checkmark$
+
+The opposite implication is in fact the easier part of the theorem. Write the monodromy matrix as $\exp(2\pi i C)$ for some $C\in M_n(\cplx)$. We show that the equation $\delta u= Au$ is equivalent to $\delta u= Cu$. Let $F=F(t)$ be a fundamental matrix of solutions in a sector containing $1$, and set 
+$$
+B(t)=e^{-C\cdot 2\pi i log(t)}\cdot F(t)
+$$
+Analytic continuation of $B(t)$ transforms $B(t)$ to itself. Hence $B(t)$ is an holomorphic function on the punctured disk. Entries of $B(t)$ have moderate growth. $B(t)$ is meromorphic and check that
+$$
+A=B'B^{-1}+ B C B^{-1}
+$$
+$\delta u=A u$ is equivalent to $\delta u =C u$
+\end{proof}
+\section{Global theory}
+$u'=A u$, $A\in M_n(\cplx(t))$. It is usually called differential equation on $\mathbb{P}^1\cplx$. A point $p\in \mathbb{P}^1\cplx$ is regular singular if $u'=A(t-p)u$ $p\neq \infty$, and for $p=\infty$ just check $u'=A(t^{-1})u$. $u'=A u$ is regular singular if all (finitely many) singularities are regular.
+
+Monodromy representation: $S=sol$ of singularities choose $x\notin S$. Choose a fundamental matrix of solutions $F$ consisting of holomorphic functions near $x$
+>>>>>>>>>2
+
+Recall: the differential Galois group of $u'=Au$ is $Gal=Aut^\pd(R_x|\cplx(t))$, where $R_x=\cplx(t)[f_{ij}(t),det F(t)^{-1}]$. Have $\sigma\in Gal\overset{\varphi}{\inj} GL_n(\cplx)$. $\sigma F$ is a fundamental matrix of solutions. $\sigma F=\varphi(\sigma)\cdot F$, $\varphi(\sigma\in GL_n(\cplx))$. 
+
+\begin{thm}
+Let $u'=A u$ be a regular singular differential equation over $\mathbb{P}^1\cplx$. Then $Gal^\pd\subseteq GL_n(\cplx)$ is the smallest algebraic group containing the image of $\rho: \pi_1(\mathbb{P}^1\cplx\backslash S,x)\lrta GL_n(\cplx)$
+\end{thm}
+\begin{proof}
+For each regular point $y\notin S$, choose a fundamental matrix of solutions of holomophic functions near $y$, denote by $F_y$. Set $R_y=\cplx(t)[\text{coeffis of $F_y(t)$}, det(F_y(t))^{-1}]$. Given a path $\gamma$ from $x$ to $y$ in $\mathbb{P}^1\cplx\backslash S$, we find by parallel transport $F_x\overset{\gamma}{\lrta}\tilde{F}_x$
+$$
+F_y=\rho(\gamma) \tilde{F}_x.
+$$
+We obtain a map 
+$$
+R_x\overset{\cong}{\lrta}R_y, \ \ \ \cplx(t)-\text{algebra homomorphism}
+$$
+given by parallel transport. Hence image of $\rho$ $\subseteq Gal^\pd\subseteq GL_n(\cplx)$. (Did not use any regular singular arguments!)
+
+The inclusion $\supseteq$ is equivalent  to the statement.
+[Given $f\in R_x$, s.t. $f$ is fixed under the action of $\pi_1(...)$, then $f\in \cplx(t)$]. $f$ is a $\cplx(t)$-linear combination of entries $f_{ij} $ and $det(F_x)^{-1}$ of $F_x$. With loss of generality: $f$ is a $\cplx[t]$-linear combination. $f$ is defined in a neighborhood of $x$, but we can continue $f$ to any $y\in \mathbb{P}^1\cplx\backslash S$ by analytic continuation along a path. Because $f\in R_x^{\pi_1}$ invariant under $\pi_1$, this is independent of the choice of path. $f$ extends to an holomorphic function on $\mathbb{P}^1\cplx\backslash S$. since we assume $y'=Ay$ to be regular singular, $f$ has moderate growth near each $s\in S$.
+$\Lrta f$ is meromorphic on $\mathbb{P}^1\cplx\backslash S$. $f\in \cplx(t)$.
+\end{proof}
+
+\begin{thm}
+(Riemann-Hilbert, Deligne, Kashiwara Mebkhout)
+The functor
+$$
+\{\text{Differential equations}\}
+$$
+>>>>>>>>3
+\end{thm}
+
+
+\begin{ex}
+Gauss hypergeometric function
+$$
+F(a,b,c|z)=\sum^\infty_{n=0}\frac{(a)_n (b)_n}{(c)_n}z^n
+$$
+where $(a)_n=a(a+1)(a+2)...(a+n-1)$, $a,b,c\in\cplx$ and $c\notin \intg$
+$$
+F(a,1,1|z)=(1-z)^a
+$$
+$$
+2z F(1/2,1,3/2|z^2)=\log\frac{(1+z)}{(1-z)}
+$$
+$$
+\frac{\pi}{2}F(\frac{1}{2},\frac{1}{2},1|z^2)=\int^1_0\frac{dx}{\sqrt{(1-x^2)(1-z^2x^2)}}
+$$
+It satisfies the Gauss Hypergeometric differential equation
+$$
+z(z-1)F''+((a+b+1)z-c)F'+ab F=0
+$$
+and
+$$
+\left(z(\delta+a)(\delta+n)-\delta(\delta+c-1)\right)F=0
+$$
+with regular singularities at $\{0,i,\infty\}$. Fix $x\neq 0,1,\infty$ get monodromy $\pi_1(\mathbb{P}^1\cplx\backslash\{0,1,\infty\},x)\lrta GL_x(\cplx)$
+
+\end{ex}
+
+
 
 
 
