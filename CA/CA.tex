@@ -282,14 +282,14 @@ Remember
 
     An element $a\in \cala$ is a \textbf{zero divisor} if there is an element $b\in \cala, b\neq 0$ s.t. $ab=0$.
 
-Fact: every nilpotent element is a zero divisor but not conversely.
+Fact: every nilpotent element is a zero-divisor  but not conversely.
 
 \begin{ex}
      take $(0,1)\in \cala\times \cala$ then $(0,1)\cdot(1,0) =(0,0)$
 \end{ex}
 
 \begin{dfn}
- The ideal $N:\text{rad}((0))$ is called  the \textbf{nil radical} of $\cala$.
+ The ideal $\text{Nil}(\cala):=\text{rad}((0))$ is called  the \textbf{nil radical} of $\cala$.
 \end{dfn}
 
 Then we have:
@@ -484,7 +484,7 @@ $$
 Details in the exercise sheet.
 \end{proof}
 
-\begin{prop}\ \\
+\begin{prop}\label{prop:prime_avoidance}(Prime avoidance) \\
 (i) Let $\scp_1,..., \scp_n\subset \cala$ prime ideals and let $\sca \subset \cala$ be an ideal which is contained in $\cup_{i=1}^n\scp_i$ then $\sca\subset \scp_j$  for some $j$.\\
 (ii)Let $\sca_1,...,\sca_n\subset \cala$ be ideals and $\scp \subset \cala$ a prime ideal s.t. $\scp \supset \cap_{i=1}^n\sca_i$.
 Then $\scp\supset \sca_i$ for some $i$.
@@ -520,7 +520,7 @@ $$
 Notation: For $x\in A$ we write $(\sca:x):=(\sca:(x))$.\\
 Fact: \\
 (i)The ideal quotient of two ideals is again an ideal.\\
-(ii)The set of zero divisors of $A$ is 
+(ii)The set of zero-divisors  of $A$ is 
 $$
 D=\cup_{x\neq 0} \text{Ann}(x)=\cup_{x\neq 0}\text{rad}(\text{Ann}(x))
 $$
@@ -1651,7 +1651,7 @@ The above definition does not exclude the possibility that $S$ contains zero. Bu
 
 We say $S^{-1}\cala$ is \textbf{localization of $\cala$ with respect to $S$}.
 When $\cala$ is an integral domain, $S=\cala-\{0\}$ is multiplicative closed, the $S^{-1}\cala=Frac(\cala)$.
-\begin{lemma}
+\begin{lemma}\label{lem:localization_inj_surj_iso}
 There exists a ring morphism $\iota$ from $\cala$ to $S^{-1}\cala$ s.t each $a\in \cala$ maps to $a/1\in S^{-1}\cala$.
 It has the following properties:
 \begin{enumerate}[label=(\alph*)]
@@ -1668,7 +1668,7 @@ It has the following properties:
 \item $a\in \text{Ker}(\iota)=\{b\in \cala|\frac{b}{1}=\frac{0}{1}\}$ $\Longleftrightarrow$ $\exists t\in S: t(a1-01)=ta=0.$
 \item  derived from (a) and (b).
 \item $S^{-1}\cala=\{0\}$ $\Longleftrightarrow$ $\frac{0}{1}=\frac{1}{1}$ $\Llrta$  there exists an element $t\in S$ s.t. $t\cdot1=0$, $\Longleftrightarrow t=0\in S$.
-\item ``$\Lrta$'' Suppose $\cala\neq \{0\}$, then $\iota $ is isomorphism $\Llrta$  $\iota$ is surjective and injective. The surjectivity is equivalent to $\forall \frac{a}{s}\in S^{-1}\cala: \exists c\in \cala\ s.t.\ \frac{a}{s}=\frac{c}{1}$ while the injectivity is equivalent to $S$ has no zero divisors according to (c). Then we know, $\frac{1}{s}=\frac{c}{1}\Lrta\exists t\in S,\ \text{such that }\  t(s\cdot c-1)=0$, and by the fact $S$ has no zero divisors $s\cdot c=1$, which means $S\subseteq \cala^{\times}$.\\
+\item ``$\Lrta$'' Suppose $\cala\neq \{0\}$, then $\iota $ is isomorphism $\Llrta$  $\iota$ is surjective and injective. The surjectivity is equivalent to $\forall \frac{a}{s}\in S^{-1}\cala: \exists c\in \cala\ s.t.\ \frac{a}{s}=\frac{c}{1}$ while the injectivity is equivalent to $S$ has no zero-divisors  according to (c). Then we know, $\frac{1}{s}=\frac{c}{1}\Lrta\exists t\in S,\ \text{such that }\  t(s\cdot c-1)=0$, and by the fact $S$ has no zero-divisors  $s\cdot c=1$, which means $S\subseteq \cala^{\times}$.\\
 ``$\Llta$'' Assume $\cala\neq\{0\}$. $S\subseteq\cala^\times$, then $S$ does not contain any zero divisors. $\forall \frac{a}{s}\in S^{-1}\cala.$ Because $S\subseteq\cala^\times$ $ \exists v\in \cala \text{ s.t. } sv=1$. Then $ \frac{a}{s}=\frac{av}{1}\in \text{Im}(\iota)$, because $a s v=a$.
 
 If $\cala=\{0\}$, the claim is trivially true.
@@ -1788,6 +1788,27 @@ See Proposition~\ref{prop:properties_extension_contractino}, $\iota_*(\iota^*(\s
   Notice that $\scq\cap\{\frac{a}{1}|a\in\cala\}$ is not necessarily an ideal in $S^{-1}\cala$. Explicit example shows that $\iota_*$ does not in general preserves the proper inclusion ``$\subsetneq$''. Let $\cala:=\intg$, $S:=\{2^n:n\in \intg_{\geq 0}\}$, then $S^{-1}\cala=\intg[1/2]$, $(2)\supsetneq (4)$ in $\cala$ but $\iota_*((2))=\iota_*((4))=S^{-1}(\cala)$. But however, unlike general $\varphi^*$, $\iota^*$ indeed preserves the proper inclusion. $\iota_*(\iota^*(\scb))=\scb\subsetneq \sca=\iota_*(\iota^*(\sca))\Lrta \iota^*(\scb)\subsetneq \iota^*(\sca)$. Or equivalently, $\frac{c}{s}\notin \sca\Lrta \frac{c}{1}\notin\sca\Lrta c\notin\iota^*(\sca)$. The fact that $\iota^*$ preserves proper inclusion is crucial for the claim $dim(\cala_\scp)=ht(\scp)$.
 \end{rmkt}
 
+{\color{red}
+\begin{lemma}\label{lem:radical_commutates_localization}
+$\cala$ a ring and $S$ is a multiplicative set in $\cala$. Let $\iota:\cala\lrta S^{-1}\cala$, then we have
+\begin{enumerate}[label=(\alph*)]
+\item $\iota^*\iota_*(\sca)=\cup_{s\in S}(\sca:s)$
+\item $\iota_*$ commutes with formation of finite sums, products, intersections and taking radicals.
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}[label=(\alph*)]
+\item 
+$x\in \iota^*\iota_*(\sca)\Lrta $ $\frac{x}{1}\in\iota_*\sca=\{\frac{y}{s}:y\in\sca,s\in S\}$
+
+``$\subseteq$'': Suppose $\frac{x}{1}=\frac{y}{s}$ for some $y\in\sca,s\in S$. Then $\exists t\in S$ s.t. $t(xs-y)=0$ $\Lrta stx=yt \in \sca\Lrta x\in (\sca:st)$, where $st\in S$.
+
+``$\supseteq$'': Say $x\in (\sca:s)$ for some $s\in S$. Thus $xs=:y \in\sca$. Then $\frac{x}{1}=\frac{y}{s}\in \iota^*\iota_*\sca$. 
+\item We know form exercise that in general $\text{rad}(\varphi_*\sca)\supseteq\varphi_*(\text{rad}(\sca))$, then in particular, we have $\text{rad}(\iota_*\sca)\supseteq\iota_*(\text{rad}(\sca))$. For the reverse inclusion, we check if $\frac{x}{s}\in \text{rad}(\iota_*\sca)$, then exists $n\in\mathbb{N}$, s.t. $\left(\frac{x}{s}\right)^n\in \iota_*\sca$. $\frac{x^n}{s^n}=\frac{y}{t}\in\iota_*\sca$, $\exists u\in S$ s.t. $u x^n t=u s^n y\in\sca$, then $(uxt)^n\in\sca\Lrta uxt\in\text{rad}(\sca)\Lrta \frac{x}{s}\in \iota_*(\text{rad}(\sca))$.
+\end{enumerate}
+\end{proof}
+\end{lemma}
+}
+
 \subsection{Lecture 8. Properties of Localization of Rings}
 Recall
 $\iota:\cala\lrta S^{-1}\cala$
@@ -1826,6 +1847,7 @@ With the one to one correspondence, we can see that $\iota^*$ and $\iota_*$ pres
 \item $\scp_1\subsetneq \scp_2\Llrta\iota_*(\scp_1)\subsetneq\iota_*(\scp_2)$.
 \end{itemize}
 \end{rmkt}
+
 \begin{dfn}
 $k(\scp):=Frac(\cala/\scp)$ is called the \textbf{residue field at (the point) prime ideal $\scp$}.
 Then the above bijection induces isomorphism $k(\iota^*\scq)\cong k(\scq)$.
@@ -2536,13 +2558,21 @@ Consider $\alpha\in \cala$ a PID. We may write uniquely $\alpha=\epsilon (p_1)^{
 
 
 \begin{dfn}$\cala$ is a general ring. 
-An ideal $\scq\subseteq\cala$ is \textbf{primary} iff every zerodivisor in $\cala/\scq$ is nilpotent.
+An ideal $\scq\subseteq\cala$ is \textbf{primary} iff every zero-divisor  in $\cala/\scq$ is nilpotent.
 \end{dfn}
-\underline{Recall} $\scp\subseteq\cala$ is prime iff the only zerodivisor in $\cala/\scp$ is $0$. We know
+\underline{Recall} $\scp\subseteq\cala$ is prime iff the only zero-divisor  in $\cala/\scp$ is $0$. We know
 $$
 \text{prime}\Lrta\text{ primary}
 $$
-Equivalently, we can define: an ideal $\scq$ is primary if, whenever $xy\in\scq$, we have either $x\in\scq$ or $y\in \text{rad}(\scq)$
+Equivalently, we can define: an ideal $\scq$ is primary if, whenever $xy\in\scq$, we have either $x\in\scq$ or $y\in \text{rad}(\scq)$. This two definitions are equivalent
+\begin{proof}
+``$\Lrta$'': $xy\in\scq\Lrta \overline{xy}=\overline{x}\ \overline{y}=0\in \cala/\scq $. Then both $\overline{x}$ and $\overline{y}$ are zero-divisors  in $\cala/\scq$, hence $\exists n\in\intg$ s.t. ${\overline{y}}^n=0\in \cala/\scq\Lrta y^n\in\scq$.
+
+``$\Llta$'' $u=x+\scq$ is a zero-divisor  in $\cala/\scq$ $\Lrta uv=(x+\scq)(y+\scq)=0\Llrta xy\in\scq$, $\Lrta (y+\scq)^n=0\in\cala/\scq\leadsto y^n\in\scq$
+\end{proof}
+\begin{rmkt}
+A tautology of the first definition says: $\scq\in\cala$ is primary iff $\overline{(0)}\in\cala/\scq$ is primary.
+\end{rmkt}
 \begin{dfn}
 An ideal $\sca\subseteq \cala$ is \textbf{decomposable} if we may write $\sca=\scq_1\cap...\cap \scq_n$, where each $\scq_i$ is primary. We call this a \textbf{primary decomposition.}
 \end{dfn}
@@ -2564,63 +2594,84 @@ Similarly, we can consider
 (II) Let $S\subseteq\{\text{ideals in $\cala$}\}$ s.t.
 \begin{enumerate}[label=(\alph*)]
 \item $(1)\in S$
-\item $\forall\sca:$  $[\scb\supsetneq\sca\Lrta \scb\in S]$ $\Lrta [\sca\in S]$\\
-Then $S=\{\text{ideals in $\cala$}\}$
+\item $\sca$ is an ideal in $\cala$,  $[\forall \scb\supsetneq\sca, \scb\in S]$ $\Lrta [\sca\in S]$\\
 \end{enumerate}
+Then $S=\{\text{ideals in $\cala$}\}$.
 
-\subsection{Lecture 12.}
+ This indeed works, because if we can find an ideal $\sca\notin S$ then there $\exists \scb\supsetneq \sca$ s.t. $\sca\notin S$. Repeating this, we can construct an infinite strictly increasing chain of ideals in $\cala$, which contradicts the fact that $\cala$ is Noetherian. 
+\subsection{Lecture 12. Associated Ideals and First Uniqueness Theorem}
+\begin{dfn}
+An ideal $\sca$ is \textbf{irreducible} if whenever $\sca=\sca'\cap \sca''$, we have either $\sca=\sca'$ or $\sca=\sca''$.
+\end{dfn}
 \begin{lemma}
-$\cala$ is Noetherian, $\sca\subseteq \cala$ is an ideal. $\Lrta\sca$ decomposable:
+$\cala$ is Noetherian, $\sca\subseteq \cala$ is an ideal. $\Lrta\sca$ \textbf{decomposable}:
 $\exists $ primary ideals $\scq_1,...,\scq_n\subseteq \cala$ s.t. $\sca=\scq_1\cap...\cap\scq_n$
-, where $\scq$ primary $\Llrta x y\in \scq\Lrta x\in \scq\ or\ y^n\in \scq\ for\ some \ n$\end{lemma}
-\begin{proof}
-Define: An ideal $r$ is \textbf{irreducible} if whenever $r=r'\cap r''$, we have either $r=r'$ or $r=r''$. NOtice $(6)=(2)(3)$ is not irreducible.\\
+, where $\scq$ primary $\Llrta x y\in \scq\Lrta x\in \scq\ or\ y^n\in \scq\ for\ some \ n$.
+\end{lemma}
+Notice $(6)=(2)(3)$ is not irreducible.
+\begin{proof}\ \\
 \textbf{Claim1}: $\cala$ Noetherian. Then irreducible $\Lrta$ primary.
 
 Proof of Claim1\\
-Let $\sca$ irreducible. Let $x,y\in \cala$ with $xy \in \sca$. Assume $x\notin \sca$. Want $\exists n,y^n\in\sca$. For notational simplicity, we may replace $\cala$ by $\cala/\sca$ and reduce to the case $\sca=(0)$. (We want to construct a ascending sequence of ideals.) Consider the ideals $\text{Ann}(y^n)$. Theses ideals goes up  as $n$ increases $\Lrta$, $\text{Ann}(y^n)=\text{Ann}(y^{n+1})$ for some $n$ because $\cala$ is Noetherian. Then we know, $xy=0$, $x\in \text{Ann}(y)$, $(x)\subseteq \text{Ann}(y)$.\\
-\textbf{subclaim}: $\text{Ann}(y)\cap(y)=0$.\\
+Let $\sca$ be irreducible. Let $x,y\in \cala$ with $xy \in \sca$. Assume $x\notin \sca$. \underline{Want}: $\exists n,y^n\in\sca$. For notational simplicity, we may replace $\cala$ by $\cala/\sca$ and reduce to the case $\sca=(0)$. (We want to construct a ascending sequence of ideals.) Consider the ideals $\text{Ann}(y^n)$. Theses ideals goes up  as $n$ increases $\Lrta$, $\text{Ann}(y^n)=\text{Ann}(y^{n+1})$ for some $n$ because $\cala$ is Noetherian. Then we know, $xy=0$, $x\in \text{Ann}(y)$, $(x)\subseteq \text{Ann}(y)$.\\
+\textbf{Subclaim}: $\text{Ann}(y)\cap(y^n)=0$.
+
  Assuming the subclaim,(since $(0)$ is irreducible) deduce that either $\text{Ann}(y)=(0)\Lrta x\in (0)$ or $(y^n)=(0)\Lrta y^n=0$.
- Now we turn to prove the subclaim: Let $z\in \text{Ann}(y)\cap(y^n)$. Then $z=y^n t, t\in \cala $ and $zy=0\Lrta t y^{n+1}=0\Lrta t\in \text{Ann}(y^{n+1})=\text{Ann}(y^n)\Lrta z= t y^n=0$. This finishes the proof of subclaim thus also the proof of Claim1.
 
- \textbf{Calim2}: $\cala$ Noetherian, $S:=\{\text{ideals in $\cala$ that are finite intersection of irreducible }ideals\}$ $\Lrta S=\{\text{ideals in $\cala$}\}$. \\
- Proof of Claim2: Consider the complement $S^c=$\{idaels in $\cala$ that are not finite intersections of irreducible ideals\}. \underline{Want}:$S^c=\emptyset$. If not, then it contains a maximal element $\sca$. Claim $\sca\neq (1)$, because $\sca$ not irreducible. 
+ Now we turn to prove the subclaim: Let $z\in \text{Ann}(y)\cap(y^n)$. Then $z=y^n t, t\in \cala $ and $zy=0\Lrta t y^{n+1}=0\Lrta t\in \text{Ann}(y^{n+1})=\text{Ann}(y^n)\Lrta z= t y^n=0$. This finishes the proof of subclaim thus also the proof of Claim1.\\
+ \textbf{Calim2}: $\cala$ Noetherian, every ideals in $\cala$ is finite intersection of irreducible ideals.
 
- $\Lrta\sca=\scb\cap \scc,\scb\supsetneq\sca, and \scc\supsetneq \sca$
+ Proof of Claim2: Define:
+$$
+  S:=\{\text{ideals in $\cala$ that are finite intersections of irreducible ideals}\}.
+$$ 
+Consider the complement 
+$$
+S^c:=\{\text{ideals in $\cala$ that are not finite intersections of irreducible ideals}\}.
+$$
+ \underline{Want}:$S^c=\emptyset$. If not, then it contains a maximal element $\sca$. Claim $\sca\neq (1)$, because $\sca$ not irreducible. 
+
+ $\Lrta\sca=\scb\cap \scc,\scb\supsetneq\sca, \text{ and }\scc\supsetneq \sca$
 
  $\sca$ maximal in $S^c$, $\scb, \scc\notin S^c$. $\Lrta \scb,\scc\in S$. So $\scb$ and $\scc$ are finite intersections of irreducible ideals $\Lrta\sca=\scb\cap\scc$ is a finite intersection of irreducible ideals. contradiction.
-Alternatively, by Noetherian induction, it suffice to show if $\sca$ has the property that \textbf{all strictly larger ideals $\scb\supsetneq \sca$ belongs to $S$} Then $\sca\in S$. If not, then$\sca=\scb\cap\scc, \scc,\scb\supsetneq \sca\Lrta \scb,\scc\in S$. conclude as before.
-\end{proof}
 
-Basics on primary ideals:\\
+Alternatively, by Noetherian induction, it suffice to show if $\sca$ has the property that`` \textbf{all strictly larger ideals $\scb\supsetneq \sca$ belongs to $S$}''  $\leadsto$ ``$\sca\in S$''. If $\sca$ irreducible, then we are done. If not, there exists $\scb\cap\scc$ s.t. $\sca=\scb\cap\scc.$ and $ \scc,\scb\supsetneq \sca$. $[\scb,\scc\in S]$ indeed implies $[\sca\in S]$. 
+\end{proof}
+\subsection*{Basics on primary ideals:}
 \begin{lemma}
 Let $\scq$ primary. Then $\scp:=\text{rad}(\scq)$ is prime. It is the smallest prime containing $\scq.$
 \end{lemma}
 \begin{proof}
-It suffices to show $\scp$ is prime. ($\scp$= intersection of all prime ideals containing $\scq$, hence contained in any such prime, hence is the minimal such prime.) Let $x,y\in\cala$, $xy\in\scp,x\notin \scp$. Want $y\in\scp$.\\
+1It suffices to show $\scp$ is prime. ($\scp$= intersection of all prime ideals containing $\scq$, hence contained in any such prime, hence is the minimal of such primes.) Let $x,y\in\cala$, $xy\in\scp,x\notin \scp$. Want $y\in\scp$.\\
  $(xy)^n\in\scq$ for some $n$. $x^n\notin\scq\Lrta (y^n)^m\in\scq $ for some $m$$\Lrta  y\in\scp$.
 \end{proof}
 \begin{dfn}
-If $\scq$ is primary with radical $\scp$, we call $\scq$ \textbf{$\scp$-primary}.
+If $\scq$ is primary with radical $\scp$, we say $\scq$ is  \textbf{$\scp$-primary}.
 \end{dfn}
+\begin{ex}
+All the primary ideals in $\intg$ are of the form $(0)$ and $(p^n)$ , where $p$ is a prime number and $n$ a positive integer. We can check immediately that $(p^n)$ is $(p)$-primary
+\end{ex}
 \begin{lemma}
-If $\scq_1,..,,\scq_n$, $\scp$-primary, then $\scq=\scq_1\cap...\cap \scq_n$ is $\scp$-primary.
+If $\scq_1,..,,\scq_n$ are all $\scp$-primary, then $\scq=\scq_1\cap...\cap \scq_n$ is also $\scp$-primary.
 \end{lemma}
 \begin{proof}
 Read $\scq_1\cap...\cap\scq_n=\text{rad}(\scq_1)\cap...\cap \text{rad}(\scq_n)=\scp\cap...\cap \scp=\scp$. Then it left to show $\scq_1\cap...\cap\scq_n$ is primary. 
 
-Suppose $xy\in\scq, x\notin \scp$. Want $y\in \scq$. We have $xy\in \scq_i,x\notin\scp\Lrta y\in \scq_i\forall i\Lrta y\in\scq$
+Suppose $xy\in\scq, x\notin \scp$. \underline{Want}: $y\in \scq$. We have $xy\in \scq_i,x\notin\scp\Lrta y\in \scq_i\forall i\Lrta y\in\scq$.
 \end{proof}
-
-Let $\scp$ prime. In general, a $\scp$-primary ideal $\scq$ need not be a power of $\scp$, and a power of $\scp$ need not be primary. For example:
-If $\scm$ maximal ideal, $\scq$ any ideal, and $\scm=\text{rad}(\scq)$, then $\scq$ is primary.
+\begin{rmk}
+Let $\scp$ prime. In general, a $\scp$-primary ideal $\scq$ need not be a power of $\scp$, and a power of $\scp$ need not be primary.
+\end{rmk}
+\begin{prop}
+If $\cala\supseteq\scm$ is a  maximal ideal, $\scq$ any ideal, and $\scm=\text{rad}(\scq)$, then $\scq$ is $\scm$-primary.
+\end{prop}
 \begin{proof}
-Then $\scm/\scq=Nil(\cala/\scq)$ is both a maximal ideal and the intersection of all prime ideals $\Lrta\cala/\scq$ has exactly one prime ideal, $\scm/\scq$. $(\cala/\scq,\scm,\scq)$ is a local ring. To show that $\scq$ is primary, we must show any zero divisors in $\cala/\scq$ is Nilpotent (belongs to $Nil(\cala/\scq)=\scm/\scq$) In other words, want if $x\in\cala/\scq,x\notin\scm/\scq$, then $x$ not a zero divisor. Because $x\in\cala/\scq adn x\notin \scm/\scq\Lrta \cala/\scq $is local ring with unique prime $\scm/\scq\Lrta x$ is a unit.
+Then $\scm/\scq=\text{rad}(\scq)/\scq=\text{Nil}(  \cala/\scq)$ is both a maximal ideal and the intersection of all prime ideals $\Lrta\cala/\scq$ has exactly one prime ideal, $\scm/\scq$. $(\cala/\scq,\scm/\scq)$ is a local ring. To show that $\scq$ is primary, we must show any zero-divisors  in $\cala/\scq$ is nilpotent (belongs to $\text{Nil}(  \cala/\scq)=\scm/\scq$). In other words, want if $x\in\cala/\scq,x\notin\scm/\scq$, then $x$ not a zero divisor. Because $x\in\cala/\scq $ and $ x\notin \scm/\scq\Lrta \cala/\scq $ is local ring with unique prime $\scm/\scq\Lrta x$ is a unit.
 \end{proof}
 
-\begin{lemma}
-$\scm$ maximal,$\Lrta\scm^n$ is $\scm$-primary $\forall n$
-\end{lemma}
+\begin{cor}In particular, 
+$\scm$ maximal, $\Lrta\scm^n$ is $\scm$-primary $\forall n$.
+\end{cor}
 \begin{ex}
 $\scm=(X,Y)\subseteq K[X,Y]\Lrta \scm^n$ is primary.
 \end{ex}
@@ -2628,10 +2679,10 @@ $\scm=(X,Y)\subseteq K[X,Y]\Lrta \scm^n$ is primary.
 $\scq=(X^2,Y)\subseteq K[X,Y]$ is $\scm$-primary.
 \end{ex}
 \begin{ex}
-$\sca=\prod^J_{j=1}(X-z_j)^{n_j}\subseteq \cplx[X]$ for some distinct $z_1,...,z_J\in\cplx$. Then $\sca=\scq_1\cap...\cap\scq_J$, $\scq_j=((X-z_j)^{n_j})$ $\scp_j=\text{rad}(\scq_j)=(X-z_j)$ 
+$\sca=\prod^J_{j=1}(X-z_j)^{n_j}\subseteq \cplx[X]$ for some distinct $z_1,...,z_J\in\cplx$. Then $\sca=\scq_1\cap...\cap\scq_J$, $\scq_j=((X-z_j)^{n_j})$, $\scp_j=\text{rad}(\scq_j)=(X-z_j)$ 
 \end{ex}
 \begin{ex}
-$\scq_1=(X,Y)^2=(X^2,XY,Y^2)\subseteq K[X,Y],\scp=(X,Y)$. $\scq_2=(Y)\Lrta \scp_2=(Y)$
+$\scq_1=(X,Y)^2=(X^2,XY,Y^2)\subseteq K[X,Y],\scp_1=(X,Y)$. $\scq_2=(Y)\Lrta \scp_2=(Y)$
 
 $\sca=\scq_1\cap\scq_2=(XY,Y^2)$
 \end{ex}
@@ -2640,43 +2691,65 @@ How do we talk about the uniqueness of primary decomposition?
 Sometimes you shrink a primary decomposition $\scq=\scq_1\cap...\cap\scq_n$. $\scp_j=\text{rad}(\scq_j)$ 
 \begin{enumerate}[label=(\alph*)]
 \item If $\scp_i=\scp_j$ for some $i\neq j$, then we can replace $\scq_i$ with $\scq_i\cap\scq_j$ and delete $\scq_j$.
-\item $\scq_j\supseteq \cap_{i:i\neq j}\scq_j$, then we can delete $\scq_j$.
+\item $\scq_j\supseteq \cap_{i\neq j}\scq_i$, then we can delete $\scq_j$.
 \end{enumerate}
 \begin{dfn}
-If we can't do (a) or (b), we call the resulting decomposition \textbf{minimal}. Let $\sca$ ideal, we define $Ass(\sca):=\{\text{prime ideals of the form $\text{rad}(\sca:x)$ for some $x\in\cala$}\}$ to be \textbf{the set of associated ideals of $\sca$}.(recall $y\in(\sca:x)\Llrta y$ maps $x$ into $\sca\Llrta yx\in\sca$ )
+If we can't do (a) or (b), we call the resulting decomposition \textbf{minimal}. Let $\sca$ ideal, we define $\text{Ass}(  \sca):=$\{prime ideals of the form $\text{rad}(\sca:x)$ for some $x\in\cala$\} to be \textbf{the set of associated ideals of $\sca$}.(recall $y\in(\sca:x)\Llrta y$ maps $x$ into $\sca\Llrta yx\in\sca$ )
 \end{dfn}
 
-\begin{thm}\label{thm:primary_decomposition}
-Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=Ass(\sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
+\begin{thm}(First Uniqueness Theorem of minimal primary decomposition)\label{thm:primary_decomposition_First_uniqueness}
+Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=\text{Ass}(  \sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
 \end{thm}
 
 \begin{lemma}\label{lem:p-primary_ideal}
-Let $\scq$ $\scp$-primary, $x\in\cala$.\\
+Let $\scq$ be $\scp$-primary, $x\in\cala$.
 \begin{enumerate}[label=(\alph*)]
  \item
  $x\in\scq\Lrta(\scq:x)=(1)$
 \item 
- $x\notin\scq\Lrta (\scq:x)$ is $\scp$-primary.
+ $x\notin\scq\Lrta (\scq:x)$ is $\scp$-primary and there for $\text{rad}(\scq:x)=\scp$.
 \item 
  $x\notin\scp\Lrta (\scq:x)=\scq$
 \end{enumerate}
 \end{lemma}
 
-We first show that the lemma leads to the theorem.
+We first show that the Lemma~\ref{lem:p-primary_ideal} leads to the Theorem~\ref{thm:primary_decomposition_First_uniqueness}.
 \begin{proof}
-$\{p_j\}\supseteq Ass(\sca)$. Let $x\in\cala$ s.t. $\text{rad}(\sca:x)=\scp$ is prime. want $\scp=$some $\scp+j$. $\text{rad}(\sca:x)=\cap \text{rad}(\scq_j:x)=\cap_{x\notin\scq_j}\scp_j\Lrta\scp=$some $\scq_j$
->>>>>>>>1
+$\{\scp_j\}\supseteq \text{Ass}(  \sca)$:\\
+ Let $x\in\cala$ s.t. $\text{rad}(\sca:x)=\scp$ is prime. \underline{Want}: $\scp$ equals some $\scp_j$. $\text{rad}(\sca:x)=\cap_j \text{rad}(\scq_j:x)=\cap_{x\notin\scq_j}\scp_j$. Then by prime avoidance~\ref{prop:prime_avoidance}, we know $\scp=$some $\scq_j$.
+
+For the converse inclusion, \underline{Want}: $\scp_j$ is of the form $\text{rad}(\sca:x)$ for some $x$. By Lemma~\ref{lem:p-primary_ideal}, we can choose $x_j\notin \scq_j$ and $x_j\notin\cap_{i\neq j}\scq_i$. This $x_j$ always exists because $\scp_1\cap...\cap \scp_n$ is a minimal primary decomposition and such choice of $x$ would make $\text{rad}(\sca:x)=\cap_i \text{rad}(\scq_i:x_j)=\cap_{x_j\notin\scq_i}\scp_i=\scp_j$.
 \end{proof}
 
+And now we come back to the proof of the Lemma~\ref{lem:p-primary_ideal}
+\begin{proof}\ 
+\begin{enumerate}[label=(\alph*)]
+\item follows directly from the definition of quotient of ideals and we want to prove a general fact that \textbf{ if $\scq$ is primary, then so is $(\scq:x),\forall x$}. Altogether, this means $(\scq:x)$ is $\scp$-primary.
+Let $y z\in(\scq:x),y\notin (\scq:x)$. 
 
-\subsection{Lecture 13}
+\underline{Want}: some $z^n\in(\scq:x)$
+
+Know: $xyz\in\scq,xy\notin\scq$ because $\scq$ is primary $\Lrta$ some $z^n\in\scq$.\\
+$\Lrta(\scq:x)$ is primary.
+\item  
+$x\notin\scq\overset{?}{\Lrta}\text{rad}(\scq:x)=\scp$
+
+Suppose $y^n\in(\scq:x)$
+
+\underline{Want}: $y\in\scp.$\\
+Know $xy^n\in\scq$, $x\notin\scq\Lrta y\in \text{rad}(\scq)=\scp$
+\item 
+$x\notin \scp\Lrta (\scq:x)=\scq$, the $\supseteq$ part is obvious. For the ``$\subseteq$'' suppose $y\in(\scq:x)$, i.e. $xy\in\scq$. Know $x\notin\scp$ because $\scq$ is primary, $\Lrta y\in\scq$
+\end{enumerate}
+\end{proof}
+\subsection{Lecture 13. Second Uniqueness Theorem}
 Recall the 
 First uniqueness theorem for Minimal Primary Decomposition(MPD).
 
-Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=Ass(\sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
+Let $\sca=\scq_1\cap...\cap\scq_n$ be a minimal primary decomposition. Then $\{\scp_1,...,\scp_n\}=\text{Ass}(  \sca)$. In particular, the set $\{\scp_1,...,\scp_n\}$ is independent of the choice of minimal primary decomposition.
 
 $\sca$ decomposable with $\scq_1\cap...\cap \scq_n$ being any of the MPD. take $\scp_i=\text{rad}(\scq_i)$
-$Ass(\sca)=\{\scp_1,...,\scp_n\}$
+$\text{Ass}(  \sca)=\{\scp_1,...,\scp_n\}$
 
 \begin{ex}
 MPD's need not be unique:
@@ -2687,35 +2760,13 @@ $$
 & =(x)\cap (x^2,y)
 \end{aligned}
 $$
-but $\scp_1=(x)$ and $p_2=(x,y)$
+but $\scp_1=(x)$ and $p_2=(x,y)$.
 \end{ex}
 
-
-And now we come back to the proof of the Lemma~\ref{lem:p-primary_ideal}
+\begin{prop}\label{prop:Noetherian_primary_quotint}
+If $\cala$ is Noetherian and $\scq$ is a $\scp$-primary ideal, then $\exists x\in\cala$ s.t. $(\scq:x)=\scp$ (necessarily $x\notin \scq$)
 \begin{proof}
-\begin{enumerate}[label=(\alph*)]
-\item let $y z\in(\scq:x),y\notin (\scq:x)$. 
-
-Want: some $z^n\in(\scq:x)$
-
-Know: $xyz\in\scq,xy\notin\scq$ because $\scq$ is primary $\Lrta$ some $z^n\in\scq$.\\
-$\Lrta(\scq:x)$ is primary.
-\item 
-Want: $\text{rad}(\scq:x)=\scq$
-
-Suppose $y^n\in(\scq:x)$
-
-Want: $y\in\scp.$\\
-Know $xy^n\in\scq$, $x\notin\scq\Lrta y\in \text{rad}(\scq)=\scp$
-\item 
-$x\notin \scp\Lrta (\scq:x)=\scq$, the $\supseteq$ part is obvious. For the ``$\subseteq$'' suppose $y\in(\scq:x)$, i.e. $xy\in\scq$. Know $x\notin\scp$ because $\scq$ is primary, $\Lrta y\in\scq$
-\end{enumerate}
-\end{proof}
-
-\begin{prop}
-If $\cala$ is Noetherian, then $\exists x\in\cala$ s.t. $(\scq:x)=\scp$ (necessarily $x\notin \scq$)
-\begin{proof}
-$\scp$ finitely generated ideal $x\in\scp\Lrta$ some $x^n\in\scq\Lrta $ some $\scp^n\subseteq \scq$ \\
+$\scp$ finitely generated ideal $\forall x_i\in\scp\Lrta$ some $x_i^m\in\scq\Lrta $ some $\scp^n\subseteq \scq$ Any $n\geq \sum_i (m_i-1)+1$ would work.  \\
 Choose $n\geq 1$ minimal with this property. Then $\scp^{n-1}\not\subseteq\scq\Lrta \exists x\in\scp^{n-1},x\notin\scq$.
 
 Claim: $(\scq:x)=\scp$.
@@ -2730,21 +2781,21 @@ Claim: $(\scq:x)=\scp$.
 $k$ is field, and $\cala=k[t]$, $\scq=(t^N),N\geq 1$, $\scp=(t)$.
 
 $x\in\cala\Lrta x=c t^n+c' t^{n+1}+...,$ where $c\neq 0, n\geq 0, n=:ord_t(x)$
-for example: $x=t^4,+4t^2$, $ord_t(x)=2$
-$\frac{x}{1}\in\cala_\scp$, $\left(\frac{x}{1}\right)=\left(\frac{t^n}{1}\right)$
+for example: $x=t^4+4t^2$, $ord_t(x)=2$.
+$\frac{x}{1}\in\cala_\scp$, $\left(\frac{x}{1}\right)=\left(\frac{t^n}{1}\right)$.
 
 Then $(\scq:x)=(t^m)$, where $m=\text{max}(N-n,0)$
 
-$x\in\scq\Llrta n\geq N\Llrta m=0$
+$x\in\scq\Llrta n\geq N\Llrta m=0$.
 
 $x\notin\scq\Llrta m\geq 1\Lrta (\scq:x)$ is $\scp$-primary.
 
-$x\in(t^{N-1}),$ but $x\notin(t^N)\Lrta(\scq:x)=\scp$
+$x\in(t^{N-1}),$ but $x\notin(t^N)\Lrta(\scq:x)=\scp$.
 
-$x\notin\scp\Llrta n=0\Llrta m=N\Lrta (\scq:x)=\scq$
+$x\notin\scp\Llrta n=0\Llrta m=N\Lrta (\scq:x)=\scq$.
 \end{ex}
 
-Now we come to the proof of Theorem~\ref{thm:primary_decomposition}
+Now we come to the proof of Theorem~\ref{thm:primary_decomposition_First_uniqueness}
 \begin{proof}
 Given a MPD $\sca=\scq_1\cap...\cap\scq_n$, $x\in\cala$, we can compute $(\sca:x)=\cap_{j}(\scq_j:x)$
 $$
@@ -2753,52 +2804,61 @@ $$
 
 Since this decomposition is minimal, we may find for each $i$ an element $x\in\cap_{j\neq i}\scq_j$, $x\notin\scq_i$\\
 $\Lrta \text{rad}(\sca:x)=\scp_i$\\
-$\Lrta \scp_i\in Ass(\sca)$.\\ ($\scq_i\not \subseteq \cap_{j\neq i}\scq_j$) 
+$\Lrta \scp_i\in \text{Ass}(  \sca)$.\\ ($\scq_i\not \subseteq \cap_{j\neq i}\scq_j$) 
 
-Conversely, if $\scp$ is a prime of the form $\scp=\text{rad}(\sca:x)$ for some $x$, then $\scp=\cap_{j:\scq_j\not\ni x}\scp_j\Lrta \scp=\scp_j$ for some $j$. $\Lrta Ass(\sca)\subseteq \{\scp_1,...,\scp_n\}$
+Conversely, if $\scp$ is a prime of the form $\scp=\text{rad}(\sca:x)$ for some $x$, then $\scp=\cap_{j:\scq_j\not\ni x}\scp_j\Lrta \scp=\scp_j$ for some $j$. $\Lrta \text{Ass}(  \sca)\subseteq \{\scp_1,...,\scp_n\}$
 \end{proof}
 
-This completes the proof the Theorem~\ref{thm:primary_decomposition}. Moreover, if $\cala$ is Noetherian, we may find for each $i$ an element $x$ with $(\sca:x)=\scp_i$, by applying the final part of the last lemma.
+This completes the proof the Theorem~\ref{thm:primary_decomposition_First_uniqueness}. Moreover, if $\cala$ is Noetherian, we may find for each $i$ an element $x_i$ with $(\sca:x_i)=\scp_i$, by applying the final part of Proposition~\ref{prop:Noetherian_primary_quotint}.
 
 
-\textbf{Note that} $\text{rad}(\sca)=\cap\scp_j$ if $\sca=\cap\scq_j$ is a  MPD.
-We want to define 
-\textbf{Zero-divisors modulo $\sca$}, 
+\begin{prop}\label{prop:zero-divisors_modulo_a}
+(Definition) $\text{rad}(\sca)=\cap\scp_j$, if $\sca=\cap\scq_j$ is a  MPD. We want to define 
+\textbf{Zero-divisors modulo $\sca$}: 
 $$
 \begin{aligned}
 Z(\sca)&:=\{x\in\cala|\exists y\in\cala-\sca\ s.t.\ xy\in\sca\}\\
+&=\{x\in\cala|(\sca:x)\nsubseteq\sca\}\\
 &=\cup_{y\in\cala-\sca}(\sca:y)\\
-&\overset{(*)}{=}\cup_{y\in\cala-\sca}\text{rad}((\sca:y))
+&\overset{(*)}{=}\cup_{y\in\cala-\sca}\text{rad}(\sca:y)
 \end{aligned}
 $$
-\begin{proof} of the (*), if some prower $x^n$ of $x$ satisfies $x^m\in(\sca:y)$, i.e. $x^n y\in\sca,$ then we may choose $n\geq 1$ minimal with thei property. Then $x\cdot x^{n-1}y\in \sca$ but $x^{n-1}y \notin \sca$. As $x\in(\sca:x^{n-1}y)\Lrta (*)$
+\end{prop}
+\begin{proof} of the $(*)$. It suffices to prove that $=\cup_{y\in\cala-\sca}(\sca:y)\supseteq\cup_{y\in\cala-\sca}\text{rad}(\sca:y)$. \underline{Want}:  if some prower $x^n$ of $x$ satisfies $x^n\in(\sca:y)$ then $\exists y'$ s.t. $x\in (\sca:y')$.  $x^n\in(\sca:y)\Llrta x^n y\in\sca,$ then we may choose $n\geq 1$ minimal with this property. Then $x\cdot x^{n-1}y\in \sca$ but $x^{n-1}y \notin \sca$. As $x\in(\sca:x^{n-1}y)$. Choose $y'=x^{n-1}y$, we are done.
 \end{proof}
 
 \begin{prop}
 $\sca=\cap\scq_j$ MPD,
 $\Lrta Z(\sca)=\cup\scp_j$.
 \begin{proof}
-$\text{rad}(\sca:y)=\cap_{j:\scq_j\not \ni y}\scp_j$,\\ $Z(\sca)\subseteq \cup\scp_j$: Let $x\in Z(\sca)$. We want to show that $x$ is contained in some $\scp_j$. The fact that $x\in Z(\sca)\Lrta(\sca:x)\not \subseteq \sca$. On the other hand, we know $(\sca:x)=\cap_j(\scq:x)$ and we know $(\scq_j:x)$ is $\scp_j$-primary ideal if $x\notin\scq_j$, or $(\scq_j:x)=\scq_j$ if $x\notin\scp_j$.
+$Z(\sca)\subseteq \cup\scp_j$: Let $x\in Z(\sca)$. 
 
-If $x\notin\scp_j\forall j$, then $(\scq_j:x)=\scq_j\Lrta (\sca:x)\cap_{\scq_j}=\sca$, contrary to the hypothesis that $x\in Z(\sca)$.
+\underline{Want}:  to show that $x$ is contained in some $\scp_j$. 
 
-For the reverse inclusion, suppose $x\notin Z(\sca)$. Want to show that $x\notin\scp_j\forall j$. Alternatively, we might try to show  $\cup\scp_j\subseteq Z(\sca)$.
+\underline{Know}: $x\in Z(\sca)\Lrta(\sca:x)\not \subseteq \sca$. On the other hand, we know $(\sca:x)=\cap_j(\scq_j:x)$ and we know $(\scq_j:x)$ is $\scp_j$-primary ideal if $x\notin\scq_j$, or $(\scq_j:x)=\scq_j$ if $x\notin\scp_j$.
 
-Recall: give $j$, we can find $y$ s.t. $\text{rad}(\sca:y)=\scp_j$. Necessarily, $y\notin\sca$. So if $x\in \scp_j$, then $x\in  \text{rad}(\sca:y)\subseteq Z(\sca)$ because $\text{rad}(\sca:y)=\cap_{j:\scq_j\not\ni y}\scp_j$ 
+If $x\notin\scp_j\forall j$, then $(\scq_j:x)=\scq_j\Lrta (\sca:x)=\cap {\scq_j}=\sca$, contrary to the hypothesis that $x\in Z(\sca)$.
+
+{\color{red} In fact, this can be seen directly from $$Z(\sca)=\cup_{y\in\cala-\sca}\text{rad}(\sca:y)=\cup_{y\in\cala-\sca}\cap_{j:\scq_j\notin y}\scp_j\subseteq\cup \scp_j$$ }
+
+For the reverse inclusion, we might try to show  $\cup\scp_j\subseteq Z(\sca)$.
+
+Recall:$\text{rad}(\sca:y)=\cap_{j:\scq_j\not \ni y}\scp_j$. Give $j$, we can find $y$ s.t. $\text{rad}(\sca:y)=\scp_j$. See the proof of Theorem~\ref{thm:primary_decomposition_First_uniqueness},  each $i$ an element $x\in\cap_{i\neq j}\scq_i$, $x\notin\scq_j$. Necessarily, $y\notin\sca$. So if $x\in \scp_j$, then $x\in  \text{rad}(\sca:y)\subseteq Z(\sca)$ because $Z(\sca)=\cup_{y\in\cala-\sca}\text{rad}(\sca:y)$.
 \end{proof}
 \end{prop}
 
-
-A good example for intuition, $\{z_1,...,z_n\}\subseteq k$ where $k$ is a field. $\sca=\cap \scq_j, \scq_k=(t-z_j)^{N_j}$ and $\cala=k[t]$.
-by the theorem $0\neq x\in\cala\Lrta n_j:=ord_{t-z_j}(x):=$largest $n_j\geq 0$ such that $(t-z_j)^{n_j}$ divides $x$.\\
+\begin{ex}
+A good example for intuition, $\{z_1,...,z_n\}\subseteq k$ where $k$ is a field. $\sca=\cap \scq_j, \scq_j=(t-z_j)^{N_j}$ and $\cala=k[t]$.
+$0\neq x\in\cala\Lrta n_j:=ord_{t-z_j}(x):=$largest $n_j\geq 0$ such that $(t-z_j)^{n_j}$ divides $x$.\\
 Then $x\in Z(\sca)\Llrta \exists j:n_j\geq 1$.\\
-$x\in \text{rad}(\sca)\Llrta \forall j, n_j\geq1$.
-\textbf{NB:} $n_j=$ order of vanishing of $x $ at $z_j$, $n_j\geq c\Llrta $ first $c$ Taylor coefficients of $x$ at $z_j$
-
+$x\in \text{rad}(\sca)\Llrta \forall j, n_j\geq1$.\\
+\textbf{N.b.} $n_j=$ order of vanishing of $x $ at $z_j$, $n_j> c\Llrta $ first $c$ Taylor coefficients of $x$ all vanish at $z_j$.
+\end{ex}
 \begin{dfn}
-$Ass(\sca)\ni \scp$ is either \\
-\textbf{minimal/isolated} is $\scp$ is a minimal element of $Ass(\sca)$ (We usually denote the set of isolated primes in $Ass(\sca)$ by $Ass'(\sca)$)or\\
-\textbf{embedded} if $\scp_1\subsetneq \scp_2\Lrta V(\scp_1)\supseteq V(\scp_2)$ embedded in $V(\scp_1)$. 
+$\text{Ass}(  \sca)\ni \scp$ is either \textbf{minimal/isolated} if $\scp$ is a minimal element of $\text{Ass}(  \sca)$ (under the partial order of inclusion) or\\
+\textbf{embedded} if the $\scp$ strictly contains some other ideals in $\text{Ass}(\sca)$. Geometrically, $\scp_1\subsetneq \scp_2\Lrta V(\scp_1)\supseteq V(\scp_2)$ embedded in $V(\scp_1)$. 
+
+We usually denote the set of isolated primes in $\text{Ass}(  \sca)$ by $Ass'(\sca)$
 \end{dfn}
 \begin{ex}
 $\scp_1=(x), \scp_2=(x,y)$\\
@@ -2806,8 +2866,8 @@ $\sca=\scp_1\cap\scp_2^2=(xy,x^2)$, $\scp_1$ is isolated/minimal while $\scp_2$ 
 \end{ex}
 
 Then we state the second unique decomposition theorem:
-\begin{thm}\label{thm:secon_unique_decomposition}
-In any MPD $\sca=\cap \scq_j$, $\{\scq_j:\scp_j\text{ is minimal}\}$ depends only upon $\sca$. More precisely, for $\scp_j$ minimal, we have $\scq_j=\iota^*(\iota_*(\sca))$, where $\iota:\cala\lrta \cala_{p_j}$
+\begin{thm}\label{thm:secon_unique_decomposition}(Second Uniqueness Theorem)
+In any MPD $\sca=\cap \scq_j$, $\{\scq_j:\scp_j\text{ is minimal}\}$ depends only upon $\sca$, independent of the choice of MPD. More precisely, for $\scp_j$ minimal, we have $\scq_j=\iota^*(\iota_*(\sca))$, where $\iota:\cala\lrta \cala_{\scp_j}$.
 \end{thm}
 Recall that for a multiplicative set $S\subseteq \cala$, $\iota:\cala\lrta S^{-1}\cala$:
 
@@ -2829,58 +2889,50 @@ $x\in \iota^*\iota_*(\sca)\Lrta $ $\frac{x}{1}\in\iota_*\sca=\{\frac{y}{s}:y\in\
 \end{lemma}
 
 \begin{lemma}\label{lem:second_uniqueness_decomposition}
-$S\subseteq \cala$ is multiplicative set $\scq\subseteq \cala$ primary and $\scp=\text{rad}(\scq)$. Then:
+$S\subseteq \cala$ is multiplicative set, $\scq\subseteq \cala$ primary and $\scp=\text{rad}(\scq)$. Then:
 \begin{enumerate}[label=(\alph*)]
 \item $\scp\cup S\neq \emptyset \Lrta \iota_*\scq=(1)$
-\item $\scp\cap S=\emptyset$($\iota_*\scp$ is prime)$\Lrta \iota_*\scq$ is $\iota_* \scp$-primary and $\iota^*\iota_* \scq=\scq$.
+\item $\scp\cap S=\emptyset$ $\Lrta \iota_*\scq$ is $\iota_* \scp$-primary and $\iota^*\iota_* \scq=\scq$.
 \item $S\cap \scq =\emptyset \Llrta S\cap \scp=\emptyset$ 
 \end{enumerate}
 \begin{proof}
 \begin{enumerate}[label=(\alph*)]
 \item 
-Suppose $\scp\cap S\neq \emptyset$, Say $s_0\in \scp\cap S.\Lrta \exists n\geq 1: s_0^n\in \scq\cap S$
+Suppose $\scp\cap S\neq \emptyset$, say $s_0\in \scp\cap S.\Lrta \exists n\geq 1: s_0^n\in \scq\cap S$
 $$
-\iota_*\scq=\{\frac{x}{s}:x\in \scq, s\in S\}
+\iota_*\scq=\left\{\frac{x}{s}:x\in \scq, s\in S\right\}
 $$
-Want $\frac{1}{1}\in \iota_* \scq\Lrta \frac{1}{1}=\frac{s_0^n}{s_0^n}\in \iota_*\scq$
-\item Suppose $\scp \cap S=\emptyset$. Then $\text{rad}(\iota_*(\scq))=\iota_*(\text{rad}(\scq))=\iota_*\scp$.
+$\frac{1}{1}=\frac{s_0^n}{s_0^n}\in \iota_*\scq$ $\Lrta\iota_*\scq=(1)$.
+\item Suppose $\scp \cap S=\emptyset$. Recall that localization commutates with taking radicals~\ref{lem:radical_commutates_localization}, $\text{rad}(\iota_*(\scq))=\iota_*(\text{rad}(\scq))=\iota_*\scp$. Then if suffices to show that $\iota_*\scq$ is primary. 
 
-Let $\frac{x}{s},\frac{y}{t}\in S^{-1}\cala$, Suppose $(\frac{x}{s})\frac{y}{t}\in \iota_* \scq ,\frac{y}{t}\notin \iota_*\scq$, Want : some $(\frac{x}{s})^n\in \iota_*\scq$
-\end{enumerate}
-\end{proof}
-\end{lemma}
+Let $\frac{x}{s},\frac{y}{t}\in S^{-1}\cala$, Suppose $(\frac{x}{s})\frac{y}{t}\in \iota_* \scq ,\frac{y}{t}\notin \iota_*\scq$, \underline{Want}: some $(\frac{x}{s})^n\in \iota_*\scq$.
 
-\subsection{Lecture 14}
-Last lecture we ended before we prove the second uniqueness theorem of primary decomposition~\ref{lem:second_uniqueness_decomposition}. Now we continue:
-
-\begin{proof}
-Last time $\text{rad}(\iota_*\scq)=\iota_*\text{rad}(\scq)=\iota_*\scp$.\\
 Note : we may assume $\scq=(0)$, because localization is exact, hence commutes with taking quotients
 $$
-S^{-1}(\cala/\scq)\cong S^{-1}\cala/\iota_*\scq
+S^{-1}(\cala/\scq)\cong S^{-1}\cala/\iota_*\scq.
 $$
-Thus take $\scq=(0)$, Assume $S\cap \scq=\emptyset$, i.e.  $S\not \ni 0$\\
-Want:
+
+Then the original statement translates to:
 \begin{enumerate}[label=(\roman*)]
-\item $\iota:$ injective (i.e. $\iota^*(0)=\iota^*\iota_*(0)\overset{?}{=}(0)$)
+\item $\iota$ is injective  (i.e. $\iota^*(0)_{S^{-1}\cala}=\iota^*\iota_*(0)\overset{?}{=}(0)$)
 \item $\iota_*(0)=(0)_{S^{-1}\cala}$ is primary.
 \end{enumerate}
-These implies the remaining assertions $(\text{for }\scq=(0))$.
+These implies the remaining assertions $(\text{for }\scq=(0))$. In this case $\scp$ is the set of nilpotents in $\cala$.
+Thus take $\scq=(0)$ and require $(0)$ to be primary in $\cala$. Assume $S\cap \scp=\emptyset$, i.e.  $S$ contains no nilpotents.\\
 
 Proof of (i):\\
-By the general fact that $\frac{x}{1}=\frac{0}{1}\Llrta \exists s\in S : xs=0\Llrta x=0 \text{ or } S \text{ contains a zerodivisor }s : xs=0$,\\
- (i) $\Llrta S$ contains no nonzero zerodivisors. \\
-$\Llrta$($(0)\subseteq \cala$ is primary) $S$ contains no nilpotents\\
-$\Llrta S\cap \scp =\emptyset\Llrta S\cap \scq=\emptyset\Llrta S\not \ni 0$
+Recall Lemma~\ref{lem:localization_inj_surj_iso} that $\iota$ injective: $(i)$ $\Llrta S$ contains no nonzero zero-divisors. Note that $(0)\subseteq \cala$ is primary $\overset{def}{\Llrta}$ \{ zero-divisors in $\cala$\} $\cong$\{nilpotents in $\cala$\}.   \\
+$(i)\Llrta$  $S$ contains no nilpotents.\\
+$\Llrta S\cap \scp =\emptyset$.
 
 Thus $(i)$ holds.
 
-proof of (ii):
+Proof of $(ii)$:
 $$
 \begin{aligned}
 \left\{
 \begin{aligned}
-& \text{Zerodivisors }\\
+& \text{zero-divisors }\\
 &\text{ in } S^{-1}\cala
 \end{aligned}
 \right\}
@@ -2899,64 +2951,88 @@ $$
 &\text{where } uy \neq 0
 \end{aligned}
 \right\}\\
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
 &=\left\{
 \begin{aligned}
 & \frac{x}{s}: s\in S\\
 & x\in \cala \text{ is  zerodivisor}
 \end{aligned}
 \right\}\\
-&=\left\{ \frac{x}{s}: s\in S, x\in \cala\text{ is nilpotent}\right\}((0)\subseteq \cala\text{ is primary})\\
-&=Nil(S^{-1}\cala),(\text{ by the general fact that radical commutes with localizations})
 \end{aligned}
 $$
-Thus \{zerodivisors in $S^{-1}\cala$\}=$Nil(S^{-1}\cala)$, so $(0)_{S^{-1}\cala}$ is primary.
->>>>>>>>>1
 
+$$
+\begin{aligned}
+&=\left\{ \frac{x}{s}: s\in S, x\in \cala\text{ is nilpotent}\right\}((0)\subseteq \cala\text{ is primary})\\
+&=S^{-1}(\text{Nil}(\cala))\\
+&=\text{Nil}(  S^{-1}\cala),\\
+&(\text{ by the fact that radical commutes with localizations})
+\end{aligned}
+$$
+Thus \{zero-divisors in $S^{-1}\cala$\}=$\text{Nil}(  S^{-1}\cala)$, so $(0)_{S^{-1}\cala}$ is primary.
 
-
-The $\Llta$ direction of (c) is trivial. For the ``$\Lrta$'' direction of (c) Suppose $\exists s\in S\cap\scp$. Since $\scp=\text{rad}(\scq)$, $\exists n\geq 1 $ s.t. $s^n\in \scq$. $S$ multiplicative closed $\Lrta s^n\in S$. Thus $s\in S\cap \scq$. So $S\cap \scp\neq \emptyset \Lrta S\cap\scq\neq \emptyset$
-
+\item The ``$\Llta$'' direction of (c) is trivial. For the ``$\Lrta$'' direction of (c), suppose $\exists s\in S\cap\scp$. Since $\scp=\text{rad}(\scq)$, $\exists n\geq 1 $ s.t. $s^n\in \scq$. $S$ multiplicative closed $\Lrta s^n\in S$. Thus $s^n\in S\cap \scq$. So $S\cap \scp\neq \emptyset \Lrta S\cap\scq\neq \emptyset$.
+\end{enumerate}
 \end{proof}
-
+\end{lemma}
 
 \begin{dfn}
-In that case call $\scq_j$ the $\scp_j$-primary component of  $\scq$.
+In that case call $\scq_j$ the $\scp_j$-primary component of  $\sca$.
 \end{dfn}
 
 \begin{lemma}
-Let $\sca$ decomposable. Then $Ass'(\sca)=\{\text{minimal primes $\scp$ containing $\sca$}\}$
+Let $\sca$ decomposable. Then $Ass'(\sca)=\{\text{minimal primes $\scp$ containing $\sca$}\}$, here minimal means that there is no intermediate primes between $\scp$
+ and $\sca$.
 \end{lemma}
 \begin{proof}
->>>>>>>>>>2
+It suffices to show that if any prime $\scp\supseteq \sca$, then there exists $\scp_j\in \text{Ass'}(\sca)$ s.t. $\scp_j\subseteq \scp$. Indeed, $\scp\supseteq\sca$ $\Lrta\scp\supseteq\text{rad}(\sca)=\text{rad}(\cap \scq_j)=\cap_j\text{rad}(\scq_j)=\cap_j\scp_j$. Then $\scp\supseteq\scp_j$ for some $j$, because of prime avoidance~\ref{prop:prime_avoidance}.
 \end{proof}
 
 \begin{thm}
-$\cala\supseteq \sca=\cap_{j=1}^n\scq_j$ MPD. If $\scp_\in Ass'(\sca),$ then 
+$\cala\supseteq \sca=\cap_{j=1}^n\scq_j$ MPD. If $\scp_j \in Ass'(\sca),$ then 
 $$
 \scq_j=\iota^*\iota_*\sca,\iota:\cala\lrta \cala_{\scp_{j}}
 $$
-As a Corollary\\
-$\scq_j$ depends only on $\sca,\scp_j$
+As a Corollary, the isolated primary component of $\sca$ does not depend on MPD.
 \end{thm}
 \begin{proof}
 $$
 \begin{aligned}
 \iota^*\iota_*\sca&=\iota^*(\iota_*(\cap\scq_i))=\iota^*(\cap\iota_*\scq_i)=\cap\iota^*\iota_*\scq_i\\
-&
+\iota^*\iota_*\scq_i&
 =\left\{
 \begin{aligned}
-&\scq_i: i= j\\
+&\scq_i: i= j(\text{By Lemma~\ref{lem:second_uniqueness_decomposition}})\\
 & (1) :i\neq j
 \end{aligned}
 \right.
-(\text{By the lemma from start of the class})
 \end{aligned}
 $$
 For the second identity, we must check that $\forall i\neq j$, $S\cap \scq_i\neq \emptyset\Llrta \scq_i\not\subseteq \scp_j$
 
-If $\scp_i\not\subseteq \scp_j$ $x\in\scp_i,x\notin\scp_j$ then some $x^n\in\scq_i,$ $\scp_i=\text{rad}(\scq_i)$, $x^n\notin \scp_j$ because $\scp_j$ is prime $\Lrta \scq_i\not\subseteq \scp_j$
+If $\scp_i\not\subseteq \scp_j$ $x\in\scp_i,x\notin\scp_j$ then some $x^n\in\scq_i,$ $\scp_i=\text{rad}(\scq_i)$, $x^n\notin \scp_j$ because $\scp_j$ is prime $\Lrta \scq_i\not\subseteq \scp_j$.
 \end{proof}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Dimension Theory}
+
+\subsection{Lecture 14. Artin Rings}
 \begin{dfn}
 An $\cala$-module $M$ is called \textbf{Artin} or \textbf{Artinian} is it satisfies either of the following equivalent conditions:
 \begin{enumerate}[label=(\roman*)]
@@ -2999,7 +3075,7 @@ $(2)\supsetneq (2^2)\supsetneq (2^3)....$
 \end{ex}
 
 \begin{lemma}\label{lem:primes_are_maximal_in_Artin}
-Let $\cala$ Artin. Then every prime in $\cala$ is maximal $\cala$ has only finitely many primes, hence the Jacobson radical $\text{Jac}(\cala)=Nil(\cala)$
+Let $\cala$ Artin. Then every prime in $\cala$ is maximal $\cala$ has only finitely many primes, hence the Jacobson radical $\text{Jac}(\cala)=\text{Nil}(  \cala)$
 \end{lemma}
 \begin{proof}
 Let $\scp\subseteq \cala$ be prime. Set $\calb:\cala/\scp$. Then $\calb$ Artin, integral domain.
@@ -3011,7 +3087,7 @@ Consider distinct maximal ideals $\scm_1,\scm_2,...\in\cala$. Consider $\scm_1\s
 \end{proof}
 
 \begin{prop}\label{prop:Artin_nilpotent_nilradical}
-$\cala$ is Artin $\Lrta \mathcal{N}:=Nil(\cala)$ is nilpotent: $\exists n\geq 0,\mathcal{N}^n=(0)$
+$\cala$ is Artin $\Lrta \mathcal{N}:=\text{Nil}(  \cala)$ is nilpotent: $\exists n\geq 0,\mathcal{N}^n=(0)$
 \end{prop}
 \begin{rmk}
 $$
@@ -3021,7 +3097,7 @@ hence $\mathcal{N}=\oplus^n_{i=1}(X_i)$, where $(X_i)\subseteq k[X_i]/(X^i_i)$ $
 \end{rmk}
 
 \begin{proof}
-Let $\mathcal{J}:= Nil(\cala)=\text{Jac}(\cala)$ by the lemma. Consider $\mathcal{J}\supseteq \mathcal{J}^2\supseteq \mathcal{J}^3\supseteq ...$ $\cala$ is Artin $\Lrta \mathcal{J}^n=\mathcal{J}^{n+1}$ for some $n$, Want $\mathcal{J}^n=(0)$\\
+Let $\mathcal{J}:= \text{Nil}(  \cala)=\text{Jac}(\cala)$ by the lemma. Consider $\mathcal{J}\supseteq \mathcal{J}^2\supseteq \mathcal{J}^3\supseteq ...$ $\cala$ is Artin $\Lrta \mathcal{J}^n=\mathcal{J}^{n+1}$ for some $n$, Want $\mathcal{J}^n=(0)$\\
 
 Denote $\mathcal{I}:=\mathcal{J}^n$. Note that $\mathcal{J}\mathcal{I}=\mathcal{I}$, if we know that $\mathcal{I}$ were finitely generated, suppose $\mathcal{I}\neq (0)$. Then Nakayama lemma $\Lrta \mathcal{I}=(0)$
 
@@ -3030,8 +3106,6 @@ $\mathcal{J}^n(x)=\mathcal{J}^{n+1}(x)=\mathcal{J}^n\mathcal{J}(x)$.
 Want $\mathcal{J}(x)=(x)$\\
 If not, then $\mathcal{J}(x)$ is a nonut now $(x)$ finitely generated, so we conclude by Nakayama
 \end{proof}
-\section{Dimension Theory}
-
 \subsection{Lecture 15}
 \begin{dfn}
 The \textbf{Krull dimension} of a nonzero ring $\cala$, denoted $dim(\cala)$, is the supremum of all $r\geq 0$ s.t. $\exists$ chain of primes in $\cala$ of length $r$: 
@@ -3120,7 +3194,7 @@ $$
 & \Lrta \text{\{primes in $\cala$\}}=\{\scp_1,...,\scp_r\} \text{ are all maximal.}
 \end{aligned}
 $$
-Consider $(\scp_1,...,\scp_r)^N\subseteq (\scp_1\cap...\cap\scp_r)^N\subseteq (0)$, where $(\scp_1\cap...\cap \scp_r)=Nil(\cala)=\text{rad}(0)$ and we can conclude the last inclusion by Lemma~\ref{lem:ideal_radical_Noetherian}
+Consider $(\scp_1,...,\scp_r)^N\subseteq (\scp_1\cap...\cap\scp_r)^N\subseteq (0)$, where $(\scp_1\cap...\cap \scp_r)=\text{Nil}(  \cala)=\text{rad}(0)$ and we can conclude the last inclusion by Lemma~\ref{lem:ideal_radical_Noetherian}
 \end{proof}
 \begin{dfn}
 A ring $\cala$ is called \textbf{primary} iff $(0)$ is primary.
@@ -3131,7 +3205,7 @@ $\cala$ is Artin. Then $\cala$ local $\Llrta $ primary.
 \begin{proof}
 ``$\Lrta$ '':\\
 $(\cala:\scm)$ is local $\Llrta \scm $ is the unique prime ideal.\\
-$\Lrta$ $\scm=\text{Jac}(\cala)=Nil(\cala)$\\
+$\Lrta$ $\scm=\text{Jac}(\cala)=\text{Nil}(  \cala)$\\
 $\Lrta\scm^N=0$ for some $N\geq 0$\\
 $\cala-\scm=\cala^\times$
 $\Lrta\scm=\{\text{zero divisors}\}=\text{Nilpotents}=\text{Non-units}$ because $(0)$ is primary.\\

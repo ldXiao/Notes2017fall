@@ -340,5 +340,4 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tf
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/doublestroke/dsrom8.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm
-INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti7.tfm
 INPUT CA.aux
