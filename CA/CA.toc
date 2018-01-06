@@ -1,4 +1,4 @@
-\contentsline {section}{\numberline {1}Rings, ideals, radicals}{3}{section.1}
+\contentsline {section}{\numberline {1}Rings, Ideals, Radicals}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Lecture 1. Motivation and Basics by Paul Steinmann}{3}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Lecture 2. local rings, coprime ideals, ideal quotients by Paul Steinmann}{7}{subsection.1.2}
 \contentsline {section}{\numberline {2}Modules}{11}{section.2}
@@ -18,21 +18,21 @@
 \contentsline {subsection}{\numberline {5.1}Lecture 12. Associated Ideals and First Uniqueness Theorem}{58}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Lecture 13. Second Uniqueness Theorem}{62}{subsection.5.2}
 \contentsline {section}{\numberline {6}Dimension Theory}{68}{section.6}
-\contentsline {subsection}{\numberline {6.1}Lecture 14. Artin Rings}{68}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Lecture 15}{69}{subsection.6.2}
-\contentsline {subsection}{\numberline {6.3}Lecture 16 Krull's Intersection Theorem}{73}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Lecture 17: Artin-Rees, Krull principal ideal theorem}{76}{subsection.6.4}
-\contentsline {subsection}{\numberline {6.5}Lecture 18 Krull Dimension Theorem}{80}{subsection.6.5}
-\contentsline {subsection}{\numberline {6.6}Lecture 19: Converse of Krull dimension theorem, System of Parameters}{83}{subsection.6.6}
-\contentsline {subsection}{\numberline {6.7}Lecture 20}{86}{subsection.6.7}
-\contentsline {section}{\numberline {7}Integral extension of rings}{88}{section.7}
-\contentsline {subsection}{\numberline {7.1}Lecture 20}{88}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Lecture 21}{90}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Lecture 22}{94}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Lecture 23}{96}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}Lecture 24}{99}{subsection.7.5}
-\contentsline {subsection}{\numberline {7.6}Lecture 25}{104}{subsection.7.6}
-\contentsline {section}{\numberline {8}Valuation rings and Normality}{104}{section.8}
-\contentsline {subsection}{\numberline {8.1}Lecture 26}{107}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Lecture 27}{110}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Lecture 28}{113}{subsection.8.3}
+\contentsline {subsection}{\numberline {6.1}Lecture 14. Artinian Rings}{68}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Lecture 15. Krull Dimension, Artinian v.s. Noetherian}{70}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Lecture 16. Krull's Intersection Theorem}{74}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Lecture 17. Krull's Principal Ideal Theorem}{79}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}Lecture 18. Krull Dimension Theorem}{83}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Lecture 19. Converse of Krull dimension theorem, System of Parameters}{85}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Lecture 20}{87}{subsection.6.7}
+\contentsline {section}{\numberline {7}Integral extension of rings}{90}{section.7}
+\contentsline {subsection}{\numberline {7.1}Lecture 20}{90}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Lecture 21}{91}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Lecture 22}{95}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Lecture 23}{98}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Lecture 24}{101}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}Lecture 25}{105}{subsection.7.6}
+\contentsline {section}{\numberline {8}Valuation rings and Normality}{106}{section.8}
+\contentsline {subsection}{\numberline {8.1}Lecture 26}{108}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Lecture 27}{111}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Lecture 28}{115}{subsection.8.3}
