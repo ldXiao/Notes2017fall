@@ -3,6 +3,8 @@
 \usepackage{latexsym}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{fancyhdr}
+\pagestyle{headings}
 \usepackage{dsfont}
 \usepackage{pifont}
 \usepackage{mathtools}
@@ -1786,7 +1788,7 @@ See Proposition~\ref{prop:properties_extension_contractino}, $\iota_*(\iota^*(\s
 \end{enumerate} 
 \end{proof}
 \begin{rmkt}
-  Notice that $\scq\cap\{\frac{a}{1}|a\in\cala\}$ is not necessarily an ideal in $S^{-1}\cala$. Explicit example shows that $\iota_*$ does not in general preserves the proper inclusion ``$\subsetneq$''. Let $\cala:=\intg$, $S:=\{2^n:n\in \intg_{\geq 0}\}$, then $S^{-1}\cala=\intg[1/2]$, $(2)\supsetneq (4)$ in $\cala$ but $\iota_*((2))=\iota_*((4))=S^{-1}(\cala)$. But however, unlike general $\varphi^*$, $\iota^*$ indeed preserves the proper inclusion. $\iota_*(\iota^*(\scb))=\scb\subsetneq \sca=\iota_*(\iota^*(\sca))\Lrta \iota^*(\scb)\subsetneq \iota^*(\sca)$. Or equivalently, $\frac{c}{s}\notin \sca\Lrta \frac{c}{1}\notin\sca\Lrta c\notin\iota^*(\sca)$. The fact that $\iota^*$ preserves proper inclusion is crucial for the claim $dim(\cala_\scp)=ht(\scp)$.
+  Notice that $\scq\cap\{\frac{a}{1}|a\in\cala\}$ is not necessarily an ideal in $S^{-1}\cala$. Explicit example shows that $\iota_*$ does not in general preserves the proper inclusion ``$\subsetneq$''. Let $\cala:=\intg$, $S:=\{2^n:n\in \intg_{\geq 0}\}$, then $S^{-1}\cala=\intg[1/2]$, $(2)\supsetneq (4)$ in $\cala$ but $\iota_*((2))=\iota_*((4))=S^{-1}(\cala)$. But however, unlike general $\varphi^*$, $\iota^*$ indeed preserves the proper inclusion. $\iota_*(\iota^*(\scb))=\scb\subsetneq \sca=\iota_*(\iota^*(\sca))\Lrta \iota^*(\scb)\subsetneq \iota^*(\sca)$. Or equivalently, $\frac{c}{s}\notin \sca\Lrta \frac{c}{1}\notin\sca\Lrta c\notin\iota^*(\sca)$. The fact that $\iota^*$ preserves proper inclusion is crucial for the claim $\text{dim}(\cala_\scp)=\text{ht}(\scp)$.
 \end{rmkt}
 
 {\color{red}
@@ -2676,7 +2678,7 @@ Suppose $xy\in\scq, x\notin \scp$. \underline{Want}: $y\in \scq$. We have $xy\in
 \begin{rmk}
 Let $\scp$ prime. In general, a $\scp$-primary ideal $\scq$ need not be a power of $\scp$, and a power of $\scp$ need not be primary.
 \end{rmk}
-\begin{prop}
+\begin{prop}\label{lem:rad_maximal_primary}
 If $\cala\supseteq\scm$ is a  maximal ideal, $\scq$ any ideal, and $\scm=\text{rad}(\scq)$, then $\scq$ is $\scm$-primary.
 \end{prop}
 \begin{proof}
@@ -2872,7 +2874,7 @@ $x\in \text{rad}(\sca)\Llrta \forall j, n_j\geq1$.\\
 $\text{Ass}(  \sca)\ni \scp$ is either \textbf{minimal/isolated} if $\scp$ is a minimal element of $\text{Ass}(  \sca)$ (under the partial order of inclusion) or\\
 \textbf{embedded} if the $\scp$ strictly contains some other ideals in $\text{Ass}(\sca)$. Geometrically, $\scp_1\subsetneq \scp_2\Lrta V(\scp_1)\supseteq V(\scp_2)$ embedded in $V(\scp_1)$. 
 
-We usually denote the set of isolated primes in $\text{Ass}(  \sca)$ by $Ass'(\sca)$
+We usually denote the set of isolated primes in $\text{Ass}(  \sca)$ by $\text{Ass}'(\sca)$
 \end{dfn}
 \begin{ex}
 $\scp_1=(x), \scp_2=(x,y)$\\
@@ -3007,7 +3009,7 @@ It suffices to show that if any prime $\scp\supseteq \sca$, then there exists $\
 \end{proof}
 
 \begin{thm}
-$\cala\supseteq \sca=\cap_{j=1}^n\scq_j$ MPD. If $\scp_j \in Ass'(\sca),$ then 
+$\cala\supseteq \sca=\cap_{j=1}^n\scq_j$ MPD. If $\scp_j \in \text{Ass}'(\sca),$ then 
 $$
 \scq_j=\iota^*\iota_*\sca,\iota:\cala\lrta \cala_{\scp_{j}}
 $$
@@ -3128,24 +3130,24 @@ Now $(x)$ is finitely generated, so we conclude by Nakayama.
 \end{proof}
 \subsection{Lecture 15. Krull Dimension, Artinian v.s. Noetherian}
 \begin{dfn}
-The \textbf{Krull dimension} of a nonzero ring $\cala$, denoted $dim(\cala)$, is the supremum of all integers $r\geq 0$ s.t. $\exists$ chain of primes in $\cala$ of length $r$: 
+The \textbf{Krull dimension} of a nonzero ring $\cala$, denoted $\text{dim}(\cala)$, is the supremum of all integers $r\geq 0$ s.t. $\exists$ chain of primes in $\cala$ of length $r$: 
 $\scp_0\subsetneq \scp_1\subsetneq...\subsetneq \scp_r$.
 \end{dfn}
 
 \begin{ex}\ 
 \begin{itemize}
-\item $k$ a field, $\Lrta (0)$ is the only prime $\Lrta dim(k)=0$
-\item $dim(\intg)=1$
-\item (NOT OBVIOUS) $dim(k[x_1,...,x_n])=n$
- and $dim(\calr[x_1,..,x_n])=dim(\calr)+n$.
-\item $dim(\cala)=0\Llrta $ every prime is maximal.  
+\item $k$ a field, $\Lrta (0)$ is the only prime $\Lrta \text{dim}(k)=0$
+\item $\text{dim}(\intg)=1$
+\item (NOT OBVIOUS) $\text{dim}(k[x_1,...,x_n])=n$
+ and $\text{dim}(\calr[x_1,..,x_n])=\text{dim}(\calr)+n$.
+\item $\text{dim}(\cala)=0\Llrta $ every prime is maximal.  
 \end{itemize}
 \end{ex}
 
 \begin{thm}\label{thm:Artin_equiv_Noetherin+dim=0}
-$\cala$ an Artinian   ring $\Llrta\cala$ Noetherian and $dim(\cala)=0$.  
+$\cala$ an Artinian   ring $\Llrta\cala$ Noetherian and $\text{dim}(\cala)=0$.  
 \end{thm}
-Recall last lecture, by the Proposition~\ref{lem:primes_are_maximal_in_Artin} says all primes in Artinian   ring is maximal $\Lrta$ $dim(\cala)=0$.
+Recall last lecture, by the Proposition~\ref{lem:primes_are_maximal_in_Artin} says all primes in Artinian   ring is maximal $\Lrta$ $\text{dim}(\cala)=0$.
 
 \begin{lemma}\label{lem:ideal_radical_Noetherian}
 $\cala$ Noetherian, $\sca\subseteq \cala$ ideal $\Lrta \exists n\geq 0: \text{rad}(\sca)^n\subseteq \sca$
@@ -3544,23 +3546,23 @@ $\cala=k[[X,Y]]\supseteq \scm=(X,Y)\supseteq (0)$. There exists $(0)\subsetneq\s
 
 
 \begin{dfn}
-$dim(\cala)=\sup \{t\geq 0:\exists \text{ chain of primes $\scp_0\subsetneq \scp_1\subsetneq ...\subsetneq \scp_t\subseteq \cala$}\}$\\
+$\text{dim}(\cala)=\sup \{t\geq 0:\exists \text{ chain of primes $\scp_0\subsetneq \scp_1\subsetneq ...\subsetneq \scp_t\subseteq \cala$}\}$\\
 
-For prime $\scp\subseteq \cala:$ \textbf{ height }$ht(\scp):=\sup \{t\geq 0|\exists\text{chain $\scp_0\subsetneq ...\subsetneq \scp_t=\scp$}\}$
+For prime $\scp\subseteq \cala:$ \textbf{ height }$\text{ht}(\scp):=\sup \{t\geq 0|\exists\text{chain $\scp_0\subsetneq ...\subsetneq \scp_t=\scp$}\}$
 $$
-ht(\scp)=dim(\cala_\scp)
+\text{ht}(\scp)=\text{dim}(\cala_\scp)
 $$
 
-\textbf{Coheight:} $coht(\scp):=\sup\{t\geq 0|\exists \scp=\scp_0\subsetneq ...\subsetneq \scp_t\subsetneq \cala\}$
+\textbf{Coheight:} $\text{coht}(\scp):=\sup\{t\geq 0|\exists \scp=\scp_0\subsetneq ...\subsetneq \scp_t\subsetneq \cala\}$
 
 $$
-coht(\scp)=dim(\cala/\scp)
+\text{coht}(\scp)=\text{dim}(\cala/\scp)
 $$
 \end{dfn}
  
 Another version:
 \begin{lemma}\label{lem_5'}
-$0\neq f(\text{ non-unit })\in\cala:$ Noetherian integral domain. Then any minimal prime $\scm_0$ of $(f)$ satisfies $ht(\scm_0)= 1$, where
+$0\neq f(\text{ non-unit })\in\cala:$ Noetherian integral domain. Then any minimal prime $\scm_0$ of $(f)$ satisfies $\text{ht}(\scm_0)= 1$, where
 $\scm_0\supseteq (f)$ minimal for this property, in other words, ``$\scm_0\in \text{Ass}'((f))$'', see~\ref{lem:Ass'_mimial_primes}.
 \end{lemma}
 
@@ -3579,11 +3581,11 @@ and
 $$
 \{\text{primes $\scp\ni f$}\} \llrta\{\text{ primes of }\cala_{\scm}\text{ that contains } f/1\}
 $$
-So $(\cala_\scm,\iota_*\scm)$ is Noetherian local domain and $\text{ht}(\iota_*(\scm))=ht(\scm)$. (We will reload it as $(\cala,\scm)$)
+So $(\cala_\scm,\iota_*\scm)$ is Noetherian local domain and $\text{ht}(\iota_*(\scm))=\text{ht}(\scm)$. (We will reload it as $(\cala,\scm)$)
 
-\underline{Know}: $\scm\in Ass'((f))$, i.e., $\nexists \text{ prime }\scp\ni f$ s.t. $(0)\subsetneq \scp\subsetneq \scm$ (We know $\scp\ni f\neq 0$, if $f\in\scp\subsetneq\scm$, then $\scm$ would not be a minimal prime of $(f)$).
+\underline{Know}: $\scm\in \text{Ass}'((f))$, i.e., $\nexists \text{ prime }\scp\ni f$ s.t. $(0)\subsetneq \scp\subsetneq \scm$ (We know $\scp\ni f\neq 0$, if $f\in\scp\subsetneq\scm$, then $\scm$ would not be a minimal prime of $(f)$).
 
-\underline{Want}: $ht(\scm)=1$, i.e.,
+\underline{Want}: $\text{ht}(\scm)=1$, i.e.,
 $1=\sup T$ where $T:=\{t\geq 0,\exists \text{chain} \scp_0\subsetneq ...\subsetneq \scp_t=\scm\}$. which is equivalent to 
 \begin{itemize}
 \item $(0)\subsetneq \scm$,$(\Llta \scm\ni f\neq 0)$,\ \ \  $T\geq 1$
@@ -3595,7 +3597,7 @@ Now we come back to the proof of the special case of Noetherian local domain.
 \begin{proof}
 ``$(i)\Lrta(ii)$'' in Lemma~\ref{lem_5}
 
-$(ii)\Llrta dim(\cala/(f))\geq 1, \forall f\in\scm$, there are two bijections: 
+$(ii)\Llrta \text{dim}(\cala/(f))\geq 1, \forall f\in\scm$, there are two bijections: 
 $$
 \scm\llrta \text{ a maximal ideal in }\cala/(f),
 $$
@@ -3605,7 +3607,7 @@ $$
 
 Consider the canonical projection $\pi:\cala\lrta \cala/(f)$. Let $\scp:$ prime s.t. $\scm\supsetneq \scp\not \ni f$.
 
-Assume the negation of $(ii)\Llrta dim(\cala/(f))=0$. Then by Theorem~\ref{thm:Artin_equiv_Noetherin+dim=0},
+Assume the negation of $(ii)\Llrta \text{dim}(\cala/(f))=0$. Then by Theorem~\ref{thm:Artin_equiv_Noetherin+dim=0},
 $\frac{\cala}{(f)}$ is  Artinian.  $\Lrta$ $\exists k$ s.t., $\forall i\geq k$, $\scp^{(k)}+(f)=\scp^{(i)}+(f)$, where $\scp^{(k)}$ is the $k$-th symbolic power defined in~\ref{def:symbolic_power}.
 
 Indeed, $\frac{\scp^{(k)}+(f)}{(f)}$ is a descending chain in $\frac{\cala}{(f)}$.
@@ -3668,17 +3670,17 @@ Because $\cala$ is domain, $\scp^{(k)}=0\Lrta\scp=(0)$ as desired.
 
 \begin{thm}\label{thm:krull_principal}
 (Krull's Principal Ideal Theorem) $\cala$ a Noetherian ring and $a\in \cala$ is non-unit and non-zerodivisor.
-$\scp\in Ass'((a))$, i.e. $\scp\supseteq (a)$ is minimal. Then $ht(\scp)=1$.
+$\scp\in \text{Ass}'((a))$, i.e. $\scp\supseteq (a)$ is minimal. Then $\text{ht}(\scp)=1$.
 \end{thm}
-Recall: $dim(\cala)=\sup\{t\geq 0|\exists \text{chain } \scp_0\subsetneq...\subsetneq \scp_t\subseteq \cala\}$
+Recall: $\text{dim}(\cala)=\sup\{t\geq 0|\exists \text{chain } \scp_0\subsetneq...\subsetneq \scp_t\subseteq \cala\}$
 
-$\scp$ prime: $ht(\scp)=\sup\{t\geq 0|\exists \text{chain } \scp_0\subsetneq...\subsetneq \scp_t=\scp\}$
-\begin{dfn}$\sca$ is any ideal in $\cala$. The \textbf{height} of $\sca$, $ht(\sca)=\inf\{ht(\scp)|\scp\supseteq\sca\}$
- and \textbf{coheight} $coht(\sca)=\sup\{coht(\scp)|\scp\supseteq \sca\}$
+$\scp$ prime: $\text{ht}(\scp)=\sup\{t\geq 0|\exists \text{chain } \scp_0\subsetneq...\subsetneq \scp_t=\scp\}$
+\begin{dfn}$\sca$ is any ideal in $\cala$. The \textbf{height} of $\sca$, $\text{ht}(\sca)=\inf\{\text{ht}(\scp)|\scp\supseteq\sca\}$
+ and \textbf{coheight} $\text{coht}(\sca)=\sup\{\text{coht}(\scp)|\scp\supseteq \sca\}$
 \end{dfn}
 
 Then the Theorem~\ref{thm:krull_principal} is equivalent to 
-``if $a$ is non-unit and non-zerodivisor, then $ht((a))=1$ ''
+``if $a$ is non-unit and non-zerodivisor, then $\text{ht}((a))=1$ ''
 \begin{proof}
 $\cala$ Noetherian, $\Lrta (0)$ decomposable, where $(0)=\cap_i\scq_i$, minimal priamry decomposition, $\scp_i=\text{rad}(\scq_i)$
 
@@ -3688,9 +3690,9 @@ $$
 $$
 thus $a\notin\scp_i\forall i$. Let $i$ s.t. $\scp\supseteq \scp_i$ (exists because $\{\scp_i\}\supseteq \{\text{minimal primes of $\cala$}\}$)
 
-$a\in\scp ,a\notin \scp_i,\Lrta\scp_i\subsetneq \scp\Lrta ht(\scp)\geq 1$
+$a\in\scp ,a\notin \scp_i,\Lrta\scp_i\subsetneq \scp\Lrta \text{ht}(\scp)\geq 1$
 
-\underline{Want}: $ht(\scp)=1$. If not, we can find a longer chain $\scp''\subsetneq \scp'\subsetneq \scp$, we assume $\scp''$ minimal, and then after changing the index (if necessary), set $\scp''=\scp_i$.
+\underline{Want}: $\text{ht}(\scp)=1$. If not, we can find a longer chain $\scp''\subsetneq \scp'\subsetneq \scp$, we assume $\scp''$ minimal, and then after changing the index (if necessary), set $\scp''=\scp_i$.
 
 Now replace
 $\cala$ by $\cala/\scp_i$, $\scp'$ by $\scp'/\scp_i$, $\scp$ by $\scp/\scp_i$, $a$ by its image.
@@ -3706,13 +3708,13 @@ $Z(f)\llrta\text{ prime }\scp\ni f$
 
 $X\llrta $ minimal primes $\scp\supseteq (f)$ 
 
-$codim_{\cplx^N}(X)=1\Llrta ht(\scp)=1$
+$codim_{\cplx^N}(X)=1\Llrta \text{ht}(\scp)=1$
 \end{rmk}
 
 Recall from linear algebra:
 if $V$ is finite dimensional vector space over field $k$, and $l$ is a nonzero linear functional on $V$, then
 $$
-dim(ker(V))=dim(V)-1
+\text{dim}(ker(V))=\text{dim}(V)-1
 $$
 Krull dimension theorem is a variant for polynomials.
 
@@ -3723,146 +3725,159 @@ Krull dimension theorem is a variant for polynomials.
 \textbf{Geometric Interpretation}: suppose $k=\overline{k}$,
 Suppose $\cala=k[x_1,..,x_n]/\scq$ (some prime $\scq$) $\llrta$ $X=V(\scq)$ irreducible variety in $k^n$, where $V(\scq)=\{z|f(z)=0\forall f\in\scq\}$.
 
-Then $dim(\cala)\llrta dim(X)$ $:=\sup\{t\geq 0:\exists$ chain of irreducible subvarieties $ X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t\}$
+Then $\text{dim}(\cala)\llrta \text{dim}(X)$ $:=\sup\{t\geq 0:\exists$ chain of irreducible subvarieties $ X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t\}$
 
 \{primes in $\cala$\} $\llrta$ \{primes $\scp$ in $k[x_1,..,x_n]$ $|$ $\scp\supsetneq \scq$\} one to one corresponds to $Y\subseteq X$ irreducible subvarieties. (this correspondence is inclusion reversing)
 
-$ht(\scp)$ $\llrta$ $codim_X(Y):=\sup\{t\geq 0|\exists $chain of irreducible subvarieties such that $X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t=Y\}$
+$\text{ht}(\scp)$ $\llrta$ $codim_X(Y):=\sup\{t\geq 0|\exists $chain of irreducible subvarieties such that $X=X_0\supsetneq X_1\supsetneq ...\supsetneq X_t=Y\}$
 
 $\sca\subseteq\cala$ any ideal with $\text{rad}(\sca)=\sca $ $\llrta$ $Z\subseteq X$ closed subvariety
 
-$\scp_i\in Ass'(\sca) i.e. \scp_i\supseteq \sca$ minimal $\llrta$ irreducible components $Y_i\subseteq Z$
+$\scp_i\in \text{Ass}'(\sca) i.e. \scp_i\supseteq \sca$ minimal $\llrta$ irreducible components $Y_i\subseteq Z$
 
 $codim_X(Z)=\inf_{Y_i}\{ codim_X(Y_i)| \text{$Y_i$ is irreducible component of $Z$}\}$
 
-$coht(\scp)=dim(\cala/\scp)\llrta dim(Y)$
+$\text{coht}(\scp)=\text{dim}(\cala/\scp)\llrta \text{dim}(Y)$
 
-$coht(\sca)=dim(\cala/\sca)=\sup_i \{coht(\scp_i)\}$
+$\text{coht}(\sca)=\text{dim}(\cala/\sca)=\sup_i \{\text{coht}(\scp_i)\}$
 
-$dim(Z)=\sup\{ dim(Y_i)| Y_i\text{ is irreducible component of $Z$}\}$
+$\text{dim}(Z)=\sup\{ \text{dim}(Y_i)| Y_i\text{ is irreducible component of $Z$}\}$
 
 Krull principal intersection theorem says :``Every irreducible component of a hypersurface in $X$ has codimension 1''
 
-$ht(\sca)=1:codim_X(Z)=1$, $X,\emptyset\neq Z\llrta\sca=(a)$, where $Z=\{p\in X:a(\scp)=0\}$ (subset cut out by one equation) and $a\neq 0\text{ non-unit}$
+$\text{ht}(\sca)=1:codim_X(Z)=1$, $X,\emptyset\neq Z\llrta\sca=(a)$, where $Z=\{p\in X:a(\scp)=0\}$ (subset cut out by one equation) and $a\neq 0\text{ non-unit}$
 
-$\scp_i\supseteq \sca$ minimal $ht(\scp)=1$ $\llrta codim_X(Y_i)=1\llrta Y_i\subseteq Z$ irreducible component.
+$\scp_i\supseteq \sca$ minimal $\text{ht}(\scp)=1$ $\llrta codim_X(Y_i)=1\llrta Y_i\subseteq Z$ irreducible component.
 
 \begin{thm}\label{thm:Krull_dimension}
-(Krull dimension theorem)
-Let $\cala$ Noetherian, $r\geq 1$, $a_1,..,a_r\in\cala$, $\sca=(a_1,...,a_r)$,$\scp\in Ass'(\sca)$. Then $ht(\scp)\leq r$.
+(Krull Dimension Theorem)
+Let $\cala$ Noetherian, $r\geq 1$, $a_1,..,a_r\in\cala$, $\sca=(a_1,...,a_r)$,$\scp\in \text{Ass}'(\sca)$. Then $\text{ht}(\scp)\leq r$.
 
 Geometrically:``every subvariety cut out by $\leq r$ equations has codimension $\leq r$''
 
 \end{thm}
 \begin{proof}
-Induct on $r\geq 1$. Suppose $\exists $ chain $\scp_0\subsetneq...\subsetneq\scp_t=\scp$\\
-Want $t\leq r$. Replace $\cala$ by $\cala/\scp$. Reduce to the case $(\cala,\scp)$ $\cala$-Noetherian local domain and $\scp$ maximal ideal in $\cala$. We know $\scp$ is the minimal among those primes containing $\sca$, $\Lrta$ $\scp$ is the only prime that contain $\sca$.
+Induct on $r\geq 1$. $r=1$ case is just the Krull's intersection theorem. Suppose $\exists $ chain $\scp_0\subsetneq...\subsetneq\scp_t=\scp$\\
+\underline{Want}: $t\leq r$. Replace $\cala$ by $\cala_\scp$, which does not change the height or the minimality assumption. Reduce to the case $(\cala,\scp)$ $\cala$ is Noetherian local ring and $\scp$ is the maximal ideal in $\cala$. We know $\scp$ is the minimal among those primes containing $\sca$ $\Lrta$ $\scp$ is the only prime that contain $\sca$.
 
 So $\scp_t=\scp$ containing $\sca$ being minimal $\scp_{t-1}\nsupseteq\sca$ $\exists $ generator of $\sca$ not in $\scp_{t-1}$. Suppose $a_r\notin\scp_{t-1}$.
 
-We may assume, enlarging the chain as necessary, that there are no prime between $\scp_{t-1}$ and $\scp_t$. (Varying that $\cala$: Noetherian to see that $\exists$ a maximal prime $\scq$ s.t. $\scp_{t-1}\subsetneq \scq\subsetneq \scp_t$, then add $\scq$ to our chain.)
+We may assume, enlarging the chain as necessary, that there are no primes between $\scp_{t-1}$ and $\scp_t$. (If $\exists$ prime between $\scp_{t-1},\scp_t$, then $\exists$ a prime $\scq$ s.t. maximal with the property $\scp_{t-1}\subsetneq \scq\subsetneq \scp_t$, then add $\scq$ to our chain. We can always attain the maximal one because $\cala$ is Noetherian)
 
 $\scp_{t-1}\subsetneq \scp_{t-1}+(a_r)\subseteq\scp_t$ $\Lrta$ ``$\scp=\scp_t$ is the only prime containing $\scp_{t-1}+(a_r)$''\\
-$\Lrta(\scp_{t-1}+(a_r))=\scp\supseteq \sca\ni a_i$\\
-$\Lrta\exists N\geq 1: a_i^N=a_i'+a_r y_i\in scp_{t-1}+(a_r)$\\
+$\Lrta\text{rad}(\scp_{t-1}+(a_r))=\scp\supseteq \sca\ni a_i$\\
+$\Lrta\exists N\geq 1: a_i^N=a_i'+a_r y_i\in \scp_{t-1}+(a_r)$\\
 Define $\sca':=(a_1',...,a_{r-1}')\subseteq \scp_{t-1}$.
 
-Want:$\scp_{t-1}\in Ass'(\sca')$. If we can show this, then our inductive hypothesis gives $t-1\leq r-1\Lrta t\leq r$. Let $\scp'\in Ass'(\sca')$ s.t. $\scp'\subseteq \scp_{t-1}\subsetneq \scp_t=\scp$ (Such a $\scp'$ exists.)
+\underline{Want}:$\scp_{t-1}\in \text{Ass}'(\sca')$. If we can show this, then our inductive hypothesis gives $t-1\leq r-1\Lrta t\leq r$. Let $\scp'\in \text{Ass}'(\sca')$ s.t. $\scp'\subseteq \scp_{t-1}\subsetneq \scp_t=\scp$ (Such a $\scp'$ exists.)
 
-To show that $\scp'=\scp_{t-1}$, it suffices to show $ht(\scp/\scp')\leq 1$ in $\cala/\scp'$. Let $\overline{a}_r:=$ images of $a_r$ in $\cala/\scp'$.
-By the Krull Princial ideal theorem~\ref{thm:krull_principal}, it will suffice to show that 
-$\scp/\scp'\in Ass'((\overline{a}_r))$ $\Lrta \scp'=\text{rad}(\scp'+(a_r))$\\
+To show that $\scp'=\scp_{t-1}$, it suffices to show $\text{ht}(\scp/\scp')\leq 1$ in $\cala/\scp'$. Let $\overline{a}_r:=$ images of $a_r$ in $\cala/\scp'$.
+By the Krull's principal ideal theorem~\ref{thm:krull_principal}, it will suffice to show that 
+$\scp/\scp'\in \text{Ass}'((\overline{a}_r))$ $\Llta \scp=\text{rad}(\scp'+(a_r))$.\\
 To see this:\\
-$\scp=\text{rad}(\sca)=\text{rad}(\sca'+(a_r))\subseteq \text{rad}(\scp'+(a_r))\subseteq \scp$
+$\scp=\text{rad}(\sca)=\text{rad}(\sca'+(a_r))\subseteq \text{rad}(\scp'+(a_r))\subseteq\text{rad}(\scp)= \scp$.
 \end{proof}
 \begin{cor}
 $\cala$ Noetherian, $\sca$ is an ideal in $\cala$\\
-$\Lrta ht(\sca)<\infty$, $dim(\cala)<\infty$
+$\Lrta \text{ht}(\sca)<\infty$.
 \end{cor}
 \begin{proof}
-$\sca=(a_1,...,a_r)\Lrta$ $ht(\sca)\leq r$ by the above theorem.
+$\sca=(a_1,...,a_r)\Lrta$ $\text{ht}(\sca)\leq r$ by the above theorem.
 \end{proof}
+\begin{rmkt}
+This means each Noetherian semi-local ring is finite dimensional. But still a general Noetherian ring can be infinite dimensional. A counter example is given by Nagata, which solved Hilbert's 14th problem.
+\end{rmkt}
 \begin{cor}
-$(\cala,\scm)$: Noetherian local ring with the maximal ideal. $k:=\cala/\scm$ field. Then $dim(\cala)\leq dim_k(\scm/\scm^2)$
+$(\cala,\scm)$: Noetherian local ring with the maximal ideal. $k:=\cala/\scm$ field. Then $\text{dim}(\cala)\leq dim_k(\scm/\scm^2)$. $\scm/\scm^2$ is called \textbf{Zariski cotangent space} and $\cala$ is called \textbf{regular} if the equality holds.
 
-\underline{NB}: $\forall$ $\cala$-module $M$, the quotient $M/\scm M$ is a $k$-vector space.
+N.b.: $\forall$ $\cala$-module $M$, the quotient $M/\scm M$ is a $k$-vector space.
 \end{cor}
 \begin{proof}
-Suppose, $r=dim_k(\scm/\scm^2)$, $a_1,...a_r$ is a basis of $\scm/\scm^2$. Let $\tilde{a}_1,...,\tilde{a}_r\in\scm$ be lifts of the $a_i$. 
+Suppose, $r=dim_k(\scm/\scm^2)$, $\pi(f_1),...\pi(f_r)$ is a basis of $\scm/\scm^2$. Let $f_1,...,f_r\in\scm$ be lifts of the $f_i$. 
 
-Set $M=\scm$, $N:=M/(\tilde{a}_1,...,\tilde{a}_r)$, by hypothesis $\scm N=N$, then by Nakayama lemma$N=0$ $\Lrta$ $\scm=(\tilde{a}_1,...\tilde{a}_r)\Lrta ht(\scm)=ht(\cala)\leq r$
+Set $M=\scm$, $N:=M/(f_1,...,f_r)$.\\
+Claim: $\scm N=N$.
+ $N=\frac{M}{\scm M}$, Want: $\scm N\supseteq N\Llrta\forall y\in M,\exists z\in M, m\in\scm s.t. y=m\cdot z+\sum_i\alpha_i f_i$. And in fact, we know $\pi(y)=\sum_i\alpha_i\pi(f_i)\Lrta \pi(y-\sum_i\alpha_if_i)=0\Lrta \exists mz\in \scm M$ s.t. $mz+\sum_i\alpha_i f_i=y$. done.
+
+Then by Nakayama lemma, $N=0$ $\Lrta$ $\scm=(\tilde{a}_1,...\tilde{a}_r)\Lrta \text{ht}(\scm)=\text{dim}(\cala)\leq r$
 \end{proof}
 
 \begin{cor}
-$\cala$ Noetherian, $\sca$ is an ideal in $\cala$ with $ht(\sca)=r$. Then exists $a_1,...,a_r\in\sca:ht(\sca)=ht((a_1,...,a_r))$.
+$\cala$ Noetherian, $\sca$ is an ideal in $\cala$ with $\text{ht}(\sca)=r$. Then exists $a_1,...,a_r\in\sca:\text{ht}(\sca)=\text{ht}((a_1,...,a_r))$.
 \end{cor}
 \begin{proof}
-It suffice by induction to show: For $s\leq r$, if we can find $a_1,...,a_{s-1}\in\sca$ with $ht((a_1,...,a_{s-1}))=s-1$, then there exists an $a_s\in\sca$ s.t. $ht((a_1,...,a_s))=s$.
+It suffice by induction to show: For $s\leq r$, if we can find $a_1,...,a_{s-1}\in\sca$ with $\text{ht}((a_1,...,a_{s-1}))=s-1$, then there exists an $a_s\in\sca$ s.t. $\text{ht}((a_1,...,a_s))=s$.
 Consider a MPD $\scb=(a_1,..,a_{s-1})=\cap\scq_i$ with $\scp_i=\text{rad}(\scq_i)$
 
-$ht(\scb)=s-1$
+$\text{ht}(\scb)=s-1$
 
 It will suffice to show that $\sca\not\subseteq \cup\scp_i $
 then any $a_s\in\cup \scp_i-\sca$ will give 
 
-$ht(a_1,...a_s)\leq s$ by Krull dimension theorem~\ref{thm:Krull_dimension}
+$\text{ht}(a_1,...a_s)\leq s$ by Krull dimension theorem~\ref{thm:Krull_dimension}
 
-$ht(a_1,...,a_s)\geq s$ by considering MPD.
+$\text{ht}(a_1,...,a_s)\geq s$ by considering MPD.
 
 For a complete proof, see the Theorem~\ref{thm:Krull_converse}
 \end{proof}
 
 
 
-\subsection{Lecture 19. Converse of Krull dimension theorem, System of Parameters}
-Recall: 
-\begin{thm}\label{thm:thm0}
+\subsection{Lecture 19. System of Parameters}
+\underline{Know}:
 $\cala$ Noetherian, $r\geq 1$, $\sca=(a_1,...,a_r), a_i\in\cala$, $\scp\supset \sca$ minimal, then 
 $$
-ht(\scp)\leq r.
+\text{ht}(\scp)\leq r.
 $$
-If $r=1$, and $a_1:$ not a zero divisor, then $ht(\scp)=1$
-\end{thm}
+If $r=1$, and $a_1:$ not a zero divisor, then $\text{ht}(\scp)=1$.
+
+What about the reverse direction?
 
 \begin{thm}\label{thm:Krull_converse}
 (Converse to Krull)\\
-$\sca\subset \cala$, Noetherian,  set $r=ht(\sca):\inf\{ht(\scp)|\scp\supset \sca,\scp\text{prime}\}$
+$\sca\subset \cala$, Noetherian,  set $r=\text{ht}(\sca):\inf\{\text{ht}(\scp)|\scp\supset \sca,\scp\text{prime}\}$
 Then 
 
-(i) $\forall s=1,...,r$ $\exists x_1,...,x_s\in\sca$ such that $ht(x_1,..,x_s)=s$
+(i) $\forall s=1,...,r$ $\exists x_1,...,x_s\in\sca$ such that $\text{ht}(x_1,..,x_s)=s$
 
-(ii) $\scp_0\subsetneq ...\subsetneq \scp_r$, then we can find $x_1,...,x_r\in\scp_r$ s.t. $\scp_i\supset(x_1,..,x_i)$ is minimal.
+(ii) Let $\scp_0\subsetneq ...\subsetneq \scp_r$ be a chain that realize the height of $\sca$, then we can find $x_1,...,x_r\in\sca$ s.t. $\scp_i\supset(x_1,..,x_i)$ is minimal.
 
-(iii) Any prime $\scp$ of $ht(\scp)=r$ is a minimal prime of some ideal $(a_1,...,a_r)$
+(iii) Any prime $\scp$ of $\text{ht}(\scp)=r$ is a minimal prime of some ideal $(a_1,...,a_r)$
 \end{thm}
-\underline{Note:} $(i)\Lrta(iii)$ take $\sca=\scp,s=r:ht(x_1,...,x_r)=r=ht(\scp)$, $\scp\supset (x_1,...,x_r)$ is minimal. 
+\underline{Note:} $(i)\Lrta(iii)$ take $\sca=\scp,s=r:\text{ht}(x_1,...,x_r)=r=\text{ht}(\scp)$, $\scp\supset (x_1,...,x_r)$ is minimal. 
 
 \begin{proof}
-(i): $ht(\sca)=r$, then we can find some chain $\scp_0\subsetneq ...\subsetneq\scp_s $. We induct on $s$, Assume we have found $x_1,...,x_s$ s.t.
-$\scp_i\supset(x_1,...,x_s)$ minimal $\forall i\leq s$, then $ht(\scp_i)\leq i$ by Theorem~\ref{thm:thm0}. On the other hand, $ht(\scp_i)\geq i$ by the existence of $\scp_0\subsetneq...\subsetneq \scp_i$ $\Lrta(\scp_i)=i$.
+(i): $\text{ht}(\sca)=r$, then we can find some chain $\scp_0\subsetneq ...\subsetneq\scp_r $ s.t. there is no intermediate primes between each $\scp_i,\scp_j,i,j\leq r$. We pick up the first $s$ primes in this chain, $\scp_0\subsetneq ...\subsetneq\scp_s$. 
 
-Consider the minimal primes $\{\scq_i\}=Ass'((x_1,...,x_s))$. Claim: $\scp_{i+1}\not \subset \cup_j\scq_j$. Indeed, if not, then since $\scq_j$ prime $\scp_{i+1}\subseteq \scq_j$ for some $j$. By the ``avoidance of primes''.
+We induct on $s$, . Assume we have found $x_1,...,x_s$ s.t.
+$\scp_i\supset(x_1,...,x_i)$ minimal $\forall i\leq s$, then $\text{ht}(\scp_i)\leq i$ by Theorem~\ref{thm:Krull_dimension}. On the other hand, $\text{ht}(\scp_i)\geq i$ by the existence of $\scp_0\subsetneq...\subsetneq \scp_i$ $\Lrta\text{ht}(\scp_i)=i,\forall i\leq s$.
 
-Then $ht(\scq_j)\leq i$, by Krull, but $ht(\scp_{i+1})\geq i+1$. Contradiction, thus the claim fails. Choose $x_{i+1}\in\scp_{i+1}-\cup_j\scq_j$. Then $\scp_{i+1}\supseteq(x_1,..,x_{i+!}.)$
+Consider the minimal primes $\{\scq_j\}=\text{Ass}'((x_1,...,x_s))$, then $\scp_s$ is one of $\scq_j$.
 
-Want:$\scp_{i+1}\in Ass'((x_1,...,x_{i+1}))$, so $\scp_{i+1}\supseteq $ some $\scq_j$ as above.
+Claim: $\scp_{s+1}\not \subset \cup_j\scq_j$.
 
-Take $\scp'\in Ass'(x_1,..,x_s)$ s.t. $\scp_{i+1}\supseteq\scp'.$ Then claim: $ht(\scp')=i+1$,
+Indeed, if not, since $\scq_j$ prime $\scp_{i+1}\subseteq \scq_j$ for some $j$, by the ``avoidance of primes''~\ref{prop:prime_avoidance}. Then $\text{ht}(\scq_j)\leq s$, by Krull dimension~\ref{thm:Krull_dimension}, but $\text{ht}(\scp_{s+1})\geq s+1$. Contradiction, thus the claim holds.
+
+Choose $x_{s+1}\in\scp_{s+1}-\cup_j\scq_j$. Then $\scp_{s+1}\supseteq(x_1,..,x_{s+1})$. Except for the $s+1=r$ case, $x_{s+1}$ is automatically in $\sca$. If $s+1=r$, we can choose $x_r\in \sca-\cup_j\scq_j$ because $\sca\not\subset\cup_j\scq_j$, otherwise contradicts the height of $\sca$.
+
+\underline{Want}:$\scp_{s+1}\in \text{Ass}'((x_1,...,x_{s+1}))$, so $\scp_{s+1}\supsetneq $ some $\scq_j$ as above, in particular $\scp_{s+1}\supsetneq\scp_s$.
+
+Take $\scp'\in \text{Ass}'((x_1,..,x_{s+1}))$ s.t. $\scp_{s+1}\supseteq\scp'.$ Then claim: $\text{ht}(\scp')=s+1$,
 
 for the proof of the claim:
-$ht(\scp')\leq i+1$ by Krull, and $ht(\scp')geq i+1$ because $\scp'$ is not a minimal prime $\scq_i$ of $\scp_i$ because $\scp'\ni x_{i+1}\notin\scq_j$,
+$\text{ht}(\scp')\leq s+1$ by Krull, and $\text{ht}(\scp')\geq s+1$ because $\scp'$ is not a minimal prime $\scq_j$ of $\scp_s$ because $\scp'\supsetneq \scp_s$
 
-If $(\scp'\subsetneq \scp_{i+1})$ we can get a contradiction on the height of $\sca$
+If $(\scp'\subsetneq \scp_{s+1})$ we can get a contradiction on our initial choice of chain that realize the height of $\sca$.
+
+We have finished the proof of induction steps. For the case $s=1$, the claim of $(i)$ reduce to Krull's principal ideal theorem~\ref{thm:krull_principal}.  The choice of $(x_1,...,x_s)$ above also implies $(ii)$.
 \end{proof}
 
-Recall: $\scp_i$ are primes. then $\sca\subset \cap\scp_j\Llrta \exists j \sca\subseteq \scp_j$
-
-\begin{cor}: $(\cala,\scm)$ Noetherian Local, Thus $dim(\cala)=ht(\scm)\leq \infty$.
+\begin{cor}: $(\cala,\scm)$ Noetherian Local, Thus $\text{dim}(\cala)=\text{ht}(\scm)\leq \infty$.
 \end{cor}
-Then $\exists x_1,...,x_n\in\scm$ s.t. $\scm$ is minimal over $(x_1,...,x_n)$. Then $\scm$ is the only prime containing $(x_1,..,x_n)$, so $\scm=\text{rad}((x_1,...,x_n))$ and $(x_1,...,x_n)$ is $\scm$-primary. (recall that any idal whose radical is maximal is primary)
+Then $\exists x_1,...,x_n\in\scm$ s.t. $\scm$ is minimal over $(x_1,...,x_n)$. Then $\scm$ is the only prime containing $(x_1,..,x_n)$, so $\scm=\text{rad}((x_1,...,x_n))$ and $(x_1,...,x_n)$ is $\scm$-primary. (Recall that any ideal whose radical is maximal is primary~\ref{lem:rad_maximal_primary})
 
-\begin{dfn}
-We say when $n=dim(\cala)=ht(\scm)$ that $x_1,...,x_n$ are \textbf{parameters} for $\scm$ (or form a \textbf{system of parameters}). Equivalently, any of the following holds:
+\begin{dfn}$(\cala,\scm)$ Noetherian Local,
+we say when $n=\text{dim}(\cala)=\text{ht}(\scm)$ that $x_1,...,x_n$ are \textbf{parameters} for $\scm$ (or form a \textbf{system of parameters}). Equivalently, any of the following holds:
 \begin{enumerate}[label=(\roman*)]
 \item $\scm\supseteq (x_1,...,x_n)$ is minimal
 \item $\scm=\text{rad}(x_1,...,x_n)$
@@ -3870,9 +3885,9 @@ We say when $n=dim(\cala)=ht(\scm)$ that $x_1,...,x_n$ are \textbf{parameters} f
 \end{enumerate}
 \end{dfn}
 
-\begin{cor}
-$(\cala,\scm)$ is Noetherian Local, $dim(\cala)=ht(\scm)=min\{n\geq 1:\exists x_1,...,x_n\text{ s.t. }\scm\subseteq (x_1,..,x_n)\text{ minimal.}\}$
-\end{cor}
+\begin{thm}\label{thm:dim_in_terms_of_parameters}
+$(\cala,\scm)$ is Noetherian Local, $\text{dim}(\cala)=\text{ht}(\scm)=min\{n\geq 1:\exists x_1,...,x_n\text{ s.t. }\scm\subseteq (x_1,..,x_n)\text{ minimal.}\}$
+\end{thm}
 \begin{proof}
 $\geq$ converse of Krull
 
@@ -3880,82 +3895,82 @@ $\leq $ Krull
 \end{proof}
 
 
-\begin{thm}
+\begin{thm}\label{thm:system_of_parameters}
 $(\cala,\scm)$ Noetherian local. Let $x_1,..,x_r\in\scm$. Consider the following assertions:
 \begin{enumerate}[label=(\roman*)]
 \item We can extend $x_1,..,x_r$ to a system of parameters for $\scm$.
-\item $dim(\cala/(x_1,..,x_r))=dim(\cala)-r$.
-\item $ht((x_1,...,x_r))=r$
+\item $\text{dim}(\cala/(x_1,..,x_r))=\text{dim}(\cala)-r$.
+\item $\text{ht}((x_1,...,x_r))=r$
 \end{enumerate}
 Then $(i)\Llrta(ii)\Llta(iii)$
 \end{thm}
 \begin{proof}
-$(iii)\Lrta(i)$: If $x_1,...,x_r$ are not already a system of parameters, then $\scm\supseteq(x_1,..,x_r)$ is not minimal. So we can find $\scm=:\scp_{r+1}\supsetneq \scp_r\supsetneq ...\supsetneq \scp_0$ and apply the result before to obtain $x_{r+1}\in\scp_{r+1}=\scm$ s.t. $ht(x_1,..,x_{r+1})=r+1$. Continue finitely many times to set the required system of parameters.
+$(iii)\Lrta(i)$: If $x_1,...,x_r$ are not already a system of parameters, then $\scm\supseteq(x_1,..,x_r)$ is not minimal. So we can find $\scm=:\scp_{r+1}\supsetneq \scp_r\supsetneq ...\supsetneq \scp_0$ and apply the converse of Krull~\ref{thm:Krull_converse} to obtain $x_{r+1}\in\scp_{r+1}=\scm$ s.t. $\text{ht}(x_1,..,x_{r+1})=r+1$. Continue finitely many times to set the required system of parameters.
 
 It remains to show $(i)\Llrta (ii)$. \\
-Consider $y_1,..,y_s\in\scm$. Let $\overline{\cala}:\cala/(x_1,..,x_r)$. $\overline{\cala}\supseteq\overline{\scm}:=$ Image  of $\scm$. Then $(\overline{\cala},\overline{\scm})$ is Noetherian local. Write $\overline{y}_1,...,\overline{y}_s\in\overline{\cala}$ the image of $y_1,..,y_s$
+``$(i)\Lrta(ii)$'': Consider $y_1,..,y_s\in\scm$. Let $\overline{\cala}:=\cala/(x_1,..,x_r)$. $\overline{\cala}\supseteq\overline{\scm}:=$ Image  of $\scm$. Then $(\overline{\cala},\overline{\scm})$ is Noetherian local. Write $\overline{y}_1,...,\overline{y}_s\in\overline{\cala}$ the image of $y_1,..,y_s$
 
-$\{x_1,...,x_r,y_1,...,y_s\}$ system of parameters, by definition, is equivalent to $r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$-primary.
+$\{x_1,...,x_r,y_1,...,y_s\}$ system of parameters, by definition, is equivalent to $r+s=\text{dim}(\cala)$ and $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$-primary.
 
 Note:$(x_1,...,x_r,y_1,...,y_s)$ $\scm$-primary\\
 $\Llrta$ $\scm$ is the only prime containing $(x_1,..,y_s)$\\
 $\Llrta\overline{\scm}$ is the only prime containing $(\overline{y}_1,...,\overline{y}_s)$\\
 $\Llrta(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary\\
-$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=dim(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}$-primary.
+$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=\text{dim}(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}$-primary.
 
-FACT1:[$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$- primary] $\Lrta dim(\cala)\leq r+s$, by Krull's dimension theorem~\ref{thm:Krull_dimension}.
+FACT1:[$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$- primary] $\Lrta \text{dim}(\cala)\leq r+s$, by Krull's dimension theorem~\ref{thm:Krull_dimension}.
 
-And in fact, if we start we a system of parameters $(\overline{z}_1,...,\overline{z}_t)$ of $\overline{A}$, $z_i$ are their preimages in $\cala$, we have proved that $(x_1,...,x_r,z_1,...,z_t)$ is $\scm$ primary, then $dim(\cala)\leq t+r= dim(\overline{\cala})+r$
+And in fact, if we start we a system of parameters $(\overline{z}_1,...,\overline{z}_t)$ of $\overline{A}$, $z_i$ are their preimages in $\cala$, we have proved that $(x_1,...,x_r,z_1,...,z_t)$ is $\scm$ primary, then $\text{dim}(\cala)\leq t+r= \text{dim}(\overline{\cala})+r$
 
 $(i)\Lrta$ $\exists y_1,..,y_s$ s.t., $\{x_1,...x_r,y_1,...,y_s\}$ is system of parameters.
-$\Lrta r+s=dim(\cala)$ and $(x_1,...,x_r,y_1,...,y)s$ is $\scm$-primary. Then, as prove before, $(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary, we have $dim(\overline{\cala})\leq s=dim(\cala)-r$, which indicates $(ii)$.
+$\Lrta r+s=\text{dim}(\cala)$ and $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$-primary. Then, as prove before, $(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary, we have $\text{dim}(\overline{\cala})\leq s=\text{dim}(\cala)-r$, which indicates $(ii)$.
 
 Now check that $(ii)$ implies $(i)$.
 
-If $(ii)$ holds, with $s:=dim(\cala)-r=dim(\overline{\cala})$, then $\exists y_1,...,y_s\in\cala$ s.t. $\{\overline{y}_1,...,\overline{y}_s\}$ us a system of parameters. $\Lrta(\overline{y}_1,...,\overline{y}_s)$ $\overline{\scm}$-primary $\Lrta (x_1,..,x_r,y_1,...,y_s)\scm$-primary.
-
-Want: $\{x_1,..,x_r,y_1,...,y_s\}$ is a system of parameters. Indeed, $r+s=dim(\cala)$, so this holds by definition. 
+If $(ii)$ holds, with $s:=\text{dim}(\cala)-r=\text{dim}(\overline{\cala})$, then $\exists y_1,...,y_s\in\cala$ s.t. $\{\overline{y}_1,...,\overline{y}_s\}$ is a system of parameters of $\overline{\cala}$. $\Lrta(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}$-primary $\Lrta (x_1,..,x_r,y_1,...,y_s)$ is $\scm$-primary. Also, we know $\text{dim}(\cala)=r+s$, then by definition $(x_1,...,x_r,y_1,...,y_s)$ is a system of parameters of $\cala$. 
 \end{proof}
 
 \begin{cor}
-$(\cala,\scm)$, Noetherian local, $a\in\cala$ non-zerodivisor. Then $dim(\cala/(a))=dim(\cala)-1$
+$(\cala,\scm)$, Noetherian local, $a\in\cala$ non-zerodivisor. Then:
+ $$
+ \text{dim}(\cala/(a))=\text{dim}(\cala)-1
+ $$
 \end{cor}
 \begin{proof}
-Recall: $ht((a))=1$ by Krull principal ideal theorem.
+Recall: $\text{ht}((a))=1$ by Krull principal ideal theorem~\ref{thm:krull_principal}.
 
-By the above ((iii)implies (i) and (ii)), we may extend $\{a\}$ to a system of parameters $\{a_0,...,a_n\}$, $a_0=a$, with $dim(\cala)-1=dim(\cala/(a))$
+By the above (~\ref{thm:system_of_parameters} (iii)implies (i) and (ii)), we may extend $\{a\}$ to a system of parameters $\{a_0,...,a_n\}$, $a_0=a$, with $\text{dim}(\cala)-1=\text{dim}(\cala/(a))$
 \end{proof}
 
+
+\subsection{Lecture 20-1. Dimension of Polynomial Rings, Regularity}
 \begin{thm}
-$\cala$ Noetherian $\Lrta dim(\cala[X_1,..,X_n])=dim(\cala)+n$
+$\cala$ Noetherian $\Lrta \text{dim}(\cala[X_1,..,X_n])=\text{dim}(\cala)+n$
 \end{thm}
 \begin{proof}
 We may assume $n=1$ (then iterate with $\cala$ replaced by $\cala[X_1], etc$)
 
-easy direction: $dim \cala[X]\geq dim(\cala)+1$. Indeed, consider a chain $\scp_0\subsetneq ...\subsetneq \scp_n$ in $\cala$. Consider $\scp_0\cala[X]\subsetneq ...\subsetneq \scp_n\cala[X]\subsetneq \scp_n\cala[X]+X\cala[X]$
+Easy direction: $\text{dim}(\cala[X])\geq \text{dim}(\cala)+1$. Indeed, consider a chain $\scp_0\subsetneq ...\subsetneq \scp_n$ in $\cala$. Consider $\scp_0\cala[X]\subsetneq ...\subsetneq \scp_n\cala[X]\subsetneq \scp_n\cala[X]+X\cala[X]$.
 
-\underline{NB}, If $\scp\subsetneq \cala$ is prime, then $\cala[X]/\scp\cala[X]\cong (\cala/\scp)[X]$ is  a domain. so $\scp\cala[X]$ is prime.
+N.b. If $\scp\subsetneq \cala$ is prime, then $\cala[X]/\scp\cala[X]\cong (\cala/\scp)[X]$ is  a domain. so $\scp\cala[X]$ is prime.
 And $\scp_n\cala[X]+X\cala[X]$ is prime because $\cala[X]/(\scp_n\cala[X]+X\cala[X])\cong \cala/\scp_n$
 
-Hard direction $dim\cala[X]\leq dim(\cala)-1$. Consider $\scp_0\subseteq...$
-\end{proof}
+Hard direction $\text{dim}(\cala[X])\leq \text{dim}(\cala)-1$. Consider $\scp_0\subseteq...$
 
-\subsection{Lecture 20}
-\begin{proof}
-Last time, we proved $dim(\cala[X])\geq dim(\cala)+1$ by exhibiting, for each length $r$ chain $\scp_0\subsetneq ...\subsetneq \scp_r\in \cala$. The length $r+1$ chain $\scp_0\cala[X]\subsetneq ...\subsetneq \scp_r\cala[X]\subsetneq \scp_r\cala[X]+(X)$ in $\cala[X]$.
+Because $\text{dim}(\cala[X])=$ $\sup\{\text{ht}(\scm):\scm\subseteq \cala[X] \text{ maximal }\}$
 
-Now $dim(\cala[X])\leq dim(\cala)+1$. Because $dim \cala[X]=$ $\sup\{\scm\subseteq \cala[X] \text{ maximal }|ht(\scm)\}$
+So it suffices to show $\forall\scm\subseteq \cala[X]$ that $\text{ht}(\scm)\leq r+1$, where $r:=\text{dim}(\cala)$. May assume $r\leq \infty$.
 
-So it suffices to show $\forall\scm\subseteq \cala[X]$ that $ht(\scm)\leq r+1$, where $r:=dim\cala$. May assume $r\leq \infty$.
+Consider $\scp:=\scm\cap\cala$, it is a prime in $\cala$ because $\scp:=\scm\cap\cala=\scm/(X)$ and also maximal. It suffices to show $\text{ht}(\scm)\leq \text{ht}(\scp)+1$.
 
-Consider $\scp:=\scm\cap\cala$ prime in $\cala$. We localize at $\scp$ :$S:=S_\scp=\cala-\scp$. $S^{-1}\cala=\cala_\scp$ is local with maximal ideal $S^{-1}(\cala[X])=(S^{-1}\cala)[X]=\cala_\scp[X]$. $S^{-1}\scm\subseteq S^{-1}\cala[X]$ remains a maximal ideal, and $ht(S^{-1}\scm)=ht(\scm)$, because the localization with respect to $S$, preserves the primes and their inclusions for those ideals not intersecting $S$.
+We localize at $\scp$. $S:=S_\scp=\cala-\scp$. $S^{-1}\cala=\cala_\scp$ is local with maximal ideal $\scp_\scp$. $S^{-1}(\cala[X])=(S^{-1}\cala)[X]=\cala_\scp[X]$. $S^{-1}\scm\subseteq S^{-1}\cala[X]$ remains a maximal ideal, and $\text{ht}(S^{-1}\scm)=\text{ht}(\scm)$, because the localization with respect to $S$, preserves the primes and their inclusions for those ideals not intersecting $S$. And the problem reduce to the case of Noetherian local ring.
 
-We now assume that $(\cala,\scp)$: Noetherian local ring, $\scm\subseteq\cala[X]$ maximal, $\scm\cap\cala=\scp$. $r=dim\cala\leq \infty$.
+We now assume that $(\cala,\scp)$: Noetherian local ring, $\scm\subseteq\cala[X]$ maximal, $\scm\cap\cala=\scp$. $r=dim\cala< \infty$.
 
-\underline{Want} $ht(\scm)\leq r+1$\\
-It suffices by a theorem in last lecture to construct $r+1$ elements of $\cala[X]$ that generate an ideal with radical $\scm$.
+\underline{Want}: $\text{ht}(\scm)\leq r+1$\\
+It suffices by theorem~\ref{thm:dim_in_terms_of_parameters}  to construct $r+1$ elements of $\cala[X]$ that generate an ideal with radical $\scm$.
 
-\underline{Know} $r=dim(\cala)=ht(\scp)$, so we can find $x_1,...,x_r\in\cala$ s.t.
+\underline{Know}: $r=\text{dim}(\cala)=\text{ht}(\scp)$, so we can find $x_1,...,x_r\in\cala$ s.t.
 $\scp$ is the only prime of $\cala$ containing $(x_1,...,x_r)$ i.e., $\text{rad}((x_1,...,x_r))=\scp.$
 
 Consider
@@ -3968,40 +3983,40 @@ where $\scm\supseteq\scp\cala[X]$ and $\cala/\scp$ is a field, thus $\cala/\scp[
 
 $\overline{\scm}=(\overline{f})$ for some $\overline{f}\in(\cala/\scp)[X]$. Say $\overline{f}$ is the image of $f\in\scm$.
 
-\textbf{Claim}:$\scm$ is the only prime $\scq$ that contains $x_1,..,x_r,f.$
+\textbf{Claim}:$\scm$ is the only prime  that contains $x_1,..,x_r,f.$
 
-Indeed, $\scq\cap \cala$ is a prime of $\cala$ containing $x_1,..,x_r$, hence $\scq\cap \cala=\scp$, so $\scq\supseteq \scp\cala[X]$, so $\scq$ identifies with a prime ideal $\overline{\scq}\subseteq \cala[X]/\scp\cala[X]$ which contains $\overline{f}$, hence $\overline{\scq}=\overline{\scm}$, hence $\scq=\scm$
+Indeed, assume $\scq$ a prime in $\cala$ that contains $x_1,..,x_r,f$ $\Lrta$ $\scq\cap \cala$ is a prime of $\cala$ containing $x_1,..,x_r$, hence $\scq\cap \cala=\scp$, so $\scq\supseteq \scp\cala[X]$, so $\scq$ identifies with a prime ideal $\overline{\scq}\subseteq \cala[X]/\scp\cala[X]$ which contains $\overline{f}$, hence $\overline{\scq}=\overline{\scm}$, hence $\scq=\scm$. $\scm=\text{rad}((x_1,...,x_r,f))$.
 
 \end{proof}
 
 \begin{ex}(All the bad examples in algebraic geometry is more or less related to this example)
-One other example: $k$ is a field, $k[[x,y]]:=\{\text{formal power series over $k$ in $x,y$}\}=\{\sum_{ij}c_ij x^i y^j\}$, $k[[x,y]]$ is Noetherian, local ring with maximal ideal $(x,y)$
+One other example: $k$ is a field, $k[[X,Y]]:=$ \{formal power series over $k$ in $X,Y$\}$=\{\sum_{ij}c_{ij} X^i Y^j\}$, $k[[X,Y]]$ is Noetherian, local ring with maximal ideal $(X,Y)$
 
-Assume $\cala:=k[[x,y]]/(x^2,xy)$. what is  $dim\cala$?
+Assume $\cala:=k[[X,Y]]/(X^2,XY)$. what is  $\text{dim}(\cala)$?
 
-$\cala/(x)\cong k[[y]]$, $\cala/(x,y)\cong k$ are integral domains $\Lrta (x)\subsetneq (x,y)$ is a chain of prime, notice that $\cala$ is not a integral domain$\Lrta dim(\cala)\geq 1$
+$\cala/(x)\cong k[[y]]$, $\cala/(x,y)\cong k$ are integral domains $\Lrta (X)\subsetneq (X,Y)$ is a chain of prime, notice that $\cala$ is not a integral domain$\Lrta \text{dim}(\cala)\geq 1$
 
 $\cala\supseteq \scm=(x,y)$ (x and y here means the image of x and y in the quotient ring.)
 
 Claim $\text{rad}((y))=\scm$
 \begin{proof}
-$x^2=0\in(y), y^1\in(y)\rta \scm\subseteq \text{rad}((y))$, and by the fact the t$\scm $ is maximal $\scm=\text{rad}((y))$
+$x^2=0\in(y), y^1\in(y)\rta \scm\subseteq \text{rad}((y))$, and by the fact that $\scm $ is maximal $\scm=\text{rad}((y))$
 \end{proof}
-By the theorem on parameters, deduce that $dim(\cala)\leq 1$. hence $dim\cala=1$
+By the theorem on parameters, deduce that $\text{dim}(\cala)\leq 1$. hence $\text{dim}(\cala)=1$.
 \end{ex}
 
 \begin{lemma}
-$k=\overline{k}$ say $k=\cplx$. $\cala=k[X_1,...,X_n]$. Let $\scm\subseteq \cala$ be a maximal ideal, then $\scm=(X_1-x_1,...,X_n-x_n)$ for some $(x_1,..,x_n)\in k^n$. Then $ht(\scm)=n$, and $\cala_\scm$ a local ring of dimension $n$ whose maximal ideal $\scm\cala_\scm$ has $n$ generators.
+$k=\overline{k}$ say $k=\cplx$. $\cala=k[X_1,...,X_n]$. Let $\scm\subseteq \cala$ be a maximal ideal, then $\scm=(X_1-x_1,...,X_n-x_n)$ for some $(x_1,..,x_n)\in k^n$. Then $\text{ht}(\scm)=n$, and $\cala_\scm$ a local ring of dimension $n$ whose maximal ideal $\scm\cala_\scm$ has $n$ generators.
 \begin{proof}
-$dim(\cala_\scm)=ht(\scm\cala_\scm)=ht(\scm)\leq dim(\cala)=n$. $ht(\scm)\geq n$ because $\scm=\scp_n\supsetneq ...\supsetneq \scp_0$, $\scp_i=(X_1-x_1,...,X_i-x_i)$ 
+$\text{dim}(\cala_\scm)=\text{ht}(\scm\cala_\scm)=\text{ht}(\scm)\leq \text{dim}(\cala)=n$. $\text{ht}(\scm)\geq n$ because $\scm=\scp_n\supsetneq ...\supsetneq \scp_0$, $\scp_i=(X_1-x_1,...,X_i-x_i)$ 
 \end{proof}
 \end{lemma}
 
-Now let $(\cala,\scm):$ Noetherian local of $d:=dim(\cala)=ht(\scm)$ and we set $k=\cala/\scm$.
 
-\begin{lemma}\ 
+\begin{lemma}Now let $(\cala,\scm):$ Noetherian local of $d:=\text{dim}(\cala)=\text{ht}(\scm)$ and we set $k=\cala/\scm$.
+
 \begin{enumerate}[label=(\alph*)]
-\item In general , $d\leq dim_k(\scm/\scm^2)$ (The late is a $k$-vector space because $M$ and $\cala$-module $\Lrta M/\scm M$ is a $k$-vector space.)
+\item In general , $d\leq dim_k(\scm/\scm^2)$ (The later is a $k$-vector space because $M$ and $\cala$-module $\Lrta M/\scm M$ is a $k$-vector space.)
 \item The following are equivalent:
     \begin{enumerate}[label=(\roman*)]
         \item $\scm$ admits a set of $d$ generator: $\scm=(x_1,..,x_d)$
@@ -4011,13 +4026,13 @@ Now let $(\cala,\scm):$ Noetherian local of $d:=dim(\cala)=ht(\scm)$ and we set 
 \end{enumerate}
 \end{lemma}
 \begin{ex}
-$k[x_1,..,x_n]_\scm$ is regular.
+$(k[x_1,..,x_n],\scm)$ is regular.
 \end{ex}
 \begin{proof}\ 
 \begin{enumerate}[label=(\alph*)]
 \item Set $n:=dim_k(\scm/\scm^2)$. Choose $x_1,..,x_n\in\scm$ s.t. $\overline{x}_1,...,\overline{x}_n\in \scm/\scm^2$ form a basis.
 
-By Nakayama Lemma $\Lrta\scm=(x_1,...,x_b)\Lrta d\leq n$ by Krull dimension theorem.
+By Nakayama Lemma $\Lrta\scm=(x_1,...,x_n)\Lrta d\leq n$ by Krull dimension theorem.
 
 \item $(i)\Lrta (ii)$\\
 $\scm=(x_1,...,x_d)\Lrta \scm/\scm^2 $ is spannd by $\overline{x}_1,...,\overline{x}_d$, so $dim_k(\scm/\scm^2)\leq d$. Combine with $(a)$ to get $(ii)$.
@@ -4028,15 +4043,15 @@ $(ii)\Lrta (i)$ Same proof as $(a)$
 \end{proof}
 
 
-Motivation: to show that $dim(\cala)=tr.deg.k(Frac(\cala))$, $\forall\cala$ integral domain that is finitely generated as an algebra over some field $k\subseteq\cala$.
+Motivation: to show that $\text{dim}(\cala)=tr.deg.k(Frac(\cala))$, $\forall\cala$ integral domain that is finitely generated as an algebra over some field $k\subseteq\cala$.
 
 For example: $\cala=k[x_1,..,x_n]$
 
 \underline{Want} Machinery for comparing a general ring $\cala$ as above to this example.
 
-\section{Integral extension of rings}
+\section{Integral Extension of Rings}
 We will cover the contents of \S 5 of A-M and \S 3 pf Bosch
-\subsection{Lecture 20}
+\subsection{Lecture 20-2}
 Consider a monic polynomial equation with coefficients in $\cala$:
 \begin{equation}\label{eq:integral_extension}\tag{*}
 x^n+a_1 x^{n-1}+...+a_n=0
@@ -4342,9 +4357,9 @@ Equivalently,
 \begin{cor}
 $\cala\subseteq\calb$ integral extension, $\scb\subseteq\calb$ ideal, $\sca:=\scb\cap\cala$
 \begin{enumerate}
-\item $dim(\cala)=dim(\calb)$
-\item $dim(\cala/\sca)= dim(\calb/\scb)$
-\item $ht(\scb)\leq ht(\sca)$
+\item $\text{dim}(\cala)=\text{dim}(\calb)$
+\item $\text{dim}(\cala/\sca)= \text{dim}(\calb/\scb)$
+\item $\text{ht}(\scb)\leq \text{ht}(\sca)$
 \end{enumerate}
 \begin{proof}
 (i),
@@ -4352,9 +4367,9 @@ $\cala\subseteq\calb$ integral extension, $\scb\subseteq\calb$ ideal, $\sca:=\sc
 (ii),
 
 
-(iii), $ht(\scb)\subseteq ht(\sca)=\inf_{\scp\supseteq \sca} ht(\scp)$. 
+(iii), $\text{ht}(\scb)\subseteq \text{ht}(\sca)=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$. 
 >>>>>5
-Want: if $\scp\supseteq \sca$, then $ht(\scp)\geq ht(\scb)$
+Want: if $\scp\supseteq \sca$, then $\text{ht}(\scp)\geq \text{ht}(\scb)$
 >>>>>>>>>6
 \end{proof}
 \end{cor}
@@ -4535,21 +4550,21 @@ Note that $g$ fixes $\cala$ so $\scq'\cap \cala=(g(Q')\cap \calb)\cap\cala=g(Q')
 
 Recall $\forall \cala\subseteq \calb$ integral, $\forall \scb\subseteq \calb,\sca\subseteq \cala\cap \scb$
 \begin{enumerate}[label=(\roman*)]
-\item $dim(\cala)=dim(\calb)$
-\item $dim(\cala/\sca)=dim(\calb/\scb)$, i.e., $
-coht(\sca)=coht(\scb)$
-\item $ht(\scb)\leq ht(\sca)$.
+\item $\text{dim}(\cala)=\text{dim}(\calb)$
+\item $\text{dim}(\cala/\sca)=\text{dim}(\calb/\scb)$, i.e., $
+\text{coht}(\sca)=\text{coht}(\scb)$
+\item $\text{ht}(\scb)\leq \text{ht}(\sca)$.
 \end{enumerate}
 \begin{cor}
-Suppose $\cala\subseteq \calb$ are domains, with $\cala$ noraml, $\calb$ integral over $\cala$. Let $\scb\subseteq \calb$, $\sca=\cala\cap \scb$. Then $ht(\sca)=ht(\scb)$.
+Suppose $\cala\subseteq \calb$ are domains, with $\cala$ noraml, $\calb$ integral over $\cala$. Let $\scb\subseteq \calb$, $\sca=\cala\cap \scb$. Then $\text{ht}(\sca)=\text{ht}(\scb)$.
 \end{cor}
 \begin{proof}
-\underline{Want}: $ht(\scb)\overset{?}{\geq} ht(\sca)$, where $ht(\scb)=\inf_{\scq\supseteq \scb} ht(\scq)$ and  $ht(\sca)=\inf_{\scp\supseteq \sca} ht(\scp)$.
+\underline{Want}: $\text{ht}(\scb)\overset{?}{\geq} \text{ht}(\sca)$, where $\text{ht}(\scb)=\inf_{\scq\supseteq \scb} \text{ht}(\scq)$ and  $\text{ht}(\sca)=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$.
 
-It suffices to show for each prime $\scq\subset\scb$ that $\scp:=\scq\cap \cala\supseteq \sca$ satisfies $ht(\scq)\geq ht(\scp)$. Let $\scp_0\subsetneq ...\subsetneq \scp_r=\scp$ be a chain of primes. By the going-down property, there exists a chain of primes $\scq_0\subsetneq ...\subsetneq \scp_r=\scp$ in $\calb$ such that $\scq_i$ lies over $\scp_i$
+It suffices to show for each prime $\scq\subset\scb$ that $\scp:=\scq\cap \cala\supseteq \sca$ satisfies $\text{ht}(\scq)\geq \text{ht}(\scp)$. Let $\scp_0\subsetneq ...\subsetneq \scp_r=\scp$ be a chain of primes. By the going-down property, there exists a chain of primes $\scq_0\subsetneq ...\subsetneq \scp_r=\scp$ in $\calb$ such that $\scq_i$ lies over $\scp_i$
 >>>>>>5
 
-$\Lrta ht(\scq)\leq r$. Since $ht(\scp)=\sup\{\text{r as above}\}$, we then conclude that $ht(\scq)\geq ht(\scp)$.
+$\Lrta \text{ht}(\scq)\leq r$. Since $\text{ht}(\scp)=\sup\{\text{r as above}\}$, we then conclude that $\text{ht}(\scq)\geq \text{ht}(\scp)$.
 \end{proof}
 
 \begin{dfn}
@@ -4557,11 +4572,11 @@ $\Lrta ht(\scq)\leq r$. Since $ht(\scp)=\sup\{\text{r as above}\}$, we then conc
 
 \textbf{finitely generated $k$-domain} means a $k$.
 -domain which is a finitely generated $k$-algebra
-$\Llrta$ $\cala\cong k[X_1,...,X_n]/\sca$ for some $\sca$, $n$ $\Lrta dim(\cala)\leq n$
+$\Llrta$ $\cala\cong k[X_1,...,X_n]/\sca$ for some $\sca$, $n$ $\Lrta \text{dim}(\cala)\leq n$
 \end{dfn}
 
 \begin{thm}\label{thm:Noether_Normalization}(Noether Normalization)
-Let $\cala$ finitely generated $k$-domain. Set $d:=dim(\cala)\in \intg_{\geq 0}$. Then there exists an injective morphism of $k$-algebras
+Let $\cala$ finitely generated $k$-domain. Set $d:=\text{dim}(\cala)\in \intg_{\geq 0}$. Then there exists an injective morphism of $k$-algebras
 $$
 k[X]:=k[X_1,..,X_d]\overset{\kappa}{\lrta} \cala
 $$
@@ -4570,16 +4585,16 @@ which is integral: $\cala$ is integral over $\kappa(k[X])$.
 
 \underline{NB} $\kappa$ is determined by $x_1:=\kappa(X_1),...,x_n:=\kappa(X_d)\in\cala$. $\kappa $ is injective $\Llrta$ $x_1,...,x_d\in \cala$ are algebraically independent over $k$.  So the theorem says : $\exists$ algebraically independent $x_1,..,x_d\in \cala$ s.t., $\cala$ is integral over the $k$-algebra $\cala_0:=k[x_1,...,x_d]\subseteq \cala$.
 \begin{cor}\label{cor:k-domain_dim_tr.deg}
-Let $\cala$ finitely generated $k$-domains, then $K:=Frac(\cala)$. Then $dim(\cala)=tr.deg_k(K)$
+Let $\cala$ finitely generated $k$-domains, then $K:=Frac(\cala)$. Then $\text{dim}(\cala)=tr.deg_k(K)$
 \end{cor}
-\begin{proof} of Corollary~\ref{cor:k-domain_dim_tr.deg}. Let $d:=dim(\cala)$ $\cala_0=k[x_1,..,x_d]$ as above. 
+\begin{proof} of Corollary~\ref{cor:k-domain_dim_tr.deg}. Let $d:=\text{dim}(\cala)$ $\cala_0=k[x_1,..,x_d]$ as above. 
 $K_0=Frac(\cala_0)\cong k(x_1,...,x_d)$
 
 $\cala$: integral over $\cala_0$ $\Lrta$ $K$ algebraic over $K_0$ (Confer the proof of Theorem 2 today).
 
-$\Lrta tr.deg_l(K)=tr.deg_k(K_0)=d=dim(\cala)$.
+$\Lrta tr.deg_l(K)=tr.deg_k(K_0)=d=\text{dim}(\cala)$.
 \end{proof}
-\underline{NB}, If $\kappa: k[X_1,...,X_n]\lrta\cala$ is injective and integral, then automatically $n=dim(\cala)$, because we have seen that integral extension preserves dimension.
+\underline{NB}, If $\kappa: k[X_1,...,X_n]\lrta\cala$ is injective and integral, then automatically $n=\text{dim}(\cala)$, because we have seen that integral extension preserves dimension.
 
 
 \subsection{Lecture 24}
@@ -4702,41 +4717,41 @@ $\Lrta k[x_1,...,x_n]$ is integral over $k[z_1,...,z_{n-1},w]$.
 The above proved the key lemma thus the Noether Normalization theorem.
 
 \begin{thm}\label{thm:finitelygeneratedk-domain_dim_equality}
-Let $\cala$ be finitely generated $k$-domain, $\scp\in \text{Spec}(\cala)$. Then $ht(\scp)+coht(\scp)=ht(\scp)+dim(\cala/\scp)=dim(\cala)$
+Let $\cala$ be finitely generated $k$-domain, $\scp\in \text{Spec}(\cala)$. Then $\text{ht}(\scp)+\text{coht}(\scp)=\text{ht}(\scp)+\text{dim}(\cala/\scp)=\text{dim}(\cala)$
 \end{thm}
 \begin{proof}
-Set $n:=dim(\cala)$. $\text{NN}\Lrta\exists x_1,..,x_n\in\cala$ algebraic independent s.t. $\cala$ is integral over $\cala_0:=k[x_1,..,x_n]\cong k[X_1,..,X_n]$.
+Set $n:=\text{dim}(\cala)$. $\text{NN}\Lrta\exists x_1,..,x_n\in\cala$ algebraic independent s.t. $\cala$ is integral over $\cala_0:=k[x_1,..,x_n]\cong k[X_1,..,X_n]$.
 
 $\cala_0$ is UFD $\Lrta$ $\cala_0$ is normal. $\cala$ is a domain., $\cala_0\subseteq \cala$ is an integral extension. So by the going-down properties~\ref{thm:normal_domain_goingdown} , we have 
 $$
 \scp_0:=\cala_0\cap\scp\in \text{Spec}(\cala_0)
 $$
 that 
-$ht(\scp)=ht(\scp_0)$, $coht(\scp)=coht(\scp_0)$, 
-$dim(\cala)=dim(\cala_0)$. Thus by replacing $\cala$ by $\cala_0$, we may assume $\cala=k[X_1,...,X_n]$.
+$\text{ht}(\scp)=\text{ht}(\scp_0)$, $\text{coht}(\scp)=\text{coht}(\scp_0)$, 
+$\text{dim}(\cala)=\text{dim}(\cala_0)$. Thus by replacing $\cala$ by $\cala_0$, we may assume $\cala=k[X_1,...,X_n]$.
 
-If $\scp=(0)$, then we are done: $ht(\scp)=0$, $coht(\scp)=dim(\cala)$. 
+If $\scp=(0)$, then we are done: $\text{ht}(\scp)=0$, $\text{coht}(\scp)=\text{dim}(\cala)$. 
 
 So we may assume $\scp\neq (0)$.
 Suppose a special case where $\scp\ni x_n$. Then $\scp\supseteq (x_n)$. 
 
 Set $\overline{\cala}:=\cala/(x_n)\cong k[X_1,...,X_{n-1}]$, $\overline{\scp}:=\scp/(x_n)$.
 
-Then $0\subsetneq (x_n)\subseteq \scp$, so $ht(\scp)\geq ht(\overline{\scp})+1$.
+Then $0\subsetneq (x_n)\subseteq \scp$, so $\text{ht}(\scp)\geq \text{ht}(\overline{\scp})+1$.
 (Given $0=\overline{\scq_0}\subsetneq ...\subsetneq \overline{\scq_r}=\overline{\scp}$, get $0\subsetneq (x_n)=\scq_0\subsetneq...\subsetneq \scq_r=\scp $)
 
-Also $coht(\overline{\scp})=dim(\overline{\cala})=coht(\overline{\scp})$, $\dim(\overline{\cala})=n-1=dim(\cala)-1$.
+Also $\text{coht}(\overline{\scp})=\text{dim}(\overline{\cala})=\text{coht}(\overline{\scp})$, $\\text{dim}(\overline{\cala})=n-1=\text{dim}(\cala)-1$.
 
-In general $ht(\scp)+coht(\scp)\leq dim(\cala)$ holds trivially. so we just need to show
- $$ht(\scp)+coht(\scp)\geq dim(\cala),$$
-  where $ht(\scp)\geq ht(\overline{\scp})+1$, $coht(\scp)=coht(\overline{\scp})$ and $dim(\cala)=dim(\overline{\cala})+1$. (If we are able to show $ht(\overline{\scp})+coht(\overline{\scp})\geq dim(\overline{\cala})$, we are done)
+In general $\text{ht}(\scp)+\text{coht}(\scp)\leq \text{dim}(\cala)$ holds trivially. so we just need to show
+ $$\text{ht}(\scp)+\text{coht}(\scp)\geq \text{dim}(\cala),$$
+  where $\text{ht}(\scp)\geq \text{ht}(\overline{\scp})+1$, $\text{coht}(\scp)=\text{coht}(\overline{\scp})$ and $\text{dim}(\cala)=\text{dim}(\overline{\cala})+1$. (If we are able to show $\text{ht}(\overline{\scp})+\text{coht}(\overline{\scp})\geq \text{dim}(\overline{\cala})$, we are done)
 
 So we can argue by induction on $n$ in the special case $x_n\in \scp$. 
 
 We now reduce the general case to this one.
 Choose any $0\neq f\in \scp$. By the key lemma for NN, $\exists z_1,...,z_{n-1}\in\cala=k[x_1,...,x_n]$, s.t. $\cala$ integral over $\cala_0:=k[z_1,...,z_{n-1},z_n]$, where $z_n:=f(x_1,...,x_n)$. Then $tr.deg (Frac(\cala_0))=\text{tr.deg}(Frac(\cala))=n$, so $\{z_j\}$ are algebraically independent. Thus $\cala_0$ is again a polynomial ring, hence $\cala_0$ is normal.
 
-By arguing as in the beginning of the proof, we have with $\scp_0:=\scp\cap\cala_0$ that $dim(\cala_0)=dim(\cala)$, $coht(\scp_0)=coht(\scp)$, $ht(\scp_0)=ht(\scp)$. So it suffices to show that $coht(\scp_0)+ht(\scp_0)\geq dim(\cala_0)$. 
+By arguing as in the beginning of the proof, we have with $\scp_0:=\scp\cap\cala_0$ that $\text{dim}(\cala_0)=\text{dim}(\cala)$, $\text{coht}(\scp_0)=\text{coht}(\scp)$, $\text{ht}(\scp_0)=\text{ht}(\scp)$. So it suffices to show that $\text{coht}(\scp_0)+\text{ht}(\scp_0)\geq \text{dim}(\cala_0)$. 
 
 But now $f\in\scp\Lrta z_n\in\scp_0$, so we reduce to the special case $x_n\in\scp$. Argue as above. 
 \end{proof}
@@ -4744,42 +4759,42 @@ But now $f\in\scp\Lrta z_n\in\scp_0$, so we reduce to the special case $x_n\in\s
 \begin{lemma}
 $\cala$ is finitely generated $k$-domain. Let $\scp\subsetneq \scp'$ be ``adjacent primes''i.e., no primes contained in between. Then 
 $$
-ht(\scp')=ht(\scp)+1
+\text{ht}(\scp')=\text{ht}(\scp)+1
 $$
 \end{lemma}
 \begin{proof}
-Apply previous theorem to $(\cala,\scp)$, $(\cala,\scp')$ and $(\overline{\cala},\overline{\scp'}),$ where $\overline{\cala}=\cala/\scp$ and $\overline{\scp'}=\scp'/\scp$. Hypothesis that $\scp$, $\scp'$``adjacent'' $\Lrta ht(\overline{\scp'})=1$
+Apply previous theorem to $(\cala,\scp)$, $(\cala,\scp')$ and $(\overline{\cala},\overline{\scp'}),$ where $\overline{\cala}=\cala/\scp$ and $\overline{\scp'}=\scp'/\scp$. Hypothesis that $\scp$, $\scp'$``adjacent'' $\Lrta \text{ht}(\overline{\scp'})=1$
 Then by Theorem~\ref{thm:finitelygeneratedk-domain_dim_equality}
 $$
-ht(\scp)+coht(\scp)=ht(\scp)+dim(\overline{\cala})=dim(\cala)
+\text{ht}(\scp)+\text{coht}(\scp)=\text{ht}(\scp)+\text{dim}(\overline{\cala})=\text{dim}(\cala)
 $$
 $$
-ht(\scp')+coht(\scp')=ht(\scp')+coht(\overline{\scp'})=dim(\cala)
+\text{ht}(\scp')+\text{coht}(\scp')=\text{ht}(\scp')+\text{coht}(\overline{\scp'})=\text{dim}(\cala)
 $$
 $$
-ht(\overline{\scp'})+coht(\overline{\scp'})=dim(\overline{\cala})
+\text{ht}(\overline{\scp'})+\text{coht}(\overline{\scp'})=\text{dim}(\overline{\cala})
 $$
 Then
 $$
-ht(\scp')-1=ht(\scp')-ht(\overline{\scp}')=dim(\cala)-dim(\overline{\cala})=ht(\scp)
+\text{ht}(\scp')-1=\text{ht}(\scp')-\text{ht}(\overline{\scp}')=\text{dim}(\cala)-\text{dim}(\overline{\cala})=\text{ht}(\scp)
 $$
 \end{proof}
 
 \subsection{Lecture 25}
 Recall last lecture, $\forall k$ field, $\cala$ a finitely generated $k$-domain, then
 \begin{enumerate}[label=(\roman*)]
-\item $dim(\cala)=tr.deg_k(K),$ where $K:=Frac(\cala)$
-\item $ht(\scp)+coht(\scp)=dim(\cala),\forall \scp\in \text{Spec}(\cala)$
-\item $ht(\scm)=dim(\cala),\forall \scm$ maximal
-\item If $\scp\subsetneq \scp'$ are adjacent,,i.e., $ht(\scp'/\scp)=1$, then $ht(\scp')=ht(\scp)+1$
+\item $\text{dim}(\cala)=tr.deg_k(K),$ where $K:=Frac(\cala)$
+\item $\text{ht}(\scp)+\text{coht}(\scp)=\text{dim}(\cala),\forall \scp\in \text{Spec}(\cala)$
+\item $\text{ht}(\scm)=\text{dim}(\cala),\forall \scm$ maximal
+\item If $\scp\subsetneq \scp'$ are adjacent,,i.e., $\text{ht}(\scp'/\scp)=1$, then $\text{ht}(\scp')=\text{ht}(\scp)+1$
 \end{enumerate}
 
 \begin{cor}
-If $\cala$ is  finitely generated $k$-domain. Every maximal chain of primes in $\cala$ has length $dim(\cala)$. That is to say: if $\scp_0\subsetneq ...\subsetneq \scp_r\subset \cala$ is a chain of primes that cannot be enlarged, then $rdim(\cala)$.
+If $\cala$ is  finitely generated $k$-domain. Every maximal chain of primes in $\cala$ has length $\text{dim}(\cala)$. That is to say: if $\scp_0\subsetneq ...\subsetneq \scp_r\subset \cala$ is a chain of primes that cannot be enlarged, then $r\text{dim}(\cala)$.
 \end{cor}
 The above corollary is false for general rings $\cala$. See the exercises, Matsumura, the keyword is \textbf{``Catenary''}
 \begin{proof}
-Maximality of the chain implies: $\scp_0=(0)\Lrta ht(\scp_0)=0$ and $\scp_r$ maximal $\Lrta ht(\scp_r)=dim(\cala)$. Also $\forall ht(\scp_i/\scp_{i-1})=1\Lrta ht(\scp_i)=ht(\scp_{i-1})+1$ $\Lrta dim(\cala)=ht(\scp_r)-ht(\scp_0)$.
+Maximality of the chain implies: $\scp_0=(0)\Lrta \text{ht}(\scp_0)=0$ and $\scp_r$ maximal $\Lrta \text{ht}(\scp_r)=\text{dim}(\cala)$. Also $\forall \text{ht}(\scp_i/\scp_{i-1})=1\Lrta \text{ht}(\scp_i)=\text{ht}(\scp_{i-1})+1$ $\Lrta \text{dim}(\cala)=\text{ht}(\scp_r)-\text{ht}(\scp_0)$.
 
 Note that this Cor implies $(ii),(iii,(iv))$
 \end{proof} 
@@ -4788,7 +4803,7 @@ Note that this Cor implies $(ii),(iii,(iv))$
 (Another proof of Nullstellensatz) Let $K/k$ be field extension s.t. $K$ is finitely generated $k$-algebra, then $K/k$ is finite.
 \end{cor}
 \begin{proof}
-It suffices to show that $K/k$ is algebraic (i.e.,integral) because integral +finitelygenerated $\Llrta$ finite. That is, we want $tr.deg_k(K)=0$. But $tr.deg_k(K)=dim(K)=0$
+It suffices to show that $K/k$ is algebraic (i.e.,integral) because integral +finitelygenerated $\Llrta$ finite. That is, we want $tr.deg_k(K)=0$. But $tr.deg_k(K)=\text{dim}(K)=0$
 \end{proof}
 
 
@@ -5013,13 +5028,13 @@ $\text{Spec}(\cala)=\{(0,\scp\}$, $\scp\neq (0)$.
 \end{cor}
 
 \begin{cor}
-$dim(\cala)=1$.
+$\text{dim}(\cala)=1$.
 \end{cor}
 
 \begin{cor}
 $\cala$ regular:
 \begin{proof}
-i.e., $dim_k(\scp/\scp^2)=dim(\cala)=1$, because $dim_k(\scp/\scp^2)=\{\text{minimal number of generators of $\scp$}\}$ by Nakayama lemma:
+i.e., $dim_k(\scp/\scp^2)=\text{dim}(\cala)=1$, because $dim_k(\scp/\scp^2)=\{\text{minimal number of generators of $\scp$}\}$ by Nakayama lemma:
 And it equals to 1 because $\scp=(\varpi)$
 \end{proof}
 \end{cor}
@@ -5032,13 +5047,13 @@ $\cala$ DVR $\Lrta \cala$ VR $\Lrta $ $\cala$ normal.
 The nonzero $\cala$-submodule of $K$ form a group $\cong \intg$. They are of the form $\cala\varpi^n, n\in \intg$. $\cala\varpi^m\cdot \cala\varpi^n=\cala^{m+n}$
 \end{cor}
 
-Now, Let $\cala:$ Noetherian local domain of dimension $dim(\cala)=1$. DVR gives examples of such $\cala$. But there are also Non-DVR examples
+Now, Let $\cala:$ Noetherian local domain of dimension $\text{dim}(\cala)=1$. DVR gives examples of such $\cala$. But there are also Non-DVR examples
 $$
 \cala=k[[x^2,x^3]]=\{f=\sum^{\infty}_{i=0}a_i x^i|a_i\in k, a_1=0\}
 $$
 $\scm=(x^2,x^3)$
 
-\begin{thm} $(\cala,\scp)$ is Noetherian local domain with $dim(\cala)=1$.  
+\begin{thm} $(\cala,\scp)$ is Noetherian local domain with $\text{dim}(\cala)=1$.  
 The following are equivalent.
 \begin{itemize}
 \item $\cala$ DVR
@@ -5079,10 +5094,10 @@ Recall
 \begin{proof}
 \underline{proof of (I)}\\
 \textbf{Sublemma 1}\\
-$\cala$ Noetherian local domain, $dim(\cala)=1$, $\scp:=$ the maximal ideal, $K:=Frac(\cala)$.
+$\cala$ Noetherian local domain, $\text{dim}(\cala)=1$, $\scp:=$ the maximal ideal, $K:=Frac(\cala)$.
 Then $\forall x\in K,\exists n\geq 0$ s.t., $x\scp^n\subseteq \cala$,
 \begin{proof}
-Write $x=u/v, 0\neq v\in \cala$. It suffices to find $n\geq 0$ s.t., $\scp^n\subseteq(v)$. But $\dim(\cala)=1$ , $\cala$ is a domain, 
+Write $x=u/v, 0\neq v\in \cala$. It suffices to find $n\geq 0$ s.t., $\scp^n\subseteq(v)$. But $\\text{dim}(\cala)=1$ , $\cala$ is a domain, 
 \end{proof}
 
 \textbf{Sublemma 2}\\
@@ -5180,8 +5195,8 @@ PID $\Llrta$ every ideal principal (finitely generated) $\Lrta $ Noetherian.
 
 PID $\Lrta $ UFD $\Lrta$ normal.
 
-$\forall\scm\in Spem(\cala)$, $\cala_\scm$ Noetherian local domain with principal maximal ideal $\Lrta dim(\cala_\scm)\leq 1$ by system of parameters.
-$dim(\cala)\leq sup_\scm dim(\cala_\scm)$. $\cala$ not a field then $\cala\neq 0$ 
+$\forall\scm\in Spem(\cala)$, $\cala_\scm$ Noetherian local domain with principal maximal ideal $\Lrta \text{dim}(\cala_\scm)\leq 1$ by system of parameters.
+$\text{dim}(\cala)\leq sup_\scm \text{dim}(\cala_\scm)$. $\cala$ not a field then $\cala\neq 0$ 
 \end{proof}
 \end{ex}
 
