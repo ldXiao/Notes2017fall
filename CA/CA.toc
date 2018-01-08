@@ -26,13 +26,13 @@
 \contentsline {subsection}{\numberline {6.6}Lecture 19. System of Parameters}{85}{subsection.6.6}
 \contentsline {subsection}{\numberline {6.7}Lecture 20-1. Dimension of Polynomial Rings, Regularity}{88}{subsection.6.7}
 \contentsline {section}{\numberline {7}Integral Extension of Rings}{90}{section.7}
-\contentsline {subsection}{\numberline {7.1}Lecture 20-2}{90}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Lecture 21}{92}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Lecture 22}{96}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Lecture 23}{98}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}Lecture 24}{101}{subsection.7.5}
-\contentsline {subsection}{\numberline {7.6}Lecture 25}{106}{subsection.7.6}
-\contentsline {section}{\numberline {8}Valuation rings and Normality}{106}{section.8}
-\contentsline {subsection}{\numberline {8.1}Lecture 26}{109}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Lecture 27}{112}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Lecture 28}{115}{subsection.8.3}
+\contentsline {subsection}{\numberline {7.1}Lecture 20-2. Integral Element}{90}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Lecture 21. Normal Domain}{92}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Lecture 22. Going-Up}{96}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Lecture 23. Going-Down}{100}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Lecture 24. Noether Normalization Theorem}{103}{subsection.7.5}
+\contentsline {subsection}{\numberline {7.6}Lecture 25}{107}{subsection.7.6}
+\contentsline {section}{\numberline {8}Valuation rings and Normality}{108}{section.8}
+\contentsline {subsection}{\numberline {8.1}Lecture 26}{110}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Lecture 27}{113}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Lecture 28}{116}{subsection.8.3}

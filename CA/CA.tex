@@ -39,6 +39,11 @@
     draw=none,
     every to/.append style={
       edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
+    },
+  Supseteq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\supseteq$}}}
   }
 }
 
@@ -2383,7 +2388,7 @@ Equivalently, we say $\calb$ is finite $\cala$-algebra iff there exists a surjec
 
 In general, we say $\calb$ is \textbf{finite over} $\cala$ iff there exists $x_1,...,x_n\in\calb$ s.t., $\calb=\{\cala\text{-linear combinations of $x_1,..,x_n$}\}$. 
 
-Also, we say $\calb$ is finitely generated over $\cala$ iff there exists $x_1,...,x_n\in\calb$ s.t., $\calb=\{\text{polynomials in $x_1,...,x_n$ with coefficients in $\cala$}\}$.
+Also, we say $\calb$ is \textbf{finitely generated over} $\cala$ iff there exists $x_1,...,x_n\in\calb$ s.t., $\calb=\{\text{polynomials in $x_1,...,x_n$ with coefficients in $\cala$}\}$.
 \end{rmk}
 
 \begin{ex} Assume
@@ -4043,15 +4048,18 @@ $(ii)\Lrta (i)$ Same proof as $(a)$
 \end{proof}
 
 
-Motivation: to show that $\text{dim}(\cala)=tr.deg.k(Frac(\cala))$, $\forall\cala$ integral domain that is finitely generated as an algebra over some field $k\subseteq\cala$.
-
-For example: $\cala=k[x_1,..,x_n]$
-
-\underline{Want} Machinery for comparing a general ring $\cala$ as above to this example.
 
 \section{Integral Extension of Rings}
 We will cover the contents of \S 5 of A-M and \S 3 pf Bosch
-\subsection{Lecture 20-2}
+
+Motivation: to show that $\text{dim}(\cala)=tr.deg_k(Frac(\cala))$, $\forall\cala$ integral domain that is finitely generated as an algebra over some field $k\subseteq\cala$.
+
+For example: $\cala=k[x_1,..,x_n]$
+
+\underline{Want}: Machinery for comparing a general ring $\cala$ as above to this example.
+
+\subsection{Lecture 20-2. Integral Element}
+
 Consider a monic polynomial equation with coefficients in $\cala$:
 \begin{equation}\label{eq:integral_extension}\tag{*}
 x^n+a_1 x^{n-1}+...+a_n=0
@@ -4075,7 +4083,7 @@ $\cala\subseteq \calb$ are rings. The followings are equivalent for $x\in\calb$.
 \end{enumerate}
 \end{lemma}
 \begin{ex}
-$\frac{1}{2}\in\ratl$ is not integral over $\intg$, $\intg[\frac{1}{2}]$ not a finitely generated $\intg$-module. It equals to  $\sum_{n=0}^\infty 2^{-n}\intg$
+$\frac{1}{2}\in\ratl$ is not integral over $\intg$, $\intg[\frac{1}{2}]$ not a finitely generated $\intg$-module. It equals to  $\sum_{n=0}^\infty 2^{-n}\intg$.
 \end{ex}
 \begin{proof}
 $(i)\Lrta(ii)$ If $x$ satisfies $x^n+a_1 x^{n-1}+...+a_n=0$, then $\cala[x]=\sum^{n-1}_{i=0}\cala x^i\ni x^n=-(a_1 x^{n-1}+...+a_n)\Lrta x^{n+1}=-a_1x^n-(a_2 x^{n-1}+...+a_n x)$. By induction, we know $\cala[x]$ is a finitely generated $\cala$-module.
@@ -4120,7 +4128,7 @@ as desired.
 
 \end{proof}
 
-\subsection{Lecture 21}
+\subsection{Lecture 21. Normal Domain}
 Last time we proved Lemma~\ref{lem:characterization_integral}, many corollary can be derived form it.
 \begin{lemma}\label{lem:integral_lemma2}
 $\cala\subseteq\calb\subseteq \calc$, $x\in\calc$. Then:
@@ -4129,11 +4137,11 @@ $$
 $$
 \end{lemma}
 \begin{lemma}\label{lem:integral_lemma3}
-$\cala\subseteq\calb\subseteq \calc$ are rings. If $\calc$ finite over $\calb$ and $\calb$ finite over $\cala$, then $\calc$ is finite over $\cala$. This can proved trivially by flattening the definition of integral.
+$\cala\subseteq\calb\subseteq \calc$ are rings. If $\calc$ finite over $\calb$ and $\calb$ finite over $\cala$, then $\calc$ is finite over $\cala$. This can proved trivially by flattening the definition.
 \begin{proof}
 $\calc=\sum_{i=1,..,m}\calb y_i$ and $\calb=\sum_{j=1,..,n}\cala x_j$ $\Lrta$
 $$
-\calc=\sum_{i,j}\cala x_j y_i,\ \ x_j\in \calb,y_i\in\calc\Lrta x_j y_i\in \calc
+\calc=\sum_{i,j}\cala x_j y_i,\ \ x_j\in \calb,y_i\in\calc\Lrta x_j y_i\in \calc.
 $$
 \end{proof}
 
@@ -4158,13 +4166,13 @@ For $n\geq 2$, consider the inclusion $\cala[x_1,...,x_{n-1}]\subseteq \cala[x_1
 \begin{lemma}\label{lem:integral_lemma5}
 $\cala\subseteq \calb$. The following are equivalent:
 \begin{enumerate}[label=(\roman*)]
-\item $\calb$ is integral over $\cala$, finitely generated as an $\cala$-algebra.
+\item $\calb$ is integral over $\cala$ and finitely generated as an $\cala$-algebra.
 \item $\calb$ is finite over $\cala$ (i.e., finitely generated as an $\cala$-module).
 \end{enumerate}
 \begin{proof}
-``$(i)\Lrta(ii)$'':$\calb$ is finitely generated $\cala$-algebra, then $\calb=\cala[x_1,..,x_n]$, $ \text{for some $x_j\in \calb$}\Lrta$( each $x_j$ is integral over $\cala$, and $\calb=\cala[x_1,...,x_n]$ is finite over $\cala$ by Lemma~\ref{lem:integral_lemma4}
+``$(i)\Lrta(ii)$'':$\calb$ is finitely generated $\cala$-algebra, then $\calb=\cala[x_1,..,x_n]$, $\Lrta$( each $x_j$ is integral over $\cala$, and $\calb=\cala[x_1,...,x_n]$ is finite over $\cala$ by Lemma~\ref{lem:integral_lemma4}
 
-``$(ii)\Lrta(i)$'': By Lemma~\ref{lem:characterization_integral}, part $iii).\Lrta i).$, $\forall x\in\calb, \cala[x]\subseteq \calb\subseteq\calb$, where $\calb$ is itself finitely generated $\cala$-module, then we know $x$ is integral over $\cala$.
+``$(ii)\Lrta(i)$'': $\calb$ is finite over $\cala$ automatically means $\calb$ is finitely generated $\cala$-algebra. By Lemma~\ref{lem:characterization_integral}, part $iii).\Lrta i).$, $\forall x\in\calb, \cala[x]\subseteq \calb\subseteq\calb$, where $\calb$ is itself finitely generated $\cala$-module, then we know $x$ is integral over $\cala$.
 \end{proof}
 \end{lemma}
 
@@ -4181,7 +4189,7 @@ $\cala\subseteq \calb\subseteq\calc$ where $\calb$ is integral over $\cala$, and
 \begin{proof}
 Let $x\in\calc$. Write
 $$
-x^n+b_1x^{n-1}+...+b_n=0 \text{  for some $b_1,...,b_{n-1}\in\calb$}.
+x^n+b_1x^{n-1}+...+b_n=0 \text{  for some $b_1,...,b_{n}\in\calb$}.
 $$
 Set $\calb_0:=\cala[b_1,...,b_n]$. Then by some Lemma~\ref{lem:integral_lemma4} above, we know $\calb_0$ is finite and integral over $\cala$, and ``$x$ integral over $\calb_0$'' $\Lrta$ ``$\calb_0[x]$ finite over $\calb_0$''.
 
@@ -4196,7 +4204,7 @@ $\cala\subseteq \calb$ rings, $\overline{\cala}:=\{x\in\calb|x\text{ integral ov
 \begin{cor}\label{cor_integral_cor8}
 $\overline{\cala}$ is integrally closed in $\calb$: $\overline{\overline{\cala}}=\overline{\cala}$,``integral closures are integrally closed''
 \begin{proof}
-Suppose $x\in\calb$ is integral over $\overline{\cala}$. Since by definition, $\overline{\cala}$ is  integral over $\cala$. Then by Lemma~\ref{lem:integral_lemma7}, $x$ is integral over $\cala$ $\Lrta$ $x\in \overline{\cala}\Lrta\overline{\overline{\cala}}=\overline{\cala}$
+Suppose $x\in\calb$ is integral over $\overline{\cala}$. Since by definition, $\overline{\cala}$ is  integral over $\cala$. Then by Lemma~\ref{lem:integral_lemma7}, $x$ is integral over $\cala$ $\Lrta$ $x\in \overline{\cala}\Lrta\overline{\overline{\cala}}=\overline{\cala}$.
 \end{proof}
 \end{cor}
 
@@ -4256,11 +4264,11 @@ The element $x\in K$ is integral over $\cala$, but not in $\cala$.
 
 Similarly, $k[x(x-1),x^2(x-1)]$ is not normal.
 \end{ex}
-\begin{prop}
+\begin{prop}\label{prop:integral_closure_in_algebraic_field_extension}
 $\cala$ is a domain. $K:=Frac(\cala)$. $L/K$ is an algebraic field extension. Suppose $\calb:=$integral closure of $\cala$ in $L$. Then $\calb$ is normal.
 \end{prop}
 \begin{proof}
-Integral closure $\calb$ is a subring of $L$, thus it is a integral domain.
+Integral closure $\calb$ is a subring of a field $L$, thus it is a integral domain.
 
 Check that $Frac(\calb)=L$: By definition, $\calb$ is a the set of integral element of $L$ over $\cala$, then $Frac(\calb)\subseteq L$. For the converse inclusion, $x\in L$, $L$ is an algebraic field extension of $K$, then $x$ satisfies some  polynomial equation with coefficients in $K$.
 $$
@@ -4271,7 +4279,7 @@ then we get
 $$
 (s x)^n+(a_1s_2...s_n) (s x)^{n-1}+...=0,
 $$
-which means $sx\in \calb\Lrta x\in Frac(\calb)$.
+which means $sx\in\overline{\cala}= \calb\Lrta x\in Frac(\calb)$.
 \end{proof}
 \begin{ex}
 $\cala=\intg, K=\ratl$, $L/K$ is finite extension ($L$ is a number field.) $\calb$ is the integral closure of $\cala$ in $L$.
@@ -4281,39 +4289,49 @@ $\calb=:\calo_L$ ``ring of integers in $L$''.
 
 \begin{ex}
 $\cala=\intg[\sqrt{3}]$,$L=\ratl(\sqrt{3})$,
-FACT: $\calo_L=[(1+\sqrt{3})/2]\supsetneq \intg[\sqrt(3)]$
+FACT: $\calo_L=[(1+\sqrt{3})/2]\supsetneq \intg[\sqrt 3]$
 
-$\intg[\sqrt{3}]$ is not normal
+$\intg[\sqrt{3}]$ is not normal.
 \end{ex}
 
 \begin{dfn}
-$\cala$ is a domain, $\cala^{norm}:=$ ``integral closure of  $\cala$ in the faction field $K=Frac(\cala)$'' is called the \textbf{normalization} of $\cala$. It is normal.
+$\cala$ is a domain, $\cala^{norm}:=$ ``integral closure of  $\cala$ in the faction field $K=Frac(\cala)$'' is called the \textbf{normalization} of $\cala$. It is normal by Prop~\ref{prop:integral_closure_in_algebraic_field_extension}.
 Examples include
 $$
-k[x^2,x^3]^{norm}=k[x]
+k[X^2,X^3]^{norm}=k[X]
 $$
 $$
 \intg[\sqrt{3}]^{norm}=\intg\left[\frac{1+\sqrt{3}}{2}\right]
 $$
 \end{dfn}
-\begin{lemma}(Lemma 12)
+\begin{lemma}\label{integral_lemma12}(Lemma 12)
 $\cala\subseteq \calb$, integral extension of rings.
 \begin{enumerate}[label=(\roman*)]
 \item ($\cala$ is a field $\Llrta$ $\calb$ is a field) provided that $\cala$ and $\calb$ are domains
-\item  Let $\scq\subseteq \calb$ prime, and $\scp:=\scq\cap \cala$. prime (in $\cala$). Then 
+\item  Let $\scq\subseteq \calb$ prime, and $\scp:=\scq^{c}=\scq\cap \cala$. prime (in $\cala$). Then 
 $\scq$ maximal $\Llrta$ $\scp$ maximal.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
-``$(i)$ $\Lrta$'', Let $x\in \calb-\{0\}$. Write $x^n+a_1 x^{n-1}+...+a_n=0$ with $a_i\in\cala$ and $n$ minimal. Then $a_n\neq 0$, because otherwise we could cancel a factor of $x\neq 0$ to reduce $n$.
+$(i)$ ``$\Lrta$'', Let $x\in \calb-\{0\}$. Write $x^n+a_1 x^{n-1}+...+a_n=0$ with $a_i\in\cala$ and $n$ minimal. Then $a_n\neq 0$, because otherwise we could cancel a factor of $x\neq 0$ to reduce $n$.
 
-Then $x^{n-1}+a_1 x^{n-2}+...+a_n/x=0$ in $Frac(\calb)$. Then $\frac{1}{x}=-(x^{n-1}+a_1 x^{n-2}+...)/a_n\in \calb$ (because $\cala$ is a field $a_n\in\cala^\times$)
->>>>>>>>>.
+Then $x^{n-1}+a_1 x^{n-2}+...+a_n/x=0$ in $Frac(\calb)$. Then $\frac{1}{x}=-(x^{n-1}+a_1 x^{n-2}+...)/a_n\in \calb$ (because $\cala$ is a field $a_n\in\cala^\times$).
+
+``$\Llta$'', $\calb$ is  field, $x\in\cala-\{0\}\subseteq\calb-\{0\}$, $1/x\in\calb$ is integral over $\cala$
+$$
+\left(\frac{1}{x}\right)^n+a_1 \left(\frac{1}{x}\right)^{n-1}+...+a_n=0
+$$
+with $a_i\in\cala$ and $n$ minimal. Multiply by $x^{n-1}$,
+$$
+\frac{1}{x}=-(a_1 +...+a_n x^{n-1})\in\cala
+$$
+$\Lrta\cala$ is a field.
+
+$(ii)$:  $\calb/\scq$ is integral over $\cala/\scp$ by Lemma~\ref{lem:integral_lemma9} and then apply part $(i)$.
+
 \end{proof}
 
-\textbf{Primes in integral extensions}
-
-\subsection{Lecture 22}
+\subsection{Lecture 22. Going-Up}
 \begin{cor}
 If $(\cala,\scm)$: local ring and $\cala\subseteq \calb$: integral extension, then 
 $$
@@ -4321,9 +4339,9 @@ $$
 $$
 \end{cor}
 \begin{proof}
-$\subseteq$: $\scq\cap \cala$: maximal $\Lrta$ $\scq$ maximal by $(ii)$ if Lemma above.
+$\subseteq$: $\scq\cap \cala$: maximal $\Lrta$ $\scq$ maximal by Lemma~\ref{integral_lemma12}.
 
-$\supseteq$: $\scq$ maximal implies by Lemma above $\scq\cap \cala$ maximal, $\scq\cap\cala=\scm$.
+$\supseteq$: $\scq$ maximal implies by Lemma~\ref{integral_lemma12}. $\scq\cap \cala$ maximal, $\scq\cap\cala=\scm$.
 \end{proof}
 \begin{dfn}
 $\cala\subseteq \calb$, integral extensions, $\scq\in \text{Spec}(\calb)$ \textbf{lies over} $\scp\in \text{Spec}(\cala)$ iff $\scq\cap\cala=\scp$.
@@ -4331,7 +4349,9 @@ $\cala\subseteq \calb$, integral extensions, $\scq\in \text{Spec}(\calb)$ \textb
 \begin{thm}\label{thm:integral_extension_primes_properties}
 Let $\cala\subseteq \calb$ integral extensions:
 \begin{enumerate}[label=(\roman*)]
-\item (lying over): Every  prime $\scp\subset\cala$ has some prime $\scq\subseteq \calb$ lying over it. (equivalently, then map $\text{Spec}(\calb)\lrta \text{Spec}(\cala)$: $\scq\mapsto \scq\cap \cala$ is surjective.)
+\item (Maximality)  Let $\scq\subseteq \calb$ prime, and $\scp:=\scq^{c}=\scq\cap \cala$. prime (in $\cala$). Then 
+$\scq$ maximal $\Llrta$ $\scp$ maximal. This has been proved in Lemma~\ref{integral_lemma12}, but we put it here for consistency.
+\item (Lying-Over): Every  prime $\scp\subset\cala$ has some prime $\scq\subseteq \calb$ lying over it. (equivalently, then map $\text{Spec}(\calb)\lrta \text{Spec}(\cala)$: $\scq\mapsto \scq\cap \cala$ is surjective.)
 
 \item (Incomparablity) The primes lying over a given prime satisfy no inclusion relations, i.e.,
 $$
@@ -4342,13 +4362,13 @@ $$
 \end{aligned}
 \right\}\Lrta \scq=\scq'.
 $$
-Equivalently, if $\scq\supsetneq \scq'$ (primes in $\calb$), then $\scq\cap\cala\supsetneq \scq'\cap\cala$
-\item (Going up) For all $\scp,\scp'\in \text{Spec}(\cala),\scq\in \text{Spec}(\calb)$ s.t. $\scp\subseteq \scp',\scq\cap\cala=\scp$, \\
+Equivalently, if $\scq\supsetneq \scq'$ (primes in $\calb$), then $\scq\cap\cala\supsetneq \scq'\cap\cala$. The direction $\scq\cap\cala\supsetneq \scq'\cap\cala\Lrta \scq\supsetneq \scq'$ holds automatically, we have $\scq\cap\cala\supsetneq \scq'\cap\cala\Llrta \scq\supsetneq \scq'$. 
+\item (Going-Up) For all $\scp,\scp'\in \text{Spec}(\cala),\scq\in \text{Spec}(\calb)$ s.t. $\scp\subseteq \scp',\scq\cap\cala=\scp$, \\
 $\exists \scq'\in \text{Spec}(\calb)$ s.t. $\scq'\supseteq \scq,$ $\scq'\cap \cala=\scp'$
 Equivalently, if we start with a chain 
-$\scp_1\subseteq ....subseteq \scp_n=\scp\in \text{Spec}(\cala)$, then there exists a chain 
-$\scq_1\subseteq ...\subseteq \scq_n=\scq\in \text{Spec}(\calb)$ 
-Moreover, by ``Incomparablity'', if $\scp\subsetneq \scp'$, then $\scq\subsetneq \scq'$
+$\scp_1\subseteq ....\subseteq \scp_n=\scp\in \text{Spec}(\cala)$, then there exists a chain 
+$\scq_1\subseteq ...\subseteq \scq_n=\scq\in \text{Spec}(\calb)$, s.t., $\scq_i\cap\cala=\scp_i$. 
+Moreover, by ``Incomparablity'', if $\scp\subsetneq \scp'$, then $\scq\subsetneq \scq'$.
 \end{enumerate}
 \end{thm}
 
@@ -4356,41 +4376,71 @@ Equivalently,
 
 \begin{cor}
 $\cala\subseteq\calb$ integral extension, $\scb\subseteq\calb$ ideal, $\sca:=\scb\cap\cala$
-\begin{enumerate}
+\begin{enumerate}[label=(\roman*)]
 \item $\text{dim}(\cala)=\text{dim}(\calb)$
-\item $\text{dim}(\cala/\sca)= \text{dim}(\calb/\scb)$
-\item $\text{ht}(\scb)\leq \text{ht}(\sca)$
+\item $\text{dim}(\cala/\sca)= \text{dim}(\calb/\scb)$, i.e. $\text{coht}(\sca)=\text{coht}(\scb)$.
+\item $\text{ht}(\scb)\leq \text{ht}(\sca)${\color{red}. But if we assume $\scq$ is prime and $\scp=\scq\cap\cala$, then $\text{ht}(\scp)=\text{ht}(\scq)$}
 \end{enumerate}
-\begin{proof}
-(i),
+\begin{proof}\ \\
+$(i)$\checkmark. In general ring morphism, for each (strictly inclusion) chain in $\calb$, there exists a (possibly not strictly inclusion) chain  in $\cala$. In the case of integral extension, the incomparability alone guarantees the strict inclusion of the chain in $\cala$. We know $\text{dim}(\cala)\geq \text{dim}(\calb)$. In return, the Going-Up+Incomparability guarantee $\text{dim}(\cala)\leq\text{dim}(\calb) $ \\ 
+$(ii)$\checkmark. By Lemma~\ref{lem:integral_lemma9}, $\calb/\scb$ is integral over $\calb/\scb$ and $(ii)$ reduce to $(i)$.\\
+$(iii)$. {\color{red}The proof of ``$\scq$ lies over $\scp$'' $\Lrta$ ``$\text{ht}(\scq)=\text{ht}(\scp)$'' is already included in (i).} $\text{ht}(\scb)\leq \text{ht}(\sca):=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$ and $\text{ht}(\scp):=\sup\{t|\exists \scp_0\subsetneq...\subsetneq\scp_t=\scp\}$. 
 
-(ii),
+\underline{Want}: if $\scp\supseteq \sca$, then $\text{ht}(\scp)\geq \text{ht}(\scb)$.
 
-
-(iii), $\text{ht}(\scb)\subseteq \text{ht}(\sca)=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$. 
->>>>>5
-Want: if $\scp\supseteq \sca$, then $\text{ht}(\scp)\geq \text{ht}(\scb)$
->>>>>>>>>6
+Given a prime $\scp\supseteq\sca$, then by Lying-Over,  $\exists\text{ prime } \scq\in\calb$ s.t. $\scq\cap\cala=\scp$. We may assume that $\scp\supseteq\sca$ is minimal, then by Incomparability $\scq\supseteq\scb$ is minimal.
+$$
+\text{ht}(\scp)=\text{ht}(\scq)\geq \text{ht}(\scb)
+$$ 
 \end{proof}
 \end{cor}
 
 \begin{proof}(of Theorem~\ref{thm:integral_extension_primes_properties})
-Lying over: Let $\scp\in \text{Spec}(\cala)$. $\cala_\scp\subseteq\calb_\scp$ integral, where $\cala_\scp$ is local with maximal $\scm:=\scp\cala_\scp$.
+{\color{red} the initial proof of Lying-Over in lecture used the term :``Let $\scp\in \text{Spec}(\cala)$. $\cala_\scp\subseteq\calb_\scp$ integral extension''. Here the $\scp$ is not necessarily prime in $\calb$, hence the notion $\calb_\scp$ should be replaced by $\varphi(S)^{-1}\calb$ where $S:=\cala-\scp$ and $\varphi$ is the inclusion map: $\cala\inj\calb$.}
 
->>>>>>>>3
+Lying-Over:  
+
+\[
+\begin{tikzcd}
+\scn\cap\calb=:\scq \arrow[r, Subseteq] \arrow[d, dash] & \calb \arrow[r, hook ] & \varphi(S)^{-1}\calb \arrow[r, Supseteq] & \exists\scn\text{ maximal }  \arrow[d,dash] \\
+\scm\cap\cala=:\scp \arrow[r, Subseteq] & \cala \arrow[r, hook] \arrow[u, hook] & S^{-1}\cala \arrow[u, hook] \arrow[r, Supseteq] & \scm\text{ maximal} 
+\end{tikzcd}
+\]
+
+$\scq:=\scn\cap\calb$ lies over $\scp$ because
+$$
+(\scn\cap\calb)\cap\cala=(\scn\cap\varphi(S)^{-1}\calb)\cap\cala=\scm\cap\cala=\scp 
+$$
+
+Incomparability: The construction above gives a bijection between
+$$
+\{\text{primes of $\calb$ lying over $\scp$}\}\llrta\{\text{primes of $\varphi(S)^{-1}\calb$ lying  over $\scm=S^{-1}\scp$}\}
+$$
+and by Lemma~\ref{integral_lemma12}, the later can be identified as
+$$
+\{\text{ maximal ideals in $\varphi(S)^{-1}\calb$ that lies over $\scm$}\},
+$$
+which is always incomparable.
+
 
 
 Going up:
-
->>>>>>4
-Consider the prime $\scp'/\scp\subset\cala/\scp\subseteq\calb/\scq$, where the second inclusion is integral extension. By lying over, we can find a prime $Q\subseteq\calb/\scq$ lying over $\scp'\scp$. Then $Q=\scq'/\scq$ for some $\scq'\in \text{Spec}(\calb)$
-
+\[
+\begin{tikzcd}
+\scq\ar[r,Subseteq]\ar[d,dash] & \exists ?\scq'\ar[r, Subseteq]\ar[d,dash] & \calb\\
+\scq\ar[r, Subseteq] & \scp'\ar[r, Subseteq] & \cala\ar[u, hook]
+\end{tikzcd}
+\]
+Consider the prime $\scp'/\scp\subset\cala/\scp\subseteq\calb/\scq$, where the second inclusion is integral extension. By lying over, we can find a prime $Q\subseteq\calb/\scq$ lying over $\scp'/\scp$. Then $Q=\scq'/\scq$ for some $\scq'\in \text{Spec}(\calb)$
+$$
+\scp'/\scp=(\scq'/\scq)\cap(\cala/\scp)=\frac{\scq'\cap\cala}{\scq\cap\cala}=\frac{\scq'\cap\cala}{\scq}\Lrta \scp'=\scq'\cap\cala
+$$
 Then $\scq'$ lies over $\scp'$
 \end{proof}
 
 
 \subsection*{Galois Transitivity}
-
+In order to prove the Going-Down theorem, we digress for a while to discuss some facts in field theory.
 \begin{dfn}
 A \textbf{normal} extension $L/K$ of fields, is an extension s.t., each irredusible $f\in K[X]$ that has $\geq 1$ root in $L$ splits completely in $L$. (In other words, $L/K$ is  a union of ``splitting fields'')
 \end{dfn}
@@ -4455,7 +4505,7 @@ This completes the proof of $(iii)$ in the case that $L/K$ is finite.
 \end{enumerate}
 \end{proof}
 
-\subsection{Lecture 23}
+\subsection{Lecture 23. Going-Down}
 In this lecture, we will continue to proof the part $(iii)$ of Theorem~\ref{thm:normal_domain_normal_Galois} for infinite field extension $L/K$.
 
 Re call the Zorn's Lemma: In a nonempty partially ordered set $A,\leq $ in which each chain $C\subseteq A$ has an upper bound in $A$, then there is a maximal element.
@@ -4594,10 +4644,10 @@ $\cala$: integral over $\cala_0$ $\Lrta$ $K$ algebraic over $K_0$ (Confer the pr
 
 $\Lrta tr.deg_l(K)=tr.deg_k(K_0)=d=\text{dim}(\cala)$.
 \end{proof}
-\underline{NB}, If $\kappa: k[X_1,...,X_n]\lrta\cala$ is injective and integral, then automatically $n=\text{dim}(\cala)$, because we have seen that integral extension preserves dimension.
+N.b., If $\kappa: k[X_1,...,X_n]\lrta\cala$ is injective and integral, then automatically $n=\text{dim}(\cala)$, because we have seen that integral extension preserves dimension.
 
 
-\subsection{Lecture 24}
+\subsection{Lecture 24. Noether Normalization Theorem}
 Last time we stated Noether Normalization Theorem~\ref{thm:Noether_Normalization} and also its main motivation Corollary~\ref{cor:k-domain_dim_tr.deg}. This lecture, we will give the proof of the Theorem.
 
 First, we give a key lemma for Noether Normalization (NN).
