@@ -29,10 +29,10 @@
 \contentsline {subsection}{\numberline {7.1}Lecture 20-2. Integral Element}{90}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Lecture 21. Normal Domain}{92}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}Lecture 22. Going-Up}{96}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Lecture 23. Going-Down}{100}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.4}Lecture 23. Galois Transitivity and Going-Down}{98}{subsection.7.4}
 \contentsline {subsection}{\numberline {7.5}Lecture 24. Noether Normalization Theorem}{103}{subsection.7.5}
-\contentsline {subsection}{\numberline {7.6}Lecture 25}{107}{subsection.7.6}
-\contentsline {section}{\numberline {8}Valuation rings and Normality}{108}{section.8}
-\contentsline {subsection}{\numberline {8.1}Lecture 26}{110}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Lecture 27}{113}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Lecture 28}{116}{subsection.8.3}
+\contentsline {section}{\numberline {8}Valuation rings and Normality}{109}{section.8}
+\contentsline {subsection}{\numberline {8.1}Lecture 25. }{109}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Lecture 26}{111}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Lecture 27}{114}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Lecture 28}{117}{subsection.8.4}

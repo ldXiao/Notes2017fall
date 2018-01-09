@@ -40,6 +40,11 @@
     every to/.append style={
       edge node={node [sloped, allow upside down, auto=false]{$\subseteq$}}}
     },
+    Subsetneq/.style={
+    draw=none,
+    every to/.append style={
+      edge node={node [sloped, allow upside down, auto=false]{$\subsetneq$}}}
+    },
   Supseteq/.style={
     draw=none,
     every to/.append style={
@@ -4346,7 +4351,7 @@ $\supseteq$: $\scq$ maximal implies by Lemma~\ref{integral_lemma12}. $\scq\cap \
 \begin{dfn}
 $\cala\subseteq \calb$, integral extensions, $\scq\in \text{Spec}(\calb)$ \textbf{lies over} $\scp\in \text{Spec}(\cala)$ iff $\scq\cap\cala=\scp$.
 \end{dfn}
-\begin{thm}\label{thm:integral_extension_primes_properties}
+\begin{thm}\label{thm:integral_extension_goingup}
 Let $\cala\subseteq \calb$ integral extensions:
 \begin{enumerate}[label=(\roman*)]
 \item (Maximality)  Let $\scq\subseteq \calb$ prime, and $\scp:=\scq^{c}=\scq\cap \cala$. prime (in $\cala$). Then 
@@ -4366,8 +4371,8 @@ Equivalently, if $\scq\supsetneq \scq'$ (primes in $\calb$), then $\scq\cap\cala
 \item (Going-Up) For all $\scp,\scp'\in \text{Spec}(\cala),\scq\in \text{Spec}(\calb)$ s.t. $\scp\subseteq \scp',\scq\cap\cala=\scp$, \\
 $\exists \scq'\in \text{Spec}(\calb)$ s.t. $\scq'\supseteq \scq,$ $\scq'\cap \cala=\scp'$
 Equivalently, if we start with a chain 
-$\scp_1\subseteq ....\subseteq \scp_n=\scp\in \text{Spec}(\cala)$, then there exists a chain 
-$\scq_1\subseteq ...\subseteq \scq_n=\scq\in \text{Spec}(\calb)$, s.t., $\scq_i\cap\cala=\scp_i$. 
+$\scp=\scp_1\subseteq ....\subseteq \scp_n\in \text{Spec}(\cala)$ and a prime $\scq$ lying over $\scp$, then there exists a chain 
+$\scq=\scq_1\subseteq ...\subseteq \scq_n\in \text{Spec}(\calb)$, s.t., $\scq_i\cap\cala=\scp_i$. 
 Moreover, by ``Incomparablity'', if $\scp\subsetneq \scp'$, then $\scq\subsetneq \scq'$.
 \end{enumerate}
 \end{thm}
@@ -4379,23 +4384,25 @@ $\cala\subseteq\calb$ integral extension, $\scb\subseteq\calb$ ideal, $\sca:=\sc
 \begin{enumerate}[label=(\roman*)]
 \item $\text{dim}(\cala)=\text{dim}(\calb)$
 \item $\text{dim}(\cala/\sca)= \text{dim}(\calb/\scb)$, i.e. $\text{coht}(\sca)=\text{coht}(\scb)$.
-\item $\text{ht}(\scb)\leq \text{ht}(\sca)${\color{red}. But if we assume $\scq$ is prime and $\scp=\scq\cap\cala$, then $\text{ht}(\scp)=\text{ht}(\scq)$}
+\item $\text{ht}(\scb)\leq \text{ht}(\sca)$.
 \end{enumerate}
 \begin{proof}\ \\
 $(i)$\checkmark. In general ring morphism, for each (strictly inclusion) chain in $\calb$, there exists a (possibly not strictly inclusion) chain  in $\cala$. In the case of integral extension, the incomparability alone guarantees the strict inclusion of the chain in $\cala$. We know $\text{dim}(\cala)\geq \text{dim}(\calb)$. In return, the Going-Up+Incomparability guarantee $\text{dim}(\cala)\leq\text{dim}(\calb) $ \\ 
 $(ii)$\checkmark. By Lemma~\ref{lem:integral_lemma9}, $\calb/\scb$ is integral over $\calb/\scb$ and $(ii)$ reduce to $(i)$.\\
-$(iii)$. {\color{red}The proof of ``$\scq$ lies over $\scp$'' $\Lrta$ ``$\text{ht}(\scq)=\text{ht}(\scp)$'' is already included in (i).} $\text{ht}(\scb)\leq \text{ht}(\sca):=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$ and $\text{ht}(\scp):=\sup\{t|\exists \scp_0\subsetneq...\subsetneq\scp_t=\scp\}$. 
+$(iii)$. For primes $\scq\subsetneq\calb$ $\scp\subseteq \cala$ s.t. $\scq$ lie over $\scq$, we have $\text{ht}(\scp)\geq \text{ht}(\scq)$ because for each proper including chain of primes that ends with$\scq\subseteq\calb$, there exists a proper including chain of primes ending with $\scq\subseteq\cala$, where the proper inclusion is guaranteed by Incomparability. (We can not use Going-Up to argue $\text{ht}(\scp)\leq \text{ht}(\scq)$).
+
+ $\text{ht}(\scb)\leq \text{ht}(\sca):=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$ and $\text{ht}(\scp):=\sup\{t|\exists \scp_0\subsetneq...\subsetneq\scp_t=\scp\}$. 
 
 \underline{Want}: if $\scp\supseteq \sca$, then $\text{ht}(\scp)\geq \text{ht}(\scb)$.
 
 Given a prime $\scp\supseteq\sca$, then by Lying-Over,  $\exists\text{ prime } \scq\in\calb$ s.t. $\scq\cap\cala=\scp$. We may assume that $\scp\supseteq\sca$ is minimal, then by Incomparability $\scq\supseteq\scb$ is minimal.
 $$
-\text{ht}(\scp)=\text{ht}(\scq)\geq \text{ht}(\scb)
+\text{ht}(\scp)\geq \text{ht}(\scq)\geq \text{ht}(\scb)
 $$ 
 \end{proof}
 \end{cor}
 
-\begin{proof}(of Theorem~\ref{thm:integral_extension_primes_properties})
+\begin{proof}(of Theorem~\ref{thm:integral_extension_goingup})
 {\color{red} the initial proof of Lying-Over in lecture used the term :``Let $\scp\in \text{Spec}(\cala)$. $\cala_\scp\subseteq\calb_\scp$ integral extension''. Here the $\scp$ is not necessarily prime in $\calb$, hence the notion $\calb_\scp$ should be replaced by $\varphi(S)^{-1}\calb$ where $S:=\cala-\scp$ and $\varphi$ is the inclusion map: $\cala\inj\calb$.}
 
 Lying-Over:  
@@ -4428,21 +4435,21 @@ Going up:
 \[
 \begin{tikzcd}
 \scq\ar[r,Subseteq]\ar[d,dash] & \exists ?\scq'\ar[r, Subseteq]\ar[d,dash] & \calb\\
-\scq\ar[r, Subseteq] & \scp'\ar[r, Subseteq] & \cala\ar[u, hook]
+\scp\ar[r, Subseteq] & \scp'\ar[r, Subseteq] & \cala\ar[u, hook]
 \end{tikzcd}
 \]
 Consider the prime $\scp'/\scp\subset\cala/\scp\subseteq\calb/\scq$, where the second inclusion is integral extension. By lying over, we can find a prime $Q\subseteq\calb/\scq$ lying over $\scp'/\scp$. Then $Q=\scq'/\scq$ for some $\scq'\in \text{Spec}(\calb)$
 $$
 \scp'/\scp=(\scq'/\scq)\cap(\cala/\scp)=\frac{\scq'\cap\cala}{\scq\cap\cala}=\frac{\scq'\cap\cala}{\scq}\Lrta \scp'=\scq'\cap\cala
 $$
-Then $\scq'$ lies over $\scp'$
+Then $\scq'$ lies over $\scp'$.
 \end{proof}
 
 
-\subsection*{Galois Transitivity}
+\subsection{Lecture 23. Galois Transitivity and Going-Down}
 In order to prove the Going-Down theorem, we digress for a while to discuss some facts in field theory.
 \begin{dfn}
-A \textbf{normal} extension $L/K$ of fields, is an extension s.t., each irredusible $f\in K[X]$ that has $\geq 1$ root in $L$ splits completely in $L$. (In other words, $L/K$ is  a union of ``splitting fields'')
+A \textbf{normal} extension $L/K$ of fields, is an extension s.t., each irreducible $f\in K[X]$ that has $\geq 1$ root in $L$ splits completely in $L$. (In other words, $L/K$ is  a union of ``splitting fields'')
 \end{dfn}
 
 \begin{dfn}
@@ -4458,17 +4465,25 @@ $$
 \end{dfn}
 $\alpha\in L$ separable over $K$ is equivalent to ``the minimal polynomial $f\in K[X]$ for $\alpha$ ($f(\alpha)=0, deg(f)\text{minimal}$) has no repeated roots.''
 
-\underline{NB} $char(K)=0\Lrta$ every extension is separable.
+N.b. $char(K)=0\Lrta$ every extension is separable.
 
 \begin{ex}
 $K=\bbf_p(t)$, $L:=K(t^{1/p^n})$ is not separable. In fact, it is purely inseparable: 
 $$
 \#Hom_K(K(\alpha),\overline{K})=1\ \forall \alpha\in L
 $$
+\underline{FACT}: let $L/K$ be a normal extension. Let $G:=Aut(L/K), L^G:=\{\alpha\in L:g(\alpha)=\alpha\forall g\in G\}$
+
+\[
+      \mathrlap{\overbrace{\phantom{Kaa \subseteq\ }}^{\text{purely insep}}}
+      K\subseteq 
+      \mathrlap{\underbrace{\phantom{L^G\subseteq\ \ \    }}_{\text{Galois}}}
+       L^G\subseteq L.
+\]
+See GTM 211 for details.
 \end{ex}
 
-\underline{FACT}: let $L/K$ be a normal extension. Let $G:=Aut(L/K), L^G:=\{\alpha\in L:g(\alpha)=\alpha\forall g\in G\}$
->>>>>>>.7
+
 
 
 \begin{thm}\label{thm:normal_domain_normal_Galois}
@@ -4477,38 +4492,53 @@ Let $L/K$: normal extension of fields. Let $\calb:=$ integral closure of $\cala$
 \begin{enumerate}[label=(\roman*)]
 \item For each $g\in G$, the restriction of $g$ to $\calb$ induces a ring automorphism $g:\calb\overset{\sim}{\lrta}\calb$
 
-\item $\scq\in \text{Spec}(\calb)\Lrta g(\scq)\in \text{Spec}(\calb), \forall g\in G$???????
+\item $\forall g\in G, \scq\in \text{Spec}(\calb)\Lrta g(\scq)\in \text{Spec}(\calb)$ and $\scq\cap\cala=g(\scq)\cap\cala$.
 
 \item $\forall \scq,\scq'\in \text{Spec}(\calb)$ with $\scq\cap\cala=\scq'\cap\cala$, $\exists g\in G$, s.t. $g(\scq)=\scq'$:
 \end{enumerate}
 \end{thm}
 
-\begin{proof}
+\begin{proof}\ 
 \begin{enumerate}[label=(\roman*)]
-\item aa
-\item 
->>>>>>>>>8
-\item Assume first that $L/K$ finite, then $\#G<\infty$. Let $\scq,\scq'\in \text{Spec}(\calb)$ with $\scq\cap\cala=\scp=\scq'\cap\cala$. 
+\item Let $x\in\calb$, $g\in G$\\
+\underline{Want}: $g(x)\in\calb$:\\
+Indeed, write
+$$
+x^n+a_1 x^{n-1}+...+a_n=0,\ a_i\in\cala,
+$$ 
+then
+$$
+\begin{aligned}
+0&=g(x^n+a_1 x^{n-1}+...+a_n)\\
+&=g(x)^n+g(a_1)g(x)^{n-1}+..+g(a_n)\\
+&=g(x)^n+a_1g(x)^{n-1}+...+a_n \ \ (\text{$g$ fixes $K\supseteq \cala$})
+\end{aligned}
+$$
+$\Lrta g(x)\in\calb$.
 
-Claim:
+We have shown that $g\in Aut(L/K)$ satisfies $g(\calb)\subset\calb\forall g\in\in G$. True also for $g^{-1}$. Then we know after restricting to $\calb$ $g\circ g^{-1}$ and $g^{-1}\circ g$ are also identities. $Aut(L/K)$ restricts to a group of ring automorphism.
+
+\item Let $g\in G$, $\scq\in\text{Spec}(\calb)$. $g$ restrict to a ring morphism then $g(\scq)=(g^{-1})^{-1}(\scq)$ always prime $g(\scq)\in\calb$. Also $\scq\cap\cala=g(\scq\cap\cala)=g(\scq)\cap g(\cala)=g(\scq)\cap\cala$ because $g$ fixes $\cala$.
+
+\item $(a)$ Assume first that $L/K$ finite, then $\#G<\infty$. Let $\scq,\scq'\in \text{Spec}(\calb)$ with $\scq\cap\cala=\scp=\scq'\cap\cala$. 
+
+\underline{Claim}:
 $$
 \scq'\subseteq\cup_{g\in G}g(\scq).
 $$
-By prime avoidance, claim $\Lrta$ $\exists g\in G,\scq;\subseteq g(\scq)$ both lying over $\scq$ (by part $(ii)$), then by incomparability we know $\scq'=g(\scq)$, as desired.
+By prime avoidance~\ref{prop:prime_avoidance}, the claim $\Lrta$ $\exists g\in G,\scq\subseteq g(\scq)$ both lying over $\scq$ (by part $(ii)$), then by incomparability~\ref{thm:integral_extension_goingup} we know $\scq'=g(\scq)$, as desired.
 
-\underline{Proof of the claim}: Let $x\in \scq'.$ St $y:=\prod_{g\in G}g(x)\in L^G$.
-By ``Galois theory'', $\exists n\geq 1$ s.t. $y^n\in K$. Moreover, since each $g(x)\in\calb$, and $\calb:$ integral over $\cala$, we see that $y^n$ is integral over $\cala$ and belong s to $K$. Since $\cala$ is normal, we get that $y^n\in \cala\cap\scq'$
->>>>>>10
-Since $\scq$ is prime, and $y^n=\prod_{g\in G}g(x)^n$, deduce that $g(x)\in\scq$ for some $g\in G$, hence that $x\in g^{-1}(\scq)$. Thus $\scq'\subseteq \cup_{g\in G}g^{-1}(\scq)=\cup_{g\in G}g(\scq)$ as claimed.
+\underline{Proof of the claim}: Let $x\in \scq'$. Set $y:=\prod_{g\in G}g(x)\in L^G$.
+By Galois theory, $\exists n\geq 1$ s.t. $y^n\in K$. Moreover, since each $g(x)\in\calb$, and $\calb:$ integral over $\cala$, we see that $y^n$ is integral over $\cala$ and belongs to $K$. (It is an integral element in $\text{Frac}(\cala)$). Since $\cala$ is normal, we get that $y^n\in \cala\cap\scq'=\scq\cap\cala$.
+
+Since $\scq$ is prime, and $y^n=\prod_{g\in G}g(x)^n$, deduce that $g(x)\in\scq$ for some $g\in G$. \textbf{Notice that this step relies on the finiteness of $\#G$}\\
+ Hence, we know $x\in g^{-1}(\scq)$. Thus $\scq'\subseteq \cup_{g\in G}g^{-1}(\scq)=\cup_{g\in G}g(\scq)$ as claimed.
 
 This completes the proof of $(iii)$ in the case that $L/K$ is finite.
-\end{enumerate}
-\end{proof}
 
-\subsection{Lecture 23. Going-Down}
-In this lecture, we will continue to proof the part $(iii)$ of Theorem~\ref{thm:normal_domain_normal_Galois} for infinite field extension $L/K$.
+$(b)$ For the infinite case.
 
-Re call the Zorn's Lemma: In a nonempty partially ordered set $A,\leq $ in which each chain $C\subseteq A$ has an upper bound in $A$, then there is a maximal element.
+Recall the \textbf{Zorn's Lemma}: In a nonempty partially ordered set $(A,\leq) $ in which each chain $C\subseteq A$ has an upper bound in $A$, then there is a maximal element.
 
 We will use this to deduce the infinite case from the finite case. Consider a subextension $L/E/K$, with $E/K$ normal. Then $R_E:=\calb\cap E$ is the integral closure of $A$ in $E$. $\scq_1\cap R_E=\scq_1\cap E$ and $\scq_2\cap R_E=\scq_2\cap E$ are primes of $R_E$ that lie over $\scp$
 $$
@@ -4520,11 +4550,13 @@ A:=\left\{
 \end{aligned}
 \right\}
 $$
-define an order on $A$ by $(E,q\leq (E',g'))$ iff $E\subseteq E', g'|_E=g$
+define an order on $A$:
+
+ $(E,q)\leq (E',g')$ iff $E\subseteq E', g'|_E=g$
 
 \underline{Want}: $\exists g\in Aut(L/K)$ s.t. $(L,g)\in A$ 
 
-$A\neq \emptyset$ $(K,id) in A$. Let $C=\{(E_i,g_i\}_{i\in I}\subseteq A$ be a chain, where $i\leq j\lrta (E_i,g_i)\leq (E_j,g_j)$.
+$A\neq \emptyset\Llta$ $(K,id) \in A$. Let $C=\{(E_i,g_i)\}_{i\in I}\subseteq A$ be a chain, where $i\leq j\Lrta (E_i,g_i)\leq (E_j,g_j)$.
 
 Then $C$ has an upper bound $(E,g)\in A$
 $$
@@ -4536,25 +4568,28 @@ $$
 \end{aligned}
 \right.
 $$
-Thus by Zorn;s lemma, $\exists $ maximal $(E,g)\in A$. We want to claim that $E=L$.
+Thus by Zorn's lemma, $\exists $ maximal $(E,g)\in A$. 
 
-If not. then $\exists $ finite normal extension $E'/E$ with $E'\subseteq L$ and $E'\supsetneq E.$ (Take any $\alpha\in L$, $\alpha\notin E$) Let $F\in E[X]$ be the minimal polynomial of $\alpha$ over $E$. Take $E':=$ field obtained by adjoining to $E$ all roots of $F$ in L 
+\underline{Claim}: $E=L$.
 
->>>>>>>>>>>>>1
+If not. then $\exists $ finite normal extension $E'/E$ with $E'\subseteq L$ and $E'\supsetneq E.$ (Take any $\alpha\in L$, $\alpha\notin E$. Let $f\in E[X]$ be the minimal polynomial of $\alpha$ over $E$. Take $E':=$ field obtained by adjoining to $E$ all roots of $f$ in $L$.)
+
 {\tiny
 \[
 \begin{tikzcd}
-\scq_1 & & & & \scq_2\ar[r,Subseteq] & \calb\ar[r,Subseteq] & L\\
-\scq_1\cap E'\ar[rr,"\tilde{g}"] & & \tilde{g}(\scq\cap E')\ar[rr,"\sigma"] & & \scq_2\cap E'\ar[r,Subseteq] & R_{E'}\ar[r,Subseteq]\ar[u,Subseteq] & E'\ar[u,Subseteq]\\
-& \scq_1\cap E\ar[rr,"g"] & & \scq_2\cap E\ar[rr,Subseteq] & & R_E\ar[r,Subseteq]\ar[u,Subseteq] & E\ar[u,Subseteq]\\
+\scq_1\ar[d,dash] & & & & \scq_2\ar[d,dash]\ar[r,Subseteq] & \calb\ar[r,Subseteq] & L\\
+\scq_1\cap E'\ar[rrrr, "g'", bend left]\ar[rr,"\tilde{g}"]\ar[dr,dash] & & \tilde{g}(\scq\cap E')\ar[rr,"\exists\sigma"]\ar[dr,dash] & & \scq_2\cap E'\ar[r,Subseteq]\ar[dl,dash] & R_{E'}\ar[r,Subseteq]\ar[u,Subseteq] & E'\ar[u,Subseteq]\\
+& \scq_1\cap E\ar[rr,"g"]\ar[dr,dash] & & \scq_2\cap E\ar[rr,Subseteq]\ar[dl,dash] & & R_E\ar[r,Subseteq]\ar[u,Subseteq] & E\ar[u,Subseteq]\\
 & & \scp & & & \cala\ar[r,Subseteq]\ar[u,Subseteq] & K\ar[u,Subseteq]
 \end{tikzcd}
 \]
 }
-Let $\tilde{g}\in Aut(E'/K)$ be any extension of $g$ such that $\tilde{g} $ exists.
-
-Then $\tilde{g}(\scq_q\cap E')$ lies over $\scq_2\cap E$. Since theorem holds for $E'/E$ (finite normal extension), $\exists \sigma \in Aut(E'/E)$ s.t. $\sigma(\tilde{g}(\scq_1\cap E'))=\scq_2\cap E'$. Set $g':=\sigma\circ \tilde{g}\in Aut(E'/K)$. Clearly, $g'(\scq_1\cap E')=\scq_2\cap E'$, so $(E',g')\in A$. Also, $E\subsetneq E'$ and $g'|E=g$, which contradict the maximality of $(E,g)$
-
+Let $\tilde{g}\in Aut(E'/K)$ be any extension of $g$ (such $\tilde{g} $ exists).\\
+Then $\tilde{g}(\scq_1\cap E')$ lies over $\scq_2\cap E$.\\
+Since theorem holds for $E'/E$ (finite normal extension), $\exists \sigma \in Aut(E'/E)$ s.t. $\sigma(\tilde{g}(\scq_1\cap E'))=\scq_2\cap E'$.\\
+ Set $g':=\sigma\circ \tilde{g}\in Aut(E'/K)$. Clearly, $g'(\scq_1\cap E')=\scq_2\cap E'$, so $(E',g')\in A$. Also, $E\subsetneq E'$ and $g'|E=g$, which contradict the maximality of $(E,g)$
+\end{enumerate}
+\end{proof}
 Then let's talk about the so called going-down property.
 \begin{dfn}
 Let $\cala\subseteq \calb$ are rings. We say that $\cala\subseteq \calb$ has property \textbf{Going-Down} (GD) if 
@@ -4562,43 +4597,48 @@ $$
 \forall \text{ primes, } \scp'\subsetneq \scp\subset \cala, \scq\subset\calb 
 $$
 with $\scq\cap \cala=\scp$, $\exists $ prime $\scq'\subsetneq \scq$ with $\scq'\cap\cala=\scp'$
-
->>>>>>>2
+\[
+\begin{tikzcd}
+\exists\scq'\ar[r,Subsetneq]\ar[d,dash] & \scq\ar[r, Subsetneq]\ar[d,dash] & \calb\\
+\scp'\ar[r, Subsetneq] & \scp\ar[r, Subsetneq] & \cala\ar[u, Subseteq]
+\end{tikzcd}
+\]
 \end{dfn}
 See P239 of Eisenbud or 32-33
  of Matsumura for a non-example.
 
-\begin{thm}\label{thm:normal_domain_goingdown}
-Let $\cala\subseteq \calb$ be domains with $\cala$ normal, $\cala $ normal, $\calb$ integral over $\cala$. Then $\cala\subseteq \calb$ has GD.
+\begin{thm}\label{thm:normal_domain_goingdown}(Going-Down for integral extension over normal ring)
+Let $\cala\subseteq \calb$ be domains with $\cala$ normal, $\calb$ integral over $\cala$. Then $\cala\subseteq \calb$ has Going-Down property.
 \end{thm}
 \begin{proof}
-Let $K:=Frac(\cala)$, $L_1:=Frac(\calb)$. $\Lrta L_1/L$ is algebraic field extension. $L_1\ni \frac{x}{y}, x\in \calb, -\neq y\in \calb$
-
-then
-$$
-x^n+a_1 x^{n-1}+...+a_n=0
-$$
-$\Lrta x$ is algebraic over $K$ and the same for $y$. 
+Let $K:=Frac(\cala)$, $L_1:=Frac(\calb)$. $\Lrta $ $L_1$ is integral over $K$ as rings by Lemma~\ref{integral_lemma12}, equivalently $L/K$ is algebraic field extension.  
 
 Let $L$ be any normal algebraic extension of $K$, that contains $L_1$ (e.g., $L=\overline{K}\supseteq L_1$) (e.g., $L:=$``normal closure of $L_1$ in $\overline{K}\supseteq L_1$'')
 
 Hence $x,y$ belong to a finite extension of $K$ $\Llrta$ $x,y$ algebraic over $K$, $\Lrta x/y$ algebraic over $K$.
 
-Let $C:=(\text{ integral closure of $\cala$ in $L$})$=$(\text{integral closure of $\calb$ in $L$})$
+Let $\calc:=(\text{ integral closure of $\cala$ in $L$})$=$(\text{integral closure of $\calb$ in $L$})$
 
 \[
 \begin{tikzcd}
-&Q & C \arrow[r,Subseteq]  & L \\
-&\scq&\calb \arrow[r,Subseteq] \arrow[u,Subseteq] & L_1 \arrow[u,Subseteq] \\
-&\scp & \cala \arrow[r,Subseteq] \arrow[u,Subseteq] & K\arrow[u,Subseteq] \\
+{\color{blue}Q'}\ar[r,orange, Subsetneq]\ar[dd,dash,bend right, blue]& {\color{orange}Q_1}\ar[ddr,orange,dash]\ar[r,"\text{\tiny{$\exists g\in Aut(L/K)$}}"] &{\color{green}Q}\ar[d,dash,green] & \calc \arrow[r,Subseteq]  & L \\
+{\color{red}\exists \scq':=g(Q')\cap\calb}\ar[d,dash,red,"?"]\ar[rr, Subsetneq, red,"?"]&  &\scq&\calb \arrow[r,Subseteq] \arrow[u,Subseteq] & L_1 \arrow[u,Subseteq] \\
+\scp'\ar[rr, Subsetneq]& &\scp\ar[u,dash] & \cala \arrow[r,Subseteq] \arrow[u,Subseteq] & K\arrow[u,Subseteq] \\
 \end{tikzcd}
 \]
->>>>>>>>4
+Let $Q'\subseteq\calc$ lie over $\scp'$, it exists by Lying-Over.\\
+Let $Q_1\subseteq\calc$ lie over $\scp$, with $Q_1\supseteq Q'$. It exists by Going-Up.\\
+Let $Q\subseteq\calc$ lie over $\scq$, it exists by Lying over. 
 
-Note that $g$ fixes $\cala$ so $\scq'\cap \cala=(g(Q')\cap \calb)\cap\cala=g(Q')\cap \cala=g(Q'\cap \cala)=\scp'=g(\scp')$
+Notice that both $Q$ and $Q_1$ lie over $\scp$, by Theorem~\ref{thm:normal_domain_normal_Galois}, $\exists g\in\text{Aut}(L/K)$ s.t. $g(Q_1)=Q$.
+
+$Q'\subsetneq Q_1\Lrta g(Q')\subsetneq Q_1$\\
+$\Lrta \scq'= g(Q')\cap\calb\subsetneq g(Q_1)\cap\calb=\scq$ by Incomparability.
+
+Note that $g$ fixes $\cala$ so $\scq'\cap \cala=(g(Q')\cap \calb)\cap\cala=g(Q')\cap \cala=g(Q'\cap \cala)=g(\scp')=\scp'$.
 \end{proof}
 
-Recall $\forall \cala\subseteq \calb$ integral, $\forall \scb\subseteq \calb,\sca\subseteq \cala\cap \scb$
+As an application of Going-Down. Recall $\forall \cala\subseteq \calb$ integral, $\forall \scb\subseteq \calb,\sca\subseteq \cala\cap \scb$
 \begin{enumerate}[label=(\roman*)]
 \item $\text{dim}(\cala)=\text{dim}(\calb)$
 \item $\text{dim}(\cala/\sca)=\text{dim}(\calb/\scb)$, i.e., $
@@ -4611,29 +4651,29 @@ Suppose $\cala\subseteq \calb$ are domains, with $\cala$ noraml, $\calb$ integra
 \begin{proof}
 \underline{Want}: $\text{ht}(\scb)\overset{?}{\geq} \text{ht}(\sca)$, where $\text{ht}(\scb)=\inf_{\scq\supseteq \scb} \text{ht}(\scq)$ and  $\text{ht}(\sca)=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$.
 
-It suffices to show for each prime $\scq\subset\scb$ that $\scp:=\scq\cap \cala\supseteq \sca$ satisfies $\text{ht}(\scq)\geq \text{ht}(\scp)$. Let $\scp_0\subsetneq ...\subsetneq \scp_r=\scp$ be a chain of primes. By the going-down property, there exists a chain of primes $\scq_0\subsetneq ...\subsetneq \scp_r=\scp$ in $\calb$ such that $\scq_i$ lies over $\scp_i$
->>>>>>5
+It suffices to show for each prime $\scq\subset\scb$ that $\scp:=\scq\cap \cala\supseteq \sca$ satisfies $\text{ht}(\scq)\geq \text{ht}(\scp)$. Let $\scp_0\subsetneq ...\subsetneq \scp_r=\scp$ be a chain of primes. By the going-down property, there exists a chain of primes $\scq_0\subsetneq ...\subsetneq \scq_r=\scq$ in $\calb$ such that $\scq_i$ lies over $\scp_i$
 
-$\Lrta \text{ht}(\scq)\leq r$. Since $\text{ht}(\scp)=\sup\{\text{r as above}\}$, we then conclude that $\text{ht}(\scq)\geq \text{ht}(\scp)$.
+$\Lrta \text{ht}(\scq)\geq r$. Since $\text{ht}(\scp)=\sup\{\text{r as above}\}$, we then conclude that $\text{ht}(\scq)\geq \text{ht}(\scp)$.
 \end{proof}
+
+\subsection{Lecture 24. Noether Normalization Theorem}
 
 \begin{dfn}
 ``$k$-domain $\cala$'' ($k$ is a field and $\cala$ is a $k$-algebra as well as a domain)
 
-\textbf{finitely generated $k$-domain} means a $k$.
--domain which is a finitely generated $k$-algebra
+\textbf{finitely generated $k$-domain} means a $k$-domain which is a finitely generated as $k$-algebra
 $\Llrta$ $\cala\cong k[X_1,...,X_n]/\sca$ for some $\sca$, $n$ $\Lrta \text{dim}(\cala)\leq n$
 \end{dfn}
 
 \begin{thm}\label{thm:Noether_Normalization}(Noether Normalization)
-Let $\cala$ finitely generated $k$-domain. Set $d:=\text{dim}(\cala)\in \intg_{\geq 0}$. Then there exists an injective morphism of $k$-algebras
+Let $\cala$ finitely generated $k$-algebra. Set $d:=\text{dim}(\cala)\in \intg_{\geq 0}$. Then there exists an injective morphism of $k$-algebras
 $$
-k[X]:=k[X_1,..,X_d]\overset{\kappa}{\lrta} \cala
+k[X]:=k[X_1,..,X_d]\overset{\kappa}{\inj} \cala
 $$
 which is integral: $\cala$ is integral over $\kappa(k[X])$.
 \end{thm}
 
-\underline{NB} $\kappa$ is determined by $x_1:=\kappa(X_1),...,x_n:=\kappa(X_d)\in\cala$. $\kappa $ is injective $\Llrta$ $x_1,...,x_d\in \cala$ are algebraically independent over $k$.  So the theorem says : $\exists$ algebraically independent $x_1,..,x_d\in \cala$ s.t., $\cala$ is integral over the $k$-algebra $\cala_0:=k[x_1,...,x_d]\subseteq \cala$.
+N.b. $\kappa$ is determined by $x_1:=\kappa(X_1),...,x_n:=\kappa(X_d)\in\cala$. $\kappa $ is injective $\Llrta$ $x_1,...,x_d\in \cala$ are algebraically independent over $k$.  So the theorem says : $\exists$ algebraically independent $x_1,..,x_d\in \cala$ s.t., $\cala$ is integral over the $k$-algebra $\cala_0:=k[x_1,...,x_d]\subseteq \cala$.
 \begin{cor}\label{cor:k-domain_dim_tr.deg}
 Let $\cala$ finitely generated $k$-domains, then $K:=Frac(\cala)$. Then $\text{dim}(\cala)=tr.deg_k(K)$
 \end{cor}
@@ -4642,13 +4682,9 @@ $K_0=Frac(\cala_0)\cong k(x_1,...,x_d)$
 
 $\cala$: integral over $\cala_0$ $\Lrta$ $K$ algebraic over $K_0$ (Confer the proof of Theorem 2 today).
 
-$\Lrta tr.deg_l(K)=tr.deg_k(K_0)=d=\text{dim}(\cala)$.
+$\Lrta tr.deg_k(K)=tr.deg_k(K_0)=d=\text{dim}(\cala)$.
 \end{proof}
 N.b., If $\kappa: k[X_1,...,X_n]\lrta\cala$ is injective and integral, then automatically $n=\text{dim}(\cala)$, because we have seen that integral extension preserves dimension.
-
-
-\subsection{Lecture 24. Noether Normalization Theorem}
-Last time we stated Noether Normalization Theorem~\ref{thm:Noether_Normalization} and also its main motivation Corollary~\ref{cor:k-domain_dim_tr.deg}. This lecture, we will give the proof of the Theorem.
 
 First, we give a key lemma for Noether Normalization (NN).
 \begin{lemma}\label{lem:key_lemma_noether_normalization}
@@ -4656,9 +4692,9 @@ Let $\cala$ be a $k$-algebra, with $x_1,..,x_n\in \cala$, $0\neq f\in k[X_1,..,X
 \end{lemma}
 
 And we have to give some motivation for this key lemma in that the lemma indicates the NN:
-\begin{proof}(Lemma$\Lrta$ NN) $\cala$ is finitely generated $k$-algebra, say $\cala$ generated by $x_1,...,x_n$. If $x_1,...,x_n$ are algebraic independent, then done: $\cala=k[x_1,..,x_n]$. 
+\begin{proof}(Lemma~\ref{lem:key_lemma_noether_normalization}$\Lrta$ NN~\ref{thm:Noether_Normalization}) $\cala$ is finitely generated $k$-algebra, say $\cala$ generated by $x_1,...,x_n$. If $x_1,...,x_n$ are algebraic independent, then done: $\cala=k[x_1,..,x_n]$. 
 
-Else $\exists 0\neq f\in k[X_1,..,X_n]$ s.t. $0=f(x_1,..,x_n)$, then by the key lemma (here $w=0$), $\exists z_1,..,z_{n-1}$ s.t. $k[x_1,...,x_n]$ integral over $k[z_1,..,z_{n-1}]$. Iterate finitely many times: $\cala$ is integral over $k[u_1,...,u_d]$, where $u_1,..,u_d$ is algebraic independent, $d\leq n-1$ 
+Else $\exists 0\neq f\in k[X_1,..,X_n]$ s.t. $0=f(x_1,..,x_n)$, then by the key lemma (here $w=0$), $\exists z_1,..,z_{n-1}$ s.t. $k[x_1,...,x_n]$ integral over $k[z_1,..,z_{n-1}]$. Iterate finitely many times: $\cala$ is integral over $k[u_1,...,u_d]$, where $u_1,..,u_d$ are algebraic independent, $d\leq n-1$. 
 \end{proof}
 
 For pedagogical reason, we start with a Baby case
@@ -4669,10 +4705,10 @@ For pedagogical reason, we start with a Baby case
 \begin{ex}
 For example, we can choose $f=XY-1$ $(\Lrta xy=1,y=1/x)$. Then $\cala$ \underline{Not} integral over $k[x]$. Thus the choice $z=x$ doesn't work.
 $$
-k[X]\cong k[x]\subsetneq \cala=\frac{k[X,Y]}{XY-1}\cong k\left[x,\frac{1}{x}\right]\subseteq k(x)\cong k(X).
+k[X]\cong k[x]\subsetneq \cala=\frac{k[X,Y]}{XY-1}\cong k\left[x,\frac{1}{x}\right]\cong k(x)\cong k(X).
 $$
 
-$k[X]$ is nomral because it is UFD, hence it is integrally closed in $k(X)$ $\Lrta$ $\cala$ is \underline{NOT} integral over $k[x]$.
+$k[X]$ is normal because it is UFD, hence it is integrally closed in $k(X)$ $\Lrta$ $\cala$ is \underline{NOT} integral over $k[x]$. ($y$ is algebraic over $k[x]$ but not integral over $k[x]$.)
 
 Similarly, $\cala$ is not integral over $k[y]$.
 
@@ -4686,19 +4722,26 @@ $$
 $\Lrta \cala=k[x,z]$ is integral over $k[z], \forall a\in k, a\neq 0$.
 
 We have also a geometric interpretion of the above example:
-$\text{Spec}(\cala)=\{(x,y): xy=1\}$, by the lying-over properties of integral extensions in Theorem~\ref{thm:integral_extension_primes_properties}, we know there should be a surjective map from $\text{Spec}(\cala)$ to $\text{Spec}(k[z])$
+$\text{Spec}(\cala)=\{(x,y): xy=1\}$, by the lying-over properties of integral extensions in Theorem~\ref{thm:integral_extension_goingup}, we know there should be a surjective map from $\text{Spec}(\cala)$ to $\text{Spec}(k[z])$
 {\centering
 \begin{tikzpicture}
     \begin{axis}
         \addplot [red,thick,domain=0.2:5] ({x},{1/x});
         \addplot [red,thick,domain=-5:-0.2] ({x},{1/x});
-        \addplot [blue, thick, domain=-5:5] ({x},{-0.2*x});
+        \addplot [blue, thick, domain=-1.5:1.5] ({x},{3*x});
+    \end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+    \begin{axis}
+        \addplot [red,thick,domain=0.2:5] ({x},{1/x});
+        \addplot [red,thick,domain=-5:-0.2] ({x},{1/x});
+        \addplot [blue, thick, domain=-1.5:1.5] ({x},{-3*x});
     \end{axis}
 \end{tikzpicture}
 }
 
 
-{\color{red} The general surjective map looks like $(X-x_0,Y-y_0)\longmapsto (X-x_0,Y-y_0)\cap k[z]=(Z-y_0+a x_0) $, it shouldn't be depicted as the projection to the line but When we choose $z=x$, then $(X-x_0,Y-y_0)\longmapsto (Z-x_0)$ does not maps to $x_0=0$. In other words, we only have to worry about asymptotes}
+{\color{red} The general surjective map looks like $(x-c_0,y-d_0)\longmapsto (x-c_0,y-d_0)\cap k[z]=(z-d_0+a c_0) $, it should be interpreted as the projection along blue line to $y$-axis. However when we choose $a<0$, although $k[x,z]$ is still integral over $k[z]$, this geometric interpretation fails because the correspondence between maximals and points relies on the Hilbert Nullstellensatz which requires the the field to be algebraically closed. }
 \end{ex}
 
 The above simple example gives us implication for the proof of the baby case:
@@ -4714,7 +4757,7 @@ If $Y\nmid f_n$, then $f_n=X^{n}+(\text{lower powers in $X$ with coefficients in
 If $k$ is infinite, then Baby case holds.
 \end{cor}
 \begin{proof}
-By the above lemma, it suffices to find $a\in k$ s.t. $Y-aX\nmid f_n$. Over $\overline{k}$, $f_n=\prod_{i=1...,n} (\alpha_i x-\beta_i Y)$ $\alpha_i,\beta_i\in \overline{k}$ not both zero. 
+By the above lemma, it suffices to find $a\in k$ s.t. $Y-aX\nmid f_n$. Over $\overline{k}$, $f_n=\prod_{i=1...,n} (\alpha_i X-\beta_i Y)$ $\alpha_i,\beta_i\in \overline{k}$ not both zero. 
 
 Just need that $a\neq \alpha_i/\beta_i\forall i$. This is always possible because $k$ is infinite.
 \end{proof}
@@ -4736,16 +4779,17 @@ $\Lrta x$ integral over $k[z]\Lrta\cala=k[x,z]$ is integral over $k[z]$. This ch
 \begin{proof}(of key lemma~\ref{lem:key_lemma_noether_normalization} due to Nagata)
 Write $f=\sum_{\alpha\in I}c_\alpha X^\alpha$, where $c_\alpha\in k^\times$ and $X^\alpha:=X_1^{\alpha_1}\cdot\cdot \cdot X^{\alpha_n}_n$. For some finite $I\subseteq \intg_{\geq }^n$. Choose $z_j:=x_j-x^{s_j}_n$ for $j=1,...,n-1$, where $s_j\in \intg_{\geq 0}$ to be chosen later.
 
-Then $x_j=x^{s_j}+z_j$, so
+Then $x_j=x^{s_j}_n+z_j$, so
 $$
 \begin{aligned}
 w&=f(x_1,...,x_n)=f(x_n^{s_1}+z_1,...,x_n^{s_{n-1}}+z_{n-1},x_n)\\
 &=\sum_{\alpha\in I}c_\alpha (x^{s_1}_n+z_1)^{\alpha_1}\cdot\cdot \cdot (x_n^{s_{n-1}}+z_{n-1})^{\alpha_{n-1}}x_n^{\alpha_n}\\
 & \text{where each power equals } x_n^{s_j\alpha_j}+(...) \text{ lower powers with coefficients in $z_j$}\\
-&=\sum_{\alpha\in I} x_n^{l(\alpha)}+(...),\ \ \ l(\alpha):=s_1\alpha_1+...+s_{n-1}\alpha_{n-1}+\alpha_n,\\ 
+&=\sum_{\alpha\in I}c_\alpha x_n^{l(\alpha)}+(...),\ \ \ l(\alpha):=s_1\alpha_1+...+s_{n-1}\alpha_{n-1}+\alpha_n,\\ 
 &\text{ where $(...)$ are of lower powers in $x_n$ with coefficients in $k[z_1,..,z_{n-1}]$}
 \end{aligned}
 $$
+To make sure the leading term does not cancel out, we need
 \underline{Sublemma:} $\exists (s_1,...,s_{n-1})$ s.t., $\forall, \alpha,\beta\in I$
 \begin{equation}\tag*{(*)}
 \alpha\neq \beta\Lrta l(\alpha)\neq l(\beta)
@@ -4764,7 +4808,7 @@ $\Lrta$ each $x_{j}=x_n^{s_j}+z_j$ is integral over $k[z_1,...,z_{n-1},w]$
 $\Lrta k[x_1,...,x_n]$ is integral over $k[z_1,...,z_{n-1},w]$.
 \end{proof}
 
-The above proved the key lemma thus the Noether Normalization theorem.
+The above proved the key Lemma~\ref{lem:key_lemma_noether_normalization} thus the Noether Normalization~\ref{thm:Noether_Normalization}.
 
 \begin{thm}\label{thm:finitelygeneratedk-domain_dim_equality}
 Let $\cala$ be finitely generated $k$-domain, $\scp\in \text{Spec}(\cala)$. Then $\text{ht}(\scp)+\text{coht}(\scp)=\text{ht}(\scp)+\text{dim}(\cala/\scp)=\text{dim}(\cala)$
@@ -4772,7 +4816,9 @@ Let $\cala$ be finitely generated $k$-domain, $\scp\in \text{Spec}(\cala)$. Then
 \begin{proof}
 Set $n:=\text{dim}(\cala)$. $\text{NN}\Lrta\exists x_1,..,x_n\in\cala$ algebraic independent s.t. $\cala$ is integral over $\cala_0:=k[x_1,..,x_n]\cong k[X_1,..,X_n]$.
 
-$\cala_0$ is UFD $\Lrta$ $\cala_0$ is normal. $\cala$ is a domain., $\cala_0\subseteq \cala$ is an integral extension. So by the going-down properties~\ref{thm:normal_domain_goingdown} , we have 
+$\cala_0$ is UFD $\Lrta$ $\cala_0$ is normal.
+
+Both $\cala_0$  $\cala$  are domains and $\cala_0\subseteq \cala$ is an integral extension. So by the Going-Down properties~\ref{thm:normal_domain_goingdown} , we have 
 $$
 \scp_0:=\cala_0\cap\scp\in \text{Spec}(\cala_0)
 $$
@@ -4830,7 +4876,7 @@ $$
 $$
 \end{proof}
 
-\subsection{Lecture 25}
+
 Recall last lecture, $\forall k$ field, $\cala$ a finitely generated $k$-domain, then
 \begin{enumerate}[label=(\roman*)]
 \item $\text{dim}(\cala)=tr.deg_k(K),$ where $K:=Frac(\cala)$
@@ -4840,7 +4886,7 @@ Recall last lecture, $\forall k$ field, $\cala$ a finitely generated $k$-domain,
 \end{enumerate}
 
 \begin{cor}
-If $\cala$ is  finitely generated $k$-domain. Every maximal chain of primes in $\cala$ has length $\text{dim}(\cala)$. That is to say: if $\scp_0\subsetneq ...\subsetneq \scp_r\subset \cala$ is a chain of primes that cannot be enlarged, then $r\text{dim}(\cala)$.
+If $\cala$ is  finitely generated $k$-domain. Every maximal chain of primes in $\cala$ has length $\text{dim}(\cala)$. That is to say: if $\scp_0\subsetneq ...\subsetneq \scp_r\subset \cala$ is a chain of primes that cannot be enlarged, then $r=\text{dim}(\cala)$.
 \end{cor}
 The above corollary is false for general rings $\cala$. See the exercises, Matsumura, the keyword is \textbf{``Catenary''}
 \begin{proof}
@@ -4858,6 +4904,7 @@ It suffices to show that $K/k$ is algebraic (i.e.,integral) because integral +fi
 
 
 \section{Valuation rings and Normality}
+\subsection{Lecture 25. }
 Recall the proof that the ring $\cala:=k[X,Y]/(XY-1)$ is not integral over $k[X]$. We denote by $x,y$ the image of $X,Y$ in $\cala$.
 
 We embed 
