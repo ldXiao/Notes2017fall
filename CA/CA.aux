@@ -20,7 +20,8 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Rings, Ideals, Radicals}{3}{section.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}Lecture 1. Motivation and Basics by Paul Steinmann}{3}{subsection.1.1}}
 \newlabel{prop:criterion_jacobson_radical}{{1.17}{7}{}{thm.1.17}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Lecture 2. local rings, coprime ideals, ideal quotients by Paul Steinmann}{7}{subsection.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}Lecture 2. Local Rings, Coprime ideals, Ideal Quotients by Paul Steinmann}{7}{subsection.1.2}}
+\newlabel{prop:local_ring_maximal}{{1.20}{7}{}{thm.1.20}{}}
 \newlabel{prop:charaterization_coprime_ideals}{{1.26}{9}{}{thm.1.26}{}}
 \newlabel{prop:prime_avoidance}{{1.27}{9}{}{thm.1.27}{}}
 \newlabel{def:extention_contraction}{{1.29}{11}{}{thm.1.29}{}}
@@ -38,17 +39,17 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Lecture 6. Flatness}{28}{subsection.2.4}}
 \newlabel{ex:iso_quotient_module}{{2.41}{32}{}{thm.2.41}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Localization}{34}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Lecture 7. Localization of rings}{34}{subsection.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Lecture 7. Localization of Rings}{34}{subsection.3.1}}
 \newlabel{lem:localization_inj_surj_iso}{{3.7}{36}{}{thm.3.7}{}}
 \newlabel{lem:prep_localization_iso}{{3.12}{38}{}{thm.3.12}{}}
 \newlabel{lem:radical_commutates_localization}{{3.14}{39}{}{thm.3.14}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Lecture 8. Properties of Localization of Rings}{40}{subsection.3.2}}
 \newlabel{prop:iso_spec_localization}{{3.15}{40}{}{thm.3.15}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Lecture 9. Localization of Modules and Local Properties}{44}{subsection.3.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Lecture 9-1. Localization of Modules and Local Properties}{44}{subsection.3.3}}
 \newlabel{lem:zerpo_local}{{3.35}{46}{}{thm.3.35}{}}
 \newlabel{prop:local_inj_surj}{{3.36}{46}{}{thm.3.36}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Noetherian Rings and Nullstellensatz}{47}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Lecture 9. Chain Conditions and Noetherian Rings}{47}{subsection.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Lecture 9-2. Chain Conditions and Noetherian Rings}{47}{subsection.4.1}}
 \newlabel{lem:SES_Noetherian}{{4.3}{48}{}{thm.4.3}{}}
 \newlabel{cor:finitely_generated_module_over_Noetherian_ring}{{4.4}{49}{}{thm.4.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Lecture 10. Hilbert Basis Theorem}{49}{subsection.4.2}}
@@ -59,6 +60,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Lecture 11. Nullstellensatz}{54}{subsection.4.3}}
 \newlabel{thm:field_extension}{{4.27}{54}{}{thm.4.27}{}}
 \newlabel{lem:Artin_Tate}{{4.29}{56}{}{thm.4.29}{}}
+\newlabel{cor:Nullstellensatz}{{4.30}{57}{}{thm.4.30}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}Primary Decomposition}{57}{section.5}}
 \newlabel{rmkt:primary}{{5.2}{58}{}{thm.5.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Lecture 12. Associated Ideals and First Uniqueness Theorem}{58}{subsection.5.1}}
@@ -81,6 +83,7 @@
 \newlabel{lem:ideal_radical_Noetherian}{{6.13}{70}{}{thm.6.13}{}}
 \newlabel{lem:Artin_Noetherin_product_of_maximals}{{6.15}{70}{}{thm.6.15}{}}
 \newlabel{prop:artin_local=artin_primary}{{6.18}{72}{}{thm.6.18}{}}
+\newlabel{prop:Noetherian_local_Artinian_nilpotent}{{6.19}{72}{}{thm.6.19}{}}
 \newlabel{thm:Artin_product_of_Artin_local}{{6.21}{73}{}{thm.6.21}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Lecture 16. Krull's Intersection Theorem}{74}{subsection.6.3}}
 \newlabel{thm:Krull_intersection}{{6.23}{74}{}{thm.6.23}{}}
@@ -128,9 +131,14 @@
 \newlabel{cor:k-domain_dim_tr.deg}{{7.37}{103}{}{thm.7.37}{}}
 \newlabel{lem:key_lemma_noether_normalization}{{7.38}{104}{}{thm.7.38}{}}
 \newlabel{thm:finitelygeneratedk-domain_dim_equality}{{7.43}{106}{}{thm.7.43}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Valuation rings and Normality}{109}{section.8}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Lecture 25. }{109}{subsection.8.1}}
-\newlabel{thm:integral_closure_VR}{{8.10}{111}{}{thm.8.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Lecture 26}{111}{subsection.8.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Lecture 27}{114}{subsection.8.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Lecture 28}{117}{subsection.8.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Valuation Rings and Normality}{109}{section.8}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}Lecture 25. Valuation}{109}{subsection.8.1}}
+\newlabel{lem:VR_normal}{{8.5}{110}{}{thm.8.5}{}}
+\newlabel{lem:equiv_defs_VR}{{8.10}{110}{}{thm.8.10}{}}
+\newlabel{thm:integral_closure_VR}{{8.11}{111}{}{thm.8.11}{}}
+\newlabel{lem:VR_lieover}{{8.12}{112}{}{thm.8.12}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}Lecture 26. Discrete Valuation Ring and Normality}{113}{subsection.8.2}}
+\newlabel{lem:DVR_PID+}{{8.18}{113}{}{thm.8.18}{}}
+\newlabel{cor:PID-_regular}{{8.22}{114}{}{thm.8.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}Lecture 27. Dedekind Domain}{117}{subsection.8.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}Lecture 28. Ideal Class Group}{119}{subsection.8.4}}

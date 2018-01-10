@@ -703,7 +703,7 @@ A representable functor $G$\{$:\calc$-algebra\} $\lrta$\{Groups\}, $\calb\longma
 \end{dfn}
 
 
-\subsection{Application of the fact that differential Galois group is a algebraic group}
+\subsection*{Application of the fact that differential Galois group is a algebraic group}
 
 Last week: $\calr/\calk$ Picard-Vessiot extension with Galois group $G\subseteq GL_n(\calc)$. The main message of last week is that $G$ is a algebraic group. you can see it in different ways.
 $$
@@ -784,7 +784,7 @@ and $dim(G)=1$, then $tr.deg(\cplx(t,\log(t)))=1\Lrta \log (t) $ is not algebrai
 Consider similarly, $\calr=(t,\exp(t))$, $G=?$
 \end{exercise}
 
-\section{The Galois-correspondence of differential equations}
+\section{The Galois Correspondence of Differential Equations}
 Recall our setting: $\calk$ differential field, $\calc$ is constants, $\calc=\overline{\calc}$ with $char =0$
 \begin{thm}
 Let $\calr/\calk$ be a Picard-Vessiot extension, with Galois group $G$. Set $\call=Frac(\calr)$. 
@@ -1305,67 +1305,6 @@ More of the same Hensel type proof, can be found in Singer's book if interested.
 \end{proof}
 
 
-
-
-
-
--------------
-\section{Personal Reads}
-\subsection{D-module}
-$\frakd$ is defined to be the ring of differential operators with coefficients in the differential field $\calk$.
-\begin{lemma}
-For differential operators $L_1,L_2$ in $\frakd$, with $L_1\neq 0$, there are unique differential operator $Q,R$ such that 
-$$
-L_2=Q L_1+R
-$$
-and $\text{deg } R<\text{deg } L_1$. This could be proved algorithmically because every $\calk$ is a field.
-
-In other word, $\frakd$ is  an Euclidean domain.
-\end{lemma}
-\begin{cor}
-For every left ideal $I\subseteq \calk[\pd]$, there is a unique differential operator $L$ such that $I=\calk[\pd]\cdot L$
-\end{cor}
-\begin{proof}
-Euclidean domain are principal ideal domain: see \href{https://proofwiki.org/wiki/Euclidean_Domain_is_Principal_Ideal_Domain}{the proofwiki page}
-\end{proof}
-\begin{lemma}
-Every finitely generated left $\frakd$-module is of the form $\oplus_i M_i$, where each $M_i$ is of isomorphic to either $\frakd$ or $\frakd/\frakd L$ for some differential operator $L$.
-\end{lemma}
-\subsection{Monodromy, Riemann-Hilbert Problem}
-$U$ is an open connected subset of the complex sphere $\mathcal{P}^1$ and let $Y'=AY$ be a differential equation on $U$, with $ A$ $n\times n$ matrix with coefficients are meromorphic functions on $U$. We assume that the equation is regular at every point $p\in U$ (might be regular singular point (which means the growth of solutions is bounded). Let $F_p$ be a matrix whose columns are the $n$ independent solutions, then $F_p$ is a fundamental matrix with entries in $\cplx(\{z-p\})$
-
-\textbf{Does there exist on all of $U$, a solution space for the equation having dimension $n$}
-
-\begin{dfn}
-Two differential operator $\frac{d}{dz}-A$ and $\frac{d}{dt}-B$ are called equivalent if there exists a $F\in GL_n(\calk)$ s,t, $F^{-1}(\frac{d}{dz}-A)F=\frac{d}{dz}-B$
-A matrix differential operator $\frac{d}{dz}-A$ is called \textbf{regular singular} if the equation is equivalent to $\frac{d}{dz}-B$ such that the entries of $B$ have poles at $z=0$ of order at most $1$.
-\end{dfn}
-Variant 2 of classification theorem can be proved using Hensel, as  follows:
-\begin{itemize}
-\item Given $(M,\pd)$, fabricate $\lambda,Q,\eta,...$
-\item By Hensel: $\oplus M_i=M$, where $M_i$ contains a lattice $L_i\subseteq M_i$, stable under $\eta$ and $\overline{\eta}$ acting on $\overline{L}_i$ has only one eigenvalue $c_i$
-\item Replace $M$ by $M_i$, $c=c_i$, $L_i=L\subseteq M$. The characteristic polynomial of $\overline{\eta}$ acting on $\overline{L}$
-$$
-(X-c)^n
-$$
-for some $c\in\calc$, it follows that $\lambda\in \intg$.
-\item Substitute $\delta=c t^{\lambda_1}+t^{\lambda-2}\eta_2=t^{\lambda_1}(c+t^{\lambda_2-\lambda_1}\eta_2)$, $\lambda_1=\lambda, \lambda_2>\lambda_1$. We define $(c+t^{\lambda_2-\lambda_1}\eta_2)=:\eta$. Look at $\eta_2$ acting on $L$. Two possibilities:
-\begin{enumerate}
-\item $\overline{\eta}_2$ acting on $\overline{L}$ has more than one eigenvalue. $\Lrta$ use Hensel's lemma to decompose, done by induction on dimensions.
-\item $\overline{\eta}_2$ has only one eigenvalue.
-$$
-\delta=c_1 t^{\lambda_1}+c_2 t^{\lambda_2}+t^{\lambda_3}\eta_2, \ \ \lambda_3>\lambda_2>\lambda_1
-$$
-\end{enumerate}
-Eventually, either $M$ decomposes, or $\lambda_{N+1}\geq 0$, In that case $\eta_N$ (acting on $M$) is regular singular. The process yields a polynomial
-$$
-q\in t^{1/m}\calc[t^{1/m}]
-$$
-$$
-q=c_1 t^{\lambda_1}+...+c_N t^{\lambda_N}
-$$
-s.t. $\delta-q$ acts regular singularly on $M$. This gives variant 2 of the classification theorem
-\end{itemize}
 
 \section{Newton Polygons}
 $S\subseteq \reals^2$ finite set of points. The \textbf{Newton polygon} of $S$ is the region of all $(x_1,x_2)\in\reals^2$ s.t. $\exists (s_1, s_2)\in$ convex hull of $S$ $x_1\leq s_1$ and $ x_2\geq s_2$. It is geometrically 
