@@ -1,22 +1,22 @@
 \contentsline {section}{\numberline {1}Rings, Ideals, Radicals}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Lecture 1. Motivation and Basics by Paul Steinmann}{3}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Lecture 2. Local Rings, Coprime ideals, Ideal Quotients by Paul Steinmann}{7}{subsection.1.2}
-\contentsline {section}{\numberline {2}Modules}{11}{section.2}
-\contentsline {subsection}{\numberline {2.1}Lecture 3. Modules, Exact sequences by Professor Kowalski}{11}{subsection.2.1}
+\contentsline {subsection}{\numberline {1.2}Lecture 2. Local Rings, Coprime Ideals, Ideal Quotients by Paul Steinmann}{7}{subsection.1.2}
+\contentsline {section}{\numberline {2}Modules}{12}{section.2}
+\contentsline {subsection}{\numberline {2.1}Lecture 3. Modules, Exact Sequences by Professor Kowalski}{12}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Lecture 4. Snake Lemma, Tensor Product by Professor Kowalski}{18}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Lecture 5. Properties of Tensor Product}{24}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Lecture 6. Flatness}{28}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.3}Lecture 5. Properties of Tensor Product}{25}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Lecture 6. Flatness}{29}{subsection.2.4}
 \contentsline {section}{\numberline {3}Localization}{34}{section.3}
 \contentsline {subsection}{\numberline {3.1}Lecture 7. Localization of Rings}{34}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Lecture 8. Properties of Localization of Rings}{40}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Lecture 9-1. Localization of Modules and Local Properties}{44}{subsection.3.3}
-\contentsline {section}{\numberline {4}Noetherian Rings and Nullstellensatz}{47}{section.4}
-\contentsline {subsection}{\numberline {4.1}Lecture 9-2. Chain Conditions and Noetherian Rings}{47}{subsection.4.1}
+\contentsline {subsection}{\numberline {3.3}Lecture 9-1. Localization of Modules and Local Properties}{45}{subsection.3.3}
+\contentsline {section}{\numberline {4}Noetherian Rings and Nullstellensatz}{48}{section.4}
+\contentsline {subsection}{\numberline {4.1}Lecture 9-2. Chain Conditions and Noetherian Rings}{48}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2}Lecture 10. Hilbert Basis Theorem}{49}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Lecture 11. Nullstellensatz}{54}{subsection.4.3}
-\contentsline {section}{\numberline {5}Primary Decomposition}{57}{section.5}
-\contentsline {subsection}{\numberline {5.1}Lecture 12. Associated Ideals and First Uniqueness Theorem}{58}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Lecture 13. Second Uniqueness Theorem}{62}{subsection.5.2}
+\contentsline {section}{\numberline {5}Primary Decomposition}{58}{section.5}
+\contentsline {subsection}{\numberline {5.1}Lecture 12. Associated Ideals and First Uniqueness Theorem}{59}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Lecture 13. Second Uniqueness Theorem}{63}{subsection.5.2}
 \contentsline {section}{\numberline {6}Dimension Theory}{68}{section.6}
 \contentsline {subsection}{\numberline {6.1}Lecture 14. Artinian Rings}{68}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Lecture 15. Krull Dimension, Artinian v.s. Noetherian}{70}{subsection.6.2}
@@ -29,10 +29,10 @@
 \contentsline {subsection}{\numberline {7.1}Lecture 20-2. Integral Element}{90}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Lecture 21. Normal Domain}{92}{subsection.7.2}
 \contentsline {subsection}{\numberline {7.3}Lecture 22. Going-Up}{96}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Lecture 23. Galois Transitivity and Going-Down}{98}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.4}Lecture 23. Galois Transitivity and Going-Down}{99}{subsection.7.4}
 \contentsline {subsection}{\numberline {7.5}Lecture 24. Noether Normalization Theorem}{103}{subsection.7.5}
 \contentsline {section}{\numberline {8}Valuation Rings and Normality}{109}{section.8}
 \contentsline {subsection}{\numberline {8.1}Lecture 25. Valuation}{109}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Lecture 26. Discrete Valuation Ring and Normality}{113}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}Lecture 27. Dedekind Domain}{117}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Lecture 28. Ideal Class Group}{119}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}Lecture 28. Fractional Ideals}{120}{subsection.8.4}

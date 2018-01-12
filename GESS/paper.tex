@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{leftidx}
+\usepackage{amsmath}
+\begin{document}
+The major two reference of this article is Ferraro and Berkeley. All the remaining reference comes from any standard textbook of hyperreal analysis.
+
+In the history of mathematics, the concept of infinitesimal is the cornerstone of calculus. However the development of this crucial concept is full of twists and turns. Is it really impossible to treat infinitesimal as number? In this paper, I want to review some conceptual history of infinitesimal and compare the view of Isaac Newton, George Berkeley, and Leonhard Euler, and finally I would also discuss the modern construction of non-standard analysis where we can rigorously treat infinitesimal and infinity as numbers. 
+At the infant era of calculus, people tried to abstract the concept of infinitesimal from physical phenomenon like motion of objects, where infinitesimals like $dx$ $dt$ are some small quantities that differs from 0 but closer to $0$ than any other numbers. Newton developed the method of fluxion to calculate momentary velocity. For example, how did he compute the momentary velocity of a particle, where the position $x$ relies on time $t$ as 
+$$
+x=t^n?
+$$
+1. Consider $t$ increased by an infinitesimal amount $o$ 
+$$
+x+o\cdot \dot{x}=(t+o)^n,
+$$ 
+where $\dot(x)$ is called fluxion, which amounts to derivative of $x$ with respect to $t$ in modern language. 
+2. Then take the difference of the new equation and the original equation, we get
+$$
+o\cdot\dot{x}=o\cdot mt^{m-1}+\frac{m(m-1)}{2}\cdot o^2 t^{m-2}+…+a o^m.
+$$
+3. And then we divide both sides by $o$, notice that this step requires $o$ to be non-zero.
+$$
+\dot{x}=m x^{m-1}+o\cdot (...)
+$$
+4. Finally abandon all the terms on the right hand side containing $o$.
+The key point (joke) is to regard the infinitesimal $o$ as a nonzero small value when it is in the denominator and abandon it whenever we want. Of course it is logically inconsistent, but Newton had captured the most important feature of infinitesimal, and the above procedure is a efficient algorithm to calculate simple derivatives.  
+In his monograph “The Analyst: a discourse addressed to an infidel mathematician”, George Berkeley observed the logical fallacy and criticized:
+“They are neither finite quantities not quantities infinitely small, nor yet nothing. May we not call them the ghost of departed quantities?”
+	Berkeley criticized not only Newton style fluxion but also Leibnitz style $dx$, $dy$ in that they both require some quantities to be as small as possible, but not smaller. 
+
+	Almost at the same era of Berkeley, Swiss mathematician Leonhard Euler has his own point of view. It is Euler who introduced imaginary number $i=\sqrt{-1}$. It is quite interesting how he thinks about infinitesimal and infinity. Euler thinks infinitesimal and is a fictitious number which equals $0$ actually. Also according to Ferraro, Euler did not list $0$ as an integer, which means in his opinion $0=$ “noting” is itself a fictitious number in some way. He also remarked that According to Euler, expressions such as $\sqrt{−1}, \sqrt{−2}, \sqrt{−3}, \sqrt{−4}$ are impossible or imaginary numbers: nevertheless they could be represented in our understanding and take a place in our imagination. Even though he invented the Euler identity that links $e, \pi, i$, Euler still think imaginary number is “impossible” and only exists in out imagination. We know he basically hold a view of pragmatism on those fictitious numbers. He think of fictitious number like $i$ and infinitesimal as symbols of represent some abstract action. In particular, infinitesimal was considered to be a symbol that represents intuitive idea of limit.
+
+After the Weierstrasse and Cauchy, the subsequent story is well known. They lay the calculus of mathematics on the foundation of $\epsilon-\delta$ language. College math student learns the basics of $\epsilon-\delta$ language with some pain, more or less. 
+	
+	Let’s recall our initial question here. Is it really impossible to infinitesimal as numbers? Is $\epsilon-\delta$ the only reasonable framework?
+	
+	The simple answer is yes. We can deal with infinitesimal and infinity as numbers but in hyperreal rather that any number field.  
+	
+	In early 1960s, Abraham Robinson initiated the studies of non-standard analysis. This construction heavily relies on the mathematical logic and model theory, which is beyond the scope of this article. But the author would try his best to explain the ideal in elementary level. The basic idea is to construct an ordered field $^{*}\mathbb{R}$ that include ring number $\mathbb{R}$ as a subfield and also include infinitesimal and infinite numbers. We also require the algebraic axioms of $\mathbb{R}$ to hold in  $^{*}\mathbb{R}$. For example $0$ is still the identity of the addition group and multiplication is commutative… In the following article, I will discuss the construction of hyperreals by ultrafilter, and most of the lemma theorems will be quoted without proof, interested reader and confer the textbook by Robinson.
+
+	A free ultrafilter $U$ on a set $J$ is a subset of the powerset $P(J)$, satisfying:
+
+1.  $\emptyset\notin U$
+
+2.	If $A\in U, B\in U$, then $A\cap B\in U$,
+
+3.	If $A\in U$ and $A\subseteq B$, then $B\in U$,
+
+4.	One and only one of $A, A^c$ is contained in $U$
+
+5.	$U$ contains no finite subsets.
+
+And we also define the equality modulo $U$ on the set of real-valued sequences. Given a free ultrafilter $U$ on $\mathbb{N}$,  and $a,b$ are two sequences in $\mathbb{R}^\mathbb{N}$, we define the relation $a=_U b$ iff $\{j\in\mathbb{N}|a_j=b_j\}\in U$. $=_U$ is an equivalence relation. Similarly we can define $\leq_U$ which gives a order on $^*\mathbb{R}$
+
+Although $\mathbb{R}^\mathbb{N}$ itself is not a field, after taking the quotient by the equivalence relation $=_U$, the resulting $^*\mathbb{R}$ is a field that contains $\mathbb{R}$. In addition, the algebraic operation like $+$, $\cdot$, $/$ can be extended to hyperreals, where 
+$$
+a^{-1}:=(a_j^{-1})_{j\in\mathbb{N}}
+$$
+and all algebraic action extends similarly by entries-wise operation. So, where are the infinitesimal and infinity?
+
+With the construction of hyperreals and $\leq _U$, we can now define infinitesimal and infinity in the naive language:
+
+A hyperreal number $a$ is called infinitesimal if $|a|\leq_U n^{-1}$ for every $n=(n,n,...)\in \mathbb{R}^\mathbb{N}$. The inverse of infinitesimal is called infinity. They indeed exists in hyperreals because $\omega:=(1,2,3,...,n,..,)$ is larger than any constant sequence because $\{j\in\mathbb{N}|\omega_j=j< n\}$ is finite, hence its complement is an element in $U$. By definition $0$ is infinitesimal.
+
+Then we identify $\mathbb{R}={^\sigma\mathbb{R}}:=\{(a,a,...a...,)|a\in\mathbb{R}\}$ and consider a subring of ${^*\mathbb{R}}$, $\mathcal{O}:=\{a\in^*\mathbb{R}|p\leq_U a\leq_U q, \exists p,q\in {^\sigma\mathbb{R}}\}$. $\mathcal{O}$ obviously contains ${^\sigma\mathbb{R}}$ and we define $\theta:=\{\text{infinitesimals}\}$. Some manipulation would show that $\theta$ is the maximal ideal of $\mathcal{O}$, and ${\cal O}/\theta\cong \mathbb{R}$. 
+
+Moreover, we say $a,b\in\mathcal{O}$ are infinitesimally close, $a\sim b$ iff $a-b$ is infinitesimal. Denote the hyperreal function ${^*f}:a\longrightarrow (f(a_1),f(a_2)),...)$, we can similarly define the continuity of functions in hyperreals, for any $\epsilon\in\theta$ ${^* f}(a+\epsilon)\sim {^* f}(a)$.
+
+This method rigorously constructed the notion of infinity and infinitesimal, and is extremely convenient when we want to prove some basic theorems. Now the initial calculation can be reinterpreted as calculation in $^*\mathbb{R}$. But notice that in the last step when we abandon the terms involving $o$, our argument is to project both side of equation from $\mathcal{O}$ to ${\cal O}/\theta$
+$$
+pr(\dot{x})=pr(m t^{m-1}+o\cdot (...))=mt^{m-1}
+$$
+
+Of course one can argue that $\mathcal{O}$ constructed in this is nothing other than the set of convergent sequences in the language of $\epsilon-\delta$. What shocks me is how non-standard analysis managed to revive the abandoned physical notion of infinitesimal. What interested me is the pattern of evolution of concepts.
+
+At adolescence of calculus, mathematicians based their works on ill-defined infinitesimal, and they made some progress such that they know how to calculate area and length, though they don't know how to rigorously define area and length.
+  This progress gave them more confidence in the frame work of calculus and they don't have to fear too much about annoying infinitesimal. 
+The huge success stimulate the development of mathematical logic which finally made it possible to define infinitesimal.
+  
+Is it totally a because we are lucky that we start from a concept that could be eventually rigorously defined? 
+What if we start from a wrong concept, which could never be rigorously defined, but coincidentally could generate some convincing result that consistent with the observed nature? What if we are ants living on a Möbius strip? What if we live in a video game that is displayed in $1280\times1024$ pixels? 
+
+Berkeley wanted to use his argument to criticize that mathematicians reason as badly as theologians. But at the time of Newton, there is no pure mathematicians, they are more or less physicists. So Berkeley himself was more or less criticizing physicists. Physics is intertwined with mathematics in their development, some times they come close and sometimes they go apart. 
+
+I have an interesting observation. Almost whenever mathematicians got some inspiration from physicists, it is  about the physical treatment of infinities. The first time is about infinitesimal it self. The second time is about Dirac's $\delta$ function and variation theory. The ongoing revolution is about the treatment of all kinds of infinite dimensional algebraic structures. Quantum field theory is a good example, and in fact, non-trivial quantum can not live in a finite dimensional setting.
+
+My real question is:\\
+what attitude should we choose towards ill-defined conception coming from physical observation which can generated some good pattern?
+
+The history gives the answer. Ironically, the golden age of calculus is the era when we didn't have rigorous infinitesimal. The golden age of mathematical physics is now.
+\end{document}
