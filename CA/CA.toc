@@ -1,5 +1,5 @@
-\contentsline {section}{\numberline {1}Rings, Ideals, Radicals}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Lecture 1. Motivation and Basics by Paul Steinmann}{3}{subsection.1.1}
+\contentsline {section}{\numberline {1}Rings, Ideals, Radicals}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Lecture 1. Motivation and Basics by Paul Steinmann}{4}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Lecture 2. Local Rings, Coprime Ideals, Ideal Quotients by Paul Steinmann}{7}{subsection.1.2}
 \contentsline {section}{\numberline {2}Modules}{12}{section.2}
 \contentsline {subsection}{\numberline {2.1}Lecture 3. Modules, Exact Sequences by Professor Kowalski}{12}{subsection.2.1}
