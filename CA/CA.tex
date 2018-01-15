@@ -3,6 +3,7 @@
 \usepackage{latexsym}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{stmaryrd}
 \usepackage{fancyhdr}
 \pagestyle{headings}
 \usepackage{dsfont}
@@ -179,7 +180,7 @@ If $0 \in \reals^n$ is a regular value of $f$ then $f^{-1}(0)$ is a submanifold.
 \end{thm} 
  
 In algebraic geometry, we look at $f^{-1}(0)$ for polynomial $f$.
-More precisely, fix an algebraically closed field $K$ and an integer $n>0$, consider the ring $R:=K[x_1,...,x_n]$.
+More precisely, fix an algebraically closed field $K$ and an integer $n>0$, consider the ring $R:=K[X_1,...,X_n]$.
  
 Define: For a subset $S\subset R$ we define the \textbf{affine algebraic variety} by
 \begin{equation}
@@ -198,10 +199,12 @@ With the affine algebraic varieties defined above, we have:
 \begin{equation*}
     V(S)\cup V(S')=V(\{fg| f\in S, g\in S'\})
 \end{equation*}
+$V(S)\cup V(S')\subseteq V(S\cdot S')$ is trivially true. For the converse inclusion, consider $x\in V(S\cdot S')$, assume $x\notin V(S')$, then $\exists g\in S'$ s.t. $g(x)\neq 0$ but $f(x)g(x)=0,\forall f\in S$: because $K[X_1,..,X_n]$ is an integral domain, we know $f(x)=0\forall f\in S\Lrta x\in V(S)$.
 \end{itemize}
 as a consequence, 
     $(V(S))_{S\subset R}$ form the closed sets of a topology on $K^n$ called \textbf{Zariski topology}.
 \end{rmk}
+Every closed set in Zariski topology is a closed set in ordinary topology but Zariski topology is coarser because for example $Y-\exp(X)\notin K[X,Y]$.
 \begin{ex}
 n=2 , $R=K[X_1,X_2]$
 
@@ -224,7 +227,7 @@ Fact: For $S$ in $R$ and $X$ subset in $K^n$, we have,
 \item
  For $S\subset S' \subset$ in $R$, we have $V(S)\supset V(S')$
 \item
- For $X \subset X'\subset K^n$, we have $ I(X)\supset I(X')$
+ For $X \subset X'\subset K^n$, we have $ I(X')\supset I(X)$
 \item
  $I(X) \subset R$ is  an ideal.
 \end{itemize}
@@ -240,10 +243,10 @@ An ideal $\sca \subseteq \cala$ with $\text{rad}(\sca)=\sca$ is  called \textbf
 Fact, 
 for every ideal $\sca \subseteq \cala$ we have  $\sca\subset \text{rad}(\sca)$.
 
- $\text{rad}(\sca)$ is an ideal, proof in exercise.
+ $\text{rad}(\sca)$ is an ideal, proof trivial.
 
 For $X\subset K^n$ the ideal $I(X)$ is radical. 
-
+$f^n\in I(X)\Lrta K\ni f^n(x)=0\forall x\in X$. Because $K$ is an integral domain, we know $f(x)=0\forall x\in X\Lrta f\in V(X)$, $\text{rad}(I(X))\subseteq I(X)$, then $I(X)$ is radical ideal.
 \end{rmk}
 
 \begin{thm}
@@ -508,14 +511,20 @@ $$
 Details in the exercise sheet.
 \end{proof}
 
-\begin{prop}\label{prop:prime_avoidance}(Prime avoidance) \\
-(i) Let $\scp_1,..., \scp_n\subset \cala$ prime ideals and let $\sca \subset \cala$ be an ideal which is contained in $\cup_{i=1}^n\scp_i$ then $\sca\subset \scp_j$  for some $j$.\\
-(ii)Let $\sca_1,...,\sca_n\subset \cala$ be ideals and $\scp \subset \cala$ a prime ideal s.t. $\scp \supset \cap_{i=1}^n\sca_i$.
-Then $\scp\supset \sca_i$ for some $i$.
-If $\scp=\cap_{i=1}^n\sca_i$,  then $\scp =\sca_i $ for some $i$ .
-\end{prop}
-
- 
+\begin{prop}\label{prop:prime_avoidance}(Prime avoidance)
+\begin{enumerate}[label=(\roman*)]
+\item Let $\scp_1,..., \scp_n\subset \cala$ prime ideals and let $\sca \subset \cala$ be an ideal which is contained in $\cup_{i=1}^n\scp_i$ then $\sca\subset \scp_j$  for some $j$.\\
+\item Let $\sca_1,...,\sca_n\subset \cala$ be ideals and $\scp \subset \cala$ a prime ideal s.t. $\scp \supset \cap_{i=1}^n\sca_i$.
+The following are equivalent:
+\begin{enumerate}[label=(\alph*)]
+\item
+$\scp\supset \sca_i$ for some $i$,
+\item $\scp\supseteq \cap_i\sca_i$,
+\item $\scp\supseteq\prod_i\sca_i$,
+\end{enumerate}
+and if $\scp=\cap_{i=1}^n\sca_i$,  then $\scp =\sca_i $ for some $i$ .
+\end{enumerate}
+\end{prop} 
 \begin{proof}
 Induction on $n$. For $n=1$, easily checked. For $n > 1$. Assume that $\sca \notsubset \scp_i$ 
 for all $1\leq i\leq n$. We show $\sca\notsubset \cup_{i=1}^n\scp_i$.
@@ -524,10 +533,13 @@ If $x_k\notin \scp_k$ for some $k$ , then we are done.
 If not, then $x_k\in \scp_k$ for all $k$. 
 Consider $y:=\sum_{k=1}^n\prod_{j\neq k}x_j$. We have $y\in \sca$ and $y \equiv \prod_{j\neq k}x_j \mod \scp_k,\forall k$.
 Since $x_j\notin \scp_k$ for $j\neq k$ and $\scp_k$ is a prime ideal, we conclude that $y\notin \scp_k$ for all $k$ hence $\sca\notsubset \cup_{i=1}^n \scp_i$.\\
-(ii) Suppose for all $i\in \{1,...,n\}$ we have $\scp\notsupset \sca_i$. Then there 
+(ii) The $(a)\Lrta (b)\Lrta (c)$ is trivial. We only need to prove $(c)\Lrta (a)$.
+
+Suppose for all $i\in \{1,...,n\}$ we have $\scp\notsupset \sca_i$. Then there 
 are $x_i\in\sca_i $ with $x_i\notin \scp$ for all $i$. 
-And thus $\prod_{i=1}^n x_i\in \prod_{i=1}^n\sca_i\subset \cap_{i=1}^n\sca_i$. 
-Since $\scp$ is a prime ideal $\prod_{i=1}^n x_i\notin \scp$, hence $\scp\notsupset \cap_{i=1}^n \sca_i$.
+And thus $\prod_{i=1}^n x_i\in \prod_{i=1}^n\sca_i$. 
+Since $\scp$ is a prime ideal $\prod_{i=1}^n x_i\notin \scp$, hence $\scp\notsupset \prod_{i=1}^n \sca_i$.
+
 If $\scp=\cap_{i=1}^n\sca_i\subset \sca_k$ for all $k$, which produce the last part.
 \end{proof}
 
@@ -577,7 +589,7 @@ $$
 \end{dfn}
 {\color{red} By definition, the extension and contraction always preserves inclusion $\subset$, but it does not necessarily preserve the proper inclusion $\subsetneq$}
 \begin{prop}\label{prop:properties_extension_contractino}
-Properties: Let $f: A\rightarrow B$ be a ring homomorphism , $\sca\subset A$ $\scb\subset B$ ideals. Then :\\
+Properties: Let $f: \cala\rightarrow \calb$ be a ring homomorphism , $\sca\subset \cala$ $\scb\subset \calb$ ideals. Then :\\
 (i) $\sca\subset f^*f_*(\sca)=\sca^{e c}$,$\scb\supset f_{*}f^*(\scb)=\scb^{ce}$.\\
 (ii) $f^*(\scb)=f^* f_*f^*(\scb), f_*(\sca)=f_* f^*f_*(\sca)$.\\
 (iii) Denote by $C$ the set of contracted ideals in $A$ and by $E$ the set of extended ideals in $B$, then 
@@ -590,9 +602,24 @@ E=\{\scb\subset B| f_* f^*(\scb)=\scb\}.
 $$ 
 And $f_*: C\rightarrow E$ is a bijection with inverse $f^*$.
 \end{prop}
-\begin{proof}
- For (i), $\sca\subset f^{-1}f(\sca)\subset f^{-1}f_{*}(\sca)=f^{*}f_*(\sca)$. For (ii) $\scb \supset f(f^{-1}(\scb))$ and $\scb$ is an ideal so $\scb \supset f_{*}f^*(\scb)$. Part (iii) is left as an exercise.
+\begin{proof}\ \\
+ (i). $\sca\subset f^{-1}f(\sca)\subset f^{-1}f_{*}(\sca)=f^{*}f_*(\sca)$.\\
+$\scb \supset f(f^{-1}(\scb))$ and $\scb$ is an ideal so $\scb \supset f_{*}f^*(\scb)$. 
+(ii). By (i) $\sca\subseteq\sca^{ec}\Lrta \sca^{e}\subseteq \sca^{ece}$, and $\sca^{e}\supseteq(\sca^{e})^{ce}$, we know $\sca^{e}=\sca^{ece}$, and another is proved similarly.\\
+(iii). trivial application of $(ii)$.
 \end{proof}
+\begin{prop}\label{prop:properties_contraction_extension}
+$$
+\begin{aligned}
+&(\sca_1+\sca_2)^e=\sca^e_1+\sca_2^e & (\scb_1+\scb_2)^c\supseteq \scb^c_1+\scb_2^c\\
+& (\sca_1\cap\sca_2)^e\subseteq\sca_1^e\cap\sca_2^e & (\scb_1\cap\scb_2)^c=\scb_1^c\cap\scb_2^c\\
+& (\sca_1\sca_2)^e=\sca_1^e\sca_2^e & (\scb_1\scb_2)^c\supseteq\scb_1^c\scb_2^c\\
+&(\sca_1:\sca_2)^e\subseteq(\sca_1^e:\sca_2^e)& (\scb_1:\scb_2)^c\subseteq (\scb_1^c:\scb_2^c)\\
+&\text{rad}(\sca)^e\subseteq\text{rad}(\sca^e) & \text{rad}(\scb)^c=\text{rad}(\scb^c)
+\end{aligned}
+$$
+Assume $\scp\subseteq\cala$ and $\scq\subseteq\calb$ are prime ideals, then $\scq^c$ is prime ideal but $\scp^e=\varphi_*(\scp)$ is not necessarily prime, for  trivial case, $\varphi=0\Lrta \varphi_*(\scp)=0$ which is not necessarily prime. 
+\end{prop}
 \section{Modules}
 \subsection{Lecture 3. Modules, Exact Sequences by Professor Kowalski}
 Outline of this chapter 
@@ -760,7 +787,15 @@ I=(X_1,..,X_n,...)$ is not a finitely generated $\cala$-module.
      (L/N)/(M/N)\cong \text{Im}(\bar{\pi}),
      $$
      by Remark~\ref{rmk:iso}.
-    \item $(M_1+M_2)/M_2\cong M_1/(M_1\cap M_2)$
+    \item $(M_1+M_2)/M_2\cong M_1/(M_1\cap M_2)$.\\
+    The composite morphism:
+    $$ 
+    M_1\lrta M_1+M_2\lrta (M_1+M_2)/M_2
+    $$ 
+    $$
+    m_1\longmapsto m_1+0\longmapsto m_1+0+ M_2
+    $$
+    is surjective, and the kernel is $M_1\cap M_2$.  
 \end{enumerate}
 \end{lemma}
 \begin{dfn}Let 
@@ -773,7 +808,7 @@ $M/IM$ is naturally an $\cala/I$-module.
 An element of $M/IM$ is of the form $m+ IM$ and suppose $a+I =a'+I$ $\Lrta $ $ a(m+ IM)= am+ IM=(a'+ b)(m+IM)=a'(m+ IM)+ bm+ IM=a'm+IM$.
 \end{proof}
 \begin{dfn}
-$(M_i)_{i \in I}$ is a family of $\cala$-modules
+$(M_i)_{i \in I}$ is a family of $\cala$-modules, $I$ is a possibly infinite index set.
 \begin{enumerate}[label=(\roman*)]
 \item $\prod_{i\in I} M_i$ is an $\cala$-module with $a(x_i)=(a x_i)$.
 \item $\oplus_{i\in I} M_i\subset \prod_{i\in I} M_i$ is the submodule of $(x_i)_{i\in I}$ s.t. $x_i=0$ for all but finitely many $i\in I$. 
@@ -788,9 +823,9 @@ An $\cala$-module $M$ is called \textbf{free} if there exists a set $I$ s.t. $M$
 \begin{enumerate}
 \item if $\cala$ is a field, then every $\cala$-module is free.
 \item $\cala=\intg$ : $\intg/2\intg$ is not free.
-\item \textbf{Warning!} A submodule of a free module is not necessarily free.(e.g. ideals in $\cala$)
+\item \textbf{Warning!} A submodule of a free module is not necessarily free.(e.g. each proper ideals in $\cala$ can't be a free $\cala$-module)
 \item If $\cala\neq \{0\}$, $n,m\geq 0$ are integer and $\cala^n\cong \cala^m$ then $n=m$.
-$I\subset \cala$ maximal ideal, then we get an isomorphism of $\cala/I$-vector spaces,
+$I\subset \cala$ maximal ideal, $I\cala^n\cong I\cala^m$ as $\cala$-modules. Taking the quotients, then we get an isomorphism of $\cala/I$-vector spaces,
 $$
 (\cala/I)^n\cong(\cala/I)^m\Lrta n=m.
 $$
@@ -848,10 +883,11 @@ $\cala$ local ring, $\scm\subset \cala$ the maximal ideal. $M$ finitely generate
 \begin{proof}
 $N=\lgl x_1,...,x_n\rgl$ and apply Nakayama's lemma. Specifically, consider the composite map $N\inj M\lrta M/\scm M$ is surjective, then we have $N+\scm M=M$, then we can apply the Corollary~\ref{cor:Nakayama1}.
 \end{proof}
+\subsection{Lecture 4. Snake Lemma, Tensor Product by Professor Kowalski}
 \section*{Exact sequences}
 \begin{dfn}\ \\
-(1)$M'\rta(f) M\rta(g) M''$ is \textbf{exact} if $\text{Im}(f)=ker(g)$\\
-(2) $M'\rta(f_1) M\rta(f_2) M''\rta...$ is \textbf{exact} if it is exact at each node.
+(1)$M'\overset{f}{\rta} M\overset{g}{\rta} M''$ is \textbf{exact} if $\text{Im}(f)=ker(g)$\\
+(2) $M'\rta M\rta M''\rta...$ is \textbf{exact} if it is exact at each node.
 \end{dfn}
 
 \begin{ex}\ 
@@ -870,7 +906,7 @@ $$
  \item $\cala=\intg$, for non-free modules, for example
  $$
 \begin{array}{ c c c c c c c c c}
-0 & \longrightarrow  & \intg/2\intg & \longrightarrow  & \intg/4\intg & \longrightarrow  & \intg/w\intg & \longrightarrow  & 0\\
+0 & \longrightarrow  & \intg/2\intg & \longrightarrow  & \intg/4\intg & \longrightarrow  & \intg/2\intg & \longrightarrow  & 0\\
  &  & x &\longmapsto  & 2x &  &  &  & \\
  &  &  &  & x & \longmapsto & x\  mod\ 2 &  &
 \end{array}
@@ -878,7 +914,7 @@ $$
 the exact sequence does not split.
 \end{enumerate}
 \end{ex}
-\subsection{Lecture 4. Snake Lemma, Tensor Product by Professor Kowalski}
+
 \begin{prop}(Snake Lemma)
 Suppose we have such a commutative diagram, each row is exact, 
 \[
@@ -1023,7 +1059,7 @@ $$
 M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \lrta0 \text{ is exact} \Longleftrightarrow (\ref{eq:1}) \text{ is exact for all $N$}
 $$\\
 and 
-\textbf{Left exactness of functor $Hom(N,\underline{\ \ })$}:\\
+\textbf{left exactness of functor $Hom(N,\underline{\ \ })$}:\\
 $$
 0\lrta M'\overset{u}{\lrta}M\overset{v}{\lrta}M'' \text{ is exact }\Longleftrightarrow (\ref{eq:2})\text{ is exact for all $N$}.
 $$
@@ -1080,7 +1116,7 @@ $$
 \end{array}
  $$
  \begin{enumerate}
-\item Let $N=Coker(v)$ and $[p:M''\lrta Coker(v)]\in Hom(M'',N)$, then $v^*(p=p\circ v=0)$. Since $v^*$ is injective, we have $p=0$, in other words $M''=\text{Ker}(p)=\text{Im}(v)$ so $v$ is surjective.
+\item Let $N=Coker(v)$ and $[p:M''\lrta Coker(v)]\in Hom(M'',N)$, then $v^*(p)=p\circ v=0$. Since $v^*$ is injective, we have $p=0$, in other words $M''=\text{Ker}(p)=\text{Im}(v)$ so $v$ is surjective.
 \item Take $N=M''$ and $f=Id_{M''}$, $(u^*\circ v^*)(f)=0$ means $Id_{M''}\circ v\circ u=0$ $\Lrta v\circ u=0$, hence $\text{Im}(u)\subset \text{Ker}(v)$.
 \item  Take $N=M/\text{Im}(u)$, and $p:M\lrta N$ projection, we have $u^*(p)=p\circ u=0$. So $p\in \text{Ker}(u^*)$, so there exists $f\in Hom(M'',N) $ s.t. $v^*(f)=f\circ v=p$. 
 \[
@@ -1536,7 +1572,10 @@ $$
 
 \begin{ex}
 $$\intg/m\intg\otimes_\intg \intg/n\intg\cong \intg/gcd(m,n)\intg.$$ 
-Pf. Take $M=\intg/m\intg$, $\cala=\intg$, $\sca=n\intg$. Then $\sca M=(n\intg+m\intg)/m\intg=gcd(m,n)\intg/m\intg$. $\cala/\sca=\intg/n\intg$
+Pf. Take $M=\intg/m\intg$, $\cala=\intg$, $\sca=n\intg$. Then $$
+\sca M=n\intg\otimes_\intg\intg/m\intg\overset{(1)}{\cong}n\intg/(n\intg\cap m\intg)=(n\intg+m\intg)/m\intg=gcd(m,n)\intg/m\intg.
+$$
+The isomorphism $(1)$ can be checked by set: $f: nk\otimes (p+m\intg)=k\otimes (np+m\intg)\longmapsto np+(n\intg\cap m\intg)$, which is obviously surjective and it is injective because $np\in n\intg\cap m\intg\Lrta k\otimes (np+m\intg)=0$.
 
 Then by the result of Example~\ref{ex:iso_quotient_module}, we have
 $$
@@ -1544,6 +1583,16 @@ M\otimes \cala/\sca=\frac{\intg}{m\intg}\otimes_\intg \frac{\intg}{n\intg}\cong\
 $$
 \end{ex}
 
+\begin{ex}
+$\calb$ is an $\cala$-algebra and $M$ is a flat $\cala$-module, then the extension by scalar $M_\calb=M\otimes_\cala\calb$ is flat $\calb$-module. In particular, $N, N'$ are also $\cala$-module.
+\begin{proof}
+Consider an injective morphism of $\calb$-module: $f: N\lrta N'$.
+$$
+N\otimes_\cala M=(N\otimes_\calb \calb)\otimes_\cala M=N\otimes_\calb(\calb\otimes_\cala M)=N\otimes_\calb M_\calb
+$$
+$M$ being flat would lead to $f\otimes 1$ injective on $N\times_\cala M$, and by the above isomorphism, we are done.
+\end{proof}
+\end{ex}
 Let $n\in\intg$. Then $\intg/n\intg$ is flat iff $n=\pm1,0$, i.e. $\intg/n\intg=\{0\} \text{ or } \intg$. This is easy to prove, consider the following short exact sequence for $|n|\geq 2$,
 $$
 0\lrta n\intg\lrta \intg\lrta \intg/n\intg\lrta 0,
@@ -1641,7 +1690,7 @@ $$
 (+):S^{-1}\cala\times S^{-1}\cala\lrta S^{-1}\cala,\ (a/s,a'/s')\mapsto \frac{as'+a's}{ss'}
 $$
 $$
-(\cdot):S^{-1}\cala\times S^{-1}\cala\lrta S^{-1}\cala,\ (\frac{a}{s},\frac{a'}{s'})\mapsto \frac{aa'}{ss'}
+(\cdot):S^{-1}\cala\times S^{-1}\cala\lrta S^{-1}\cala,\ \left(\frac{a}{s},\frac{a'}{s'}\right)\mapsto \frac{aa'}{ss'}
 $$
 $$
 0_{S^{-1}\cala}=\frac{0}{1}\text{ and } 1_{S^{-1}\cala}=\frac{1}{1}
@@ -1706,7 +1755,7 @@ $\cala:=\{\text{functions } f:X\lrta \reals\}$ is a ring of the the multiplicati
 \begin{lemma}$X$ any set, $U\subseteq X$ any subset.
 $\cala:=\{\text{functions } f:X\lrta \reals\}$.
 Let $\calb:=\{\text{functions }U\lrta \reals\}$.
-Then the natural map $j:S^{-1}\cala\lrta \calb$ is an isomorphism $\frac{a}{s}\mapsto [U\ni x\mapsto\frac{a(x)}{s(x)}\in\reals]$
+Then the natural map $j:S^{-1}\cala\lrta \calb$ is an isomorphism $\frac{a}{s}\mapsto [U\ni x\mapsto\frac{a(x)}{s(x)}\in\reals]$ (This gives us some implication why localization is called localization)
 \end{lemma}
 \begin{proof}
 $j$ is well-defined:
@@ -1755,7 +1804,7 @@ S\ar[r,hook] &\cala  \arrow[r,"f"] \arrow[d,"\iota"] & \calb \\
 This universal property of localization can serve as an alternative definition of localization, where $S^{-1}\cala$ is defined to be a pair $(T,\iota)$ so that any morphism $f$, $f:\cala\lrta \calb,f(S)\subseteq\calb^\times$ would factor through $T$ by $f=\tilde{f}\circ\iota$.
 \end{lemma}
 \begin{proof}
-Want: $\forall f$ as above $\exists ! \tilde{f}\text{ s.t. } \tilde{f}\circ\iota=f$
+\underline{Want}: $\forall f$ as above $\exists ! \tilde{f}\text{ s.t. } \tilde{f}\circ\iota=f$
 
 Uniqueness:\\
 $\tilde{f}(a/s)=\tilde{f}(a/1)\tilde{f}(s/1)^{-1}=f(a)f(s)^{-1}$.
@@ -1774,7 +1823,7 @@ This is guaranteed, $\exists t\in S: as' t=a's t$ $\Lrta (f(a)f(s')-f(a')f(s))f(
     \item 
     $\cala\ni f$, $S_f:=\{f^n|n\geq 0\}$ is multiplicatively closed. $\cala_f:=S^{-1}_f\cala$.
     \item
-    $\scp\subset \cala$ is a prime ideal, then $S_\scp:=\cala-\scp$ is multiplicatively closed (In fact then $\cala-\scp$ being multiplicatively closed is equivalent to $\scp$ being prime). We can define 
+    $\scp\subset \cala$ is a prime ideal, then $S_\scp:=\cala-\scp$ is multiplicatively closed (In fact, for an ideal $\scp$, $\cala-\scp$ being multiplicatively closed is equivalent to $\scp$ being prime). We can define 
     $\cala_{\scp}:=S_{\scp}^{-1}\cala$.
 \end{itemize}
 Caution that if $\scp=(f)$, usually $\cala_{(f)}\neq \cala_{f}$.
@@ -1803,7 +1852,7 @@ $S$ is a multiplicative set in a ring $\cala$, then for the canonical morphism $
  Similarly, we choose an ideal $\scq\subseteq S^{-1}\cala$ and check that $\iota^*(\scq):=\iota^{-1}(\scq)\ni a\longmapsto \frac{a}{1}\in\scq$ and for an $\frac{b}{1}\in\scq\cap\{\frac{c}{1}|c\in\cala\}\longmapsto b\in\cala$, which gives the one to one correspondence.
 \item
  $\iota_*(\sca)=S^{-1}\cala\Llrta \exists a\in \sca, s\in S$ s.t. $a/s=1/1$
-$\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$. Conversely, $\sca\cap S\neq \emptyset$, any $a\in \sca, a=s\in S$, then $a/s=1/1$. 
+$\Llrta\exists t\in S$ s.t. $\sca\ni ta=ts\in S$, then $\sca\cap S\neq\emptyset$. Conversely, $\sca\cap S\neq \emptyset$, exists an $a\in \sca, a=s\in S$, then $a/s=1/1$. 
 \item 
 See Proposition~\ref{prop:properties_extension_contractino}, $\iota_*(\iota^*(\scb))\subset \scb$ in general. For the converse inclusion, if $a/s\in \scb$, then $a/s\cdot s/1=a/1\in\scb$, which means $a\in \iota^{*}(\scb)\Lrta a/s\in \iota_{*}(\iota^*(\scb))$. This claims means every ideal in $S^{-1}\cala$ is extension of an ideal in $\cala$. 
 \end{enumerate} 
@@ -1812,14 +1861,13 @@ See Proposition~\ref{prop:properties_extension_contractino}, $\iota_*(\iota^*(\s
   Notice that $\scq\cap\{\frac{a}{1}|a\in\cala\}$ is not necessarily an ideal in $S^{-1}\cala$. Explicit example shows that $\iota_*$ does not in general preserves the proper inclusion ``$\subsetneq$''. Let $\cala:=\intg$, $S:=\{2^n:n\in \intg_{\geq 0}\}$, then $S^{-1}\cala=\intg[1/2]$, $(2)\supsetneq (4)$ in $\cala$ but $\iota_*((2))=\iota_*((4))=S^{-1}(\cala)$. But however, unlike general $\varphi^*$, $\iota^*$ indeed preserves the proper inclusion. $\iota_*(\iota^*(\scb))=\scb\subsetneq \sca=\iota_*(\iota^*(\sca))\Lrta \iota^*(\scb)\subsetneq \iota^*(\sca)$. Or equivalently, $\frac{c}{s}\notin \sca\Lrta \frac{c}{1}\notin\sca\Lrta c\notin\iota^*(\sca)$. The fact that $\iota^*$ preserves proper inclusion is crucial for the claim $\text{dim}(\cala_\scp)=\text{ht}(\scp)$.
 \end{rmkt}
 
-{\color{red}
 \begin{lemma}\label{lem:radical_commutates_localization}
 $\cala$ a ring and $S$ is a multiplicative set in $\cala$. Let $\iota:\cala\lrta S^{-1}\cala$, then we have
 \begin{enumerate}[label=(\alph*)]
 \item $\iota^*\iota_*(\sca)=\cup_{s\in S}(\sca:s)$
 \item $\iota_*$ commutes with formation of finite sums, products, intersections and taking radicals.
 \end{enumerate}
-\begin{proof}
+\begin{proof}\ 
 \begin{enumerate}[label=(\alph*)]
 \item 
 $x\in \iota^*\iota_*(\sca)\Lrta $ $\frac{x}{1}\in\iota_*\sca=\{\frac{y}{s}:y\in\sca,s\in S\}$
@@ -1827,11 +1875,16 @@ $x\in \iota^*\iota_*(\sca)\Lrta $ $\frac{x}{1}\in\iota_*\sca=\{\frac{y}{s}:y\in\
 ``$\subseteq$'': Suppose $\frac{x}{1}=\frac{y}{s}$ for some $y\in\sca,s\in S$. Then $\exists t\in S$ s.t. $t(xs-y)=0$ $\Lrta stx=yt \in \sca\Lrta x\in (\sca:st)$, where $st\in S$.
 
 ``$\supseteq$'': Say $x\in (\sca:s)$ for some $s\in S$. Thus $xs=:y \in\sca$. Then $\frac{x}{1}=\frac{y}{s}\in \iota^*\iota_*\sca$. 
-\item We know form exercise that in general $\text{rad}(\varphi_*\sca)\supseteq\varphi_*(\text{rad}(\sca))$, then in particular, we have $\text{rad}(\iota_*\sca)\supseteq\iota_*(\text{rad}(\sca))$. For the reverse inclusion, we check if $\frac{x}{s}\in \text{rad}(\iota_*\sca)$, then exists $n\in\mathbb{N}$, s.t. $\left(\frac{x}{s}\right)^n\in \iota_*\sca$. $\frac{x^n}{s^n}=\frac{y}{t}\in\iota_*\sca$, $\exists u\in S$ s.t. $u x^n t=u s^n y\in\sca$, then $(uxt)^n\in\sca\Lrta uxt\in\text{rad}(\sca)\Lrta \frac{x}{s}\in \iota_*(\text{rad}(\sca))$.
+\item 
+See~\ref{prop:properties_contraction_extension} for the properties of general contraction and extension. For general extension, $\varphi_*$ commutes with taking finite sum and products. we only need to prove the remaining two.
+
+We already know $\varphi_*(\sca\cap\scb)\subset\varphi_*\sca\cap\varphi_*\scb$. For the converse inclusion in the case of $\iota_*$, consider $\frac{x}{u}\in \iota_*\sca\cap\iota_*\scb$, $\frac{x}{u}\sim\frac{a}{s}\sim\frac{b}{s'}$, where $a\in \sca, b\in\scb$ and $s,s',s''\in S$.  Then $\exists t, t',v\in S $ s.t. $x t s= a t u$, $x t's'=bt'u$ and $a s' v=b s v=c\in\sca\cap\scb$ then $x t t' ss'v=(a s' v) t t'u=(b sv) t t' u=c tt'u$ $\Lrta \frac{x}{u}\sim\frac{c}{ss'v}\in\iota_*(\sca\cap\scb)$.
+
+We know form~\ref{prop:properties_contraction_extension} that in general $\text{rad}(\varphi_*\sca)\supseteq\varphi_*(\text{rad}(\sca))$, then in particular, we have $\text{rad}(\iota_*\sca)\supseteq\iota_*(\text{rad}(\sca))$. For the reverse inclusion, we check if $\frac{x}{s}\in \text{rad}(\iota_*\sca)$, then exists $n\in\mathbb{N}$, s.t. $\left(\frac{x}{s}\right)^n\in \iota_*\sca$. $\frac{x^n}{s^n}=\frac{y}{t}\in\iota_*\sca$, $\exists u\in S$ s.t. $u x^n t=u s^n y\in\sca$, then $(uxt)^n\in\sca\Lrta uxt\in\text{rad}(\sca)\Lrta \frac{x}{s}\in \iota_*(\text{rad}(\sca))$.
 \end{enumerate}
 \end{proof}
 \end{lemma}
-}
+
 
 \subsection{Lecture 8. Properties of Localization of Rings}
 Recall
@@ -1872,6 +1925,10 @@ With the one to one correspondence, we can see that $\iota^*$ and $\iota_*$ pres
 \end{itemize}
 \end{rmkt}
 
+\begin{cor}
+The above correspondence says if $(0)$ is a prime ideal in $\cala$, then so is $S^{-1}(0)$, hence a localization of an integral domain is always an integral domain. But in fact ``being an integral domain'' is not a local property. Consider $\ratl\times\ratl$, whose maximal ideals are $(0,\ratl)$ and $(\ratl,0)$
+\end{cor}
+
 \begin{dfn}
 $k(\scp):=Frac(\cala/\scp)$ is called the \textbf{residue field at (the point) prime ideal $\scp$}.
 Then the above bijection induces isomorphism $k(\iota^*\scq)\cong k(\scq)$.
@@ -1887,7 +1944,7 @@ $$
 & a+\iota^*\scq\longmapsto \frac{a}{1}+\scq
 \end{aligned}
 $$
-$\iota_*\iota^*\scq=\scq\Lrta \text{Ker}(\overline{\iota})=0+\iota^*\scq$. And see for example  
+$\iota_*\iota^*\scq=\scq\Lrta \text{Ker}(\overline{\iota})=0+\iota^*\scq$. And see, for example,  
  \href{https://math.stackexchange.com/questions/2123201/relation-between-integral-domains-with-isomorphic-fraction-fields}{this StackExchange answer}, a injective morphism of integral domains induces a injective morphism of fraction fields. The induced morphism of fraction field is 
  $$
  Frac(\overline{\iota}):\frac{a+\iota^*\scq}{b+\iota^*\scq}\longmapsto \frac{\frac{a}{1}+\scq}{\frac{b}{1}+\scq}
@@ -1995,7 +2052,7 @@ A \textbf{germ at} $p$ is an equivalence class $[(U,f)]$ of pairs $(U,f)$, where
 $\Omega\subseteq \cplx$ open $\cala$ is the set of holomorphic germs $f:\Omega\lrta \cplx$. Fix $p\in\Omega$. and set $\scp=\{f\in \cala|f(p)=0\}$. Then $\cala$ is a local ring with maximal ideal $\scp$
 \end{lemma}
 \begin{proof}
-\underline{Want} $\cala-\scp\subseteq \cala^\times$\\
+\underline{Want}: $\cala-\scp\subseteq \cala^\times$\\
 
 This is just a way of saying : if $f(p)\neq 0$, then there is an open neighborhood of $p$ on which $1/f$ is defined and holomorphic.
 \end{proof}
@@ -2037,9 +2094,13 @@ $S^{-1}\cala\otimes_{\cala}M\cong S^{-1}M$, where the map is $\frac{a}{s}\otimes
 \begin{proof}
 We can define the inverse
 $$
-\frac{1}{s}\otimes m \longleftarrow\frac{m}{s}
+\frac{1}{s}\otimes m \mapsfrom\frac{m}{s}
 $$
 and then check it is well-defined.
+$\frac{n}{t}\sim\frac{m}{s}$ $\Lrta \exists u\in S , ut m=us n$. 
+$$
+\frac{1}{t}\otimes n=\frac{us}{ust}\otimes n=\frac{1}{ust}\otimes usn=\frac{1}{ust}\otimes utm=\frac{1}{s}\otimes m
+$$
 \end{proof}
 
 Moreover, we can also define the localization of morphisms,
@@ -2067,7 +2128,8 @@ Next time: we will focus other local properties i.e.properties of $M$ that depen
 Recall that given a multiplicative closed set 
 $S\subseteq \cala$, we can define  $S^{-1}\cala$.
 Also we can define \textbf{localization of modules:} $S^{-1}M\cong S^{-1}\cala\otimes_\cala M$. The localization of module defines a functor $S^{-1}$:
-$f:M\lrta N$, induces a morphism of $S^{-1}\cala$-modules $S^{-1}f:S^{-1}M\lrta S^{-1}N$ and $S^{-1}(f\circ g)=S^{-1}f\circ S^{-1}g$. Moreover $S^{-1}$ is an exact functor:
+$f:M\lrta N$, induces a morphism of $S^{-1}\cala$-modules $S^{-1}f:S^{-1}M\lrta S^{-1}N$ and $S^{-1}(f\circ g)=S^{-1}f\circ S^{-1}g$. Moreover,
+\begin{lemma} $S^{-1}$ is an exact functor:
 $$
 M'\overset{f}{\lrta}M\overset{g}{\lrta}M''
 $$
@@ -2075,9 +2137,9 @@ is exact, then so is
 $$
 S^{-1}M\overset{S^{-1}f}{\lrta }S^{-1}M\overset{S^{-1}g}{\lrta } S^{-1}M''.
 $$
-
+\end{lemma}
 \begin{proof}
-$g\circ f=0\Lrta S^{-1}g\circ S^{-1}f=0$, then we have $\text{Ker}(S^{-1}g)\supseteq \text{Im}(S^{-1}f)$. For the converse inclusion, consider an element $\frac{x}{s}\in \text{Ker}(S^{-1}g)，x\in M s\in S$, $\Lrta S^{-1}g(\frac{x}{s})=\frac{g(x)}{s}=\frac{0}{1}$, $\Lrta \exists t\in S\ s.t. \ g(tx)=tg(x)=0$. $\text{Im}(f)=\text{Ker}(g)\Lrta\exists y: f(y)=tx$. Then we check that $\frac{x}{s}=(S^{-1}f)(\frac{y}{st})=\frac{f(y)}{st}=\frac{tx}{ts}=\frac{x}{s}$, which concludes the proof.
+$g\circ f=0\Lrta S^{-1}g\circ S^{-1}f=0$, then we have $\text{Ker}(S^{-1}g)\supseteq \text{Im}(S^{-1}f)$. For the converse inclusion, consider an element $\frac{x}{s}\in \text{Ker}(S^{-1}g), x\in M, s\in S$, $\Lrta S^{-1}g(\frac{x}{s})=\frac{g(x)}{s}=\frac{0}{1}$, $\Lrta \exists t\in S\ s.t. \ g(tx)=tg(x)=0$. $\text{Im}(f)=\text{Ker}(g)\Lrta\exists y: f(y)=tx$. Then we check that $\frac{x}{s}=(S^{-1}f)(\frac{y}{st})=\frac{f(y)}{st}=\frac{tx}{ts}=\frac{x}{s}$, which concludes the proof.
 \end{proof}
 
 \begin{cor}
@@ -2094,6 +2156,23 @@ $$
 0\lrta S^{-1}M\lrta S^{-1}M
 $$
 \end{proof}
+
+\begin{cor}\ 
+\begin{enumerate}[label=(\roman*)]
+    \item
+Recall an exercise that $M\otimes_\cala N$ is flat if both $M$ and $N$ are flat $\cala$-module.
+\item
+$M$ is a flat $\cala$-module, $\calb$ is an $\cala$-algebra, then $M\otimes_\cala\calb$ is a flat $\calb$-module. Consider injective morphism of $\calb$-modules: $j: N_1\inj N_2$
+$$
+N_i\otimes_\calb (M\otimes_\cala\calb)=(N_i\otimes\calb)\otimes_\cala M\cong N_i\otimes_\cala M,
+$$
+$j$ is still injective when we consider it as an $\cala$-linear morphism then we conclude by $M$ is flat $\cala$-module.
+\item
+$M$ is a flat $\calb$-module and $\calb$ is a \textbf{flat} $\cala$-algebra, then $M$ is also a flat $\cala$-module. 
+\item
+ $S^{-1}\cala\otimes_\cala M=S^{-1}M$ is flat as an $\cala$-module if $M$ is flat $\cala$-module by (i). It is also flat as an $S^{-1}\cala$-module by (ii)
+\end{enumerate}
+\end{cor}
 
 \begin{lemma}
 $S^{-1} $ commutes with:
@@ -2114,6 +2193,9 @@ $$
 $$
 \end{proof}
 \end{lemma}
+
+
+
 
 \subsection*{Local Properties}
 $M$ is an $\cala$-module
@@ -2165,17 +2247,20 @@ $\Llrta \phi_\scp$ surjective $\forall\scp$ prime. We can replace the prime idea
 For the statement of injectivity, we can analogously prove it by starting from the exact sequence
 $0\lrta \text{Ker}(\phi)\lrta M\overset{\phi}{\lrta}N$.
 \end{proof}
+\begin{rmkt}
+Applying the above local property to the defining isomorphism of free module $\cala^{(I)}\cong M$, we can prove that being free is a local property and being projective is also a local property. What's more, an $\cala$-module $M$ is projective iff $M_\scm$ is free $\cala_\scm$-module for all maximal ideals.
+\end{rmkt}
 \begin{prop}
 \textbf{(Flatness is local)}\\
 $M$ is an $\cala$-module, then the followings are equivalent.
 \begin{enumerate}[label=(\alph*)]
 \item $\cala$-module $M$ is flat
 \item $\cala_\scp$-module $M_\scp$ is flat $\forall \scp$ prime
-\item $A_\scm$-module $M_\scm$ is flat $\forall \scm$ maximal ideals.
+\item $\cala_\scm$-module $M_\scm$ is flat $\forall \scm$ maximal ideals.
 \end{enumerate}
 \end{prop}
 \begin{proof}We prove e.g. 
-(a)$\Llrta$(b): Suppose $N\inj P$.
+(a)$\Llrta$(c): Suppose $N\inj P$.
 
 \underline{Want:} $[N\otimes M\inj P\otimes M]\Llrta [(N\otimes M)_\scm=(N_\scm\otimes_{\cala_\scm}M_\scm)\inj P_\scm\otimes_{\cala_\scm} M_\scm= (P\otimes M)_\scm\forall \scm$ ]\\
 $\Longleftarrow N_\scm\inj P_\scm\forall \scm$\\
@@ -2190,7 +2275,7 @@ $\Llrta N\inj P$ by Proposition~\ref{prop:local_inj_surj}.
 \item Every ideal of $\cala$ is finitely generated.
 \item $\{\text{ideals in $\cala$}\}$ satisfies the \textbf{maximal property}: i.e. Every subset contains a maximal element. That is : For any nonempty collection $S$ of ideals in $\cala$, $\exists \sca\in S$ s.t. $\forall \scb\in S\Lrta \scb\not \supset \sca$
 \end{enumerate}
-Then, $\cala$ is called \textbf{Noetherian}
+Then, $\cala$ is called \textbf{Noetherian}. Notices that we don't restrict to proper ideals in the above definition.
 \end{dfn}
 \begin{proof}\ \\
 (a)$\Lrta$(b). Let $\sca$ be an ideal. we may assume that $\sca$ is \textbf{NOT} finitely generated. Inductively construct $x_1, x_2,x_3...\in \sca$ such that $(x_1)\neq 0$ and $\sca\supsetneqq(x_1,x_2)\supsetneqq(x_1)$ an also $\sca\supsetneqq(x_1,x_2,x_3)\supsetneqq(x_1,x_2)$, but then this sequence contradict the \textbf{ACC}.
@@ -2207,7 +2292,7 @@ Define $\sca:=\cup_n \sca_n$. We know that every ideal of $\cala$ is finitely ge
 $M$ is an $\cala$-module. The following characterizations are equivalent:
 \begin{enumerate}[label=(\alph*)]
 \item $M$ has \textbf{ACC} on submodules
-\item Every submodule of $M$ is finitely generated
+\item Every submodule of $M$ is finitely generated (In particular, $M$ is finitely generated)
 \item $M$ has the \textbf{maximal property} on submodules
 \end{enumerate}
 Then, we call $M$ a \textbf{Noetherian $\cala$-module}.
@@ -2341,7 +2426,9 @@ Localization of  Noetherian ring are Noetherian. $S\subseteq \cala$ is multiplic
 Remember that $S^{-1}\cala$ is not a homomorphic image of $\cala$. By Proposition~\ref{prop:iso_spec_localization}, there is a one to one inclusion preserving correspondence between \{ideals in $\cala$ which does not intersect $S$\} and \{ideals in $S^{-1}\cala$\}. Then the maximal property is also inherited to $S^{-1}\cala$.
 \end{proof}
 \begin{rmkt}
-Notices that ``the localizations of $\cala$ is Noetherian at every primes does not imply ``that $\cala$ it self is Noetherian ''. See for example this \href{https://math.stackexchange.com/questions/73421/a-non-noetherian-ring-with-all-localizations-noetherian}{StackExchange answer}. In other words, being Noetherian is not a local property.
+See this \href{https://math.stackexchange.com/questions/110735/why-is-the-localization-of-a-commutative-noetherian-ring-still-noetherian}{StackExchange Answer} for a discussion of the relation between the submodule of $M$ and submodule of $S^{-1}M$. We know that $M$ is Noetherian $\Lrta S^{-1}M$ is Noetherian but not the reverse. 
+In other words, being Noetherian module is not local properties. 
+Also in the special case of Noetherian ring. Notices that ``the localizations of $\cala$ is Noetherian at every primes does not imply ``that $\cala$ it self is Noetherian  ''. See for example this \href{https://math.stackexchange.com/questions/73421/a-non-noetherian-ring-with-all-localizations-noetherian}{StackExchange answer}. In other words, being Noetherian ring is not a local property.
 \end{rmkt}
 
 \begin{dfn}
@@ -3291,7 +3378,7 @@ $\scp$ is arbitrary, $\cala$ is Artinian   local.
 \item $k[[x]]/(x^n)$: Artinian   local
 \item $k[x^2,x^3]/(x^{10})$: Artinian   local $\scm=(x^2,x^3)$
 \end{itemize}
-In the first three examples, the maximal ideal is principal while in the last example it is not.
+In the first three examples, the maximal ideal is principal while 
 \end{ex}
 
 In fact we can describe every Artinian   ring in terms of Artinian   local ring.

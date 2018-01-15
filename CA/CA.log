@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  13 JAN 2018 13:50
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  16 JAN 2018 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -109,6 +109,12 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@postskip=\skip47
 \thm@headsep=\skip48
 \dth@everypar=\toks25
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip49
@@ -794,36 +800,36 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutvoffset=\dimen199
 \Gm@dimlist=\toks44
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 61.
+Package hyperref Info: Option `colorlinks' set `true' on input line 62.
 \c@thm=\count149
  (./CA.aux)
 \openout1 = `CA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 132.
-LaTeX Font Info:    ... okay on input line 132.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
+LaTeX Font Info:    ... okay on input line 133.
 ABD: EveryShipout initializing macros
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.12} into 
 your preamble.
- on input line 132.
+ on input line 133.
 
 \AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring ON on input line 132.
+Package hyperref Info: Link coloring ON on input line 133.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -832,9 +838,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count150
 )
-LaTeX Info: Redefining \ref on input line 132.
-LaTeX Info: Redefining \pageref on input line 132.
-LaTeX Info: Redefining \nameref on input line 132.
+LaTeX Info: Redefining \ref on input line 133.
+LaTeX Info: Redefining \pageref on input line 133.
+LaTeX Info: Redefining \nameref on input line 133.
 
 (./CA.out) (./CA.out)
 \@outlinefile=\write4
@@ -875,20 +881,24 @@ LaTeX Info: Redefining \nameref on input line 132.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 134.
+LaTeX Font Info:    Try loading font information for U+msa on input line 135.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 134.
+LaTeX Font Info:    Try loading font information for U+msb on input line 135.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 134.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 135.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./CA.toc
+)
+LaTeX Font Info:    Try loading font information for U+stmry on input line 135.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) (./CA.toc
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 
@@ -900,22 +910,20 @@ File: se-ascii-print.def 2011/12/02 v1.10 stringenc: Printable ASCII characters
 \openout5 = `CA.toc'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 149.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 150.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 149.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 150.
 Missing character: There is no   in font cmr10!
  [3]
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 191.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 192.
 Missing character: There is no   in font cmr10!
-Missing character: There is no   in font cmti10!
-Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmti10!
@@ -931,7 +939,9 @@ Missing character: There is no   in font cmti10!
 [4]
 Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmti10!
-LaTeX Font Info:    Try loading font information for U+euf on input line 234.
+Missing character: There is no   in font cmti10!
+Missing character: There is no   in font cmti10!
+LaTeX Font Info:    Try loading font information for U+euf on input line 237.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
@@ -963,63 +973,68 @@ Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
-Missing character: There is no   in font cmr10!
-Missing character: There is no   in font cmr10!
 
 [6]
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
-Missing character: There is no   in font cmti10!
+Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
  [7]
 Missing character: There is no   in font cmti10!
-Missing character: There is no   in font cmti10!
-Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmr10!
+Missing character: There is no   in font cmti10!
+Missing character: There is no   in font cmti10!
+Missing character: There is no   in font cmti10!
  [8]
-Missing character: There is no   in font cmr10!
-Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
  [9]
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmr10!
-Missing character: There is no   in font cmti10!
-Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmr10!
- [10]
 Missing character: There is no   in font cmr10!
+Missing character: There is no   in font cmr10!
+Missing character: There is no   in font cmti10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 560--566
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
 
  []
 
+Missing character: There is no   in font cmti10!
+[10]
 Missing character: There is no   in font cmr10!
+Missing character: There is no   in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 572--578
+
+ []
+
 [11]
+Missing character: There is no   in font cmr10!
 Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmti10!
 Missing character: There is no   in font cmr10!
- [12]
-Underfull \hbox (badness 10000) in paragraph at lines 678--680
+ [12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 705--707
 
  []
 
-[13]
-Overfull \hbox (4.3539pt too wide) detected at line 727
+[14]
+Overfull \hbox (4.3539pt too wide) detected at line 754
 [] []
  []
 
-[14] [15] [16] [17]
-Overfull \hbox (5.31737pt too wide) in paragraph at lines 881--881
+[15] [16] [17]
+Overfull \hbox (5.31737pt too wide) in paragraph at lines 886--886
 []\OT1/cmr/bx/n/12 Lecture 4. Snake Lemma, Ten-sor Prod-uct by Pro-fes-sor Kowa
 l-
  []
 
-
-Overfull \hbox (34.96786pt too wide) detected at line 893
+[18]
+Overfull \hbox (34.96786pt too wide) detected at line 929
 \OT1/cmr/m/n/10.95 0 [][]\OMS/cmsy/m/n/10.95 ! []\OT1/cmr/m/n/10.95 (\OML/cmm/m
 /it/10.95 f[]\OT1/cmr/m/n/10.95 ) [][]\OMS/cmsy/m/n/10.95 ! []\OT1/cmr/m/n/10.9
 5 (\OML/cmm/m/it/10.95 f\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ! []\OT1/cmr/m
@@ -1031,55 +1046,53 @@ mr/m/n/10.95 (\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ) [][]\OMS/cmsy/m/n/10.
 95 ! \OT1/cmr/m/n/10.95 0
  []
 
-[18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 921--922
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 957--958
 
  []
 
-[20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1018--1022
+[21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1058
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1024--1027
+Underfull \hbox (badness 10000) in paragraph at lines 1060--1063
 
  []
 
-[22] [23] [24] [25] [26] [27]
-Overfull \hbox (2.1718pt too wide) detected at line 1308
+[23] [24] [25] [26] [27] [28]
+Overfull \hbox (2.1718pt too wide) detected at line 1344
 [] \OMS/cmsy/m/n/10.95 $ []
  []
 
-[28] [29] [30] [31] [32] [33] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 1652--1653
+[29] [30] [31] [32] [33] [34] [35] [36]
+Underfull \hbox (badness 10000) in paragraph at lines 1701--1702
 
  []
 
-[35] [36]
-LaTeX Font Info:    Try loading font information for U+dsrom on input line 1728
+[37] [38]
+LaTeX Font Info:    Try loading font information for U+dsrom on input line 1777
 .
  (/usr/local/texlive/2015/texmf-dist/tex/latex/doublestroke/Udsrom.fd
 File: Udsrom.fd 1995/08/01 v0.1 Double stroke roman font definitions
-) [37] [38] [39] [40] [41] [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1998--1999
+) [39] [40] [41] [42] [43] [44]
+Underfull \hbox (badness 10000) in paragraph at lines 2055--2056
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2004--2005
+Underfull \hbox (badness 10000) in paragraph at lines 2061--2062
 
  []
 
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 2011--2012
+
+Underfull \hbox (badness 10000) in paragraph at lines 2068--2069
 
  []
 
-[44]
-Missing character: There is no ， in font cmr10!
- [45] [46] [47] [48] [49] [50]
-Overfull \hbox (3.06216pt too wide) in paragraph at lines 2316--2317
+[45] [46] [47] [48] [49] [50] [51] [52]
+Overfull \hbox (3.06216pt too wide) in paragraph at lines 2401--2402
 \OT1/cmr/m/n/10.95 rem [][]4.5[][], $\U/msb/m/n/10.95 C\OT1/cmr/m/n/10.95 [\OML
 /cmm/m/it/10.95 X[]; :::; X[]\OT1/cmr/m/n/10.95 ]$ Noethe-rian $=[]\OMS/cmsy/m/
 n/10.95 ) \U/euf/m/n/10.95 a$ \OT1/cmr/m/n/10.95 finitely gen-er-ated $\OMS/cms
@@ -1087,42 +1100,42 @@ y/m/n/10.95 ([]) \U/euf/m/n/10.95 a \OT1/cmr/m/n/10.95 = (\OML/cmm/m/it/10.95 f
 []; :::; f[]\OT1/cmr/m/n/10.95 )$
  []
 
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 2387--2388
+[53] [54]
+Underfull \hbox (badness 10000) in paragraph at lines 2474--2475
 
  []
 
-[52] [53] [54] [55] [56] [57]
-Underfull \hbox (badness 10000) in paragraph at lines 2632--2633
+[55] [56] [57] [58] [59] [60]
+Underfull \hbox (badness 10000) in paragraph at lines 2719--2720
 
  []
 
-[58] [59] [60] [61] [62] [63] [64] [65]
-Underfull \hbox (badness 10000) in paragraph at lines 2957--2959
+[61] [62] [63] [64] [65] [66] [67] [68]
+Underfull \hbox (badness 10000) in paragraph at lines 3044--3046
 
  []
 
 
-Overfull \hbox (4.44226pt too wide) in paragraph at lines 2960--2964
+Overfull \hbox (4.44226pt too wide) in paragraph at lines 3047--3051
 \OT1/cmr/m/n/10.95 divisors. Note that $(0) \OMS/cmsy/m/n/10.95 ^^R A$ \OT1/cmr
 /m/n/10.95 is pri-mary $[]$ \OMS/cmsy/m/n/10.95 f \OT1/cmr/m/n/10.95 zero-divis
 ors in $\OMS/cmsy/m/n/10.95 A$g $[]$f\OT1/cmr/m/n/10.95 nilpotents
  []
 
-[66] [67] [68] [69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79]
-Overfull \hbox (5.24516pt too wide) in paragraph at lines 3570--3571
+[69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81]
+Overfull \hbox (5.24516pt too wide) in paragraph at lines 3657--3658
 [][]\OT1/cmr/bx/n/10.95 Definition 6.43. []$[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n
 /10.95 A\OT1/cmr/m/n/10.95 ) = []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 t \OM
 S/cmsy/m/n/10.95 ^^U \OT1/cmr/m/n/10.95 0 : \OMS/cmsy/m/n/10.95 9[]g$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3570--3571
+Underfull \hbox (badness 10000) in paragraph at lines 3657--3658
 
  []
 
-[80]
-Overfull \hbox (4.98257pt too wide) in paragraph at lines 3675--3677
+[82] [83]
+Overfull \hbox (4.98257pt too wide) in paragraph at lines 3762--3764
 []\OT1/cmr/m/n/10.95 Then we take $\OML/cmm/m/it/10.95 i \OT1/cmr/m/n/10.95 = \
 OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 + 1$ and con-sider the mod-ule $\OML/cm
 m/m/it/10.95 M \OT1/cmr/m/n/10.95 := \U/euf/m/n/10.95 p[]\OML/cmm/m/it/10.95 =\
@@ -1130,8 +1143,8 @@ U/euf/m/n/10.95 p[]$\OT1/cmr/m/n/10.95 . (Claim:$\U/euf/m/n/10.95 p[] \OT1/cmr/
 m/n/10.95 =
  []
 
-[81] [82] [83]
-Overfull \hbox (1.54037pt too wide) in paragraph at lines 3817--3818
+[84] [85] [86]
+Overfull \hbox (1.54037pt too wide) in paragraph at lines 3904--3905
 []\OT1/cmr/m/n/10.95 Suppose, $\OML/cmm/m/it/10.95 r \OT1/cmr/m/n/10.95 = \OML/
 cmm/m/it/10.95 dim[]\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 m\OML/cmm/m/it/10.95 =
 \U/euf/m/n/10.95 m[]\OT1/cmr/m/n/10.95 )$, $\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/m/n
@@ -1141,9 +1154,9 @@ cmm/m/it/10.95 dim[]\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 m\OML/cmm/m/it/10.95 =
 5 . Let $\OML/cmm/m/it/10.95 f[]; :::; f[] \OMS/cmsy/m/n/10.95 2
  []
 
-[84] [85] [86] [87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98]
-[99] [100] [101] [102] [103]
-Overfull \hbox (1.51785pt too wide) in paragraph at lines 4702--4703
+[87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
+[102] [103] [104] [105]
+Overfull \hbox (1.51785pt too wide) in paragraph at lines 4789--4790
 \OMS/cmsy/m/n/10.95 A$\OT1/cmr/m/it/10.95 . Then $\OMS/cmsy/m/n/10.95 9\OML/cmm
 /m/it/10.95 z[]; ::; z[] \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 k\OT1/cmr/m/
 n/10.95 [\OML/cmm/m/it/10.95 x[]; ::; x[]\OT1/cmr/m/n/10.95 ]$ \OT1/cmr/m/it/10
@@ -1153,33 +1166,33 @@ t/10.95 k\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 z[]; ::; z[]; w\OT1/cmr/m/n/10
 .95 ]$\OT1/cmr/m/it/10.95 . 
  []
 
-[104]
-Overfull \hbox (6.90947pt too wide) in paragraph at lines 4735--4753
+[106]
+Overfull \hbox (6.90947pt too wide) in paragraph at lines 4822--4840
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4735--4753
+Underfull \hbox (badness 10000) in paragraph at lines 4822--4840
 
  []
 
-[105]
-Overfull \hbox (11.20013pt too wide) in paragraph at lines 4802--4805
+[107] [108]
+Overfull \hbox (11.20013pt too wide) in paragraph at lines 4889--4892
 \OT1/cmr/m/n/10.95 To make sure the lead-ing term does not can-cel out, we need
  $[]$ $\OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; :::; s
 []\OT1/cmr/m/n/10.95 )$
  []
 
-[106] [107]
-Overfull \hbox (9.8606pt too wide) in paragraph at lines 4869--4870
+[109]
+Overfull \hbox (9.8606pt too wide) in paragraph at lines 4956--4957
 [][]\OT1/cmr/bx/n/10.95 Lemma 7.44. []$\OMS/cmsy/m/n/10.95 A$ \OT1/cmr/m/it/10.
 95 is finitely gen-er-ated $\OML/cmm/m/it/10.95 k$\OT1/cmr/m/it/10.95 -domain. 
 Let $\U/euf/m/n/10.95 p \U/msb/m/n/10.95 ( \U/euf/m/n/10.95 p[]$ \OT1/cmr/m/it/
 10.95 be ``ad-ja-cent primes''i.e.,
  []
 
-[108]
-Overfull \hbox (26.86023pt too wide) in paragraph at lines 4945--4946
+[110] [111]
+Overfull \hbox (26.86023pt too wide) in paragraph at lines 5032--5033
 []$\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f[] \OT1/cmr/m/
 n/10.95 + \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \
 OML/cmm/m/it/10.95 min\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.
@@ -1194,27 +1207,27 @@ then $\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f[] \OT1/cmr
 t/10.95 ; v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ))$ 
  []
 
-[109]
-Underfull \hbox (badness 10000) in paragraph at lines 4996--4998
+[112]
+Underfull \hbox (badness 10000) in paragraph at lines 5083--5085
 
  []
 
-[110] [111] [112] [113] [114] [115] [116] [117] [118] [119] [120] [121]
-[122] [123]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5594.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5594.
+[113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124]
+[125]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5681.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5681.
  (./CA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5594.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5594.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5594.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5681.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5681.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5681.
  ) 
 Here is how much of TeX's memory you used:
- 32999 strings out of 493706
- 754680 string characters out of 6145769
- 897603 words of memory out of 5000000
- 35849 multiletter control sequences out of 15000+600000
- 20507 words of font info for 81 fonts, out of 8000000 for 9000
+ 33156 strings out of 493706
+ 756619 string characters out of 6145769
+ 899210 words of memory out of 5000000
+ 35993 multiletter control sequences out of 15000+600000
+ 21731 words of font info for 87 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  71i,27n,100p,969b,1982s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CA.pdf (123 pages).
+Output written on CA.pdf (125 pages).
