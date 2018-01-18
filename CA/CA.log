@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  16 JAN 2018 00:53
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.8.24)  18 JAN 2018 02:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1106,36 +1106,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 2474--2475
  []
 
 [55] [56] [57] [58] [59] [60]
-Underfull \hbox (badness 10000) in paragraph at lines 2719--2720
+Underfull \hbox (badness 10000) in paragraph at lines 2721--2722
 
  []
 
 [61] [62] [63] [64] [65] [66] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 3044--3046
+Underfull \hbox (badness 10000) in paragraph at lines 3048--3050
 
  []
 
 
-Overfull \hbox (4.44226pt too wide) in paragraph at lines 3047--3051
+Overfull \hbox (4.44226pt too wide) in paragraph at lines 3051--3055
 \OT1/cmr/m/n/10.95 divisors. Note that $(0) \OMS/cmsy/m/n/10.95 ^^R A$ \OT1/cmr
 /m/n/10.95 is pri-mary $[]$ \OMS/cmsy/m/n/10.95 f \OT1/cmr/m/n/10.95 zero-divis
 ors in $\OMS/cmsy/m/n/10.95 A$g $[]$f\OT1/cmr/m/n/10.95 nilpotents
  []
 
-[69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81]
-Overfull \hbox (5.24516pt too wide) in paragraph at lines 3657--3658
-[][]\OT1/cmr/bx/n/10.95 Definition 6.43. []$[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n
+[69] [70] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
+Overfull \hbox (5.24516pt too wide) in paragraph at lines 3683--3684
+[][]\OT1/cmr/bx/n/10.95 Definition 6.44. []$[]\OT1/cmr/m/n/10.95 (\OMS/cmsy/m/n
 /10.95 A\OT1/cmr/m/n/10.95 ) = []\OMS/cmsy/m/n/10.95 f\OML/cmm/m/it/10.95 t \OM
 S/cmsy/m/n/10.95 ^^U \OT1/cmr/m/n/10.95 0 : \OMS/cmsy/m/n/10.95 9[]g$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3657--3658
+Underfull \hbox (badness 10000) in paragraph at lines 3683--3684
 
  []
 
-[82] [83]
-Overfull \hbox (4.98257pt too wide) in paragraph at lines 3762--3764
+[83] [84]
+Overfull \hbox (4.98257pt too wide) in paragraph at lines 3790--3792
 []\OT1/cmr/m/n/10.95 Then we take $\OML/cmm/m/it/10.95 i \OT1/cmr/m/n/10.95 = \
 OML/cmm/m/it/10.95 k \OT1/cmr/m/n/10.95 + 1$ and con-sider the mod-ule $\OML/cm
 m/m/it/10.95 M \OT1/cmr/m/n/10.95 := \U/euf/m/n/10.95 p[]\OML/cmm/m/it/10.95 =\
@@ -1143,8 +1143,8 @@ U/euf/m/n/10.95 p[]$\OT1/cmr/m/n/10.95 . (Claim:$\U/euf/m/n/10.95 p[] \OT1/cmr/
 m/n/10.95 =
  []
 
-[84] [85] [86]
-Overfull \hbox (1.54037pt too wide) in paragraph at lines 3904--3905
+[85] [86] [87]
+Overfull \hbox (1.54037pt too wide) in paragraph at lines 3937--3938
 []\OT1/cmr/m/n/10.95 Suppose, $\OML/cmm/m/it/10.95 r \OT1/cmr/m/n/10.95 = \OML/
 cmm/m/it/10.95 dim[]\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 m\OML/cmm/m/it/10.95 =
 \U/euf/m/n/10.95 m[]\OT1/cmr/m/n/10.95 )$, $\OML/cmm/m/it/10.95 ^^Y\OT1/cmr/m/n
@@ -1154,9 +1154,9 @@ cmm/m/it/10.95 dim[]\OT1/cmr/m/n/10.95 (\U/euf/m/n/10.95 m\OML/cmm/m/it/10.95 =
 5 . Let $\OML/cmm/m/it/10.95 f[]; :::; f[] \OMS/cmsy/m/n/10.95 2
  []
 
-[87] [88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
-[102] [103] [104] [105]
-Overfull \hbox (1.51785pt too wide) in paragraph at lines 4789--4790
+[88] [89] [90] [91] [92] [93] [94] [95] [96] [97] [98] [99] [100] [101]
+[102] [103] [104] [105] [106]
+Overfull \hbox (1.51785pt too wide) in paragraph at lines 4822--4823
 \OMS/cmsy/m/n/10.95 A$\OT1/cmr/m/it/10.95 . Then $\OMS/cmsy/m/n/10.95 9\OML/cmm
 /m/it/10.95 z[]; ::; z[] \OMS/cmsy/m/n/10.95 2 \OML/cmm/m/it/10.95 k\OT1/cmr/m/
 n/10.95 [\OML/cmm/m/it/10.95 x[]; ::; x[]\OT1/cmr/m/n/10.95 ]$ \OT1/cmr/m/it/10
@@ -1166,33 +1166,33 @@ t/10.95 k\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 z[]; ::; z[]; w\OT1/cmr/m/n/10
 .95 ]$\OT1/cmr/m/it/10.95 . 
  []
 
-[106]
-Overfull \hbox (6.90947pt too wide) in paragraph at lines 4822--4840
+[107]
+Overfull \hbox (6.90947pt too wide) in paragraph at lines 4855--4873
 [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4822--4840
+Underfull \hbox (badness 10000) in paragraph at lines 4855--4873
 
  []
 
-[107] [108]
-Overfull \hbox (11.20013pt too wide) in paragraph at lines 4889--4892
+[108] [109]
+Overfull \hbox (11.20013pt too wide) in paragraph at lines 4922--4925
 \OT1/cmr/m/n/10.95 To make sure the lead-ing term does not can-cel out, we need
  $[]$ $\OMS/cmsy/m/n/10.95 9\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s[]; :::; s
 []\OT1/cmr/m/n/10.95 )$
  []
 
-[109]
-Overfull \hbox (9.8606pt too wide) in paragraph at lines 4956--4957
+[110]
+Overfull \hbox (9.8606pt too wide) in paragraph at lines 4989--4990
 [][]\OT1/cmr/bx/n/10.95 Lemma 7.44. []$\OMS/cmsy/m/n/10.95 A$ \OT1/cmr/m/it/10.
 95 is finitely gen-er-ated $\OML/cmm/m/it/10.95 k$\OT1/cmr/m/it/10.95 -domain. 
 Let $\U/euf/m/n/10.95 p \U/msb/m/n/10.95 ( \U/euf/m/n/10.95 p[]$ \OT1/cmr/m/it/
 10.95 be ``ad-ja-cent primes''i.e.,
  []
 
-[110] [111]
-Overfull \hbox (26.86023pt too wide) in paragraph at lines 5032--5033
+[111] [112]
+Overfull \hbox (26.86023pt too wide) in paragraph at lines 5065--5066
 []$\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f[] \OT1/cmr/m/
 n/10.95 + \OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/10.95 ^^U \
 OML/cmm/m/it/10.95 min\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.
@@ -1207,27 +1207,27 @@ then $\OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f[] \OT1/cmr
 t/10.95 ; v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 f[]\OT1/cmr/m/n/10.95 ))$ 
  []
 
-[112]
-Underfull \hbox (badness 10000) in paragraph at lines 5083--5085
+[113]
+Underfull \hbox (badness 10000) in paragraph at lines 5116--5118
 
  []
 
-[113] [114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124]
-[125]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5681.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5681.
+[114] [115] [116] [117] [118] [119] [120] [121] [122] [123] [124] [125]
+[126]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5714.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5714.
  (./CA.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5681.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5681.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5681.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 5714.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 5714.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5714.
  ) 
 Here is how much of TeX's memory you used:
- 33156 strings out of 493706
- 756619 string characters out of 6145769
- 899210 words of memory out of 5000000
- 35993 multiletter control sequences out of 15000+600000
+ 33157 strings out of 493706
+ 756639 string characters out of 6145769
+ 899237 words of memory out of 5000000
+ 35994 multiletter control sequences out of 15000+600000
  21731 words of font info for 87 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  71i,27n,100p,969b,1982s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on CA.pdf (125 pages).
+Output written on CA.pdf (126 pages).

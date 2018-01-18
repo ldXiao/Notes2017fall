@@ -21,18 +21,18 @@
 \contentsline {subsection}{\numberline {6.1}Lecture 14. Artinian Rings}{71}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Lecture 15. Krull Dimension, Artinian v.s. Noetherian}{73}{subsection.6.2}
 \contentsline {subsection}{\numberline {6.3}Lecture 16. Krull's Intersection Theorem}{77}{subsection.6.3}
-\contentsline {subsection}{\numberline {6.4}Lecture 17. Krull's Principal Ideal Theorem}{82}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.4}Lecture 17. Krull's Principal Ideal Theorem}{83}{subsection.6.4}
 \contentsline {subsection}{\numberline {6.5}Lecture 18. Krull Dimension Theorem}{86}{subsection.6.5}
-\contentsline {subsection}{\numberline {6.6}Lecture 19. System of Parameters}{88}{subsection.6.6}
-\contentsline {subsection}{\numberline {6.7}Lecture 20-1. Dimension of Polynomial Rings, Regularity}{91}{subsection.6.7}
-\contentsline {section}{\numberline {7}Integral Extension of Rings}{93}{section.7}
-\contentsline {subsection}{\numberline {7.1}Lecture 20-2. Integral Element}{93}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Lecture 21. Normal Domain}{95}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Lecture 22. Going-Up}{99}{subsection.7.3}
-\contentsline {subsection}{\numberline {7.4}Lecture 23. Galois Transitivity and Going-Down}{101}{subsection.7.4}
-\contentsline {subsection}{\numberline {7.5}Lecture 24. Noether Normalization Theorem}{106}{subsection.7.5}
-\contentsline {section}{\numberline {8}Valuation Rings and Normality}{112}{section.8}
-\contentsline {subsection}{\numberline {8.1}Lecture 25. Valuation}{112}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Lecture 26. Discrete Valuation Ring and Normality}{116}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Lecture 27. Dedekind Domain}{120}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Lecture 28. Fractional Ideals}{123}{subsection.8.4}
+\contentsline {subsection}{\numberline {6.6}Lecture 19. System of Parameters}{89}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}Lecture 20-1. Dimension of Polynomial Rings, Regularity}{92}{subsection.6.7}
+\contentsline {section}{\numberline {7}Integral Extension of Rings}{94}{section.7}
+\contentsline {subsection}{\numberline {7.1}Lecture 20-2. Integral Element}{94}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Lecture 21. Normal Domain}{96}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Lecture 22. Going-Up}{100}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.4}Lecture 23. Galois Transitivity and Going-Down}{102}{subsection.7.4}
+\contentsline {subsection}{\numberline {7.5}Lecture 24. Noether Normalization Theorem}{107}{subsection.7.5}
+\contentsline {section}{\numberline {8}Valuation Rings and Normality}{113}{section.8}
+\contentsline {subsection}{\numberline {8.1}Lecture 25. Valuation}{113}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.2}Lecture 26. Discrete Valuation Ring and Normality}{117}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Lecture 27. Dedekind Domain}{121}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.4}Lecture 28. Fractional Ideals}{124}{subsection.8.4}

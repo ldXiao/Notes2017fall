@@ -2343,7 +2343,7 @@ Let $\sca\subseteq \cala[X]$. \underline{Want:} show $\sca$ finitely generated.
 $$
 \begin{aligned}
 \sca' &=\{\text{Leading coefficients of $\sca$}\}\\
-&= \cup_{n\geq 0}\{\sca\in\cala: \exists a X^n+...\in \sca\}
+&= \cup_{n\geq 0}\{a\in\cala: \exists a X^n+...\in \sca\}
 \end{aligned}
 $$
 Because $\cala$ is  Noetherian, $\sca'$ is finitely generated. $\Lrta\sca'=(a_1,...,a_r),a_i\in \sca'$ $\Lrta\exists f_1,...,f_r\in \sca: f_j=a_j X^{n_j}+...$.
@@ -2409,7 +2409,7 @@ Any principal ideal domain is Noetherian, because all the ideals are finitely ge
 \begin{nex}
 $\cala=\cplx[x_1,x_2,....]$ is not Noetherian: $\scm:=(x_1,x_2,...)$ is Not finitely generated. If $S\subseteq \scm$ is finite, we may find some $x_n$ not occurring in any element of $S$: $\Lrta x_n\notin \lgl S\rgl, x_n\in \scm$.
 
-The ring of algebraic integers in not Noetherian, for example, it contains an infinite ascending chain of principal ideals: $(2)\subsetneq (2^{1/2})\subsetneq (2)\subsetneq (2^{1/4})...$
+The ring of algebraic integers in not Noetherian, for example, it contains an infinite ascending chain of principal ideals: $(2)\subsetneq (2^{1/2})\subsetneq (2^{1/3})\subsetneq (2^{1/4})...$
 \end{nex}
 \begin{lemma}\label{lem:homomorphic_image_Noetherian}
 $\cala$ Noetherian
@@ -2456,7 +2456,7 @@ Let $\calb$ be any field of characteristic $p$, if $p=0$, then $\calb$ is a $\ra
 \end{ex}
 
 \begin{dfn}
-We say that an $\cala$-algebra $\calb$ if a \textbf{finitely generated $\cala$-algebra} is there exists $x_1,...,x_n\in \calb$ s.t. $\calb$ is $\cala[x_1,..,x_n]$. 
+We say that an $\cala$-algebra $\calb$ if a \textbf{finitely generated $\cala$-algebra} if there exists $x_1,...,x_n\in \calb$ s.t. $\calb$ is $\cala[x_1,..,x_n]$. 
 
 Given two $\cala$-algebra $\cala\overset{f}{\lrta}\calb$ and $\cala\overset{g}{\lrta}\calc$. A \textbf{morphism of $\cala$-algebra} is defined to be a ring homomorphism that commutes with $f,g$
 
@@ -2518,7 +2518,7 @@ The last row is somehow not a good example because $\frac{1}{2}\intg$ is not a r
 Assume $K$a field, $K\subseteq  L$, where $ L$ is also a field. Assume $ L$ is a finitely generated $K$-algebra,  then $ L$ is a finite $K$-algebra which is equivalent to $ L/K$ being a finite algebraic field extension.
 \end{thm}
 
-\begin{cor}
+\begin{cor}(Hilbert Nullstellensatz weak form)
 The maximal ideal of $\cala=\cplx[X_1,...,X_d]$ are all of the form $\scm_x=(X_1-x_1,...,X_d-x_d)$ for some $x\in\cplx^d$.
 \end{cor}
 \begin{proof}
@@ -2537,7 +2537,7 @@ $$
 \end{aligned}
 $$
 Set $x:=(j^{-1}(q(X_1)),...,j^{-1}(q(X_d)))\in \cplx^d$. Check $\scm=\scm_x$.
-We know $j$ is surjective because $q$ is, and $j$ is always injective because $\cplx$ is a field. Suppose $P\in \scm\Lrta q(P)=0\Lrta j^{-1}(P(q(X)))=0\Lrta P(j^{-1}(P(X)))=P(x)=0$, hence $\scm_x\in \scm$, but we already know $\scm_x$ is maximal, then $\scm=\scm_x$. The above proof also works for all algebraically closed fields.
+We know $j$ is surjective because $q$ is, and $j$ is always injective because $\cplx$ is a field. Suppose $P\in \scm\Lrta q(P)=0\Lrta j^{-1}(P(q(X)))=0\Lrta P(j^{-1}(q(X)))=P(x)=0$, hence $\scm_x\in \scm$, but we already know $\scm_x$ is maximal, then $\scm=\scm_x$. The above proof also works for all algebraically closed fields.
 \end{proof}
 
 \begin{cor}\label{cor:rational_functions_not_fin.gen.alg}
@@ -2625,7 +2625,7 @@ $\{x_1,...,x_r\}$ is a transcendence basis of $L/K$. Each $x_{r+1},...,x_n$ is a
 
 Then we incorporate the following lemma by Artin-Tate.
 \begin{lemma}\label{lem:Artin_Tate}
-Let $\cala\subseteq\calb\subseteq\calc$ be rings s.t. $\calc$ is finitely generated as $\cala$-algebra and $\calc$ is also finitely generated $\calb$-module. Then $\calb$ is a finitely generated $\cala$-algebra. In other word, we have
+Let $\cala\subseteq\calb\subseteq\calc$ be rings s.t. Assume $\cala$ is Noetherian. $\calc$ is finitely generated as $\cala$-algebra and $\calc$ is also finitely generated $\calb$-module. Then $\calb$ is a finitely generated $\cala$-algebra. In other word, we have
 \[\underbrace{
       \mathrlap{\overbrace{\phantom{\cala \lrta b }}^{\text{(*)}}}
       \cala\lrta 
@@ -2663,7 +2663,9 @@ where $K=\overline{K}$ is an algebraically closed field. $\sca\subseteq K[X_1,..
 \begin{proof}
 $\text{rad}(\sca)\subseteq I(V(\sca))$, $f\in \text{rad}(\sca)\Lrta f^n\in \sca\Lrta f^n|_{V(\sca)=0}$, and $K$ is an integral domain $\Lrta f|_{V(\sca)}=0$$\Lrta f\in I(V(\sca))$. 
 
-For the converse inclusion recall that $\text{rad}(\sca)=\cap_{\scp\supseteq \sca, prime}\scp$. suppose $f\notin  \text{rad}(\sca) $. \underline{Want}:$f\notin I(V(\sca))$. Choose $\scp\supseteq \sca,\scp \not \ni f$. Then $0\neq \overline{f}\in \cala/\scp$. $\Lrta (\cala/\scp)_{\overline{f}}=(\cala/\scp)[1/\overline{f}]\neq 0$. Choose a maximal ideal $\scm\subseteq (\cala/\scp)_{\overline{f}}=:\calb$. Set $L:=\calb/\scm$ a field, $L$ is finitely generated $K$-algebra. $\Lrta L/K $ is finite $\Lrta L=K$ because $\overline{K}=K$. Set $x:=(x_1,...,x_d)$, $x_j:=$ image of $X_j$ in $L$. Check that $f(x)\neq 0\text{ and } x\in V(\sca)\Lrta f\notin I(V(\sca))$. 
+For the converse inclusion recall that $\text{rad}(\sca)=\cap_{\scp\supseteq \sca, prime}\scp$. suppose $f\notin  \text{rad}(\sca) $. \underline{Want}:$f\notin I(V(\sca))$. Choose $\scp\supseteq \sca,\scp \not \ni f$. Then $0\neq \overline{f}\in \cala/\scp$. $\Lrta (\cala/\scp)_{\overline{f}}=(\cala/\scp)[1/\overline{f}]\neq 0$. Choose a maximal ideal $\scm\subseteq (\cala/\scp)_{\overline{f}}=:\calb$. Set $L:=\calb/\scm$ a field, $L$ is finitely generated $K$-algebra. $\Lrta L/K $ is finite $\Lrta L=K$ because $\overline{K}=K$. Set $x:=(x_1,...,x_d)$, $x_j:=$ image of $X_j$ in $L$.
+
+ Check that $f(x)\neq 0\text{ and } x\in V(\sca)\Lrta f\notin I(V(\sca))$. 
 
  \[
 \begin{tikzcd}
@@ -2730,7 +2732,7 @@ $\cala$ is Noetherian, $\sca\subseteq \cala$ is an ideal. $\Lrta\sca$ \textbf{de
 $\exists $ primary ideals $\scq_1,...,\scq_n\subseteq \cala$ s.t. $\sca=\scq_1\cap...\cap\scq_n$
 , where $\scq$ primary $\Llrta x y\in \scq\Lrta x\in \scq\ or\ y^n\in \scq\ for\ some \ n$.
 \end{lemma}
-Notice $(6)=(2)(3)$ is not irreducible.
+Notice $(6)=(2)\cap(3)$ is not irreducible.
 \begin{proof}\ \\
 \textbf{Claim1}: $\cala$ Noetherian. Then irreducible $\Lrta$ primary.
 
@@ -2764,7 +2766,7 @@ Alternatively, by Noetherian induction, it suffice to show if $\sca$ has the pro
 Let $\scq$ primary. Then $\scp:=\text{rad}(\scq)$ is prime. It is the smallest prime containing $\scq.$
 \end{lemma}
 \begin{proof}
-1It suffices to show $\scp$ is prime. ($\scp$= intersection of all prime ideals containing $\scq$, hence contained in any such prime, hence is the minimal of such primes.) Let $x,y\in\cala$, $xy\in\scp,x\notin \scp$. Want $y\in\scp$.\\
+It suffices to show $\scp$ is prime. ($\scp$= intersection of all prime ideals containing $\scq$, hence contained in any such prime, hence is the minimal of such primes.) Let $x,y\in\cala$, $xy\in\scp,x\notin \scp$. Want $y\in\scp$.\\
  $(xy)^n\in\scq$ for some $n$. $x^n\notin\scq\Lrta (y^n)^m\in\scq $ for some $m$$\Lrta  y\in\scp$.
 \end{proof}
 
@@ -2818,7 +2820,7 @@ Sometimes you shrink a primary decomposition $\scq=\scq_1\cap...\cap\scq_n$. $\s
 \item $\scq_j\supseteq \cap_{i\neq j}\scq_i$, then we can delete $\scq_j$.
 \end{enumerate}
 \begin{dfn}
-If we can't do (a) or (b), we call the resulting decomposition \textbf{minimal}. Let $\sca$ ideal, we define $\text{Ass}(  \sca):=$\{prime ideals of the form $\text{rad}(\sca:x)$ for some $x\in\cala$\} to be \textbf{the set of associated ideals of $\sca$}.(recall $y\in(\sca:x)\Llrta y$ maps $x$ into $\sca\Llrta yx\in\sca$ )
+If we can't do (a) or (b), we call the resulting decomposition \textbf{minimal}. Let $\sca$ ideal, we define $\text{Ass}(  \sca):=$\{prime ideals of the form $\text{rad}(\sca:x)$ for some $x\in\cala$\} to be \textbf{the set of associated prime ideals of $\sca$}.(recall $y\in(\sca:x)\Llrta y$ maps $x$ into $\sca\Llrta yx\in\sca$ )
 \end{dfn}
 
 \begin{thm}(First Uniqueness Theorem of minimal primary decomposition)\label{thm:primary_decomposition_First_uniqueness}
@@ -2831,7 +2833,7 @@ Let $\scq$ be $\scp$-primary, $x\in\cala$.
  \item
  $x\in\scq\Lrta(\scq:x)=(1)$
 \item 
- $x\notin\scq\Lrta (\scq:x)$ is $\scp$-primary and there for $\text{rad}(\scq:x)=\scp$.
+ $x\notin\scq\Lrta (\scq:x)$ is $\scp$-primary and therefore $\text{rad}(\scq:x)=\scp$.
 \item 
  $x\notin\scp\Lrta (\scq:x)=\scq$
 \end{enumerate}
@@ -2842,7 +2844,7 @@ We first show that the Lemma~\ref{lem:p-primary_ideal} leads to the Theorem~\ref
 $\{\scp_j\}\supseteq \text{Ass}(  \sca)$:\\
  Let $x\in\cala$ s.t. $\text{rad}(\sca:x)=\scp$ is prime. \underline{Want}: $\scp$ equals some $\scp_j$. $\text{rad}(\sca:x)=\cap_j \text{rad}(\scq_j:x)=\cap_{x\notin\scq_j}\scp_j$. Then by prime avoidance~\ref{prop:prime_avoidance}, we know $\scp=$some $\scq_j$.
 
-For the converse inclusion, \underline{Want}: $\scp_j$ is of the form $\text{rad}(\sca:x)$ for some $x$. By Lemma~\ref{lem:p-primary_ideal}, we can choose $x_j\notin \scq_j$ and $x_j\notin\cap_{i\neq j}\scq_i$. This $x_j$ always exists because $\scp_1\cap...\cap \scp_n$ is a minimal primary decomposition and such choice of $x$ would make $\text{rad}(\sca:x)=\cap_i \text{rad}(\scq_i:x_j)=\cap_{x_j\notin\scq_i}\scp_i=\scp_j$.
+For the converse inclusion, \underline{Want}: $\scp_j$ is of the form $\text{rad}(\sca:x)$ for some $x$. By Lemma~\ref{lem:p-primary_ideal}, we can choose $x_j\notin \scq_j$ and $x_j\in\cap_{i\neq j}\scq_i$. This $x_j$ always exists because $\scp_1\cap...\cap \scp_n$ is a minimal primary decomposition and such choice of $x$ would make $\text{rad}(\sca:x)=\cap_i \text{rad}(\scq_i:x_j)=\cap_{x_j\notin\scq_i}\scp_i=\scp_j$.
 \end{proof}
 
 And now we come back to the proof of the Lemma~\ref{lem:p-primary_ideal}
@@ -2857,6 +2859,8 @@ Know: $xyz\in\scq,xy\notin\scq$ because $\scq$ is primary $\Lrta$ some $z^n\in\s
 $\Lrta(\scq:x)$ is primary.
 \item  
 $x\notin\scq\overset{?}{\Lrta}\text{rad}(\scq:x)=\scp$
+
+Obviously, we have $\scp=\text{rad}(\scq)\subseteq\text{rad}{\scq:x}$. It suffice to prove the converse inclusion.
 
 Suppose $y^n\in(\scq:x)$
 
@@ -2951,7 +2955,7 @@ $$
 \begin{proof} of the $(*)$. It suffices to prove that $=\cup_{y\in\cala-\sca}(\sca:y)\supseteq\cup_{y\in\cala-\sca}\text{rad}(\sca:y)$. \underline{Want}:  if some prower $x^n$ of $x$ satisfies $x^n\in(\sca:y)$ then $\exists y'$ s.t. $x\in (\sca:y')$.  $x^n\in(\sca:y)\Llrta x^n y\in\sca,$ then we may choose $n\geq 1$ minimal with this property. Then $x\cdot x^{n-1}y\in \sca$ but $x^{n-1}y \notin \sca$. As $x\in(\sca:x^{n-1}y)$. Choose $y'=x^{n-1}y$, we are done.
 \end{proof}
 
-\begin{prop}
+\begin{prop}\label{prop:zero-divisors}
 $\sca=\cap\scq_j$ MPD,
 $\Lrta Z(\sca)=\cup\scp_j$.
 \begin{proof}
@@ -3188,14 +3192,14 @@ $\cala$ Artinian   $\Llrta $ $\cala/\sca:$ Artinian   $\forall \sca$ ideals.
 \begin{ex}\ 
 \begin{itemize}
 \item A field is trivially Artinian   because it has only two ideals.
-\item $\intg $ is NOT Artin,
+\item $\intg $ is NOT Artinian,
 $(2)\supsetneq (2^2)\supsetneq (2^3)....$
 \item Any finite ring is Artinian   + Noetherian e.g. $\intg/n\intg,n\neq 0$
 \item Any finite product of Artinian  rings is Artinian. 
 \item $k$ is field, $\scm:=(X_1,...,X_n)\subset k[X_1,...,X_n]=\cala$. Then $\cala/\scm^l$ is Artinian   $\forall l\geq 1$ where $\cala/\scm^l$ is finite dimensional vector space over $k$.
 \item $k[X]/(X^l)$ is Artinian   $\forall l\geq 1$
 \item $k[X^2,X^3]/(X^{10})$ is Artin
-\item $k[X]$ is NOT Artin, for example $(X)\supsetneq (X^2)\supsetneq (X^3)\supsetneq ...$
+\item $k[X]$ is NOT Artinian, for example $(X)\supsetneq (X^2)\supsetneq (X^3)\supsetneq ...$
 \end{itemize}
 \end{ex}
 
@@ -3203,7 +3207,7 @@ $(2)\supsetneq (2^2)\supsetneq (2^3)....$
 Let $\cala$ Artinian.  Then every prime in $\cala$ is maximal and $\cala$ has only finitely many primes, hence the Jacobson radical $\text{Jac}(\cala)=\text{Nil}(  \cala)$
 \end{lemma}
 \begin{proof}
-Let $\scp\subseteq \cala$ be prime. Set $\calb:\cala/\scp$. Then $\calb$ Artin, integral domain.
+Let $\scp\subseteq \cala$ be prime. Set $\calb:\cala/\scp$. Then $\calb$ Artinian, integral domain.
 \\
 Want $\calb$ is a field.\\
 Let $0\neq x\in \calb$, Want $x\in \calb^\times$\\
@@ -3218,7 +3222,7 @@ $\cala$ is Artinian   $\Lrta \mathcal{N}:=\text{Nil}(  \cala)$ is nilpotent: $\e
 $$
 \cala=\oplus^n_{i=1}k[X_i]/(X^i_i)
 $$
-hence $\mathcal{N}=\oplus^n_{i=1}(X_i)$, where $(X_i)\subseteq k[X_i]/(X^i_i)$ $\mathcal{N}^n=(0), \mathcal{N}^{n-1}\neq (0)$, If $n<\infty, \cala$ is Artinian   . If $n=\infty, \cala$ is NOT Artin, $\cala$ not Nilpotent.
+hence $\mathcal{N}=\oplus^n_{i=1}(X_i)$, where $(X_i)\subseteq k[X_i]/(X^i_i)$ $\mathcal{N}^n=(0), \mathcal{N}^{n-1}\neq (0)$, If $n<\infty, \cala$ is Artinian   . If $n=\infty, \cala$ is NOT Artinian, because $\mathcal{N}$ not Nilpotent.
 \end{rmk}
 
 \begin{proof}
@@ -3226,15 +3230,22 @@ Let $\mathcal{J}:= \text{Nil}(  \cala)=\text{Jac}(\cala)$ by the Lemma~\ref{lem:
 
  \underline{Want}: $\mathcal{J}^n=(0)$.
 
-Denote $\mathcal{I}:=\mathcal{J}^n$. Note that $\mathcal{J}\mathcal{I}=\mathcal{I}$, if we know that $\mathcal{I}$ is finitely generated, suppose $\mathcal{I}\neq (0)$. Then Nakayama Lemma~\ref{lem:Nakayama} $\Lrta \mathcal{I}=(0)$.
+Denote $\mathcal{I}:=\mathcal{J}^n$. Note that $\mathcal{J}\mathcal{I}=\mathcal{I}$, if we knew that $\mathcal{I}$ is finitely generated. Then Nakayama Lemma $\Lrta \mathcal{I}=(0)$. (But currently we don't know it. Because our definition of Artinian ring is not based on dimension 0 Noetherian ring)
+
+Then we have to argue in some other way. Suppose $\mathcal{I}\neq (0)$. Consider the set 
+$$
+\Sigma:=\{\text{ideals } \scb\subseteq \cala: \cali \scb\neq(0)\}.
+$$
+Then $\Sigma$ is not empty because $\cali\subseteq \Sigma$. Then because $\cala$ is Artinian, there is a minimal element in $\Sigma$.
 
 Let $\scb$ be a minimal element of $\{\text{ideals $\scb\subseteq \mathcal{I}:\mathcal{J}^n\scb\neq (0)$}\}$. Then $\exists 0\neq x\in \scb$ with $\mathcal{J}^n(x)\neq (0)$. Then $(x\subseteq \scb\subseteq \mathcal{I}), \mathcal{J}^n (x)\neq (0)$, so by minimality, $\scb=(x)$.
 $\mathcal{J}^n(x)=\mathcal{J}^{n+1}(x)=\mathcal{J}^n\mathcal{J}(x)$.
 
-\underline{Want}: $\mathcal{J}(x)=(x)$
+Case 1: $\mathcal{J}(x)=(x)$, then it is zero by Nakayama lemma, however $(0)\notin \Sigma$, contradiction.
 
-If not, then $\mathcal{J}(x)$ is a non-zero submodule in $(x)$ and $\mathcal{J}^n\mathcal{J}(x)\neq (0)$, which contradicts the minimality of $(x)$.\\
-Now $(x)$ is finitely generated, so we conclude by Nakayama.
+Case 2: $\mathcal{J}(x)\subsetneq (x)$ and $\cali \cdot \mathcal{J}\neq (0)$, which contradicts the minimality of $(x)$. 
+
+Then $\Sigma$ has to be empty, $\cali=(0)$.
 \end{proof}
 \subsection{Lecture 15. Krull Dimension, Artinian v.s. Noetherian}
 \begin{dfn}
@@ -3310,7 +3321,7 @@ By Lemma~\ref{lem:Artin_Noetherin_product_of_maximals}, it reduces to showing
 \item Noetherian + $dim=0$ $\Lrta $ $(0)=$ finite product of maximal ideals .
 \end{enumerate}
 
-For the part $(i)$. Recall $\cala$ Artinian   $\Lrta $ $\{\text{primes }\in \cala\}=\{\scm_1,...,\scm_r\}$ finite set of maximal ideals.
+For the part $(i)$. Recall $\cala$ Artinian   $\Lrta $ $\{\text{primes ideals in } \cala\}=\{\scm_1,...,\scm_r\}$ finite set of maximal ideals.
 $$
 (\scm_1\cdot \cdot \cdot \scm_r)^N\subseteq (\scm_1\cap ...\cap \scm_r)^N=\text{Jac}(\cala)^N=(0)
 $$
@@ -3327,7 +3338,7 @@ $$
 Consider $(\scp_1,...,\scp_r)^N\subseteq (\scp_1\cap...\cap\scp_r)^N\subseteq (0)$, where $(\scp_1\cap...\cap \scp_r)=\text{Nil}(  \cala)=\text{rad}(0)$ and we can conclude the last inclusion by Lemma~\ref{lem:ideal_radical_Noetherian}.
 \end{proof}
 \begin{dfn}
-A ring $\cala$ is called \textbf{primary} iff $(0)$ is primary.
+A ring $\cala$ is called \textbf{primary} iff $(0)$ is primary. Alternatively, $\cala$
 \end{dfn}
 
 \begin{prop}\label{prop:artin_local=artin_primary}
@@ -3340,6 +3351,8 @@ $\Lrta\scm^N=0$ for some $N\geq 0$\\
 $\cala-\scm=\cala^\times$
 Here $\scm=\{\text{non-units}\}$, and by the argument above, $\scm=\{\text{nilpotents}\}$. (In a general ring, we have $\{\text{non-units}\}\supseteq\{\text{zero-divisors}\}\supseteq\{\text{nilpotents}\}$). In this case $\scm=\{\text{non-units}\}=\{\text{zero-divisors}\}=\{\text{nilpotents}\}$, $\Lrta(0)$ is primary.
 
+Or equivalently, we can argue that $\text{rad}((0))=\scm$, then by Proposition~\ref{lem:rad_maximal_primary}, $(0)$ is primary.
+
 ``$\Llta$'':\\
  $(0)$ primary $\Lrta \scp=\text{rad}(0)$ is the smallest prime $\Lrta$ maximal.\\
 $\Lrta\scp$ the unique prime in $\cala$\\
@@ -3348,6 +3361,10 @@ $\Lrta(\cala,\scm:=\scp)$ is local.
 
 \end{proof}
 \end{prop}
+
+\begin{rmkt}
+In an Artinian local ring, every primary ideal is of the form $\scm^n$. Consider a primary ideal $\sca\in\cala$, then $(\cala/\sca,\overline{\scm})$ is also Artinian local $\overline{\scm}^n=(0)$. By the isomorphism theorem of quotient ring, $\sca\sim\scm^n$
+\end{rmkt}
 
 Question: What are the Artinian   integral domains?\\
 Answer: The fields. $(0)$ prime $\Lrta (0)$ maximal $\Lrta \cala$ is a field. 
@@ -3405,10 +3422,12 @@ is a finite product of Artinian   local rings.
 Uniqueness: Suppose $\phi:\cala\overset{\cong}{\lrta}\prod_j\cala_j$ finite product of Artinian   local ring. Let $\phi_i:\cala\lrta \cala_i$, $\phi_j=pr_j\circ\phi$. Define $\scq_i':=\text{Ker}(\phi_i)$. Then $\cala/\scq'_i\cong \cala_i$. By Proposition~\ref{prop:artin_local=artin_primary}, we know Artinian   local indicate primary. Then we know $\cala/\scq_i'$ primary $\Lrta\scq_i'$ is primary.
 
 $\cap\scq_i'=(0)$ is a MPD.
-But $\cala$ is Artin, so every associated primes of $(0)$ is minimal or isolated. ($\text{Ass'}(0)=\text{Ass}(0)$).  Then by the Second Uniqueness Theorem of Primary Decomposition~\ref{thm:secon_unique_decomposition}. Each primary component is uniquely determined by $(0)$.
+But $\cala$ is Artinian, so every associated primes of $(0)$ is minimal or isolated. ($\text{Ass'}(0)=\text{Ass}(0)$).  Then by the Second Uniqueness Theorem of Primary Decomposition~\ref{thm:secon_unique_decomposition}. Each primary component is uniquely determined by $(0)$.
 \end{proof}
 \begin{rmkt}
 Is it true that every primary ideal in Artinian   ring is the form $\scm_j^n$?
+
+Yes, consider an Artinian ring $\cala\cong_i \cala_i$, where $\cala_i$ is Artinian local. Then the maximal ideals $\scm_j=\prod_{i\neq j}\cala_i\times \scn_j$, where $\scn_j$ is the maximal ideal in $\cala_j$
 \end{rmkt}
 \subsection{Lecture 16. Krull's Intersection Theorem}
 
@@ -3447,7 +3466,7 @@ $$
 %$\Lrta\sca^{i-k}(\sca^k M\cap M')\subseteq \sca^i M\cap M'$
 %\end{proof}
 
-Then, by Artin-Rees Lemma~\ref{lem:Artin-Rees}, $\sca^i M\cap M'=\sca^{i-k}(\sca^k M\cap M')$. But $\sca^i M\cap M'=M'=\sca^k M\cap M'$. Take $i=k+1: M'=\sca M'$. Then use the Nakayama Lemma~\ref{lem:Nakayama}, $\Lrta M'=0$   done.
+Then consider the $M':=\cap_i\sca^i M$, by Artin-Rees Lemma~\ref{lem:Artin-Rees}, $\sca^i M\cap M'=\sca^{i-k}(\sca^k M\cap M')$. But $\sca^i M\cap M'=M'=\sca^k M\cap M'$. Take $i=k+1: M'=\sca M'$. Then use the Nakayama Lemma~\ref{lem:Nakayama}, $\Lrta M'=0$   done.
 \end{lemma}
 \end{proof}
 
@@ -3572,7 +3591,7 @@ $\Lrta (M'_i)$ is stable $\sca$-filtration by Lemma~\ref{lem:stable_filtration}.
  &\subseteq\sum_{0\leq i\leq n}\sca(\sca^n M\cap \sca^{n-i}M')\subseteq \sca(\sca^n M\cap M'),
  \end{aligned}
  $$
-which give the trickier inclusion of Artin-Rees.
+which gives the trickier inclusion of Artin-Rees.
 \end{proof}
 We have proved the Artin-Rees Lemma and thus Krull's intersection theorem.
 \underline{Recall}
@@ -3594,7 +3613,7 @@ Deduce Krull intersection theorem form Corollary~\ref{cor:cor3}.
 \begin{proof}
 \underline{Claim}: $(\calb,\scn)$ is Noetherian local, $N$ is a finite $\calb$-module: $\cap_i\scn^i=0\Lrta\cap_i\scn^i N=0$. Suppose $N$ is finitely generated by $\{x_\alpha\}$. 
 $$
-N'=\cap_i\scn^i N\subseteq \cap_i(\scn^i\oplus_\alpha \calb x_\alpha)=\oplus_\alpha(\cap_i\scn^i)x_\alpha=0,
+N'=\cap_i\scn^i N\subseteq \cap_i(\scn^i(\oplus_\alpha \calb x_\alpha))=\oplus_\alpha(\cap_i\scn^i)x_\alpha=0,
 $$
 the last equality from Corollary~\ref{cor:cor3}.
 
@@ -3620,6 +3639,13 @@ Let $\scp$ be a prime ideal in  a ring $\cala$. The $n$-th symbolic power of $\s
 \item $\scp^{(n)}$ is the $\scp$-primary component of $\scp^n$.
 \item $\scp^{(n)}=\scp^n$ iff $\scp^n$ is $\scp$-primary.
 \end{enumerate}
+\begin{proof}
+(a) by definition,
+
+(b) by Second uniqueness theorem~\ref{thm:secon_unique_decomposition}, $\scp^{(n)}$ it is primary component of $\scp^n$. It is $\scp$-primary because $\text{rad}(\iota^*\iota_*(\scp^n))=\iota^*\iota_*\text{rad}(\scp^n)=\iota^*\iota_*\scp=\scp$.
+
+(c) $\scp^{(n)}\supseteq\scp^n$ is easily checked. The reverse inclusion holds when $\scp^n$ is $\scp$-primary because $\scp^{(n)}$ is the $\scp$-primary component of $\scp^n$ 
+\end{proof}
 \end{prop}
 Here, we will give an application of Krull's intersection theorem.
 \begin{thm}\label{thm:Noetherian_localization_kernel}
@@ -3647,7 +3673,7 @@ N.b. $(ii)\Lrta(i)$ is clear: take $f=0$.
 \end{lemma}
 
 \begin{ex}
-$\cala=k[[X,Y]]\supseteq \scm=(X,Y)\supseteq (0)$. There exists $(0)\subsetneq\scp\subsetneq\scm,$ e.g., $\scp=(X)$. The conclusion says that $\forall f\in\scm\exists $ prime $\scp\ni f$ with  $(0)\subsetneq \scp\subsetneq \scm$, e.g. $f=Y\in\scm$
+$\cala=k[[X,Y]]\supseteq \scm=(X,Y)\supseteq (0)$. There exists $(0)\subsetneq\scp\subsetneq\scm,$ e.g., $\scp=(X)$. The conclusion says that $\forall f\in\scm\exists $ prime $\scp\ni f$ with  $(0)\subsetneq \scp\subsetneq \scm$, e.g. $f=Y\in\scm$.
 \end{ex}
 
 
@@ -3656,12 +3682,14 @@ $\cala=k[[X,Y]]\supseteq \scm=(X,Y)\supseteq (0)$. There exists $(0)\subsetneq\s
 \begin{dfn}
 $\text{dim}(\cala)=\sup \{t\geq 0:\exists \text{ chain of primes $\scp_0\subsetneq \scp_1\subsetneq ...\subsetneq \scp_t\subseteq \cala$}\}$\\
 
-For prime $\scp\subseteq \cala:$ \textbf{ height }$\text{ht}(\scp):=\sup \{t\geq 0|\exists\text{chain $\scp_0\subsetneq ...\subsetneq \scp_t=\scp$}\}$
+For prime $\scp\subseteq \cala:$
+
+ \textbf{ height }$\text{ht}(\scp):=\sup \{t\geq 0|\exists\text{chain $\scp_0\subsetneq ...\subsetneq \scp_t=\scp$}\}$
 $$
 \text{ht}(\scp)=\text{dim}(\cala_\scp)
 $$
 
-\textbf{Coheight:} $\text{coht}(\scp):=\sup\{t\geq 0|\exists \scp=\scp_0\subsetneq ...\subsetneq \scp_t\subsetneq \cala\}$
+\textbf{coheight:} $\text{coht}(\scp):=\sup\{t\geq 0|\exists \scp=\scp_0\subsetneq ...\subsetneq \scp_t\subsetneq \cala\}$
 
 $$
 \text{coht}(\scp)=\text{dim}(\cala/\scp)
@@ -3671,10 +3699,10 @@ $$
 Another version:
 \begin{lemma}\label{lem_5'}
 $0\neq f(\text{ non-unit })\in\cala:$ Noetherian integral domain. Then any minimal prime $\scm_0$ of $(f)$ satisfies $\text{ht}(\scm_0)= 1$, where
-$\scm_0\supseteq (f)$ minimal for this property, in other words, ``$\scm_0\in \text{Ass}'((f))$'', see~\ref{lem:Ass'_mimial_primes}.
+$\scm_0\supseteq (f)$ minimal for this inclusion, in other words, ``$\scm_0\in \text{Ass}'((f))$'', see~\ref{lem:Ass'_mimial_primes}.
 \end{lemma}
 
-Reduce Lemma~\ref{lem_5'} to Lemma~\ref{lem_5}, we may assume that $\cala$ is local with $\scm$ the maximal ideal:
+We may assume that $\cala$ is local with $\scm$ a maximal ideal that contains $f$ and then we can reduce Lemma~\ref{lem_5'} to Lemma~\ref{lem_5} via the following steps: 
 \begin{itemize}
 \item replace $\cala$ by $\cala_{\scm}$,\ \  $\iota:\cala\lrta \cala_{\scm}$
 \item replace $\scm$ by $\iota_*(\scm)$
@@ -3694,7 +3722,7 @@ So $(\cala_\scm,\iota_*\scm)$ is Noetherian local domain and $\text{ht}(\iota_*(
 \underline{Know}: $\scm\in \text{Ass}'((f))$, i.e., $\nexists \text{ prime }\scp\ni f$ s.t. $(0)\subsetneq \scp\subsetneq \scm$ (We know $\scp\ni f\neq 0$, if $f\in\scp\subsetneq\scm$, then $\scm$ would not be a minimal prime of $(f)$).
 
 \underline{Want}: $\text{ht}(\scm)=1$, i.e.,
-$1=\sup T$ where $T:=\{t\geq 0,\exists \text{chain} \scp_0\subsetneq ...\subsetneq \scp_t=\scm\}$. which is equivalent to 
+$1=\sup T$ where $T:=\{t\geq 0,\exists \text{ chain } \scp_0\subsetneq ...\subsetneq \scp_t=\scm\}$. which is equivalent to 
 \begin{itemize}
 \item $(0)\subsetneq \scm$,$(\Llta \scm\ni f\neq 0)$,\ \ \  $T\geq 1$
 \item $\nexists$ prime $\scp:(0)\subsetneq \scp\subsetneq\scm$,\ \ \ $T< 2$,
@@ -3707,7 +3735,7 @@ Now we come back to the proof of the special case of Noetherian local domain.
 
 $(ii)\Llrta \text{dim}(\cala/(f))\geq 1, \forall f\in\scm$, there are two bijections: 
 $$
-\scm\llrta \text{ a maximal ideal in }\cala/(f),
+\scm\llrta \text{ the maximal ideal in }\cala/(f),
 $$
 $$
 \scm\supsetneq\scp\supseteq(f)\llrta\text{ a prime ideal in }\cala/(f).
@@ -3738,7 +3766,7 @@ As above, $\exists k,\forall i\geq k$:
 \scp^{(k)}\subseteq\scp^{(i)}+(f)
 \end{equation}
 
-Claim:
+\underline{Claim}:
 \begin{equation}\tag{**}
 \scp^{(k)}=\scp^{(i)}+(f)\scp^{(k)}:
 \end{equation}
@@ -3750,7 +3778,7 @@ Claim:
 
 $x-y=fz\in \scp^{(k)}$
 
-$\Lrta z\in(\scp^{(k)}:f)=\scp^{(k)}$ ($\scp^{(k)}$ is $\scp$-primary and $\scp\not\ni f$, we conclude the equality $(\scp^{(k):f})=\scp^{(k)}$ by~\ref{lem:p-primary_ideal})
+$\Lrta z\in(\scp^{(k)}:f)=\scp^{(k)}$ ($\scp^{(k)}$ is $\scp$-primary and $\scp\not\ni f$, we conclude the equality $(\scp^{(k)}:f)=\scp^{(k)}$ by~\ref{lem:p-primary_ideal})
 
 Taking $i\geq k$,
 $
@@ -3762,18 +3790,23 @@ $
 Then we take $i=k+1$ and consider the module $M:=\scp^{(k)}/\scp^{(k+1)}$.
 (Claim:$\scp^{(k)}=\scp^{(k+1)}+f\scp^{(k)}$)$\Lrta$ 
 $$
-\scp^{(k)}/\scp^{(k+1)}=(\scp^{(k+1)}+(f)\scp^{(k)})/\scp^{(k+1)}=(f)\scp^{(k)}/\scp^{(k+1)}
+\begin{aligned}
+\scp^{(k)}/\scp^{(k+1)}&=(\scp^{(k+1)}+(f)\scp^{(k)})/\scp^{(k+1)}\\
+&=\frac{(f)\scp^{(k)}}{\scp^{(k+1)}\cap (f)\scp^{(k)}}\\
+&=\frac{(f)\scp^{(k)}}{(f)\scp^{(k+1)}}\\
+&=(f)\frac{\scp^{(k)}}{\scp^{(k+1)}}
+\end{aligned}
 $$
-$\cala$ is local Noetherian, then
+$\cala$ is local Noetherian, $f$ non-unit, then
 $(f)\subseteq \text{Jac}(\cala)=\scm$.
 $$
 (f)M=M\Lrta M=\scp^{(k)}/\scp^{(i)}=0\text{ by Nakayama~\ref{lem:Nakayama}}.\\
 $$
 $\Lrta\scp^{(i)}=\scp^{(k)},\ \forall i\geq k$\\
 $\Lrta$ $\scp^{(k)}=\cap_i\scp^{(i)}=$  $\text{Ker}(\cala\lrta \cala_\scp)$, by Theorem~\ref{thm:Noetherian_localization_kernel}. 
-But $\text{Ker}(\cala\lrta \cala_\scp)={0}$ because $\cala$ is a domain.\\
+But $\text{Ker}(\cala\lrta \cala_\scp)={0}$ because $\cala$ is a domain (there is no nontrivial zero-divisors).\\
 $\Lrta \scp^k\subseteq\scp^{(k)}=(0)$\\
-Because $\cala$ is domain, $\scp^{(k)}=0\Lrta\scp=(0)$ as desired.
+Because $\cala$ is domain, $\scp^{k}=0\Lrta\scp=(0)$ as desired.
 \end{proof}
 
 \begin{thm}\label{thm:krull_principal}
@@ -3792,7 +3825,7 @@ Then the Theorem~\ref{thm:krull_principal} is equivalent to
 \begin{proof}
 $\cala$ Noetherian, $\Lrta (0)$ decomposable, where $(0)=\cap_i\scq_i$, minimal priamry decomposition, $\scp_i=\text{rad}(\scq_i)$
 
-Recall:
+Recall~\ref{prop:zero-divisors}:
 $$
 \{\text{zero-divisors in }\cala\} =\cup_i\scp_i,
 $$
@@ -3822,7 +3855,7 @@ $codim_{\cplx^N}(X)=1\Llrta \text{ht}(\scp)=1$
 Recall from linear algebra:
 if $V$ is finite dimensional vector space over field $k$, and $l$ is a nonzero linear functional on $V$, then
 $$
-\text{dim}(ker(V))=\text{dim}(V)-1
+\text{dim}(ker(l))=\text{dim}(V)-1
 $$
 Krull dimension theorem is a variant for polynomials.
 
