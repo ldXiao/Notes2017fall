@@ -1372,7 +1372,7 @@ $$
 $\cala=\intg$ , $M'=2\intg\subseteq M=\intg$, $N'=\intg/2 =N$,
  then $2\intg \otimes \intg/2\intg \ni 2\otimes 1\neq 0 $, but $\intg \otimes \intg/w\intg\ni2\otimes 1=0$ 
 \end{ex}
-In summary, we no $M'\subset M, N'\subset N$ does not indicate that $M'\otimes N'\subset M\otimes N$, which means the simple inclusion is  not an injective  morphism. 
+In summary, we know $M'\subset M, N'\subset N$ does not indicate that $M'\otimes N'\subset M\otimes N$, which means the simple inclusion is  not an injective  morphism. 
 
 But $\otimes$ is indeed a \textbf{bifunctor}. Given module morphisms
 $$
@@ -3258,7 +3258,7 @@ $\scp_0\subsetneq \scp_1\subsetneq...\subsetneq \scp_r$.
 \item $k$ a field, $\Lrta (0)$ is the only prime $\Lrta \text{dim}(k)=0$
 \item $\text{dim}(\intg)=1$
 \item (NOT OBVIOUS) $\text{dim}(k[x_1,...,x_n])=n$
- and $\text{dim}(\calr[x_1,..,x_n])=\text{dim}(\calr)+n$.
+ and $\text{dim}(\calr[x_1,..,x_n])=\text{dim}(\calr)+n$ for $\calr$ being Noetherian.
 \item $\text{dim}(\cala)=0\Llrta $ every prime is maximal.  
 \end{itemize}
 \end{ex}
@@ -3833,6 +3833,8 @@ thus $a\notin\scp_i\forall i$. Let $i$ s.t. $\scp\supseteq \scp_i$ (exists becau
 
 $a\in\scp ,a\notin \scp_i,\Lrta\scp_i\subsetneq \scp\Lrta \text{ht}(\scp)\geq 1$
 
+
+
 \underline{Want}: $\text{ht}(\scp)=1$. If not, we can find a longer chain $\scp''\subsetneq \scp'\subsetneq \scp$, we assume $\scp''$ minimal, and then after changing the index (if necessary), set $\scp''=\scp_i$.
 
 Now replace
@@ -3841,6 +3843,21 @@ $\cala$ by $\cala/\scp_i$, $\scp'$ by $\scp'/\scp_i$, $\scp$ by $\scp/\scp_i$, $
 Then $\cala$ Noetherian integral domain, $0\neq a\in \cala,a\in\scp,\scp\supset(a)$, minimal.
 Then by Lemma~\ref{lem_5'}$\Lrta \nexists \scp':(0)\subsetneq \scp'\subsetneq \scp\Lrta \text{dim}(\scp)=1$.
 \end{proof}
+
+\begin{rmk}
+Let $\cala$ be ring,$\scp$ is prime, $\sca$ is an ordinary ideal. 
+$$
+\text{dim}(\cala_\scp)+\text{coht}(\cala/\scp)=\text{ht}(\scp)+\text{coht}(\scp)\leq \text{dim}(\cala)
+$$
+
+$$
+\text{ht}(\sca)+\text{coht}(\sca)\leq \text{dim}(\cala)
+$$
+The first inequality if trivial by definition. For the second inequality: recall $\text{ht}(\sca)=\text{inf}\{ ht(\scp),\scp\supseteq\sca\}$
+
+Take a minimal prime $\scp\supseteq\sca$.
+Then $\text{ht}(\sca)+\text{coht}(\scp)\leq\text{ht}(\scp)+\text{coht}(\scp)\leq \text{dim}(\cala)$, and then we take the supremum to get the desired result.
+\end{rmk}
 
 \begin{rmk}
 If $0\neq f\in\cplx[X_1,..,X_N]$, $Z(f)$ being the zero loci of $f$. Then every irreducible component $X$ of $Z(f)$ has dimension $N-1$.
@@ -3912,17 +3929,22 @@ Define $\sca':=(a_1',...,a_{r-1}')\subseteq \scp_{t-1}$.
 
 \underline{Want}:$\scp_{t-1}\in \text{Ass}'(\sca')$. If we can show this, then our inductive hypothesis gives $t-1\leq r-1\Lrta t\leq r$. Let $\scp'\in \text{Ass}'(\sca')$ s.t. $\scp'\subseteq \scp_{t-1}\subsetneq \scp_t=\scp$ (Such a $\scp'$ exists.)
 
-To show that $\scp'=\scp_{t-1}$, it suffices to show $\text{ht}(\scp/\scp')\leq 1$ in $\cala/\scp'$. Let $\overline{a}_r:=$ images of $a_r$ in $\cala/\scp'$.
+To show that $\scp'=\scp_{t-1}$, it suffices to show $\text{ht}(\scp/\scp')\leq 1$ in $\cala/\scp'$. Let $\overline{a}_r:=$ images of $a_r$ in $\cala/\scp'$. $\overline{a}_r$ is nonzero and non-unit.
 By the Krull's principal ideal theorem~\ref{thm:krull_principal}, it will suffice to show that 
-$\scp/\scp'\in \text{Ass}'((\overline{a}_r))$ $\Llta \scp=\text{rad}(\scp'+(a_r))$.\\
+$\scp/\scp'\in \text{Ass}'((\overline{a}_r))$
+
+\underline{Claim}:
+ $ \scp=\text{rad}(\scp'+(a_r))$.\\
 To see this:\\
 $\scp=\text{rad}(\sca)=\text{rad}(\sca'+(a_r))\subseteq \text{rad}(\scp'+(a_r))\subseteq\text{rad}(\scp)= \scp$.
+
+Then $\scp$ is the minimal prime that contains $\scp'+(a_r)$ $\Lrta \scp/\scp'$ is the minimal prime that containing $\overline{a}_r\Lrta \scp/\scp'\in\text{Ass}'((\overline{a}_r))$.
 \end{proof}
-\begin{cor}
+\begin{cor} 
 $\cala$ Noetherian, $\sca$ is an ideal in $\cala$\\
 $\Lrta \text{ht}(\sca)<\infty$.
 \end{cor}
-\begin{proof}
+\begin{proof}$\cala$ Noetherian, $\sca$ is finitely generated. Assume
 $\sca=(a_1,...,a_r)\Lrta$ $\text{ht}(\sca)\leq r$ by the above theorem.
 \end{proof}
 \begin{rmkt}
@@ -3934,15 +3956,26 @@ $(\cala,\scm)$: Noetherian local ring with the maximal ideal. $k:=\cala/\scm$ fi
 N.b.: $\forall$ $\cala$-module $M$, the quotient $M/\scm M$ is a $k$-vector space.
 \end{cor}
 \begin{proof}
-Suppose, $r=dim_k(\scm/\scm^2)$, $\pi(f_1),...\pi(f_r)$ is a basis of $\scm/\scm^2$. Let $f_1,...,f_r\in\scm$ be lifts of the $f_i$. 
+Suppose, $r=dim_k(\scm/\scm^2)$, $\pi(f_1),...\pi(f_r)$ is a basis of $\scm/\scm^2$. Let $f_1,...,f_r\in\scm$ be lifts of the $\pi(f_i)$. 
 
 Set $M=\scm$, $N:=M/(f_1,...,f_r)$.\\
 Claim: $\scm N=N$.
- $N=\frac{M}{\scm M}$, Want: $\scm N\supseteq N\Llrta\forall y\in M,\exists z\in M, m\in\scm s.t. y=m\cdot z+\sum_i\alpha_i f_i$. And in fact, we know $\pi(y)=\sum_i\alpha_i\pi(f_i)\Lrta \pi(y-\sum_i\alpha_if_i)=0\Lrta \exists mz\in \scm M$ s.t. $mz+\sum_i\alpha_i f_i=y$. done.
+ $N=\frac{M}{\scm M}$.
 
-Then by Nakayama lemma~\ref{lem:Nakayama}, $N=0$ $\Lrta$ $\scm=(\tilde{a}_1,...\tilde{a}_r)\Lrta \text{ht}(\scm)=\text{dim}(\cala)\leq r$
+Want: $\scm N\supseteq N\Llrta\forall y\in M,\exists z\in M, m\in\scm s.t. y=m\cdot z+\sum_i\alpha_i f_i$. 
+
+And in fact, we know $\pi(y)=\sum_i\alpha_i\pi(f_i)\Lrta \pi(y-\sum_i\alpha_if_i)=0\Lrta \exists mz\in \scm M$ s.t. $mz+\sum_i\alpha_i f_i=y$. done.
+
+Then by Nakayama lemma~\ref{lem:Nakayama}, $N=0$. Or equivalently, we can argue directly by a corollary~\ref{cor:Nakayama} of Nakayama Lemma.
+
+ $\Lrta$ $\scm=(f_1,...f_r)\overset{~\ref{thm:Krull_dimension}}{\Lrta} \text{ht}(\scm)=\text{dim}(\cala)\leq r$. 
+
+
 \end{proof}
-
+\begin{nex}
+For the non-Noetherian local ring the above inequality can be violated. Consider the ring of formal power series with rational exponentials. $k$ is a field, $\cala:\cup_{n\geq 1}k[[X^{1/n}]]$ which is an integral domain. $\cala$ is a local ring with maximal ideal $\scm:\{a=\sum_{i\in\ratl_{\geq 0}}c_i X^i|c_0=0\}.$ $\cala/\scm=k$.\\ 
+Then $\scm^n=\scm$ for arbitrary $n$. In particular $\scm^2=\scm$. Then $\text{dim}(\cala)\geq1>0=\text{dim}_k(\scm/\scm^2)$.
+\end{nex}
 \begin{cor}
 $\cala$ Noetherian, $\sca$ is an ideal in $\cala$ with $\text{ht}(\sca)=r$. Then exists $a_1,...,a_r\in\sca:\text{ht}(\sca)=\text{ht}((a_1,...,a_r))$.
 \end{cor}
@@ -3957,9 +3990,7 @@ then any $a_s\in\cup \scp_i-\sca$ will give
 
 $\text{ht}(a_1,...a_s)\leq s$ by Krull dimension theorem~\ref{thm:Krull_dimension}
 
-$\text{ht}(a_1,...,a_s)\geq s$ by considering MPD.
-
-For a complete proof, see the Theorem~\ref{thm:Krull_converse}
+For the rest part of the proof, see the Theorem~\ref{thm:Krull_converse}
 \end{proof}
 
 
@@ -3988,7 +4019,7 @@ Then
 \underline{Note:} $(i)\Lrta(iii)$ take $\sca=\scp,s=r:\text{ht}(x_1,...,x_r)=r=\text{ht}(\scp)$, $\scp\supset (x_1,...,x_r)$ is minimal. 
 
 \begin{proof}
-(i): $\text{ht}(\sca)=r$, then we can find some chain $\scp_0\subsetneq ...\subsetneq\scp_r $ s.t. there is no intermediate primes between each $\scp_i,\scp_j,i,j\leq r$. We pick up the first $s$ primes in this chain, $\scp_0\subsetneq ...\subsetneq\scp_s$. 
+(i): $\text{ht}(\sca)=r$, then we can find some chain $\scp_0\subsetneq ...\subsetneq\scp_r $ s.t. there is no intermediate primes between each $\scp_i,\scp_j,i,j\leq r$ and $\scp_j$ is the minimal prime containing $\sca$. We pick up the first $s$ primes in this chain, $\scp_0\subsetneq ...\subsetneq\scp_s$. 
 
 We induct on $s$, . Assume we have found $x_1,...,x_s$ s.t.
 $\scp_i\supset(x_1,...,x_i)$ minimal $\forall i\leq s$, then $\text{ht}(\scp_i)\leq i$ by Theorem~\ref{thm:Krull_dimension}. On the other hand, $\text{ht}(\scp_i)\geq i$ by the existence of $\scp_0\subsetneq...\subsetneq \scp_i$ $\Lrta\text{ht}(\scp_i)=i,\forall i\leq s$.
@@ -3997,7 +4028,7 @@ Consider the minimal primes $\{\scq_j\}=\text{Ass}'((x_1,...,x_s))$, then $\scp_
 
 Claim: $\scp_{s+1}\not \subset \cup_j\scq_j$.
 
-Indeed, if not, since $\scq_j$ prime $\scp_{i+1}\subseteq \scq_j$ for some $j$, by the ``avoidance of primes''~\ref{prop:prime_avoidance}. Then $\text{ht}(\scq_j)\leq s$, by Krull dimension~\ref{thm:Krull_dimension}, but $\text{ht}(\scp_{s+1})\geq s+1$. Contradiction, thus the claim holds.
+Indeed, if not, since $\scq_j$ prime $\scp_{s+1}\subseteq \scq_j$ for some $j$, by the ``avoidance of primes''~\ref{prop:prime_avoidance}. Then $\text{ht}(\scq_j)\leq s$, by Krull dimension~\ref{thm:Krull_dimension}, but $\text{ht}(\scp_{s+1})\geq s+1$. Contradiction, thus the claim holds.
 
 Choose $x_{s+1}\in\scp_{s+1}-\cup_j\scq_j$. Then $\scp_{s+1}\supseteq(x_1,..,x_{s+1})$. Except for the $s+1=r$ case, $x_{s+1}$ is automatically in $\sca$. If $s+1=r$, we can choose $x_r\in \sca-\cup_j\scq_j$ because $\sca\not\subset\cup_j\scq_j$, otherwise contradicts the height of $\sca$.
 
@@ -4046,7 +4077,7 @@ $(\cala,\scm)$ Noetherian local. Let $x_1,..,x_r\in\scm$. Consider the following
 Then $(i)\Llrta(ii)\Llta(iii)$
 \end{thm}
 \begin{proof}
-$(iii)\Lrta(i)$: If $x_1,...,x_r$ are not already a system of parameters, then $\scm\supseteq(x_1,..,x_r)$ is not minimal. So we can find $\scm=:\scp_{r+1}\supsetneq \scp_r\supsetneq ...\supsetneq \scp_0$ and apply the converse of Krull~\ref{thm:Krull_converse} to obtain $x_{r+1}\in\scp_{r+1}=\scm$ s.t. $\text{ht}(x_1,..,x_{r+1})=r+1$. Continue finitely many times to set the required system of parameters.
+$(iii)\Lrta(i)$: If $x_1,...,x_r$ are not already a system of parameters, then $\scm\supseteq(x_1,..,x_r)$ is not minimal. So we can find $\scm=:\scp_{r+1}\supsetneq \scp_r\supsetneq ...\supsetneq \scp_0$ and apply the converse of Krull~\ref{thm:Krull_converse} to obtain $x_{r+1}\in\scp_{r+1}=\scm$ s.t. $\text{ht}(x_1,..,x_{r+1})=r+1$. Continue finitely many times until we get the required system of parameters.
 
 It remains to show $(i)\Llrta (ii)$. \\
 ``$(i)\Lrta(ii)$'': Consider $y_1,..,y_s\in\scm$. Let $\overline{\cala}:=\cala/(x_1,..,x_r)$. $\overline{\cala}\supseteq\overline{\scm}:=$ Image  of $\scm$. Then $(\overline{\cala},\overline{\scm})$ is Noetherian local. Write $\overline{y}_1,...,\overline{y}_s\in\overline{\cala}$ the image of $y_1,..,y_s$
@@ -4057,14 +4088,11 @@ Note:$(x_1,...,x_r,y_1,...,y_s)$ $\scm$-primary\\
 $\Llrta$ $\scm$ is the only prime containing $(x_1,..,y_s)$\\
 $\Llrta\overline{\scm}$ is the only prime containing $(\overline{y}_1,...,\overline{y}_s)$\\
 $\Llrta(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary\\
-$\{\overline{y}_1,...,\overline{y}_s\}$ system of parameters for $(\overline{\cala},\overline{\scm})\Llrta s=\text{dim}(\overline{\cala})$ and $(\overline{y}_1,...,\overline{y}_s)$ is $\overline{\scm}$-primary.
+Now we don't whether $\{\overline{y}_1,...,\overline{y}_s\}$ is a system of parameters of $\overline{\cala}$. At best we can get $\text{dim}(\overline{\cala})\leq s$ by Krull dimension theorem and then $\text{dim}(\cala)=r+s\geq \text{dim}(\overline{\cala})+r$.
 
-FACT1:[$\exists y_1,...,y_s$ s.t. $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$- primary] $\Lrta \text{dim}(\cala)\leq r+s$, by Krull's dimension theorem~\ref{thm:Krull_dimension}.
+On the other hand, if we start with a system of parameters $(\overline{z}_1,...,\overline{z}_t)$ of $\overline{A}$, $z_i$ are their preimages in $\cala$. $\text{dim}(\overline{\cala})=t$ and $(\overline{z}_1,...,\overline{z}_t)$ is $\overline{\scm}$-primary $\Llrta(x_1,...,x_r,z_1,...,z_t)$ is $\scm$ primary (but we don't require it to be SOP of $\cala$), then $\text{dim}(\cala)\leq t+r= \text{dim}(\overline{\cala})+r$. This direction of inequality is independent of $(i)$.
 
-And in fact, if we start we a system of parameters $(\overline{z}_1,...,\overline{z}_t)$ of $\overline{A}$, $z_i$ are their preimages in $\cala$, we have proved that $(x_1,...,x_r,z_1,...,z_t)$ is $\scm$ primary, then $\text{dim}(\cala)\leq t+r= \text{dim}(\overline{\cala})+r$
-
-$(i)\Lrta$ $\exists y_1,..,y_s$ s.t., $\{x_1,...x_r,y_1,...,y_s\}$ is system of parameters.
-$\Lrta r+s=\text{dim}(\cala)$ and $(x_1,...,x_r,y_1,...,y_s)$ is $\scm$-primary. Then, as prove before, $(\overline{y}_1,...,\overline{y}_s)$: $\overline{\scm}$-primary, we have $\text{dim}(\overline{\cala})\leq s=\text{dim}(\cala)-r$, which indicates $(ii)$.
+Then $(i)$ indicates $(ii)$.
 
 Now check that $(ii)$ implies $(i)$.
 
@@ -4094,17 +4122,20 @@ We may assume $n=1$ (then iterate with $\cala$ replaced by $\cala[X_1], etc$)
 Easy direction: $\text{dim}(\cala[X])\geq \text{dim}(\cala)+1$. Indeed, consider a chain $\scp_0\subsetneq ...\subsetneq \scp_n$ in $\cala$. Consider $\scp_0\cala[X]\subsetneq ...\subsetneq \scp_n\cala[X]\subsetneq \scp_n\cala[X]+X\cala[X]$.
 
 N.b. If $\scp\subsetneq \cala$ is prime, then $\cala[X]/\scp\cala[X]\cong (\cala/\scp)[X]$ is  a domain. so $\scp\cala[X]$ is prime.
-And $\scp_n\cala[X]+X\cala[X]$ is prime because $\cala[X]/(\scp_n\cala[X]+X\cala[X])\cong \cala/\scp_n$
+And $\scp_n\cala[X]+X\cala[X]$ is prime because 
+$$
+\cala[X]/(\scp_n\cala[X]+X\cala[X])\cong\frac{\frac{\cala[X]}{\scp_n\cala[X]}}{\frac{\scp_n\cala[X]+X\cala[X]}{\scp_n\cala[X]}}\cong\frac{\cala/\scp_n[X]}{X(\cala/\scp_n)[X]}\cong \cala/\scp_n.
+$$
 
-Hard direction $\text{dim}(\cala[X])\leq \text{dim}(\cala)-1$. Consider $\scp_0\subseteq...$
+Hard direction $\text{dim}(\cala[X])\leq \text{dim}(\cala)-1$. 
 
 Because $\text{dim}(\cala[X])=$ $\sup\{\text{ht}(\scm):\scm\subseteq \cala[X] \text{ maximal }\}$
 
-So it suffices to show $\forall\scm\subseteq \cala[X]$ that $\text{ht}(\scm)\leq r+1$, where $r:=\text{dim}(\cala)$. May assume $r\leq \infty$.
+So it suffices to show $\forall\scm\subseteq \cala[X]$ that $\text{ht}(\scm)\leq r+1$, where $r:=\text{dim}(\cala)$. May assume $r< \infty$.
 
 Consider $\scp:=\scm\cap\cala$, it is a prime in $\cala$ because $\scp:=\scm\cap\cala=\scm/(X)$ and also maximal. It suffices to show $\text{ht}(\scm)\leq \text{ht}(\scp)+1$.
 
-We localize at $\scp$. $S:=S_\scp=\cala-\scp$. $S^{-1}\cala=\cala_\scp$ is local with maximal ideal $\scp_\scp$. $S^{-1}(\cala[X])=(S^{-1}\cala)[X]=\cala_\scp[X]$. $S^{-1}\scm\subseteq S^{-1}\cala[X]$ remains a maximal ideal, and $\text{ht}(S^{-1}\scm)=\text{ht}(\scm)$, because the localization with respect to $S$, preserves the primes and their inclusions for those ideals not intersecting $S$. And the problem reduce to the case of Noetherian local ring.
+We localize at $\scp$. $S:=S_\scp=\cala-\scp$. $S^{-1}\cala=\cala_\scp$ is local with maximal ideal $\scp_\scp$ and $\text{ht}(\scp_\scp)=\text{ht}(\scp)$. $S^{-1}(\cala[X])=(S^{-1}\cala)[X]=\cala_\scp[X]$. $S^{-1}\scm\subseteq S^{-1}\cala[X]$ remains a maximal ideal, and $\text{ht}(S^{-1}\scm)=\text{ht}(\scm)$, because the localization with respect to $S$, preserves the primes and their inclusions for those ideals not intersecting $S$. Also because $S^{-1}$ commutes with intersection of ideals $S^{-1}\scm\cap S^{-1}\cala=S^{-1}\scp=\scp_\scp$ And the problem reduce to the case of Noetherian local ring.
 
 We now assume that $(\cala,\scp)$: Noetherian local ring, $\scm\subseteq\cala[X]$ maximal, $\scm\cap\cala=\scp$. $r=dim\cala< \infty$.
 
@@ -4126,18 +4157,25 @@ $\overline{\scm}=(\overline{f})$ for some $\overline{f}\in(\cala/\scp)[X]$. Say 
 
 \textbf{Claim}:$\scm$ is the only prime  that contains $x_1,..,x_r,f.$
 
-Indeed, assume $\scq$ a prime in $\cala$ that contains $x_1,..,x_r,f$ $\Lrta$ $\scq\cap \cala$ is a prime of $\cala$ containing $x_1,..,x_r$, hence $\scq\cap \cala=\scp$, so $\scq\supseteq \scp\cala[X]$, so $\scq$ identifies with a prime ideal $\overline{\scq}\subseteq \cala[X]/\scp\cala[X]$ which contains $\overline{f}$, hence $\overline{\scq}=\overline{\scm}$, hence $\scq=\scm$. $\scm=\text{rad}((x_1,...,x_r,f))$.
+Indeed, assume $\scq$ a prime in $\cala[X]$ that contains $x_1,..,x_r,f$ $\Lrta$ $\scq\cap \cala$ is a prime of $\cala$ containing $x_1,..,x_r$, hence $\scq\cap \cala=\scp$, so $\scq\supseteq \scp\cala[X]$, so $\scq$ identifies with a prime ideal $\overline{\scq}\subseteq \cala[X]/\scp\cala[X]$ which contains $\overline{f}$, hence $\overline{\scq}=\overline{\scm}$, hence $\scq=\scm$. $\scm=\text{rad}((x_1,...,x_r,f))$.
 
 \end{proof}
 
+\begin{rmkt}
+For non-Noetherian ring, in general, we don't have the equality $\text{dim}(\cala[X])=\text{dim}(\cala)+1$. But rather, we have
+$$
+\text{dim}(\cala)+1\leq \text{dim}(\cala[X])\leq 2\text{dim}(\cala)+1.
+$$
+\end{rmkt}
+
 \begin{ex}(All the bad examples in algebraic geometry is more or less related to this example)
-One other example: $k$ is a field, $k[[X,Y]]:=$ \{formal power series over $k$ in $X,Y$\}$=\{\sum_{ij}c_{ij} X^i Y^j\}$, $k[[X,Y]]$ is Noetherian, local ring with maximal ideal $(X,Y)$
+One other example for dimension computation: $k$ is a field, $k[[X,Y]]:=$ \{formal power series over $k$ in $X,Y$\}$=\{\sum_{ij}c_{ij} X^i Y^j\}$, $k[[X,Y]]$ is Noetherian, local ring with maximal ideal $(X,Y)$
 
 Assume $\cala:=k[[X,Y]]/(X^2,XY)$. what is  $\text{dim}(\cala)$?
 
-$\cala/(x)\cong k[[y]]$, $\cala/(x,y)\cong k$ are integral domains $\Lrta (X)\subsetneq (X,Y)$ is a chain of prime, notice that $\cala$ is not a integral domain$\Lrta \text{dim}(\cala)\geq 1$
+$\cala/(x)\cong k[[y]]$, $\cala/(x,y)\cong k$ are integral domains $\Lrta (x)\subsetneq (x,y)$ is a chain of prime, notice that $\cala$ is not a integral domain$\Lrta \text{dim}(\cala)\geq 1$
 
-$\cala\supseteq \scm=(x,y)$ (x and y here means the image of x and y in the quotient ring.)
+$\cala\supseteq \scm=(x,y)$ (x and y here means the image of X and Y in the quotient ring.)
 
 Claim $\text{rad}((y))=\scm$
 \begin{proof}
@@ -4149,7 +4187,7 @@ By the theorem on parameters, deduce that $\text{dim}(\cala)\leq 1$. hence $\tex
 \begin{lemma}
 $k=\overline{k}$ say $k=\cplx$. $\cala=k[X_1,...,X_n]$. Let $\scm\subseteq \cala$ be a maximal ideal, then $\scm=(X_1-x_1,...,X_n-x_n)$ for some $(x_1,..,x_n)\in k^n$. Then $\text{ht}(\scm)=n$, and $\cala_\scm$ a local ring of dimension $n$ whose maximal ideal $\scm\cala_\scm$ has $n$ generators.
 \begin{proof}
-$\text{dim}(\cala_\scm)=\text{ht}(\scm\cala_\scm)=\text{ht}(\scm)\leq \text{dim}(\cala)=n$. $\text{ht}(\scm)\geq n$ because $\scm=\scp_n\supsetneq ...\supsetneq \scp_0$, $\scp_i=(X_1-x_1,...,X_i-x_i)$ 
+$\text{dim}(\cala_\scm)=\text{ht}(\scm\cala_\scm)=\text{ht}(\scm)\leq \text{dim}(\cala)=n$. $\text{ht}(\scm)\geq n$ because $\scm=\scp_n\supsetneq ...\supsetneq \scp_0$, $\scp_i=(X_1-x_1,...,X_i-x_i)$. 
 \end{proof}
 \end{lemma}
 
@@ -4215,7 +4253,7 @@ $\cala\subseteq \calb$ are rings. The followings are equivalent for $x\in\calb$.
 \item $\cala[x]$ is finite over $\cala$, i.e., $\cala[x]$ is a finitely generated $\cala$-module: $\exists e_1,..,e_n\in\cala[x],s.t. \cala[x]=\sum_i\cala e_i$
 \item $\exists $ subring $\cala[x]\subseteq \calc\subseteq \calb$ s.t. $\calc$ finitely generated $\cala$-module.
 \item $\exists$ faithful $\cala[x]$-module $M$ which is finitely generated as an $\cala$-module.
-(Here by faithful, we mean the only element $y\in\cala[x], y\cdot m=0,\forall m\in M$ $\Lrta y=0$ )
+(Here by \textbf{faithful}, we mean the only element $y\in\cala[x], y\cdot m=0,\forall m\in M$ $\Lrta y=0$ )
 \end{enumerate}
 \end{lemma}
 \begin{ex}
@@ -4226,7 +4264,7 @@ $(i)\Lrta(ii)$ If $x$ satisfies $x^n+a_1 x^{n-1}+...+a_n=0$, then $\cala[x]=\sum
 
 $(ii)\Lrta (iii)$ $\calc:=\cala[x]$,
 
-$(iii)\Lrta(iv)$ $M:=\calc$
+$(iii)\Lrta(iv)$ $M:=\calc$, which is faithful as an $\cala$-module.
 
 $(iv)\Lrta(i)$ Suppose a finitely generated $\cala$-module $M$ which is simultaneously a faithful $\cala[x]$-module. $M=\sum_i^n\cala e_i, e_i\in M$. Because $M$ is a $\cala[x]$-module, we can apply the action of $x$ on each $e_i$ and get a system of linear equations:
 $$
@@ -4256,7 +4294,7 @@ e_{1}\\
 e_{n}
 \end{pmatrix} =0$,
 \end{center}
-hence $\det\Delta m=0,\ \forall m\in M$, by the assumption in $(iv)$, M is a faithful $\cala[x]$-module $\Lrta \det \Delta=0$. Therefore $x$ satisfies the following monic polynomial equation 
+hence $\det(\Delta)\cdot m=0,\ \forall m\in M$, by the assumption in $(iv)$, M is a faithful $\cala[x]$-module $\Lrta \det \Delta=0$. Therefore $x$ satisfies the following monic polynomial equation 
 $$
 \det (\delta_{ij} X-a_{ij})=0
 $$
@@ -4344,14 +4382,14 @@ Suppose $x\in\calb$ is integral over $\overline{\cala}$. Since by definition, $\
 \end{proof}
 \end{cor}
 
-\begin{lemma}\label{lem:integral_lemma9}(Lemma 9)\\
+\begin{lemma}\label{lem:integral_lemma9}
 $\cala\subseteq \calb$ rings, $\scb\subseteq\calb$ an ideal, and set $\sca:=\cala\cap\scb$. If $\calb$ is integral over $\cala$, then $\calb/\scb$ is integral over $\cala/\sca$.
 \begin{proof}
 Let $x+\scb\in \calb/\scb$. Write $x^n+...=0$ with coefficients in $\cala$, and then reduce to the conclusion by $\mod \scb$.
 \end{proof}
 \end{lemma}
 
-\begin{lemma}\label{lem:integral_lemma10}(Lemma 10)
+\begin{lemma}\label{lem:integral_lemma10}
 Let $\cala\subseteq \calb$ are rings, and multiplicative set $S\subseteq \cala$. Then $\cala$, then $S^{-1}\calb$ is integral over $S^{-1}\cala$.
 \begin{proof}
 Let $\frac{x}{s}\in S^{-1}\calb$, $x\in \calb, s\in S$.
@@ -4368,12 +4406,12 @@ which means $\frac{x}{s}$ is integral over $S^{-1}\cala$.
 \end{lemma}
 
 \begin{dfn}
-Let $\cala$ a domain (:= integral domain).
+Let $\cala$ be an integral domain.
 set $K:=Frac(\cala)$ field of fractions. Call $\cala$ \textbf{normal} if $\cala$ is integrally closed in $K$, i.e., $x\in K, $ integral over $\cala\Lrta x\in\cala$.
 Note in some references e.g., Atiyah-Macdonald ``normal'' is equivalent to ``integrally closed''
 \end{dfn}
 
-\begin{lemma}\label{lem:integral_lemma11}(Lemma 11)
+\begin{lemma}\label{lem:integral_lemma11}
 $\intg$ is normal.
 \begin{proof}
 Let $x\in \ratl^\times$, say $x=r/s$, $gcd(x,s)=1$, $r,s\in\intg, s\neq 0$. Suppose $\exists a_1,..,a_n\in\intg$ s.t.,
@@ -4388,13 +4426,13 @@ $\Lrta s|r^n$, $gcd(r^n,s)=1,\Lrta s\in \intg^\times\Lrta x\in \intg$.
 \end{proof}
 \end{lemma}
 
-\begin{lemma}\label{lem:integral_lemma11'}(Lemma11')
+\begin{lemma}\label{lem:integral_lemma11'}
 Any UFD (unique factorization domain) is normal (via the same proof): e.g. $\intg,k[x_1,...,x_n]$
 \end{lemma}
 
 Consider an example of ring which is not normal:
 \begin{ex}
-$\cala=k[x^2,x^3]\subset K=Frac(\cala)=k(x),(\text{because } x^3/x^2)$ is not normal.
+$\cala=k[x^2,x^3]\subset K=Frac(\cala)=k(x),(\text{because } x^3/x^2=x)$ is not normal.
 
 The element $x\in K$ is integral over $\cala$, but not in $\cala$.
 
@@ -4415,7 +4453,7 @@ then we get
 $$
 (s x)^n+(a_1s_2...s_n) (s x)^{n-1}+...=0,
 $$
-which means $sx\in\overline{\cala}= \calb\Lrta x\in Frac(\calb)$. This proof in fact says each element $x\in L$ can be written as $\frac{b}{a}$, $b\in\calb, a\in\cala^\times$.
+which means $sx\in\overline{\cala}= \calb\Lrta x\in Frac(\calb)$. {\color{red}This proof also implies: each element $x\in L$ can be written as $\frac{b}{a}$, $b\in\calb, a\in\cala^\times$, which would be useful in the proof of~\ref{thm:finitness_integral_closure}}.
 \end{proof}
 \begin{ex}
 $\cala=\intg, K=\ratl$, $L/K$ is finite extension ($L$ is a number field.) $\calb$ is the integral closure of $\cala$ in $L$.
@@ -4425,7 +4463,7 @@ $\calb=:\calo_L$ ``ring of integers in $L$''.
 
 \begin{ex}
 $\cala=\intg[\sqrt{3}]$,$L=\ratl(\sqrt{3})$,
-FACT: $\calo_L=[(1+\sqrt{3})/2]\supsetneq \intg[\sqrt 3]$
+FACT: $\calo_L=\intg[(1+\sqrt{3})/2]\supsetneq \intg[\sqrt 3]$
 
 $\intg[\sqrt{3}]$ is not normal.
 \end{ex}
@@ -4440,12 +4478,13 @@ $$
 \intg[\sqrt{3}]^{norm}=\intg\left[\frac{1+\sqrt{3}}{2}\right]
 $$
 \end{dfn}
-\begin{lemma}\label{integral_lemma12}(Lemma 12)
+\begin{lemma}\label{integral_lemma12}
 $\cala\subseteq \calb$, integral extension of rings.
 \begin{enumerate}[label=(\roman*)]
 \item ($\cala$ is a field $\Llrta$ $\calb$ is a field) provided that $\cala$ and $\calb$ are domains
 \item  Let $\scq\subseteq \calb$ prime, and $\scp:=\scq^{c}=\scq\cap \cala$. prime (in $\cala$). Then 
 $\scq$ maximal $\Llrta$ $\scp$ maximal.
+\item If $\cala$ and $\calb$ are integral domains, then $L:=\text{Frac}(\calb)$ is algebraic extension of $K:\text{Frac}(\cala)$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
@@ -4465,6 +4504,11 @@ $\Lrta\cala$ is a field.
 
 $(ii)$:  $\calb/\scq$ is integral over $\cala/\scp$ by Lemma~\ref{lem:integral_lemma9} and then apply part $(i)$.
 
+$(iii)$: element in $L$ can be written as $\frac{b}{s}, b\in\calb,s\in \calb^{\times}$, $s b\in\calb$ is integral over $\cala$,
+$$
+\left(s\frac{b}{s}\right)^n+a_1 \left(s\frac{b}{s}\right)^{n-1}+...+a_n=0
+$$
+$\frac{b}{s}$ is algebraic over $K$. We can divide the above equation by $s^n$ to make it a monic polynomial, bu we can not guarantee that $a_i/s^k\in K$, hence we can't say $L$ is integral over $K$.
 \end{proof}
 
 \subsection{Lecture 22. Going-Up}
@@ -4505,6 +4549,7 @@ Equivalently, if we start with a chain
 $\scp=\scp_1\subseteq ....\subseteq \scp_n\in \text{Spec}(\cala)$ and a prime $\scq$ lying over $\scp$, then there exists a chain 
 $\scq=\scq_1\subseteq ...\subseteq \scq_n\in \text{Spec}(\calb)$, s.t., $\scq_i\cap\cala=\scp_i$. 
 Moreover, by ``Incomparablity'', if $\scp\subsetneq \scp'$, then $\scq\subsetneq \scq'$.
+\item {\color{red}(Going-Up') There is a stronger variant of Going-Up. For arbitrary ideal $\sca\subseteq\cala$ and a prime ideal $\scp'\in\text{Spec}(\cala)$, arbitrary ideal $\scb\subseteq\calb$, s.t. $\sca\subseteq\scp',\scb\cap\cala=\sca$, there exists $\scq'\in \text{Spec}(\calb)$ s.t. $\scq'\supseteq\scb,\scq'\cap\cala=\scp'$.}
 \end{enumerate}
 \end{thm}
 
@@ -4520,60 +4565,64 @@ $\cala\subseteq\calb$ integral extension, $\scb\subseteq\calb$ ideal, $\sca:=\sc
 \begin{proof}\ \\
 $(i)$\checkmark. In general ring morphism, for each (strictly inclusion) chain in $\calb$, there exists a (possibly not strictly inclusion) chain  in $\cala$. In the case of integral extension, the incomparability alone guarantees the strict inclusion of the chain in $\cala$. We know $\text{dim}(\cala)\geq \text{dim}(\calb)$. In return, the Going-Up+Incomparability guarantee $\text{dim}(\cala)\leq\text{dim}(\calb) $ \\ 
 $(ii)$\checkmark. By Lemma~\ref{lem:integral_lemma9}, $\calb/\scb$ is integral over $\calb/\scb$ and $(ii)$ reduce to $(i)$.\\
-$(iii)$. For primes $\scq\subsetneq\calb$ $\scp\subseteq \cala$ s.t. $\scq$ lies over $\scq$, we have $\text{ht}(\scp)\geq \text{ht}(\scq)$ because for each proper including chain of primes that ends with$\scq\subseteq\calb$, there exists a proper including chain of primes ending with $\scq\subseteq\cala$, where the proper inclusion is guaranteed by Incomparability. (We can not use Going-Up to argue $\text{ht}(\scp)\leq \text{ht}(\scq)$).
+$(iii)$. For primes $\scq\subsetneq\calb$ $\scp\subseteq \cala$ s.t. $\scq$ lies over $\scq$, we have $\text{ht}(\scp)\geq \text{ht}(\scq)$ because for each proper including chain of primes that ends with $\scq\subseteq\calb$, there exists a proper including chain of primes ending with $\scp\subseteq\cala$, where the proper inclusion is guaranteed by Incomparability. (We can not use Going-Up to argue $\text{ht}(\scp)\leq \text{ht}(\scq)$, because it goes up rather than goes down).
 
- $\text{ht}(\scb)\leq \text{ht}(\sca):=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$ and $\text{ht}(\scp):=\sup\{t|\exists \scp_0\subsetneq...\subsetneq\scp_t=\scp\}$. 
+ $\text{ht}(\sca):=\inf_{\scp\supseteq \sca} \text{ht}(\scp)$ and $\text{ht}(\scp):=\sup\{t|\exists \scp_0\subsetneq...\subsetneq\scp_t=\scp\}$. 
 
 \underline{Want}: if $\scp\supseteq \sca$, then $\text{ht}(\scp)\geq \text{ht}(\scb)$.
 
-Given a prime $\scp\supseteq\sca$, then by Lying-Over,  $\exists\text{ prime } \scq\in\calb$ s.t. $\scq\cap\cala=\scp$. We may assume that $\scp\supseteq\sca$ is minimal, then by Incomparability $\scq\supseteq\scb$ is minimal.
+Given a prime $\scp\supseteq\sca$, then by {\color{red} Going-Up', there exists a $\scq\in\text{Spec}(\calb)$ s.t. $\scq\cap\cala=\scp$ and $\scq\supseteq\scb$. Then we have}
 $$
-\text{ht}(\scp)\geq \text{ht}(\scq)\geq \text{ht}(\scb)
+\text{ht}(\scp)\geq \text{ht}(\scq)\geq \text{ht}(\scb),
 $$ 
+and we can get $\text{ht}(\sca)\geq \text{ht}(\scb)$ after taking the infimum.
 \end{proof}
 \end{cor}
 
 \begin{proof}(of Theorem~\ref{thm:integral_extension_goingup})
-{\color{red} the initial proof of Lying-Over in lecture used the term :``Let $\scp\in \text{Spec}(\cala)$. $\cala_\scp\subseteq\calb_\scp$ integral extension''. Here the $\scp$ is not necessarily prime in $\calb$, hence the notion $\calb_\scp$ should be replaced by $\varphi(S)^{-1}\calb$ where $S:=\cala-\scp$ and $\varphi$ is the inclusion map: $\cala\inj\calb$.}
+{\color{red} the initial proof of Lying-Over in lecture used the term :``Let $\scp\in \text{Spec}(\cala)$. $\cala_\scp\subseteq\calb_\scp$ integral extension''. Here the $\scp$ is not necessarily prime in $\calb$, hence the notion $\calb_\scp$ should be replaced by $S^{-1}\calb$ where $S:=\cala-\scp$}
 
 Lying-Over:  
 
+We localize $\cala$ at $\scp$, then $\scp\cala_\scp=:\scm$ is the maximal in $S^{-1}\cala$. By Lemma~\ref{lem:integral_lemma10}, $S^{-1}\calb$ is integral over $S^{-1}\cala$. Then define $\scn:=\scm S^{-1}\calb$ (the extension of $\scm$), hence $\scn\cap S^{-1}\cala=\scm$, then $\scn$ is maximal by~\ref{integral_lemma12}.
+
 \[
 \begin{tikzcd}
-\scn\cap\calb=:\scq \arrow[r, Subseteq] \arrow[d, dash] & \calb \arrow[r, hook ] & \varphi(S)^{-1}\calb \arrow[r, Supseteq] & \exists\scn\text{ maximal }  \arrow[d,dash] \\
+\scn\cap\calb=:\scq \arrow[r, Subseteq] \arrow[d, dash] & \calb \arrow[r, hook ] & S^{-1}\calb \arrow[r, Supseteq] & \exists\scn\text{ maximal }  \arrow[d,dash] \\
 \scm\cap\cala=:\scp \arrow[r, Subseteq] & \cala \arrow[r, hook] \arrow[u, hook] & S^{-1}\cala \arrow[u, hook] \arrow[r, Supseteq] & \scm\text{ maximal} 
 \end{tikzcd}
 \]
 
 $\scq:=\scn\cap\calb$ lies over $\scp$ because
 $$
-(\scn\cap\calb)\cap\cala=(\scn\cap\varphi(S)^{-1}\calb)\cap\cala=\scm\cap\cala=\scp 
+(\scn\cap\calb)\cap\cala=(\scn\cap S^{-1}\calb)\cap\cala=\scm\cap\cala=\scp 
 $$
 
 Incomparability: The construction above gives a bijection between
 $$
-\{\text{primes of $\calb$ lying over $\scp$}\}\llrta\{\text{primes of $\varphi(S)^{-1}\calb$ lying  over $\scm=S^{-1}\scp$}\}
+\{\text{primes of $\calb$ lying over $\scp$}\}\llrta\{\text{primes of $S^{-1}\calb$ lying  over $\scm=S^{-1}\scp$}\}
 $$
 and by Lemma~\ref{integral_lemma12}, the later can be identified as
 $$
-\{\text{ maximal ideals in $\varphi(S)^{-1}\calb$ that lies over $\scm$}\},
+\{\text{ maximal ideals in $S^{-1}\calb$ that lies over $\scm$}\},
 $$
 which is always incomparable.
 
 
+Because Going-Up' implies Going-Up, we only prove the stronger version.
 
-Going up:
+Going-Up':
 \[
 \begin{tikzcd}
-\scq\ar[r,Subseteq]\ar[d,dash] & \exists ?\scq'\ar[r, Subseteq]\ar[d,dash] & \calb\\
-\scp\ar[r, Subseteq] & \scp'\ar[r, Subseteq] & \cala\ar[u, hook]
+\scb\ar[r,Subseteq]\ar[d,dash] & \exists ?\scq'\ar[r, Subseteq]\ar[d,dash] & \calb\\
+\sca\ar[r, Subseteq] & \scp'\ar[r, Subseteq] & \cala\ar[u, hook]
 \end{tikzcd}
 \]
-Consider the prime $\scp'/\scp\subset\cala/\scp\subseteq\calb/\scq$, where the second inclusion is integral extension. By lying over, we can find a prime $Q\subseteq\calb/\scq$ lying over $\scp'/\scp$. Then $Q=\scq'/\scq$ for some $\scq'\in \text{Spec}(\calb)$
+Consider the prime $\scp'/\sca\subset\cala/\sca\subseteq\calb/\scb$, where the second inclusion is integral extension by~\ref{lem:integral_lemma9}. By lying over, we can find a prime $Q\subseteq\calb/\scb$ lying over $\scp'/\sca$. Then $Q=\scq'/\scb$ for some $\scq'\in \text{Spec}(\calb)$
 $$
-\scp'/\scp=(\scq'/\scq)\cap(\cala/\scp)=\frac{\scq'\cap\cala}{\scq\cap\cala}=\frac{\scq'\cap\cala}{\scq}\Lrta \scp'=\scq'\cap\cala
+\scp'/\sca=(\scq'/\scb)\cap(\cala/\sca)=\frac{\scq'\cap\cala}{\scb\cap\cala}=\frac{\scq'\cap\cala}{\scb}\Lrta \scp'=\scq'\cap\cala
 $$
-Then $\scq'$ lies over $\scp'$.
+Then $\scq'$ lies over $\scp'$ and $\scq'\supseteq\scb$.
 \end{proof}
 
 
@@ -4742,7 +4791,7 @@ See P239 of Eisenbud or 32-33
 Let $\cala\subseteq \calb$ be domains with $\cala$ normal, $\calb$ integral over $\cala$. Then $\cala\subseteq \calb$ has Going-Down property.
 \end{thm}
 \begin{proof}
-Let $K:=Frac(\cala)$, $L_1:=Frac(\calb)$. $\Lrta $ $L_1$ is integral over $K$ as rings by Lemma~\ref{integral_lemma12}, equivalently $L/K$ is algebraic field extension.  
+Let $K:=Frac(\cala)$, $L_1:=Frac(\calb)$. $\Lrta $  by Lemma~\ref{integral_lemma12}, $L/K$ is algebraic field extension.  
 
 Let $L$ be any normal algebraic extension of $K$, that contains $L_1$ (e.g., $L=\overline{K}\supseteq L_1$) (e.g., $L:=$``normal closure of $L_1$ in $\overline{K}\supseteq L_1$'')
 
@@ -4763,7 +4812,7 @@ Let $Q\subseteq\calc$ lies over $\scq$, it exists by Lying over.
 
 Notice that both $Q$ and $Q_1$ lies over $\scp$, by Theorem~\ref{thm:normal_domain_normal_Galois}, $\exists g\in\text{Aut}(L/K)$ s.t. $g(Q_1)=Q$.
 
-$Q'\subsetneq Q_1\Lrta g(Q')\subsetneq Q_1$\\
+$Q'\subsetneq Q_1\Lrta g(Q')\subsetneq Q$\\
 $\Lrta \scq'= g(Q')\cap\calb\subsetneq g(Q_1)\cap\calb=\scq$ by Incomparability.
 
 Note that $g$ fixes $\cala$ so $\scq'\cap \cala=(g(Q')\cap \calb)\cap\cala=g(Q')\cap \cala=g(Q'\cap \cala)=g(\scp')=\scp'$.
@@ -4811,7 +4860,7 @@ Let $\cala$ finitely generated $k$-domains, then $K:=Frac(\cala)$. Then $\text{d
 \begin{proof} of Corollary~\ref{cor:k-domain_dim_tr.deg}. Let $d:=\text{dim}(\cala)$ $\cala_0=k[x_1,..,x_d]$ as above. 
 $K_0=Frac(\cala_0)\cong k(x_1,...,x_d)$
 
-$\cala$: integral over $\cala_0$ $\Lrta$ $K$ algebraic over $K_0$ (Confer the proof of Theorem 2 today).
+$\cala$: integral over $\cala_0$ $\Lrta$ $K$ algebraic over $K_0$ (See~\ref{integral_lemma12}).
 
 $\Lrta tr.deg_k(K)=tr.deg_k(K_0)=d=\text{dim}(\cala)$.
 \end{proof}
@@ -4825,7 +4874,7 @@ Let $\cala$ be a $k$-algebra, with $x_1,..,x_n\in \cala$, $0\neq f\in k[X_1,..,X
 And we have to give some motivation for this key lemma in that the lemma indicates the NN:
 \begin{proof}(Lemma~\ref{lem:key_lemma_noether_normalization}$\Lrta$ NN~\ref{thm:Noether_Normalization}) $\cala$ is finitely generated $k$-algebra, say $\cala$ generated by $x_1,...,x_n$. If $x_1,...,x_n$ are algebraic independent, then done: $\cala=k[x_1,..,x_n]$. 
 
-Else $\exists 0\neq f\in k[X_1,..,X_n]$ s.t. $0=f(x_1,..,x_n)$, then by the key lemma (here $w=0$), $\exists z_1,..,z_{n-1}$ s.t. $k[x_1,...,x_n]$ integral over $k[z_1,..,z_{n-1}]$. Iterate finitely many times: $\cala$ is integral over $k[u_1,...,u_d]$, where $u_1,..,u_d$ are algebraic independent, $d\leq n-1$. 
+Else $\exists 0\neq f\in k[X_1,..,X_n]$ s.t. $0=f(x_1,..,x_n)$, then by the key lemma (here $w=0$), $\exists z_1,..,z_{n-1}$ s.t. $k[x_1,...,x_n]$ integral over $k[z_1,..,z_{n-1}]$. Iterate finitely many times: $\cala$ is integral over $k[u_1,...,u_d]$, where $u_1,..,u_d$ are algebraic independent, then $\text{dim}(\cala)=\text{dim}(k[u_1,..,u_d])=d$. 
 \end{proof}
 
 For pedagogical reason, we start with a Baby case
@@ -4839,7 +4888,7 @@ $$
 k[X]\cong k[x]\subsetneq \cala=\frac{k[X,Y]}{XY-1}\cong k\left[x,\frac{1}{x}\right]\cong k(x)\cong k(X).
 $$
 
-$k[X]$ is normal because it is UFD, hence it is integrally closed in $k(X)$ $\Lrta$ $\cala$ is \underline{NOT} integral over $k(x)$. ($y$ is algebraic over $k[x]$ but not integral over $k[x]$.)
+$k[X]$ is normal because it is UFD, hence it is integrally closed in $k(X)$ $\Lrta$ $\cala$ is \underline{NOT} integral over $k[x]$. ($y$ is algebraic over $k[x]$ but not integral over $k[x]$.)
 
 Similarly, $\cala$ is not integral over $k[y]$.
 
@@ -5048,7 +5097,7 @@ $$
 We then argued that $k[X]$ is normal, hence that $\cala \cong k[X,1/X]$ is Not integral over $k[X]$.
 
 Here, we will give another proof.
-\begin{dfn}
+\begin{ex}
 Any $0\neq f\in\cala$ may be written in the form
 $$
 a_{-n}X^{-n}+...+a_m X^{m},
@@ -5072,7 +5121,7 @@ $$
 with $a_{j}\in k[X]$. Note $v(a_j)\geq 0$\\
 $\Lrta v(a_j f^{n-j})\geq v(f^{n-j})=(n-j)v(f)\leq -1$\\
 $\Lrta v(f^n)=nv(f)< v(a_1 f^{n-1}+....+a_n)$, contradicting to $f^n+a_1 f^{n-1}+..+a_n=0$.
-\end{dfn}
+\end{ex}
 
 \begin{dfn}
 Let $K$ be a field, $(G,0, +,\leq)$ totally ordered abelian group e.g. $( G=\intg)$. A map $v:K^\times\lrta G$ is called a \textbf{valuation} if it satisfies the property
@@ -5517,7 +5566,7 @@ The ring of integers (integral closure of $\intg$ in the number field) in any nu
 \begin{proof}
 Reduced the proof to checking that $\calb$ is Noetherian. For this, it suffices to show that $\calb$ is finitely generated $\cala$-module because $\cala$ is Noetherian.
 
- Recall (every finite field extension is algebraic) the proof of~\ref{prop:integral_closure_in_algebraic_field_extension}, we saw $\exists u_1,...,u_n\in\calb$, a $K$-basis of $L$. $\leadsto$ dual basis $v_1,...,v_n\in L$, a $K$-basis for $L/K$ separable. s.t., with
+ Recall every finite field extension is algebraic and the {\color{red}red words } in the proof of~\ref{prop:integral_closure_in_algebraic_field_extension}, every element in $L$ can be written as $\frac{b}{a}, b\in \calb, a\in \cala^\times$. Then each $K$-basis in $L$ can in fact give an $K$-basis of $L$: $\{u_1,..,u_n\}$ s.t. $ u_1,...,u_n\in\calb$. $\leadsto$ dual basis $v_1,...,v_n\in L$, a $K$-basis for $L/K$ separable. s.t., with
  $$T:L\lrta K$$
 $$z\longmapsto trace_{L/K}(M_z),$$
 where $M_z$ is multiplication by $z$
@@ -5636,7 +5685,7 @@ If $\cala$ Noetherian and $I$ fractional ideal, then $I $ finitely generated
 
 \begin{dfn}
 $$
-I\cdot J:=\{\sum_i a_i b_j: a_i \in I, b_i\in J\}
+I\cdot J:=\left\{\sum_i a_i b_j: a_i \in I, b_i\in J\right\}
 $$
 \end{dfn}
 
