@@ -35,4 +35,4 @@
 \contentsline {subsection}{\numberline {8.1}Lecture 25. Valuation}{114}{subsection.8.1}
 \contentsline {subsection}{\numberline {8.2}Lecture 26. Discrete Valuation Ring and Normality}{118}{subsection.8.2}
 \contentsline {subsection}{\numberline {8.3}Lecture 27. Dedekind Domain}{122}{subsection.8.3}
-\contentsline {subsection}{\numberline {8.4}Lecture 28. Fractional Ideals}{125}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}Lecture 28. Fractional Ideals}{126}{subsection.8.4}
